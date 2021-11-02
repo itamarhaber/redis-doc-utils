@@ -1,0 +1,80 @@
+{
+  "ZUNION": {
+    "summary": "Add multiple sorted sets",
+    "complexity": "O(N)+O(M*log(M)) with N being the sum of the sizes of the input sorted sets, and M being the number of elements in the resulting sorted set.",
+    "group": "sorted_set",
+    "since": "6.2.0",
+    "arity": -3,
+    "command_flags": [
+      "readonly",
+      "movablekeys"
+    ],
+    "acl_categories": [
+      "read",
+      "sortedset",
+      "slow"
+    ],
+    "key_specs": [
+      {
+        "flags": [
+          "read"
+        ],
+        "begin_search": {
+          "index": {
+            "pos": 1
+          }
+        },
+        "find_keys": {
+          "keynum": {
+            "keynumidx": 0,
+            "firstkey": 1,
+            "step": 1
+          }
+        }
+      }
+    ],
+    "return_types": [
+      {
+        "description": "the result of union (optionally with their scores, in case ",
+        "type": "array"
+      }
+    ],
+    "arguments": [
+      {
+        "name": "numkeys",
+        "type": "integer"
+      },
+      {
+        "name": "key",
+        "type": "key",
+        "multiple": true
+      },
+      {
+        "command": "WEIGHTS",
+        "name": "weight",
+        "type": "integer",
+        "variadic": true,
+        "optional": true
+      },
+      {
+        "command": "AGGREGATE",
+        "name": "aggregate",
+        "type": "enum",
+        "enum": [
+          "SUM",
+          "MIN",
+          "MAX"
+        ],
+        "optional": true
+      },
+      {
+        "name": "withscores",
+        "type": "enum",
+        "enum": [
+          "WITHSCORES"
+        ],
+        "optional": true
+      }
+    ]
+  }
+}

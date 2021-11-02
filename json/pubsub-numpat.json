@@ -1,0 +1,15 @@
+{
+  "NUMPAT": {
+    "arity": 2,
+    "container": "PUBSUB",
+    "command_flags": [
+      "pubsub",
+      "loading",
+      "stale"
+    ],
+    "acl_categories": [
+      "pubsub",
+      "slow"
+    ]
+  }
+}

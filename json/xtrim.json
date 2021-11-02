@@ -1,0 +1,88 @@
+{
+  "XTRIM": {
+    "summary": "Trims the stream to (approximately if '~' is passed) a certain size",
+    "complexity": "O(N), with N being the number of evicted entries. Constant times are very small however, since entries are organized in macro nodes containing multiple entries that can be released with a single deallocation.",
+    "group": "stream",
+    "since": "5.0.0",
+    "arity": -4,
+    "history": [
+      [
+        "6.2",
+        "Added the `MINID` trimming strategy and the `LIMIT` option."
+      ]
+    ],
+    "command_flags": [
+      "write",
+      "random"
+    ],
+    "acl_categories": [
+      "write",
+      "stream",
+      "slow"
+    ],
+    "key_specs": [
+      {
+        "flags": [
+          "write"
+        ],
+        "begin_search": {
+          "index": {
+            "pos": 1
+          }
+        },
+        "find_keys": {
+          "range": {
+            "lastkey": 0,
+            "step": 1,
+            "limit": 0
+          }
+        }
+      }
+    ],
+    "return_types": [
+      {
+        "description": "The number of entries deleted from the stream.",
+        "type": "integer"
+      }
+    ],
+    "arguments": [
+      {
+        "name": "key",
+        "type": "key"
+      },
+      {
+        "name": "trim",
+        "type": "block",
+        "block": [
+          {
+            "name": "strategy",
+            "type": "enum",
+            "enum": [
+              "MAXLEN",
+              "MINID"
+            ]
+          },
+          {
+            "name": "operator",
+            "type": "enum",
+            "enum": [
+              "=",
+              "~"
+            ],
+            "optional": true
+          },
+          {
+            "name": "threshold",
+            "type": "string"
+          },
+          {
+            "command": "LIMIT",
+            "name": "count",
+            "type": "integer",
+            "optional": true
+          }
+        ]
+      }
+    ]
+  }
+}

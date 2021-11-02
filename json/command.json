@@ -1,0 +1,31 @@
+{
+  "COMMAND": {
+    "summary": "Get array of Redis command details",
+    "complexity": "O(N) where N is the total number of Redis commands",
+    "group": "server",
+    "since": "2.8.13",
+    "arity": -1,
+    "command_flags": [
+      "random",
+      "loading",
+      "stale"
+    ],
+    "acl_categories": [
+      "slow",
+      "connection"
+    ],
+    "subcommands": [
+      "COUNT",
+      "GETKEYS",
+      "HELP",
+      "INFO",
+      "LIST"
+    ],
+    "return_types": [
+      {
+        "description": "nested list of command details.  Commands are returned",
+        "type": "array"
+      }
+    ]
+  }
+}

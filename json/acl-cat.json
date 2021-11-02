@@ -1,0 +1,31 @@
+{
+  "CAT": {
+    "summary": "List the ACL categories or the commands inside a category",
+    "complexity": "O(1) since the categories and commands are a fixed set.",
+    "group": "server",
+    "since": "6.0.0",
+    "arity": -2,
+    "container": "ACL",
+    "command_flags": [
+      "noscript",
+      "loading",
+      "stale"
+    ],
+    "acl_categories": [
+      "slow"
+    ],
+    "return_types": [
+      {
+        "description": "a list of ACL categories or a list of commands inside a given category. The command may return an error if an invalid category name is given as argument.",
+        "type": "array"
+      }
+    ],
+    "arguments": [
+      {
+        "name": "categoryname",
+        "type": "string",
+        "optional": true
+      }
+    ]
+  }
+}

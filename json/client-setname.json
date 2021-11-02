@@ -1,0 +1,31 @@
+{
+  "SETNAME": {
+    "summary": "Set the current connection name",
+    "complexity": "O(1)",
+    "group": "connection",
+    "since": "2.6.9",
+    "arity": 3,
+    "container": "CLIENT",
+    "command_flags": [
+      "noscript",
+      "loading",
+      "stale"
+    ],
+    "acl_categories": [
+      "slow",
+      "connection"
+    ],
+    "return_types": [
+      {
+        "description": "`OK` if the connection name was successfully set.",
+        "type": "simple-string"
+      }
+    ],
+    "arguments": [
+      {
+        "name": "connection-name",
+        "type": "string"
+      }
+    ]
+  }
+}

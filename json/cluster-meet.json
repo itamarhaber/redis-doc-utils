@@ -1,0 +1,36 @@
+{
+  "MEET": {
+    "summary": "Force a node cluster to handshake with another node",
+    "complexity": "O(1)",
+    "group": "cluster",
+    "since": "3.0.0",
+    "arity": -4,
+    "container": "CLUSTER",
+    "command_flags": [
+      "admin",
+      "random",
+      "stale"
+    ],
+    "acl_categories": [
+      "admin",
+      "slow",
+      "dangerous"
+    ],
+    "return_types": [
+      {
+        "description": "`OK` if the command was successful. If the address or port specified are invalid an error is returned.",
+        "type": "simple-string"
+      }
+    ],
+    "arguments": [
+      {
+        "name": "ip",
+        "type": "string"
+      },
+      {
+        "name": "port",
+        "type": "integer"
+      }
+    ]
+  }
+}

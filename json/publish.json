@@ -1,0 +1,36 @@
+{
+  "PUBLISH": {
+    "summary": "Post a message to a channel",
+    "complexity": "O(N+M) where N is the number of clients subscribed to the receiving channel and M is the total number of subscribed patterns (by any client).",
+    "group": "pubsub",
+    "since": "2.0.0",
+    "arity": 3,
+    "command_flags": [
+      "pubsub",
+      "loading",
+      "stale",
+      "fast",
+      "may_replicate"
+    ],
+    "acl_categories": [
+      "pubsub",
+      "fast"
+    ],
+    "return_types": [
+      {
+        "description": "the number of clients that received the message. Note that in a",
+        "type": "integer"
+      }
+    ],
+    "arguments": [
+      {
+        "name": "channel",
+        "type": "string"
+      },
+      {
+        "name": "message",
+        "type": "string"
+      }
+    ]
+  }
+}

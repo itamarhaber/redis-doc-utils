@@ -1,0 +1,73 @@
+{
+  "XAUTOCLAIM": {
+    "summary": "Changes (or acquires) ownership of messages in a consumer group, as if the messages were delivered to the specified consumer.",
+    "complexity": "O(1) if COUNT is small.",
+    "group": "stream",
+    "since": "6.2.0",
+    "arity": -6,
+    "command_flags": [
+      "write",
+      "random",
+      "fast"
+    ],
+    "acl_categories": [
+      "write",
+      "stream",
+      "fast"
+    ],
+    "key_specs": [
+      {
+        "flags": [
+          "write"
+        ],
+        "begin_search": {
+          "index": {
+            "pos": 1
+          }
+        },
+        "find_keys": {
+          "range": {
+            "lastkey": 0,
+            "step": 1,
+            "limit": 0
+          }
+        }
+      }
+    ],
+    "arguments": [
+      {
+        "name": "key",
+        "type": "key"
+      },
+      {
+        "name": "group",
+        "type": "string"
+      },
+      {
+        "name": "consumer",
+        "type": "string"
+      },
+      {
+        "name": "min-idle-time",
+        "type": "string"
+      },
+      {
+        "name": "start",
+        "type": "string"
+      },
+      {
+        "command": "COUNT",
+        "name": "count",
+        "type": "integer",
+        "optional": true
+      },
+      {
+        "name": "justid",
+        "enum": [
+          "JUSTID"
+        ],
+        "optional": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "GENPASS": {
+    "summary": "Generate a pseudorandom secure password to use for ACL users",
+    "complexity": "O(1)",
+    "group": "server",
+    "since": "6.0.0",
+    "arity": -2,
+    "container": "ACL",
+    "command_flags": [
+      "noscript",
+      "loading",
+      "stale"
+    ],
+    "acl_categories": [
+      "slow"
+    ],
+    "return_types": [
+      {
+        "description": "by default 64 bytes string representing 256 bits of pseudorandom data. Otherwise if an argument if needed, the output string length is the number of specified bits (rounded to the next multiple of 4) divided by 4.",
+        "type": "bulk-string"
+      }
+    ],
+    "arguments": [
+      {
+        "name": "bits",
+        "type": "integer",
+        "optional": true
+      }
+    ]
+  }
+}

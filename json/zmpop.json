@@ -1,0 +1,33 @@
+{
+  "ZMPOP": {
+    "arity": -4,
+    "command_flags": [
+      "write",
+      "movablekeys"
+    ],
+    "acl_categories": [
+      "write",
+      "sortedset",
+      "slow"
+    ],
+    "key_specs": [
+      {
+        "flags": [
+          "write"
+        ],
+        "begin_search": {
+          "index": {
+            "pos": 1
+          }
+        },
+        "find_keys": {
+          "keynum": {
+            "keynumidx": 0,
+            "firstkey": 1,
+            "step": 1
+          }
+        }
+      }
+    ]
+  }
+}

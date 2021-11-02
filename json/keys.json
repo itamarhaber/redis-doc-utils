@@ -1,0 +1,31 @@
+{
+  "KEYS": {
+    "summary": "Find all keys matching the given pattern",
+    "complexity": "O(N) with N being the number of keys in the database, under the assumption that the key names in the database and the given pattern have limited length.",
+    "group": "generic",
+    "since": "1.0.0",
+    "arity": 2,
+    "command_flags": [
+      "readonly",
+      "sort_for_script"
+    ],
+    "acl_categories": [
+      "keyspace",
+      "read",
+      "slow",
+      "dangerous"
+    ],
+    "return_types": [
+      {
+        "description": "list of keys matching `pattern`.",
+        "type": "array"
+      }
+    ],
+    "arguments": [
+      {
+        "name": "pattern",
+        "type": "pattern"
+      }
+    ]
+  }
+}

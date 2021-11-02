@@ -1,0 +1,31 @@
+{
+  "INFO": {
+    "summary": "Get array of specific Redis command details",
+    "complexity": "O(N) when N is number of commands to look up",
+    "group": "server",
+    "since": "2.8.13",
+    "arity": -3,
+    "container": "COMMAND",
+    "command_flags": [
+      "loading",
+      "stale"
+    ],
+    "acl_categories": [
+      "slow",
+      "connection"
+    ],
+    "return_types": [
+      {
+        "description": "nested list of command details.",
+        "type": "array"
+      }
+    ],
+    "arguments": [
+      {
+        "name": "command-name",
+        "type": "string",
+        "multiple": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "LCS": {
+    "arity": -5,
+    "container": "STRALGO",
+    "command_flags": [
+      "readonly",
+      "movablekeys"
+    ],
+    "acl_categories": [
+      "read",
+      "string",
+      "slow"
+    ],
+    "key_specs": [
+      {
+        "flags": [
+          "read",
+          "incomplete"
+        ],
+        "begin_search": {
+          "unknown": null
+        },
+        "find_keys": {
+          "unknown": null
+        }
+      }
+    ]
+  }
+}

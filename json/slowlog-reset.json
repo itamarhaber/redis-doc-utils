@@ -1,0 +1,16 @@
+{
+  "RESET": {
+    "arity": 2,
+    "container": "SLOWLOG",
+    "command_flags": [
+      "admin",
+      "loading",
+      "stale"
+    ],
+    "acl_categories": [
+      "admin",
+      "slow",
+      "dangerous"
+    ]
+  }
+}

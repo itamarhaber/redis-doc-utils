@@ -1,0 +1,76 @@
+{
+  "ZDIFFSTORE": {
+    "summary": "Subtract multiple sorted sets and store the resulting sorted set in a new key",
+    "complexity": "O(L + (N-K)log(N)) worst case where L is the total number of elements in all the sets, N is the size of the first set, and K is the size of the result set.",
+    "group": "sorted_set",
+    "since": "6.2.0",
+    "arity": -4,
+    "command_flags": [
+      "write",
+      "denyoom",
+      "movablekeys"
+    ],
+    "acl_categories": [
+      "write",
+      "sortedset",
+      "slow"
+    ],
+    "key_specs": [
+      {
+        "flags": [
+          "write"
+        ],
+        "begin_search": {
+          "index": {
+            "pos": 1
+          }
+        },
+        "find_keys": {
+          "range": {
+            "lastkey": 0,
+            "step": 1,
+            "limit": 0
+          }
+        }
+      },
+      {
+        "flags": [
+          "read"
+        ],
+        "begin_search": {
+          "index": {
+            "pos": 2
+          }
+        },
+        "find_keys": {
+          "keynum": {
+            "keynumidx": 0,
+            "firstkey": 1,
+            "step": 1
+          }
+        }
+      }
+    ],
+    "return_types": [
+      {
+        "description": "the number of elements in the resulting sorted set at",
+        "type": "integer"
+      }
+    ],
+    "arguments": [
+      {
+        "name": "destination",
+        "type": "key"
+      },
+      {
+        "name": "numkeys",
+        "type": "integer"
+      },
+      {
+        "name": "key",
+        "type": "key",
+        "multiple": true
+      }
+    ]
+  }
+}

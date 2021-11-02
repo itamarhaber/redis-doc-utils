@@ -1,0 +1,17 @@
+{
+  "SCRIPT": {
+    "arity": -2,
+    "command_flags": [],
+    "acl_categories": [
+      "slow"
+    ],
+    "subcommands": [
+      "DEBUG",
+      "EXISTS",
+      "FLUSH",
+      "HELP",
+      "KILL",
+      "LOAD"
+    ]
+  }
+}

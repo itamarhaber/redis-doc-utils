@@ -1,0 +1,35 @@
+{
+  "RESTORE-ASKING": {
+    "arity": -4,
+    "command_flags": [
+      "write",
+      "denyoom",
+      "asking"
+    ],
+    "acl_categories": [
+      "keyspace",
+      "write",
+      "slow",
+      "dangerous"
+    ],
+    "key_specs": [
+      {
+        "flags": [
+          "write"
+        ],
+        "begin_search": {
+          "index": {
+            "pos": 1
+          }
+        },
+        "find_keys": {
+          "range": {
+            "lastkey": 0,
+            "step": 1,
+            "limit": 0
+          }
+        }
+      }
+    ]
+  }
+}

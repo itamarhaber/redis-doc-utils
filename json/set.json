@@ -1,0 +1,96 @@
+{
+  "SET": {
+    "summary": "Set the string value of a key",
+    "complexity": "O(1)",
+    "group": "string",
+    "since": "1.0.0",
+    "arity": -3,
+    "depracated": true,
+    "history": [
+      [
+        "2.6.12",
+        "Added the `EX`, `PX`, `NX` and `XX` options."
+      ],
+      [
+        "6.0",
+        "Added the `KEEPTTL` option."
+      ],
+      [
+        "6.2",
+        "Added the `!GET`, `EXAT` and `PXAT` option."
+      ],
+      [
+        "7.0",
+        "Allowed the `NX` and `!GET` options to be used together."
+      ]
+    ],
+    "command_flags": [
+      "write",
+      "denyoom"
+    ],
+    "acl_categories": [
+      "write",
+      "string",
+      "slow"
+    ],
+    "key_specs": [
+      {
+        "flags": [
+          "write",
+          "read"
+        ],
+        "begin_search": {
+          "index": {
+            "pos": 1
+          }
+        },
+        "find_keys": {
+          "range": {
+            "lastkey": 0,
+            "step": 1,
+            "limit": 0
+          }
+        }
+      }
+    ],
+    "arguments": [
+      {
+        "name": "key",
+        "type": "key"
+      },
+      {
+        "name": "value",
+        "type": "string"
+      },
+      {
+        "name": "expiration",
+        "type": "enum",
+        "enum": [
+          "EX seconds",
+          "PX milliseconds",
+          "EXAT timestamp",
+          "PXAT milliseconds-timestamp",
+          "KEEPTTL"
+        ],
+        "optional": true
+      },
+      {
+        "name": "condition",
+        "type": "enum",
+        "enum": [
+          "NX",
+          "XX"
+        ],
+        "optional": true
+      },
+      {
+        "name": "get",
+        "type": "enum",
+        "enum": [
+          "GET"
+        ],
+        "optional": true
+      }
+    ]
+  }
+}

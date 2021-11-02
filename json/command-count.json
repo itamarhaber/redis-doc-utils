@@ -1,0 +1,24 @@
+{
+  "COUNT": {
+    "summary": "Get total number of Redis commands",
+    "complexity": "O(1)",
+    "group": "server",
+    "since": "2.8.13",
+    "arity": 2,
+    "container": "COMMAND",
+    "command_flags": [
+      "loading",
+      "stale"
+    ],
+    "acl_categories": [
+      "slow",
+      "connection"
+    ],
+    "return_types": [
+      {
+        "description": "number of commands returned by `COMMAND`",
+        "type": "integer"
+      }
+    ]
+  }
+}

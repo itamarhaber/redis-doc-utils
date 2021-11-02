@@ -1,0 +1,21 @@
+{
+  "STATS": {
+    "summary": "Show memory usage details",
+    "group": "server",
+    "since": "4.0.0",
+    "arity": 2,
+    "container": "MEMORY",
+    "command_flags": [
+      "random"
+    ],
+    "acl_categories": [
+      "slow"
+    ],
+    "return_types": [
+      {
+        "description": "nested list of memory usage metrics and their values",
+        "type": "array"
+      }
+    ]
+  }
+}

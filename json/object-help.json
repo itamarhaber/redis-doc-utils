@@ -1,0 +1,14 @@
+{
+  "HELP": {
+    "arity": 2,
+    "container": "OBJECT",
+    "command_flags": [
+      "loading",
+      "stale"
+    ],
+    "acl_categories": [
+      "keyspace",
+      "slow"
+    ]
+  }
+}

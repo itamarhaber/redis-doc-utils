@@ -1,0 +1,63 @@
+{
+  "HELLO": {
+    "summary": "Handshake with Redis",
+    "complexity": "O(1)",
+    "group": "connection",
+    "since": "6.0.0",
+    "arity": -1,
+    "history": [
+      [
+        "6.2",
+        "`protover` made optional; when called without arguments the command reports the current connection's context."
+      ]
+    ],
+    "command_flags": [
+      "noscript",
+      "loading",
+      "stale",
+      "fast",
+      "no_auth"
+    ],
+    "acl_categories": [
+      "fast",
+      "connection"
+    ],
+    "return_types": [
+      {
+        "description": "a list of server properties. The reply is a map instead of an array when RESP3 is selected. The command returns an error if the `protover` requested does not exist.",
+        "type": "array"
+      }
+    ],
+    "arguments": [
+      {
+        "name": "arguments",
+        "type": "block",
+        "block": [
+          {
+            "name": "protover",
+            "type": "integer"
+          },
+          {
+            "command": "AUTH",
+            "name": [
+              "username",
+              "password"
+            ],
+            "type": [
+              "string",
+              "string"
+            ],
+            "optional": true
+          },
+          {
+            "command": "SETNAME",
+            "name": "clientname",
+            "type": "string",
+            "optional": true
+          }
+        ],
+        "optional": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "KILL": {
+    "summary": "Kill the script currently in execution.",
+    "complexity": "O(1)",
+    "group": "scripting",
+    "since": "2.6.0",
+    "arity": 2,
+    "container": "SCRIPT",
+    "command_flags": [
+      "noscript"
+    ],
+    "acl_categories": [
+      "slow",
+      "scripting"
+    ],
+    "return_types": [
+      {
+        "type": "simple-string"
+      }
+    ]
+  }
+}

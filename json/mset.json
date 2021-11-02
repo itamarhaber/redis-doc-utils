@@ -1,0 +1,56 @@
+{
+  "MSET": {
+    "summary": "Set multiple keys to multiple values",
+    "complexity": "O(N) where N is the number of keys to set.",
+    "group": "string",
+    "since": "1.0.1",
+    "arity": -3,
+    "command_flags": [
+      "write",
+      "denyoom"
+    ],
+    "acl_categories": [
+      "write",
+      "string",
+      "slow"
+    ],
+    "key_specs": [
+      {
+        "flags": [
+          "write"
+        ],
+        "begin_search": {
+          "index": {
+            "pos": 1
+          }
+        },
+        "find_keys": {
+          "range": {
+            "lastkey": -1,
+            "step": 2,
+            "limit": 0
+          }
+        }
+      }
+    ],
+    "return_types": [
+      {
+        "description": "always `OK` since `MSET` can't fail.",
+        "type": "simple-string"
+      }
+    ],
+    "arguments": [
+      {
+        "name": [
+          "key",
+          "value"
+        ],
+        "type": [
+          "key",
+          "string"
+        ],
+        "multiple": true
+      }
+    ]
+  }
+}

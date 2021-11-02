@@ -1,0 +1,13 @@
+{
+  "HELP": {
+    "arity": 2,
+    "container": "MODULE",
+    "command_flags": [
+      "loading",
+      "stale"
+    ],
+    "acl_categories": [
+      "slow"
+    ]
+  }
+}

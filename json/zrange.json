@@ -1,0 +1,99 @@
+{
+  "ZRANGE": {
+    "summary": "Return a range of members in a sorted set",
+    "complexity": "O(log(N)+M) with N being the number of elements in the sorted set and M the number of elements returned.",
+    "group": "sorted_set",
+    "since": "1.2.0",
+    "arity": -4,
+    "history": [
+      [
+        "6.2",
+        "Added the `REV`, `BYSCORE`, `BYLEX` and `LIMIT` options."
+      ]
+    ],
+    "command_flags": [
+      "readonly"
+    ],
+    "acl_categories": [
+      "read",
+      "sortedset",
+      "slow"
+    ],
+    "key_specs": [
+      {
+        "flags": [
+          "read"
+        ],
+        "begin_search": {
+          "index": {
+            "pos": 1
+          }
+        },
+        "find_keys": {
+          "range": {
+            "lastkey": 0,
+            "step": 1,
+            "limit": 0
+          }
+        }
+      }
+    ],
+    "return_types": [
+      {
+        "description": "list of elements in the specified range (optionally with",
+        "type": "array"
+      }
+    ],
+    "arguments": [
+      {
+        "name": "key",
+        "type": "key"
+      },
+      {
+        "name": "min",
+        "type": "string"
+      },
+      {
+        "name": "max",
+        "type": "string"
+      },
+      {
+        "name": "sortby",
+        "type": "enum",
+        "enum": [
+          "BYSCORE",
+          "BYLEX"
+        ],
+        "optional": true
+      },
+      {
+        "name": "rev",
+        "type": "enum",
+        "enum": [
+          "REV"
+        ],
+        "optional": true
+      },
+      {
+        "command": "LIMIT",
+        "name": [
+          "offset",
+          "count"
+        ],
+        "type": [
+          "integer",
+          "integer"
+        ],
+        "optional": true
+      },
+      {
+        "name": "withscores",
+        "type": "enum",
+        "enum": [
+          "WITHSCORES"
+        ],
+        "optional": true
+      }
+    ]
+  }
+}

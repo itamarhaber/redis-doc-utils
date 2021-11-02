@@ -1,0 +1,14 @@
+{
+  "HELP": {
+    "arity": 2,
+    "container": "SCRIPT",
+    "command_flags": [
+      "loading",
+      "stale"
+    ],
+    "acl_categories": [
+      "slow",
+      "scripting"
+    ]
+  }
+}

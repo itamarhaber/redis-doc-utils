@@ -1,0 +1,49 @@
+{
+  "SMEMBERS": {
+    "summary": "Get all the members in a set",
+    "complexity": "O(N) where N is the set cardinality.",
+    "group": "set",
+    "since": "1.0.0",
+    "arity": 2,
+    "command_flags": [
+      "readonly",
+      "sort_for_script"
+    ],
+    "acl_categories": [
+      "read",
+      "set",
+      "slow"
+    ],
+    "key_specs": [
+      {
+        "flags": [
+          "read"
+        ],
+        "begin_search": {
+          "index": {
+            "pos": 1
+          }
+        },
+        "find_keys": {
+          "range": {
+            "lastkey": 0,
+            "step": 1,
+            "limit": 0
+          }
+        }
+      }
+    ],
+    "return_types": [
+      {
+        "description": "all elements of the set.",
+        "type": "array"
+      }
+    ],
+    "arguments": [
+      {
+        "name": "key",
+        "type": "key"
+      }
+    ]
+  }
+}

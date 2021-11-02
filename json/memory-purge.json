@@ -1,0 +1,18 @@
+{
+  "PURGE": {
+    "summary": "Ask the allocator to release memory",
+    "group": "server",
+    "since": "4.0.0",
+    "arity": 2,
+    "container": "MEMORY",
+    "command_flags": [],
+    "acl_categories": [
+      "slow"
+    ],
+    "return_types": [
+      {
+        "type": "simple-string"
+      }
+    ]
+  }
+}

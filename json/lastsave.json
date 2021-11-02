@@ -1,0 +1,25 @@
+{
+  "LASTSAVE": {
+    "summary": "Get the UNIX time stamp of the last successful save to disk",
+    "group": "server",
+    "since": "1.0.0",
+    "arity": 1,
+    "command_flags": [
+      "random",
+      "loading",
+      "stale",
+      "fast"
+    ],
+    "acl_categories": [
+      "admin",
+      "fast",
+      "dangerous"
+    ],
+    "return_types": [
+      {
+        "description": "an UNIX time stamp.",
+        "type": "integer"
+      }
+    ]
+  }
+}

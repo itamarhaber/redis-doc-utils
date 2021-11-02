@@ -1,0 +1,34 @@
+{
+  "BZMPOP": {
+    "arity": -5,
+    "command_flags": [
+      "write",
+      "movablekeys"
+    ],
+    "acl_categories": [
+      "write",
+      "sortedset",
+      "slow",
+      "blocking"
+    ],
+    "key_specs": [
+      {
+        "flags": [
+          "write"
+        ],
+        "begin_search": {
+          "index": {
+            "pos": 2
+          }
+        },
+        "find_keys": {
+          "keynum": {
+            "keynumidx": 0,
+            "firstkey": 1,
+            "step": 1
+          }
+        }
+      }
+    ]
+  }
+}

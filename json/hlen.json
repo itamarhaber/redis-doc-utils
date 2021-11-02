@@ -1,0 +1,49 @@
+{
+  "HLEN": {
+    "summary": "Get the number of fields in a hash",
+    "complexity": "O(1)",
+    "group": "hash",
+    "since": "2.0.0",
+    "arity": 2,
+    "command_flags": [
+      "readonly",
+      "fast"
+    ],
+    "acl_categories": [
+      "read",
+      "hash",
+      "fast"
+    ],
+    "key_specs": [
+      {
+        "flags": [
+          "read"
+        ],
+        "begin_search": {
+          "index": {
+            "pos": 1
+          }
+        },
+        "find_keys": {
+          "range": {
+            "lastkey": 0,
+            "step": 1,
+            "limit": 0
+          }
+        }
+      }
+    ],
+    "return_types": [
+      {
+        "description": "number of fields in the hash, or `0` when `key` does not exist.",
+        "type": "integer"
+      }
+    ],
+    "arguments": [
+      {
+        "name": "key",
+        "type": "key"
+      }
+    ]
+  }
+}

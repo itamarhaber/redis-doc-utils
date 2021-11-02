@@ -1,0 +1,26 @@
+{
+  "LATEST": {
+    "summary": "Return the latest latency samples for all events.",
+    "group": "server",
+    "since": "2.8.13",
+    "arity": 2,
+    "container": "LATENCY",
+    "command_flags": [
+      "admin",
+      "noscript",
+      "loading",
+      "stale"
+    ],
+    "acl_categories": [
+      "admin",
+      "slow",
+      "dangerous"
+    ],
+    "return_types": [
+      {
+        "description": "specifically:",
+        "type": "array"
+      }
+    ]
+  }
+}

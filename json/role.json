@@ -1,0 +1,26 @@
+{
+  "ROLE": {
+    "summary": "Return the role of the instance in the context of replication",
+    "group": "server",
+    "since": "2.8.12",
+    "arity": 1,
+    "depracated": true,
+    "command_flags": [
+      "noscript",
+      "loading",
+      "stale",
+      "fast"
+    ],
+    "acl_categories": [
+      "admin",
+      "fast",
+      "dangerous"
+    ],
+    "return_types": [
+      {
+        "description": "where the first element is one of `master`, `slave`, `sentinel` and the additional elements are role-specific as illustrated above.",
+        "type": "array"
+      }
+    ]
+  }
+}

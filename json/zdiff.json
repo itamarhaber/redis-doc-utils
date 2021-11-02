@@ -1,0 +1,62 @@
+{
+  "ZDIFF": {
+    "summary": "Subtract multiple sorted sets",
+    "complexity": "O(L + (N-K)log(N)) worst case where L is the total number of elements in all the sets, N is the size of the first set, and K is the size of the result set.",
+    "group": "sorted_set",
+    "since": "6.2.0",
+    "arity": -3,
+    "command_flags": [
+      "readonly",
+      "movablekeys"
+    ],
+    "acl_categories": [
+      "read",
+      "sortedset",
+      "slow"
+    ],
+    "key_specs": [
+      {
+        "flags": [
+          "read"
+        ],
+        "begin_search": {
+          "index": {
+            "pos": 1
+          }
+        },
+        "find_keys": {
+          "keynum": {
+            "keynumidx": 0,
+            "firstkey": 1,
+            "step": 1
+          }
+        }
+      }
+    ],
+    "return_types": [
+      {
+        "description": "the result of the difference (optionally with their scores, in case",
+        "type": "array"
+      }
+    ],
+    "arguments": [
+      {
+        "name": "numkeys",
+        "type": "integer"
+      },
+      {
+        "name": "key",
+        "type": "key",
+        "multiple": true
+      },
+      {
+        "name": "withscores",
+        "type": "enum",
+        "enum": [
+          "WITHSCORES"
+        ],
+        "optional": true
+      }
+    ]
+  }
+}

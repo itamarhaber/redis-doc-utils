@@ -1,0 +1,47 @@
+{
+  "ZRANK": {
+    "summary": "Determine the index of a member in a sorted set",
+    "complexity": "O(log(N))",
+    "group": "sorted_set",
+    "since": "2.0.0",
+    "arity": 3,
+    "command_flags": [
+      "readonly",
+      "fast"
+    ],
+    "acl_categories": [
+      "read",
+      "sortedset",
+      "fast"
+    ],
+    "key_specs": [
+      {
+        "flags": [
+          "read"
+        ],
+        "begin_search": {
+          "index": {
+            "pos": 1
+          }
+        },
+        "find_keys": {
+          "range": {
+            "lastkey": 0,
+            "step": 1,
+            "limit": 0
+          }
+        }
+      }
+    ],
+    "arguments": [
+      {
+        "name": "key",
+        "type": "key"
+      },
+      {
+        "name": "member",
+        "type": "string"
+      }
+    ]
+  }
+}

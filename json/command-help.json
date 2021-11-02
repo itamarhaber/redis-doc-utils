@@ -1,0 +1,14 @@
+{
+  "HELP": {
+    "arity": 2,
+    "container": "COMMAND",
+    "command_flags": [
+      "loading",
+      "stale"
+    ],
+    "acl_categories": [
+      "slow",
+      "connection"
+    ]
+  }
+}

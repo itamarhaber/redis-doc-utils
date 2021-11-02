@@ -1,0 +1,174 @@
+{
+  "GEOSEARCHSTORE": {
+    "summary": "Query a sorted set representing a geospatial index to fetch members inside an area of a box or a circle, and store the result in another key.",
+    "complexity": "O(N+log(M)) where N is the number of elements in the grid-aligned bounding box area around the shape provided as the filter and M is the number of items inside the shape",
+    "group": "geo",
+    "since": "6.2",
+    "arity": -8,
+    "depracated": true,
+    "command_flags": [
+      "write",
+      "denyoom"
+    ],
+    "acl_categories": [
+      "write",
+      "geo",
+      "slow"
+    ],
+    "key_specs": [
+      {
+        "flags": [
+          "write"
+        ],
+        "begin_search": {
+          "index": {
+            "pos": 1
+          }
+        },
+        "find_keys": {
+          "range": {
+            "lastkey": 0,
+            "step": 1,
+            "limit": 0
+          }
+        }
+      },
+      {
+        "flags": [
+          "read"
+        ],
+        "begin_search": {
+          "index": {
+            "pos": 2
+          }
+        },
+        "find_keys": {
+          "range": {
+            "lastkey": 0,
+            "step": 1,
+            "limit": 0
+          }
+        }
+      }
+    ],
+    "return_types": [
+      {
+        "description": "the number of elements in the resulting set.",
+        "type": "integer"
+      }
+    ],
+    "arguments": [
+      {
+        "name": "destination",
+        "type": "key"
+      },
+      {
+        "name": "source",
+        "type": "key"
+      },
+      {
+        "command": "FROMMEMBER",
+        "name": "member",
+        "type": "string",
+        "optional": true
+      },
+      {
+        "command": "FROMLONLAT",
+        "name": [
+          "longitude",
+          "latitude"
+        ],
+        "type": [
+          "double",
+          "double"
+        ],
+        "optional": true
+      },
+      {
+        "type": "block",
+        "name": "circle",
+        "block": [
+          {
+            "name": "radius",
+            "command": "BYRADIUS",
+            "type": "double"
+          },
+          {
+            "name": "unit",
+            "type": "enum",
+            "enum": [
+              "m",
+              "km",
+              "ft",
+              "mi"
+            ]
+          }
+        ],
+        "optional": true
+      },
+      {
+        "type": "block",
+        "name": "box",
+        "block": [
+          {
+            "name": "width",
+            "command": "BYBOX",
+            "type": "double"
+          },
+          {
+            "name": "height",
+            "type": "double"
+          },
+          {
+            "name": "unit",
+            "type": "enum",
+            "enum": [
+              "m",
+              "km",
+              "ft",
+              "mi"
+            ]
+          }
+        ],
+        "optional": true
+      },
+      {
+        "name": "order",
+        "type": "enum",
+        "enum": [
+          "ASC",
+          "DESC"
+        ],
+        "optional": true
+      },
+      {
+        "type": "block",
+        "name": "count",
+        "block": [
+          {
+            "name": "count",
+            "command": "COUNT",
+            "type": "integer"
+          },
+          {
+            "name": "any",
+            "type": "enum",
+            "enum": [
+              "ANY"
+            ],
+            "optional": true
+          }
+        ],
+        "optional": true
+      },
+      {
+        "name": "storedist",
+        "type": "enum",
+        "enum": [
+          "STOREDIST"
+        ],
+        "optional": true
+      }
+    ]
+  }
+}

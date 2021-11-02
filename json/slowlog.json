@@ -1,0 +1,29 @@
+{
+  "SLOWLOG": {
+    "summary": "Manages the Redis slow queries log",
+    "group": "server",
+    "since": "2.2.12",
+    "arity": -2,
+    "command_flags": [],
+    "acl_categories": [
+      "slow"
+    ],
+    "subcommands": [
+      "GET",
+      "HELP",
+      "LEN",
+      "RESET"
+    ],
+    "arguments": [
+      {
+        "name": "subcommand",
+        "type": "string"
+      },
+      {
+        "name": "argument",
+        "type": "string",
+        "optional": true
+      }
+    ]
+  }
+}

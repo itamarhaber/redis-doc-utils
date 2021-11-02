@@ -1,0 +1,61 @@
+{
+  "EVALSHA": {
+    "summary": "Execute a Lua script server side",
+    "complexity": "Depends on the script that is executed.",
+    "group": "scripting",
+    "since": "2.6.0",
+    "arity": -3,
+    "command_flags": [
+      "noscript",
+      "skip_monitor",
+      "may_replicate",
+      "movablekeys"
+    ],
+    "acl_categories": [
+      "slow",
+      "scripting"
+    ],
+    "key_specs": [
+      {
+        "flags": [
+          "write",
+          "read"
+        ],
+        "begin_search": {
+          "index": {
+            "pos": 2
+          }
+        },
+        "find_keys": {
+          "keynum": {
+            "keynumidx": 0,
+            "firstkey": 1,
+            "step": 1
+          }
+        }
+      }
+    ],
+    "arguments": [
+      {
+        "name": "sha1",
+        "type": "string"
+      },
+      {
+        "name": "numkeys",
+        "type": "integer"
+      },
+      {
+        "name": "key",
+        "type": "key",
+        "optional": true,
+        "multiple": true
+      },
+      {
+        "name": "arg",
+        "type": "string",
+        "optional": true,
+        "multiple": true
+      }
+    ]
+  }
+}

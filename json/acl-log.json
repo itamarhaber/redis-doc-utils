@@ -1,0 +1,28 @@
+{
+  "LOG": {
+    "summary": "List latest events denied because of ACLs in place",
+    "complexity": "O(N) with N being the number of entries shown.",
+    "group": "server",
+    "since": "6.0.0",
+    "arity": -2,
+    "container": "ACL",
+    "command_flags": [
+      "admin",
+      "noscript",
+      "loading",
+      "stale"
+    ],
+    "acl_categories": [
+      "admin",
+      "slow",
+      "dangerous"
+    ],
+    "arguments": [
+      {
+        "name": "count or RESET",
+        "type": "string",
+        "optional": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "REFCOUNT": {
+    "arity": 3,
+    "container": "OBJECT",
+    "command_flags": [
+      "readonly"
+    ],
+    "acl_categories": [
+      "keyspace",
+      "read",
+      "slow"
+    ],
+    "key_specs": [
+      {
+        "flags": [
+          "read"
+        ],
+        "begin_search": {
+          "index": {
+            "pos": 2
+          }
+        },
+        "find_keys": {
+          "range": {
+            "lastkey": 0,
+            "step": 1,
+            "limit": 0
+          }
+        }
+      }
+    ]
+  }
+}

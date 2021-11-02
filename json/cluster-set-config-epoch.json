@@ -1,0 +1,32 @@
+{
+  "SET-CONFIG-EPOCH": {
+    "summary": "Set the configuration epoch in a new node",
+    "complexity": "O(1)",
+    "group": "cluster",
+    "since": "3.0.0",
+    "arity": 3,
+    "container": "CLUSTER",
+    "command_flags": [
+      "admin",
+      "random",
+      "stale"
+    ],
+    "acl_categories": [
+      "admin",
+      "slow",
+      "dangerous"
+    ],
+    "return_types": [
+      {
+        "description": "`OK` if the command was executed successfully, otherwise an error is returned.",
+        "type": "simple-string"
+      }
+    ],
+    "arguments": [
+      {
+        "name": "config-epoch",
+        "type": "integer"
+      }
+    ]
+  }
+}

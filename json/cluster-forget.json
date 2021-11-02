@@ -1,0 +1,32 @@
+{
+  "FORGET": {
+    "summary": "Remove a node from the nodes table",
+    "complexity": "O(1)",
+    "group": "cluster",
+    "since": "3.0.0",
+    "arity": 3,
+    "container": "CLUSTER",
+    "command_flags": [
+      "admin",
+      "random",
+      "stale"
+    ],
+    "acl_categories": [
+      "admin",
+      "slow",
+      "dangerous"
+    ],
+    "return_types": [
+      {
+        "description": "`OK` if the command was executed successfully, otherwise an error is returned.",
+        "type": "simple-string"
+      }
+    ],
+    "arguments": [
+      {
+        "name": "node-id",
+        "type": "string"
+      }
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "MEMORY": {
+    "arity": -2,
+    "command_flags": [],
+    "acl_categories": [
+      "slow"
+    ],
+    "subcommands": [
+      "DOCTOR",
+      "HELP",
+      "MALLOC-STATS",
+      "PURGE",
+      "STATS",
+      "USAGE"
+    ]
+  }
+}

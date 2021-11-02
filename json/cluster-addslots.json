@@ -1,0 +1,33 @@
+{
+  "ADDSLOTS": {
+    "summary": "Assign new hash slots to receiving node",
+    "complexity": "O(N) where N is the total number of hash slot arguments",
+    "group": "cluster",
+    "since": "3.0.0",
+    "arity": -3,
+    "container": "CLUSTER",
+    "command_flags": [
+      "admin",
+      "random",
+      "stale"
+    ],
+    "acl_categories": [
+      "admin",
+      "slow",
+      "dangerous"
+    ],
+    "return_types": [
+      {
+        "description": "`OK` if the command was successful. Otherwise an error is returned.",
+        "type": "simple-string"
+      }
+    ],
+    "arguments": [
+      {
+        "name": "slot",
+        "type": "integer",
+        "multiple": true
+      }
+    ]
+  }
+}

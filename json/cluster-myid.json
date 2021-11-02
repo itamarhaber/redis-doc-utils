@@ -1,0 +1,23 @@
+{
+  "MYID": {
+    "summary": "Return the node id",
+    "complexity": "O(1)",
+    "group": "cluster",
+    "since": "3.0.0",
+    "arity": 2,
+    "container": "CLUSTER",
+    "command_flags": [
+      "random",
+      "stale"
+    ],
+    "acl_categories": [
+      "slow"
+    ],
+    "return_types": [
+      {
+        "description": "The node id.",
+        "type": "bulk-string"
+      }
+    ]
+  }
+}

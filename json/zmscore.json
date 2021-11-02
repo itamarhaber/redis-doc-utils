@@ -1,0 +1,54 @@
+{
+  "ZMSCORE": {
+    "summary": "Get the score associated with the given members in a sorted set",
+    "complexity": "O(N) where N is the number of members being requested.",
+    "group": "sorted_set",
+    "since": "6.2.0",
+    "arity": -3,
+    "command_flags": [
+      "readonly",
+      "fast"
+    ],
+    "acl_categories": [
+      "read",
+      "sortedset",
+      "fast"
+    ],
+    "key_specs": [
+      {
+        "flags": [
+          "read"
+        ],
+        "begin_search": {
+          "index": {
+            "pos": 1
+          }
+        },
+        "find_keys": {
+          "range": {
+            "lastkey": 0,
+            "step": 1,
+            "limit": 0
+          }
+        }
+      }
+    ],
+    "return_types": [
+      {
+        "description": "list of scores or `nil` associated with the specified `member` values (a double precision floating point number),",
+        "type": "array"
+      }
+    ],
+    "arguments": [
+      {
+        "name": "key",
+        "type": "key"
+      },
+      {
+        "name": "member",
+        "type": "string",
+        "multiple": true
+      }
+    ]
+  }
+}

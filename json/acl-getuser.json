@@ -1,0 +1,33 @@
+{
+  "GETUSER": {
+    "summary": "Get the rules for a specific ACL user",
+    "complexity": "O(N). Where N is the number of password, command and pattern rules that the user has.",
+    "group": "server",
+    "since": "6.0.0",
+    "arity": 3,
+    "container": "ACL",
+    "history": [
+      [
+        "6.2",
+        "Added Pub/Sub channel patterns."
+      ]
+    ],
+    "command_flags": [
+      "admin",
+      "noscript",
+      "loading",
+      "stale"
+    ],
+    "acl_categories": [
+      "admin",
+      "slow",
+      "dangerous"
+    ],
+    "arguments": [
+      {
+        "name": "username",
+        "type": "string"
+      }
+    ]
+  }
+}

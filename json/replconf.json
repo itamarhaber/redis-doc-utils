@@ -1,0 +1,16 @@
+{
+  "REPLCONF": {
+    "arity": -1,
+    "command_flags": [
+      "admin",
+      "noscript",
+      "loading",
+      "stale"
+    ],
+    "acl_categories": [
+      "admin",
+      "slow",
+      "dangerous"
+    ]
+  }
+}

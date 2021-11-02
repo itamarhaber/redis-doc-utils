@@ -1,0 +1,80 @@
+{
+  "TRACKING": {
+    "summary": "Enable or disable server assisted client side caching support",
+    "complexity": "O(1). Some options may introduce additional complexity.",
+    "group": "connection",
+    "since": "6.0.0",
+    "arity": -3,
+    "container": "CLIENT",
+    "command_flags": [
+      "noscript",
+      "loading",
+      "stale"
+    ],
+    "acl_categories": [
+      "slow",
+      "connection"
+    ],
+    "return_types": [
+      {
+        "description": "`OK` if the connection was successfully put in tracking mode or if the tracking mode was successfully disabled. Otherwise an error is returned.",
+        "type": "simple-string"
+      }
+    ],
+    "arguments": [
+      {
+        "name": "status",
+        "type": "enum",
+        "enum": [
+          "ON",
+          "OFF"
+        ]
+      },
+      {
+        "command": "REDIRECT",
+        "name": "client-id",
+        "type": "integer",
+        "optional": true
+      },
+      {
+        "command": "PREFIX",
+        "name": "prefix",
+        "type": "string",
+        "optional": true,
+        "multiple": true
+      },
+      {
+        "name": "BCAST",
+        "type": "enum",
+        "enum": [
+          "BCAST"
+        ],
+        "optional": true
+      },
+      {
+        "name": "OPTIN",
+        "type": "enum",
+        "enum": [
+          "OPTIN"
+        ],
+        "optional": true
+      },
+      {
+        "name": "OPTOUT",
+        "type": "enum",
+        "enum": [
+          "OPTOUT"
+        ],
+        "optional": true
+      },
+      {
+        "name": "NOLOOP",
+        "type": "enum",
+        "enum": [
+          "NOLOOP"
+        ],
+        "optional": true
+      }
+    ]
+  }
+}

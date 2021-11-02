@@ -1,0 +1,25 @@
+{
+  "GETREDIR": {
+    "summary": "Get tracking notifications redirection client ID if any",
+    "complexity": "O(1)",
+    "group": "connection",
+    "since": "6.0.0",
+    "arity": 2,
+    "container": "CLIENT",
+    "command_flags": [
+      "noscript",
+      "loading",
+      "stale"
+    ],
+    "acl_categories": [
+      "slow",
+      "connection"
+    ],
+    "return_types": [
+      {
+        "description": "the ID of the client we are redirecting the notifications to. The command returns `-1` if client tracking is not enabled, or `0` if client tracking is enabled but we are not redirecting the notifications to any client.",
+        "type": "integer"
+      }
+    ]
+  }
+}

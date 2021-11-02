@@ -1,0 +1,20 @@
+{
+  "name": "redis-doc-utils",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "convert-commands": "node convert-commands.js",
+    "command-output-to-json": "node command-output-to-json.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "redis": "^4.0.0-rc.2"
+  },
+  "devDependencies": {
+    "typescript": "^4.4.3"
+  }
+}

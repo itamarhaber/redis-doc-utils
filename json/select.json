@@ -1,0 +1,28 @@
+{
+  "SELECT": {
+    "summary": "Change the selected database for the current connection",
+    "group": "connection",
+    "since": "1.0.0",
+    "arity": 2,
+    "command_flags": [
+      "loading",
+      "stale",
+      "fast"
+    ],
+    "acl_categories": [
+      "fast",
+      "connection"
+    ],
+    "return_types": [
+      {
+        "type": "simple-string"
+      }
+    ],
+    "arguments": [
+      {
+        "name": "index",
+        "type": "integer"
+      }
+    ]
+  }
+}

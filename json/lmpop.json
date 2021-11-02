@@ -1,0 +1,69 @@
+{
+  "LMPOP": {
+    "summary": "Pop elements from a list",
+    "complexity": "O(N+M) where N is the number of provided keys and M is the number of elements returned.",
+    "group": "list",
+    "since": "7.0.0",
+    "arity": -4,
+    "command_flags": [
+      "write",
+      "movablekeys"
+    ],
+    "acl_categories": [
+      "write",
+      "list",
+      "slow"
+    ],
+    "key_specs": [
+      {
+        "flags": [
+          "write"
+        ],
+        "begin_search": {
+          "index": {
+            "pos": 1
+          }
+        },
+        "find_keys": {
+          "keynum": {
+            "keynumidx": 0,
+            "firstkey": 1,
+            "step": 1
+          }
+        }
+      }
+    ],
+    "return_types": [
+      {
+        "description": "specifically:",
+        "type": "array"
+      }
+    ],
+    "arguments": [
+      {
+        "name": "numkeys",
+        "type": "integer"
+      },
+      {
+        "name": "key",
+        "type": "key",
+        "optional": true,
+        "multiple": true
+      },
+      {
+        "name": "where",
+        "type": "enum",
+        "enum": [
+          "LEFT",
+          "RIGHT"
+        ]
+      },
+      {
+        "command": "COUNT",
+        "name": "count",
+        "type": "integer",
+        "optional": true
+      }
+    ]
+  }
+}

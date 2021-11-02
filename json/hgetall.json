@@ -1,0 +1,49 @@
+{
+  "HGETALL": {
+    "summary": "Get all the fields and values in a hash",
+    "complexity": "O(N) where N is the size of the hash.",
+    "group": "hash",
+    "since": "2.0.0",
+    "arity": 2,
+    "command_flags": [
+      "readonly",
+      "random"
+    ],
+    "acl_categories": [
+      "read",
+      "hash",
+      "slow"
+    ],
+    "key_specs": [
+      {
+        "flags": [
+          "read"
+        ],
+        "begin_search": {
+          "index": {
+            "pos": 1
+          }
+        },
+        "find_keys": {
+          "range": {
+            "lastkey": 0,
+            "step": 1,
+            "limit": 0
+          }
+        }
+      }
+    ],
+    "return_types": [
+      {
+        "description": "list of fields and their values stored in the hash, or an",
+        "type": "array"
+      }
+    ],
+    "arguments": [
+      {
+        "name": "key",
+        "type": "key"
+      }
+    ]
+  }
+}

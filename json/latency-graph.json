@@ -1,0 +1,31 @@
+{
+  "GRAPH": {
+    "summary": "Return a latency graph for the event.",
+    "group": "server",
+    "since": "2.8.13",
+    "arity": 3,
+    "container": "LATENCY",
+    "command_flags": [
+      "admin",
+      "noscript",
+      "loading",
+      "stale"
+    ],
+    "acl_categories": [
+      "admin",
+      "slow",
+      "dangerous"
+    ],
+    "return_types": [
+      {
+        "type": "bulk-string"
+      }
+    ],
+    "arguments": [
+      {
+        "name": "event",
+        "type": "string"
+      }
+    ]
+  }
+}

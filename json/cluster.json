@@ -1,0 +1,35 @@
+{
+  "CLUSTER": {
+    "arity": -2,
+    "command_flags": [],
+    "acl_categories": [
+      "slow"
+    ],
+    "subcommands": [
+      "ADDSLOTS",
+      "ADDSLOTSRANGE",
+      "BUMPEPOCH",
+      "COUNT-FAILURE-REPORTS",
+      "COUNTKEYSINSLOT",
+      "DELSLOTS",
+      "DELSLOTSRANGE",
+      "FAILOVER",
+      "FLUSHSLOTS",
+      "FORGET",
+      "GETKEYSINSLOT",
+      "HELP",
+      "INFO",
+      "KEYSLOT",
+      "MEET",
+      "MYID",
+      "NODES",
+      "REPLICAS",
+      "REPLICATE",
+      "RESET",
+      "SAVECONFIG",
+      "SET-CONFIG-EPOCH",
+      "SETSLOT",
+      "SLOTS"
+    ]
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "GEODIST": {
+    "summary": "Returns the distance between two members of a geospatial index",
+    "complexity": "O(log(N))",
+    "group": "geo",
+    "since": "3.2.0",
+    "arity": -4,
+    "command_flags": [
+      "readonly"
+    ],
+    "acl_categories": [
+      "read",
+      "geo",
+      "slow"
+    ],
+    "key_specs": [
+      {
+        "flags": [
+          "read"
+        ],
+        "begin_search": {
+          "index": {
+            "pos": 1
+          }
+        },
+        "find_keys": {
+          "range": {
+            "lastkey": 0,
+            "step": 1,
+            "limit": 0
+          }
+        }
+      }
+    ],
+    "arguments": [
+      {
+        "name": "key",
+        "type": "key"
+      },
+      {
+        "name": "member1",
+        "type": "string"
+      },
+      {
+        "name": "member2",
+        "type": "string"
+      },
+      {
+        "name": "unit",
+        "type": "enum",
+        "enum": [
+          "m",
+          "km",
+          "ft",
+          "mi"
+        ],
+        "optional": true
+      }
+    ]
+  }
+}

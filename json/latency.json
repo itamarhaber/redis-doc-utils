@@ -1,0 +1,17 @@
+{
+  "LATENCY": {
+    "arity": -2,
+    "command_flags": [],
+    "acl_categories": [
+      "slow"
+    ],
+    "subcommands": [
+      "DOCTOR",
+      "GRAPH",
+      "HELP",
+      "HISTORY",
+      "LATEST",
+      "RESET"
+    ]
+  }
+}

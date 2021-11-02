@@ -1,0 +1,93 @@
+{
+  "XCLAIM": {
+    "summary": "Changes (or acquires) ownership of a message in a consumer group, as if the message was delivered to the specified consumer.",
+    "complexity": "O(log N) with N being the number of messages in the PEL of the consumer group.",
+    "group": "stream",
+    "since": "5.0.0",
+    "arity": -6,
+    "command_flags": [
+      "write",
+      "random",
+      "fast"
+    ],
+    "acl_categories": [
+      "write",
+      "stream",
+      "fast"
+    ],
+    "key_specs": [
+      {
+        "flags": [
+          "write"
+        ],
+        "begin_search": {
+          "index": {
+            "pos": 1
+          }
+        },
+        "find_keys": {
+          "range": {
+            "lastkey": 0,
+            "step": 1,
+            "limit": 0
+          }
+        }
+      }
+    ],
+    "arguments": [
+      {
+        "name": "key",
+        "type": "key"
+      },
+      {
+        "name": "group",
+        "type": "string"
+      },
+      {
+        "name": "consumer",
+        "type": "string"
+      },
+      {
+        "name": "min-idle-time",
+        "type": "string"
+      },
+      {
+        "name": "ID",
+        "type": "string",
+        "multiple": true
+      },
+      {
+        "command": "IDLE",
+        "name": "ms",
+        "type": "integer",
+        "optional": true
+      },
+      {
+        "command": "TIME",
+        "name": "ms-unix-time",
+        "type": "integer",
+        "optional": true
+      },
+      {
+        "command": "RETRYCOUNT",
+        "name": "count",
+        "type": "integer",
+        "optional": true
+      },
+      {
+        "name": "force",
+        "enum": [
+          "FORCE"
+        ],
+        "optional": true
+      },
+      {
+        "name": "justid",
+        "enum": [
+          "JUSTID"
+        ],
+        "optional": true
+      }
+    ]
+  }
+}

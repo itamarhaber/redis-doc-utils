@@ -1,0 +1,25 @@
+{
+  "REWRITE": {
+    "summary": "Rewrite the configuration file with the in memory configuration",
+    "group": "server",
+    "since": "2.8.0",
+    "arity": 2,
+    "container": "CONFIG",
+    "command_flags": [
+      "admin",
+      "noscript",
+      "stale"
+    ],
+    "acl_categories": [
+      "admin",
+      "slow",
+      "dangerous"
+    ],
+    "return_types": [
+      {
+        "description": "`OK` when the configuration was rewritten properly.",
+        "type": "simple-string"
+      }
+    ]
+  }
+}

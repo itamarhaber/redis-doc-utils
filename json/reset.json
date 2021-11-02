@@ -1,0 +1,24 @@
+{
+  "RESET": {
+    "summary": "Reset the connection",
+    "group": "connection",
+    "since": "6.2",
+    "arity": 1,
+    "command_flags": [
+      "noscript",
+      "loading",
+      "stale",
+      "fast"
+    ],
+    "acl_categories": [
+      "fast",
+      "connection"
+    ],
+    "return_types": [
+      {
+        "description": "always 'RESET'.",
+        "type": "simple-string"
+      }
+    ]
+  }
+}

@@ -1,0 +1,143 @@
+{
+  "MIGRATE": {
+    "summary": "Atomically transfer a key from a Redis instance to another one.",
+    "complexity": "This command actually executes a DUMP+DEL in the source instance, and a RESTORE in the target instance. See the pages of these commands for time complexity. Also an O(N) data transfer between the two instances is performed.",
+    "group": "generic",
+    "since": "2.6.0",
+    "arity": -6,
+    "history": [
+      [
+        "3.0.0",
+        "Added the `!COPY` and `REPLACE` options."
+      ],
+      [
+        "3.0.6",
+        "Added the `!KEYS` option."
+      ],
+      [
+        "4.0.7",
+        "Added the `!AUTH` option."
+      ],
+      [
+        "6.0.0",
+        "Added the `AUTH2` option."
+      ]
+    ],
+    "command_flags": [
+      "write",
+      "random",
+      "movablekeys"
+    ],
+    "acl_categories": [
+      "keyspace",
+      "write",
+      "slow",
+      "dangerous"
+    ],
+    "key_specs": [
+      {
+        "flags": [
+          "write"
+        ],
+        "begin_search": {
+          "index": {
+            "pos": 3
+          }
+        },
+        "find_keys": {
+          "range": {
+            "lastkey": 0,
+            "step": 1,
+            "limit": 0
+          }
+        }
+      },
+      {
+        "flags": [
+          "write",
+          "incomplete"
+        ],
+        "begin_search": {
+          "keyword": {
+            "keyword": "KEYS",
+            "startfrom": -2
+          }
+        },
+        "find_keys": {
+          "range": {
+            "lastkey": -1,
+            "step": 1,
+            "limit": 0
+          }
+        }
+      }
+    ],
+    "return_types": [
+      {
+        "description": "The command returns OK on success, or `NOKEY` if no keys were",
+        "type": "simple-string"
+      }
+    ],
+    "arguments": [
+      {
+        "name": "host",
+        "type": "string"
+      },
+      {
+        "name": "port",
+        "type": "string"
+      },
+      {
+        "name": "key",
+        "type": "enum",
+        "enum": [
+          "key",
+          "\"\""
+        ]
+      },
+      {
+        "name": "destination-db",
+        "type": "integer"
+      },
+      {
+        "name": "timeout",
+        "type": "integer"
+      },
+      {
+        "name": "copy",
+        "type": "enum",
+        "enum": [
+          "COPY"
+        ],
+        "optional": true
+      },
+      {
+        "name": "replace",
+        "type": "enum",
+        "enum": [
+          "REPLACE"
+        ],
+        "optional": true
+      },
+      {
+        "command": "AUTH",
+        "name": "password",
+        "type": "string",
+        "optional": true
+      },
+      {
+        "command": "AUTH2",
+        "name": "username password",
+        "type": "string",
+        "optional": true
+      },
+      {
+        "name": "key",
+        "command": "KEYS",
+        "type": "key",
+        "variadic": true,
+        "optional": true
+      }
+    ]
+  }
+}

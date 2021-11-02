@@ -1,0 +1,34 @@
+{
+  "DEBUG": {
+    "summary": "Set the debug mode for executed scripts.",
+    "complexity": "O(1)",
+    "group": "scripting",
+    "since": "3.2.0",
+    "arity": 3,
+    "container": "SCRIPT",
+    "command_flags": [
+      "noscript"
+    ],
+    "acl_categories": [
+      "slow",
+      "scripting"
+    ],
+    "return_types": [
+      {
+        "description": "`OK`.",
+        "type": "simple-string"
+      }
+    ],
+    "arguments": [
+      {
+        "name": "mode",
+        "type": "enum",
+        "enum": [
+          "YES",
+          "SYNC",
+          "NO"
+        ]
+      }
+    ]
+  }
+}

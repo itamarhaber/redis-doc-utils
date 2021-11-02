@@ -1,0 +1,31 @@
+{
+  "UNLOAD": {
+    "summary": "Unload a module",
+    "complexity": "O(1)",
+    "group": "server",
+    "since": "4.0.0",
+    "arity": 3,
+    "container": "MODULE",
+    "command_flags": [
+      "admin",
+      "noscript"
+    ],
+    "acl_categories": [
+      "admin",
+      "slow",
+      "dangerous"
+    ],
+    "return_types": [
+      {
+        "description": "`OK` if module was unloaded.",
+        "type": "simple-string"
+      }
+    ],
+    "arguments": [
+      {
+        "name": "name",
+        "type": "string"
+      }
+    ]
+  }
+}

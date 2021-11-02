@@ -1,0 +1,26 @@
+{
+  "FLUSHSLOTS": {
+    "summary": "Delete a node's own slots information",
+    "complexity": "O(1)",
+    "group": "cluster",
+    "since": "3.0.0",
+    "arity": 2,
+    "container": "CLUSTER",
+    "command_flags": [
+      "admin",
+      "random",
+      "stale"
+    ],
+    "acl_categories": [
+      "admin",
+      "slow",
+      "dangerous"
+    ],
+    "return_types": [
+      {
+        "description": "`OK`",
+        "type": "simple-string"
+      }
+    ]
+  }
+}

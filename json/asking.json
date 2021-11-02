@@ -1,0 +1,23 @@
+{
+  "ASKING": {
+    "summary": "Sent by cluster clients after an -ASK redirect",
+    "complexity": "O(1)",
+    "group": "cluster",
+    "since": "3.0.0",
+    "arity": 1,
+    "command_flags": [
+      "fast"
+    ],
+    "acl_categories": [
+      "fast",
+      "connection"
+    ],
+    "return_types": [
+      {
+        "description": "`OK`.",
+        "type": "simple-string"
+      }
+    ],
+    "arguments": []
+  }
+}

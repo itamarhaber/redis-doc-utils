@@ -1,0 +1,26 @@
+{
+  "ECHO": {
+    "summary": "Echo the given string",
+    "group": "connection",
+    "since": "1.0.0",
+    "arity": 2,
+    "command_flags": [
+      "fast"
+    ],
+    "acl_categories": [
+      "fast",
+      "connection"
+    ],
+    "return_types": [
+      {
+        "type": "bulk-string"
+      }
+    ],
+    "arguments": [
+      {
+        "name": "message",
+        "type": "string"
+      }
+    ]
+  }
+}

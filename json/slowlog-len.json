@@ -1,0 +1,17 @@
+{
+  "LEN": {
+    "arity": 2,
+    "container": "SLOWLOG",
+    "command_flags": [
+      "admin",
+      "random",
+      "loading",
+      "stale"
+    ],
+    "acl_categories": [
+      "admin",
+      "slow",
+      "dangerous"
+    ]
+  }
+}

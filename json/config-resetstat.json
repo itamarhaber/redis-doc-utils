@@ -1,0 +1,26 @@
+{
+  "RESETSTAT": {
+    "summary": "Reset the stats returned by INFO",
+    "complexity": "O(1)",
+    "group": "server",
+    "since": "2.0.0",
+    "arity": 2,
+    "container": "CONFIG",
+    "command_flags": [
+      "admin",
+      "noscript",
+      "stale"
+    ],
+    "acl_categories": [
+      "admin",
+      "slow",
+      "dangerous"
+    ],
+    "return_types": [
+      {
+        "description": "always `OK`.",
+        "type": "simple-string"
+      }
+    ]
+  }
+}

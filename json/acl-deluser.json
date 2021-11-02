@@ -1,0 +1,34 @@
+{
+  "DELUSER": {
+    "summary": "Remove the specified ACL users and the associated rules",
+    "complexity": "O(1) amortized time considering the typical user.",
+    "group": "server",
+    "since": "6.0.0",
+    "arity": -3,
+    "container": "ACL",
+    "command_flags": [
+      "admin",
+      "noscript",
+      "loading",
+      "stale"
+    ],
+    "acl_categories": [
+      "admin",
+      "slow",
+      "dangerous"
+    ],
+    "return_types": [
+      {
+        "description": "The number of users that were deleted. This number will not always match the number of arguments since certain users may not exist.",
+        "type": "integer"
+      }
+    ],
+    "arguments": [
+      {
+        "name": "username",
+        "type": "string",
+        "multiple": true
+      }
+    ]
+  }
+}

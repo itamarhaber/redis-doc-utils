@@ -1,0 +1,14 @@
+{
+  "HELP": {
+    "arity": 2,
+    "container": "STRALGO",
+    "command_flags": [
+      "loading",
+      "stale"
+    ],
+    "acl_categories": [
+      "string",
+      "slow"
+    ]
+  }
+}

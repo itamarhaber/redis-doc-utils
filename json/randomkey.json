@@ -1,0 +1,24 @@
+{
+  "RANDOMKEY": {
+    "summary": "Return a random key from the keyspace",
+    "complexity": "O(1)",
+    "group": "generic",
+    "since": "1.0.0",
+    "arity": 1,
+    "command_flags": [
+      "readonly",
+      "random"
+    ],
+    "acl_categories": [
+      "keyspace",
+      "read",
+      "slow"
+    ],
+    "return_types": [
+      {
+        "description": "the random key, or `nil` when the database is empty.",
+        "type": "bulk-string"
+      }
+    ]
+  }
+}

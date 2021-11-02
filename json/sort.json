@@ -1,0 +1,107 @@
+{
+  "SORT": {
+    "summary": "Sort the elements in a list, set or sorted set",
+    "complexity": "O(N+M*log(M)) where N is the number of elements in the list or set to sort, and M the number of returned elements. When the elements are not sorted, complexity is O(N).",
+    "group": "generic",
+    "since": "1.0.0",
+    "arity": -2,
+    "command_flags": [
+      "write",
+      "denyoom",
+      "movablekeys"
+    ],
+    "acl_categories": [
+      "write",
+      "set",
+      "sortedset",
+      "list",
+      "slow",
+      "dangerous"
+    ],
+    "key_specs": [
+      {
+        "flags": [
+          "read"
+        ],
+        "begin_search": {
+          "index": {
+            "pos": 1
+          }
+        },
+        "find_keys": {
+          "range": {
+            "lastkey": 0,
+            "step": 1,
+            "limit": 0
+          }
+        }
+      },
+      {
+        "flags": [
+          "write",
+          "incomplete"
+        ],
+        "begin_search": {
+          "unknown": null
+        },
+        "find_keys": {
+          "unknown": null
+        }
+      }
+    ],
+    "arguments": [
+      {
+        "name": "key",
+        "type": "key"
+      },
+      {
+        "command": "BY",
+        "name": "pattern",
+        "type": "pattern",
+        "optional": true
+      },
+      {
+        "command": "LIMIT",
+        "name": [
+          "offset",
+          "count"
+        ],
+        "type": [
+          "integer",
+          "integer"
+        ],
+        "optional": true
+      },
+      {
+        "command": "GET",
+        "name": "pattern",
+        "type": "string",
+        "optional": true,
+        "multiple": true
+      },
+      {
+        "name": "order",
+        "type": "enum",
+        "enum": [
+          "ASC",
+          "DESC"
+        ],
+        "optional": true
+      },
+      {
+        "name": "sorting",
+        "type": "enum",
+        "enum": [
+          "ALPHA"
+        ],
+        "optional": true
+      },
+      {
+        "command": "STORE",
+        "name": "destination",
+        "type": "key",
+        "optional": true
+      }
+    ]
+  }
+}

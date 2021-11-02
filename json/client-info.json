@@ -1,0 +1,26 @@
+{
+  "INFO": {
+    "summary": "Returns information about the current client connection.",
+    "complexity": "O(1)",
+    "group": "connection",
+    "since": "6.2.0",
+    "arity": 2,
+    "container": "CLIENT",
+    "command_flags": [
+      "noscript",
+      "random",
+      "loading",
+      "stale"
+    ],
+    "acl_categories": [
+      "slow",
+      "connection"
+    ],
+    "return_types": [
+      {
+        "description": "a unique string, as described at the `CLIENT LIST` page, for the current client.",
+        "type": "bulk-string"
+      }
+    ]
+  }
+}

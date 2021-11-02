@@ -1,0 +1,107 @@
+{
+  "XADD": {
+    "summary": "Appends a new entry to a stream",
+    "complexity": "O(1) when adding a new entry, O(N) when trimming where N being the number of entires evicted.",
+    "group": "stream",
+    "since": "5.0.0",
+    "arity": -5,
+    "history": [
+      [
+        "6.2",
+        "Added the `NOMKSTREAM` option, `MINID` trimming strategy and the `LIMIT` option."
+      ]
+    ],
+    "command_flags": [
+      "write",
+      "denyoom",
+      "random",
+      "fast"
+    ],
+    "acl_categories": [
+      "write",
+      "stream",
+      "fast"
+    ],
+    "key_specs": [
+      {
+        "flags": [
+          "write"
+        ],
+        "begin_search": {
+          "index": {
+            "pos": 1
+          }
+        },
+        "find_keys": {
+          "range": {
+            "lastkey": 0,
+            "step": 1,
+            "limit": 0
+          }
+        }
+      }
+    ],
+    "arguments": [
+      {
+        "name": "key",
+        "type": "key"
+      },
+      {
+        "command": "NOMKSTREAM",
+        "optional": true
+      },
+      {
+        "name": "trim",
+        "type": "block",
+        "optional": true,
+        "block": [
+          {
+            "name": "strategy",
+            "type": "enum",
+            "enum": [
+              "MAXLEN",
+              "MINID"
+            ]
+          },
+          {
+            "name": "operator",
+            "type": "enum",
+            "enum": [
+              "=",
+              "~"
+            ],
+            "optional": true
+          },
+          {
+            "name": "threshold",
+            "type": "string"
+          },
+          {
+            "command": "LIMIT",
+            "name": "count",
+            "type": "integer",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "type": "enum",
+        "enum": [
+          "*",
+          "ID"
+        ]
+      },
+      {
+        "name": [
+          "field",
+          "value"
+        ],
+        "type": [
+          "string",
+          "string"
+        ],
+        "multiple": true
+      }
+    ]
+  }
+}

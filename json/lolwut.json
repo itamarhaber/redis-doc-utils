@@ -1,0 +1,24 @@
+{
+  "LOLWUT": {
+    "summary": "Display some computer art and the Redis version",
+    "group": "server",
+    "since": "5.0.0",
+    "arity": -1,
+    "command_flags": [
+      "readonly",
+      "fast"
+    ],
+    "acl_categories": [
+      "read",
+      "fast"
+    ],
+    "arguments": [
+      {
+        "command": "VERSION",
+        "name": "version",
+        "type": "integer",
+        "optional": true
+      }
+    ]
+  }
+}

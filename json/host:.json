@@ -1,0 +1,14 @@
+{
+  "HOST:": {
+    "arity": -1,
+    "command_flags": [
+      "readonly",
+      "loading",
+      "stale"
+    ],
+    "acl_categories": [
+      "read",
+      "slow"
+    ]
+  }
+}

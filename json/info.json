@@ -1,0 +1,31 @@
+{
+  "INFO": {
+    "summary": "Get information and statistics about the server",
+    "group": "server",
+    "since": "1.0.0",
+    "arity": -1,
+    "depracated": true,
+    "command_flags": [
+      "random",
+      "loading",
+      "stale"
+    ],
+    "acl_categories": [
+      "slow",
+      "dangerous"
+    ],
+    "return_types": [
+      {
+        "description": "as a collection of text lines.",
+        "type": "bulk-string"
+      }
+    ],
+    "arguments": [
+      {
+        "name": "section",
+        "type": "string",
+        "optional": true
+      }
+    ]
+  }
+}
