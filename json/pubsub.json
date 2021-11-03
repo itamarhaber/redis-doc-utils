@@ -10,12 +10,6 @@
     "acl_categories": [
       "slow"
     ],
-    "subcommands": [
-      "CHANNELS",
-      "HELP",
-      "NUMPAT",
-      "NUMSUB"
-    ],
     "arguments": [
       {
         "name": "subcommand",

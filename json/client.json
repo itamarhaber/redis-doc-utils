@@ -5,24 +5,6 @@
     "command_flags": [],
     "acl_categories": [
       "slow"
-    ],
-    "subcommands": [
-      "CACHING",
-      "GETNAME",
-      "GETREDIR",
-      "HELP",
-      "ID",
-      "INFO",
-      "KILL",
-      "LIST",
-      "NO-EVICT",
-      "PAUSE",
-      "REPLY",
-      "SETNAME",
-      "TRACKING",
-      "TRACKINGINFO",
-      "UNBLOCK",
-      "UNPAUSE"
     ]
   }
 }

@@ -4,13 +4,6 @@
     "command_flags": [],
     "acl_categories": [
       "slow"
-    ],
-    "subcommands": [
-      "GET",
-      "HELP",
-      "RESETSTAT",
-      "REWRITE",
-      "SET"
     ]
   }
 }

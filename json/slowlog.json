@@ -8,12 +8,6 @@
     "acl_categories": [
       "slow"
     ],
-    "subcommands": [
-      "GET",
-      "HELP",
-      "LEN",
-      "RESET"
-    ],
     "arguments": [
       {
         "name": "subcommand",

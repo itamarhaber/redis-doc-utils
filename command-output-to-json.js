@@ -346,7 +346,6 @@ async function persistCommand(cmd) {
     history: cmd[kname].history,
     command_flags: cmd[kname].command_flags,
     acl_categories: cmd[kname].acl_categories,
-    subcommands: cmd[kname].subcommands,
     key_specs: cmd[kname].key_specs,
     return_types: cmd[kname].return_types,
     arguments: cmd[kname].arguments,

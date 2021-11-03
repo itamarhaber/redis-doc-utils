@@ -10,10 +10,6 @@
     "acl_categories": [
       "slow"
     ],
-    "subcommands": [
-      "HELP",
-      "LCS"
-    ],
     "arguments": [
       {
         "name": "algorithm",

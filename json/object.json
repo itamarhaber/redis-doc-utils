@@ -10,13 +10,6 @@
     "acl_categories": [
       "slow"
     ],
-    "subcommands": [
-      "ENCODING",
-      "FREQ",
-      "HELP",
-      "IDLETIME",
-      "REFCOUNT"
-    ],
     "arguments": [
       {
         "name": "subcommand",

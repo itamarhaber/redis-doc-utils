@@ -10,14 +10,6 @@
     "acl_categories": [
       "slow"
     ],
-    "subcommands": [
-      "CREATE",
-      "CREATECONSUMER",
-      "DELCONSUMER",
-      "DESTROY",
-      "HELP",
-      "SETID"
-    ],
     "arguments": [
       {
         "name": "create",

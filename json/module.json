@@ -5,12 +5,6 @@
     "command_flags": [],
     "acl_categories": [
       "slow"
-    ],
-    "subcommands": [
-      "HELP",
-      "LIST",
-      "LOAD",
-      "UNLOAD"
     ]
   }
 }

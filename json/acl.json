@@ -5,20 +5,6 @@
     "command_flags": [],
     "acl_categories": [
       "slow"
-    ],
-    "subcommands": [
-      "CAT",
-      "DELUSER",
-      "GENPASS",
-      "GETUSER",
-      "HELP",
-      "LIST",
-      "LOAD",
-      "LOG",
-      "SAVE",
-      "SETUSER",
-      "USERS",
-      "WHOAMI"
     ]
   }
 }

@@ -15,13 +15,6 @@
       "slow",
       "connection"
     ],
-    "subcommands": [
-      "COUNT",
-      "GETKEYS",
-      "HELP",
-      "INFO",
-      "LIST"
-    ],
     "return_types": [
       {
         "description": "nested list of command details.  Commands are returned",

@@ -16,12 +16,6 @@
     "acl_categories": [
       "slow"
     ],
-    "subcommands": [
-      "CONSUMERS",
-      "GROUPS",
-      "HELP",
-      "STREAM"
-    ],
     "arguments": [
       {
         "command": "CONSUMERS",
