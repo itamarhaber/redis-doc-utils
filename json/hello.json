@@ -5,6 +5,7 @@
     "group": "connection",
     "since": "6.0.0",
     "arity": -1,
+    "function": "helloCommand",
     "history": [
       [
         "6.2",

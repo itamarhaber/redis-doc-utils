@@ -1,6 +1,8 @@
 {
   "ZMPOP": {
     "arity": -4,
+    "function": "zmpopCommand",
+    "get_keys_function": "zmpopGetKeys",
     "command_flags": [
       "write",
       "movablekeys"

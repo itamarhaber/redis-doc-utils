@@ -5,6 +5,7 @@
     "group": "geo",
     "since": "3.2.0",
     "arity": -2,
+    "function": "geoposCommand",
     "command_flags": [
       "readonly"
     ],

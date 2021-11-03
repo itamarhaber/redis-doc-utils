@@ -1,6 +1,8 @@
 {
   "BZMPOP": {
     "arity": -5,
+    "function": "bzmpopCommand",
+    "get_keys_function": "bzmpopGetKeys",
     "command_flags": [
       "write",
       "movablekeys"

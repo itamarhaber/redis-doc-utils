@@ -5,6 +5,8 @@
     "group": "set",
     "since": "7.0.0",
     "arity": -3,
+    "function": "sinterCardCommand",
+    "get_keys_function": "sintercardGetKeys",
     "command_flags": [
       "readonly",
       "movablekeys"

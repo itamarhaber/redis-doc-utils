@@ -5,6 +5,8 @@
     "group": "list",
     "since": "7.0.0",
     "arity": -5,
+    "function": "blmpopCommand",
+    "get_keys_function": "blmpopGetKeys",
     "command_flags": [
       "write",
       "movablekeys"

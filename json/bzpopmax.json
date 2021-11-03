@@ -5,6 +5,7 @@
     "group": "sorted_set",
     "since": "5.0.0",
     "arity": -3,
+    "function": "bzpopmaxCommand",
     "history": [
       [
         "6.0",

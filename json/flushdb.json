@@ -5,6 +5,7 @@
     "group": "server",
     "since": "1.0.0",
     "arity": -1,
+    "function": "flushdbCommand",
     "command_flags": [
       "write"
     ],

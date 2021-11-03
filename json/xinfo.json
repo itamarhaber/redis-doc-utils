@@ -5,6 +5,7 @@
     "group": "stream",
     "since": "5.0.0",
     "arity": -2,
+    "function": "xinfoCommand",
     "history": [
       [
         "6.0.0",

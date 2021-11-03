@@ -1,6 +1,7 @@
 {
   "ACL": {
     "arity": -2,
+    "function": "aclCommand",
     "command_flags": [],
     "acl_categories": [
       "slow"

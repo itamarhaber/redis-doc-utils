@@ -5,6 +5,7 @@
     "group": "geo",
     "since": "3.2.0",
     "arity": -4,
+    "function": "geodistCommand",
     "command_flags": [
       "readonly"
     ],

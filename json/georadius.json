@@ -6,6 +6,8 @@
     "since": "3.2.0",
     "arity": -6,
     "depracated": true,
+    "function": "georadiusCommand",
+    "get_keys_function": "georadiusGetKeys",
     "history": [
       [
         "6.2",

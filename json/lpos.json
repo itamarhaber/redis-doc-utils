@@ -5,6 +5,7 @@
     "group": "list",
     "since": "6.0.6",
     "arity": -3,
+    "function": "lposCommand",
     "command_flags": [
       "readonly"
     ],

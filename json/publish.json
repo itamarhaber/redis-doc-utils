@@ -5,6 +5,7 @@
     "group": "pubsub",
     "since": "2.0.0",
     "arity": 3,
+    "function": "publishCommand",
     "command_flags": [
       "pubsub",
       "loading",

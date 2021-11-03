@@ -5,6 +5,7 @@
     "group": "transactions",
     "since": "2.2.0",
     "arity": -2,
+    "function": "watchCommand",
     "command_flags": [
       "noscript",
       "loading",

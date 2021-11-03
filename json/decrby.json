@@ -5,6 +5,7 @@
     "group": "string",
     "since": "1.0.0",
     "arity": 3,
+    "function": "decrbyCommand",
     "command_flags": [
       "write",
       "denyoom",

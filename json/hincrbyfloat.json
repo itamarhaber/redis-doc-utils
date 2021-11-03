@@ -5,6 +5,7 @@
     "group": "hash",
     "since": "2.6.0",
     "arity": 4,
+    "function": "hincrbyfloatCommand",
     "command_flags": [
       "write",
       "denyoom",

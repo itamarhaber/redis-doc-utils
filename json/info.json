@@ -5,6 +5,7 @@
     "since": "1.0.0",
     "arity": -1,
     "depracated": true,
+    "function": "infoCommand",
     "command_flags": [
       "random",
       "loading",

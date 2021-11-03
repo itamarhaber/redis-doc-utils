@@ -5,6 +5,7 @@
     "group": "set",
     "since": "1.0.0",
     "arity": -3,
+    "function": "sdiffstoreCommand",
     "command_flags": [
       "write",
       "denyoom"

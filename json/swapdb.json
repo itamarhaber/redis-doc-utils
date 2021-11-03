@@ -5,6 +5,7 @@
     "group": "server",
     "since": "4.0.0",
     "arity": 3,
+    "function": "swapdbCommand",
     "command_flags": [
       "write",
       "fast"

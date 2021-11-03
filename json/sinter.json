@@ -5,6 +5,7 @@
     "group": "set",
     "since": "1.0.0",
     "arity": -2,
+    "function": "sinterCommand",
     "command_flags": [
       "readonly",
       "sort_for_script"

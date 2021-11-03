@@ -5,6 +5,7 @@
     "group": "bitmap",
     "since": "2.8.7",
     "arity": -3,
+    "function": "bitposCommand",
     "command_flags": [
       "readonly"
     ],

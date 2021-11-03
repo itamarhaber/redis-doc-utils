@@ -5,6 +5,7 @@
     "group": "hash",
     "since": "2.0.0",
     "arity": -4,
+    "function": "hsetCommand",
     "command_flags": [
       "write",
       "denyoom",

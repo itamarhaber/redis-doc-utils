@@ -1,6 +1,7 @@
 {
   "SCRIPT": {
     "arity": -2,
+    "function": "scriptCommand",
     "command_flags": [],
     "acl_categories": [
       "slow"

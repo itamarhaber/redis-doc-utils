@@ -1,6 +1,7 @@
 {
   "CLIENT": {
     "arity": -2,
+    "function": "clientCommand",
     "command_flags": [],
     "acl_categories": [
       "slow"

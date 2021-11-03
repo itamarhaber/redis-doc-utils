@@ -5,6 +5,7 @@
     "group": "generic",
     "since": "4.0.0",
     "arity": -2,
+    "function": "unlinkCommand",
     "command_flags": [
       "write",
       "fast"

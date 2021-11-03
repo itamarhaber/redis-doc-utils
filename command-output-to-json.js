@@ -237,7 +237,11 @@ function convertCommand(container, args) {
 }
 
 function getCommandName(cmd) {
-  return Object.keys(cmd)[0];
+  if (cmd !== undefined) {
+    return Object.keys(cmd)[0];
+  } else {
+    console.trace('show me')
+  }
 }
 
 function getCommandNameFromObj(cmd) {
@@ -249,29 +253,29 @@ function getCommandNameFromObj(cmd) {
   }
 }
 
-function getBaseFunctionName(prefix, cmd) {
-  let name = getCommandName(cmd);
-  if (prefix.length === 0) {
-    name = name.toLowerCase();
+function addFunctions(funcs, cmd) {
+  const kname = getCommandName(cmd);
+  const name = getCommandNameFromObj(cmd);
+  let fname = name.split(' ').join().toLowerCase() + 'command';
+  let found = funcs.funcs.filter(x => x.toLowerCase() == fname);
+  if (found.length != 0) {
+    cmd[kname]['function'] = found[0];
   } else {
-    name = name.slice(0, 1).toUpperCase() + name.slice(1).toLowerCase();
+    console.error(`-ERR can't find a function for ${name} in server.h`);
   }
-  return prefix + name;
-}
-
-function addFunctionName(prefix, cmd) {
-  const name = getBaseFunctionName(prefix, cmd);
-  cmd['function'] = name + 'Command';
-}
-
-function addFunctions(cmd) {
-  let name = getCommandName(cmd);
-  addFunctionName('', cmd);
-  if (cmd[name].subcommands !== undefined) {
-    cmd[name].subcommands.forEach(x => {
-      addFunctionName(name.toLowerCase(), x);
-    });
+  
+  fname = name.split(' ').join().toLowerCase() + 'getkeys';
+  found = funcs.getters.filter(x => x.toLowerCase() == fname);
+  if (found.length != 0) {
+    cmd[kname]['get_keys_function'] = found[0];
+  } else {
+    console.error(`-ERR can't find a keys getter for ${name} in server.h`);
   }
+
+  if (cmd[kname].subcommands !== undefined) {
+    cmd[kname].subcommands = cmd[kname].subcommands.map(x => addFunctions(funcs, x));
+  }
+  return cmd;
 }
 
 function enrichWithJSON(json, cmd) {
@@ -338,6 +342,7 @@ async function persistCommand(cmd) {
     depracated: cmd[kname].depracated,
     container: cmd[kname].container,
     function: cmd[kname].function,
+    get_keys_function: cmd[kname].get_keys_function,
     history: cmd[kname].history,
     command_flags: cmd[kname].command_flags,
     acl_categories: cmd[kname].acl_categories,
@@ -351,9 +356,32 @@ async function persistCommand(cmd) {
   await fs.writeFile(`${outputPathJSON}/${fname}.json`,json,'utf-8');
 }
 
+async function loadServerH() {
+  const buff = await fs.readFile(`${srcPath}/src/server.h`,'utf-8');
+  const lines = buff.split('\n');
+  const funcs = lines.reduce((a,x) => {
+    const re = x.match(/^void ([a-zA-Z]+Command)\(client \*c\);$/);
+    if (re) {
+      a.push(re[1]);
+    }
+    return a;
+  },[]);
+
+  const getters = lines.reduce((a,x) => {
+    const re = x.match(/^int ([a-zA-Z]+GetKeys).*;$/);
+    if (re) {
+      a.push(re[1]);
+    }
+    return a;
+  },[]);
+
+  return {
+    funcs: funcs,
+    getters: getters,
+  };
+}
+
 async function main() {
-  console.log('Loading commands.json');
-  const commandsJSON = await loadCommandsJSON();
   const client = createClient();
   client.on('error', (err) => console.error('-ERR Redis client error', err));
   await client.connect();
@@ -362,14 +390,20 @@ async function main() {
   console.log('Loading `COMMAND` reply');
   let commands = await commandOutput.map(x => convertCommand(null, x));
 
+  console.log('Loading server.h');
+  const functions = await loadServerH();
+
+  console.log('Loading commands.json');
+  const commandsJSON = await loadCommandsJSON();
+
+  console.log('Adding functions');
+  commands = commands.map(x => addFunctions(functions,x));
+
   console.log('Enrichening with JSONs');
   commands = commands.map(x => enrichWithJSON(commandsJSON, x))
 
   console.log('Enrichening with MarkDown');
   commands = await Promise.all(commands.map(async (x) => enrichWithMD(x)));
-
-  console.log('Guessing function names');
-  await commands.forEach(x => addFunctions(x));
 
   await fs.writeFile(`commands.json`, JSON.stringify(commands, null, 2));
 

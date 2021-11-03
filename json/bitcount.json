@@ -5,6 +5,7 @@
     "group": "bitmap",
     "since": "2.6.0",
     "arity": -2,
+    "function": "bitcountCommand",
     "command_flags": [
       "readonly"
     ],

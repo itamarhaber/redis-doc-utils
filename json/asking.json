@@ -5,6 +5,7 @@
     "group": "cluster",
     "since": "3.0.0",
     "arity": 1,
+    "function": "askingCommand",
     "command_flags": [
       "fast"
     ],

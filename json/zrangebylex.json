@@ -6,6 +6,7 @@
     "since": "2.8.9",
     "arity": -4,
     "depracated": true,
+    "function": "zrangebylexCommand",
     "command_flags": [
       "readonly"
     ],

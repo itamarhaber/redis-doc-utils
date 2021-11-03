@@ -5,6 +5,7 @@
     "group": "stream",
     "since": "5.0.0",
     "arity": -3,
+    "function": "xdelCommand",
     "command_flags": [
       "write",
       "fast"

@@ -5,6 +5,7 @@
     "group": "stream",
     "since": "5.0.0",
     "arity": 2,
+    "function": "xlenCommand",
     "command_flags": [
       "readonly",
       "fast"

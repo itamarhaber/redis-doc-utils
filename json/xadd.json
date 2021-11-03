@@ -5,6 +5,7 @@
     "group": "stream",
     "since": "5.0.0",
     "arity": -5,
+    "function": "xaddCommand",
     "history": [
       [
         "6.2",

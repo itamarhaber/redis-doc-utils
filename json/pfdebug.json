@@ -1,6 +1,7 @@
 {
   "PFDEBUG": {
     "arity": -3,
+    "function": "pfdebugCommand",
     "command_flags": [
       "write",
       "denyoom",

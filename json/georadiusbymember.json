@@ -6,6 +6,7 @@
     "since": "3.2.0",
     "arity": -5,
     "depracated": true,
+    "function": "georadiusbymemberCommand",
     "command_flags": [
       "write",
       "denyoom",

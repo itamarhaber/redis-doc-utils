@@ -5,6 +5,7 @@
     "group": "set",
     "since": "2.8.0",
     "arity": -3,
+    "function": "sscanCommand",
     "command_flags": [
       "readonly",
       "random"

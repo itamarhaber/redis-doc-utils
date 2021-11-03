@@ -5,6 +5,7 @@
     "group": "hash",
     "since": "3.2.0",
     "arity": 3,
+    "function": "hstrlenCommand",
     "command_flags": [
       "readonly",
       "fast"

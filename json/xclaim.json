@@ -5,6 +5,7 @@
     "group": "stream",
     "since": "5.0.0",
     "arity": -6,
+    "function": "xclaimCommand",
     "command_flags": [
       "write",
       "random",

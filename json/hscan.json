@@ -5,6 +5,7 @@
     "group": "hash",
     "since": "2.8.0",
     "arity": -3,
+    "function": "hscanCommand",
     "command_flags": [
       "readonly",
       "random"

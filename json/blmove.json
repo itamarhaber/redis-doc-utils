@@ -6,6 +6,7 @@
     "since": "6.2.0",
     "arity": 6,
     "depracated": true,
+    "function": "blmoveCommand",
     "command_flags": [
       "write",
       "denyoom",

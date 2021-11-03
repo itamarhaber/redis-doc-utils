@@ -1,3 +1,463 @@
+-ERR can't find a function for XREADGROUP in server.h
+-ERR can't find a keys getter for XREADGROUP in server.h
+-ERR can't find a keys getter for GETBIT in server.h
+-ERR can't find a keys getter for FLUSHDB in server.h
+-ERR can't find a keys getter for SPOP in server.h
+-ERR can't find a keys getter for REPLICAOF in server.h
+-ERR can't find a keys getter for SCAN in server.h
+-ERR can't find a keys getter for FLUSHALL in server.h
+-ERR can't find a keys getter for SDIFFSTORE in server.h
+-ERR can't find a keys getter for BGSAVE in server.h
+-ERR can't find a keys getter for TYPE in server.h
+-ERR can't find a keys getter for HGET in server.h
+-ERR can't find a keys getter for HELLO in server.h
+-ERR can't find a keys getter for LLEN in server.h
+-ERR can't find a keys getter for MOVE in server.h
+-ERR can't find a keys getter for ZINTERSTORE in server.h
+-ERR can't find a keys getter for TTL in server.h
+-ERR can't find a keys getter for ZCOUNT in server.h
+-ERR can't find a keys getter for HINCRBYFLOAT in server.h
+-ERR can't find a keys getter for SINTER in server.h
+-ERR can't find a keys getter for ZREVRANK in server.h
+-ERR can't find a function for EVAL_RO in server.h
+-ERR can't find a keys getter for EVAL_RO in server.h
+-ERR can't find a keys getter for LSET in server.h
+-ERR can't find a keys getter for AUTH in server.h
+-ERR can't find a keys getter for GEORADIUSBYMEMBER in server.h
+-ERR can't find a keys getter for PEXPIRETIME in server.h
+-ERR can't find a keys getter for EXPIREAT in server.h
+-ERR can't find a keys getter for MSET in server.h
+-ERR can't find a keys getter for PFMERGE in server.h
+-ERR can't find a keys getter for BITFIELD in server.h
+-ERR can't find a keys getter for PEXPIRE in server.h
+-ERR can't find a keys getter for PUBLISH in server.h
+-ERR can't find a keys getter for SSCAN in server.h
+-ERR can't find a keys getter for GETSET in server.h
+-ERR can't find a keys getter for DISCARD in server.h
+-ERR can't find a keys getter for EXPIRE in server.h
+-ERR can't find a keys getter for PSETEX in server.h
+-ERR can't find a keys getter for PFADD in server.h
+-ERR can't find a keys getter for GEOSEARCH in server.h
+-ERR can't find a keys getter for XCLAIM in server.h
+-ERR can't find a keys getter for RESTORE in server.h
+-ERR can't find a keys getter for HSCAN in server.h
+-ERR can't find a keys getter for RPUSHX in server.h
+-ERR can't find a keys getter for RANDOMKEY in server.h
+-ERR can't find a keys getter for XGROUP in server.h
+-ERR can't find a function for XGROUP SETID in server.h
+-ERR can't find a keys getter for XGROUP SETID in server.h
+-ERR can't find a function for XGROUP DESTROY in server.h
+-ERR can't find a keys getter for XGROUP DESTROY in server.h
+-ERR can't find a function for XGROUP CREATE in server.h
+-ERR can't find a keys getter for XGROUP CREATE in server.h
+-ERR can't find a function for XGROUP CREATECONSUMER in server.h
+-ERR can't find a keys getter for XGROUP CREATECONSUMER in server.h
+-ERR can't find a function for XGROUP DELCONSUMER in server.h
+-ERR can't find a keys getter for XGROUP DELCONSUMER in server.h
+-ERR can't find a function for XGROUP HELP in server.h
+-ERR can't find a keys getter for XGROUP HELP in server.h
+-ERR can't find a keys getter for GETDEL in server.h
+-ERR can't find a keys getter for BZPOPMAX in server.h
+-ERR can't find a keys getter for PEXPIREAT in server.h
+-ERR can't find a keys getter for GEODIST in server.h
+-ERR can't find a keys getter for XREVRANGE in server.h
+-ERR can't find a keys getter for ZREVRANGE in server.h
+-ERR can't find a keys getter for BITCOUNT in server.h
+-ERR can't find a keys getter for EVALSHA in server.h
+-ERR can't find a keys getter for SDIFF in server.h
+-ERR can't find a keys getter for REPLCONF in server.h
+-ERR can't find a keys getter for PUBSUB in server.h
+-ERR can't find a function for PUBSUB HELP in server.h
+-ERR can't find a keys getter for PUBSUB HELP in server.h
+-ERR can't find a function for PUBSUB NUMSUB in server.h
+-ERR can't find a keys getter for PUBSUB NUMSUB in server.h
+-ERR can't find a function for PUBSUB CHANNELS in server.h
+-ERR can't find a keys getter for PUBSUB CHANNELS in server.h
+-ERR can't find a function for PUBSUB NUMPAT in server.h
+-ERR can't find a keys getter for PUBSUB NUMPAT in server.h
+-ERR can't find a keys getter for XDEL in server.h
+-ERR can't find a keys getter for LPUSH in server.h
+-ERR can't find a keys getter for COPY in server.h
+-ERR can't find a keys getter for MODULE in server.h
+-ERR can't find a function for MODULE HELP in server.h
+-ERR can't find a keys getter for MODULE HELP in server.h
+-ERR can't find a function for MODULE LOAD in server.h
+-ERR can't find a keys getter for MODULE LOAD in server.h
+-ERR can't find a function for MODULE UNLOAD in server.h
+-ERR can't find a keys getter for MODULE UNLOAD in server.h
+-ERR can't find a function for MODULE LIST in server.h
+-ERR can't find a keys getter for MODULE LIST in server.h
+-ERR can't find a keys getter for SISMEMBER in server.h
+-ERR can't find a keys getter for HEXISTS in server.h
+-ERR can't find a keys getter for ZRANGEBYSCORE in server.h
+-ERR can't find a keys getter for ZPOPMAX in server.h
+-ERR can't find a keys getter for SYNC in server.h
+-ERR can't find a keys getter for XPENDING in server.h
+-ERR can't find a keys getter for UNSUBSCRIBE in server.h
+-ERR can't find a keys getter for SUNIONSTORE in server.h
+-ERR can't find a keys getter for MSETNX in server.h
+-ERR can't find a keys getter for BITOP in server.h
+-ERR can't find a keys getter for SADD in server.h
+-ERR can't find a function for SMEMBERS in server.h
+-ERR can't find a keys getter for SMEMBERS in server.h
+-ERR can't find a function for SORT_RO in server.h
+-ERR can't find a keys getter for SORT_RO in server.h
+-ERR can't find a keys getter for ZREMRANGEBYRANK in server.h
+-ERR can't find a keys getter for RPOP in server.h
+-ERR can't find a keys getter for BLPOP in server.h
+-ERR can't find a keys getter for MULTI in server.h
+-ERR can't find a keys getter for SETEX in server.h
+-ERR can't find a function for PSYNC in server.h
+-ERR can't find a keys getter for PSYNC in server.h
+-ERR can't find a keys getter for ZDIFFSTORE in server.h
+-ERR can't find a keys getter for ZRANDMEMBER in server.h
+-ERR can't find a keys getter for ZREMRANGEBYLEX in server.h
+-ERR can't find a keys getter for ZREMRANGEBYSCORE in server.h
+-ERR can't find a keys getter for RENAME in server.h
+-ERR can't find a keys getter for STRALGO in server.h
+-ERR can't find a function for STRALGO HELP in server.h
+-ERR can't find a keys getter for STRALGO HELP in server.h
+-ERR can't find a function for STRALGO LCS in server.h
+-ERR can't find a keys getter for STRALGO LCS in server.h
+-ERR can't find a keys getter for LPOP in server.h
+-ERR can't find a keys getter for GETEX in server.h
+-ERR can't find a keys getter for ECHO in server.h
+-ERR can't find a function for SLAVEOF in server.h
+-ERR can't find a keys getter for SLAVEOF in server.h
+-ERR can't find a keys getter for PTTL in server.h
+-ERR can't find a keys getter for ACL in server.h
+-ERR can't find a function for ACL SAVE in server.h
+-ERR can't find a keys getter for ACL SAVE in server.h
+-ERR can't find a function for ACL GENPASS in server.h
+-ERR can't find a keys getter for ACL GENPASS in server.h
+-ERR can't find a function for ACL LOG in server.h
+-ERR can't find a keys getter for ACL LOG in server.h
+-ERR can't find a function for ACL LIST in server.h
+-ERR can't find a keys getter for ACL LIST in server.h
+-ERR can't find a function for ACL LOAD in server.h
+-ERR can't find a keys getter for ACL LOAD in server.h
+-ERR can't find a function for ACL SETUSER in server.h
+-ERR can't find a keys getter for ACL SETUSER in server.h
+-ERR can't find a function for ACL HELP in server.h
+-ERR can't find a keys getter for ACL HELP in server.h
+-ERR can't find a function for ACL GETUSER in server.h
+-ERR can't find a keys getter for ACL GETUSER in server.h
+-ERR can't find a function for ACL DELUSER in server.h
+-ERR can't find a keys getter for ACL DELUSER in server.h
+-ERR can't find a function for ACL USERS in server.h
+-ERR can't find a keys getter for ACL USERS in server.h
+-ERR can't find a function for ACL WHOAMI in server.h
+-ERR can't find a keys getter for ACL WHOAMI in server.h
+-ERR can't find a function for ACL CAT in server.h
+-ERR can't find a keys getter for ACL CAT in server.h
+-ERR can't find a keys getter for PSUBSCRIBE in server.h
+-ERR can't find a keys getter for GEOHASH in server.h
+-ERR can't find a keys getter for GEOPOS in server.h
+-ERR can't find a keys getter for TOUCH in server.h
+-ERR can't find a keys getter for XLEN in server.h
+-ERR can't find a function for HOST: in server.h
+-ERR can't find a keys getter for HOST: in server.h
+-ERR can't find a keys getter for XINFO in server.h
+-ERR can't find a function for XINFO HELP in server.h
+-ERR can't find a keys getter for XINFO HELP in server.h
+-ERR can't find a function for XINFO STREAM in server.h
+-ERR can't find a keys getter for XINFO STREAM in server.h
+-ERR can't find a function for XINFO CONSUMERS in server.h
+-ERR can't find a keys getter for XINFO CONSUMERS in server.h
+-ERR can't find a function for XINFO GROUPS in server.h
+-ERR can't find a keys getter for XINFO GROUPS in server.h
+-ERR can't find a keys getter for ZRANGESTORE in server.h
+-ERR can't find a keys getter for DEL in server.h
+-ERR can't find a function for CONFIG in server.h
+-ERR can't find a keys getter for CONFIG in server.h
+-ERR can't find a function for CONFIG GET in server.h
+-ERR can't find a keys getter for CONFIG GET in server.h
+-ERR can't find a function for CONFIG REWRITE in server.h
+-ERR can't find a keys getter for CONFIG REWRITE in server.h
+-ERR can't find a function for CONFIG SET in server.h
+-ERR can't find a keys getter for CONFIG SET in server.h
+-ERR can't find a function for CONFIG RESETSTAT in server.h
+-ERR can't find a keys getter for CONFIG RESETSTAT in server.h
+-ERR can't find a function for CONFIG HELP in server.h
+-ERR can't find a keys getter for CONFIG HELP in server.h
+-ERR can't find a keys getter for ZPOPMIN in server.h
+-ERR can't find a keys getter for INCRBYFLOAT in server.h
+-ERR can't find a keys getter for BGREWRITEAOF in server.h
+-ERR can't find a keys getter for SWAPDB in server.h
+-ERR can't find a keys getter for ZCARD in server.h
+-ERR can't find a keys getter for LRANGE in server.h
+-ERR can't find a keys getter for SREM in server.h
+-ERR can't find a keys getter for LINDEX in server.h
+-ERR can't find a keys getter for CLIENT in server.h
+-ERR can't find a function for CLIENT INFO in server.h
+-ERR can't find a keys getter for CLIENT INFO in server.h
+-ERR can't find a function for CLIENT GETNAME in server.h
+-ERR can't find a keys getter for CLIENT GETNAME in server.h
+-ERR can't find a function for CLIENT SETNAME in server.h
+-ERR can't find a keys getter for CLIENT SETNAME in server.h
+-ERR can't find a function for CLIENT REPLY in server.h
+-ERR can't find a keys getter for CLIENT REPLY in server.h
+-ERR can't find a function for CLIENT PAUSE in server.h
+-ERR can't find a keys getter for CLIENT PAUSE in server.h
+-ERR can't find a function for CLIENT HELP in server.h
+-ERR can't find a keys getter for CLIENT HELP in server.h
+-ERR can't find a function for CLIENT TRACKINGINFO in server.h
+-ERR can't find a keys getter for CLIENT TRACKINGINFO in server.h
+-ERR can't find a function for CLIENT GETREDIR in server.h
+-ERR can't find a keys getter for CLIENT GETREDIR in server.h
+-ERR can't find a function for CLIENT CACHING in server.h
+-ERR can't find a keys getter for CLIENT CACHING in server.h
+-ERR can't find a function for CLIENT UNPAUSE in server.h
+-ERR can't find a keys getter for CLIENT UNPAUSE in server.h
+-ERR can't find a function for CLIENT NO-EVICT in server.h
+-ERR can't find a keys getter for CLIENT NO-EVICT in server.h
+-ERR can't find a function for CLIENT ID in server.h
+-ERR can't find a keys getter for CLIENT ID in server.h
+-ERR can't find a function for CLIENT TRACKING in server.h
+-ERR can't find a keys getter for CLIENT TRACKING in server.h
+-ERR can't find a function for CLIENT KILL in server.h
+-ERR can't find a keys getter for CLIENT KILL in server.h
+-ERR can't find a function for CLIENT UNBLOCK in server.h
+-ERR can't find a keys getter for CLIENT UNBLOCK in server.h
+-ERR can't find a function for CLIENT LIST in server.h
+-ERR can't find a keys getter for CLIENT LIST in server.h
+-ERR can't find a keys getter for SAVE in server.h
+-ERR can't find a keys getter for PUNSUBSCRIBE in server.h
+-ERR can't find a keys getter for ROLE in server.h
+-ERR can't find a keys getter for XACK in server.h
+-ERR can't find a keys getter for HSET in server.h
+-ERR can't find a keys getter for HGETALL in server.h
+-ERR can't find a keys getter for FAILOVER in server.h
+-ERR can't find a keys getter for SMISMEMBER in server.h
+-ERR can't find a keys getter for PING in server.h
+-ERR can't find a function for RESTORE-ASKING in server.h
+-ERR can't find a keys getter for RESTORE-ASKING in server.h
+-ERR can't find a keys getter for HMGET in server.h
+-ERR can't find a keys getter for SUBSCRIBE in server.h
+-ERR can't find a keys getter for LOLWUT in server.h
+-ERR can't find a keys getter for PFDEBUG in server.h
+-ERR can't find a keys getter for SCARD in server.h
+-ERR can't find a keys getter for LINSERT in server.h
+-ERR can't find a function for POST in server.h
+-ERR can't find a keys getter for POST in server.h
+-ERR can't find a keys getter for SCRIPT in server.h
+-ERR can't find a function for SCRIPT KILL in server.h
+-ERR can't find a keys getter for SCRIPT KILL in server.h
+-ERR can't find a function for SCRIPT EXISTS in server.h
+-ERR can't find a keys getter for SCRIPT EXISTS in server.h
+-ERR can't find a function for SCRIPT DEBUG in server.h
+-ERR can't find a keys getter for SCRIPT DEBUG in server.h
+-ERR can't find a function for SCRIPT FLUSH in server.h
+-ERR can't find a keys getter for SCRIPT FLUSH in server.h
+-ERR can't find a function for SCRIPT LOAD in server.h
+-ERR can't find a keys getter for SCRIPT LOAD in server.h
+-ERR can't find a function for SCRIPT HELP in server.h
+-ERR can't find a keys getter for SCRIPT HELP in server.h
+-ERR can't find a keys getter for LREM in server.h
+-ERR can't find a keys getter for SUNION in server.h
+-ERR can't find a keys getter for EXPIRETIME in server.h
+-ERR can't find a keys getter for XSETID in server.h
+-ERR can't find a keys getter for HINCRBY in server.h
+-ERR can't find a keys getter for PFCOUNT in server.h
+-ERR can't find a keys getter for EXISTS in server.h
+-ERR can't find a keys getter for DEBUG in server.h
+-ERR can't find a keys getter for BITPOS in server.h
+-ERR can't find a keys getter for LTRIM in server.h
+-ERR can't find a keys getter for ZREM in server.h
+-ERR can't find a keys getter for SETNX in server.h
+-ERR can't find a keys getter for XADD in server.h
+-ERR can't find a keys getter for ZADD in server.h
+-ERR can't find a keys getter for INCR in server.h
+-ERR can't find a keys getter for BLMOVE in server.h
+-ERR can't find a function for EVALSHA_RO in server.h
+-ERR can't find a keys getter for EVALSHA_RO in server.h
+-ERR can't find a keys getter for PERSIST in server.h
+-ERR can't find a keys getter for SMOVE in server.h
+-ERR can't find a keys getter for ZSCORE in server.h
+-ERR can't find a keys getter for ZDIFF in server.h
+-ERR can't find a keys getter for HDEL in server.h
+-ERR can't find a function for HMSET in server.h
+-ERR can't find a keys getter for HMSET in server.h
+-ERR can't find a keys getter for ZUNIONSTORE in server.h
+-ERR can't find a keys getter for ZREVRANGEBYSCORE in server.h
+-ERR can't find a keys getter for GETRANGE in server.h
+-ERR can't find a keys getter for ASKING in server.h
+-ERR can't find a keys getter for SINTERSTORE in server.h
+-ERR can't find a keys getter for MGET in server.h
+-ERR can't find a keys getter for TIME in server.h
+-ERR can't find a keys getter for XAUTOCLAIM in server.h
+-ERR can't find a keys getter for READWRITE in server.h
+-ERR can't find a keys getter for ZMSCORE in server.h
+-ERR can't find a keys getter for APPEND in server.h
+-ERR can't find a keys getter for LPUSHX in server.h
+-ERR can't find a keys getter for ZRANGEBYLEX in server.h
+-ERR can't find a function for GEORADIUS_RO in server.h
+-ERR can't find a keys getter for GEORADIUS_RO in server.h
+-ERR can't find a keys getter for DECR in server.h
+-ERR can't find a keys getter for GET in server.h
+-ERR can't find a keys getter for ZLEXCOUNT in server.h
+-ERR can't find a keys getter for RPOPLPUSH in server.h
+-ERR can't find a keys getter for PFSELFTEST in server.h
+-ERR can't find a keys getter for RPUSH in server.h
+-ERR can't find a function for BITFIELD_RO in server.h
+-ERR can't find a keys getter for BITFIELD_RO in server.h
+-ERR can't find a keys getter for XTRIM in server.h
+-ERR can't find a keys getter for INFO in server.h
+-ERR can't find a keys getter for HRANDFIELD in server.h
+-ERR can't find a keys getter for MEMORY in server.h
+-ERR can't find a function for MEMORY PURGE in server.h
+-ERR can't find a keys getter for MEMORY PURGE in server.h
+-ERR can't find a function for MEMORY DOCTOR in server.h
+-ERR can't find a keys getter for MEMORY DOCTOR in server.h
+-ERR can't find a function for MEMORY MALLOC-STATS in server.h
+-ERR can't find a keys getter for MEMORY MALLOC-STATS in server.h
+-ERR can't find a function for MEMORY HELP in server.h
+-ERR can't find a keys getter for MEMORY HELP in server.h
+-ERR can't find a function for MEMORY STATS in server.h
+-ERR can't find a keys getter for MEMORY STATS in server.h
+-ERR can't find a function for MEMORY USAGE in server.h
+-ERR can't find a keys getter for MEMORY USAGE in server.h
+-ERR can't find a keys getter for HKEYS in server.h
+-ERR can't find a keys getter for HSTRLEN in server.h
+-ERR can't find a keys getter for DBSIZE in server.h
+-ERR can't find a keys getter for COMMAND in server.h
+-ERR can't find a function for COMMAND INFO in server.h
+-ERR can't find a keys getter for COMMAND INFO in server.h
+-ERR can't find a function for COMMAND COUNT in server.h
+-ERR can't find a keys getter for COMMAND COUNT in server.h
+-ERR can't find a function for COMMAND GETKEYS in server.h
+-ERR can't find a keys getter for COMMAND GETKEYS in server.h
+-ERR can't find a function for COMMAND LIST in server.h
+-ERR can't find a keys getter for COMMAND LIST in server.h
+-ERR can't find a function for COMMAND HELP in server.h
+-ERR can't find a keys getter for COMMAND HELP in server.h
+-ERR can't find a function for SUBSTR in server.h
+-ERR can't find a keys getter for SUBSTR in server.h
+-ERR can't find a keys getter for READONLY in server.h
+-ERR can't find a keys getter for SRANDMEMBER in server.h
+-ERR can't find a keys getter for ZRANK in server.h
+-ERR can't find a keys getter for STRLEN in server.h
+-ERR can't find a keys getter for ZINCRBY in server.h
+-ERR can't find a keys getter for SET in server.h
+-ERR can't find a keys getter for UNLINK in server.h
+-ERR can't find a keys getter for HLEN in server.h
+-ERR can't find a keys getter for WAIT in server.h
+-ERR can't find a keys getter for RENAMENX in server.h
+-ERR can't find a keys getter for KEYS in server.h
+-ERR can't find a keys getter for BRPOPLPUSH in server.h
+-ERR can't find a keys getter for ZRANGE in server.h
+-ERR can't find a keys getter for UNWATCH in server.h
+-ERR can't find a keys getter for LATENCY in server.h
+-ERR can't find a function for LATENCY LATEST in server.h
+-ERR can't find a keys getter for LATENCY LATEST in server.h
+-ERR can't find a function for LATENCY GRAPH in server.h
+-ERR can't find a keys getter for LATENCY GRAPH in server.h
+-ERR can't find a function for LATENCY HISTORY in server.h
+-ERR can't find a keys getter for LATENCY HISTORY in server.h
+-ERR can't find a function for LATENCY HELP in server.h
+-ERR can't find a keys getter for LATENCY HELP in server.h
+-ERR can't find a function for LATENCY DOCTOR in server.h
+-ERR can't find a keys getter for LATENCY DOCTOR in server.h
+-ERR can't find a function for LATENCY RESET in server.h
+-ERR can't find a keys getter for LATENCY RESET in server.h
+-ERR can't find a keys getter for CLUSTER in server.h
+-ERR can't find a function for CLUSTER FAILOVER in server.h
+-ERR can't find a keys getter for CLUSTER FAILOVER in server.h
+-ERR can't find a function for CLUSTER BUMPEPOCH in server.h
+-ERR can't find a keys getter for CLUSTER BUMPEPOCH in server.h
+-ERR can't find a function for CLUSTER FORGET in server.h
+-ERR can't find a keys getter for CLUSTER FORGET in server.h
+-ERR can't find a function for CLUSTER MYID in server.h
+-ERR can't find a keys getter for CLUSTER MYID in server.h
+-ERR can't find a function for CLUSTER ADDSLOTSRANGE in server.h
+-ERR can't find a keys getter for CLUSTER ADDSLOTSRANGE in server.h
+-ERR can't find a function for CLUSTER ADDSLOTS in server.h
+-ERR can't find a keys getter for CLUSTER ADDSLOTS in server.h
+-ERR can't find a function for CLUSTER NODES in server.h
+-ERR can't find a keys getter for CLUSTER NODES in server.h
+-ERR can't find a function for CLUSTER SLOTS in server.h
+-ERR can't find a keys getter for CLUSTER SLOTS in server.h
+-ERR can't find a function for CLUSTER COUNTKEYSINSLOT in server.h
+-ERR can't find a keys getter for CLUSTER COUNTKEYSINSLOT in server.h
+-ERR can't find a function for CLUSTER HELP in server.h
+-ERR can't find a keys getter for CLUSTER HELP in server.h
+-ERR can't find a function for CLUSTER KEYSLOT in server.h
+-ERR can't find a keys getter for CLUSTER KEYSLOT in server.h
+-ERR can't find a function for CLUSTER SAVECONFIG in server.h
+-ERR can't find a keys getter for CLUSTER SAVECONFIG in server.h
+-ERR can't find a function for CLUSTER COUNT-FAILURE-REPORTS in server.h
+-ERR can't find a keys getter for CLUSTER COUNT-FAILURE-REPORTS in server.h
+-ERR can't find a function for CLUSTER FLUSHSLOTS in server.h
+-ERR can't find a keys getter for CLUSTER FLUSHSLOTS in server.h
+-ERR can't find a function for CLUSTER MEET in server.h
+-ERR can't find a keys getter for CLUSTER MEET in server.h
+-ERR can't find a function for CLUSTER DELSLOTSRANGE in server.h
+-ERR can't find a keys getter for CLUSTER DELSLOTSRANGE in server.h
+-ERR can't find a function for CLUSTER REPLICAS in server.h
+-ERR can't find a keys getter for CLUSTER REPLICAS in server.h
+-ERR can't find a function for CLUSTER INFO in server.h
+-ERR can't find a keys getter for CLUSTER INFO in server.h
+-ERR can't find a function for CLUSTER SET-CONFIG-EPOCH in server.h
+-ERR can't find a keys getter for CLUSTER SET-CONFIG-EPOCH in server.h
+-ERR can't find a function for CLUSTER SETSLOT in server.h
+-ERR can't find a keys getter for CLUSTER SETSLOT in server.h
+-ERR can't find a function for CLUSTER RESET in server.h
+-ERR can't find a keys getter for CLUSTER RESET in server.h
+-ERR can't find a function for CLUSTER GETKEYSINSLOT in server.h
+-ERR can't find a keys getter for CLUSTER GETKEYSINSLOT in server.h
+-ERR can't find a function for CLUSTER DELSLOTS in server.h
+-ERR can't find a keys getter for CLUSTER DELSLOTS in server.h
+-ERR can't find a function for CLUSTER REPLICATE in server.h
+-ERR can't find a keys getter for CLUSTER REPLICATE in server.h
+-ERR can't find a keys getter for BZPOPMIN in server.h
+-ERR can't find a keys getter for LPOS in server.h
+-ERR can't find a keys getter for SETBIT in server.h
+-ERR can't find a keys getter for SELECT in server.h
+-ERR can't find a keys getter for XRANGE in server.h
+-ERR can't find a keys getter for RESET in server.h
+-ERR can't find a function for GEORADIUSBYMEMBER_RO in server.h
+-ERR can't find a keys getter for GEORADIUSBYMEMBER_RO in server.h
+-ERR can't find a keys getter for WATCH in server.h
+-ERR can't find a keys getter for GEOSEARCHSTORE in server.h
+-ERR can't find a keys getter for HVALS in server.h
+-ERR can't find a keys getter for OBJECT in server.h
+-ERR can't find a function for OBJECT REFCOUNT in server.h
+-ERR can't find a keys getter for OBJECT REFCOUNT in server.h
+-ERR can't find a function for OBJECT FREQ in server.h
+-ERR can't find a keys getter for OBJECT FREQ in server.h
+-ERR can't find a function for OBJECT IDLETIME in server.h
+-ERR can't find a keys getter for OBJECT IDLETIME in server.h
+-ERR can't find a function for OBJECT ENCODING in server.h
+-ERR can't find a keys getter for OBJECT ENCODING in server.h
+-ERR can't find a function for OBJECT HELP in server.h
+-ERR can't find a keys getter for OBJECT HELP in server.h
+-ERR can't find a keys getter for LASTSAVE in server.h
+-ERR can't find a keys getter for INCRBY in server.h
+-ERR can't find a keys getter for ZINTERCARD in server.h
+-ERR can't find a keys getter for DECRBY in server.h
+-ERR can't find a keys getter for ZREVRANGEBYLEX in server.h
+-ERR can't find a keys getter for HSETNX in server.h
+-ERR can't find a keys getter for ZUNION in server.h
+-ERR can't find a keys getter for SETRANGE in server.h
+-ERR can't find a keys getter for BRPOP in server.h
+-ERR can't find a function for SLOWLOG in server.h
+-ERR can't find a keys getter for SLOWLOG in server.h
+-ERR can't find a function for SLOWLOG HELP in server.h
+-ERR can't find a keys getter for SLOWLOG HELP in server.h
+-ERR can't find a function for SLOWLOG GET in server.h
+-ERR can't find a keys getter for SLOWLOG GET in server.h
+-ERR can't find a function for SLOWLOG RESET in server.h
+-ERR can't find a keys getter for SLOWLOG RESET in server.h
+-ERR can't find a function for SLOWLOG LEN in server.h
+-ERR can't find a keys getter for SLOWLOG LEN in server.h
+-ERR can't find a keys getter for MONITOR in server.h
+-ERR can't find a keys getter for ZINTER in server.h
+-ERR can't find a keys getter for SHUTDOWN in server.h
+-ERR can't find a keys getter for LMOVE in server.h
+-ERR can't find a keys getter for ZSCAN in server.h
+-ERR can't find a keys getter for EXEC in server.h
+-ERR can't find a keys getter for GEOADD in server.h
+-ERR can't find a keys getter for DUMP in server.h
 -ERR no commands.json entry for XGROUP SETID
 -ERR no commands.json entry for XGROUP DESTROY
 -ERR no commands.json entry for XGROUP CREATE
@@ -81,8 +541,8 @@
 -ERR while reading cluster-addslotsrange.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/cluster-addslotsrange.md'
 -ERR while reading cluster-help.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/cluster-help.md'
 -ERR while reading cluster-delslotsrange.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/cluster-delslotsrange.md'
--ERR no return types for SPOP: "When called without the `count` argument:\n\n@bulk-string-reply: the removed member, or `nil` when `key` does not exist.\n\nWhen called with the `count` argument:\n\n@array-reply: the removed members, or an empty array when `key` does not exist."
 -ERR no return types for XREADGROUP: "@array-reply, specifically:\n\nThe command returns an array of results: each element of the returned\narray is an array composed of a two element containing the key name and\nthe entries reported for that key. The entries reported are full stream\nentries, having IDs and the list of all the fields and values. Field and\nvalues are guaranteed to be reported in the same order they were added\nby `XADD`.\n\nWhen **BLOCK** is used, on timeout a null reply is returned.\n\nReading the [Redis Streams introduction](/topics/streams-intro) is highly\nsuggested in order to understand more about the streams overall behavior\nand semantics."
+-ERR no return types for SPOP: "When called without the `count` argument:\n\n@bulk-string-reply: the removed member, or `nil` when `key` does not exist.\n\nWhen called with the `count` argument:\n\n@array-reply: the removed members, or an empty array when `key` does not exist."
 -ERR no return types for SCAN: ""
 -ERR no return types for MOVE: "@integer-reply, specifically:\n\n* `1` if `key` was moved.\n* `0` if `key` was not moved."
 -ERR no return types for ZREVRANK: "* If `member` exists in the sorted set, @integer-reply: the rank of `member`.\n* If `member` does not exist in the sorted set or `key` does not exist,\n  @bulk-string-reply: `nil`."
@@ -100,8 +560,8 @@
 -ERR no return types for XCLAIM: "@array-reply, specifically:\n\nThe command returns all the messages successfully claimed, in the same format\nas `XRANGE`. However if the `JUSTID` option was specified, only the message\nIDs are reported, without including the actual message."
 -ERR no return types for HSCAN: ""
 -ERR no return types for XGROUP: ""
--ERR no return types for PEXPIREAT: "@integer-reply, specifically:\n\n* `1` if the timeout was set.\n* `0` if the timeout was not set. e.g. key doesn't exist, or operation skipped due to the provided arguments."
 -ERR no return types for GEODIST: "@bulk-string-reply, specifically:\n\nThe command returns the distance as a double (represented as a string)\nin the specified unit, or NULL if one or both the elements are missing."
+-ERR no return types for PEXPIREAT: "@integer-reply, specifically:\n\n* `1` if the timeout was set.\n* `0` if the timeout was not set. e.g. key doesn't exist, or operation skipped due to the provided arguments."
 -ERR no return types for XREVRANGE: "@array-reply, specifically:\n\nThe command returns the entries with IDs matching the specified range,\nfrom the higher ID to the lower ID matching.\nThe returned entries are complete, that means that the ID and all the fields\nthey are composed are returned. Moreover the entries are returned with\ntheir fields and values in the exact same order as `XADD` added them."
 -ERR no return types for EVALSHA: ""
 -ERR no return types for PUBSUB: "@array-reply: a list of active channels, optionally matching the specified pattern.\n\n\n@array-reply: a list of channels and number of subscribers for every channel. The format is channel, count, channel, count, ..., so the list is flat.\nThe order in which the channels are listed is the same as the order of the\nchannels specified in the command call.\n\nNote that it is valid to call this command without channels. In this case it\nwill just return an empty list.\n\n\n@integer-reply: the number of patterns all the clients are subscribed to."
@@ -119,16 +579,16 @@
 -ERR no return types for STRALGO: "For the LCS algorithm:\n\n* Without modifiers the string representing the longest common substring is returned.\n* When `LEN` is given the command returns the length of the longest common substring.\n* When `IDX` is given the command returns an array with the LCS length and all the ranges in both the strings, start and end offset for each string, where there are matches. When `WITHMATCHLEN` is given each array representing a match will also have the length of the match (see examples)."
 -ERR no return types for LPOP: "When called without the `count` argument:\n\n@bulk-string-reply: the value of the first element, or `nil` when `key` does not exist.\n\nWhen called with the `count` argument:\n\n@array-reply: list of popped elements, or `nil` when `key` does not exist."
 -ERR no return types for PSUBSCRIBE: ""
--ERR no return types for GEOHASH: "@array-reply, specifically:\n\nThe command returns an array where each element is the Geohash corresponding to\neach member name passed as argument to the command."
 -ERR no return types for GEORADIUS: "@array-reply, specifically:\n\n* Without any `WITH` option specified, the command just returns a linear array like [\"New York\",\"Milan\",\"Paris\"].\n* If `WITHCOORD`, `WITHDIST` or `WITHHASH` options are specified, the command returns an array of arrays, where each sub-array represents a single item.\n\nWhen additional information is returned as an array of arrays for each item, the first item in the sub-array is always the name of the returned item. The other information is returned in the following order as successive elements of the sub-array.\n\n1. The distance from the center as a floating point number, in the same unit specified in the radius.\n2. The geohash integer.\n3. The coordinates as a two items x,y array (longitude,latitude).\n\nSo for example the command `GEORADIUS Sicily 15 37 200 km WITHCOORD WITHDIST` will return each item in the following way:\n\n    [\"Palermo\",\"190.4424\",[\"13.361389338970184\",\"38.115556395496299\"]]"
+-ERR no return types for GEOHASH: "@array-reply, specifically:\n\nThe command returns an array where each element is the Geohash corresponding to\neach member name passed as argument to the command."
 -ERR no return types for GEOPOS: "@array-reply, specifically:\n\nThe command returns an array where each element is a two elements array\nrepresenting longitude and latitude (x,y) of each member name passed as\nargument to the command.\n\nNon existing elements are reported as NULL elements of the array."
 -ERR no return types for XINFO: ""
 -ERR no return types for PUNSUBSCRIBE: ""
 -ERR no return types for XACK: "@integer-reply, specifically:\n\nThe command returns the number of messages successfully acknowledged.\nCertain message IDs may no longer be part of the PEL (for example because\nthey have already been acknowledged), and XACK will not count them as\nsuccessfully acknowledged."
 -ERR no return types for SUBSCRIBE: ""
 -ERR no return types for LOLWUT: "@bulk-string-reply (or verbatim reply when using the RESP3 protocol): the string containing the generative computer art, and a text with the Redis version."
--ERR no return types for EXISTS: "@integer-reply, specifically:\n\n* `1` if the key exists.\n* `0` if the key does not exist.\n\nSince Redis 3.0.3 the command accepts a variable number of keys and the return value is generalized:\n\n* The number of keys existing among the ones specified as arguments. Keys mentioned multiple times and existing are counted multiple times."
 -ERR no return types for PFCOUNT: "@integer-reply, specifically:\n\n* The approximated number of unique elements observed via `PFADD`."
+-ERR no return types for EXISTS: "@integer-reply, specifically:\n\n* `1` if the key exists.\n* `0` if the key does not exist.\n\nSince Redis 3.0.3 the command accepts a variable number of keys and the return value is generalized:\n\n* The number of keys existing among the ones specified as arguments. Keys mentioned multiple times and existing are counted multiple times."
 -ERR no return types for EVAL: ""
 -ERR no return types for ZREM: "@integer-reply, specifically:\n\n* The number of members removed from the sorted set, not including non existing\n  members."
 -ERR no return types for SETNX: "@integer-reply, specifically:\n\n* `1` if the key was set\n* `0` if the key was not set"

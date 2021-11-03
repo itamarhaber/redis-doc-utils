@@ -1,6 +1,7 @@
 {
   "XSETID": {
     "arity": 3,
+    "function": "xsetidCommand",
     "command_flags": [
       "write",
       "denyoom",

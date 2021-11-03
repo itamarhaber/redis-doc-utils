@@ -5,6 +5,7 @@
     "group": "stream",
     "since": "5.0.0",
     "arity": -3,
+    "function": "xpendingCommand",
     "history": [
       [
         "6.2.0",

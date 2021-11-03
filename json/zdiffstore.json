@@ -5,6 +5,7 @@
     "group": "sorted_set",
     "since": "6.2.0",
     "arity": -4,
+    "function": "zdiffstoreCommand",
     "command_flags": [
       "write",
       "denyoom",

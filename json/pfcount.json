@@ -5,6 +5,7 @@
     "group": "hyperloglog",
     "since": "2.8.9",
     "arity": -2,
+    "function": "pfcountCommand",
     "command_flags": [
       "readonly",
       "may_replicate"

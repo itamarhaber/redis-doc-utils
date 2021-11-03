@@ -1,6 +1,7 @@
 {
   "LATENCY": {
     "arity": -2,
+    "function": "latencyCommand",
     "command_flags": [],
     "acl_categories": [
       "slow"

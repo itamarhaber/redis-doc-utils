@@ -5,6 +5,7 @@
     "group": "hash",
     "since": "2.0.0",
     "arity": -3,
+    "function": "hmgetCommand",
     "command_flags": [
       "readonly",
       "fast"

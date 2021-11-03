@@ -5,6 +5,7 @@
     "group": "set",
     "since": "1.0.0",
     "arity": 4,
+    "function": "smoveCommand",
     "command_flags": [
       "write",
       "fast"

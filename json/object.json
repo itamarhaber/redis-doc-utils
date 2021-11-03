@@ -5,6 +5,7 @@
     "group": "generic",
     "since": "2.2.3",
     "arity": -2,
+    "function": "objectCommand",
     "command_flags": [],
     "acl_categories": [
       "slow"

@@ -5,6 +5,7 @@
     "group": "bitmap",
     "since": "2.6.0",
     "arity": -4,
+    "function": "bitopCommand",
     "command_flags": [
       "write",
       "denyoom"

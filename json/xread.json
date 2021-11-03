@@ -5,6 +5,8 @@
     "group": "stream",
     "since": "5.0.0",
     "arity": -4,
+    "function": "xreadCommand",
+    "get_keys_function": "xreadGetKeys",
     "command_flags": [
       "readonly",
       "movablekeys"

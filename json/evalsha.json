@@ -5,6 +5,7 @@
     "group": "scripting",
     "since": "2.6.0",
     "arity": -3,
+    "function": "evalShaCommand",
     "command_flags": [
       "noscript",
       "skip_monitor",

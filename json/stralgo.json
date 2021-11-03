@@ -5,6 +5,7 @@
     "group": "string",
     "since": "6.0.0",
     "arity": -2,
+    "function": "stralgoCommand",
     "command_flags": [],
     "acl_categories": [
       "slow"

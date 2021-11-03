@@ -5,6 +5,7 @@
     "group": "generic",
     "since": "1.0.0",
     "arity": 1,
+    "function": "randomkeyCommand",
     "command_flags": [
       "readonly",
       "random"

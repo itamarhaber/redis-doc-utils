@@ -5,6 +5,7 @@
     "group": "geo",
     "since": "3.2.0",
     "arity": -5,
+    "function": "geoaddCommand",
     "history": [
       [
         "6.2",

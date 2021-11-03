@@ -5,6 +5,7 @@
     "group": "generic",
     "since": "1.0.0",
     "arity": 3,
+    "function": "renameCommand",
     "command_flags": [
       "write"
     ],

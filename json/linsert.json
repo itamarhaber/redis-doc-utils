@@ -5,6 +5,7 @@
     "group": "list",
     "since": "2.2.0",
     "arity": 5,
+    "function": "linsertCommand",
     "command_flags": [
       "write",
       "denyoom"

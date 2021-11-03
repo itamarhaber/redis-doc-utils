@@ -5,6 +5,7 @@
     "group": "generic",
     "since": "1.2.0",
     "arity": -3,
+    "function": "expireatCommand",
     "history": [
       [
         "7.0",

@@ -5,6 +5,7 @@
     "group": "server",
     "since": "2.8.13",
     "arity": -1,
+    "function": "commandCommand",
     "command_flags": [
       "random",
       "loading",

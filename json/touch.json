@@ -5,6 +5,7 @@
     "group": "generic",
     "since": "3.2.1",
     "arity": -2,
+    "function": "touchCommand",
     "command_flags": [
       "readonly",
       "fast"

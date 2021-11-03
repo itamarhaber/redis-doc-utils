@@ -5,6 +5,8 @@
     "group": "generic",
     "since": "2.6.0",
     "arity": -6,
+    "function": "migrateCommand",
+    "get_keys_function": "migrateGetKeys",
     "history": [
       [
         "3.0.0",

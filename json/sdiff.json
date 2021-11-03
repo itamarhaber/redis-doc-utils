@@ -5,6 +5,7 @@
     "group": "set",
     "since": "1.0.0",
     "arity": -2,
+    "function": "sdiffCommand",
     "command_flags": [
       "readonly",
       "sort_for_script"

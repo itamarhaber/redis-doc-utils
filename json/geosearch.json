@@ -6,6 +6,7 @@
     "since": "6.2",
     "arity": -7,
     "depracated": true,
+    "function": "geosearchCommand",
     "command_flags": [
       "readonly"
     ],

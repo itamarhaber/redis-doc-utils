@@ -5,6 +5,7 @@
     "group": "generic",
     "since": "2.8.0",
     "arity": -2,
+    "function": "scanCommand",
     "command_flags": [
       "readonly",
       "random"

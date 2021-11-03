@@ -5,6 +5,7 @@
     "group": "hash",
     "since": "2.0.0",
     "arity": 2,
+    "function": "hkeysCommand",
     "command_flags": [
       "readonly",
       "sort_for_script"

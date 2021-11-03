@@ -5,6 +5,7 @@
     "group": "string",
     "since": "1.0.0",
     "arity": 3,
+    "function": "setnxCommand",
     "command_flags": [
       "write",
       "denyoom",

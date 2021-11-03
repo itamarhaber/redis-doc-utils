@@ -6,6 +6,7 @@
     "since": "1.2.0",
     "arity": -4,
     "depracated": true,
+    "function": "zrevrangeCommand",
     "command_flags": [
       "readonly"
     ],

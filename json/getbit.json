@@ -5,6 +5,7 @@
     "group": "bitmap",
     "since": "2.2.0",
     "arity": 3,
+    "function": "getbitCommand",
     "command_flags": [
       "readonly",
       "fast"

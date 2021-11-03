@@ -5,6 +5,7 @@
     "group": "sorted_set",
     "since": "2.8.9",
     "arity": 4,
+    "function": "zremrangebylexCommand",
     "command_flags": [
       "write"
     ],

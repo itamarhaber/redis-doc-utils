@@ -5,6 +5,7 @@
     "group": "generic",
     "since": "1.0.0",
     "arity": 2,
+    "function": "keysCommand",
     "command_flags": [
       "readonly",
       "sort_for_script"

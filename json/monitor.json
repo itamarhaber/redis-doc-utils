@@ -4,6 +4,7 @@
     "group": "server",
     "since": "1.0.0",
     "arity": 1,
+    "function": "monitorCommand",
     "history": [
       [
         "6.0",

@@ -5,6 +5,7 @@
     "group": "generic",
     "since": "3.0.0",
     "arity": 3,
+    "function": "waitCommand",
     "command_flags": [
       "noscript"
     ],

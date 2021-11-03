@@ -5,6 +5,7 @@
     "group": "list",
     "since": "2.0.0",
     "arity": -3,
+    "function": "blpopCommand",
     "history": [
       [
         "6.0",

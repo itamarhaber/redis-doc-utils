@@ -1,6 +1,7 @@
 {
   "MEMORY": {
     "arity": -2,
+    "function": "memoryCommand",
     "command_flags": [],
     "acl_categories": [
       "slow"

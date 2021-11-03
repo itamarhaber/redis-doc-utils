@@ -5,6 +5,7 @@
     "group": "server",
     "since": "2.6.0",
     "arity": 1,
+    "function": "timeCommand",
     "command_flags": [
       "random",
       "loading",

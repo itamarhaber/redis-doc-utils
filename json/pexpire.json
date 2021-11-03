@@ -5,6 +5,7 @@
     "group": "generic",
     "since": "2.6.0",
     "arity": -3,
+    "function": "pexpireCommand",
     "history": [
       [
         "7.0",

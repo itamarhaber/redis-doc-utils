@@ -5,6 +5,8 @@
     "group": "list",
     "since": "7.0.0",
     "arity": -4,
+    "function": "lmpopCommand",
+    "get_keys_function": "lmpopGetKeys",
     "command_flags": [
       "write",
       "movablekeys"

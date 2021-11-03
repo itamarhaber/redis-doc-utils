@@ -5,6 +5,7 @@
     "group": "sorted_set",
     "since": "1.2.0",
     "arity": 2,
+    "function": "zcardCommand",
     "command_flags": [
       "readonly",
       "fast"

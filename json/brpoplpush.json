@@ -6,6 +6,7 @@
     "since": "2.2.0",
     "arity": 4,
     "depracated": true,
+    "function": "brpoplpushCommand",
     "history": [
       [
         "6.0",

@@ -5,6 +5,7 @@
     "group": "sorted_set",
     "since": "5.0.0",
     "arity": -2,
+    "function": "zpopminCommand",
     "command_flags": [
       "write",
       "fast"

@@ -5,6 +5,7 @@
     "group": "string",
     "since": "2.4.0",
     "arity": 4,
+    "function": "getrangeCommand",
     "command_flags": [
       "readonly"
     ],

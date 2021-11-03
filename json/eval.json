@@ -5,6 +5,8 @@
     "group": "scripting",
     "since": "2.6.0",
     "arity": -3,
+    "function": "evalCommand",
+    "get_keys_function": "evalGetKeys",
     "command_flags": [
       "noscript",
       "skip_monitor",

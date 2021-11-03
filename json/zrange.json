@@ -5,6 +5,7 @@
     "group": "sorted_set",
     "since": "1.2.0",
     "arity": -4,
+    "function": "zrangeCommand",
     "history": [
       [
         "6.2",

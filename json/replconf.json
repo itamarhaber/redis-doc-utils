@@ -1,6 +1,7 @@
 {
   "REPLCONF": {
     "arity": -1,
+    "function": "replconfCommand",
     "command_flags": [
       "admin",
       "noscript",

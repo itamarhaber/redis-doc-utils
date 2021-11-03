@@ -5,6 +5,7 @@
     "group": "pubsub",
     "since": "2.0.0",
     "arity": -1,
+    "function": "punsubscribeCommand",
     "command_flags": [
       "pubsub",
       "noscript",

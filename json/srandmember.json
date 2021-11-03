@@ -5,6 +5,7 @@
     "group": "set",
     "since": "1.0.0",
     "arity": -2,
+    "function": "srandmemberCommand",
     "history": [
       [
         "2.6.0",

@@ -5,6 +5,7 @@
     "group": "generic",
     "since": "1.0.0",
     "arity": -2,
+    "function": "existsCommand",
     "command_flags": [
       "readonly",
       "fast"

@@ -4,6 +4,7 @@
     "group": "server",
     "since": "6.2.0",
     "arity": -1,
+    "function": "failoverCommand",
     "command_flags": [
       "admin",
       "noscript",

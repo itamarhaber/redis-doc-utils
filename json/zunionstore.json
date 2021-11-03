@@ -5,6 +5,7 @@
     "group": "sorted_set",
     "since": "2.0.0",
     "arity": -4,
+    "function": "zunionstoreCommand",
     "command_flags": [
       "write",
       "denyoom",

@@ -5,6 +5,7 @@
     "group": "generic",
     "since": "2.6.0",
     "arity": -4,
+    "function": "restoreCommand",
     "command_flags": [
       "write",
       "denyoom"

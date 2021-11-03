@@ -4,6 +4,7 @@
     "group": "server",
     "since": "5.0.0",
     "arity": -1,
+    "function": "lolwutCommand",
     "command_flags": [
       "readonly",
       "fast"

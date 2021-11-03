@@ -1,6 +1,7 @@
 {
   "DEBUG": {
     "arity": -2,
+    "function": "debugCommand",
     "command_flags": [
       "admin",
       "noscript",

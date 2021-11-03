@@ -5,6 +5,7 @@
     "group": "generic",
     "since": "6.2.0",
     "arity": -3,
+    "function": "copyCommand",
     "command_flags": [
       "write",
       "denyoom"

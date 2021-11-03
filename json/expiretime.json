@@ -5,6 +5,7 @@
     "group": "generic",
     "since": "7.0.0",
     "arity": 2,
+    "function": "expiretimeCommand",
     "command_flags": [
       "readonly",
       "random",

@@ -89,8 +89,7 @@
           }
         }
       ]
-    },
-    "function": "xreadgroupCommand"
+    }
   },
   {
     "GETBIT": {
@@ -144,9 +143,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "getbitCommand"
+      ],
+      "function": "getbitCommand"
+    }
   },
   {
     "FLUSHDB": {
@@ -181,9 +180,9 @@
         "write",
         "slow",
         "dangerous"
-      ]
-    },
-    "function": "flushdbCommand"
+      ],
+      "function": "flushdbCommand"
+    }
   },
   {
     "SPOP": {
@@ -240,9 +239,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "spopCommand"
+      ],
+      "function": "spopCommand"
+    }
   },
   {
     "REPLICAOF": {
@@ -276,9 +275,9 @@
         "admin",
         "slow",
         "dangerous"
-      ]
-    },
-    "function": "replicaofCommand"
+      ],
+      "function": "replicaofCommand"
+    }
   },
   {
     "LMPOP": {
@@ -348,9 +347,10 @@
             }
           }
         }
-      ]
-    },
-    "function": "lmpopCommand"
+      ],
+      "function": "lmpopCommand",
+      "get_keys_function": "lmpopGetKeys"
+    }
   },
   {
     "SCAN": {
@@ -393,9 +393,9 @@
         "keyspace",
         "read",
         "slow"
-      ]
-    },
-    "function": "scanCommand"
+      ],
+      "function": "scanCommand"
+    }
   },
   {
     "FLUSHALL": {
@@ -440,9 +440,9 @@
         "write",
         "slow",
         "dangerous"
-      ]
-    },
-    "function": "flushallCommand"
+      ],
+      "function": "flushallCommand"
+    }
   },
   {
     "SDIFFSTORE": {
@@ -514,9 +514,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "sdiffstoreCommand"
+      ],
+      "function": "sdiffstoreCommand"
+    }
   },
   {
     "BGSAVE": {
@@ -556,9 +556,9 @@
         "admin",
         "slow",
         "dangerous"
-      ]
-    },
-    "function": "bgsaveCommand"
+      ],
+      "function": "bgsaveCommand"
+    }
   },
   {
     "TYPE": {
@@ -608,9 +608,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "typeCommand"
+      ],
+      "function": "typeCommand"
+    }
   },
   {
     "HGET": {
@@ -664,9 +664,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "hgetCommand"
+      ],
+      "function": "hgetCommand"
+    }
   },
   {
     "HELLO": {
@@ -730,9 +730,9 @@
       "acl_categories": [
         "fast",
         "connection"
-      ]
-    },
-    "function": "helloCommand"
+      ],
+      "function": "helloCommand"
+    }
   },
   {
     "LLEN": {
@@ -782,9 +782,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "llenCommand"
+      ],
+      "function": "llenCommand"
+    }
   },
   {
     "MOVE": {
@@ -833,9 +833,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "moveCommand"
+      ],
+      "function": "moveCommand"
+    }
   },
   {
     "ZINTERSTORE": {
@@ -930,9 +930,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "zinterstoreCommand"
+      ],
+      "function": "zinterstoreCommand"
+    }
   },
   {
     "TTL": {
@@ -983,9 +983,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "ttlCommand"
+      ],
+      "function": "ttlCommand"
+    }
   },
   {
     "ZCOUNT": {
@@ -1043,9 +1043,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "zcountCommand"
+      ],
+      "function": "zcountCommand"
+    }
   },
   {
     "HINCRBYFLOAT": {
@@ -1104,9 +1104,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "hincrbyfloatCommand"
+      ],
+      "function": "hincrbyfloatCommand"
+    }
   },
   {
     "SINTER": {
@@ -1157,9 +1157,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "sinterCommand"
+      ],
+      "function": "sinterCommand"
+    }
   },
   {
     "ZREVRANK": {
@@ -1208,9 +1208,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "zrevrankCommand"
+      ],
+      "function": "zrevrankCommand"
+    }
   },
   {
     "EVAL_RO": {
@@ -1269,8 +1269,7 @@
           }
         }
       ]
-    },
-    "function": "eval_roCommand"
+    }
   },
   {
     "LSET": {
@@ -1327,9 +1326,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "lsetCommand"
+      ],
+      "function": "lsetCommand"
+    }
   },
   {
     "AUTH": {
@@ -1367,9 +1366,9 @@
       "acl_categories": [
         "fast",
         "connection"
-      ]
-    },
-    "function": "authCommand"
+      ],
+      "function": "authCommand"
+    }
   },
   {
     "GEORADIUSBYMEMBER": {
@@ -1534,9 +1533,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "georadiusbymemberCommand"
+      ],
+      "function": "georadiusbymemberCommand"
+    }
   },
   {
     "PEXPIRETIME": {
@@ -1587,9 +1586,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "pexpiretimeCommand"
+      ],
+      "function": "pexpiretimeCommand"
+    }
   },
   {
     "EXPIREAT": {
@@ -1655,9 +1654,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "expireatCommand"
+      ],
+      "function": "expireatCommand"
+    }
   },
   {
     "MSET": {
@@ -1714,9 +1713,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "msetCommand"
+      ],
+      "function": "msetCommand"
+    }
   },
   {
     "PFMERGE": {
@@ -1789,9 +1788,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "pfmergeCommand"
+      ],
+      "function": "pfmergeCommand"
+    }
   },
   {
     "BITFIELD": {
@@ -1885,9 +1884,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "bitfieldCommand"
+      ],
+      "function": "bitfieldCommand"
+    }
   },
   {
     "PEXPIRE": {
@@ -1953,9 +1952,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "pexpireCommand"
+      ],
+      "function": "pexpireCommand"
+    }
   },
   {
     "PUBLISH": {
@@ -1992,9 +1991,9 @@
       "acl_categories": [
         "pubsub",
         "fast"
-      ]
-    },
-    "function": "publishCommand"
+      ],
+      "function": "publishCommand"
+    }
   },
   {
     "SSCAN": {
@@ -2054,9 +2053,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "sscanCommand"
+      ],
+      "function": "sscanCommand"
+    }
   },
   {
     "GETSET": {
@@ -2113,9 +2112,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "getsetCommand"
+      ],
+      "function": "getsetCommand"
+    }
   },
   {
     "DISCARD": {
@@ -2140,9 +2139,9 @@
       "acl_categories": [
         "fast",
         "transaction"
-      ]
-    },
-    "function": "discardCommand"
+      ],
+      "function": "discardCommand"
+    }
   },
   {
     "EXPIRE": {
@@ -2208,9 +2207,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "expireCommand"
+      ],
+      "function": "expireCommand"
+    }
   },
   {
     "PSETEX": {
@@ -2262,9 +2261,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "psetexCommand"
+      ],
+      "function": "psetexCommand"
+    }
   },
   {
     "PFADD": {
@@ -2316,9 +2315,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "pfaddCommand"
+      ],
+      "function": "pfaddCommand"
+    }
   },
   {
     "GEOSEARCH": {
@@ -2482,9 +2481,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "geosearchCommand"
+      ],
+      "function": "geosearchCommand"
+    }
   },
   {
     "XCLAIM": {
@@ -2579,9 +2578,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "xclaimCommand"
+      ],
+      "function": "xclaimCommand"
+    }
   },
   {
     "RESTORE": {
@@ -2668,9 +2667,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "restoreCommand"
+      ],
+      "function": "restoreCommand"
+    }
   },
   {
     "HSCAN": {
@@ -2730,9 +2729,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "hscanCommand"
+      ],
+      "function": "hscanCommand"
+    }
   },
   {
     "RPUSHX": {
@@ -2794,9 +2793,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "rpushxCommand"
+      ],
+      "function": "rpushxCommand"
+    }
   },
   {
     "RANDOMKEY": {
@@ -2821,9 +2820,9 @@
         "keyspace",
         "read",
         "slow"
-      ]
-    },
-    "function": "randomkeyCommand"
+      ],
+      "function": "randomkeyCommand"
+    }
   },
   {
     "XGROUP": {
@@ -2968,8 +2967,7 @@
               }
             ],
             "container": "XGROUP"
-          },
-          "function": "xgroupSetidCommand"
+          }
         },
         {
           "DESTROY": {
@@ -3002,8 +3000,7 @@
               }
             ],
             "container": "XGROUP"
-          },
-          "function": "xgroupDestroyCommand"
+          }
         },
         {
           "CREATE": {
@@ -3037,8 +3034,7 @@
               }
             ],
             "container": "XGROUP"
-          },
-          "function": "xgroupCreateCommand"
+          }
         },
         {
           "CREATECONSUMER": {
@@ -3072,8 +3068,7 @@
               }
             ],
             "container": "XGROUP"
-          },
-          "function": "xgroupCreateconsumerCommand"
+          }
         },
         {
           "DELCONSUMER": {
@@ -3106,8 +3101,7 @@
               }
             ],
             "container": "XGROUP"
-          },
-          "function": "xgroupDelconsumerCommand"
+          }
         },
         {
           "HELP": {
@@ -3121,12 +3115,11 @@
               "slow"
             ],
             "container": "XGROUP"
-          },
-          "function": "xgroupHelpCommand"
+          }
         }
-      ]
-    },
-    "function": "xgroupCommand"
+      ],
+      "function": "xgroupCommand"
+    }
   },
   {
     "GETDEL": {
@@ -3176,9 +3169,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "getdelCommand"
+      ],
+      "function": "getdelCommand"
+    }
   },
   {
     "BZPOPMAX": {
@@ -3241,9 +3234,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "bzpopmaxCommand"
+      ],
+      "function": "bzpopmaxCommand"
+    }
   },
   {
     "PEXPIREAT": {
@@ -3309,9 +3302,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "pexpireatCommand"
+      ],
+      "function": "pexpireatCommand"
+    }
   },
   {
     "GEODIST": {
@@ -3374,9 +3367,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "geodistCommand"
+      ],
+      "function": "geodistCommand"
+    }
   },
   {
     "XREVRANGE": {
@@ -3434,9 +3427,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "xrevrangeCommand"
+      ],
+      "function": "xrevrangeCommand"
+    }
   },
   {
     "ZREVRANGE": {
@@ -3502,9 +3495,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "zrevrangeCommand"
+      ],
+      "function": "zrevrangeCommand"
+    }
   },
   {
     "BITCOUNT": {
@@ -3563,9 +3556,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "bitcountCommand"
+      ],
+      "function": "bitcountCommand"
+    }
   },
   {
     "EVALSHA": {
@@ -3627,9 +3620,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "evalshaCommand"
+      ],
+      "function": "evalShaCommand"
+    }
   },
   {
     "SDIFF": {
@@ -3680,9 +3673,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "sdiffCommand"
+      ],
+      "function": "sdiffCommand"
+    }
   },
   {
     "REPLCONF": {
@@ -3697,9 +3690,9 @@
         "admin",
         "slow",
         "dangerous"
-      ]
-    },
-    "function": "replconfCommand"
+      ],
+      "function": "replconfCommand"
+    }
   },
   {
     "PUBSUB": {
@@ -3739,8 +3732,7 @@
               "slow"
             ],
             "container": "PUBSUB"
-          },
-          "function": "pubsubHelpCommand"
+          }
         },
         {
           "NUMSUB": {
@@ -3755,8 +3747,7 @@
               "slow"
             ],
             "container": "PUBSUB"
-          },
-          "function": "pubsubNumsubCommand"
+          }
         },
         {
           "CHANNELS": {
@@ -3771,8 +3762,7 @@
               "slow"
             ],
             "container": "PUBSUB"
-          },
-          "function": "pubsubChannelsCommand"
+          }
         },
         {
           "NUMPAT": {
@@ -3787,12 +3777,11 @@
               "slow"
             ],
             "container": "PUBSUB"
-          },
-          "function": "pubsubNumpatCommand"
+          }
         }
-      ]
-    },
-    "function": "pubsubCommand"
+      ],
+      "function": "pubsubCommand"
+    }
   },
   {
     "XDEL": {
@@ -3847,9 +3836,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "xdelCommand"
+      ],
+      "function": "xdelCommand"
+    }
   },
   {
     "LPUSH": {
@@ -3911,9 +3900,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "lpushCommand"
+      ],
+      "function": "lpushCommand"
+    }
   },
   {
     "COPY": {
@@ -3993,9 +3982,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "copyCommand"
+      ],
+      "function": "copyCommand"
+    }
   },
   {
     "MODULE": {
@@ -4016,8 +4005,7 @@
               "slow"
             ],
             "container": "MODULE"
-          },
-          "function": "moduleHelpCommand"
+          }
         },
         {
           "LOAD": {
@@ -4056,8 +4044,7 @@
               "dangerous"
             ],
             "container": "MODULE"
-          },
-          "function": "moduleLoadCommand"
+          }
         },
         {
           "UNLOAD": {
@@ -4090,8 +4077,7 @@
               "dangerous"
             ],
             "container": "MODULE"
-          },
-          "function": "moduleUnloadCommand"
+          }
         },
         {
           "LIST": {
@@ -4118,12 +4104,11 @@
               "dangerous"
             ],
             "container": "MODULE"
-          },
-          "function": "moduleListCommand"
+          }
         }
-      ]
-    },
-    "function": "moduleCommand"
+      ],
+      "function": "moduleCommand"
+    }
   },
   {
     "SISMEMBER": {
@@ -4172,9 +4157,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "sismemberCommand"
+      ],
+      "function": "sismemberCommand"
+    }
   },
   {
     "HEXISTS": {
@@ -4223,9 +4208,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "hexistsCommand"
+      ],
+      "function": "hexistsCommand"
+    }
   },
   {
     "ZRANGEBYSCORE": {
@@ -4303,9 +4288,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "zrangebyscoreCommand"
+      ],
+      "function": "zrangebyscoreCommand"
+    }
   },
   {
     "SORT": {
@@ -4414,9 +4399,10 @@
             "unknown": null
           }
         }
-      ]
-    },
-    "function": "sortCommand"
+      ],
+      "function": "sortCommand",
+      "get_keys_function": "sortGetKeys"
+    }
   },
   {
     "ZPOPMAX": {
@@ -4471,9 +4457,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "zpopmaxCommand"
+      ],
+      "function": "zpopmaxCommand"
+    }
   },
   {
     "SYNC": {
@@ -4492,9 +4478,9 @@
         "admin",
         "slow",
         "dangerous"
-      ]
-    },
-    "function": "syncCommand"
+      ],
+      "function": "syncCommand"
+    }
   },
   {
     "XPENDING": {
@@ -4579,9 +4565,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "xpendingCommand"
+      ],
+      "function": "xpendingCommand"
+    }
   },
   {
     "UNSUBSCRIBE": {
@@ -4609,9 +4595,9 @@
       "acl_categories": [
         "pubsub",
         "slow"
-      ]
-    },
-    "function": "unsubscribeCommand"
+      ],
+      "function": "unsubscribeCommand"
+    }
   },
   {
     "SUNIONSTORE": {
@@ -4683,9 +4669,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "sunionstoreCommand"
+      ],
+      "function": "sunionstoreCommand"
+    }
   },
   {
     "MSETNX": {
@@ -4737,9 +4723,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "msetnxCommand"
+      ],
+      "function": "msetnxCommand"
+    }
   },
   {
     "BITOP": {
@@ -4814,9 +4800,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "bitopCommand"
+      ],
+      "function": "bitopCommand"
+    }
   },
   {
     "SADD": {
@@ -4878,9 +4864,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "saddCommand"
+      ],
+      "function": "saddCommand"
+    }
   },
   {
     "SMEMBERS": {
@@ -4931,8 +4917,7 @@
           }
         }
       ]
-    },
-    "function": "smembersCommand"
+    }
   },
   {
     "SORT_RO": {
@@ -5027,8 +5012,7 @@
           }
         }
       ]
-    },
-    "function": "sort_roCommand"
+    }
   },
   {
     "ZREMRANGEBYRANK": {
@@ -5085,9 +5069,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "zremrangebyrankCommand"
+      ],
+      "function": "zremrangebyrankCommand"
+    }
   },
   {
     "RPOP": {
@@ -5143,9 +5127,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "rpopCommand"
+      ],
+      "function": "rpopCommand"
+    }
   },
   {
     "BLPOP": {
@@ -5207,9 +5191,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "blpopCommand"
+      ],
+      "function": "blpopCommand"
+    }
   },
   {
     "MULTI": {
@@ -5234,9 +5218,9 @@
       "acl_categories": [
         "fast",
         "transaction"
-      ]
-    },
-    "function": "multiCommand"
+      ],
+      "function": "multiCommand"
+    }
   },
   {
     "SETEX": {
@@ -5293,9 +5277,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "setexCommand"
+      ],
+      "function": "setexCommand"
+    }
   },
   {
     "PSYNC": {
@@ -5325,8 +5309,7 @@
         "slow",
         "dangerous"
       ]
-    },
-    "function": "psyncCommand"
+    }
   },
   {
     "ZDIFFSTORE": {
@@ -5403,9 +5386,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "zdiffstoreCommand"
+      ],
+      "function": "zdiffstoreCommand"
+    }
   },
   {
     "ZRANDMEMBER": {
@@ -5469,9 +5452,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "zrandmemberCommand"
+      ],
+      "function": "zrandmemberCommand"
+    }
   },
   {
     "ZREMRANGEBYLEX": {
@@ -5528,9 +5511,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "zremrangebylexCommand"
+      ],
+      "function": "zremrangebylexCommand"
+    }
   },
   {
     "ZREMRANGEBYSCORE": {
@@ -5587,9 +5570,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "zremrangebyscoreCommand"
+      ],
+      "function": "zremrangebyscoreCommand"
+    }
   },
   {
     "RENAME": {
@@ -5641,9 +5624,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "renameCommand"
+      ],
+      "function": "renameCommand"
+    }
   },
   {
     "STRALGO": {
@@ -5686,8 +5669,7 @@
               "slow"
             ],
             "container": "STRALGO"
-          },
-          "function": "stralgoHelpCommand"
+          }
         },
         {
           "LCS": {
@@ -5716,12 +5698,11 @@
               }
             ],
             "container": "STRALGO"
-          },
-          "function": "stralgoLcsCommand"
+          }
         }
-      ]
-    },
-    "function": "stralgoCommand"
+      ],
+      "function": "stralgoCommand"
+    }
   },
   {
     "LPOP": {
@@ -5777,9 +5758,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "lpopCommand"
+      ],
+      "function": "lpopCommand"
+    }
   },
   {
     "GETEX": {
@@ -5841,9 +5822,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "getexCommand"
+      ],
+      "function": "getexCommand"
+    }
   },
   {
     "ECHO": {
@@ -5870,9 +5851,9 @@
       "acl_categories": [
         "fast",
         "connection"
-      ]
-    },
-    "function": "echoCommand"
+      ],
+      "function": "echoCommand"
+    }
   },
   {
     "SLAVEOF": {
@@ -5907,8 +5888,7 @@
         "slow",
         "dangerous"
       ]
-    },
-    "function": "slaveofCommand"
+    }
   },
   {
     "PTTL": {
@@ -5959,9 +5939,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "pttlCommand"
+      ],
+      "function": "pttlCommand"
+    }
   },
   {
     "ACL": {
@@ -5998,8 +5978,7 @@
               "dangerous"
             ],
             "container": "ACL"
-          },
-          "function": "aclSaveCommand"
+          }
         },
         {
           "GENPASS": {
@@ -6032,8 +6011,7 @@
               "slow"
             ],
             "container": "ACL"
-          },
-          "function": "aclGenpassCommand"
+          }
         },
         {
           "LOG": {
@@ -6064,8 +6042,7 @@
               "dangerous"
             ],
             "container": "ACL"
-          },
-          "function": "aclLogCommand"
+          }
         },
         {
           "LIST": {
@@ -6089,8 +6066,7 @@
               "dangerous"
             ],
             "container": "ACL"
-          },
-          "function": "aclListCommand"
+          }
         },
         {
           "LOAD": {
@@ -6119,8 +6095,7 @@
               "dangerous"
             ],
             "container": "ACL"
-          },
-          "function": "aclLoadCommand"
+          }
         },
         {
           "SETUSER": {
@@ -6167,8 +6142,7 @@
               "dangerous"
             ],
             "container": "ACL"
-          },
-          "function": "aclSetuserCommand"
+          }
         },
         {
           "HELP": {
@@ -6193,8 +6167,7 @@
               "slow"
             ],
             "container": "ACL"
-          },
-          "function": "aclHelpCommand"
+          }
         },
         {
           "GETUSER": {
@@ -6229,8 +6202,7 @@
               "dangerous"
             ],
             "container": "ACL"
-          },
-          "function": "aclGetuserCommand"
+          }
         },
         {
           "DELUSER": {
@@ -6266,8 +6238,7 @@
               "dangerous"
             ],
             "container": "ACL"
-          },
-          "function": "aclDeluserCommand"
+          }
         },
         {
           "USERS": {
@@ -6291,8 +6262,7 @@
               "dangerous"
             ],
             "container": "ACL"
-          },
-          "function": "aclUsersCommand"
+          }
         },
         {
           "WHOAMI": {
@@ -6318,8 +6288,7 @@
               "slow"
             ],
             "container": "ACL"
-          },
-          "function": "aclWhoamiCommand"
+          }
         },
         {
           "CAT": {
@@ -6352,12 +6321,11 @@
               "slow"
             ],
             "container": "ACL"
-          },
-          "function": "aclCatCommand"
+          }
         }
-      ]
-    },
-    "function": "aclCommand"
+      ],
+      "function": "aclCommand"
+    }
   },
   {
     "PSUBSCRIBE": {
@@ -6388,9 +6356,9 @@
       "acl_categories": [
         "pubsub",
         "slow"
-      ]
-    },
-    "function": "psubscribeCommand"
+      ],
+      "function": "psubscribeCommand"
+    }
   },
   {
     "GEOHASH": {
@@ -6439,9 +6407,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "geohashCommand"
+      ],
+      "function": "geohashCommand"
+    }
   },
   {
     "GEORADIUS": {
@@ -6617,9 +6585,10 @@
             }
           }
         }
-      ]
-    },
-    "function": "georadiusCommand"
+      ],
+      "function": "georadiusCommand",
+      "get_keys_function": "georadiusGetKeys"
+    }
   },
   {
     "GEOPOS": {
@@ -6668,9 +6637,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "geoposCommand"
+      ],
+      "function": "geoposCommand"
+    }
   },
   {
     "TOUCH": {
@@ -6721,9 +6690,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "touchCommand"
+      ],
+      "function": "touchCommand"
+    }
   },
   {
     "XLEN": {
@@ -6773,9 +6742,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "xlenCommand"
+      ],
+      "function": "xlenCommand"
+    }
   },
   {
     "HOST:": {
@@ -6789,8 +6758,7 @@
         "read",
         "slow"
       ]
-    },
-    "function": "host:Command"
+    }
   },
   {
     "XINFO": {
@@ -6858,8 +6826,7 @@
               "slow"
             ],
             "container": "XINFO"
-          },
-          "function": "xinfoHelpCommand"
+          }
         },
         {
           "STREAM": {
@@ -6892,8 +6859,7 @@
               }
             ],
             "container": "XINFO"
-          },
-          "function": "xinfoStreamCommand"
+          }
         },
         {
           "CONSUMERS": {
@@ -6927,8 +6893,7 @@
               }
             ],
             "container": "XINFO"
-          },
-          "function": "xinfoConsumersCommand"
+          }
         },
         {
           "GROUPS": {
@@ -6961,12 +6926,11 @@
               }
             ],
             "container": "XINFO"
-          },
-          "function": "xinfoGroupsCommand"
+          }
         }
-      ]
-    },
-    "function": "xinfoCommand"
+      ],
+      "function": "xinfoCommand"
+    }
   },
   {
     "ZRANGESTORE": {
@@ -7074,9 +7038,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "zrangestoreCommand"
+      ],
+      "function": "zrangestoreCommand"
+    }
   },
   {
     "DEL": {
@@ -7126,9 +7090,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "delCommand"
+      ],
+      "function": "delCommand"
+    }
   },
   {
     "CONFIG": {
@@ -7165,8 +7129,7 @@
               "dangerous"
             ],
             "container": "CONFIG"
-          },
-          "function": "configGetCommand"
+          }
         },
         {
           "REWRITE": {
@@ -7193,8 +7156,7 @@
               "dangerous"
             ],
             "container": "CONFIG"
-          },
-          "function": "configRewriteCommand"
+          }
         },
         {
           "SET": {
@@ -7231,8 +7193,7 @@
               "dangerous"
             ],
             "container": "CONFIG"
-          },
-          "function": "configSetCommand"
+          }
         },
         {
           "RESETSTAT": {
@@ -7260,8 +7221,7 @@
               "dangerous"
             ],
             "container": "CONFIG"
-          },
-          "function": "configResetstatCommand"
+          }
         },
         {
           "HELP": {
@@ -7274,12 +7234,10 @@
               "slow"
             ],
             "container": "CONFIG"
-          },
-          "function": "configHelpCommand"
+          }
         }
       ]
-    },
-    "function": "configCommand"
+    }
   },
   {
     "ZPOPMIN": {
@@ -7334,9 +7292,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "zpopminCommand"
+      ],
+      "function": "zpopminCommand"
+    }
   },
   {
     "INCRBYFLOAT": {
@@ -7391,9 +7349,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "incrbyfloatCommand"
+      ],
+      "function": "incrbyfloatCommand"
+    }
   },
   {
     "BGREWRITEAOF": {
@@ -7417,9 +7375,9 @@
         "admin",
         "slow",
         "dangerous"
-      ]
-    },
-    "function": "bgrewriteaofCommand"
+      ],
+      "function": "bgrewriteaofCommand"
+    }
   },
   {
     "SWAPDB": {
@@ -7455,9 +7413,9 @@
         "write",
         "fast",
         "dangerous"
-      ]
-    },
-    "function": "swapdbCommand"
+      ],
+      "function": "swapdbCommand"
+    }
   },
   {
     "ZCARD": {
@@ -7507,9 +7465,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "zcardCommand"
+      ],
+      "function": "zcardCommand"
+    }
   },
   {
     "LRANGE": {
@@ -7566,9 +7524,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "lrangeCommand"
+      ],
+      "function": "lrangeCommand"
+    }
   },
   {
     "SREM": {
@@ -7629,9 +7587,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "sremCommand"
+      ],
+      "function": "sremCommand"
+    }
   },
   {
     "LINDEX": {
@@ -7684,9 +7642,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "lindexCommand"
+      ],
+      "function": "lindexCommand"
+    }
   },
   {
     "CLIENT": {
@@ -7722,8 +7680,7 @@
               "connection"
             ],
             "container": "CLIENT"
-          },
-          "function": "clientInfoCommand"
+          }
         },
         {
           "GETNAME": {
@@ -7750,8 +7707,7 @@
               "connection"
             ],
             "container": "CLIENT"
-          },
-          "function": "clientGetnameCommand"
+          }
         },
         {
           "SETNAME": {
@@ -7784,8 +7740,7 @@
               "connection"
             ],
             "container": "CLIENT"
-          },
-          "function": "clientSetnameCommand"
+          }
         },
         {
           "REPLY": {
@@ -7823,8 +7778,7 @@
               "connection"
             ],
             "container": "CLIENT"
-          },
-          "function": "clientReplyCommand"
+          }
         },
         {
           "PAUSE": {
@@ -7879,8 +7833,7 @@
               "connection"
             ],
             "container": "CLIENT"
-          },
-          "function": "clientPauseCommand"
+          }
         },
         {
           "HELP": {
@@ -7894,8 +7847,7 @@
               "connection"
             ],
             "container": "CLIENT"
-          },
-          "function": "clientHelpCommand"
+          }
         },
         {
           "TRACKINGINFO": {
@@ -7922,8 +7874,7 @@
               "connection"
             ],
             "container": "CLIENT"
-          },
-          "function": "clientTrackinginfoCommand"
+          }
         },
         {
           "GETREDIR": {
@@ -7950,8 +7901,7 @@
               "connection"
             ],
             "container": "CLIENT"
-          },
-          "function": "clientGetredirCommand"
+          }
         },
         {
           "CACHING": {
@@ -7988,8 +7938,7 @@
               "connection"
             ],
             "container": "CLIENT"
-          },
-          "function": "clientCachingCommand"
+          }
         },
         {
           "UNPAUSE": {
@@ -8019,8 +7968,7 @@
               "connection"
             ],
             "container": "CLIENT"
-          },
-          "function": "clientUnpauseCommand"
+          }
         },
         {
           "NO-EVICT": {
@@ -8060,8 +8008,7 @@
               "connection"
             ],
             "container": "CLIENT"
-          },
-          "function": "clientNo-evictCommand"
+          }
         },
         {
           "ID": {
@@ -8087,8 +8034,7 @@
               "connection"
             ],
             "container": "CLIENT"
-          },
-          "function": "clientIdCommand"
+          }
         },
         {
           "TRACKING": {
@@ -8170,8 +8116,7 @@
               "connection"
             ],
             "container": "CLIENT"
-          },
-          "function": "clientTrackingCommand"
+          }
         },
         {
           "KILL": {
@@ -8266,8 +8211,7 @@
               "connection"
             ],
             "container": "CLIENT"
-          },
-          "function": "clientKillCommand"
+          }
         },
         {
           "UNBLOCK": {
@@ -8307,8 +8251,7 @@
               "connection"
             ],
             "container": "CLIENT"
-          },
-          "function": "clientUnblockCommand"
+          }
         },
         {
           "LIST": {
@@ -8381,12 +8324,11 @@
               "connection"
             ],
             "container": "CLIENT"
-          },
-          "function": "clientListCommand"
+          }
         }
-      ]
-    },
-    "function": "clientCommand"
+      ],
+      "function": "clientCommand"
+    }
   },
   {
     "SAVE": {
@@ -8410,9 +8352,9 @@
         "admin",
         "slow",
         "dangerous"
-      ]
-    },
-    "function": "saveCommand"
+      ],
+      "function": "saveCommand"
+    }
   },
   {
     "PUNSUBSCRIBE": {
@@ -8440,9 +8382,9 @@
       "acl_categories": [
         "pubsub",
         "slow"
-      ]
-    },
-    "function": "punsubscribeCommand"
+      ],
+      "function": "punsubscribeCommand"
+    }
   },
   {
     "ROLE": {
@@ -8469,9 +8411,9 @@
         "admin",
         "fast",
         "dangerous"
-      ]
-    },
-    "function": "roleCommand"
+      ],
+      "function": "roleCommand"
+    }
   },
   {
     "XACK": {
@@ -8526,9 +8468,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "xackCommand"
+      ],
+      "function": "xackCommand"
+    }
   },
   {
     "HSET": {
@@ -8590,9 +8532,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "hsetCommand"
+      ],
+      "function": "hsetCommand"
+    }
   },
   {
     "HGETALL": {
@@ -8642,9 +8584,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "hgetallCommand"
+      ],
+      "function": "hgetallCommand"
+    }
   },
   {
     "FAILOVER": {
@@ -8703,9 +8645,9 @@
         "admin",
         "slow",
         "dangerous"
-      ]
-    },
-    "function": "failoverCommand"
+      ],
+      "function": "failoverCommand"
+    }
   },
   {
     "SMISMEMBER": {
@@ -8760,9 +8702,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "smismemberCommand"
+      ],
+      "function": "smismemberCommand"
+    }
   },
   {
     "PING": {
@@ -8791,9 +8733,9 @@
       "acl_categories": [
         "fast",
         "connection"
-      ]
-    },
-    "function": "pingCommand"
+      ],
+      "function": "pingCommand"
+    }
   },
   {
     "ZMPOP": {
@@ -8825,9 +8767,10 @@
             }
           }
         }
-      ]
-    },
-    "function": "zmpopCommand"
+      ],
+      "function": "zmpopCommand",
+      "get_keys_function": "zmpopGetKeys"
+    }
   },
   {
     "RESTORE-ASKING": {
@@ -8862,8 +8805,7 @@
           }
         }
       ]
-    },
-    "function": "restore-askingCommand"
+    }
   },
   {
     "BLMPOP": {
@@ -8938,9 +8880,10 @@
             }
           }
         }
-      ]
-    },
-    "function": "blmpopCommand"
+      ],
+      "function": "blmpopCommand",
+      "get_keys_function": "blmpopGetKeys"
+    }
   },
   {
     "HMGET": {
@@ -8995,9 +8938,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "hmgetCommand"
+      ],
+      "function": "hmgetCommand"
+    }
   },
   {
     "SUBSCRIBE": {
@@ -9030,9 +8973,9 @@
       "acl_categories": [
         "pubsub",
         "slow"
-      ]
-    },
-    "function": "subscribeCommand"
+      ],
+      "function": "subscribeCommand"
+    }
   },
   {
     "LOLWUT": {
@@ -9058,9 +9001,9 @@
       "acl_categories": [
         "read",
         "fast"
-      ]
-    },
-    "function": "lolwutCommand"
+      ],
+      "function": "lolwutCommand"
+    }
   },
   {
     "PFDEBUG": {
@@ -9095,9 +9038,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "pfdebugCommand"
+      ],
+      "function": "pfdebugCommand"
+    }
   },
   {
     "SCARD": {
@@ -9147,9 +9090,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "scardCommand"
+      ],
+      "function": "scardCommand"
+    }
   },
   {
     "LINSERT": {
@@ -9215,9 +9158,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "linsertCommand"
+      ],
+      "function": "linsertCommand"
+    }
   },
   {
     "POST": {
@@ -9231,8 +9174,7 @@
         "read",
         "slow"
       ]
-    },
-    "function": "postCommand"
+    }
   },
   {
     "SCRIPT": {
@@ -9264,8 +9206,7 @@
               "scripting"
             ],
             "container": "SCRIPT"
-          },
-          "function": "scriptKillCommand"
+          }
         },
         {
           "EXISTS": {
@@ -9292,8 +9233,7 @@
               "scripting"
             ],
             "container": "SCRIPT"
-          },
-          "function": "scriptExistsCommand"
+          }
         },
         {
           "DEBUG": {
@@ -9329,8 +9269,7 @@
               "scripting"
             ],
             "container": "SCRIPT"
-          },
-          "function": "scriptDebugCommand"
+          }
         },
         {
           "FLUSH": {
@@ -9372,8 +9311,7 @@
               "scripting"
             ],
             "container": "SCRIPT"
-          },
-          "function": "scriptFlushCommand"
+          }
         },
         {
           "LOAD": {
@@ -9400,8 +9338,7 @@
               "scripting"
             ],
             "container": "SCRIPT"
-          },
-          "function": "scriptLoadCommand"
+          }
         },
         {
           "HELP": {
@@ -9415,12 +9352,11 @@
               "scripting"
             ],
             "container": "SCRIPT"
-          },
-          "function": "scriptHelpCommand"
+          }
         }
-      ]
-    },
-    "function": "scriptCommand"
+      ],
+      "function": "scriptCommand"
+    }
   },
   {
     "LREM": {
@@ -9477,9 +9413,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "lremCommand"
+      ],
+      "function": "lremCommand"
+    }
   },
   {
     "SUNION": {
@@ -9530,9 +9466,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "sunionCommand"
+      ],
+      "function": "sunionCommand"
+    }
   },
   {
     "EXPIRETIME": {
@@ -9583,9 +9519,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "expiretimeCommand"
+      ],
+      "function": "expiretimeCommand"
+    }
   },
   {
     "SINTERCARD": {
@@ -9636,9 +9572,10 @@
             }
           }
         }
-      ]
-    },
-    "function": "sintercardCommand"
+      ],
+      "function": "sinterCardCommand",
+      "get_keys_function": "sintercardGetKeys"
+    }
   },
   {
     "XSETID": {
@@ -9671,9 +9608,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "xsetidCommand"
+      ],
+      "function": "xsetidCommand"
+    }
   },
   {
     "HINCRBY": {
@@ -9732,9 +9669,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "hincrbyCommand"
+      ],
+      "function": "hincrbyCommand"
+    }
   },
   {
     "PFCOUNT": {
@@ -9780,9 +9717,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "pfcountCommand"
+      ],
+      "function": "pfcountCommand"
+    }
   },
   {
     "EXISTS": {
@@ -9828,9 +9765,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "existsCommand"
+      ],
+      "function": "existsCommand"
+    }
   },
   {
     "DEBUG": {
@@ -9845,9 +9782,9 @@
         "admin",
         "slow",
         "dangerous"
-      ]
-    },
-    "function": "debugCommand"
+      ],
+      "function": "debugCommand"
+    }
   },
   {
     "EVAL": {
@@ -9909,9 +9846,10 @@
             }
           }
         }
-      ]
-    },
-    "function": "evalCommand"
+      ],
+      "function": "evalCommand",
+      "get_keys_function": "evalGetKeys"
+    }
   },
   {
     "BITPOS": {
@@ -9979,9 +9917,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "bitposCommand"
+      ],
+      "function": "bitposCommand"
+    }
   },
   {
     "LTRIM": {
@@ -10037,9 +9975,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "ltrimCommand"
+      ],
+      "function": "ltrimCommand"
+    }
   },
   {
     "ZREM": {
@@ -10095,9 +10033,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "zremCommand"
+      ],
+      "function": "zremCommand"
+    }
   },
   {
     "SETNX": {
@@ -10147,9 +10085,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "setnxCommand"
+      ],
+      "function": "setnxCommand"
+    }
   },
   {
     "XADD": {
@@ -10258,9 +10196,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "xaddCommand"
+      ],
+      "function": "xaddCommand"
+    }
   },
   {
     "ZADD": {
@@ -10365,9 +10303,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "zaddCommand"
+      ],
+      "function": "zaddCommand"
+    }
   },
   {
     "INCR": {
@@ -10418,9 +10356,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "incrCommand"
+      ],
+      "function": "incrCommand"
+    }
   },
   {
     "BLMOVE": {
@@ -10510,9 +10448,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "blmoveCommand"
+      ],
+      "function": "blmoveCommand"
+    }
   },
   {
     "EVALSHA_RO": {
@@ -10571,8 +10509,7 @@
           }
         }
       ]
-    },
-    "function": "evalsha_roCommand"
+    }
   },
   {
     "PERSIST": {
@@ -10617,9 +10554,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "persistCommand"
+      ],
+      "function": "persistCommand"
+    }
   },
   {
     "SMOVE": {
@@ -10690,9 +10627,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "smoveCommand"
+      ],
+      "function": "smoveCommand"
+    }
   },
   {
     "ZSCORE": {
@@ -10746,9 +10683,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "zscoreCommand"
+      ],
+      "function": "zscoreCommand"
+    }
   },
   {
     "ZDIFF": {
@@ -10811,9 +10748,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "zdiffCommand"
+      ],
+      "function": "zdiffCommand"
+    }
   },
   {
     "HDEL": {
@@ -10868,9 +10805,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "hdelCommand"
+      ],
+      "function": "hdelCommand"
+    }
   },
   {
     "HMSET": {
@@ -10933,8 +10870,7 @@
           }
         }
       ]
-    },
-    "function": "hmsetCommand"
+    }
   },
   {
     "ZUNIONSTORE": {
@@ -11029,9 +10965,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "zunionstoreCommand"
+      ],
+      "function": "zunionstoreCommand"
+    }
   },
   {
     "ZREVRANGEBYSCORE": {
@@ -11109,9 +11045,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "zrevrangebyscoreCommand"
+      ],
+      "function": "zrevrangebyscoreCommand"
+    }
   },
   {
     "GETRANGE": {
@@ -11167,9 +11103,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "getrangeCommand"
+      ],
+      "function": "getrangeCommand"
+    }
   },
   {
     "ASKING": {
@@ -11193,9 +11129,9 @@
       "acl_categories": [
         "fast",
         "connection"
-      ]
-    },
-    "function": "askingCommand"
+      ],
+      "function": "askingCommand"
+    }
   },
   {
     "SINTERSTORE": {
@@ -11267,9 +11203,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "sinterstoreCommand"
+      ],
+      "function": "sinterstoreCommand"
+    }
   },
   {
     "MGET": {
@@ -11320,9 +11256,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "mgetCommand"
+      ],
+      "function": "mgetCommand"
+    }
   },
   {
     "TIME": {
@@ -11342,9 +11278,9 @@
       ],
       "acl_categories": [
         "fast"
-      ]
-    },
-    "function": "timeCommand"
+      ],
+      "function": "timeCommand"
+    }
   },
   {
     "XAUTOCLAIM": {
@@ -11419,9 +11355,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "xautoclaimCommand"
+      ],
+      "function": "xautoclaimCommand"
+    }
   },
   {
     "READWRITE": {
@@ -11443,9 +11379,9 @@
       "acl_categories": [
         "fast",
         "connection"
-      ]
-    },
-    "function": "readwriteCommand"
+      ],
+      "function": "readwriteCommand"
+    }
   },
   {
     "ZMSCORE": {
@@ -11500,9 +11436,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "zmscoreCommand"
+      ],
+      "function": "zmscoreCommand"
+    }
   },
   {
     "APPEND": {
@@ -11557,9 +11493,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "appendCommand"
+      ],
+      "function": "appendCommand"
+    }
   },
   {
     "LPUSHX": {
@@ -11621,9 +11557,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "lpushxCommand"
+      ],
+      "function": "lpushxCommand"
+    }
   },
   {
     "ZRANGEBYLEX": {
@@ -11693,9 +11629,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "zrangebylexCommand"
+      ],
+      "function": "zrangebylexCommand"
+    }
   },
   {
     "GEORADIUS_RO": {
@@ -11727,8 +11663,7 @@
           }
         }
       ]
-    },
-    "function": "georadius_roCommand"
+    }
   },
   {
     "MIGRATE": {
@@ -11872,9 +11807,10 @@
             }
           }
         }
-      ]
-    },
-    "function": "migrateCommand"
+      ],
+      "function": "migrateCommand",
+      "get_keys_function": "migrateGetKeys"
+    }
   },
   {
     "DECR": {
@@ -11925,9 +11861,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "decrCommand"
+      ],
+      "function": "decrCommand"
+    }
   },
   {
     "GET": {
@@ -11977,9 +11913,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "getCommand"
+      ],
+      "function": "getCommand"
+    }
   },
   {
     "ZLEXCOUNT": {
@@ -12037,9 +11973,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "zlexcountCommand"
+      ],
+      "function": "zlexcountCommand"
+    }
   },
   {
     "RPOPLPUSH": {
@@ -12112,9 +12048,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "rpoplpushCommand"
+      ],
+      "function": "rpoplpushCommand"
+    }
   },
   {
     "PFSELFTEST": {
@@ -12127,9 +12063,9 @@
         "admin",
         "slow",
         "dangerous"
-      ]
-    },
-    "function": "pfselftestCommand"
+      ],
+      "function": "pfselftestCommand"
+    }
   },
   {
     "RPUSH": {
@@ -12191,9 +12127,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "rpushCommand"
+      ],
+      "function": "rpushCommand"
+    }
   },
   {
     "BITFIELD_RO": {
@@ -12255,8 +12191,7 @@
           }
         }
       ]
-    },
-    "function": "bitfield_roCommand"
+    }
   },
   {
     "XTRIM": {
@@ -12345,9 +12280,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "xtrimCommand"
+      ],
+      "function": "xtrimCommand"
+    }
   },
   {
     "XREAD": {
@@ -12419,9 +12354,10 @@
             }
           }
         }
-      ]
-    },
-    "function": "xreadCommand"
+      ],
+      "function": "xreadCommand",
+      "get_keys_function": "xreadGetKeys"
+    }
   },
   {
     "INFO": {
@@ -12453,9 +12389,9 @@
       "acl_categories": [
         "slow",
         "dangerous"
-      ]
-    },
-    "function": "infoCommand"
+      ],
+      "function": "infoCommand"
+    }
   },
   {
     "HRANDFIELD": {
@@ -12519,9 +12455,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "hrandfieldCommand"
+      ],
+      "function": "hrandfieldCommand"
+    }
   },
   {
     "MEMORY": {
@@ -12549,8 +12485,7 @@
               "slow"
             ],
             "container": "MEMORY"
-          },
-          "function": "memoryPurgeCommand"
+          }
         },
         {
           "DOCTOR": {
@@ -12572,8 +12507,7 @@
               "slow"
             ],
             "container": "MEMORY"
-          },
-          "function": "memoryDoctorCommand"
+          }
         },
         {
           "MALLOC-STATS": {
@@ -12596,8 +12530,7 @@
               "slow"
             ],
             "container": "MEMORY"
-          },
-          "function": "memoryMalloc-statsCommand"
+          }
         },
         {
           "HELP": {
@@ -12621,8 +12554,7 @@
               "slow"
             ],
             "container": "MEMORY"
-          },
-          "function": "memoryHelpCommand"
+          }
         },
         {
           "STATS": {
@@ -12645,8 +12577,7 @@
               "slow"
             ],
             "container": "MEMORY"
-          },
-          "function": "memoryStatsCommand"
+          }
         },
         {
           "USAGE": {
@@ -12702,12 +12633,11 @@
               }
             ],
             "container": "MEMORY"
-          },
-          "function": "memoryUsageCommand"
+          }
         }
-      ]
-    },
-    "function": "memoryCommand"
+      ],
+      "function": "memoryCommand"
+    }
   },
   {
     "HKEYS": {
@@ -12757,9 +12687,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "hkeysCommand"
+      ],
+      "function": "hkeysCommand"
+    }
   },
   {
     "HSTRLEN": {
@@ -12813,9 +12743,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "hstrlenCommand"
+      ],
+      "function": "hstrlenCommand"
+    }
   },
   {
     "DBSIZE": {
@@ -12838,9 +12768,9 @@
         "keyspace",
         "read",
         "fast"
-      ]
-    },
-    "function": "dbsizeCommand"
+      ],
+      "function": "dbsizeCommand"
+    }
   },
   {
     "COMMAND": {
@@ -12898,8 +12828,7 @@
               "connection"
             ],
             "container": "COMMAND"
-          },
-          "function": "commandInfoCommand"
+          }
         },
         {
           "COUNT": {
@@ -12925,8 +12854,7 @@
               "connection"
             ],
             "container": "COMMAND"
-          },
-          "function": "commandCountCommand"
+          }
         },
         {
           "GETKEYS": {
@@ -12952,8 +12880,7 @@
               "connection"
             ],
             "container": "COMMAND"
-          },
-          "function": "commandGetkeysCommand"
+          }
         },
         {
           "LIST": {
@@ -12967,8 +12894,7 @@
               "connection"
             ],
             "container": "COMMAND"
-          },
-          "function": "commandListCommand"
+          }
         },
         {
           "HELP": {
@@ -12982,12 +12908,11 @@
               "connection"
             ],
             "container": "COMMAND"
-          },
-          "function": "commandHelpCommand"
+          }
         }
-      ]
-    },
-    "function": "commandCommand"
+      ],
+      "function": "commandCommand"
+    }
   },
   {
     "SUBSTR": {
@@ -13019,8 +12944,7 @@
           }
         }
       ]
-    },
-    "function": "substrCommand"
+    }
   },
   {
     "READONLY": {
@@ -13042,9 +12966,9 @@
       "acl_categories": [
         "fast",
         "connection"
-      ]
-    },
-    "function": "readonlyCommand"
+      ],
+      "function": "readonlyCommand"
+    }
   },
   {
     "SRANDMEMBER": {
@@ -13100,9 +13024,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "srandmemberCommand"
+      ],
+      "function": "srandmemberCommand"
+    }
   },
   {
     "ZRANK": {
@@ -13151,9 +13075,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "zrankCommand"
+      ],
+      "function": "zrankCommand"
+    }
   },
   {
     "BZMPOP": {
@@ -13186,9 +13110,10 @@
             }
           }
         }
-      ]
-    },
-    "function": "bzmpopCommand"
+      ],
+      "function": "bzmpopCommand",
+      "get_keys_function": "bzmpopGetKeys"
+    }
   },
   {
     "STRLEN": {
@@ -13238,9 +13163,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "strlenCommand"
+      ],
+      "function": "strlenCommand"
+    }
   },
   {
     "ZINCRBY": {
@@ -13299,9 +13224,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "zincrbyCommand"
+      ],
+      "function": "zincrbyCommand"
+    }
   },
   {
     "SET": {
@@ -13399,9 +13324,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "setCommand"
+      ],
+      "function": "setCommand"
+    }
   },
   {
     "UNLINK": {
@@ -13452,9 +13377,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "unlinkCommand"
+      ],
+      "function": "unlinkCommand"
+    }
   },
   {
     "HLEN": {
@@ -13504,9 +13429,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "hlenCommand"
+      ],
+      "function": "hlenCommand"
+    }
   },
   {
     "WAIT": {
@@ -13539,9 +13464,9 @@
       "acl_categories": [
         "slow",
         "connection"
-      ]
-    },
-    "function": "waitCommand"
+      ],
+      "function": "waitCommand"
+    }
   },
   {
     "RENAMENX": {
@@ -13590,9 +13515,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "renamenxCommand"
+      ],
+      "function": "renamenxCommand"
+    }
   },
   {
     "KEYS": {
@@ -13624,9 +13549,9 @@
         "read",
         "slow",
         "dangerous"
-      ]
-    },
-    "function": "keysCommand"
+      ],
+      "function": "keysCommand"
+    }
   },
   {
     "BRPOPLPUSH": {
@@ -13706,9 +13631,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "brpoplpushCommand"
+      ],
+      "function": "brpoplpushCommand"
+    }
   },
   {
     "ZRANGE": {
@@ -13808,9 +13733,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "zrangeCommand"
+      ],
+      "function": "zrangeCommand"
+    }
   },
   {
     "UNWATCH": {
@@ -13836,9 +13761,9 @@
       "acl_categories": [
         "fast",
         "transaction"
-      ]
-    },
-    "function": "unwatchCommand"
+      ],
+      "function": "unwatchCommand"
+    }
   },
   {
     "LATENCY": {
@@ -13874,8 +13799,7 @@
               "dangerous"
             ],
             "container": "LATENCY"
-          },
-          "function": "latencyLatestCommand"
+          }
         },
         {
           "GRAPH": {
@@ -13908,8 +13832,7 @@
               "dangerous"
             ],
             "container": "LATENCY"
-          },
-          "function": "latencyGraphCommand"
+          }
         },
         {
           "HISTORY": {
@@ -13943,8 +13866,7 @@
               "dangerous"
             ],
             "container": "LATENCY"
-          },
-          "function": "latencyHistoryCommand"
+          }
         },
         {
           "HELP": {
@@ -13968,8 +13890,7 @@
               "slow"
             ],
             "container": "LATENCY"
-          },
-          "function": "latencyHelpCommand"
+          }
         },
         {
           "DOCTOR": {
@@ -13996,8 +13917,7 @@
               "dangerous"
             ],
             "container": "LATENCY"
-          },
-          "function": "latencyDoctorCommand"
+          }
         },
         {
           "RESET": {
@@ -14033,12 +13953,11 @@
               "dangerous"
             ],
             "container": "LATENCY"
-          },
-          "function": "latencyResetCommand"
+          }
         }
-      ]
-    },
-    "function": "latencyCommand"
+      ],
+      "function": "latencyCommand"
+    }
   },
   {
     "CLUSTER": {
@@ -14085,8 +14004,7 @@
               "dangerous"
             ],
             "container": "CLUSTER"
-          },
-          "function": "clusterFailoverCommand"
+          }
         },
         {
           "BUMPEPOCH": {
@@ -14114,8 +14032,7 @@
               "dangerous"
             ],
             "container": "CLUSTER"
-          },
-          "function": "clusterBumpepochCommand"
+          }
         },
         {
           "FORGET": {
@@ -14149,8 +14066,7 @@
               "dangerous"
             ],
             "container": "CLUSTER"
-          },
-          "function": "clusterForgetCommand"
+          }
         },
         {
           "MYID": {
@@ -14175,8 +14091,7 @@
               "slow"
             ],
             "container": "CLUSTER"
-          },
-          "function": "clusterMyidCommand"
+          }
         },
         {
           "ADDSLOTSRANGE": {
@@ -14192,8 +14107,7 @@
               "dangerous"
             ],
             "container": "CLUSTER"
-          },
-          "function": "clusterAddslotsrangeCommand"
+          }
         },
         {
           "ADDSLOTS": {
@@ -14228,8 +14142,7 @@
               "dangerous"
             ],
             "container": "CLUSTER"
-          },
-          "function": "clusterAddslotsCommand"
+          }
         },
         {
           "NODES": {
@@ -14254,8 +14167,7 @@
               "slow"
             ],
             "container": "CLUSTER"
-          },
-          "function": "clusterNodesCommand"
+          }
         },
         {
           "SLOTS": {
@@ -14286,8 +14198,7 @@
               "slow"
             ],
             "container": "CLUSTER"
-          },
-          "function": "clusterSlotsCommand"
+          }
         },
         {
           "COUNTKEYSINSLOT": {
@@ -14318,8 +14229,7 @@
               "slow"
             ],
             "container": "CLUSTER"
-          },
-          "function": "clusterCountkeysinslotCommand"
+          }
         },
         {
           "HELP": {
@@ -14332,8 +14242,7 @@
               "slow"
             ],
             "container": "CLUSTER"
-          },
-          "function": "clusterHelpCommand"
+          }
         },
         {
           "KEYSLOT": {
@@ -14364,8 +14273,7 @@
               "slow"
             ],
             "container": "CLUSTER"
-          },
-          "function": "clusterKeyslotCommand"
+          }
         },
         {
           "SAVECONFIG": {
@@ -14393,8 +14301,7 @@
               "dangerous"
             ],
             "container": "CLUSTER"
-          },
-          "function": "clusterSaveconfigCommand"
+          }
         },
         {
           "COUNT-FAILURE-REPORTS": {
@@ -14428,8 +14335,7 @@
               "dangerous"
             ],
             "container": "CLUSTER"
-          },
-          "function": "clusterCount-failure-reportsCommand"
+          }
         },
         {
           "FLUSHSLOTS": {
@@ -14457,8 +14363,7 @@
               "dangerous"
             ],
             "container": "CLUSTER"
-          },
-          "function": "clusterFlushslotsCommand"
+          }
         },
         {
           "MEET": {
@@ -14496,8 +14401,7 @@
               "dangerous"
             ],
             "container": "CLUSTER"
-          },
-          "function": "clusterMeetCommand"
+          }
         },
         {
           "DELSLOTSRANGE": {
@@ -14513,8 +14417,7 @@
               "dangerous"
             ],
             "container": "CLUSTER"
-          },
-          "function": "clusterDelslotsrangeCommand"
+          }
         },
         {
           "REPLICAS": {
@@ -14543,8 +14446,7 @@
               "dangerous"
             ],
             "container": "CLUSTER"
-          },
-          "function": "clusterReplicasCommand"
+          }
         },
         {
           "INFO": {
@@ -14569,8 +14471,7 @@
               "slow"
             ],
             "container": "CLUSTER"
-          },
-          "function": "clusterInfoCommand"
+          }
         },
         {
           "SET-CONFIG-EPOCH": {
@@ -14604,8 +14505,7 @@
               "dangerous"
             ],
             "container": "CLUSTER"
-          },
-          "function": "clusterSet-config-epochCommand"
+          }
         },
         {
           "SETSLOT": {
@@ -14654,8 +14554,7 @@
               "dangerous"
             ],
             "container": "CLUSTER"
-          },
-          "function": "clusterSetslotCommand"
+          }
         },
         {
           "RESET": {
@@ -14694,8 +14593,7 @@
               "dangerous"
             ],
             "container": "CLUSTER"
-          },
-          "function": "clusterResetCommand"
+          }
         },
         {
           "GETKEYSINSLOT": {
@@ -14730,8 +14628,7 @@
               "slow"
             ],
             "container": "CLUSTER"
-          },
-          "function": "clusterGetkeysinslotCommand"
+          }
         },
         {
           "DELSLOTS": {
@@ -14766,8 +14663,7 @@
               "dangerous"
             ],
             "container": "CLUSTER"
-          },
-          "function": "clusterDelslotsCommand"
+          }
         },
         {
           "REPLICATE": {
@@ -14801,12 +14697,11 @@
               "dangerous"
             ],
             "container": "CLUSTER"
-          },
-          "function": "clusterReplicateCommand"
+          }
         }
-      ]
-    },
-    "function": "clusterCommand"
+      ],
+      "function": "clusterCommand"
+    }
   },
   {
     "BZPOPMIN": {
@@ -14869,9 +14764,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "bzpopminCommand"
+      ],
+      "function": "bzpopminCommand"
+    }
   },
   {
     "LPOS": {
@@ -14937,9 +14832,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "lposCommand"
+      ],
+      "function": "lposCommand"
+    }
   },
   {
     "SETBIT": {
@@ -14997,9 +14892,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "setbitCommand"
+      ],
+      "function": "setbitCommand"
+    }
   },
   {
     "SELECT": {
@@ -15028,9 +14923,9 @@
       "acl_categories": [
         "fast",
         "connection"
-      ]
-    },
-    "function": "selectCommand"
+      ],
+      "function": "selectCommand"
+    }
   },
   {
     "XRANGE": {
@@ -15088,9 +14983,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "xrangeCommand"
+      ],
+      "function": "xrangeCommand"
+    }
   },
   {
     "RESET": {
@@ -15115,9 +15010,9 @@
       "acl_categories": [
         "fast",
         "connection"
-      ]
-    },
-    "function": "resetCommand"
+      ],
+      "function": "resetCommand"
+    }
   },
   {
     "GEORADIUSBYMEMBER_RO": {
@@ -15149,8 +15044,7 @@
           }
         }
       ]
-    },
-    "function": "georadiusbymember_roCommand"
+    }
   },
   {
     "WATCH": {
@@ -15200,9 +15094,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "watchCommand"
+      ],
+      "function": "watchCommand"
+    }
   },
   {
     "GEOSEARCHSTORE": {
@@ -15377,9 +15271,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "geosearchstoreCommand"
+      ],
+      "function": "geosearchstoreCommand"
+    }
   },
   {
     "HVALS": {
@@ -15429,9 +15323,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "hvalsCommand"
+      ],
+      "function": "hvalsCommand"
+    }
   },
   {
     "OBJECT": {
@@ -15491,8 +15385,7 @@
               }
             ],
             "container": "OBJECT"
-          },
-          "function": "objectRefcountCommand"
+          }
         },
         {
           "FREQ": {
@@ -15526,8 +15419,7 @@
               }
             ],
             "container": "OBJECT"
-          },
-          "function": "objectFreqCommand"
+          }
         },
         {
           "IDLETIME": {
@@ -15561,8 +15453,7 @@
               }
             ],
             "container": "OBJECT"
-          },
-          "function": "objectIdletimeCommand"
+          }
         },
         {
           "ENCODING": {
@@ -15595,8 +15486,7 @@
               }
             ],
             "container": "OBJECT"
-          },
-          "function": "objectEncodingCommand"
+          }
         },
         {
           "HELP": {
@@ -15610,12 +15500,11 @@
               "slow"
             ],
             "container": "OBJECT"
-          },
-          "function": "objectHelpCommand"
+          }
         }
-      ]
-    },
-    "function": "objectCommand"
+      ],
+      "function": "objectCommand"
+    }
   },
   {
     "LASTSAVE": {
@@ -15641,9 +15530,9 @@
         "admin",
         "fast",
         "dangerous"
-      ]
-    },
-    "function": "lastsaveCommand"
+      ],
+      "function": "lastsaveCommand"
+    }
   },
   {
     "INCRBY": {
@@ -15698,9 +15587,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "incrbyCommand"
+      ],
+      "function": "incrbyCommand"
+    }
   },
   {
     "ZINTERCARD": {
@@ -15755,9 +15644,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "zintercardCommand"
+      ],
+      "function": "zinterCardCommand"
+    }
   },
   {
     "DECRBY": {
@@ -15812,9 +15701,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "decrbyCommand"
+      ],
+      "function": "decrbyCommand"
+    }
   },
   {
     "ZREVRANGEBYLEX": {
@@ -15884,9 +15773,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "zrevrangebylexCommand"
+      ],
+      "function": "zrevrangebylexCommand"
+    }
   },
   {
     "HSETNX": {
@@ -15940,9 +15829,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "hsetnxCommand"
+      ],
+      "function": "hsetnxCommand"
+    }
   },
   {
     "ZUNION": {
@@ -16023,9 +15912,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "zunionCommand"
+      ],
+      "function": "zunionCommand"
+    }
   },
   {
     "SETRANGE": {
@@ -16083,9 +15972,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "setrangeCommand"
+      ],
+      "function": "setrangeCommand"
+    }
   },
   {
     "BRPOP": {
@@ -16147,9 +16036,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "brpopCommand"
+      ],
+      "function": "brpopCommand"
+    }
   },
   {
     "SLOWLOG": {
@@ -16186,8 +16075,7 @@
               "slow"
             ],
             "container": "SLOWLOG"
-          },
-          "function": "slowlogHelpCommand"
+          }
         },
         {
           "GET": {
@@ -16204,8 +16092,7 @@
               "dangerous"
             ],
             "container": "SLOWLOG"
-          },
-          "function": "slowlogGetCommand"
+          }
         },
         {
           "RESET": {
@@ -16221,8 +16108,7 @@
               "dangerous"
             ],
             "container": "SLOWLOG"
-          },
-          "function": "slowlogResetCommand"
+          }
         },
         {
           "LEN": {
@@ -16239,12 +16125,10 @@
               "dangerous"
             ],
             "container": "SLOWLOG"
-          },
-          "function": "slowlogLenCommand"
+          }
         }
       ]
-    },
-    "function": "slowlogCommand"
+    }
   },
   {
     "MONITOR": {
@@ -16279,9 +16163,9 @@
         "admin",
         "slow",
         "dangerous"
-      ]
-    },
-    "function": "monitorCommand"
+      ],
+      "function": "monitorCommand"
+    }
   },
   {
     "ZINTER": {
@@ -16362,9 +16246,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "zinterCommand"
+      ],
+      "function": "zinterCommand"
+    }
   },
   {
     "SHUTDOWN": {
@@ -16396,9 +16280,9 @@
         "admin",
         "slow",
         "dangerous"
-      ]
-    },
-    "function": "shutdownCommand"
+      ],
+      "function": "shutdownCommand"
+    }
   },
   {
     "LMOVE": {
@@ -16487,9 +16371,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "lmoveCommand"
+      ],
+      "function": "lmoveCommand"
+    }
   },
   {
     "ZSCAN": {
@@ -16549,9 +16433,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "zscanCommand"
+      ],
+      "function": "zscanCommand"
+    }
   },
   {
     "EXEC": {
@@ -16571,9 +16455,9 @@
       "acl_categories": [
         "slow",
         "transaction"
-      ]
-    },
-    "function": "execCommand"
+      ],
+      "function": "execCommand"
+    }
   },
   {
     "GEOADD": {
@@ -16654,9 +16538,9 @@
             }
           }
         }
-      ]
-    },
-    "function": "geoaddCommand"
+      ],
+      "function": "geoaddCommand"
+    }
   },
   {
     "DUMP": {
@@ -16706,8 +16590,8 @@
             }
           }
         }
-      ]
-    },
-    "function": "dumpCommand"
+      ],
+      "function": "dumpCommand"
+    }
   }
 ]

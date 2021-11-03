@@ -5,6 +5,8 @@
     "group": "generic",
     "since": "1.0.0",
     "arity": -2,
+    "function": "sortCommand",
+    "get_keys_function": "sortGetKeys",
     "command_flags": [
       "write",
       "denyoom",

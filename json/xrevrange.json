@@ -5,6 +5,7 @@
     "group": "stream",
     "since": "5.0.0",
     "arity": -4,
+    "function": "xrevrangeCommand",
     "command_flags": [
       "readonly"
     ],

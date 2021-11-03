@@ -5,6 +5,7 @@
     "group": "hyperloglog",
     "since": "2.8.9",
     "arity": -2,
+    "function": "pfaddCommand",
     "command_flags": [
       "write",
       "denyoom",
