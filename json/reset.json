@@ -4,7 +4,6 @@
     "group": "connection",
     "since": "6.2",
     "arity": 1,
-    "function": "resetCommand",
     "command_flags": [
       "noscript",
       "loading",

@@ -6,6 +6,7 @@
     "since": "2.0.0",
     "arity": -4,
     "depracated": true,
+    "function": "hmsetCommand",
     "command_flags": [
       "write",
       "denyoom",

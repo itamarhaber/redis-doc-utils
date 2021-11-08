@@ -1,7 +1,12 @@
 {
   "CREATECONSUMER": {
+    "summary": "Create a consumer in a consumer group.",
+    "complexity": "O(1)",
+    "group": "stream",
+    "since": "6.2.0",
     "arity": 5,
     "container": "XGROUP",
+    "function": "xgroupCommand",
     "command_flags": [
       "write",
       "denyoom"
@@ -28,6 +33,26 @@
             "limit": 0
           }
         }
+      }
+    ],
+    "return_types": [
+      {
+        "description": "the number of created consumers (0 or 1)",
+        "type": "integer"
+      }
+    ],
+    "arguments": [
+      {
+        "name": "key",
+        "type": "key"
+      },
+      {
+        "name": "groupname",
+        "type": "string"
+      },
+      {
+        "name": "consumername",
+        "type": "string"
       }
     ]
   }

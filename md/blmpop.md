@@ -7,18 +7,3 @@ A `timeout` of zero can be used to block indefinitely.
 
 See `LMPOP` for more information.
 
-@examples
-
-```cli
-DEL mylist mylist2
-LPUSH mylist "one" "two" "three" "four" "five"
-BLMPOP 1 1 mylist LEFT COUNT 2
-LRANGE mylist 0 -1
-LPUSH mylist2 "a" "b" "c" "d" "e"
-BLMPOP 1 2 mylist mylist2 LEFT COUNT 3
-LRANGE mylist 0 -1
-BLMPOP 1 2 mylist mylist2 RIGHT COUNT 10
-LRANGE mylist2 0 -1
-EXISTS mylist mylist2
-```
-

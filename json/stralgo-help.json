@@ -2,6 +2,7 @@
   "HELP": {
     "arity": 2,
     "container": "STRALGO",
+    "function": "stralgoCommand",
     "command_flags": [
       "loading",
       "stale"

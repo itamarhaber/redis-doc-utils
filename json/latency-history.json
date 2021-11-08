@@ -5,6 +5,7 @@
     "since": "2.8.13",
     "arity": 3,
     "container": "LATENCY",
+    "function": "latencyCommand",
     "command_flags": [
       "admin",
       "noscript",

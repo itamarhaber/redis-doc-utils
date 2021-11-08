@@ -6,7 +6,6 @@
     "since": "6.2",
     "arity": -8,
     "depracated": true,
-    "function": "geosearchstoreCommand",
     "command_flags": [
       "write",
       "denyoom"

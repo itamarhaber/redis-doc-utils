@@ -1,7 +1,5 @@
 {
   "XGROUP": {
-    "summary": "Create, destroy, and manage consumer groups.",
-    "complexity": "O(1) for all the subcommands, with the exception of the DESTROY subcommand which takes an additional O(M) time in order to delete the M entries inside the consumer group pending entries list (PEL).",
     "group": "stream",
     "since": "5.0.0",
     "arity": -2,
@@ -9,104 +7,6 @@
     "command_flags": [],
     "acl_categories": [
       "slow"
-    ],
-    "arguments": [
-      {
-        "name": "create",
-        "type": "block",
-        "block": [
-          {
-            "command": "CREATE",
-            "name": [
-              "key",
-              "groupname"
-            ],
-            "type": [
-              "key",
-              "string"
-            ]
-          },
-          {
-            "name": "id",
-            "type": "enum",
-            "enum": [
-              "ID",
-              "$"
-            ]
-          },
-          {
-            "command": "MKSTREAM",
-            "optional": true
-          }
-        ],
-        "optional": true
-      },
-      {
-        "name": "setid",
-        "type": "block",
-        "block": [
-          {
-            "command": "SETID",
-            "name": [
-              "key",
-              "groupname"
-            ],
-            "type": [
-              "key",
-              "string"
-            ]
-          },
-          {
-            "name": "id",
-            "type": "enum",
-            "enum": [
-              "ID",
-              "$"
-            ]
-          }
-        ],
-        "optional": true
-      },
-      {
-        "command": "DESTROY",
-        "name": [
-          "key",
-          "groupname"
-        ],
-        "type": [
-          "key",
-          "string"
-        ],
-        "optional": true
-      },
-      {
-        "command": "CREATECONSUMER",
-        "name": [
-          "key",
-          "groupname",
-          "consumername"
-        ],
-        "type": [
-          "key",
-          "string",
-          "string"
-        ],
-        "optional": true
-      },
-      {
-        "command": "DELCONSUMER",
-        "name": [
-          "key",
-          "groupname",
-          "consumername"
-        ],
-        "type": [
-          "key",
-          "string",
-          "string"
-        ],
-        "optional": true
-      }
     ]
   }
 }

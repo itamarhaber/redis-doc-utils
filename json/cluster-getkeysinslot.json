@@ -6,6 +6,7 @@
     "since": "3.0.0",
     "arity": 4,
     "container": "CLUSTER",
+    "function": "clusterCommand",
     "command_flags": [
       "random",
       "stale"

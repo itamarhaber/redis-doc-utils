@@ -1,7 +1,12 @@
 {
   "FREQ": {
+    "summary": "Get the logarithmic access frequency counter of a Redis object",
+    "complexity": "O(1)",
+    "group": "generic",
+    "since": "4.0.0",
     "arity": 3,
     "container": "OBJECT",
+    "function": "objectCommand",
     "command_flags": [
       "readonly",
       "random"
@@ -28,6 +33,17 @@
             "limit": 0
           }
         }
+      }
+    ],
+    "return_types": [
+      {
+        "type": "integer"
+      }
+    ],
+    "arguments": [
+      {
+        "name": "key",
+        "type": "key"
       }
     ]
   }

@@ -5,6 +5,7 @@
     "since": "2.0.0",
     "arity": 4,
     "container": "CONFIG",
+    "function": "configCommand",
     "command_flags": [
       "admin",
       "noscript",

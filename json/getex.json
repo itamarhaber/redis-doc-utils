@@ -5,7 +5,6 @@
     "group": "string",
     "since": "6.2.0",
     "arity": -2,
-    "function": "getexCommand",
     "command_flags": [
       "write",
       "fast"

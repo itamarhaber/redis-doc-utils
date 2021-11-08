@@ -1,7 +1,12 @@
 {
   "HELP": {
+    "summary": "Show helpful text about the different subcommands",
+    "complexity": "O(1)",
+    "group": "connection",
+    "since": "5.0.0",
     "arity": 2,
     "container": "CLIENT",
+    "function": "clientCommand",
     "command_flags": [
       "loading",
       "stale"
@@ -9,6 +14,12 @@
     "acl_categories": [
       "slow",
       "connection"
+    ],
+    "return_types": [
+      {
+        "description": "a list of subcommands and their descriptions",
+        "type": "array"
+      }
     ]
   }
 }

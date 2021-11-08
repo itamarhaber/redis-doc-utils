@@ -4,7 +4,6 @@
     "group": "server",
     "since": "6.2.0",
     "arity": -1,
-    "function": "failoverCommand",
     "command_flags": [
       "admin",
       "noscript",
@@ -28,7 +27,8 @@
         "optional": true,
         "block": [
           {
-            "command": "TO"
+            "command": "TO",
+            "type": "command"
           },
           {
             "name": "host",
@@ -40,12 +40,14 @@
           },
           {
             "command": "FORCE",
+            "type": "command",
             "optional": true
           }
         ]
       },
       {
         "command": "ABORT",
+        "type": "command",
         "optional": true
       },
       {

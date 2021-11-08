@@ -5,7 +5,6 @@
     "group": "sorted_set",
     "since": "6.2.0",
     "arity": -2,
-    "function": "zrandmemberCommand",
     "command_flags": [
       "readonly",
       "random"

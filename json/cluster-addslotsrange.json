@@ -2,6 +2,7 @@
   "ADDSLOTSRANGE": {
     "arity": -4,
     "container": "CLUSTER",
+    "function": "clusterCommand",
     "command_flags": [
       "admin",
       "random",

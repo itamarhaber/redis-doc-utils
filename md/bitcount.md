@@ -10,6 +10,11 @@ byte, -2 is the penultimate, and so forth.
 
 Non-existent keys are treated as empty strings, so the command will return zero.
 
+By default, the additional arguments _start_ and _end_ specify a byte index.
+We can use an additional argument `BIT` to specify a bit index.
+So 0 is the first bit, 1 is the second bit, and so forth.
+For negative values, -1 is the last bit, -2 is the penultimate, and so forth.
+
 @examples
 
 ```cli
@@ -17,6 +22,8 @@ SET mykey "foobar"
 BITCOUNT mykey
 BITCOUNT mykey 0 0
 BITCOUNT mykey 1 1
+BITCOUNT mykey 1 1 BYTE
+BITCOUNT mykey 5 30 BIT
 ```
 
 ## Pattern: real-time metrics using bitmaps

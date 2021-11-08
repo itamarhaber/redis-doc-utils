@@ -1,7 +1,12 @@
 {
   "CONSUMERS": {
+    "summary": "List the consumers in a consumer group",
+    "complexity": "O(1)",
+    "group": "stream",
+    "since": "5.0.0",
     "arity": 4,
     "container": "XINFO",
+    "function": "xinfoCommand",
     "command_flags": [
       "readonly",
       "random"
@@ -28,6 +33,16 @@
             "limit": 0
           }
         }
+      }
+    ],
+    "arguments": [
+      {
+        "name": "key",
+        "type": "key"
+      },
+      {
+        "name": "groupname",
+        "type": "string"
       }
     ]
   }

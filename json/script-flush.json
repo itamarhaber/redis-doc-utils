@@ -6,6 +6,7 @@
     "since": "2.6.0",
     "arity": -2,
     "container": "SCRIPT",
+    "function": "scriptCommand",
     "history": [
       [
         "6.2.0",

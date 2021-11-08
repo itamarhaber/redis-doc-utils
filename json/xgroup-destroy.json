@@ -1,7 +1,12 @@
 {
   "DESTROY": {
+    "summary": "Destroy a consumer group.",
+    "complexity": "O(N) where N is the number of entries in the group's pending entries list (PEL).",
+    "group": "stream",
+    "since": "5.0.0",
     "arity": 4,
     "container": "XGROUP",
+    "function": "xgroupCommand",
     "command_flags": [
       "write"
     ],
@@ -27,6 +32,22 @@
             "limit": 0
           }
         }
+      }
+    ],
+    "return_types": [
+      {
+        "description": "the number of destroyed consumer groups (0 or 1)",
+        "type": "integer"
+      }
+    ],
+    "arguments": [
+      {
+        "name": "key",
+        "type": "key"
+      },
+      {
+        "name": "groupname",
+        "type": "string"
       }
     ]
   }

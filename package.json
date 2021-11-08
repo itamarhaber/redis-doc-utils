@@ -5,8 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "convert-commands": "node convert-commands.js",
-    "command-output-to-json": "node command-output-to-json.js",
+    "command-output-to-json": "node command-output-to-json.js 2> error.log",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

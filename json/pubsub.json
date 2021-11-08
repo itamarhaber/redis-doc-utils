@@ -1,7 +1,5 @@
 {
   "PUBSUB": {
-    "summary": "Inspect the state of the Pub/Sub subsystem",
-    "complexity": "O(N) for the CHANNELS subcommand, where N is the number of active channels, and assuming constant time pattern matching (relatively short channels and patterns). O(N) for the NUMSUB subcommand, where N is the number of requested channels. O(1) for the NUMPAT subcommand.",
     "group": "pubsub",
     "since": "2.8.0",
     "arity": -2,
@@ -9,18 +7,6 @@
     "command_flags": [],
     "acl_categories": [
       "slow"
-    ],
-    "arguments": [
-      {
-        "name": "subcommand",
-        "type": "string"
-      },
-      {
-        "name": "argument",
-        "type": "string",
-        "optional": true,
-        "multiple": true
-      }
     ]
   }
 }

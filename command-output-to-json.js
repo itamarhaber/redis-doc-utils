@@ -6,7 +6,7 @@
 // * Command arguments need translation to new format
 // * Need to convert md `SET` to [`SET`](/commands/set) in MD
 // * Need to extract return types
-
+// * The QUIT command doesn't exist in the commands table
 import { createClient } from 'redis';
 import { promises as fs } from 'fs';
 
@@ -256,20 +256,39 @@ function getCommandNameFromObj(cmd) {
 function addFunctions(funcs, cmd) {
   const kname = getCommandName(cmd);
   const name = getCommandNameFromObj(cmd);
-  let fname = name.split(' ').join().toLowerCase() + 'command';
-  let found = funcs.funcs.filter(x => x.toLowerCase() == fname);
-  if (found.length != 0) {
-    cmd[kname]['function'] = found[0];
-  } else {
-    console.error(`-ERR can't find a function for ${name} in server.h`);
+
+  // Guess the function
+  if (cmd[kname]['function'] === undefined) {
+    let fname = name.split(' ').join().toLowerCase() + 'command';
+    let found = funcs.funcs.filter(x => x.toLowerCase() == fname);
+    if (found.length != 0) {
+      // Try to match the the entire subcommand
+      cmd[kname]['function'] = found[0];
+    } else {
+      if (cmd[kname].container !== undefined) {
+        fname = cmd[kname].container.toLowerCase() + 'command';
+        found = funcs.funcs.filter(x => x.toLowerCase() == fname);
+        if (found.length != 0) {
+          // Try to match its container
+          cmd[kname]['function'] = found[0];
+        } else {
+          console.error(`-ERR can't find a function for ${name} in server.h`);
+        }
+      }
+    }
   }
   
-  fname = name.split(' ').join().toLowerCase() + 'getkeys';
-  found = funcs.getters.filter(x => x.toLowerCase() == fname);
-  if (found.length != 0) {
-    cmd[kname]['get_keys_function'] = found[0];
-  } else {
-    console.error(`-ERR can't find a keys getter for ${name} in server.h`);
+  // Guess the getter
+  if (cmd[kname]['get_keys_function'] === undefined) {
+    if (cmd[kname]['key_specs'] !== undefined) {
+      let fname = name.split(' ').join().toLowerCase() + 'getkeys';
+      let found = funcs.getters.filter(x => x.toLowerCase() == fname);
+      if (found.length != 0) {
+        cmd[kname]['get_keys_function'] = found[0];
+      } else {
+        console.error(`-ERR can't find a keys getter for ${name} in server.h`);
+      }
+    }
   }
 
   if (cmd[kname].subcommands !== undefined) {
@@ -380,6 +399,27 @@ async function loadServerH() {
   };
 }
 
+function backpropIfContainer(cmd) {
+  const kname = getCommandName(cmd);
+  if (cmd[kname].subcommands !== undefined) {
+    const sname = getCommandName(cmd[kname].subcommands[0]);
+    if (cmd[kname].group === undefined) {
+      cmd[kname]['group'] = cmd[kname].subcommands[0][sname]['group'];
+    }
+    if (cmd[kname].since === undefined) {
+      cmd[kname]['since'] = cmd[kname].subcommands.map(x => {
+        const sname = getCommandName(x);
+        return x[sname]['since'];
+      }).sort()[0];
+    }
+  }
+  return cmd;
+}
+
+function manualPatch(cmds) {
+  return cmds;
+}
+
 async function main() {
   const client = createClient();
   client.on('error', (err) => console.error('-ERR Redis client error', err));
@@ -391,15 +431,23 @@ async function main() {
 
   console.log('Loading server.h');
   const functions = await loadServerH();
+  await fs.writeFile('functions.json',JSON.stringify(functions,null,2),'utf-8');
+  functions.funcs.push('slowlogCommand'); // Not in .h file
 
   console.log('Loading commands.json');
   const commandsJSON = await loadCommandsJSON();
+
+  console.log('Applying patches');
+  commands = manualPatch(commands);
 
   console.log('Adding functions');
   commands = commands.map(x => addFunctions(functions,x));
 
   console.log('Enrichening with JSONs');
   commands = commands.map(x => enrichWithJSON(commandsJSON, x))
+
+  console.log('Backpropagating container properties');
+  commands = commands.map(x => backpropIfContainer(x));
 
   console.log('Enrichening with MarkDown');
   commands = await Promise.all(commands.map(async (x) => enrichWithMD(x)));

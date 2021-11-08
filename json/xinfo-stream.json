@@ -1,7 +1,12 @@
 {
   "STREAM": {
+    "summary": "Get information about a stream",
+    "complexity": "O(1)",
+    "group": "stream",
+    "since": "5.0.0",
     "arity": -3,
     "container": "XINFO",
+    "function": "xinfoCommand",
     "command_flags": [
       "readonly"
     ],
@@ -27,6 +32,34 @@
             "limit": 0
           }
         }
+      }
+    ],
+    "return_types": [
+      {
+        "description": "a list of informational bits",
+        "type": "array"
+      }
+    ],
+    "arguments": [
+      {
+        "name": "key",
+        "type": "key"
+      },
+      {
+        "name": "full",
+        "type": "block",
+        "block": [
+          {
+            "command": "FULL"
+          },
+          {
+            "name": "count",
+            "command": "COUNT",
+            "type": "integer",
+            "optional": true
+          }
+        ],
+        "optional": true
       }
     ]
   }

@@ -1,7 +1,12 @@
 {
   "SETID": {
+    "summary": "Set a consumer group to an arbitrary last delivered ID value.",
+    "complexity": "O(1)",
+    "group": "stream",
+    "since": "5.0.0",
     "arity": 5,
     "container": "XGROUP",
+    "function": "xgroupCommand",
     "command_flags": [
       "write"
     ],
@@ -27,6 +32,30 @@
             "limit": 0
           }
         }
+      }
+    ],
+    "return_types": [
+      {
+        "description": "`OK` on success.",
+        "type": "simple-string"
+      }
+    ],
+    "arguments": [
+      {
+        "name": "key",
+        "type": "key"
+      },
+      {
+        "name": "groupname",
+        "type": "string"
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "enum": [
+          "id",
+          "$"
+        ]
       }
     ]
   }

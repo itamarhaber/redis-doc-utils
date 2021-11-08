@@ -1,7 +1,5 @@
 {
   "OBJECT": {
-    "summary": "Inspect the internals of Redis objects",
-    "complexity": "O(1) for all the currently implemented subcommands.",
     "group": "generic",
     "since": "2.2.3",
     "arity": -2,
@@ -9,18 +7,6 @@
     "command_flags": [],
     "acl_categories": [
       "slow"
-    ],
-    "arguments": [
-      {
-        "name": "subcommand",
-        "type": "string"
-      },
-      {
-        "name": "arguments",
-        "type": "string",
-        "optional": true,
-        "multiple": true
-      }
     ]
   }
 }

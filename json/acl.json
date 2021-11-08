@@ -1,5 +1,7 @@
 {
   "ACL": {
+    "group": "server",
+    "since": "6.0.0",
     "arity": -2,
     "function": "aclCommand",
     "command_flags": [],

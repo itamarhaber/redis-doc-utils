@@ -77,6 +77,7 @@
       },
       {
         "name": "force",
+        "type": "enum",
         "enum": [
           "FORCE"
         ],
@@ -84,6 +85,7 @@
       },
       {
         "name": "justid",
+        "type": "enum",
         "enum": [
           "JUSTID"
         ],

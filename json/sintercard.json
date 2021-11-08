@@ -5,8 +5,6 @@
     "group": "set",
     "since": "7.0.0",
     "arity": -3,
-    "function": "sinterCardCommand",
-    "get_keys_function": "sintercardGetKeys",
     "command_flags": [
       "readonly",
       "movablekeys"
@@ -43,9 +41,19 @@
     ],
     "arguments": [
       {
+        "name": "numkeys",
+        "type": "integer"
+      },
+      {
         "name": "key",
         "type": "key",
         "multiple": true
+      },
+      {
+        "command": "LIMIT",
+        "name": "limit",
+        "type": "integer",
+        "optional": true
       }
     ]
   }

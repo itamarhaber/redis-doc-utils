@@ -6,3 +6,13 @@ If a server is already a replica of some master, `REPLICAOF` hostname port will 
 
 The form `REPLICAOF` NO ONE will stop replication, turning the server into a MASTER, but will not discard the replication. So, if the old master stops working, it is possible to turn the replica into a master and set the application to use this new master in read/write. Later when the other Redis server is fixed, it can be reconfigured to work as a replica.
 
+@examples
+
+```
+> REPLICAOF NO ONE
+"OK"
+
+> REPLICAOF 127.0.0.1 6799
+"OK"
+```
+

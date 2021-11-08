@@ -1,7 +1,12 @@
 {
   "CHANNELS": {
+    "summary": "List active channels",
+    "complexity": "O(N) where N is the number of active channels, and assuming constant time pattern matching (relatively short channels and patterns)",
+    "group": "pubsub",
+    "since": "2.8.0",
     "arity": -2,
     "container": "PUBSUB",
+    "function": "pubsubCommand",
     "command_flags": [
       "pubsub",
       "loading",
@@ -10,6 +15,19 @@
     "acl_categories": [
       "pubsub",
       "slow"
+    ],
+    "return_types": [
+      {
+        "description": "a list of active channels, optionally matching the specified pattern.",
+        "type": "array"
+      }
+    ],
+    "arguments": [
+      {
+        "name": "pattern",
+        "type": "string",
+        "optional": true
+      }
     ]
   }
 }

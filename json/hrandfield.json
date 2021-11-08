@@ -5,7 +5,6 @@
     "group": "hash",
     "since": "6.2.0",
     "arity": -2,
-    "function": "hrandfieldCommand",
     "command_flags": [
       "readonly",
       "random"

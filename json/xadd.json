@@ -49,6 +49,7 @@
       },
       {
         "command": "NOMKSTREAM",
+        "type": "command",
         "optional": true
       },
       {

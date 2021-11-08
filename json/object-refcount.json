@@ -1,7 +1,12 @@
 {
   "REFCOUNT": {
+    "summary": "Get the number of references to the value of the key",
+    "complexity": "O(1)",
+    "group": "generic",
+    "since": "2.2.3",
     "arity": 3,
     "container": "OBJECT",
+    "function": "objectCommand",
     "command_flags": [
       "readonly"
     ],
@@ -27,6 +32,17 @@
             "limit": 0
           }
         }
+      }
+    ],
+    "return_types": [
+      {
+        "type": "integer"
+      }
+    ],
+    "arguments": [
+      {
+        "name": "key",
+        "type": "key"
       }
     ]
   }

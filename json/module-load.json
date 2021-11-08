@@ -6,6 +6,7 @@
     "since": "4.0.0",
     "arity": -3,
     "container": "MODULE",
+    "function": "moduleCommand",
     "command_flags": [
       "admin",
       "noscript"

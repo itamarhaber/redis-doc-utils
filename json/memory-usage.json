@@ -6,6 +6,7 @@
     "since": "4.0.0",
     "arity": -3,
     "container": "MEMORY",
+    "function": "memoryCommand",
     "command_flags": [
       "readonly"
     ],

@@ -5,7 +5,6 @@
     "group": "sorted_set",
     "since": "6.2.0",
     "arity": -5,
-    "function": "zrangestoreCommand",
     "command_flags": [
       "write",
       "denyoom"

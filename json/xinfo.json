@@ -1,54 +1,12 @@
 {
   "XINFO": {
-    "summary": "Get information on streams and consumer groups",
-    "complexity": "O(N) with N being the number of returned items for the subcommands CONSUMERS and GROUPS. The STREAM subcommand is O(log N) with N being the number of items in the stream.",
     "group": "stream",
     "since": "5.0.0",
     "arity": -2,
     "function": "xinfoCommand",
-    "history": [
-      [
-        "6.0.0",
-        "Added the `FULL` option to `XINFO STREAM`."
-      ]
-    ],
     "command_flags": [],
     "acl_categories": [
       "slow"
-    ],
-    "arguments": [
-      {
-        "command": "CONSUMERS",
-        "name": [
-          "key",
-          "groupname"
-        ],
-        "type": [
-          "key",
-          "string"
-        ],
-        "optional": true
-      },
-      {
-        "command": "GROUPS",
-        "name": "key",
-        "type": "key",
-        "optional": true
-      },
-      {
-        "command": "STREAM",
-        "name": "key",
-        "type": "key",
-        "optional": true
-      },
-      {
-        "name": "help",
-        "type": "enum",
-        "enum": [
-          "HELP"
-        ],
-        "optional": true
-      }
     ]
   }
 }

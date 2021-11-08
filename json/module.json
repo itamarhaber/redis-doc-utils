@@ -1,5 +1,7 @@
 {
   "MODULE": {
+    "group": "server",
+    "since": "4.0.0",
     "arity": -2,
     "function": "moduleCommand",
     "command_flags": [],

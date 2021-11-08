@@ -5,7 +5,6 @@
     "group": "stream",
     "since": "6.2.0",
     "arity": -6,
-    "function": "xautoclaimCommand",
     "command_flags": [
       "write",
       "random",
@@ -64,6 +63,7 @@
       },
       {
         "name": "justid",
+        "type": "enum",
         "enum": [
           "JUSTID"
         ],

@@ -1,5 +1,7 @@
 {
   "CLUSTER": {
+    "group": "cluster",
+    "since": "3.0.0",
     "arity": -2,
     "function": "clusterCommand",
     "command_flags": [],

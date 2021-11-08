@@ -2,6 +2,7 @@
   "LCS": {
     "arity": -5,
     "container": "STRALGO",
+    "function": "stralgoCommand",
     "command_flags": [
       "readonly",
       "movablekeys"

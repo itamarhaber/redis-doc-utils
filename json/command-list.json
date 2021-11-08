@@ -2,6 +2,7 @@
   "LIST": {
     "arity": -2,
     "container": "COMMAND",
+    "function": "commandCommand",
     "command_flags": [
       "loading",
       "stale"

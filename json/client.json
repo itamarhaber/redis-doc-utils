@@ -1,5 +1,7 @@
 {
   "CLIENT": {
+    "group": "connection",
+    "since": "2.4.0",
     "arity": -2,
     "function": "clientCommand",
     "command_flags": [],

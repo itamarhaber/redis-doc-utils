@@ -6,6 +6,12 @@
     "since": "2.8.7",
     "arity": -3,
     "function": "bitposCommand",
+    "history": [
+      [
+        "7.0",
+        "Added the `BYTE|BIT` option."
+      ]
+    ],
     "command_flags": [
       "readonly"
     ],
@@ -57,9 +63,24 @@
             "type": "integer"
           },
           {
-            "name": "end",
-            "type": "integer",
-            "optional": true
+            "name": "end_index",
+            "type": "block",
+            "optional": true,
+            "block": [
+              {
+                "name": "end",
+                "type": "integer"
+              },
+              {
+                "name": "index_unit",
+                "type": "enum",
+                "enum": [
+                  "BYTE",
+                  "BIT"
+                ],
+                "optional": true
+              }
+            ]
           }
         ]
       }

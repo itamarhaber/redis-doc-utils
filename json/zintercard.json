@@ -5,7 +5,6 @@
     "group": "sorted_set",
     "since": "7.0.0",
     "arity": -3,
-    "function": "zinterCardCommand",
     "command_flags": [
       "readonly",
       "movablekeys"
@@ -49,6 +48,12 @@
         "name": "key",
         "type": "key",
         "multiple": true
+      },
+      {
+        "command": "LIMIT",
+        "name": "limit",
+        "type": "integer",
+        "optional": true
       }
     ]
   }

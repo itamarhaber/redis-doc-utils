@@ -1,7 +1,12 @@
 {
   "CREATE": {
+    "summary": "Create a consumer group.",
+    "complexity": "O(1)",
+    "group": "stream",
+    "since": "5.0.0",
     "arity": -5,
     "container": "XGROUP",
+    "function": "xgroupCommand",
     "command_flags": [
       "write",
       "denyoom"
@@ -28,6 +33,34 @@
             "limit": 0
           }
         }
+      }
+    ],
+    "return_types": [
+      {
+        "description": "`OK` on success.",
+        "type": "simple-string"
+      }
+    ],
+    "arguments": [
+      {
+        "name": "key",
+        "type": "key"
+      },
+      {
+        "name": "groupname",
+        "type": "string"
+      },
+      {
+        "name": "id",
+        "type": "enum",
+        "enum": [
+          "id",
+          "$"
+        ]
+      },
+      {
+        "command": "MKSTREAM",
+        "optional": true
       }
     ]
   }

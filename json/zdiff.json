@@ -5,7 +5,6 @@
     "group": "sorted_set",
     "since": "6.2.0",
     "arity": -3,
-    "function": "zdiffCommand",
     "command_flags": [
       "readonly",
       "movablekeys"

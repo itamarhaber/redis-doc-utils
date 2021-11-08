@@ -6,6 +6,7 @@
     "since": "2.6.0",
     "arity": 2,
     "container": "SCRIPT",
+    "function": "scriptCommand",
     "command_flags": [
       "noscript"
     ],
