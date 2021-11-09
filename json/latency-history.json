@@ -16,18 +16,6 @@
       "admin",
       "slow",
       "dangerous"
-    ],
-    "return_types": [
-      {
-        "description": "specifically:",
-        "type": "array"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "event",
-        "type": "string"
-      }
     ]
   }
 }

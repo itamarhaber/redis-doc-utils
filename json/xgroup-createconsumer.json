@@ -34,26 +34,6 @@
           }
         }
       }
-    ],
-    "return_types": [
-      {
-        "description": "the number of created consumers (0 or 1)",
-        "type": "integer"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      },
-      {
-        "name": "groupname",
-        "type": "string"
-      },
-      {
-        "name": "consumername",
-        "type": "string"
-      }
     ]
   }
 }

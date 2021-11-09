@@ -32,25 +32,6 @@
           }
         }
       }
-    ],
-    "return_types": [
-      {
-        "type": "bulk-string"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      },
-      {
-        "name": "start",
-        "type": "integer"
-      },
-      {
-        "name": "end",
-        "type": "integer"
-      }
     ]
   }
 }

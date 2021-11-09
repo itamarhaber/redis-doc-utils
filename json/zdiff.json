@@ -5,6 +5,7 @@
     "group": "sorted_set",
     "since": "6.2.0",
     "arity": -3,
+    "function": "zdiffCommand",
     "command_flags": [
       "readonly",
       "movablekeys"
@@ -31,31 +32,6 @@
             "step": 1
           }
         }
-      }
-    ],
-    "return_types": [
-      {
-        "description": "the result of the difference (optionally with their scores, in case",
-        "type": "array"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "numkeys",
-        "type": "integer"
-      },
-      {
-        "name": "key",
-        "type": "key",
-        "multiple": true
-      },
-      {
-        "name": "withscores",
-        "type": "enum",
-        "enum": [
-          "WITHSCORES"
-        ],
-        "optional": true
       }
     ]
   }

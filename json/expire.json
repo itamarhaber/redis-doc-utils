@@ -39,27 +39,6 @@
           }
         }
       }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      },
-      {
-        "name": "seconds",
-        "type": "integer"
-      },
-      {
-        "name": "condition",
-        "type": "enum",
-        "enum": [
-          "NX",
-          "XX",
-          "GT",
-          "LT"
-        ],
-        "optional": true
-      }
     ]
   }
 }

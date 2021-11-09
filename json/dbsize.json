@@ -13,11 +13,6 @@
       "keyspace",
       "read",
       "fast"
-    ],
-    "return_types": [
-      {
-        "type": "integer"
-      }
     ]
   }
 }

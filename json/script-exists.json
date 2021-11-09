@@ -13,13 +13,6 @@
     "acl_categories": [
       "slow",
       "scripting"
-    ],
-    "arguments": [
-      {
-        "name": "sha1",
-        "type": "string",
-        "multiple": true
-      }
     ]
   }
 }

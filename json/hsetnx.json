@@ -34,20 +34,6 @@
           }
         }
       }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      },
-      {
-        "name": "field",
-        "type": "string"
-      },
-      {
-        "name": "value",
-        "type": "string"
-      }
     ]
   }
 }

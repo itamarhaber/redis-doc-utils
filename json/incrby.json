@@ -34,22 +34,6 @@
           }
         }
       }
-    ],
-    "return_types": [
-      {
-        "description": "the value of `key` after the increment",
-        "type": "integer"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      },
-      {
-        "name": "increment",
-        "type": "integer"
-      }
     ]
   }
 }

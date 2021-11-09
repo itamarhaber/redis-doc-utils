@@ -33,18 +33,6 @@
           }
         }
       }
-    ],
-    "return_types": [
-      {
-        "description": "the number of entries of the stream at `key`.",
-        "type": "integer"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      }
     ]
   }
 }

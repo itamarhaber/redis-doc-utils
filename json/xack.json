@@ -34,21 +34,6 @@
           }
         }
       }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      },
-      {
-        "name": "group",
-        "type": "string"
-      },
-      {
-        "name": "ID",
-        "type": "string",
-        "multiple": true
-      }
     ]
   }
 }

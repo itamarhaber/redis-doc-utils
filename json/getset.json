@@ -36,22 +36,6 @@
           }
         }
       }
-    ],
-    "return_types": [
-      {
-        "description": "the old value stored at `key`, or `nil` when `key` did not exist.",
-        "type": "bulk-string"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      },
-      {
-        "name": "value",
-        "type": "string"
-      }
     ]
   }
 }

@@ -40,23 +40,6 @@
           }
         }
       }
-    ],
-    "return_types": [
-      {
-        "description": "the number of elements that were added to the set, not including",
-        "type": "integer"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      },
-      {
-        "name": "member",
-        "type": "string",
-        "multiple": true
-      }
     ]
   }
 }

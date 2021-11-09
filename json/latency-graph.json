@@ -16,17 +16,6 @@
       "admin",
       "slow",
       "dangerous"
-    ],
-    "return_types": [
-      {
-        "type": "bulk-string"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "event",
-        "type": "string"
-      }
     ]
   }
 }

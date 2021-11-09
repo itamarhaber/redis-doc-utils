@@ -15,24 +15,6 @@
       "admin",
       "slow",
       "dangerous"
-    ],
-    "return_types": [
-      {
-        "description": "`OK` if module was loaded.",
-        "type": "simple-string"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "path",
-        "type": "string"
-      },
-      {
-        "name": "arg",
-        "type": "string",
-        "variadic": true,
-        "optional": true
-      }
     ]
   }
 }

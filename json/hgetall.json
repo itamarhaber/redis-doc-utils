@@ -33,18 +33,6 @@
           }
         }
       }
-    ],
-    "return_types": [
-      {
-        "description": "list of fields and their values stored in the hash, or an",
-        "type": "array"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      }
     ]
   }
 }

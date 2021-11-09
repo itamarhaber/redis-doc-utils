@@ -50,60 +50,6 @@
           "unknown": null
         }
       }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      },
-      {
-        "command": "BY",
-        "name": "pattern",
-        "type": "pattern",
-        "optional": true
-      },
-      {
-        "command": "LIMIT",
-        "name": [
-          "offset",
-          "count"
-        ],
-        "type": [
-          "integer",
-          "integer"
-        ],
-        "optional": true
-      },
-      {
-        "command": "GET",
-        "name": "pattern",
-        "type": "string",
-        "optional": true,
-        "multiple": true
-      },
-      {
-        "name": "order",
-        "type": "enum",
-        "enum": [
-          "ASC",
-          "DESC"
-        ],
-        "optional": true
-      },
-      {
-        "name": "sorting",
-        "type": "enum",
-        "enum": [
-          "ALPHA"
-        ],
-        "optional": true
-      },
-      {
-        "command": "STORE",
-        "name": "destination",
-        "type": "key",
-        "optional": true
-      }
     ]
   }
 }

@@ -6,6 +6,7 @@
     "since": "6.2.0",
     "arity": 6,
     "depracated": true,
+    "function": "blmoveCommand",
     "command_flags": [
       "write",
       "denyoom",
@@ -52,36 +53,6 @@
             "limit": 0
           }
         }
-      }
-    ],
-    "arguments": [
-      {
-        "name": "source",
-        "type": "key"
-      },
-      {
-        "name": "destination",
-        "type": "key"
-      },
-      {
-        "name": "wherefrom",
-        "type": "enum",
-        "enum": [
-          "LEFT",
-          "RIGHT"
-        ]
-      },
-      {
-        "name": "whereto",
-        "type": "enum",
-        "enum": [
-          "LEFT",
-          "RIGHT"
-        ]
-      },
-      {
-        "name": "timeout",
-        "type": "double"
       }
     ]
   }

@@ -11,11 +11,6 @@
     ],
     "acl_categories": [
       "slow"
-    ],
-    "return_types": [
-      {
-        "type": "bulk-string"
-      }
     ]
   }
 }

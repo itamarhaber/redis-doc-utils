@@ -5,6 +5,7 @@
     "group": "generic",
     "since": "7.0.0",
     "arity": 2,
+    "function": "expiretimeCommand",
     "command_flags": [
       "readonly",
       "random",
@@ -32,18 +33,6 @@
             "limit": 0
           }
         }
-      }
-    ],
-    "return_types": [
-      {
-        "description": "Expiration Unix timestamp in seconds, or a negative value in order to signal an error (see the description below).",
-        "type": "integer"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
       }
     ]
   }

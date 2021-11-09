@@ -5,7 +5,6 @@
     "since": "2.0.0",
     "arity": 4,
     "container": "CONFIG",
-    "function": "configCommand",
     "command_flags": [
       "admin",
       "noscript",
@@ -15,22 +14,6 @@
       "admin",
       "slow",
       "dangerous"
-    ],
-    "return_types": [
-      {
-        "description": "`OK` when the configuration was set properly.",
-        "type": "simple-string"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "parameter",
-        "type": "string"
-      },
-      {
-        "name": "value",
-        "type": "string"
-      }
     ]
   }
 }

@@ -34,63 +34,6 @@
           }
         }
       }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      },
-      {
-        "name": "group",
-        "type": "string"
-      },
-      {
-        "name": "consumer",
-        "type": "string"
-      },
-      {
-        "name": "min-idle-time",
-        "type": "string"
-      },
-      {
-        "name": "ID",
-        "type": "string",
-        "multiple": true
-      },
-      {
-        "command": "IDLE",
-        "name": "ms",
-        "type": "integer",
-        "optional": true
-      },
-      {
-        "command": "TIME",
-        "name": "ms-unix-time",
-        "type": "integer",
-        "optional": true
-      },
-      {
-        "command": "RETRYCOUNT",
-        "name": "count",
-        "type": "integer",
-        "optional": true
-      },
-      {
-        "name": "force",
-        "type": "enum",
-        "enum": [
-          "FORCE"
-        ],
-        "optional": true
-      },
-      {
-        "name": "justid",
-        "type": "enum",
-        "enum": [
-          "JUSTID"
-        ],
-        "optional": true
-      }
     ]
   }
 }

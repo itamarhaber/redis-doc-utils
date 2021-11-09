@@ -33,34 +33,6 @@
           }
         }
       }
-    ],
-    "return_types": [
-      {
-        "description": "list of elements in the specified range (optionally with",
-        "type": "array"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      },
-      {
-        "name": "start",
-        "type": "integer"
-      },
-      {
-        "name": "stop",
-        "type": "integer"
-      },
-      {
-        "name": "withscores",
-        "type": "enum",
-        "enum": [
-          "WITHSCORES"
-        ],
-        "optional": true
-      }
     ]
   }
 }

@@ -6,7 +6,6 @@
     "since": "2.0.0",
     "arity": -4,
     "depracated": true,
-    "function": "hmsetCommand",
     "command_flags": [
       "write",
       "denyoom",
@@ -34,28 +33,6 @@
             "limit": 0
           }
         }
-      }
-    ],
-    "return_types": [
-      {
-        "type": "simple-string"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      },
-      {
-        "name": [
-          "field",
-          "value"
-        ],
-        "type": [
-          "string",
-          "string"
-        ],
-        "multiple": true
       }
     ]
   }

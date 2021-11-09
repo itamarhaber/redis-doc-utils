@@ -38,52 +38,6 @@
           }
         }
       }
-    ],
-    "return_types": [
-      {
-        "type": "integer"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      },
-      {
-        "name": "bit",
-        "type": "integer"
-      },
-      {
-        "name": "index",
-        "type": "block",
-        "optional": true,
-        "block": [
-          {
-            "name": "start",
-            "type": "integer"
-          },
-          {
-            "name": "end_index",
-            "type": "block",
-            "optional": true,
-            "block": [
-              {
-                "name": "end",
-                "type": "integer"
-              },
-              {
-                "name": "index_unit",
-                "type": "enum",
-                "enum": [
-                  "BYTE",
-                  "BIT"
-                ],
-                "optional": true
-              }
-            ]
-          }
-        ]
-      }
     ]
   }
 }

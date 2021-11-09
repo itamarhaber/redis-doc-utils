@@ -60,20 +60,6 @@
           }
         }
       }
-    ],
-    "arguments": [
-      {
-        "name": "source",
-        "type": "key"
-      },
-      {
-        "name": "destination",
-        "type": "key"
-      },
-      {
-        "name": "timeout",
-        "type": "double"
-      }
     ]
   }
 }

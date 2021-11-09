@@ -18,22 +18,6 @@
       "slow",
       "dangerous",
       "connection"
-    ],
-    "return_types": [
-      {
-        "description": "`OK`.",
-        "type": "simple-string"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "enabled",
-        "type": "enum",
-        "enum": [
-          "ON",
-          "OFF"
-        ]
-      }
     ]
   }
 }

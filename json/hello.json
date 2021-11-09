@@ -22,43 +22,6 @@
     "acl_categories": [
       "fast",
       "connection"
-    ],
-    "return_types": [
-      {
-        "description": "a list of server properties. The reply is a map instead of an array when RESP3 is selected. The command returns an error if the `protover` requested does not exist.",
-        "type": "array"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "arguments",
-        "type": "block",
-        "block": [
-          {
-            "name": "protover",
-            "type": "integer"
-          },
-          {
-            "command": "AUTH",
-            "name": [
-              "username",
-              "password"
-            ],
-            "type": [
-              "string",
-              "string"
-            ],
-            "optional": true
-          },
-          {
-            "command": "SETNAME",
-            "name": "clientname",
-            "type": "string",
-            "optional": true
-          }
-        ],
-        "optional": true
-      }
     ]
   }
 }

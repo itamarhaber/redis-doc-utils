@@ -33,12 +33,6 @@
           }
         }
       }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      }
     ]
   }
 }

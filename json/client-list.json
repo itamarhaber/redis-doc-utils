@@ -33,41 +33,6 @@
       "slow",
       "dangerous",
       "connection"
-    ],
-    "return_types": [
-      {
-        "description": "a unique string, formatted as follows:",
-        "type": "bulk-string"
-      }
-    ],
-    "arguments": [
-      {
-        "command": "TYPE",
-        "type": "enum",
-        "enum": [
-          "normal",
-          "master",
-          "replica",
-          "pubsub"
-        ],
-        "optional": true
-      },
-      {
-        "name": "id",
-        "type": "block",
-        "block": [
-          {
-            "command": "ID",
-            "type": "command"
-          },
-          {
-            "name": "client-id",
-            "type": "integer",
-            "multiple": true
-          }
-        ],
-        "optional": true
-      }
     ]
   }
 }

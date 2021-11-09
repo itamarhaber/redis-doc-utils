@@ -28,27 +28,6 @@
       "slow",
       "dangerous",
       "connection"
-    ],
-    "return_types": [
-      {
-        "description": "The command returns OK or an error if the timeout is invalid.",
-        "type": "simple-string"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "timeout",
-        "type": "integer"
-      },
-      {
-        "name": "mode",
-        "type": "enum",
-        "optional": true,
-        "enum": [
-          "WRITE",
-          "ALL"
-        ]
-      }
     ]
   }
 }

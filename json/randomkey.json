@@ -14,12 +14,6 @@
       "keyspace",
       "read",
       "slow"
-    ],
-    "return_types": [
-      {
-        "description": "the random key, or `nil` when the database is empty.",
-        "type": "bulk-string"
-      }
     ]
   }
 }

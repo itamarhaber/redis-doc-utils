@@ -32,29 +32,6 @@
           }
         }
       }
-    ],
-    "return_types": [
-      {
-        "description": "An array with each entry being the corresponding result of the subcommand given at the same position.",
-        "type": "array"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      },
-      {
-        "command": "GET",
-        "name": [
-          "type",
-          "offset"
-        ],
-        "type": [
-          "type",
-          "integer"
-        ]
-      }
     ]
   }
 }

@@ -5,6 +5,7 @@
     "group": "sorted_set",
     "since": "6.2.0",
     "arity": -5,
+    "function": "zrangestoreCommand",
     "command_flags": [
       "write",
       "denyoom"
@@ -48,59 +49,6 @@
             "limit": 0
           }
         }
-      }
-    ],
-    "return_types": [
-      {
-        "description": "the number of elements in the resulting sorted set.",
-        "type": "integer"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "dst",
-        "type": "key"
-      },
-      {
-        "name": "src",
-        "type": "key"
-      },
-      {
-        "name": "min",
-        "type": "string"
-      },
-      {
-        "name": "max",
-        "type": "string"
-      },
-      {
-        "name": "sortby",
-        "type": "enum",
-        "enum": [
-          "BYSCORE",
-          "BYLEX"
-        ],
-        "optional": true
-      },
-      {
-        "name": "rev",
-        "type": "enum",
-        "enum": [
-          "REV"
-        ],
-        "optional": true
-      },
-      {
-        "command": "LIMIT",
-        "name": [
-          "offset",
-          "count"
-        ],
-        "type": [
-          "integer",
-          "integer"
-        ],
-        "optional": true
       }
     ]
   }

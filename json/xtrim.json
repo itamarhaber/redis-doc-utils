@@ -39,51 +39,6 @@
           }
         }
       }
-    ],
-    "return_types": [
-      {
-        "description": "The number of entries deleted from the stream.",
-        "type": "integer"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      },
-      {
-        "name": "trim",
-        "type": "block",
-        "block": [
-          {
-            "name": "strategy",
-            "type": "enum",
-            "enum": [
-              "MAXLEN",
-              "MINID"
-            ]
-          },
-          {
-            "name": "operator",
-            "type": "enum",
-            "enum": [
-              "=",
-              "~"
-            ],
-            "optional": true
-          },
-          {
-            "name": "threshold",
-            "type": "string"
-          },
-          {
-            "command": "LIMIT",
-            "name": "count",
-            "type": "integer",
-            "optional": true
-          }
-        ]
-      }
     ]
   }
 }

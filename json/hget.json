@@ -33,22 +33,6 @@
           }
         }
       }
-    ],
-    "return_types": [
-      {
-        "description": "the value associated with `field`, or `nil` when `field` is not",
-        "type": "bulk-string"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      },
-      {
-        "name": "field",
-        "type": "string"
-      }
     ]
   }
 }

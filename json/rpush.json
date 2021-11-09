@@ -40,23 +40,6 @@
           }
         }
       }
-    ],
-    "return_types": [
-      {
-        "description": "the length of the list after the push operation.",
-        "type": "integer"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      },
-      {
-        "name": "element",
-        "type": "string",
-        "multiple": true
-      }
     ]
   }
 }

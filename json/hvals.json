@@ -33,18 +33,6 @@
           }
         }
       }
-    ],
-    "return_types": [
-      {
-        "description": "list of values in the hash, or an empty list when `key` does",
-        "type": "array"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      }
     ]
   }
 }

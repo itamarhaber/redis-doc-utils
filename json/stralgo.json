@@ -9,20 +9,6 @@
     "command_flags": [],
     "acl_categories": [
       "slow"
-    ],
-    "arguments": [
-      {
-        "name": "algorithm",
-        "type": "enum",
-        "enum": [
-          "LCS"
-        ]
-      },
-      {
-        "name": "algo-specific-argument",
-        "type": "string",
-        "multiple": true
-      }
     ]
   }
 }

@@ -14,19 +14,6 @@
     ],
     "acl_categories": [
       "slow"
-    ],
-    "return_types": [
-      {
-        "description": "a list of ACL categories or a list of commands inside a given category. The command may return an error if an invalid category name is given as argument.",
-        "type": "array"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "categoryname",
-        "type": "string",
-        "optional": true
-      }
     ]
   }
 }

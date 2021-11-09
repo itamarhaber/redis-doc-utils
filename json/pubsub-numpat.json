@@ -15,12 +15,6 @@
     "acl_categories": [
       "pubsub",
       "slow"
-    ],
-    "return_types": [
-      {
-        "description": "the number of patterns all the clients are subscribed to.",
-        "type": "integer"
-      }
     ]
   }
 }

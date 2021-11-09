@@ -41,23 +41,6 @@
           }
         }
       }
-    ],
-    "return_types": [
-      {
-        "description": "specifically:",
-        "type": "array"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key",
-        "multiple": true
-      },
-      {
-        "name": "timeout",
-        "type": "double"
-      }
     ]
   }
 }

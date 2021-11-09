@@ -33,19 +33,6 @@
           }
         }
       }
-    ],
-    "arguments": [
-      {
-        "name": [
-          "key",
-          "value"
-        ],
-        "type": [
-          "key",
-          "string"
-        ],
-        "multiple": true
-      }
     ]
   }
 }

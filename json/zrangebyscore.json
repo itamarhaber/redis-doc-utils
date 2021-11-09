@@ -33,46 +33,6 @@
           }
         }
       }
-    ],
-    "return_types": [
-      {
-        "description": "list of elements in the specified score range (optionally",
-        "type": "array"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      },
-      {
-        "name": "min",
-        "type": "double"
-      },
-      {
-        "name": "max",
-        "type": "double"
-      },
-      {
-        "name": "withscores",
-        "type": "enum",
-        "enum": [
-          "WITHSCORES"
-        ],
-        "optional": true
-      },
-      {
-        "command": "LIMIT",
-        "name": [
-          "offset",
-          "count"
-        ],
-        "type": [
-          "integer",
-          "integer"
-        ],
-        "optional": true
-      }
     ]
   }
 }

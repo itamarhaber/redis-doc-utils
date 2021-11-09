@@ -50,23 +50,6 @@
           }
         }
       }
-    ],
-    "return_types": [
-      {
-        "description": "the number of elements in the resulting set.",
-        "type": "integer"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "destination",
-        "type": "key"
-      },
-      {
-        "name": "key",
-        "type": "key",
-        "multiple": true
-      }
     ]
   }
 }

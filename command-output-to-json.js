@@ -10,6 +10,11 @@
 import { createClient } from 'redis';
 import { promises as fs } from 'fs';
 
+const options = {
+  noreturn: true,
+  noargs: true,
+}
+
 const docPath = process.env.REDIS_DOC || '../redis-doc';
 const srcPath = process.env.REDIS_SRC || '../redis';
 const outputPathJSON = './json';
@@ -366,8 +371,13 @@ async function persistCommand(cmd) {
     command_flags: cmd[kname].command_flags,
     acl_categories: cmd[kname].acl_categories,
     key_specs: cmd[kname].key_specs,
-    return_types: cmd[kname].return_types,
-    arguments: cmd[kname].arguments,
+  };
+
+  if (!options.noreturn) {
+    s[kname]['return_types'] = cmd[kname].return_types;
+  }
+  if (!options.noargs) {
+    s[kname]['arguments'] = cmd[kname].arguments;
   }
 
   const json = JSON.stringify(s,null,2);

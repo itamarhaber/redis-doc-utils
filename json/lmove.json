@@ -6,6 +6,7 @@
     "since": "6.2.0",
     "arity": 5,
     "depracated": true,
+    "function": "lmoveCommand",
     "command_flags": [
       "write",
       "denyoom"
@@ -50,38 +51,6 @@
             "limit": 0
           }
         }
-      }
-    ],
-    "return_types": [
-      {
-        "description": "the element being popped and pushed.",
-        "type": "bulk-string"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "source",
-        "type": "key"
-      },
-      {
-        "name": "destination",
-        "type": "key"
-      },
-      {
-        "name": "wherefrom",
-        "type": "enum",
-        "enum": [
-          "LEFT",
-          "RIGHT"
-        ]
-      },
-      {
-        "name": "whereto",
-        "type": "enum",
-        "enum": [
-          "LEFT",
-          "RIGHT"
-        ]
       }
     ]
   }

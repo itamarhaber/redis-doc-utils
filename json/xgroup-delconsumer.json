@@ -33,26 +33,6 @@
           }
         }
       }
-    ],
-    "return_types": [
-      {
-        "description": "the number of pending messages that the consumer had before it was deleted",
-        "type": "integer"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      },
-      {
-        "name": "groupname",
-        "type": "string"
-      },
-      {
-        "name": "consumername",
-        "type": "string"
-      }
     ]
   }
 }

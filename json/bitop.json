@@ -50,26 +50,6 @@
           }
         }
       }
-    ],
-    "return_types": [
-      {
-        "type": "integer"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "operation",
-        "type": "string"
-      },
-      {
-        "name": "destkey",
-        "type": "key"
-      },
-      {
-        "name": "key",
-        "type": "key",
-        "multiple": true
-      }
     ]
   }
 }

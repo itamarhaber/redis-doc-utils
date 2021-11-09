@@ -52,22 +52,6 @@
           }
         }
       }
-    ],
-    "return_types": [
-      {
-        "description": "the element being popped and pushed.",
-        "type": "bulk-string"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "source",
-        "type": "key"
-      },
-      {
-        "name": "destination",
-        "type": "key"
-      }
     ]
   }
 }

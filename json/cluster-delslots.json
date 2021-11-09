@@ -16,19 +16,6 @@
       "admin",
       "slow",
       "dangerous"
-    ],
-    "return_types": [
-      {
-        "description": "`OK` if the command was successful. Otherwise",
-        "type": "simple-string"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "slot",
-        "type": "integer",
-        "multiple": true
-      }
     ]
   }
 }

@@ -12,12 +12,6 @@
     ],
     "acl_categories": [
       "slow"
-    ],
-    "return_types": [
-      {
-        "description": "a list of subcommands and their descriptions",
-        "type": "array"
-      }
     ]
   }
 }

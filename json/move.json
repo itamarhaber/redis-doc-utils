@@ -33,16 +33,6 @@
           }
         }
       }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      },
-      {
-        "name": "db",
-        "type": "integer"
-      }
     ]
   }
 }

@@ -19,22 +19,6 @@
       "admin",
       "slow",
       "dangerous"
-    ],
-    "return_types": [
-      {
-        "description": "`Background saving started` if `BGSAVE` started correctly or `Background saving scheduled` when used with the `SCHEDULE` subcommand.",
-        "type": "simple-string"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "schedule",
-        "type": "enum",
-        "enum": [
-          "SCHEDULE"
-        ],
-        "optional": true
-      }
     ]
   }
 }

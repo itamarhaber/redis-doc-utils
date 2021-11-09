@@ -15,18 +15,6 @@
       "admin",
       "slow",
       "dangerous"
-    ],
-    "return_types": [
-      {
-        "description": "`OK` if module was unloaded.",
-        "type": "simple-string"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "name",
-        "type": "string"
-      }
     ]
   }
 }

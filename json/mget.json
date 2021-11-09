@@ -33,19 +33,6 @@
           }
         }
       }
-    ],
-    "return_types": [
-      {
-        "description": "list of values at the specified keys.",
-        "type": "array"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key",
-        "multiple": true
-      }
     ]
   }
 }

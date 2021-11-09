@@ -39,17 +39,6 @@
           }
         }
       }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      },
-      {
-        "name": "member",
-        "type": "string",
-        "multiple": true
-      }
     ]
   }
 }

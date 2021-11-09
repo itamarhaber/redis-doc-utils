@@ -13,17 +13,6 @@
     "acl_categories": [
       "fast",
       "connection"
-    ],
-    "return_types": [
-      {
-        "type": "simple-string"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "index",
-        "type": "integer"
-      }
     ]
   }
 }

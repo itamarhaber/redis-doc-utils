@@ -33,18 +33,6 @@
           }
         }
       }
-    ],
-    "return_types": [
-      {
-        "description": "the value of `key`, or `nil` when `key` does not exist.",
-        "type": "bulk-string"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      }
     ]
   }
 }

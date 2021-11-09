@@ -19,12 +19,6 @@
     ],
     "acl_categories": [
       "slow"
-    ],
-    "return_types": [
-      {
-        "description": "nested list of slot ranges with IP/Port/ID mappings.",
-        "type": "array"
-      }
     ]
   }
 }

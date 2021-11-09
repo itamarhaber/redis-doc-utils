@@ -18,12 +18,6 @@
       "slow",
       "dangerous",
       "connection"
-    ],
-    "return_types": [
-      {
-        "description": "The command returns `OK`",
-        "type": "simple-string"
-      }
     ]
   }
 }

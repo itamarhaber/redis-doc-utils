@@ -13,21 +13,6 @@
       "admin",
       "slow",
       "dangerous"
-    ],
-    "return_types": [
-      {
-        "type": "simple-string"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "host",
-        "type": "string"
-      },
-      {
-        "name": "port",
-        "type": "string"
-      }
     ]
   }
 }

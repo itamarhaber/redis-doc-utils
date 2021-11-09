@@ -32,34 +32,6 @@
           }
         }
       }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      },
-      {
-        "name": "element",
-        "type": "string"
-      },
-      {
-        "command": "RANK",
-        "name": "rank",
-        "type": "integer",
-        "optional": true
-      },
-      {
-        "command": "COUNT",
-        "name": "num-matches",
-        "type": "integer",
-        "optional": true
-      },
-      {
-        "command": "MAXLEN",
-        "name": "len",
-        "type": "integer",
-        "optional": true
-      }
     ]
   }
 }

@@ -32,24 +32,6 @@
           }
         }
       }
-    ],
-    "return_types": [
-      {
-        "description": "the memory usage in bytes, or `nil` when the key does not exist.",
-        "type": "integer"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      },
-      {
-        "command": "SAMPLES",
-        "name": "count",
-        "type": "integer",
-        "optional": true
-      }
     ]
   }
 }

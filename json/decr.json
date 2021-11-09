@@ -34,18 +34,6 @@
           }
         }
       }
-    ],
-    "return_types": [
-      {
-        "description": "the value of `key` after the decrement",
-        "type": "integer"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      }
     ]
   }
 }

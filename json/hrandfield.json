@@ -5,6 +5,7 @@
     "group": "hash",
     "since": "6.2.0",
     "arity": -2,
+    "function": "hrandfieldCommand",
     "command_flags": [
       "readonly",
       "random"
@@ -31,31 +32,6 @@
             "limit": 0
           }
         }
-      }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      },
-      {
-        "name": "options",
-        "type": "block",
-        "block": [
-          {
-            "name": "count",
-            "type": "integer"
-          },
-          {
-            "name": "withvalues",
-            "type": "enum",
-            "enum": [
-              "WITHVALUES"
-            ],
-            "optional": true
-          }
-        ],
-        "optional": true
       }
     ]
   }

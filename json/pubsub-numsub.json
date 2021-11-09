@@ -15,20 +15,6 @@
     "acl_categories": [
       "pubsub",
       "slow"
-    ],
-    "return_types": [
-      {
-        "description": "a list of channels and number of subscribers for every channel.",
-        "type": "array"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "channel",
-        "type": "string",
-        "optional": true,
-        "multiple": true
-      }
     ]
   }
 }

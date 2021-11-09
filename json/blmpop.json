@@ -5,6 +5,8 @@
     "group": "list",
     "since": "7.0.0",
     "arity": -5,
+    "function": "blmpopCommand",
+    "get_keys_function": "blmpopGetKeys",
     "command_flags": [
       "write",
       "movablekeys"
@@ -32,41 +34,6 @@
             "step": 1
           }
         }
-      }
-    ],
-    "return_types": [
-      {
-        "description": "specifically:",
-        "type": "array"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "timeout",
-        "type": "double"
-      },
-      {
-        "name": "numkeys",
-        "type": "integer"
-      },
-      {
-        "name": "key",
-        "type": "key",
-        "multiple": true
-      },
-      {
-        "name": "where",
-        "type": "enum",
-        "enum": [
-          "LEFT",
-          "RIGHT"
-        ]
-      },
-      {
-        "command": "COUNT",
-        "name": "count",
-        "type": "integer",
-        "optional": true
       }
     ]
   }

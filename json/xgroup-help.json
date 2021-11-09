@@ -14,12 +14,6 @@
     "acl_categories": [
       "stream",
       "slow"
-    ],
-    "return_types": [
-      {
-        "description": "a list of subcommands and their descriptions",
-        "type": "array"
-      }
     ]
   }
 }

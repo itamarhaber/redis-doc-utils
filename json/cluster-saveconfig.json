@@ -16,12 +16,6 @@
       "admin",
       "slow",
       "dangerous"
-    ],
-    "return_types": [
-      {
-        "description": "`OK` or an error if the operation fails.",
-        "type": "simple-string"
-      }
     ]
   }
 }

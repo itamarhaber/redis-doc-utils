@@ -16,23 +16,6 @@
       "admin",
       "slow",
       "dangerous"
-    ],
-    "return_types": [
-      {
-        "description": "`OK` if the command was accepted and a manual failover is going to be attempted. An error if the operation cannot be executed, for example if we are talking with a node which is already a master.",
-        "type": "simple-string"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "options",
-        "type": "enum",
-        "enum": [
-          "FORCE",
-          "TAKEOVER"
-        ],
-        "optional": true
-      }
     ]
   }
 }

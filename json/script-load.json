@@ -14,12 +14,6 @@
     "acl_categories": [
       "slow",
       "scripting"
-    ],
-    "arguments": [
-      {
-        "name": "script",
-        "type": "string"
-      }
     ]
   }
 }

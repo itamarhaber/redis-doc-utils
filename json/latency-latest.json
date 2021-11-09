@@ -16,12 +16,6 @@
       "admin",
       "slow",
       "dangerous"
-    ],
-    "return_types": [
-      {
-        "description": "specifically:",
-        "type": "array"
-      }
     ]
   }
 }

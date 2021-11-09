@@ -16,18 +16,6 @@
       "admin",
       "slow",
       "dangerous"
-    ],
-    "return_types": [
-      {
-        "description": "`OK` if the command was executed successfully, otherwise an error is returned.",
-        "type": "simple-string"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "config-epoch",
-        "type": "integer"
-      }
     ]
   }
 }

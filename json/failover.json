@@ -4,6 +4,7 @@
     "group": "server",
     "since": "6.2.0",
     "arity": -1,
+    "function": "failoverCommand",
     "command_flags": [
       "admin",
       "noscript",
@@ -13,49 +14,6 @@
       "admin",
       "slow",
       "dangerous"
-    ],
-    "return_types": [
-      {
-        "description": "`OK` if the command was accepted and a coordinated failover is in progress. An error if the operation cannot be executed.",
-        "type": "simple-string"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "target",
-        "type": "block",
-        "optional": true,
-        "block": [
-          {
-            "command": "TO",
-            "type": "command"
-          },
-          {
-            "name": "host",
-            "type": "string"
-          },
-          {
-            "name": "port",
-            "type": "integer"
-          },
-          {
-            "command": "FORCE",
-            "type": "command",
-            "optional": true
-          }
-        ]
-      },
-      {
-        "command": "ABORT",
-        "type": "command",
-        "optional": true
-      },
-      {
-        "command": "TIMEOUT",
-        "name": "milliseconds",
-        "type": "integer",
-        "optional": true
-      }
     ]
   }
 }

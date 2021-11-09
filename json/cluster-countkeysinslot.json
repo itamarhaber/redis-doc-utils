@@ -13,18 +13,6 @@
     ],
     "acl_categories": [
       "slow"
-    ],
-    "return_types": [
-      {
-        "description": "The number of keys in the specified hash slot, or an error if the hash slot is invalid.",
-        "type": "integer"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "slot",
-        "type": "integer"
-      }
     ]
   }
 }

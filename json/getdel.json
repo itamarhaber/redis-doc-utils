@@ -5,6 +5,7 @@
     "group": "string",
     "since": "6.2.0",
     "arity": 2,
+    "function": "getdelCommand",
     "command_flags": [
       "write",
       "fast"
@@ -31,18 +32,6 @@
             "limit": 0
           }
         }
-      }
-    ],
-    "return_types": [
-      {
-        "description": "the value of `key`, `nil` when `key` does not exist, or an error if the key's value type isn't a string.",
-        "type": "bulk-string"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
       }
     ]
   }

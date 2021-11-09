@@ -33,17 +33,6 @@
           }
         }
       }
-    ],
-    "return_types": [
-      {
-        "type": "integer"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      }
     ]
   }
 }

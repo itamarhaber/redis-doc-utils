@@ -5,6 +5,7 @@
     "group": "sorted_set",
     "since": "6.2.0",
     "arity": -2,
+    "function": "zrandmemberCommand",
     "command_flags": [
       "readonly",
       "random"
@@ -31,31 +32,6 @@
             "limit": 0
           }
         }
-      }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      },
-      {
-        "name": "options",
-        "type": "block",
-        "block": [
-          {
-            "name": "count",
-            "type": "integer"
-          },
-          {
-            "name": "withscores",
-            "type": "enum",
-            "enum": [
-              "WITHSCORES"
-            ],
-            "optional": true
-          }
-        ],
-        "optional": true
       }
     ]
   }

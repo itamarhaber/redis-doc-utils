@@ -13,11 +13,6 @@
     "acl_categories": [
       "slow",
       "scripting"
-    ],
-    "return_types": [
-      {
-        "type": "simple-string"
-      }
     ]
   }
 }

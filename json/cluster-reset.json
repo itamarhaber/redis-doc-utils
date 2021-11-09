@@ -16,23 +16,6 @@
       "admin",
       "slow",
       "dangerous"
-    ],
-    "return_types": [
-      {
-        "description": "`OK` if the command was successful. Otherwise an error is returned.",
-        "type": "simple-string"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "reset-type",
-        "type": "enum",
-        "enum": [
-          "HARD",
-          "SOFT"
-        ],
-        "optional": true
-      }
     ]
   }
 }

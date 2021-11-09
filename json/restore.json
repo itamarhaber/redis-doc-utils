@@ -34,54 +34,6 @@
           }
         }
       }
-    ],
-    "return_types": [
-      {
-        "description": "The command returns OK on success.",
-        "type": "simple-string"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      },
-      {
-        "name": "ttl",
-        "type": "integer"
-      },
-      {
-        "name": "serialized-value",
-        "type": "string"
-      },
-      {
-        "name": "replace",
-        "type": "enum",
-        "enum": [
-          "REPLACE"
-        ],
-        "optional": true
-      },
-      {
-        "name": "absttl",
-        "type": "enum",
-        "enum": [
-          "ABSTTL"
-        ],
-        "optional": true
-      },
-      {
-        "command": "IDLETIME",
-        "name": "seconds",
-        "type": "integer",
-        "optional": true
-      },
-      {
-        "command": "FREQ",
-        "name": "frequency",
-        "type": "integer",
-        "optional": true
-      }
     ]
   }
 }

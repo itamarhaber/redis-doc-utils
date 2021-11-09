@@ -34,26 +34,6 @@
           }
         }
       }
-    ],
-    "return_types": [
-      {
-        "description": "the value at `field` after the increment operation.",
-        "type": "integer"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      },
-      {
-        "name": "field",
-        "type": "string"
-      },
-      {
-        "name": "increment",
-        "type": "integer"
-      }
     ]
   }
 }

@@ -17,19 +17,6 @@
       "admin",
       "slow",
       "dangerous"
-    ],
-    "return_types": [
-      {
-        "description": "The number of users that were deleted. This number will not always match the number of arguments since certain users may not exist.",
-        "type": "integer"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "username",
-        "type": "string",
-        "multiple": true
-      }
     ]
   }
 }

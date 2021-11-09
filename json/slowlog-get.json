@@ -23,13 +23,6 @@
       "admin",
       "slow",
       "dangerous"
-    ],
-    "arguments": [
-      {
-        "name": "count",
-        "type": "integer",
-        "optional": true
-      }
     ]
   }
 }

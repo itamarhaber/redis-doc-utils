@@ -16,12 +16,6 @@
       "admin",
       "fast",
       "dangerous"
-    ],
-    "return_types": [
-      {
-        "description": "where the first element is one of `master`, `slave`, `sentinel` and the additional elements are role-specific as illustrated above.",
-        "type": "array"
-      }
     ]
   }
 }

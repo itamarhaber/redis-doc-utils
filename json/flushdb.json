@@ -14,22 +14,6 @@
       "write",
       "slow",
       "dangerous"
-    ],
-    "return_types": [
-      {
-        "type": "simple-string"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "async",
-        "type": "enum",
-        "enum": [
-          "ASYNC",
-          "SYNC"
-        ],
-        "optional": true
-      }
     ]
   }
 }

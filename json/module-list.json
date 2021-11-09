@@ -15,12 +15,6 @@
       "admin",
       "slow",
       "dangerous"
-    ],
-    "return_types": [
-      {
-        "description": "list of loaded modules. Each element in the list represents a",
-        "type": "array"
-      }
     ]
   }
 }

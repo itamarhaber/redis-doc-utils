@@ -33,19 +33,6 @@
           }
         }
       }
-    ],
-    "return_types": [
-      {
-        "description": "The number of keys that were touched.",
-        "type": "integer"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key",
-        "multiple": true
-      }
     ]
   }
 }

@@ -51,20 +51,6 @@
           }
         }
       }
-    ],
-    "arguments": [
-      {
-        "name": "source",
-        "type": "key"
-      },
-      {
-        "name": "destination",
-        "type": "key"
-      },
-      {
-        "name": "member",
-        "type": "string"
-      }
     ]
   }
 }

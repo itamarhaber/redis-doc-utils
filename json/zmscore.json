@@ -5,6 +5,7 @@
     "group": "sorted_set",
     "since": "6.2.0",
     "arity": -3,
+    "function": "zmscoreCommand",
     "command_flags": [
       "readonly",
       "fast"
@@ -31,23 +32,6 @@
             "limit": 0
           }
         }
-      }
-    ],
-    "return_types": [
-      {
-        "description": "list of scores or `nil` associated with the specified `member` values (a double precision floating point number),",
-        "type": "array"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      },
-      {
-        "name": "member",
-        "type": "string",
-        "multiple": true
       }
     ]
   }

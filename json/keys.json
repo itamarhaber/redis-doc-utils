@@ -15,18 +15,6 @@
       "read",
       "slow",
       "dangerous"
-    ],
-    "return_types": [
-      {
-        "description": "list of keys matching `pattern`.",
-        "type": "array"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "pattern",
-        "type": "pattern"
-      }
     ]
   }
 }

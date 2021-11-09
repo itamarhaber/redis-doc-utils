@@ -34,18 +34,6 @@
           }
         }
       }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      },
-      {
-        "name": "element",
-        "type": "string",
-        "optional": true,
-        "multiple": true
-      }
     ]
   }
 }

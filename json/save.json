@@ -13,12 +13,6 @@
       "admin",
       "slow",
       "dangerous"
-    ],
-    "return_types": [
-      {
-        "description": "The commands returns OK on success.",
-        "type": "simple-string"
-      }
     ]
   }
 }

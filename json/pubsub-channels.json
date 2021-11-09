@@ -15,19 +15,6 @@
     "acl_categories": [
       "pubsub",
       "slow"
-    ],
-    "return_types": [
-      {
-        "description": "a list of active channels, optionally matching the specified pattern.",
-        "type": "array"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "pattern",
-        "type": "string",
-        "optional": true
-      }
     ]
   }
 }

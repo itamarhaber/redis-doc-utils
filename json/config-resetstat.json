@@ -6,7 +6,6 @@
     "since": "2.0.0",
     "arity": 2,
     "container": "CONFIG",
-    "function": "configCommand",
     "command_flags": [
       "admin",
       "noscript",
@@ -16,12 +15,6 @@
       "admin",
       "slow",
       "dangerous"
-    ],
-    "return_types": [
-      {
-        "description": "always `OK`.",
-        "type": "simple-string"
-      }
     ]
   }
 }

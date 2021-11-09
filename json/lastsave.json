@@ -15,12 +15,6 @@
       "admin",
       "fast",
       "dangerous"
-    ],
-    "return_types": [
-      {
-        "description": "an UNIX time stamp.",
-        "type": "integer"
-      }
     ]
   }
 }

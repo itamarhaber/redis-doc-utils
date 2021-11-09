@@ -15,14 +15,6 @@
     "acl_categories": [
       "pubsub",
       "slow"
-    ],
-    "arguments": [
-      {
-        "name": "channel",
-        "type": "string",
-        "optional": true,
-        "multiple": true
-      }
     ]
   }
 }

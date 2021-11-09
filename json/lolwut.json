@@ -12,14 +12,6 @@
     "acl_categories": [
       "read",
       "fast"
-    ],
-    "arguments": [
-      {
-        "command": "VERSION",
-        "name": "version",
-        "type": "integer",
-        "optional": true
-      }
     ]
   }
 }

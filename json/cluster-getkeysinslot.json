@@ -13,22 +13,6 @@
     ],
     "acl_categories": [
       "slow"
-    ],
-    "return_types": [
-      {
-        "description": "From 0 to *count* key names in a Redis array reply.",
-        "type": "array"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "slot",
-        "type": "integer"
-      },
-      {
-        "name": "count",
-        "type": "integer"
-      }
     ]
   }
 }

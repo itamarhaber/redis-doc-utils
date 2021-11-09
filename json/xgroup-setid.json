@@ -33,30 +33,6 @@
           }
         }
       }
-    ],
-    "return_types": [
-      {
-        "description": "`OK` on success.",
-        "type": "simple-string"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      },
-      {
-        "name": "groupname",
-        "type": "string"
-      },
-      {
-        "name": "id",
-        "type": "string",
-        "enum": [
-          "id",
-          "$"
-        ]
-      }
     ]
   }
 }

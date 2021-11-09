@@ -15,17 +15,6 @@
       "admin",
       "slow",
       "dangerous"
-    ],
-    "arguments": [
-      {
-        "name": "save-mode",
-        "type": "enum",
-        "enum": [
-          "NOSAVE",
-          "SAVE"
-        ],
-        "optional": true
-      }
     ]
   }
 }

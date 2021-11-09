@@ -32,25 +32,6 @@
           }
         }
       }
-    ],
-    "return_types": [
-      {
-        "type": "simple-string"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      },
-      {
-        "name": "start",
-        "type": "integer"
-      },
-      {
-        "name": "stop",
-        "type": "integer"
-      }
     ]
   }
 }

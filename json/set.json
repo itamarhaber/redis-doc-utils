@@ -53,45 +53,6 @@
           }
         }
       }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      },
-      {
-        "name": "value",
-        "type": "string"
-      },
-      {
-        "name": "expiration",
-        "type": "enum",
-        "enum": [
-          "EX seconds",
-          "PX milliseconds",
-          "EXAT timestamp",
-          "PXAT milliseconds-timestamp",
-          "KEEPTTL"
-        ],
-        "optional": true
-      },
-      {
-        "name": "condition",
-        "type": "enum",
-        "enum": [
-          "NX",
-          "XX"
-        ],
-        "optional": true
-      },
-      {
-        "name": "get",
-        "type": "enum",
-        "enum": [
-          "GET"
-        ],
-        "optional": true
-      }
     ]
   }
 }

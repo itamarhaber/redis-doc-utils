@@ -33,18 +33,6 @@
           }
         }
       }
-    ],
-    "return_types": [
-      {
-        "description": "the serialized value.",
-        "type": "bulk-string"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      }
     ]
   }
 }

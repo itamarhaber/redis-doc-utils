@@ -15,12 +15,6 @@
     "acl_categories": [
       "fast",
       "transaction"
-    ],
-    "return_types": [
-      {
-        "description": "always `OK`.",
-        "type": "simple-string"
-      }
     ]
   }
 }

@@ -33,26 +33,6 @@
           }
         }
       }
-    ],
-    "return_types": [
-      {
-        "description": "the length of the string after it was modified by the command.",
-        "type": "integer"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      },
-      {
-        "name": "offset",
-        "type": "integer"
-      },
-      {
-        "name": "value",
-        "type": "string"
-      }
     ]
   }
 }

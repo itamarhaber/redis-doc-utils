@@ -12,13 +12,6 @@
     "acl_categories": [
       "fast",
       "connection"
-    ],
-    "return_types": [
-      {
-        "description": "`OK`.",
-        "type": "simple-string"
-      }
-    ],
-    "arguments": []
+    ]
   }
 }

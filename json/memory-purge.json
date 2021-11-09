@@ -9,11 +9,6 @@
     "command_flags": [],
     "acl_categories": [
       "slow"
-    ],
-    "return_types": [
-      {
-        "type": "simple-string"
-      }
     ]
   }
 }

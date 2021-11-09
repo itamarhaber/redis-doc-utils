@@ -33,34 +33,6 @@
           }
         }
       }
-    ],
-    "return_types": [
-      {
-        "description": "the length of the list after the insert operation, or `-1` when",
-        "type": "integer"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      },
-      {
-        "name": "where",
-        "type": "enum",
-        "enum": [
-          "BEFORE",
-          "AFTER"
-        ]
-      },
-      {
-        "name": "pivot",
-        "type": "string"
-      },
-      {
-        "name": "element",
-        "type": "string"
-      }
     ]
   }
 }

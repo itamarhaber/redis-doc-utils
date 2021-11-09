@@ -33,22 +33,6 @@
           }
         }
       }
-    ],
-    "return_types": [
-      {
-        "description": "the string length of the value associated with `field`, or zero when `field` is not present in the hash or `key` does not exist at all.",
-        "type": "integer"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      },
-      {
-        "name": "field",
-        "type": "string"
-      }
     ]
   }
 }

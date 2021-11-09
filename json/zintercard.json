@@ -5,6 +5,7 @@
     "group": "sorted_set",
     "since": "7.0.0",
     "arity": -3,
+    "function": "zinterCardCommand",
     "command_flags": [
       "readonly",
       "movablekeys"
@@ -31,29 +32,6 @@
             "step": 1
           }
         }
-      }
-    ],
-    "return_types": [
-      {
-        "description": "the number of elements in the resulting intersection.",
-        "type": "integer"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "numkeys",
-        "type": "integer"
-      },
-      {
-        "name": "key",
-        "type": "key",
-        "multiple": true
-      },
-      {
-        "command": "LIMIT",
-        "name": "limit",
-        "type": "integer",
-        "optional": true
       }
     ]
   }

@@ -14,19 +14,6 @@
     "acl_categories": [
       "slow",
       "dangerous"
-    ],
-    "return_types": [
-      {
-        "description": "as a collection of text lines.",
-        "type": "bulk-string"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "section",
-        "type": "string",
-        "optional": true
-      }
     ]
   }
 }

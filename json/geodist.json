@@ -32,31 +32,6 @@
           }
         }
       }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      },
-      {
-        "name": "member1",
-        "type": "string"
-      },
-      {
-        "name": "member2",
-        "type": "string"
-      },
-      {
-        "name": "unit",
-        "type": "enum",
-        "enum": [
-          "m",
-          "km",
-          "ft",
-          "mi"
-        ],
-        "optional": true
-      }
     ]
   }
 }

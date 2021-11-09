@@ -5,6 +5,8 @@
     "group": "sorted_set",
     "since": "7.0.0",
     "arity": -4,
+    "function": "zmpopCommand",
+    "get_keys_function": "zmpopGetKeys",
     "command_flags": [
       "write",
       "movablekeys"
@@ -31,37 +33,6 @@
             "step": 1
           }
         }
-      }
-    ],
-    "return_types": [
-      {
-        "description": "specifically:",
-        "type": "array"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "numkeys",
-        "type": "integer"
-      },
-      {
-        "name": "key",
-        "type": "key",
-        "multiple": true
-      },
-      {
-        "name": "where",
-        "type": "enum",
-        "enum": [
-          "MIN",
-          "MAX"
-        ]
-      },
-      {
-        "command": "COUNT",
-        "name": "count",
-        "type": "integer",
-        "optional": true
       }
     ]
   }

@@ -13,23 +13,6 @@
     "acl_categories": [
       "slow",
       "scripting"
-    ],
-    "return_types": [
-      {
-        "description": "`OK`.",
-        "type": "simple-string"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "mode",
-        "type": "enum",
-        "enum": [
-          "YES",
-          "SYNC",
-          "NO"
-        ]
-      }
     ]
   }
 }

@@ -18,21 +18,6 @@
       "slow",
       "dangerous",
       "connection"
-    ],
-    "arguments": [
-      {
-        "name": "client-id",
-        "type": "integer"
-      },
-      {
-        "name": "unblock-type",
-        "type": "enum",
-        "enum": [
-          "TIMEOUT",
-          "ERROR"
-        ],
-        "optional": true
-      }
     ]
   }
 }

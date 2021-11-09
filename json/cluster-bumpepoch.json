@@ -16,12 +16,6 @@
       "admin",
       "slow",
       "dangerous"
-    ],
-    "return_types": [
-      {
-        "description": "`BUMPED` if the epoch was incremented, or `STILL` if the node already has the greatest config epoch in the cluster.",
-        "type": "simple-string"
-      }
     ]
   }
 }

@@ -5,6 +5,7 @@
     "group": "string",
     "since": "6.2.0",
     "arity": -2,
+    "function": "getexCommand",
     "command_flags": [
       "write",
       "fast"
@@ -31,30 +32,6 @@
             "limit": 0
           }
         }
-      }
-    ],
-    "return_types": [
-      {
-        "description": "the value of `key`, or `nil` when `key` does not exist.",
-        "type": "bulk-string"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      },
-      {
-        "name": "expiration",
-        "type": "enum",
-        "enum": [
-          "EX seconds",
-          "PX milliseconds",
-          "EXAT timestamp",
-          "PXAT milliseconds-timestamp",
-          "PERSIST"
-        ],
-        "optional": true
       }
     ]
   }

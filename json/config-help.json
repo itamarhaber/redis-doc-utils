@@ -6,19 +6,12 @@
     "since": "5.0.0",
     "arity": 2,
     "container": "CONFIG",
-    "function": "configCommand",
     "command_flags": [
       "loading",
       "stale"
     ],
     "acl_categories": [
       "slow"
-    ],
-    "return_types": [
-      {
-        "description": "a list of subcommands and their descriptions",
-        "type": "array"
-      }
     ]
   }
 }

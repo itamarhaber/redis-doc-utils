@@ -5,6 +5,7 @@
     "group": "set",
     "since": "6.2.0",
     "arity": -3,
+    "function": "smismemberCommand",
     "command_flags": [
       "readonly",
       "fast"
@@ -31,23 +32,6 @@
             "limit": 0
           }
         }
-      }
-    ],
-    "return_types": [
-      {
-        "description": "list representing the membership of the given elements, in the same",
-        "type": "array"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      },
-      {
-        "name": "member",
-        "type": "string",
-        "multiple": true
       }
     ]
   }

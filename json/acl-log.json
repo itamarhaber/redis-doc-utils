@@ -17,13 +17,6 @@
       "admin",
       "slow",
       "dangerous"
-    ],
-    "arguments": [
-      {
-        "name": "count or RESET",
-        "type": "string",
-        "optional": true
-      }
     ]
   }
 }

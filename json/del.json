@@ -32,19 +32,6 @@
           }
         }
       }
-    ],
-    "return_types": [
-      {
-        "description": "The number of keys that were removed.",
-        "type": "integer"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key",
-        "multiple": true
-      }
     ]
   }
 }

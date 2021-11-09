@@ -16,22 +16,6 @@
     "acl_categories": [
       "pubsub",
       "fast"
-    ],
-    "return_types": [
-      {
-        "description": "the number of clients that received the message. Note that in a",
-        "type": "integer"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "channel",
-        "type": "string"
-      },
-      {
-        "name": "message",
-        "type": "string"
-      }
     ]
   }
 }

@@ -51,45 +51,6 @@
           }
         }
       }
-    ],
-    "return_types": [
-      {
-        "description": "the number of elements in the resulting sorted set at",
-        "type": "integer"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "destination",
-        "type": "key"
-      },
-      {
-        "name": "numkeys",
-        "type": "integer"
-      },
-      {
-        "name": "key",
-        "type": "key",
-        "multiple": true
-      },
-      {
-        "command": "WEIGHTS",
-        "name": "weight",
-        "type": "integer",
-        "variadic": true,
-        "optional": true
-      },
-      {
-        "command": "AGGREGATE",
-        "name": "aggregate",
-        "type": "enum",
-        "enum": [
-          "SUM",
-          "MIN",
-          "MAX"
-        ],
-        "optional": true
-      }
     ]
   }
 }

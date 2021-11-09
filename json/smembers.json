@@ -32,18 +32,6 @@
           }
         }
       }
-    ],
-    "return_types": [
-      {
-        "description": "all elements of the set.",
-        "type": "array"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      }
     ]
   }
 }

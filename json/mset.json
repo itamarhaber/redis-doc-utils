@@ -33,25 +33,6 @@
           }
         }
       }
-    ],
-    "return_types": [
-      {
-        "description": "always `OK` since `MSET` can't fail.",
-        "type": "simple-string"
-      }
-    ],
-    "arguments": [
-      {
-        "name": [
-          "key",
-          "value"
-        ],
-        "type": [
-          "key",
-          "string"
-        ],
-        "multiple": true
-      }
     ]
   }
 }

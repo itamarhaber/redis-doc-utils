@@ -32,26 +32,6 @@
           }
         }
       }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      },
-      {
-        "name": "end",
-        "type": "string"
-      },
-      {
-        "name": "start",
-        "type": "string"
-      },
-      {
-        "command": "COUNT",
-        "name": "count",
-        "type": "integer",
-        "optional": true
-      }
     ]
   }
 }

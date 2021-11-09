@@ -33,23 +33,6 @@
           }
         }
       }
-    ],
-    "return_types": [
-      {
-        "description": "the number of fields that were removed from the hash, not",
-        "type": "integer"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      },
-      {
-        "name": "field",
-        "type": "string",
-        "multiple": true
-      }
     ]
   }
 }

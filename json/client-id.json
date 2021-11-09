@@ -15,11 +15,6 @@
     "acl_categories": [
       "slow",
       "connection"
-    ],
-    "return_types": [
-      {
-        "type": "integer"
-      }
     ]
   }
 }

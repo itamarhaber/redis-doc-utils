@@ -16,22 +16,6 @@
       "admin",
       "slow",
       "dangerous"
-    ],
-    "return_types": [
-      {
-        "description": "`OK` if the command was successful. If the address or port specified are invalid an error is returned.",
-        "type": "simple-string"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "ip",
-        "type": "string"
-      },
-      {
-        "name": "port",
-        "type": "integer"
-      }
     ]
   }
 }

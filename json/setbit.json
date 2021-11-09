@@ -33,26 +33,6 @@
           }
         }
       }
-    ],
-    "return_types": [
-      {
-        "description": "the original bit value stored at _offset_.",
-        "type": "integer"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      },
-      {
-        "name": "offset",
-        "type": "integer"
-      },
-      {
-        "name": "value",
-        "type": "integer"
-      }
     ]
   }
 }

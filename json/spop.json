@@ -40,17 +40,6 @@
           }
         }
       }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      },
-      {
-        "name": "count",
-        "type": "integer",
-        "optional": true
-      }
     ]
   }
 }

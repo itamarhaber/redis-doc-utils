@@ -32,26 +32,6 @@
           }
         }
       }
-    ],
-    "return_types": [
-      {
-        "description": "the number of elements removed.",
-        "type": "integer"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      },
-      {
-        "name": "start",
-        "type": "integer"
-      },
-      {
-        "name": "stop",
-        "type": "integer"
-      }
     ]
   }
 }

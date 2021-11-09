@@ -32,26 +32,6 @@
           }
         }
       }
-    ],
-    "return_types": [
-      {
-        "description": "list of elements in the specified range.",
-        "type": "array"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      },
-      {
-        "name": "start",
-        "type": "integer"
-      },
-      {
-        "name": "stop",
-        "type": "integer"
-      }
     ]
   }
 }

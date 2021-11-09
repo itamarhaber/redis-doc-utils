@@ -51,23 +51,6 @@
           }
         }
       }
-    ],
-    "return_types": [
-      {
-        "description": "The command just returns `OK`.",
-        "type": "simple-string"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "destkey",
-        "type": "key"
-      },
-      {
-        "name": "sourcekey",
-        "type": "key",
-        "multiple": true
-      }
     ]
   }
 }

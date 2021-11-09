@@ -12,22 +12,6 @@
     "acl_categories": [
       "slow",
       "connection"
-    ],
-    "return_types": [
-      {
-        "description": "The command returns the number of replicas reached by all the writes performed in the context of the current connection.",
-        "type": "integer"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "numreplicas",
-        "type": "integer"
-      },
-      {
-        "name": "timeout",
-        "type": "integer"
-      }
     ]
   }
 }

@@ -16,11 +16,6 @@
       "admin",
       "slow",
       "dangerous"
-    ],
-    "return_types": [
-      {
-        "type": "bulk-string"
-      }
     ]
   }
 }

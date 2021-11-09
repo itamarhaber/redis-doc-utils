@@ -41,69 +41,6 @@
           }
         }
       }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      },
-      {
-        "command": "NOMKSTREAM",
-        "type": "command",
-        "optional": true
-      },
-      {
-        "name": "trim",
-        "type": "block",
-        "optional": true,
-        "block": [
-          {
-            "name": "strategy",
-            "type": "enum",
-            "enum": [
-              "MAXLEN",
-              "MINID"
-            ]
-          },
-          {
-            "name": "operator",
-            "type": "enum",
-            "enum": [
-              "=",
-              "~"
-            ],
-            "optional": true
-          },
-          {
-            "name": "threshold",
-            "type": "string"
-          },
-          {
-            "command": "LIMIT",
-            "name": "count",
-            "type": "integer",
-            "optional": true
-          }
-        ]
-      },
-      {
-        "type": "enum",
-        "enum": [
-          "*",
-          "ID"
-        ]
-      },
-      {
-        "name": [
-          "field",
-          "value"
-        ],
-        "type": [
-          "string",
-          "string"
-        ],
-        "multiple": true
-      }
     ]
   }
 }

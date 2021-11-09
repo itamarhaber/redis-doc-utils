@@ -13,12 +13,6 @@
     ],
     "acl_categories": [
       "slow"
-    ],
-    "return_types": [
-      {
-        "description": "The node id.",
-        "type": "bulk-string"
-      }
     ]
   }
 }

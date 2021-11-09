@@ -32,19 +32,6 @@
           }
         }
       }
-    ],
-    "return_types": [
-      {
-        "description": "always `OK`.",
-        "type": "simple-string"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key",
-        "multiple": true
-      }
     ]
   }
 }

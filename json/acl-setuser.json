@@ -23,24 +23,6 @@
       "admin",
       "slow",
       "dangerous"
-    ],
-    "return_types": [
-      {
-        "description": "`OK` on success.",
-        "type": "simple-string"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "username",
-        "type": "string"
-      },
-      {
-        "name": "rule",
-        "type": "string",
-        "multiple": true,
-        "optional": true
-      }
     ]
   }
 }

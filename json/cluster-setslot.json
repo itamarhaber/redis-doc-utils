@@ -16,33 +16,6 @@
       "admin",
       "slow",
       "dangerous"
-    ],
-    "return_types": [
-      {
-        "description": "All the subcommands return `OK` if the command was successful. Otherwise an error is returned.",
-        "type": "simple-string"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "slot",
-        "type": "integer"
-      },
-      {
-        "name": "subcommand",
-        "type": "enum",
-        "enum": [
-          "IMPORTING",
-          "MIGRATING",
-          "STABLE",
-          "NODE"
-        ]
-      },
-      {
-        "name": "node-id",
-        "type": "string",
-        "optional": true
-      }
     ]
   }
 }

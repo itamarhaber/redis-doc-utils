@@ -38,63 +38,6 @@
           }
         }
       }
-    ],
-    "return_types": [
-      {
-        "description": "list of elements in the specified range (optionally with",
-        "type": "array"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      },
-      {
-        "name": "min",
-        "type": "string"
-      },
-      {
-        "name": "max",
-        "type": "string"
-      },
-      {
-        "name": "sortby",
-        "type": "enum",
-        "enum": [
-          "BYSCORE",
-          "BYLEX"
-        ],
-        "optional": true
-      },
-      {
-        "name": "rev",
-        "type": "enum",
-        "enum": [
-          "REV"
-        ],
-        "optional": true
-      },
-      {
-        "command": "LIMIT",
-        "name": [
-          "offset",
-          "count"
-        ],
-        "type": [
-          "integer",
-          "integer"
-        ],
-        "optional": true
-      },
-      {
-        "name": "withscores",
-        "type": "enum",
-        "enum": [
-          "WITHSCORES"
-        ],
-        "optional": true
-      }
     ]
   }
 }

@@ -36,37 +36,6 @@
           }
         }
       }
-    ],
-    "arguments": [
-      {
-        "command": "COUNT",
-        "name": "count",
-        "type": "integer",
-        "optional": true
-      },
-      {
-        "command": "BLOCK",
-        "name": "milliseconds",
-        "type": "integer",
-        "optional": true
-      },
-      {
-        "name": "streams",
-        "type": "enum",
-        "enum": [
-          "STREAMS"
-        ]
-      },
-      {
-        "name": "key",
-        "type": "key",
-        "multiple": true
-      },
-      {
-        "name": "ID",
-        "type": "string",
-        "multiple": true
-      }
     ]
   }
 }

@@ -33,34 +33,6 @@
           }
         }
       }
-    ],
-    "return_types": [
-      {
-        "description": "a list of informational bits",
-        "type": "array"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      },
-      {
-        "name": "full",
-        "type": "block",
-        "block": [
-          {
-            "command": "FULL"
-          },
-          {
-            "name": "count",
-            "command": "COUNT",
-            "type": "integer",
-            "optional": true
-          }
-        ],
-        "optional": true
-      }
     ]
   }
 }

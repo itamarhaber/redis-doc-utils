@@ -16,18 +16,6 @@
       "admin",
       "slow",
       "dangerous"
-    ],
-    "return_types": [
-      {
-        "description": "the number of active failure reports for the node.",
-        "type": "integer"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "node-id",
-        "type": "string"
-      }
     ]
   }
 }

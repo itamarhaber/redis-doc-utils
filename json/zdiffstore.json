@@ -5,6 +5,7 @@
     "group": "sorted_set",
     "since": "6.2.0",
     "arity": -4,
+    "function": "zdiffstoreCommand",
     "command_flags": [
       "write",
       "denyoom",
@@ -49,27 +50,6 @@
             "step": 1
           }
         }
-      }
-    ],
-    "return_types": [
-      {
-        "description": "the number of elements in the resulting sorted set at",
-        "type": "integer"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "destination",
-        "type": "key"
-      },
-      {
-        "name": "numkeys",
-        "type": "integer"
-      },
-      {
-        "name": "key",
-        "type": "key",
-        "multiple": true
       }
     ]
   }

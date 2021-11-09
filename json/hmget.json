@@ -33,23 +33,6 @@
           }
         }
       }
-    ],
-    "return_types": [
-      {
-        "description": "list of values associated with the given fields, in the same",
-        "type": "array"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      },
-      {
-        "name": "field",
-        "type": "string",
-        "multiple": true
-      }
     ]
   }
 }

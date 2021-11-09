@@ -34,29 +34,6 @@
           }
         }
       }
-    ],
-    "return_types": [
-      {
-        "description": "The number of fields that were added.",
-        "type": "integer"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      },
-      {
-        "name": [
-          "field",
-          "value"
-        ],
-        "type": [
-          "string",
-          "string"
-        ],
-        "multiple": true
-      }
     ]
   }
 }

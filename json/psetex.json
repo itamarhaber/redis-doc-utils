@@ -33,20 +33,6 @@
           }
         }
       }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      },
-      {
-        "name": "milliseconds",
-        "type": "integer"
-      },
-      {
-        "name": "value",
-        "type": "string"
-      }
     ]
   }
 }

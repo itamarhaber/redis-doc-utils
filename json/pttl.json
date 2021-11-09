@@ -34,18 +34,6 @@
           }
         }
       }
-    ],
-    "return_types": [
-      {
-        "description": "TTL in milliseconds, or a negative value in order to signal an error (see the description above).",
-        "type": "integer"
-      }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      }
     ]
   }
 }

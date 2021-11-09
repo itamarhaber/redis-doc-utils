@@ -5,6 +5,7 @@
     "group": "stream",
     "since": "6.2.0",
     "arity": -6,
+    "function": "xautoclaimCommand",
     "command_flags": [
       "write",
       "random",
@@ -32,42 +33,6 @@
             "limit": 0
           }
         }
-      }
-    ],
-    "arguments": [
-      {
-        "name": "key",
-        "type": "key"
-      },
-      {
-        "name": "group",
-        "type": "string"
-      },
-      {
-        "name": "consumer",
-        "type": "string"
-      },
-      {
-        "name": "min-idle-time",
-        "type": "string"
-      },
-      {
-        "name": "start",
-        "type": "string"
-      },
-      {
-        "command": "COUNT",
-        "name": "count",
-        "type": "integer",
-        "optional": true
-      },
-      {
-        "name": "justid",
-        "type": "enum",
-        "enum": [
-          "JUSTID"
-        ],
-        "optional": true
       }
     ]
   }
