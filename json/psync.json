@@ -1,17 +1,18 @@
 {
-  "PSYNC": {
-    "summary": "Internal command used for replication",
-    "group": "server",
-    "since": "2.8.0",
-    "arity": -3,
-    "command_flags": [
-      "admin",
-      "noscript"
-    ],
-    "acl_categories": [
-      "admin",
-      "slow",
-      "dangerous"
-    ]
-  }
+    "PSYNC": {
+        "summary": "Internal command used for replication",
+        "group": "server",
+        "since": "2.8.0",
+        "arity": -3,
+        "function": "syncCommand",
+        "command_flags": [
+            "admin",
+            "noscript"
+        ],
+        "acl_categories": [
+            "admin",
+            "slow",
+            "dangerous"
+        ]
+    }
 }

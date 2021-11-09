@@ -1,46 +1,46 @@
 {
-  "XADD": {
-    "summary": "Appends a new entry to a stream",
-    "complexity": "O(1) when adding a new entry, O(N) when trimming where N being the number of entires evicted.",
-    "group": "stream",
-    "since": "5.0.0",
-    "arity": -5,
-    "function": "xaddCommand",
-    "history": [
-      [
-        "6.2",
-        "Added the `NOMKSTREAM` option, `MINID` trimming strategy and the `LIMIT` option."
-      ]
-    ],
-    "command_flags": [
-      "write",
-      "denyoom",
-      "random",
-      "fast"
-    ],
-    "acl_categories": [
-      "write",
-      "stream",
-      "fast"
-    ],
-    "key_specs": [
-      {
-        "flags": [
-          "write"
+    "XADD": {
+        "summary": "Appends a new entry to a stream",
+        "complexity": "O(1) when adding a new entry, O(N) when trimming where N being the number of entires evicted.",
+        "group": "stream",
+        "since": "5.0.0",
+        "arity": -5,
+        "function": "xaddCommand",
+        "history": [
+            [
+                "6.2",
+                "Added the `NOMKSTREAM` option, `MINID` trimming strategy and the `LIMIT` option."
+            ]
         ],
-        "begin_search": {
-          "index": {
-            "pos": 1
-          }
-        },
-        "find_keys": {
-          "range": {
-            "lastkey": 0,
-            "step": 1,
-            "limit": 0
-          }
-        }
-      }
-    ]
-  }
+        "command_flags": [
+            "write",
+            "denyoom",
+            "random",
+            "fast"
+        ],
+        "acl_categories": [
+            "write",
+            "stream",
+            "fast"
+        ],
+        "key_specs": [
+            {
+                "flags": [
+                    "write"
+                ],
+                "begin_search": {
+                    "index": {
+                        "pos": 1
+                    }
+                },
+                "find_keys": {
+                    "range": {
+                        "lastkey": 0,
+                        "step": 1,
+                        "limit": 0
+                    }
+                }
+            }
+        ]
+    }
 }

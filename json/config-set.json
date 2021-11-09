@@ -1,19 +1,20 @@
 {
-  "SET": {
-    "summary": "Set a configuration parameter to the given value",
-    "group": "server",
-    "since": "2.0.0",
-    "arity": 4,
-    "container": "CONFIG",
-    "command_flags": [
-      "admin",
-      "noscript",
-      "stale"
-    ],
-    "acl_categories": [
-      "admin",
-      "slow",
-      "dangerous"
-    ]
-  }
+    "SET": {
+        "summary": "Set a configuration parameter to the given value",
+        "group": "server",
+        "since": "2.0.0",
+        "arity": 4,
+        "container": "CONFIG",
+        "function": "configSetCommand",
+        "command_flags": [
+            "admin",
+            "noscript",
+            "stale"
+        ],
+        "acl_categories": [
+            "admin",
+            "slow",
+            "dangerous"
+        ]
+    }
 }

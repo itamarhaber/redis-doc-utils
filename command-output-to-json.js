@@ -1,5 +1,6 @@
 // Make a commands.json from COMMAND's output
 // Assumes max subcommand depth of 1
+// Requires Redis from guybe7/redis/cmd_ptr
 // * SORT has unknown key_specs
 // * function is wrong in some cases (e.g. SETNX b/c it doesn't exist, zunionInterDiffGetKeys, COUNT GETKEYS b/c of capitalization, the HOST: command...). Maybe parse server.c?
 // * Some commmands don't have a commands.json entry (e.g. PFSELFTEST, HOST:, CONFIG/XGROUP...)
@@ -7,8 +8,11 @@
 // * Need to convert md `SET` to [`SET`](/commands/set) in MD
 // * Need to extract return types
 // * The QUIT command doesn't exist in the commands table
+// * The `movablekeys` server flag is deprecated intentionally
+
 import { createClient } from 'redis';
 import { promises as fs } from 'fs';
+import { assert } from 'console';
 
 const options = {
   noreturn: true,
@@ -126,7 +130,7 @@ async function loadCommandMarkdown(name) {
     m['return_types'] = splitMDReturnSummary(m['return_summary']);
   }
   if (m['return_types'] === undefined) {
-    console.error(`-ERR no return types for ${name}: ${JSON.stringify(m['return_summary'],null,2)}`);
+    console.error(`-ERR no return types for ${name}: ${JSON.stringify(m['return_summary'],null,4)}`);
   } else {
     delete m['return_summary'];
   }
@@ -210,6 +214,12 @@ function kargsRESPToObj(name, kargs) {
   return obj;
 }
 
+function extractFuncName(str) {
+  const s = str.split(' ').filter(x => x !== '');
+  assert(s.length == 6);
+  return s[3];
+}
+
 function convertCommand(container, args) {
   const o = {};
   const name = args[0].toUpperCase();
@@ -222,6 +232,8 @@ function convertCommand(container, args) {
     // step: args[5],
   };
 
+  o[name]['command_flags'] = o[name]['command_flags'].filter(x => x !== 'movablekeys');
+
   if (args[6].length !== 0) {
     o[name].acl_categories = args[6].map(x => x.slice(1));
   }
@@ -232,6 +244,14 @@ function convertCommand(container, args) {
 
   if (args[8].length !== 0) {
     o[name].subcommands = args[8].map(x => convertCommand(name, x));
+  }
+
+  if (args[9] !== null) {
+    o[name].function = extractFuncName(args[9]);
+  }
+
+  if (args[10] !== null) {
+    o[name].get_keys_function = extractFuncName(args[10]);
   }
 
   if (container) {
@@ -380,7 +400,7 @@ async function persistCommand(cmd) {
     s[kname]['arguments'] = cmd[kname].arguments;
   }
 
-  const json = JSON.stringify(s,null,2);
+  const json = JSON.stringify(s,null,4);
   await fs.writeFile(`${outputPathJSON}/${fname}.json`,json,'utf-8');
 }
 
@@ -439,19 +459,19 @@ async function main() {
   console.log('Loading `COMMAND` reply');
   let commands = await commandOutput.map(x => convertCommand(null, x));
 
-  console.log('Loading server.h');
-  const functions = await loadServerH();
-  await fs.writeFile('functions.json',JSON.stringify(functions,null,2),'utf-8');
-  functions.funcs.push('slowlogCommand'); // Not in .h file
+  // console.log('Loading server.h');
+  // const functions = await loadServerH();
+  // await fs.writeFile('functions.json',JSON.stringify(functions,null,4),'utf-8');
+  // functions.funcs.push('slowlogCommand'); // Not in .h file
 
   console.log('Loading commands.json');
   const commandsJSON = await loadCommandsJSON();
 
-  console.log('Applying patches');
-  commands = manualPatch(commands);
+  // console.log('Applying patches');
+  // commands = manualPatch(commands);
 
-  console.log('Adding functions');
-  commands = commands.map(x => addFunctions(functions,x));
+  // console.log('Adding functions');
+  // commands = commands.map(x => addFunctions(functions,x));
 
   console.log('Enrichening with JSONs');
   commands = commands.map(x => enrichWithJSON(commandsJSON, x))
@@ -462,7 +482,7 @@ async function main() {
   console.log('Enrichening with MarkDown');
   commands = await Promise.all(commands.map(async (x) => enrichWithMD(x)));
 
-  await fs.writeFile(`commands.json`, JSON.stringify(commands, null, 2));
+  await fs.writeFile(`commands.json`,JSON.stringify(commands,null,4));
 
   console.log('Persisting files');
   await Promise.all(Object.values(commands).map(async (cmd) => {

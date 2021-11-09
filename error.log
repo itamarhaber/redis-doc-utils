@@ -1,356 +1,173 @@
--ERR can't find a keys getter for PEXPIRETIME in server.h
--ERR can't find a keys getter for TYPE in server.h
--ERR can't find a keys getter for RESTORE in server.h
--ERR can't find a keys getter for BITFIELD_RO in server.h
--ERR can't find a keys getter for GETDEL in server.h
--ERR can't find a keys getter for PSETEX in server.h
--ERR can't find a keys getter for SETRANGE in server.h
--ERR can't find a keys getter for INCRBYFLOAT in server.h
--ERR can't find a keys getter for MOVE in server.h
--ERR can't find a keys getter for ZINCRBY in server.h
--ERR can't find a keys getter for XINFO STREAM in server.h
--ERR can't find a keys getter for XINFO GROUPS in server.h
--ERR can't find a keys getter for XINFO CONSUMERS in server.h
--ERR can't find a keys getter for GEORADIUSBYMEMBER in server.h
--ERR can't find a keys getter for ZREMRANGEBYRANK in server.h
--ERR can't find a keys getter for ZCOUNT in server.h
--ERR can't find a keys getter for RENAMENX in server.h
--ERR can't find a keys getter for HSETNX in server.h
--ERR can't find a keys getter for GEOSEARCHSTORE in server.h
--ERR can't find a keys getter for ZRANGESTORE in server.h
--ERR can't find a keys getter for LREM in server.h
--ERR can't find a keys getter for SET in server.h
--ERR can't find a keys getter for SISMEMBER in server.h
--ERR can't find a keys getter for XSETID in server.h
--ERR can't find a keys getter for ZDIFFSTORE in server.h
--ERR can't find a keys getter for ZADD in server.h
--ERR can't find a keys getter for LPUSH in server.h
--ERR can't find a keys getter for TTL in server.h
--ERR can't find a keys getter for SRANDMEMBER in server.h
--ERR can't find a keys getter for HGET in server.h
--ERR can't find a keys getter for ZUNIONSTORE in server.h
--ERR can't find a keys getter for APPEND in server.h
--ERR can't find a keys getter for ZRANDMEMBER in server.h
--ERR can't find a keys getter for HINCRBYFLOAT in server.h
--ERR can't find a keys getter for STRLEN in server.h
--ERR can't find a keys getter for GETSET in server.h
--ERR can't find a keys getter for ZREVRANGE in server.h
--ERR can't find a keys getter for HGETALL in server.h
--ERR can't find a keys getter for BITCOUNT in server.h
--ERR can't find a keys getter for SMISMEMBER in server.h
--ERR can't find a keys getter for ZSCAN in server.h
--ERR can't find a keys getter for GEOSEARCH in server.h
--ERR can't find a keys getter for BITPOS in server.h
--ERR can't find a keys getter for SMEMBERS in server.h
--ERR can't find a keys getter for XGROUP CREATE in server.h
--ERR can't find a keys getter for XGROUP SETID in server.h
--ERR can't find a keys getter for XGROUP CREATECONSUMER in server.h
--ERR can't find a keys getter for XGROUP DESTROY in server.h
--ERR can't find a keys getter for XGROUP DELCONSUMER in server.h
--ERR can't find a keys getter for SETEX in server.h
--ERR can't find a keys getter for STRALGO LCS in server.h
--ERR can't find a keys getter for ZREMRANGEBYSCORE in server.h
--ERR can't find a keys getter for BZPOPMAX in server.h
--ERR can't find a keys getter for PEXPIRE in server.h
--ERR can't find a keys getter for RENAME in server.h
--ERR can't find a keys getter for LRANGE in server.h
--ERR can't find a keys getter for DECR in server.h
--ERR can't find a keys getter for LINSERT in server.h
--ERR can't find a keys getter for LPOP in server.h
--ERR can't find a keys getter for TOUCH in server.h
--ERR can't find a keys getter for SREM in server.h
--ERR can't find a keys getter for WATCH in server.h
--ERR can't find a keys getter for LTRIM in server.h
--ERR can't find a keys getter for HEXISTS in server.h
--ERR can't find a keys getter for PFADD in server.h
--ERR can't find a function for CONFIG RESETSTAT in server.h
--ERR can't find a function for CONFIG REWRITE in server.h
--ERR can't find a function for CONFIG GET in server.h
--ERR can't find a function for CONFIG SET in server.h
--ERR can't find a function for CONFIG HELP in server.h
--ERR can't find a keys getter for ZREVRANGEBYSCORE in server.h
--ERR can't find a keys getter for SUBSTR in server.h
--ERR can't find a keys getter for DECRBY in server.h
--ERR can't find a keys getter for XDEL in server.h
--ERR can't find a keys getter for BLPOP in server.h
--ERR can't find a keys getter for RPOPLPUSH in server.h
--ERR can't find a keys getter for LSET in server.h
--ERR can't find a keys getter for XREVRANGE in server.h
--ERR can't find a keys getter for LPUSHX in server.h
--ERR can't find a keys getter for ZRANK in server.h
--ERR can't find a keys getter for XREADGROUP in server.h
--ERR can't find a keys getter for ZREVRANGEBYLEX in server.h
--ERR can't find a keys getter for RPUSH in server.h
--ERR can't find a keys getter for SORT_RO in server.h
--ERR can't find a keys getter for XAUTOCLAIM in server.h
--ERR can't find a keys getter for SINTER in server.h
--ERR can't find a keys getter for MSET in server.h
--ERR can't find a keys getter for COPY in server.h
--ERR can't find a keys getter for GETBIT in server.h
--ERR can't find a keys getter for GEORADIUS_RO in server.h
--ERR can't find a keys getter for BRPOP in server.h
--ERR can't find a keys getter for SETNX in server.h
--ERR can't find a keys getter for PEXPIREAT in server.h
--ERR can't find a keys getter for EVAL_RO in server.h
--ERR can't find a keys getter for SINTERSTORE in server.h
--ERR can't find a keys getter for EVALSHA_RO in server.h
--ERR can't find a keys getter for EXPIRETIME in server.h
--ERR can't find a keys getter for LMOVE in server.h
--ERR can't find a keys getter for ZRANGEBYSCORE in server.h
--ERR can't find a keys getter for SETBIT in server.h
--ERR can't find a keys getter for ZUNION in server.h
--ERR can't find a keys getter for PERSIST in server.h
--ERR can't find a keys getter for DUMP in server.h
--ERR can't find a keys getter for MEMORY USAGE in server.h
--ERR can't find a keys getter for GEOHASH in server.h
--ERR can't find a keys getter for XTRIM in server.h
--ERR can't find a keys getter for PFMERGE in server.h
--ERR can't find a keys getter for HMSET in server.h
--ERR can't find a keys getter for ZMSCORE in server.h
--ERR can't find a keys getter for ZCARD in server.h
--ERR can't find a keys getter for ZPOPMIN in server.h
--ERR can't find a keys getter for GEODIST in server.h
--ERR can't find a keys getter for SDIFF in server.h
--ERR can't find a keys getter for SSCAN in server.h
--ERR can't find a keys getter for XRANGE in server.h
--ERR can't find a keys getter for ZINTERCARD in server.h
--ERR can't find a keys getter for BITOP in server.h
--ERR can't find a keys getter for XLEN in server.h
--ERR can't find a keys getter for ZPOPMAX in server.h
--ERR can't find a keys getter for EXISTS in server.h
--ERR can't find a keys getter for ZINTER in server.h
--ERR can't find a keys getter for ZRANGEBYLEX in server.h
--ERR can't find a keys getter for GET in server.h
--ERR can't find a keys getter for MSETNX in server.h
--ERR can't find a keys getter for RESTORE-ASKING in server.h
--ERR can't find a keys getter for INCR in server.h
--ERR can't find a keys getter for HMGET in server.h
--ERR can't find a keys getter for XADD in server.h
--ERR can't find a keys getter for GETEX in server.h
--ERR can't find a keys getter for EXPIRE in server.h
--ERR can't find a keys getter for GETRANGE in server.h
--ERR can't find a keys getter for UNLINK in server.h
--ERR can't find a keys getter for SMOVE in server.h
--ERR can't find a keys getter for EVALSHA in server.h
--ERR can't find a keys getter for BZPOPMIN in server.h
--ERR can't find a keys getter for GEORADIUSBYMEMBER_RO in server.h
--ERR can't find a keys getter for SUNION in server.h
--ERR can't find a keys getter for SPOP in server.h
--ERR can't find a keys getter for LPOS in server.h
--ERR can't find a keys getter for ZREM in server.h
--ERR can't find a keys getter for RPUSHX in server.h
--ERR can't find a keys getter for SADD in server.h
--ERR can't find a keys getter for ZREVRANK in server.h
--ERR can't find a keys getter for PTTL in server.h
--ERR can't find a keys getter for HRANDFIELD in server.h
--ERR can't find a keys getter for HKEYS in server.h
--ERR can't find a keys getter for XACK in server.h
--ERR can't find a keys getter for PFCOUNT in server.h
--ERR can't find a keys getter for ZINTERSTORE in server.h
--ERR can't find a keys getter for EXPIREAT in server.h
--ERR can't find a keys getter for RPOP in server.h
--ERR can't find a keys getter for INCRBY in server.h
--ERR can't find a keys getter for XCLAIM in server.h
--ERR can't find a keys getter for HSTRLEN in server.h
--ERR can't find a keys getter for HSCAN in server.h
--ERR can't find a keys getter for MGET in server.h
--ERR can't find a keys getter for HINCRBY in server.h
--ERR can't find a keys getter for ZREMRANGEBYLEX in server.h
--ERR can't find a keys getter for ZRANGE in server.h
--ERR can't find a keys getter for HVALS in server.h
--ERR can't find a keys getter for DEL in server.h
--ERR can't find a keys getter for PFDEBUG in server.h
--ERR can't find a keys getter for HDEL in server.h
--ERR can't find a keys getter for ZLEXCOUNT in server.h
--ERR can't find a keys getter for SCARD in server.h
--ERR can't find a keys getter for BLMOVE in server.h
--ERR can't find a keys getter for ZDIFF in server.h
--ERR can't find a keys getter for HLEN in server.h
--ERR can't find a keys getter for BITFIELD in server.h
--ERR can't find a keys getter for OBJECT ENCODING in server.h
--ERR can't find a keys getter for OBJECT REFCOUNT in server.h
--ERR can't find a keys getter for OBJECT FREQ in server.h
--ERR can't find a keys getter for OBJECT IDLETIME in server.h
--ERR can't find a keys getter for SDIFFSTORE in server.h
--ERR can't find a keys getter for SUNIONSTORE in server.h
--ERR can't find a keys getter for ZSCORE in server.h
--ERR can't find a keys getter for GEOPOS in server.h
--ERR can't find a keys getter for HSET in server.h
--ERR can't find a keys getter for LINDEX in server.h
--ERR can't find a keys getter for LLEN in server.h
--ERR can't find a keys getter for BRPOPLPUSH in server.h
--ERR can't find a keys getter for GEOADD in server.h
--ERR can't find a keys getter for XPENDING in server.h
--ERR no commands.json entry for XINFO
--ERR no commands.json entry for XSETID
--ERR no commands.json entry for MODULE
--ERR no commands.json entry for HOST:
--ERR no commands.json entry for XGROUP
--ERR no commands.json entry for STRALGO LCS
--ERR no commands.json entry for STRALGO HELP
--ERR no commands.json entry for CONFIG
--ERR no commands.json entry for SLOWLOG
--ERR no commands.json entry for SUBSTR
--ERR no commands.json entry for ACL
--ERR no commands.json entry for COMMAND LIST
 -ERR no commands.json entry for GEORADIUS_RO
--ERR no commands.json entry for LATENCY
--ERR no commands.json entry for MEMORY
--ERR no commands.json entry for CLIENT
--ERR no commands.json entry for RESTORE-ASKING
--ERR no commands.json entry for REPLCONF
--ERR no commands.json entry for SCRIPT
--ERR no commands.json entry for PUBSUB
--ERR no commands.json entry for GEORADIUSBYMEMBER_RO
--ERR no commands.json entry for DEBUG
--ERR no commands.json entry for PFDEBUG
 -ERR no commands.json entry for POST
+-ERR no commands.json entry for LATENCY
+-ERR no commands.json entry for REPLCONF
+-ERR no commands.json entry for HOST:
+-ERR no commands.json entry for GEORADIUSBYMEMBER_RO
+-ERR no commands.json entry for COMMAND LIST
+-ERR no commands.json entry for CLIENT
+-ERR no commands.json entry for SCRIPT
+-ERR no commands.json entry for SLOWLOG
+-ERR no commands.json entry for OBJECT
+-ERR no commands.json entry for SUBSTR
 -ERR no commands.json entry for CLUSTER
 -ERR no commands.json entry for CLUSTER ADDSLOTSRANGE
 -ERR no commands.json entry for CLUSTER DELSLOTSRANGE
+-ERR no commands.json entry for DEBUG
+-ERR no commands.json entry for XINFO
+-ERR no commands.json entry for STRALGO LCS
+-ERR no commands.json entry for STRALGO HELP
+-ERR no commands.json entry for CONFIG
+-ERR no commands.json entry for MODULE
+-ERR no commands.json entry for ACL
+-ERR no commands.json entry for MEMORY
+-ERR no commands.json entry for XGROUP
+-ERR no commands.json entry for PFDEBUG
+-ERR no commands.json entry for PUBSUB
+-ERR no commands.json entry for XSETID
+-ERR no commands.json entry for RESTORE-ASKING
 -ERR no commands.json entry for PFSELFTEST
--ERR no commands.json entry for OBJECT
--ERR while reading xinfo.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/xinfo.md'
--ERR while reading xsetid.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/xsetid.md'
--ERR while reading module.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/module.md'
--ERR while reading host:.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/host:.md'
--ERR while reading xgroup.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/xgroup.md'
--ERR while reading config.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/config.md'
--ERR while reading slowlog.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/slowlog.md'
--ERR while reading substr.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/substr.md'
--ERR while reading acl.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/acl.md'
 -ERR while reading georadius_ro.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/georadius_ro.md'
--ERR while reading latency.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/latency.md'
--ERR while reading memory.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/memory.md'
--ERR while reading client.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/client.md'
--ERR while reading restore-asking.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/restore-asking.md'
--ERR while reading replconf.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/replconf.md'
--ERR while reading script.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/script.md'
--ERR while reading pubsub.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/pubsub.md'
--ERR while reading georadiusbymember_ro.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/georadiusbymember_ro.md'
--ERR while reading debug.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/debug.md'
--ERR while reading pfdebug.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/pfdebug.md'
 -ERR while reading post.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/post.md'
--ERR while reading cluster.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/cluster.md'
--ERR while reading pfselftest.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/pfselftest.md'
+-ERR while reading latency.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/latency.md'
+-ERR while reading replconf.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/replconf.md'
+-ERR while reading host:.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/host:.md'
+-ERR while reading georadiusbymember_ro.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/georadiusbymember_ro.md'
+-ERR while reading client.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/client.md'
+-ERR while reading script.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/script.md'
+-ERR while reading slowlog.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/slowlog.md'
 -ERR while reading object.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/object.md'
+-ERR while reading substr.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/substr.md'
+-ERR while reading cluster.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/cluster.md'
+-ERR while reading debug.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/debug.md'
+-ERR while reading xinfo.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/xinfo.md'
+-ERR while reading config.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/config.md'
+-ERR while reading module.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/module.md'
+-ERR while reading acl.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/acl.md'
+-ERR while reading memory.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/memory.md'
+-ERR while reading xgroup.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/xgroup.md'
+-ERR while reading pfdebug.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/pfdebug.md'
+-ERR while reading pubsub.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/pubsub.md'
+-ERR while reading xsetid.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/xsetid.md'
+-ERR while reading restore-asking.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/restore-asking.md'
+-ERR while reading pfselftest.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/pfselftest.md'
 -ERR while reading cluster-addslotsrange.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/cluster-addslotsrange.md'
 -ERR while reading cluster-delslotsrange.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/cluster-delslotsrange.md'
--ERR no return types for PSETEX: ""
--ERR no return types for EVAL: ""
--ERR no return types for EXEC: "@array-reply: each element being the reply to each of the commands in the\natomic transaction.\n\nWhen using `WATCH`, `EXEC` can return a @nil-reply if the execution was aborted."
--ERR no return types for MOVE: "@integer-reply, specifically:\n\n* `1` if `key` was moved.\n* `0` if `key` was not moved."
--ERR no return types for SORT: "@array-reply: without passing the `store` option the command returns a list of sorted elements.\n@integer-reply: when the `store` option is specified the command returns the number of sorted elements in the destination list."
--ERR no return types for GEORADIUSBYMEMBER: ""
--ERR no return types for RENAMENX: "@integer-reply, specifically:\n\n* `1` if `key` was renamed to `newkey`.\n* `0` if `newkey` already exists."
--ERR no return types for HSETNX: "@integer-reply, specifically:\n\n* `1` if `field` is a new field in the hash and `value` was set.\n* `0` if `field` already exists in the hash and no operation was performed."
--ERR no return types for SET: "@simple-string-reply: `OK` if `SET` was executed correctly.\n\n@nil-reply: `(nil)` if the `SET` operation was not performed because the user specified the `NX` or `XX` option but the condition was not met.\n\nIf the command is issued with the `!GET` option, the above does not apply. It will instead reply as follows, regardless if the `SET` was actually performed:\n\n@bulk-string-reply: the old string value stored at key.\n\n@nil-reply: `(nil)` if the key did not exist."
--ERR no return types for SISMEMBER: "@integer-reply, specifically:\n\n* `1` if the element is a member of the set.\n* `0` if the element is not a member of the set, or if `key` does not exist."
--ERR no return types for ZADD: "@integer-reply, specifically:\n\n* When used without optional arguments, the number of elements added to the sorted set (excluding score updates).\n* If the `CH` option is specified, the number of elements that were changed (added or updated).\n\nIf the `INCR` option is specified, the return value will be @bulk-string-reply:\n\n* The new score of `member` (a double precision floating point number) represented as string, or `nil` if the operation was aborted (when called with either the `XX` or the `NX` option)."
--ERR no return types for SRANDMEMBER: "@bulk-string-reply: without the additional `count` argument, the command returns a Bulk Reply with the randomly selected element, or `nil` when `key` does not exist.\n\n@array-reply: when the additional `count` argument is passed, the command returns an array of elements, or an empty array when `key` does not exist."
--ERR no return types for ZRANDMEMBER: "@bulk-string-reply: without the additional `count` argument, the command returns a Bulk Reply with the randomly selected element, or `nil` when `key` does not exist.\n\n@array-reply: when the additional `count` argument is passed, the command returns an array of elements, or an empty array when `key` does not exist.\nIf the `WITHSCORES` modifier is used, the reply is a list elements and their scores from the sorted set."
--ERR no return types for ZSCAN: ""
--ERR no return types for GEOSEARCH: "@array-reply, specifically:\n\n* Without any `WITH` option specified, the command just returns a linear array like [\"New York\",\"Milan\",\"Paris\"].\n* If `WITHCOORD`, `WITHDIST` or `WITHHASH` options are specified, the command returns an array of arrays, where each sub-array represents a single item.\n\nWhen additional information is returned as an array of arrays for each item, the first item in the sub-array is always the name of the returned item. The other information is returned in the following order as successive elements of the sub-array.\n\n1. The distance from the center as a floating point number, in the same unit specified in the shape.\n2. The geohash integer.\n3. The coordinates as a two items x,y array (longitude,latitude)."
--ERR no return types for GEORADIUS: "@array-reply, specifically:\n\n* Without any `WITH` option specified, the command just returns a linear array like [\"New York\",\"Milan\",\"Paris\"].\n* If `WITHCOORD`, `WITHDIST` or `WITHHASH` options are specified, the command returns an array of arrays, where each sub-array represents a single item.\n\nWhen additional information is returned as an array of arrays for each item, the first item in the sub-array is always the name of the returned item. The other information is returned in the following order as successive elements of the sub-array.\n\n1. The distance from the center as a floating point number, in the same unit specified in the radius.\n2. The geohash integer.\n3. The coordinates as a two items x,y array (longitude,latitude).\n\nSo for example the command `GEORADIUS Sicily 15 37 200 km WITHCOORD WITHDIST` will return each item in the following way:\n\n    [\"Palermo\",\"190.4424\",[\"13.361389338970184\",\"38.115556395496299\"]]"
--ERR no return types for STRALGO: "For the LCS algorithm:\n\n* Without modifiers the string representing the longest common substring is returned.\n* When `LEN` is given the command returns the length of the longest common substring.\n* When `IDX` is given the command returns an array with the LCS length and all the ranges in both the strings, start and end offset for each string, where there are matches. When `WITHMATCHLEN` is given each array representing a match will also have the length of the match (see examples)."
--ERR no return types for PEXPIRE: "@integer-reply, specifically:\n\n* `1` if the timeout was set.\n* `0` if the timeout was not set. e.g. key doesn't exist, or operation skipped due to the provided arguments."
--ERR no return types for MONITOR: "**Non standard return value**, just dumps the received commands in an infinite\nflow."
--ERR no return types for LPOP: "When called without the `count` argument:\n\n@bulk-string-reply: the value of the first element, or `nil` when `key` does not exist.\n\nWhen called with the `count` argument:\n\n@array-reply: list of popped elements, or `nil` when `key` does not exist."
--ERR no return types for SCAN: ""
--ERR no return types for HEXISTS: "@integer-reply, specifically:\n\n* `1` if the hash contains `field`.\n* `0` if the hash does not contain `field`, or `key` does not exist."
--ERR no return types for PFADD: "@integer-reply, specifically:\n\n* 1 if at least 1 HyperLogLog internal register was altered. 0 otherwise."
--ERR no return types for PSUBSCRIBE: ""
--ERR no return types for XREVRANGE: "@array-reply, specifically:\n\nThe command returns the entries with IDs matching the specified range,\nfrom the higher ID to the lower ID matching.\nThe returned entries are complete, that means that the ID and all the fields\nthey are composed are returned. Moreover the entries are returned with\ntheir fields and values in the exact same order as `XADD` added them."
--ERR no return types for SYNC: "**Non standard return value**, a bulk transfer of the data followed by `PING` and write requests from the master."
--ERR no return types for ZRANK: "* If `member` exists in the sorted set, @integer-reply: the rank of `member`.\n* If `member` does not exist in the sorted set or `key` does not exist,\n  @bulk-string-reply: `nil`."
--ERR no return types for XREADGROUP: "@array-reply, specifically:\n\nThe command returns an array of results: each element of the returned\narray is an array composed of a two element containing the key name and\nthe entries reported for that key. The entries reported are full stream\nentries, having IDs and the list of all the fields and values. Field and\nvalues are guaranteed to be reported in the same order they were added\nby `XADD`.\n\nWhen **BLOCK** is used, on timeout a null reply is returned.\n\nReading the [Redis Streams introduction](/topics/streams-intro) is highly\nsuggested in order to understand more about the streams overall behavior\nand semantics."
--ERR no return types for XAUTOCLAIM: "@array-reply, specifically:\n\nAn array with two elements:\n\n1. The first element is a stream ID to be used as the `<start>` argument for the next call to `XAUTOCLAIM`\n2. The second element is an array containing all the successfully claimed messages in the same format as `XRANGE`."
--ERR no return types for COPY: "@integer-reply, specifically:\n\n* `1` if `source` was copied.\n* `0` if `source` was not copied."
--ERR no return types for UNSUBSCRIBE: ""
--ERR no return types for SETNX: "@integer-reply, specifically:\n\n* `1` if the key was set\n* `0` if the key was not set"
--ERR no return types for PEXPIREAT: "@integer-reply, specifically:\n\n* `1` if the timeout was set.\n* `0` if the timeout was not set. e.g. key doesn't exist, or operation skipped due to the provided arguments."
--ERR no return types for EVAL_RO: ""
--ERR no return types for EVALSHA_RO: ""
--ERR no return types for SUBSCRIBE: ""
 -ERR no return types for PERSIST: "@integer-reply, specifically:\n\n* `1` if the timeout was removed.\n* `0` if `key` does not exist or does not have an associated timeout."
--ERR no return types for GEOHASH: "@array-reply, specifically:\n\nThe command returns an array where each element is the Geohash corresponding to\neach member name passed as argument to the command."
--ERR no return types for GEODIST: "@bulk-string-reply, specifically:\n\nThe command returns the distance as a double (represented as a string)\nin the specified unit, or NULL if one or both the elements are missing."
--ERR no return types for SSCAN: ""
--ERR no return types for XRANGE: "@array-reply, specifically:\n\nThe command returns the entries with IDs matching the specified range.\nThe returned entries are complete, that means that the ID and all the fields\nthey are composed are returned. Moreover, the entries are returned with\ntheir fields and values in the exact same order as `XADD` added them."
--ERR no return types for EXISTS: "@integer-reply, specifically:\n\n* `1` if the key exists.\n* `0` if the key does not exist.\n\nSince Redis 3.0.3 the command accepts a variable number of keys and the return value is generalized:\n\n* The number of keys existing among the ones specified as arguments. Keys mentioned multiple times and existing are counted multiple times."
--ERR no return types for SHUTDOWN: "@simple-string-reply on error.\nOn success nothing is returned since the server quits and the connection is\nclosed."
+-ERR no return types for BITFIELD: ""
+-ERR no return types for XAUTOCLAIM: "@array-reply, specifically:\n\nAn array with two elements:\n\n1. The first element is a stream ID to be used as the `<start>` argument for the next call to `XAUTOCLAIM`\n2. The second element is an array containing all the successfully claimed messages in the same format as `XRANGE`."
+-ERR no return types for PFCOUNT: "@integer-reply, specifically:\n\n* The approximated number of unique elements observed via `PFADD`."
+-ERR no return types for GEOADD: "@integer-reply, specifically:\n\n* When used without optional arguments, the number of elements added to the sorted set (excluding score updates).\n* If the `CH` option is specified, the number of elements that were changed (added or updated)."
+-ERR no return types for HEXISTS: "@integer-reply, specifically:\n\n* `1` if the hash contains `field`.\n* `0` if the hash does not contain `field`, or `key` does not exist."
+-ERR no return types for XACK: "@integer-reply, specifically:\n\nThe command returns the number of messages successfully acknowledged.\nCertain message IDs may no longer be part of the PEL (for example because\nthey have already been acknowledged), and XACK will not count them as\nsuccessfully acknowledged."
+-ERR no return types for XPENDING: "@array-reply, specifically:\n\nThe command returns data in different format depending on the way it is\ncalled, as previously explained in this page. However the reply is always\nan array of items."
+-ERR no return types for AUTH: "@simple-string-reply or an error if the password, or username/password pair, is invalid."
+-ERR no return types for SETNX: "@integer-reply, specifically:\n\n* `1` if the key was set\n* `0` if the key was not set"
+-ERR no return types for ZADD: "@integer-reply, specifically:\n\n* When used without optional arguments, the number of elements added to the sorted set (excluding score updates).\n* If the `CH` option is specified, the number of elements that were changed (added or updated).\n\nIf the `INCR` option is specified, the return value will be @bulk-string-reply:\n\n* The new score of `member` (a double precision floating point number) represented as string, or `nil` if the operation was aborted (when called with either the `XX` or the `NX` option)."
+-ERR no return types for UNSUBSCRIBE: ""
+-ERR no return types for ZREM: "@integer-reply, specifically:\n\n* The number of members removed from the sorted set, not including non existing\n  members."
 -ERR no return types for MSETNX: "@integer-reply, specifically:\n\n* `1` if the all the keys were set.\n* `0` if no key was set (at least one key already existed)."
 -ERR no return types for LOLWUT: "@bulk-string-reply (or verbatim reply when using the RESP3 protocol): the string containing the generative computer art, and a text with the Redis version."
--ERR no return types for XADD: "@bulk-string-reply, specifically:\n\nThe command returns the ID of the added entry. The ID is the one auto-generated\nif `*` is passed as ID argument, otherwise the command just returns the same ID\nspecified by the user during insertion.\n\nThe command returns a @nil-reply when used with the `NOMKSTREAM` option and the\nkey doesn't exist."
--ERR no return types for EXPIRE: "@integer-reply, specifically:\n\n* `1` if the timeout was set.\n* `0` if the timeout was not set. e.g. key doesn't exist, or operation skipped due to the provided arguments."
--ERR no return types for SMOVE: "@integer-reply, specifically:\n\n* `1` if the element is moved.\n* `0` if the element is not a member of `source` and no operation was performed."
 -ERR no return types for EVALSHA: ""
+-ERR no return types for GEOSEARCH: "@array-reply, specifically:\n\n* Without any `WITH` option specified, the command just returns a linear array like [\"New York\",\"Milan\",\"Paris\"].\n* If `WITHCOORD`, `WITHDIST` or `WITHHASH` options are specified, the command returns an array of arrays, where each sub-array represents a single item.\n\nWhen additional information is returned as an array of arrays for each item, the first item in the sub-array is always the name of the returned item. The other information is returned in the following order as successive elements of the sub-array.\n\n1. The distance from the center as a floating point number, in the same unit specified in the shape.\n2. The geohash integer.\n3. The coordinates as a two items x,y array (longitude,latitude)."
+-ERR no return types for XREVRANGE: "@array-reply, specifically:\n\nThe command returns the entries with IDs matching the specified range,\nfrom the higher ID to the lower ID matching.\nThe returned entries are complete, that means that the ID and all the fields\nthey are composed are returned. Moreover the entries are returned with\ntheir fields and values in the exact same order as `XADD` added them."
+-ERR no return types for HSCAN: ""
+-ERR no return types for SORT: "@array-reply: without passing the `store` option the command returns a list of sorted elements.\n@integer-reply: when the `store` option is specified the command returns the number of sorted elements in the destination list."
+-ERR no return types for PSUBSCRIBE: ""
+-ERR no return types for GEOPOS: "@array-reply, specifically:\n\nThe command returns an array where each element is a two elements array\nrepresenting longitude and latitude (x,y) of each member name passed as\nargument to the command.\n\nNon existing elements are reported as NULL elements of the array."
+-ERR no return types for EXISTS: "@integer-reply, specifically:\n\n* `1` if the key exists.\n* `0` if the key does not exist.\n\nSince Redis 3.0.3 the command accepts a variable number of keys and the return value is generalized:\n\n* The number of keys existing among the ones specified as arguments. Keys mentioned multiple times and existing are counted multiple times."
+-ERR no return types for EVAL_RO: ""
+-ERR no return types for PUNSUBSCRIBE: ""
+-ERR no return types for MONITOR: "**Non standard return value**, just dumps the received commands in an infinite\nflow."
+-ERR no return types for XREADGROUP: "@array-reply, specifically:\n\nThe command returns an array of results: each element of the returned\narray is an array composed of a two element containing the key name and\nthe entries reported for that key. The entries reported are full stream\nentries, having IDs and the list of all the fields and values. Field and\nvalues are guaranteed to be reported in the same order they were added\nby `XADD`.\n\nWhen **BLOCK** is used, on timeout a null reply is returned.\n\nReading the [Redis Streams introduction](/topics/streams-intro) is highly\nsuggested in order to understand more about the streams overall behavior\nand semantics."
+-ERR no return types for XRANGE: "@array-reply, specifically:\n\nThe command returns the entries with IDs matching the specified range.\nThe returned entries are complete, that means that the ID and all the fields\nthey are composed are returned. Moreover, the entries are returned with\ntheir fields and values in the exact same order as `XADD` added them."
+-ERR no return types for EVAL: ""
+-ERR no return types for PSETEX: ""
+-ERR no return types for MOVE: "@integer-reply, specifically:\n\n* `1` if `key` was moved.\n* `0` if `key` was not moved."
+-ERR no return types for SSCAN: ""
+-ERR no return types for GEODIST: "@bulk-string-reply, specifically:\n\nThe command returns the distance as a double (represented as a string)\nin the specified unit, or NULL if one or both the elements are missing."
+-ERR no return types for BRPOPLPUSH: "@bulk-string-reply: the element being popped from `source` and pushed to `destination`.\nIf `timeout` is reached, a @nil-reply is returned."
+-ERR no return types for ZREVRANK: "* If `member` exists in the sorted set, @integer-reply: the rank of `member`.\n* If `member` does not exist in the sorted set or `key` does not exist,\n  @bulk-string-reply: `nil`."
+-ERR no return types for SUBSCRIBE: ""
+-ERR no return types for XADD: "@bulk-string-reply, specifically:\n\nThe command returns the ID of the added entry. The ID is the one auto-generated\nif `*` is passed as ID argument, otherwise the command just returns the same ID\nspecified by the user during insertion.\n\nThe command returns a @nil-reply when used with the `NOMKSTREAM` option and the\nkey doesn't exist."
+-ERR no return types for EXPIREAT: "@integer-reply, specifically:\n\n* `1` if the timeout was set.\n* `0` if the timeout was not set. e.g. key doesn't exist, or operation skipped due to the provided arguments."
+-ERR no return types for COPY: "@integer-reply, specifically:\n\n* `1` if `source` was copied.\n* `0` if `source` was not copied."
+-ERR no return types for RENAMENX: "@integer-reply, specifically:\n\n* `1` if `key` was renamed to `newkey`.\n* `0` if `newkey` already exists."
+-ERR no return types for PEXPIREAT: "@integer-reply, specifically:\n\n* `1` if the timeout was set.\n* `0` if the timeout was not set. e.g. key doesn't exist, or operation skipped due to the provided arguments."
+-ERR no return types for ZSCAN: ""
+-ERR no return types for SCAN: ""
+-ERR no return types for EVALSHA_RO: ""
+-ERR no return types for RPOP: "When called without the `count` argument:\n\n@bulk-string-reply: the value of the last element, or `nil` when `key` does not exist.\n\nWhen called with the `count` argument:\n\n@array-reply: list of popped elements, or `nil` when `key` does not exist."
+-ERR no return types for EXPIRE: "@integer-reply, specifically:\n\n* `1` if the timeout was set.\n* `0` if the timeout was not set. e.g. key doesn't exist, or operation skipped due to the provided arguments."
+-ERR no return types for XREAD: "@array-reply, specifically:\n\nThe command returns an array of results: each element of the returned\narray is an array composed of a two element containing the key name and\nthe entries reported for that key. The entries reported are full stream\nentries, having IDs and the list of all the fields and values. Field and\nvalues are guaranteed to be reported in the same order they were added\nby `XADD`.\n\nWhen **BLOCK** is used, on timeout a null reply is returned.\n\nReading the [Redis Streams introduction](/topics/streams-intro) is highly\nsuggested in order to understand more about the streams overall behavior\nand semantics."
+-ERR no return types for SMOVE: "@integer-reply, specifically:\n\n* `1` if the element is moved.\n* `0` if the element is not a member of `source` and no operation was performed."
+-ERR no return types for GEORADIUS: "@array-reply, specifically:\n\n* Without any `WITH` option specified, the command just returns a linear array like [\"New York\",\"Milan\",\"Paris\"].\n* If `WITHCOORD`, `WITHDIST` or `WITHHASH` options are specified, the command returns an array of arrays, where each sub-array represents a single item.\n\nWhen additional information is returned as an array of arrays for each item, the first item in the sub-array is always the name of the returned item. The other information is returned in the following order as successive elements of the sub-array.\n\n1. The distance from the center as a floating point number, in the same unit specified in the radius.\n2. The geohash integer.\n3. The coordinates as a two items x,y array (longitude,latitude).\n\nSo for example the command `GEORADIUS Sicily 15 37 200 km WITHCOORD WITHDIST` will return each item in the following way:\n\n    [\"Palermo\",\"190.4424\",[\"13.361389338970184\",\"38.115556395496299\"]]"
+-ERR no return types for STRALGO: "For the LCS algorithm:\n\n* Without modifiers the string representing the longest common substring is returned.\n* When `LEN` is given the command returns the length of the longest common substring.\n* When `IDX` is given the command returns an array with the LCS length and all the ranges in both the strings, start and end offset for each string, where there are matches. When `WITHMATCHLEN` is given each array representing a match will also have the length of the match (see examples)."
+-ERR no return types for EXEC: "@array-reply: each element being the reply to each of the commands in the\natomic transaction.\n\nWhen using `WATCH`, `EXEC` can return a @nil-reply if the execution was aborted."
 -ERR no return types for PSYNC: "**Non standard return value**, a bulk transfer of the data followed by `PING` and write requests from the master."
 -ERR no return types for SPOP: "When called without the `count` argument:\n\n@bulk-string-reply: the removed member, or `nil` when `key` does not exist.\n\nWhen called with the `count` argument:\n\n@array-reply: the removed members, or an empty array when `key` does not exist."
--ERR no return types for LPOS: "The command returns the integer representing the matching element, or `nil` if there is no match. However, if the `COUNT` option is given the command returns an array (empty if there are no matches)."
--ERR no return types for ZREM: "@integer-reply, specifically:\n\n* The number of members removed from the sorted set, not including non existing\n  members."
--ERR no return types for ZREVRANK: "* If `member` exists in the sorted set, @integer-reply: the rank of `member`.\n* If `member` does not exist in the sorted set or `key` does not exist,\n  @bulk-string-reply: `nil`."
--ERR no return types for TIME: "@array-reply, specifically:\n\nA multi bulk reply containing two elements:\n\n* unix time in seconds.\n* microseconds."
--ERR no return types for HRANDFIELD: "@bulk-string-reply: without the additional `count` argument, the command returns a Bulk Reply with the randomly selected field, or `nil` when `key` does not exist.\n\n@array-reply: when the additional `count` argument is passed, the command returns an array of fields, or an empty array when `key` does not exist.\nIf the `WITHVALUES` modifier is used, the reply is a list fields and their values from the hash."
--ERR no return types for XACK: "@integer-reply, specifically:\n\nThe command returns the number of messages successfully acknowledged.\nCertain message IDs may no longer be part of the PEL (for example because\nthey have already been acknowledged), and XACK will not count them as\nsuccessfully acknowledged."
--ERR no return types for PFCOUNT: "@integer-reply, specifically:\n\n* The approximated number of unique elements observed via `PFADD`."
--ERR no return types for EXPIREAT: "@integer-reply, specifically:\n\n* `1` if the timeout was set.\n* `0` if the timeout was not set. e.g. key doesn't exist, or operation skipped due to the provided arguments."
--ERR no return types for RPOP: "When called without the `count` argument:\n\n@bulk-string-reply: the value of the last element, or `nil` when `key` does not exist.\n\nWhen called with the `count` argument:\n\n@array-reply: list of popped elements, or `nil` when `key` does not exist."
+-ERR no return types for ZRANK: "* If `member` exists in the sorted set, @integer-reply: the rank of `member`.\n* If `member` does not exist in the sorted set or `key` does not exist,\n  @bulk-string-reply: `nil`."
 -ERR no return types for XCLAIM: "@array-reply, specifically:\n\nThe command returns all the messages successfully claimed, in the same format\nas `XRANGE`. However if the `JUSTID` option was specified, only the message\nIDs are reported, without including the actual message."
--ERR no return types for HSCAN: ""
--ERR no return types for PUNSUBSCRIBE: ""
+-ERR no return types for SYNC: "**Non standard return value**, a bulk transfer of the data followed by `PING` and write requests from the master."
+-ERR no return types for SISMEMBER: "@integer-reply, specifically:\n\n* `1` if the element is a member of the set.\n* `0` if the element is not a member of the set, or if `key` does not exist."
+-ERR no return types for SHUTDOWN: "@simple-string-reply on error.\nOn success nothing is returned since the server quits and the connection is\nclosed."
+-ERR no return types for GEORADIUSBYMEMBER: ""
 -ERR no return types for BLMOVE: "@bulk-string-reply: the element being popped from `source` and pushed to `destination`.\nIf `timeout` is reached, a @nil-reply is returned."
--ERR no return types for AUTH: "@simple-string-reply or an error if the password, or username/password pair, is invalid."
--ERR no return types for BITFIELD: ""
--ERR no return types for GEOPOS: "@array-reply, specifically:\n\nThe command returns an array where each element is a two elements array\nrepresenting longitude and latitude (x,y) of each member name passed as\nargument to the command.\n\nNon existing elements are reported as NULL elements of the array."
--ERR no return types for BRPOPLPUSH: "@bulk-string-reply: the element being popped from `source` and pushed to `destination`.\nIf `timeout` is reached, a @nil-reply is returned."
--ERR no return types for GEOADD: "@integer-reply, specifically:\n\n* When used without optional arguments, the number of elements added to the sorted set (excluding score updates).\n* If the `CH` option is specified, the number of elements that were changed (added or updated)."
--ERR no return types for XREAD: "@array-reply, specifically:\n\nThe command returns an array of results: each element of the returned\narray is an array composed of a two element containing the key name and\nthe entries reported for that key. The entries reported are full stream\nentries, having IDs and the list of all the fields and values. Field and\nvalues are guaranteed to be reported in the same order they were added\nby `XADD`.\n\nWhen **BLOCK** is used, on timeout a null reply is returned.\n\nReading the [Redis Streams introduction](/topics/streams-intro) is highly\nsuggested in order to understand more about the streams overall behavior\nand semantics."
--ERR no return types for XPENDING: "@array-reply, specifically:\n\nThe command returns data in different format depending on the way it is\ncalled, as previously explained in this page. However the reply is always\nan array of items."
+-ERR no return types for SRANDMEMBER: "@bulk-string-reply: without the additional `count` argument, the command returns a Bulk Reply with the randomly selected element, or `nil` when `key` does not exist.\n\n@array-reply: when the additional `count` argument is passed, the command returns an array of elements, or an empty array when `key` does not exist."
+-ERR no return types for GEOHASH: "@array-reply, specifically:\n\nThe command returns an array where each element is the Geohash corresponding to\neach member name passed as argument to the command."
+-ERR no return types for PFADD: "@integer-reply, specifically:\n\n* 1 if at least 1 HyperLogLog internal register was altered. 0 otherwise."
+-ERR no return types for LPOP: "When called without the `count` argument:\n\n@bulk-string-reply: the value of the first element, or `nil` when `key` does not exist.\n\nWhen called with the `count` argument:\n\n@array-reply: list of popped elements, or `nil` when `key` does not exist."
+-ERR no return types for SET: "@simple-string-reply: `OK` if `SET` was executed correctly.\n\n@nil-reply: `(nil)` if the `SET` operation was not performed because the user specified the `NX` or `XX` option but the condition was not met.\n\nIf the command is issued with the `!GET` option, the above does not apply. It will instead reply as follows, regardless if the `SET` was actually performed:\n\n@bulk-string-reply: the old string value stored at key.\n\n@nil-reply: `(nil)` if the key did not exist."
+-ERR no return types for TIME: "@array-reply, specifically:\n\nA multi bulk reply containing two elements:\n\n* unix time in seconds.\n* microseconds."
+-ERR no return types for PEXPIRE: "@integer-reply, specifically:\n\n* `1` if the timeout was set.\n* `0` if the timeout was not set. e.g. key doesn't exist, or operation skipped due to the provided arguments."
+-ERR no return types for HSETNX: "@integer-reply, specifically:\n\n* `1` if `field` is a new field in the hash and `value` was set.\n* `0` if `field` already exists in the hash and no operation was performed."
+-ERR no return types for LPOS: "The command returns the integer representing the matching element, or `nil` if there is no match. However, if the `COUNT` option is given the command returns an array (empty if there are no matches)."
+-ERR no return types for ZRANDMEMBER: "@bulk-string-reply: without the additional `count` argument, the command returns a Bulk Reply with the randomly selected element, or `nil` when `key` does not exist.\n\n@array-reply: when the additional `count` argument is passed, the command returns an array of elements, or an empty array when `key` does not exist.\nIf the `WITHSCORES` modifier is used, the reply is a list elements and their scores from the sorted set."
+-ERR no return types for HRANDFIELD: "@bulk-string-reply: without the additional `count` argument, the command returns a Bulk Reply with the randomly selected field, or `nil` when `key` does not exist.\n\n@array-reply: when the additional `count` argument is passed, the command returns an array of fields, or an empty array when `key` does not exist.\nIf the `WITHVALUES` modifier is used, the reply is a list fields and their values from the hash."
+-ERR while reading command-list.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/command-list.md'
+-ERR no return types for CLIENT KILL: "When called with the three arguments format:\n\n@simple-string-reply: `OK` if the connection exists and has been closed\n\nWhen called with the filter / value format:\n\n@integer-reply: the number of clients killed."
+-ERR no return types for CLIENT UNBLOCK: "@integer-reply, specifically:\n\n* `1` if the client was unblocked successfully.\n* `0` if the client wasn't unblocked."
+-ERR no return types for SCRIPT LOAD: "@bulk-string-reply This command returns the SHA1 digest of the script added into the\nscript cache."
+-ERR no return types for SCRIPT EXISTS: "@array-reply The command returns an array of integers that correspond to\nthe specified SHA1 digest arguments.\nFor every corresponding SHA1 digest of a script that actually exists in the\nscript cache, an 1 is returned, otherwise 0 is returned."
+-ERR no return types for SLOWLOG RESET: ""
+-ERR no return types for SLOWLOG LEN: ""
+-ERR no return types for SLOWLOG GET: ""
+-ERR no return types for CLUSTER REPLICAS: "The command returns data in the same format as `CLUSTER NODES`."
 -ERR no return types for XINFO GROUPS: ""
 -ERR no return types for XINFO CONSUMERS: ""
 -ERR while reading stralgo-lcs.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/stralgo-lcs.md'
 -ERR while reading stralgo-help.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/stralgo-help.md'
 -ERR no return types for CONFIG GET: "The return type of the command is a @array-reply."
--ERR no return types for SLOWLOG RESET: ""
--ERR no return types for SLOWLOG GET: ""
--ERR no return types for SLOWLOG LEN: ""
 -ERR no return types for ACL LOG: "When called to show security events:\n\n@array-reply: a list of ACL security events.\n\nWhen called with `RESET`:\n\n@simple-string-reply: `OK` if the security log was cleared."
--ERR no return types for ACL GETUSER: ""
 -ERR no return types for ACL LIST: "An array of strings."
+-ERR no return types for ACL GETUSER: ""
 -ERR no return types for ACL USERS: "An array of strings."
--ERR while reading command-list.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/command-list.md'
--ERR no return types for CLIENT UNBLOCK: "@integer-reply, specifically:\n\n* `1` if the client was unblocked successfully.\n* `0` if the client wasn't unblocked."
--ERR no return types for CLIENT KILL: "When called with the three arguments format:\n\n@simple-string-reply: `OK` if the connection exists and has been closed\n\nWhen called with the filter / value format:\n\n@integer-reply: the number of clients killed."
--ERR no return types for SCRIPT EXISTS: "@array-reply The command returns an array of integers that correspond to\nthe specified SHA1 digest arguments.\nFor every corresponding SHA1 digest of a script that actually exists in the\nscript cache, an 1 is returned, otherwise 0 is returned."
--ERR no return types for SCRIPT LOAD: "@bulk-string-reply This command returns the SHA1 digest of the script added into the\nscript cache."
--ERR no return types for CLUSTER REPLICAS: "The command returns data in the same format as `CLUSTER NODES`."
--ERR no markdown file for XINFO
--ERR no markdown file for XSETID
--ERR no markdown file for MODULE
--ERR no markdown file for HOST:
--ERR no markdown file for XGROUP
--ERR no markdown file for CONFIG
--ERR no markdown file for SLOWLOG
--ERR no markdown file for SUBSTR
--ERR no markdown file for ACL
 -ERR no markdown file for GEORADIUS_RO
--ERR no markdown file for LATENCY
--ERR no markdown file for MEMORY
--ERR no markdown file for CLIENT
--ERR no markdown file for RESTORE-ASKING
--ERR no markdown file for REPLCONF
--ERR no markdown file for SCRIPT
--ERR no markdown file for PUBSUB
--ERR no markdown file for GEORADIUSBYMEMBER_RO
--ERR no markdown file for DEBUG
--ERR no markdown file for PFDEBUG
 -ERR no markdown file for POST
+-ERR no markdown file for LATENCY
+-ERR no markdown file for REPLCONF
+-ERR no markdown file for HOST:
+-ERR no markdown file for GEORADIUSBYMEMBER_RO
+-ERR no markdown file for CLIENT
+-ERR no markdown file for SCRIPT
+-ERR no markdown file for SLOWLOG
+-ERR no markdown file for OBJECT
+-ERR no markdown file for SUBSTR
 -ERR no markdown file for CLUSTER
 -ERR no markdown file for CLUSTER ADDSLOTSRANGE
 -ERR no markdown file for CLUSTER DELSLOTSRANGE
+-ERR no markdown file for DEBUG
+-ERR no markdown file for XINFO
+-ERR no markdown file for CONFIG
+-ERR no markdown file for MODULE
+-ERR no markdown file for ACL
+-ERR no markdown file for MEMORY
+-ERR no markdown file for XGROUP
+-ERR no markdown file for PFDEBUG
+-ERR no markdown file for PUBSUB
+-ERR no markdown file for XSETID
+-ERR no markdown file for RESTORE-ASKING
 -ERR no markdown file for PFSELFTEST
--ERR no markdown file for OBJECT
+-ERR no markdown file for COMMAND LIST
 -ERR no markdown file for STRALGO LCS
 -ERR no markdown file for STRALGO HELP
--ERR no markdown file for COMMAND LIST

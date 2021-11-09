@@ -1,11 +1,11 @@
 {
-  "CONFIG": {
-    "group": "server",
-    "since": "2.0.0",
-    "arity": -2,
-    "command_flags": [],
-    "acl_categories": [
-      "slow"
-    ]
-  }
+    "CONFIG": {
+        "group": "server",
+        "since": "2.0.0",
+        "arity": -2,
+        "command_flags": [],
+        "acl_categories": [
+            "slow"
+        ]
+    }
 }

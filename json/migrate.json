@@ -1,78 +1,77 @@
 {
-  "MIGRATE": {
-    "summary": "Atomically transfer a key from a Redis instance to another one.",
-    "complexity": "This command actually executes a DUMP+DEL in the source instance, and a RESTORE in the target instance. See the pages of these commands for time complexity. Also an O(N) data transfer between the two instances is performed.",
-    "group": "generic",
-    "since": "2.6.0",
-    "arity": -6,
-    "function": "migrateCommand",
-    "get_keys_function": "migrateGetKeys",
-    "history": [
-      [
-        "3.0.0",
-        "Added the `!COPY` and `REPLACE` options."
-      ],
-      [
-        "3.0.6",
-        "Added the `!KEYS` option."
-      ],
-      [
-        "4.0.7",
-        "Added the `!AUTH` option."
-      ],
-      [
-        "6.0.0",
-        "Added the `AUTH2` option."
-      ]
-    ],
-    "command_flags": [
-      "write",
-      "random",
-      "movablekeys"
-    ],
-    "acl_categories": [
-      "keyspace",
-      "write",
-      "slow",
-      "dangerous"
-    ],
-    "key_specs": [
-      {
-        "flags": [
-          "write"
+    "MIGRATE": {
+        "summary": "Atomically transfer a key from a Redis instance to another one.",
+        "complexity": "This command actually executes a DUMP+DEL in the source instance, and a RESTORE in the target instance. See the pages of these commands for time complexity. Also an O(N) data transfer between the two instances is performed.",
+        "group": "generic",
+        "since": "2.6.0",
+        "arity": -6,
+        "function": "migrateCommand",
+        "get_keys_function": "migrateGetKeys",
+        "history": [
+            [
+                "3.0.0",
+                "Added the `!COPY` and `REPLACE` options."
+            ],
+            [
+                "3.0.6",
+                "Added the `!KEYS` option."
+            ],
+            [
+                "4.0.7",
+                "Added the `!AUTH` option."
+            ],
+            [
+                "6.0.0",
+                "Added the `AUTH2` option."
+            ]
         ],
-        "begin_search": {
-          "index": {
-            "pos": 3
-          }
-        },
-        "find_keys": {
-          "range": {
-            "lastkey": 0,
-            "step": 1,
-            "limit": 0
-          }
-        }
-      },
-      {
-        "flags": [
-          "write",
-          "incomplete"
+        "command_flags": [
+            "write",
+            "random"
         ],
-        "begin_search": {
-          "keyword": {
-            "keyword": "KEYS",
-            "startfrom": -2
-          }
-        },
-        "find_keys": {
-          "range": {
-            "lastkey": -1,
-            "step": 1,
-            "limit": 0
-          }
-        }
-      }
-    ]
-  }
+        "acl_categories": [
+            "keyspace",
+            "write",
+            "slow",
+            "dangerous"
+        ],
+        "key_specs": [
+            {
+                "flags": [
+                    "write"
+                ],
+                "begin_search": {
+                    "index": {
+                        "pos": 3
+                    }
+                },
+                "find_keys": {
+                    "range": {
+                        "lastkey": 0,
+                        "step": 1,
+                        "limit": 0
+                    }
+                }
+            },
+            {
+                "flags": [
+                    "write",
+                    "incomplete"
+                ],
+                "begin_search": {
+                    "keyword": {
+                        "keyword": "KEYS",
+                        "startfrom": -2
+                    }
+                },
+                "find_keys": {
+                    "range": {
+                        "lastkey": -1,
+                        "step": 1,
+                        "limit": 0
+                    }
+                }
+            }
+        ]
+    }
 }

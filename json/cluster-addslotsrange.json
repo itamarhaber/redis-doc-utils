@@ -1,17 +1,17 @@
 {
-  "ADDSLOTSRANGE": {
-    "arity": -4,
-    "container": "CLUSTER",
-    "function": "clusterCommand",
-    "command_flags": [
-      "admin",
-      "random",
-      "stale"
-    ],
-    "acl_categories": [
-      "admin",
-      "slow",
-      "dangerous"
-    ]
-  }
+    "ADDSLOTSRANGE": {
+        "arity": -4,
+        "container": "CLUSTER",
+        "function": "clusterCommand",
+        "command_flags": [
+            "admin",
+            "random",
+            "stale"
+        ],
+        "acl_categories": [
+            "admin",
+            "slow",
+            "dangerous"
+        ]
+    }
 }
