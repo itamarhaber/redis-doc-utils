@@ -16,6 +16,21 @@
             "admin",
             "slow",
             "dangerous"
+        ],
+        "arguments": [
+            {
+                "optional": true,
+                "name": "hard_soft",
+                "type": "oneof",
+                "value": [
+                    {
+                        "token": "HARD"
+                    },
+                    {
+                        "token": "SOFT"
+                    }
+                ]
+            }
         ]
     }
 }

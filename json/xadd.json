@@ -41,6 +41,93 @@
                     }
                 }
             }
+        ],
+        "arguments": [
+            {
+                "name": "key",
+                "type": "key",
+                "value": "key"
+            },
+            {
+                "token": "NOMKSTREAM",
+                "optional": true,
+                "name": "nomkstream"
+            },
+            {
+                "optional": true,
+                "name": "trim",
+                "type": "block",
+                "value": [
+                    {
+                        "name": "maxlen_minid",
+                        "type": "oneof",
+                        "value": [
+                            {
+                                "token": "MAXLEN"
+                            },
+                            {
+                                "token": "MINID"
+                            }
+                        ]
+                    },
+                    {
+                        "optional": true,
+                        "name": "=_~",
+                        "type": "oneof",
+                        "value": [
+                            {
+                                "token": "="
+                            },
+                            {
+                                "token": "~"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "threshold",
+                        "type": "string",
+                        "value": "threshold"
+                    },
+                    {
+                        "token": "LIMIT",
+                        "optional": true,
+                        "name": "count",
+                        "type": "integer",
+                        "value": "count"
+                    }
+                ]
+            },
+            {
+                "name": "*_id",
+                "type": "oneof",
+                "value": [
+                    {
+                        "token": "*"
+                    },
+                    {
+                        "name": "id",
+                        "value": "id"
+                    }
+                ]
+            },
+            {
+                "multiple": true,
+                "multiple_token": true,
+                "name": "field_value",
+                "type": "block",
+                "value": [
+                    {
+                        "name": "field",
+                        "type": "string",
+                        "value": "field"
+                    },
+                    {
+                        "name": "value",
+                        "type": "string",
+                        "value": "value"
+                    }
+                ]
+            }
         ]
     }
 }

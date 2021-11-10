@@ -34,6 +34,35 @@
                     }
                 }
             }
+        ],
+        "arguments": [
+            {
+                "name": "key",
+                "type": "key",
+                "value": "key"
+            },
+            {
+                "name": "groupname",
+                "type": "string",
+                "value": "groupname"
+            },
+            {
+                "name": "id_$",
+                "type": "oneof",
+                "value": [
+                    {
+                        "token": "id"
+                    },
+                    {
+                        "token": "$"
+                    }
+                ]
+            },
+            {
+                "token": "MKSTREAM",
+                "optional": true,
+                "name": "mkstream"
+            }
         ]
     }
 }

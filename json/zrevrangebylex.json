@@ -5,7 +5,7 @@
         "group": "sorted_set",
         "since": "2.8.9",
         "arity": -4,
-        "depracated": true,
+        "deprecated": true,
         "function": "zrevrangebylexCommand",
         "command_flags": [
             "readonly"
@@ -32,6 +32,41 @@
                         "limit": 0
                     }
                 }
+            }
+        ],
+        "arguments": [
+            {
+                "name": "key",
+                "type": "key",
+                "value": "key"
+            },
+            {
+                "name": "max",
+                "type": "string",
+                "value": "max"
+            },
+            {
+                "name": "min",
+                "type": "string",
+                "value": "min"
+            },
+            {
+                "token": "LIMIT",
+                "optional": true,
+                "name": "offset_count",
+                "type": "block",
+                "value": [
+                    {
+                        "name": "offset",
+                        "type": "integer",
+                        "value": "offset"
+                    },
+                    {
+                        "name": "count",
+                        "type": "integer",
+                        "value": "count"
+                    }
+                ]
             }
         ]
     }

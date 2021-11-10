@@ -23,6 +23,13 @@
             "admin",
             "slow",
             "dangerous"
+        ],
+        "arguments": [
+            {
+                "name": "username",
+                "type": "string",
+                "value": "username"
+            }
         ]
     }
 }

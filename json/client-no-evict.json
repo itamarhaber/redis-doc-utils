@@ -18,6 +18,20 @@
             "slow",
             "dangerous",
             "connection"
+        ],
+        "arguments": [
+            {
+                "name": "on_off",
+                "type": "oneof",
+                "value": [
+                    {
+                        "token": "ON"
+                    },
+                    {
+                        "token": "OFF"
+                    }
+                ]
+            }
         ]
     }
 }

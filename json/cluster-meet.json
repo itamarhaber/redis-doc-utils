@@ -16,6 +16,18 @@
             "admin",
             "slow",
             "dangerous"
+        ],
+        "arguments": [
+            {
+                "name": "ip",
+                "type": "string",
+                "value": "ip"
+            },
+            {
+                "name": "port",
+                "type": "integer",
+                "value": "port"
+            }
         ]
     }
 }

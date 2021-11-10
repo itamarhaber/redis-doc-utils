@@ -1,0 +1,19 @@
+{
+    "REPLCONF": {
+        "group": "server",
+        "arity": -1,
+        "internal": true,
+        "function": "replconfCommand",
+        "command_flags": [
+            "admin",
+            "noscript",
+            "loading",
+            "stale"
+        ],
+        "acl_categories": [
+            "admin",
+            "slow",
+            "dangerous"
+        ]
+    }
+}

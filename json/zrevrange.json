@@ -5,7 +5,7 @@
         "group": "sorted_set",
         "since": "1.2.0",
         "arity": -4,
-        "depracated": true,
+        "deprecated": true,
         "function": "zrevrangeCommand",
         "command_flags": [
             "readonly"
@@ -32,6 +32,28 @@
                         "limit": 0
                     }
                 }
+            }
+        ],
+        "arguments": [
+            {
+                "name": "key",
+                "type": "key",
+                "value": "key"
+            },
+            {
+                "name": "start",
+                "type": "integer",
+                "value": "start"
+            },
+            {
+                "name": "stop",
+                "type": "integer",
+                "value": "stop"
+            },
+            {
+                "optional": true,
+                "name": "withscores",
+                "token": "WITHSCORES"
             }
         ]
     }

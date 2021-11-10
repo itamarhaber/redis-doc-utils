@@ -39,6 +39,54 @@
                     }
                 }
             }
+        ],
+        "arguments": [
+            {
+                "name": "key",
+                "type": "key",
+                "value": "key"
+            },
+            {
+                "optional": true,
+                "name": "nx_xx",
+                "type": "oneof",
+                "value": [
+                    {
+                        "token": "NX"
+                    },
+                    {
+                        "token": "XX"
+                    }
+                ]
+            },
+            {
+                "optional": true,
+                "name": "change",
+                "token": "CH"
+            },
+            {
+                "multiple": true,
+                "multiple_token": true,
+                "name": "longitude_latitude_member",
+                "type": "block",
+                "value": [
+                    {
+                        "name": "longitude",
+                        "type": "double",
+                        "value": "longitude"
+                    },
+                    {
+                        "name": "latitude",
+                        "type": "double",
+                        "value": "latitude"
+                    },
+                    {
+                        "name": "member",
+                        "type": "string",
+                        "value": "member"
+                    }
+                ]
+            }
         ]
     }
 }

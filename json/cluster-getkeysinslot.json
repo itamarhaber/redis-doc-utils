@@ -13,6 +13,18 @@
         ],
         "acl_categories": [
             "slow"
+        ],
+        "arguments": [
+            {
+                "name": "slot",
+                "type": "integer",
+                "value": "slot"
+            },
+            {
+                "name": "count",
+                "type": "integer",
+                "value": "count"
+            }
         ]
     }
 }

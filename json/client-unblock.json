@@ -18,6 +18,26 @@
             "slow",
             "dangerous",
             "connection"
+        ],
+        "arguments": [
+            {
+                "name": "client-id",
+                "type": "integer",
+                "value": "client-id"
+            },
+            {
+                "optional": true,
+                "name": "timeout_error",
+                "type": "oneof",
+                "value": [
+                    {
+                        "token": "TIMEOUT"
+                    },
+                    {
+                        "token": "ERROR"
+                    }
+                ]
+            }
         ]
     }
 }

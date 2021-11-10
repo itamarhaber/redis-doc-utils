@@ -15,6 +15,56 @@
         "acl_categories": [
             "slow",
             "connection"
+        ],
+        "arguments": [
+            {
+                "name": "on_off",
+                "type": "oneof",
+                "value": [
+                    {
+                        "token": "ON"
+                    },
+                    {
+                        "token": "OFF"
+                    }
+                ]
+            },
+            {
+                "token": "REDIRECT",
+                "optional": true,
+                "name": "client-id",
+                "type": "integer",
+                "value": "client-id"
+            },
+            {
+                "token": "PREFIX",
+                "optional": true,
+                "multiple": true,
+                "multiple_token": true,
+                "name": "prefix",
+                "type": "string",
+                "value": "prefix"
+            },
+            {
+                "optional": true,
+                "name": "BCAST",
+                "token": "BCAST"
+            },
+            {
+                "optional": true,
+                "name": "OPTIN",
+                "token": "OPTIN"
+            },
+            {
+                "optional": true,
+                "name": "OPTOUT",
+                "token": "OPTOUT"
+            },
+            {
+                "optional": true,
+                "name": "NOLOOP",
+                "token": "NOLOOP"
+            }
         ]
     }
 }

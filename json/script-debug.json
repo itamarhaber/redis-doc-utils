@@ -13,6 +13,23 @@
         "acl_categories": [
             "slow",
             "scripting"
+        ],
+        "arguments": [
+            {
+                "name": "yes_sync_no",
+                "type": "oneof",
+                "value": [
+                    {
+                        "token": "YES"
+                    },
+                    {
+                        "token": "SYNC"
+                    },
+                    {
+                        "token": "NO"
+                    }
+                ]
+            }
         ]
     }
 }

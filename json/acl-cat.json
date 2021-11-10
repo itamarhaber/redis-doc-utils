@@ -14,6 +14,14 @@
         ],
         "acl_categories": [
             "slow"
+        ],
+        "arguments": [
+            {
+                "optional": true,
+                "name": "categoryname",
+                "type": "string",
+                "value": "categoryname"
+            }
         ]
     }
 }

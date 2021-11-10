@@ -39,6 +39,37 @@
                     }
                 }
             }
+        ],
+        "arguments": [
+            {
+                "name": "key",
+                "type": "key",
+                "value": "key"
+            },
+            {
+                "name": "timestamp",
+                "type": "posix time",
+                "value": "timestamp"
+            },
+            {
+                "optional": true,
+                "name": "nx_xx_gt_lt",
+                "type": "oneof",
+                "value": [
+                    {
+                        "token": "NX"
+                    },
+                    {
+                        "token": "XX"
+                    },
+                    {
+                        "token": "GT"
+                    },
+                    {
+                        "token": "LT"
+                    }
+                ]
+            }
         ]
     }
 }

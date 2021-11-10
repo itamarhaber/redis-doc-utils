@@ -16,6 +16,13 @@
             "admin",
             "slow",
             "dangerous"
+        ],
+        "arguments": [
+            {
+                "name": "event",
+                "type": "string",
+                "value": "event"
+            }
         ]
     }
 }

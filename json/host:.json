@@ -1,0 +1,17 @@
+{
+    "HOST:": {
+        "group": "server",
+        "arity": -1,
+        "internal": true,
+        "function": "securityWarningCommand",
+        "command_flags": [
+            "readonly",
+            "loading",
+            "stale"
+        ],
+        "acl_categories": [
+            "read",
+            "slow"
+        ]
+    }
+}

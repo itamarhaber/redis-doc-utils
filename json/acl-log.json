@@ -17,6 +17,30 @@
             "admin",
             "slow",
             "dangerous"
+        ],
+        "arguments": [
+            {
+                "optional": true,
+                "name": "count_or RESET",
+                "type": "block",
+                "value": [
+                    {
+                        "name": "count",
+                        "type": "string",
+                        "value": "count"
+                    },
+                    {
+                        "name": "or",
+                        "type": "string",
+                        "value": "or"
+                    },
+                    {
+                        "name": "reset",
+                        "type": "string",
+                        "value": "RESET"
+                    }
+                ]
+            }
         ]
     }
 }

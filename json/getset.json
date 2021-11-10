@@ -5,7 +5,7 @@
         "group": "string",
         "since": "1.0.0",
         "arity": 3,
-        "depracated": true,
+        "deprecated": true,
         "function": "getsetCommand",
         "command_flags": [
             "write",
@@ -35,6 +35,18 @@
                         "limit": 0
                     }
                 }
+            }
+        ],
+        "arguments": [
+            {
+                "name": "key",
+                "type": "key",
+                "value": "key"
+            },
+            {
+                "name": "value",
+                "type": "string",
+                "value": "value"
             }
         ]
     }

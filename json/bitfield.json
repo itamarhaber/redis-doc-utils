@@ -33,6 +33,94 @@
                     }
                 }
             }
+        ],
+        "arguments": [
+            {
+                "name": "key",
+                "type": "key",
+                "value": "key"
+            },
+            {
+                "token": "GET",
+                "optional": true,
+                "name": "type_offset",
+                "type": "block",
+                "value": [
+                    {
+                        "name": "type",
+                        "type": "type",
+                        "value": "type"
+                    },
+                    {
+                        "name": "offset",
+                        "type": "integer",
+                        "value": "offset"
+                    }
+                ]
+            },
+            {
+                "token": "SET",
+                "optional": true,
+                "name": "type_offset_value",
+                "type": "block",
+                "value": [
+                    {
+                        "name": "type",
+                        "type": "type",
+                        "value": "type"
+                    },
+                    {
+                        "name": "offset",
+                        "type": "integer",
+                        "value": "offset"
+                    },
+                    {
+                        "name": "value",
+                        "type": "integer",
+                        "value": "value"
+                    }
+                ]
+            },
+            {
+                "token": "INCRBY",
+                "optional": true,
+                "name": "type_offset_increment",
+                "type": "block",
+                "value": [
+                    {
+                        "name": "type",
+                        "type": "type",
+                        "value": "type"
+                    },
+                    {
+                        "name": "offset",
+                        "type": "integer",
+                        "value": "offset"
+                    },
+                    {
+                        "name": "increment",
+                        "type": "integer",
+                        "value": "increment"
+                    }
+                ]
+            },
+            {
+                "token": "OVERFLOW",
+                "optional": true,
+                "name": "wrap_sat_fail",
+                "type": "oneof",
+                "value": [
+                    {
+                        "token": "WRAP"
+                    },
+                    {
+                        "token": "SAT"
+                    },
+                    {
+                        "token": "FAIL"
+                    }
+                ]
+            }
         ]
     }
 }

@@ -28,6 +28,26 @@
             "slow",
             "dangerous",
             "connection"
+        ],
+        "arguments": [
+            {
+                "name": "timeout",
+                "type": "integer",
+                "value": "timeout"
+            },
+            {
+                "optional": true,
+                "name": "write_all",
+                "type": "oneof",
+                "value": [
+                    {
+                        "token": "WRITE"
+                    },
+                    {
+                        "token": "ALL"
+                    }
+                ]
+            }
         ]
     }
 }

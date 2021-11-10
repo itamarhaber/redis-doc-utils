@@ -5,7 +5,7 @@
         "group": "string",
         "since": "1.0.0",
         "arity": -3,
-        "depracated": true,
+        "deprecated": true,
         "function": "setCommand",
         "history": [
             [
@@ -52,6 +52,58 @@
                         "limit": 0
                     }
                 }
+            }
+        ],
+        "arguments": [
+            {
+                "name": "key",
+                "type": "key",
+                "value": "key"
+            },
+            {
+                "name": "value",
+                "type": "string",
+                "value": "value"
+            },
+            {
+                "optional": true,
+                "name": "ex seconds_px milliseconds_exat timestamp_pxat milliseconds-timestamp_keepttl",
+                "type": "oneof",
+                "value": [
+                    {
+                        "token": "EX seconds"
+                    },
+                    {
+                        "token": "PX milliseconds"
+                    },
+                    {
+                        "token": "EXAT timestamp"
+                    },
+                    {
+                        "token": "PXAT milliseconds-timestamp"
+                    },
+                    {
+                        "token": "KEEPTTL"
+                    }
+                ]
+            },
+            {
+                "optional": true,
+                "name": "nx_xx",
+                "type": "oneof",
+                "value": [
+                    {
+                        "token": "NX"
+                    },
+                    {
+                        "token": "XX"
+                    }
+                ]
+            },
+            {
+                "optional": true,
+                "name": "get",
+                "token": "GET"
             }
         ]
     }

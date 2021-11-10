@@ -33,6 +33,35 @@
                     }
                 }
             }
+        ],
+        "arguments": [
+            {
+                "name": "key",
+                "type": "key",
+                "value": "key"
+            },
+            {
+                "name": "before_after",
+                "type": "oneof",
+                "value": [
+                    {
+                        "token": "BEFORE"
+                    },
+                    {
+                        "token": "AFTER"
+                    }
+                ]
+            },
+            {
+                "name": "pivot",
+                "type": "string",
+                "value": "pivot"
+            },
+            {
+                "name": "element",
+                "type": "string",
+                "value": "element"
+            }
         ]
     }
 }

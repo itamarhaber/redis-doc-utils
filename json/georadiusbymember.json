@@ -5,7 +5,7 @@
         "group": "geo",
         "since": "3.2.0",
         "arity": -5,
-        "depracated": true,
+        "deprecated": true,
         "function": "georadiusbymemberCommand",
         "get_keys_function": "georadiusGetKeys",
         "command_flags": [
@@ -70,6 +70,101 @@
                         "limit": 0
                     }
                 }
+            }
+        ],
+        "arguments": [
+            {
+                "name": "key",
+                "type": "key",
+                "value": "key"
+            },
+            {
+                "name": "member",
+                "type": "string",
+                "value": "member"
+            },
+            {
+                "name": "radius",
+                "type": "double",
+                "value": "radius"
+            },
+            {
+                "name": "m_km_ft_mi",
+                "type": "oneof",
+                "value": [
+                    {
+                        "token": "m"
+                    },
+                    {
+                        "token": "km"
+                    },
+                    {
+                        "token": "ft"
+                    },
+                    {
+                        "token": "mi"
+                    }
+                ]
+            },
+            {
+                "optional": true,
+                "name": "withcoord",
+                "token": "WITHCOORD"
+            },
+            {
+                "optional": true,
+                "name": "withdist",
+                "token": "WITHDIST"
+            },
+            {
+                "optional": true,
+                "name": "withhash",
+                "token": "WITHHASH"
+            },
+            {
+                "optional": true,
+                "name": "count",
+                "type": "block",
+                "value": [
+                    {
+                        "token": "COUNT",
+                        "name": "count",
+                        "type": "integer",
+                        "value": "count"
+                    },
+                    {
+                        "optional": true,
+                        "name": "any",
+                        "token": "ANY"
+                    }
+                ]
+            },
+            {
+                "optional": true,
+                "name": "asc_desc",
+                "type": "oneof",
+                "value": [
+                    {
+                        "token": "ASC"
+                    },
+                    {
+                        "token": "DESC"
+                    }
+                ]
+            },
+            {
+                "token": "STORE",
+                "optional": true,
+                "name": "key",
+                "type": "key",
+                "value": "key"
+            },
+            {
+                "token": "STOREDIST",
+                "optional": true,
+                "name": "key",
+                "type": "key",
+                "value": "key"
             }
         ]
     }

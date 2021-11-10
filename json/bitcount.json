@@ -38,6 +38,43 @@
                     }
                 }
             }
+        ],
+        "arguments": [
+            {
+                "name": "key",
+                "type": "key",
+                "value": "key"
+            },
+            {
+                "optional": true,
+                "name": "index",
+                "type": "block",
+                "value": [
+                    {
+                        "name": "start",
+                        "type": "integer",
+                        "value": "start"
+                    },
+                    {
+                        "name": "end",
+                        "type": "integer",
+                        "value": "end"
+                    },
+                    {
+                        "optional": true,
+                        "name": "byte_bit",
+                        "type": "oneof",
+                        "value": [
+                            {
+                                "token": "BYTE"
+                            },
+                            {
+                                "token": "BIT"
+                            }
+                        ]
+                    }
+                ]
+            }
         ]
     }
 }

@@ -16,6 +16,15 @@
             "admin",
             "slow",
             "dangerous"
+        ],
+        "arguments": [
+            {
+                "multiple": true,
+                "multiple_token": true,
+                "name": "slot",
+                "type": "integer",
+                "value": "slot"
+            }
         ]
     }
 }

@@ -23,6 +23,21 @@
             "admin",
             "slow",
             "dangerous"
+        ],
+        "arguments": [
+            {
+                "name": "username",
+                "type": "string",
+                "value": "username"
+            },
+            {
+                "optional": true,
+                "multiple": true,
+                "multiple_token": true,
+                "name": "rule",
+                "type": "string",
+                "value": "rule"
+            }
         ]
     }
 }

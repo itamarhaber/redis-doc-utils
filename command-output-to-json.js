@@ -15,13 +15,109 @@ import { assert } from 'console';
 
 const options = {
   noreturn: true,
-  noargs: true,
+  noargs: false,
 }
 
 const docPath = process.env.REDIS_DOC || '../redis-doc';
 const srcPath = process.env.REDIS_SRC || '../redis';
 const outputPathJSON = './json';
 const outputPathMD = './md';
+
+var getTbdStr = (function () {
+  var i = 0;
+
+  return function () {
+    i++;
+    return `__TBD__${i}__`;
+  };
+});
+
+function isAlpha (s) {
+  return (s.search(/[^A-Za-z]/) != -1 && s.length > 0);
+}
+
+function isUppder (s) {
+  return (s.search(/[^A-Z]/) != -1);
+}
+
+function convertSingleArg(old) {
+  const n = {};
+  if ("command" in old) {
+    n.token = old.command;
+  }
+  if (old["optional"]) {
+    n.optional = true;
+  }
+  if (old["variadic"]) {
+    n.multiple = true;
+  }
+  if (old["multiple"]) {
+    n.multiple = true;
+    n.multiple_token = true;
+  }
+  if (Array.isArray(old.name)) {
+    n.name = old.name.join('_');
+    n.type = 'block';
+    n.value = old.name.map((e,i) => { 
+      return {
+        name: e,
+        type: old.type[i],
+        value: e,
+      };
+    });
+  } else if (old.type != 'enum' && old.type != 'block') {
+    if ('name' in old && old.name.indexOf(' ') == -1) {
+      n.name = old.name;
+      n.type = old.type;
+      n.value = old.name;
+    } else if (!('name' in old)) {
+      n.name = old.command.toLowerCase();
+      n.token = old.command;
+    } else if (old.name.indexOf(' ') != -1) {
+      n.name = old.name.replace(' ','_');
+      n.type = 'block';
+      n.value = old.name.split(' ').map((e,i) => { 
+        return {
+          name: e.toLowerCase(),
+          type: old.type,
+          value: e,
+        };
+      });
+    }
+  } else if (old.type == 'enum') {
+    if (old.enum.length == 1) {
+      n.name = old.name;
+      n.token = old.enum[0];
+    } else {
+      n.name = old.enum.join('_').toLowerCase();
+      if (!isAlpha(n.name)) {
+        n.name = getTbdStr();
+      }
+      n.type = 'oneof';
+      n.value = old.enum.map(e => {
+        if (e == 'ID' || (isAlpha(e) && !isUppder(e))) {
+          return {
+            name: e.toLowerCase(),
+            type: getTbdStr(),
+            value: e.toLowerCase(),
+          };
+        } else {
+          return {
+            name: getTbdStr(),
+            token: e,
+          };
+        }
+      });
+    }
+  } else if (old.type == 'block') {
+    n.name = old.name;
+    n.type = 'block';
+    n.value = old.block.map(x => convertSingleArg(x));
+  } else {
+    console.error(`-ERR invalid type ${old.type}`);
+  }
+  return n;
+}
 
 function commandFileName(name) {
   return name.toLowerCase().replace(' ', '-');
@@ -332,6 +428,10 @@ function enrichWithJSON(json, cmd) {
     }
   } else console.error(`-ERR no commands.json entry for ${fname}`);
 
+  if (cmd[name].arguments !== undefined) {
+    cmd[name].arguments = cmd[name].arguments.map(a => convertSingleArg(a));
+  }
+
   if (cmd[name].subcommands !== undefined) {
     cmd[name].subcommands = cmd[name].subcommands.map(x => enrichWithJSON(json, x));
   }
@@ -384,7 +484,7 @@ async function persistCommand(cmd) {
     group: cmd[kname].group,
     since: cmd[kname].since,
     arity: cmd[kname].arity,
-    internal: cmd[name].internal,
+    internal: cmd[kname].internal,
     deprecated: cmd[kname].deprecated,
     container: cmd[kname].container,
     function: cmd[kname].function,
@@ -506,6 +606,9 @@ function manualPatch(cmds) {
     "POST": {
       "group": "server",
       "internal": true,
+    },
+    "MODULE": {
+      "group": "server",
     },
     "SUBSTR": {
       "group": "string",

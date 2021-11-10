@@ -32,6 +32,42 @@
                     }
                 }
             }
+        ],
+        "arguments": [
+            {
+                "name": "key",
+                "type": "key",
+                "value": "key"
+            },
+            {
+                "name": "member1",
+                "type": "string",
+                "value": "member1"
+            },
+            {
+                "name": "member2",
+                "type": "string",
+                "value": "member2"
+            },
+            {
+                "optional": true,
+                "name": "m_km_ft_mi",
+                "type": "oneof",
+                "value": [
+                    {
+                        "token": "m"
+                    },
+                    {
+                        "token": "km"
+                    },
+                    {
+                        "token": "ft"
+                    },
+                    {
+                        "token": "mi"
+                    }
+                ]
+            }
         ]
     }
 }

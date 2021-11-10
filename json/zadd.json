@@ -48,6 +48,67 @@
                     }
                 }
             }
+        ],
+        "arguments": [
+            {
+                "name": "key",
+                "type": "key",
+                "value": "key"
+            },
+            {
+                "optional": true,
+                "name": "nx_xx",
+                "type": "oneof",
+                "value": [
+                    {
+                        "token": "NX"
+                    },
+                    {
+                        "token": "XX"
+                    }
+                ]
+            },
+            {
+                "optional": true,
+                "name": "gt_lt",
+                "type": "oneof",
+                "value": [
+                    {
+                        "token": "GT"
+                    },
+                    {
+                        "token": "LT"
+                    }
+                ]
+            },
+            {
+                "optional": true,
+                "name": "change",
+                "token": "CH"
+            },
+            {
+                "optional": true,
+                "name": "increment",
+                "token": "INCR"
+            },
+            {
+                "multiple": true,
+                "multiple_token": true,
+                "name": "score_member",
+                "type": "block",
+                "value": [
+                    {
+                        "name": "score",
+                        "type": "double",
+                        "value": "score"
+                    },
+                    {
+                        "name": "member",
+                        "type": "string",
+                        "value": "member"
+                    }
+                ]
+            }
         ]
     }
 }

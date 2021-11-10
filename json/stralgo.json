@@ -8,6 +8,19 @@
         "command_flags": [],
         "acl_categories": [
             "slow"
+        ],
+        "arguments": [
+            {
+                "name": "algorithm",
+                "token": "LCS"
+            },
+            {
+                "multiple": true,
+                "multiple_token": true,
+                "name": "algo-specific-argument",
+                "type": "string",
+                "value": "algo-specific-argument"
+            }
         ]
     }
 }

@@ -33,6 +33,46 @@
             "slow",
             "dangerous",
             "connection"
+        ],
+        "arguments": [
+            {
+                "token": "TYPE",
+                "optional": true,
+                "name": "normal_master_replica_pubsub",
+                "type": "oneof",
+                "value": [
+                    {
+                        "token": "normal"
+                    },
+                    {
+                        "token": "master"
+                    },
+                    {
+                        "token": "replica"
+                    },
+                    {
+                        "token": "pubsub"
+                    }
+                ]
+            },
+            {
+                "optional": true,
+                "name": "id",
+                "type": "block",
+                "value": [
+                    {
+                        "token": "ID",
+                        "name": "id"
+                    },
+                    {
+                        "multiple": true,
+                        "multiple_token": true,
+                        "name": "client-id",
+                        "type": "integer",
+                        "value": "client-id"
+                    }
+                ]
+            }
         ]
     }
 }

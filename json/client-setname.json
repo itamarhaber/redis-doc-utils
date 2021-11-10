@@ -15,6 +15,13 @@
         "acl_categories": [
             "slow",
             "connection"
+        ],
+        "arguments": [
+            {
+                "name": "connection-name",
+                "type": "string",
+                "value": "connection-name"
+            }
         ]
     }
 }

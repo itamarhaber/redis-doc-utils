@@ -5,7 +5,7 @@
         "group": "list",
         "since": "2.2.0",
         "arity": 4,
-        "depracated": true,
+        "deprecated": true,
         "function": "brpoplpushCommand",
         "history": [
             [
@@ -59,6 +59,23 @@
                         "limit": 0
                     }
                 }
+            }
+        ],
+        "arguments": [
+            {
+                "name": "source",
+                "type": "key",
+                "value": "source"
+            },
+            {
+                "name": "destination",
+                "type": "key",
+                "value": "destination"
+            },
+            {
+                "name": "timeout",
+                "type": "double",
+                "value": "timeout"
             }
         ]
     }

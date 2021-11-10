@@ -20,6 +20,21 @@
         "acl_categories": [
             "slow",
             "scripting"
+        ],
+        "arguments": [
+            {
+                "optional": true,
+                "name": "async_sync",
+                "type": "oneof",
+                "value": [
+                    {
+                        "token": "ASYNC"
+                    },
+                    {
+                        "token": "SYNC"
+                    }
+                ]
+            }
         ]
     }
 }

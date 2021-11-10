@@ -15,6 +15,20 @@
         "acl_categories": [
             "slow",
             "connection"
+        ],
+        "arguments": [
+            {
+                "name": "yes_no",
+                "type": "oneof",
+                "value": [
+                    {
+                        "token": "YES"
+                    },
+                    {
+                        "token": "NO"
+                    }
+                ]
+            }
         ]
     }
 }

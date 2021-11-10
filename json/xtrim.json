@@ -39,6 +39,56 @@
                     }
                 }
             }
+        ],
+        "arguments": [
+            {
+                "name": "key",
+                "type": "key",
+                "value": "key"
+            },
+            {
+                "name": "trim",
+                "type": "block",
+                "value": [
+                    {
+                        "name": "maxlen_minid",
+                        "type": "oneof",
+                        "value": [
+                            {
+                                "token": "MAXLEN"
+                            },
+                            {
+                                "token": "MINID"
+                            }
+                        ]
+                    },
+                    {
+                        "optional": true,
+                        "name": "=_~",
+                        "type": "oneof",
+                        "value": [
+                            {
+                                "token": "="
+                            },
+                            {
+                                "token": "~"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "threshold",
+                        "type": "string",
+                        "value": "threshold"
+                    },
+                    {
+                        "token": "LIMIT",
+                        "optional": true,
+                        "name": "count",
+                        "type": "integer",
+                        "value": "count"
+                    }
+                ]
+            }
         ]
     }
 }

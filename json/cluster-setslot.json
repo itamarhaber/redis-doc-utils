@@ -16,6 +16,37 @@
             "admin",
             "slow",
             "dangerous"
+        ],
+        "arguments": [
+            {
+                "name": "slot",
+                "type": "integer",
+                "value": "slot"
+            },
+            {
+                "name": "importing_migrating_stable_node",
+                "type": "oneof",
+                "value": [
+                    {
+                        "token": "IMPORTING"
+                    },
+                    {
+                        "token": "MIGRATING"
+                    },
+                    {
+                        "token": "STABLE"
+                    },
+                    {
+                        "token": "NODE"
+                    }
+                ]
+            },
+            {
+                "optional": true,
+                "name": "node-id",
+                "type": "string",
+                "value": "node-id"
+            }
         ]
     }
 }

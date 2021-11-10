@@ -38,6 +38,55 @@
                     }
                 }
             }
+        ],
+        "arguments": [
+            {
+                "name": "key",
+                "type": "key",
+                "value": "key"
+            },
+            {
+                "name": "bit",
+                "type": "integer",
+                "value": "bit"
+            },
+            {
+                "optional": true,
+                "name": "index",
+                "type": "block",
+                "value": [
+                    {
+                        "name": "start",
+                        "type": "integer",
+                        "value": "start"
+                    },
+                    {
+                        "optional": true,
+                        "name": "end_index",
+                        "type": "block",
+                        "value": [
+                            {
+                                "name": "end",
+                                "type": "integer",
+                                "value": "end"
+                            },
+                            {
+                                "optional": true,
+                                "name": "byte_bit",
+                                "type": "oneof",
+                                "value": [
+                                    {
+                                        "token": "BYTE"
+                                    },
+                                    {
+                                        "token": "BIT"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
         ]
     }
 }

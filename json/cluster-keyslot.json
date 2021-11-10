@@ -13,6 +13,13 @@
         ],
         "acl_categories": [
             "slow"
+        ],
+        "arguments": [
+            {
+                "name": "key",
+                "type": "string",
+                "value": "key"
+            }
         ]
     }
 }

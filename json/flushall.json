@@ -24,6 +24,21 @@
             "write",
             "slow",
             "dangerous"
+        ],
+        "arguments": [
+            {
+                "optional": true,
+                "name": "async_sync",
+                "type": "oneof",
+                "value": [
+                    {
+                        "token": "ASYNC"
+                    },
+                    {
+                        "token": "SYNC"
+                    }
+                ]
+            }
         ]
     }
 }

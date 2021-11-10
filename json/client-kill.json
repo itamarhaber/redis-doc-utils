@@ -40,6 +40,69 @@
             "slow",
             "dangerous",
             "connection"
+        ],
+        "arguments": [
+            {
+                "optional": true,
+                "name": "ip:port",
+                "type": "string",
+                "value": "ip:port"
+            },
+            {
+                "token": "ID",
+                "optional": true,
+                "name": "client-id",
+                "type": "integer",
+                "value": "client-id"
+            },
+            {
+                "token": "TYPE",
+                "optional": true,
+                "name": "normal_master_slave_pubsub",
+                "type": "oneof",
+                "value": [
+                    {
+                        "token": "normal"
+                    },
+                    {
+                        "token": "master"
+                    },
+                    {
+                        "token": "slave"
+                    },
+                    {
+                        "token": "pubsub"
+                    }
+                ]
+            },
+            {
+                "token": "USER",
+                "optional": true,
+                "name": "username",
+                "type": "string",
+                "value": "username"
+            },
+            {
+                "token": "ADDR",
+                "optional": true,
+                "name": "ip:port",
+                "type": "string",
+                "value": "ip:port"
+            },
+            {
+                "token": "LADDR",
+                "optional": true,
+                "name": "ip:port",
+                "type": "string",
+                "value": "ip:port"
+            },
+            {
+                "token": "SKIPME",
+                "optional": true,
+                "name": "yes/no",
+                "type": "string",
+                "value": "yes/no"
+            }
         ]
     }
 }

@@ -33,6 +33,23 @@
                     }
                 }
             }
+        ],
+        "arguments": [
+            {
+                "name": "key",
+                "type": "key",
+                "value": "key"
+            },
+            {
+                "name": "groupname",
+                "type": "string",
+                "value": "groupname"
+            },
+            {
+                "name": "id",
+                "type": "string",
+                "value": "id"
+            }
         ]
     }
 }

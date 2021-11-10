@@ -33,6 +33,39 @@
                     }
                 }
             }
+        ],
+        "arguments": [
+            {
+                "name": "numkeys",
+                "type": "integer",
+                "value": "numkeys"
+            },
+            {
+                "multiple": true,
+                "multiple_token": true,
+                "name": "key",
+                "type": "key",
+                "value": "key"
+            },
+            {
+                "name": "left_right",
+                "type": "oneof",
+                "value": [
+                    {
+                        "token": "LEFT"
+                    },
+                    {
+                        "token": "RIGHT"
+                    }
+                ]
+            },
+            {
+                "token": "COUNT",
+                "optional": true,
+                "name": "count",
+                "type": "integer",
+                "value": "count"
+            }
         ]
     }
 }

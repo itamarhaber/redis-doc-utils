@@ -16,6 +16,21 @@
             "admin",
             "slow",
             "dangerous"
+        ],
+        "arguments": [
+            {
+                "optional": true,
+                "name": "force_takeover",
+                "type": "oneof",
+                "value": [
+                    {
+                        "token": "FORCE"
+                    },
+                    {
+                        "token": "TAKEOVER"
+                    }
+                ]
+            }
         ]
     }
 }
