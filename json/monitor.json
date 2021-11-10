@@ -8,15 +8,15 @@
         "history": [
             [
                 "6.0",
-                "`AUTH` excluded from the command's output."
+                "[`AUTH`](./auth) excluded from the command's output."
             ],
             [
                 "6.2",
-                "`RESET` can be called to exit monitor mode."
+                "[`RESET`](./reset) can be called to exit monitor mode."
             ],
             [
                 "6.2.4",
-                "`AUTH`, `HELLO`, `EVAL`, `EVAL_RO`, `EVALSHA` and `EVALSHA_RO` included in the command's output."
+                "[`AUTH`](./auth), [`HELLO`](./hello), [`EVAL`](./eval), [`EVAL_RO`](./eval_ro), [`EVALSHA`](./evalsha) and [`EVALSHA_RO`](./evalsha_ro) included in the command's output."
             ]
         ],
         "command_flags": [

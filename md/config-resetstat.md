@@ -1,4 +1,4 @@
-Resets the statistics reported by Redis using the `INFO` command.
+Resets the statistics reported by Redis using the [`INFO`](./info) command.
 
 These are the counters that are reset:
 

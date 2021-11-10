@@ -12,6 +12,6 @@ In such a case only `SHUTDOWN NOSAVE` is able to kill the script, killing
 the Redis process in an hard way preventing it to persist with half-written
 information.
 
-Please refer to the `EVAL` documentation for detailed information about Redis
+Please refer to the [`EVAL`](./eval) documentation for detailed information about Redis
 Lua scripting.
 

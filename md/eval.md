@@ -1,6 +1,6 @@
 ## Introduction to EVAL
 
-`EVAL` and `EVALSHA` are used to evaluate scripts using the Lua interpreter
+`EVAL` and [`EVALSHA`](./evalsha) are used to evaluate scripts using the Lua interpreter
 built into Redis starting from version 2.6.0.
 
 The first argument of `EVAL` is a Lua 5.1 script.
@@ -9,7 +9,7 @@ It is just a Lua program that will run in the context of the Redis server.
 
 The second argument of `EVAL` is the number of arguments that follows the script
 (starting from the third argument) that represent Redis key names.
-The arguments can be accessed by Lua using the `!KEYS` global variable in the
+The arguments can be accessed by Lua using the `KEYS` global variable in the
 form of a one-based array (so `KEYS[1]`, `KEYS[2]`, ...).
 
 All the additional arguments should not represent key names and can be accessed
@@ -53,7 +53,7 @@ OK
 
 The above script sets the key `foo` to the string `bar`.
 However it violates the `EVAL` command semantics as all the keys that the script
-uses should be passed using the `!KEYS` array:
+uses should be passed using the `KEYS` array:
 
 ```
 > eval "return redis.call('set',KEYS[1],'bar')" 1 foo
@@ -112,7 +112,7 @@ Redis to Lua conversion rule:
 
 Lastly, there are three important rules to note:
 
-* Lua has a single numerical type, Lua numbers. There is no distinction between integers and floats. So we always convert Lua numbers into integer replies, removing the decimal part of the number if any. **If you want to return a float from Lua you should return it as a string**, exactly like Redis itself does (see for instance the `ZSCORE` command).
+* Lua has a single numerical type, Lua numbers. There is no distinction between integers and floats. So we always convert Lua numbers into integer replies, removing the decimal part of the number if any. **If you want to return a float from Lua you should return it as a string**, exactly like Redis itself does (see for instance the [`ZSCORE`](./zscore) command).
 * There is [no simple way to have nils inside Lua arrays](http://www.lua.org/pil/19.1.html), this is a result of Lua table semantics, so when Redis converts a Lua array into Redis protocol the conversion is stopped if a nil is encountered.
 * When a Lua table contains keys (and their values), the converted Redis reply will **not** include them.
 
@@ -166,7 +166,7 @@ There is no difference between using the helper functions or directly returning 
 Redis uses the same Lua interpreter to run all the commands.
 Also Redis guarantees that a script is executed in an atomic way: no other
 script or Redis command will be executed while a script is being executed.
-This semantic is similar to the one of `MULTI` / `EXEC`.
+This semantic is similar to the one of [`MULTI`](./multi) / [`EXEC`](./exec).
 From the point of view of all the other clients the effects of a script are
 either still not visible or already completed.
 
@@ -226,9 +226,9 @@ would be a problem for a few reasons:
     application calls commands defined server side.
 
 In order to avoid these problems while avoiding the bandwidth penalty, Redis
-implements the `EVALSHA` command.
+implements the [`EVALSHA`](./evalsha) command.
 
-`EVALSHA` works exactly like `EVAL`, but instead of having a script as the first
+[`EVALSHA`](./evalsha) works exactly like `EVAL`, but instead of having a script as the first
 argument it has the SHA1 digest of a script.
 The behavior is the following:
 
@@ -251,7 +251,7 @@ OK
 (error) NOSCRIPT No matching script. Please use EVAL.
 ```
 
-The client library implementation can always optimistically send `EVALSHA` under
+The client library implementation can always optimistically send [`EVALSHA`](./evalsha) under
 the hood even when the client actually calls `EVAL`, in the hope the script was
 already seen by the server.
 If the `NOSCRIPT` error is returned `EVAL` will be used instead.
@@ -263,7 +263,7 @@ by Redis.
 ## Script cache semantics
 
 Executed scripts are guaranteed to be in the script cache of a given execution
-of a Redis instance forever. This means that if an `EVAL` is performed against a Redis instance all the subsequent `EVALSHA` calls will succeed.
+of a Redis instance forever. This means that if an `EVAL` is performed against a Redis instance all the subsequent [`EVALSHA`](./evalsha) calls will succeed.
 
 The reason why scripts can be cached for long time is that it is unlikely for
 a well written application to have enough different scripts to cause memory
@@ -283,7 +283,7 @@ client there are only two ways to make sure a Redis instance was not restarted
 between two different commands.
 
 * The connection we have with the server is persistent and was never closed so far.
-* The client explicitly checks the `runid` field in the `INFO` command in order to make sure the server was not restarted and is still the same process.
+* The client explicitly checks the `runid` field in the [`INFO`](./info) command in order to make sure the server was not restarted and is still the same process.
 
 Practically speaking, for the client it is much better to simply assume that in the context of a given connection, cached scripts are guaranteed to be there
 unless an administrator explicitly called the `SCRIPT FLUSH` command.
@@ -297,7 +297,7 @@ against those scripts in a pipeline without the chance of an error being
 generated due to an unknown script (we'll see this problem in detail later).
 
 A common pattern is to call `SCRIPT LOAD` to load all the scripts that will
-appear in a pipeline, then use `EVALSHA` directly inside the pipeline without
+appear in a pipeline, then use [`EVALSHA`](./evalsha) directly inside the pipeline without
 any need to check for errors resulting from the script hash not being
 recognized.
 
@@ -327,7 +327,7 @@ SCRIPT currently accepts three different commands:
 
     This command registers the specified script in the Redis script cache.
     The command is useful in all the contexts where we want to make sure that
-    `EVALSHA` will not fail (for instance during a pipeline or MULTI/EXEC
+    [`EVALSHA`](./evalsha) will not fail (for instance during a pipeline or MULTI/EXEC
     operation), without the need to actually execute the script.
 
 *   `SCRIPT KILL`
@@ -375,7 +375,7 @@ The main drawback with the *whole scripts replication* approach is that scripts 
   from I/O devices.
 
 Things like using the system time, calling Redis random commands like
-`RANDOMKEY`, or using Lua's random number generator, could result in scripts
+[`RANDOMKEY`](./randomkey), or using Lua's random number generator, could result in scripts
 that will not always evaluate in the same way.
 
 In order to enforce this behavior in scripts Redis does the following:
@@ -384,14 +384,14 @@ In order to enforce this behavior in scripts Redis does the following:
   state.
 * Redis will block the script with an error if a script calls a Redis
   command able to alter the data set **after** a Redis _random_ command like
-  `RANDOMKEY`, `SRANDMEMBER`, `TIME`.
+  [`RANDOMKEY`](./randomkey), [`SRANDMEMBER`](./srandmember), [`TIME`](./time).
   This means that if a script is read-only and does not modify the data set it
   is free to call those commands.
   Note that a _random command_ does not necessarily mean a command that uses
   random numbers: any non-deterministic command is considered a random command
-  (the best example in this regard is the `TIME` command).
+  (the best example in this regard is the [`TIME`](./time) command).
 * In Redis version 4, commands that may return elements in random order, like
-  `SMEMBERS` (because Redis Sets are _unordered_) have a different behavior
+  [`SMEMBERS`](./smembers) (because Redis Sets are _unordered_) have a different behavior
   when called from Lua, and undergo a silent lexicographical sorting filter
   before returning data to Lua scripts. So `redis.call("smembers",KEYS[1])`
   will always return the Set elements in the same order, while the same
@@ -507,7 +507,7 @@ This is useful in several ways depending on the use case:
 * When the script is slow to compute, but the effects can be summarized by a few write commands, it is a shame to re-compute the script on the replicas or when reloading the AOF.
   In this case it is much better to replicate just the effects of the script.
 * When script effects replication is enabled, the restrictions on non-deterministic functions are removed.
-  You can, for example, use the `TIME` or `SRANDMEMBER` commands inside your scripts freely at any place.
+  You can, for example, use the [`TIME`](./time) or [`SRANDMEMBER`](./srandmember) commands inside your scripts freely at any place.
 * The Lua PRNG in this mode is seeded randomly on every call.
 
 To enable script effects replication you need to issue the
@@ -595,7 +595,7 @@ simply declare every variable you are going to use using the _local_ keyword.
 
 ## Using SELECT inside scripts
 
-It is possible to call `SELECT` inside Lua scripts like with normal clients,
+It is possible to call [`SELECT`](./select) inside Lua scripts like with normal clients,
 However one subtle aspect of the behavior changes between Redis 2.8.11 and
 Redis 2.8.12. Before the 2.8.12 release the database selected by the Lua
 script was *transferred* to the calling script as current database.
@@ -612,14 +612,14 @@ was the cause of bugs.
 Starting with Redis version 6, the server supports two different protocols.
 One is called RESP2, and is the old protocol: all the new connections to
 the server start in this mode. However clients are able to negotiate the
-new protocol using the `HELLO` command: this way the connection is put
-in RESP3 mode. In this mode certain commands, like for instance `HGETALL`,
+new protocol using the [`HELLO`](./hello) command: this way the connection is put
+in RESP3 mode. In this mode certain commands, like for instance [`HGETALL`](./hgetall),
 reply with a new data type (the Map data type in this specific case). The
 RESP3 protocol is semantically more powerful, however most scripts are OK
 with using just RESP2.
 
 The Lua engine always assumes to run in RESP2 mode when talking with Redis,
-so whatever the connection that is invoking the `EVAL` or `EVALSHA` command
+so whatever the connection that is invoking the `EVAL` or [`EVALSHA`](./evalsha) command
 is in RESP2 or RESP3 mode, Lua scripts will, by default, still see the
 same kind of replies they used to see in the past from Redis, when calling
 commands using the `redis.call()` built-in function.
@@ -858,10 +858,10 @@ following happens:
 
 ## EVALSHA in the context of pipelining
 
-Care should be taken when executing `EVALSHA` in the context of a pipelined
+Care should be taken when executing [`EVALSHA`](./evalsha) in the context of a pipelined
 request, since even in a pipeline the order of execution of commands must be
 guaranteed.
-If `EVALSHA` will return a `NOSCRIPT` error the command can not be reissued
+If [`EVALSHA`](./evalsha) will return a `NOSCRIPT` error the command can not be reissued
 later otherwise the order of execution is violated.
 
 The client library implementation should take one of the following approaches:
@@ -872,7 +872,7 @@ The client library implementation should take one of the following approaches:
     commands and use the `SCRIPT EXISTS` command to check if all the scripts are
     already defined.
     If not, add `SCRIPT LOAD` commands on top of the pipeline as required, and
-    use `EVALSHA` for all the `EVAL` calls.
+    use [`EVALSHA`](./evalsha) for all the `EVAL` calls.
 
 ## Debugging Lua scripts
 

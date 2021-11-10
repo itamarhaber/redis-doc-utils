@@ -1,4 +1,4 @@
-`BZPOPMAX` is the blocking variant of the sorted set `ZPOPMAX` primitive.
+`BZPOPMAX` is the blocking variant of the sorted set [`ZPOPMAX`](./zpopmax) primitive.
 
 It is the blocking version because it blocks the connection when there are no
 members to pop from any of the given sorted sets.
@@ -9,7 +9,7 @@ The `timeout` argument is interpreted as a double value specifying the maximum
 number of seconds to block. A timeout of zero can be used to block indefinitely.
 
 See the [BZPOPMIN documentation][cb] for the exact semantics, since `BZPOPMAX`
-is identical to `BZPOPMIN` with the only difference being that it pops members
+is identical to [`BZPOPMIN`](./bzpopmin) with the only difference being that it pops members
 with the highest scores instead of popping the ones with the lowest scores.
 
 [cb]: /commands/bzpopmin

@@ -1,4 +1,4 @@
-This command can unblock, from a different connection, a client blocked in a blocking operation, such as for instance `BRPOP` or `XREAD` or `WAIT`.
+This command can unblock, from a different connection, a client blocked in a blocking operation, such as for instance [`BRPOP`](./brpop) or [`XREAD`](./xread) or [`WAIT`](./wait).
 
 By default the client is unblocked as if the timeout of the command was
 reached, however if an additional (and optional) argument is passed, it is possible to specify the unblocking behavior, that can be **TIMEOUT** (the default) or **ERROR**. If **ERROR** is specified, the behavior is to unblock the client returning as error the fact that the client was force-unblocked. Specifically the client will receive the following error:
@@ -10,7 +10,7 @@ the same, however the error code will remain `-UNBLOCKED`.
 
 This command is useful especially when we are monitoring many keys with
 a limited number of connections. For instance we may want to monitor multiple
-streams with `XREAD` without using more than N connections. However at some
+streams with [`XREAD`](./xread) without using more than N connections. However at some
 point the consumer process is informed that there is one more stream key
 to monitor. In order to avoid using more connections, the best behavior would
 be to stop the blocking command from one of the connections in the pool, add

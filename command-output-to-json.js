@@ -3,7 +3,6 @@
 // Requires Redis from guybe7/redis/cmd_ptr
 // * SORT has unknown key_specs
 // * Some commmands don't have a commands.json entry (e.g. PFSELFTEST, HOST:, CONFIG/XGROUP...)
-// * Command arguments need translation to new format
 // * Need to convert md `SET` to [`SET`](/commands/set) in MD
 // * Need to extract return types
 // * The QUIT command doesn't exist in the commands table
@@ -153,7 +152,21 @@ function splitMDReturnSummary(s) {
   }
 }
 
-async function loadCommandMarkdown(name) {
+function linkifyMD(cmds,name,md) {
+  return md.replace(/`.+?`/g, s => {
+    const k = s.slice(1,s.length-1);
+    const e = cmds.map(x => Object.keys(x)[0]).filter(x => x == k);
+    if (k[0] == '!') {
+      return `\`${k.slice(1)}\``;
+    } else if (e.length == 1 && name != k) {
+      return `[${s}](./${commandFileName(k)})`;
+    } else {
+      return s;
+    }
+  });
+}
+
+async function loadCommandMarkdown(cmds,name) {
   const sections = {
     body: '<body>',
     history: '@history',
@@ -176,7 +189,8 @@ async function loadCommandMarkdown(name) {
     console.error(`-ERR while reading ${fname}.md: ${err}`);
     return {};
   }
-  const md = buff.toString();
+  let md = buff.toString();
+  md = linkifyMD(cmds,name,md);
   const lines = md.split('\n');
   let i = 0;
   let s = sections.body;
@@ -438,10 +452,10 @@ function enrichWithJSON(json, cmd) {
   return cmd;
 }
 
-async function enrichWithMD(cmd) {
+async function enrichWithMD(cmds, cmd) {
   const name = getCommandNameFromObj(cmd);
   const kname = getCommandName(cmd);
-  const md = await loadCommandMarkdown(name);
+  const md = await loadCommandMarkdown(cmds,name);
 
   cmd[kname] = {
     ...md,
@@ -451,7 +465,7 @@ async function enrichWithMD(cmd) {
   // TODO: sanitize MD fully
 
   if (cmd[kname].subcommands !== undefined) {
-    await Promise.all(cmd[kname].subcommands.map(async (s) => enrichWithMD(s)));
+    await Promise.all(cmd[kname].subcommands.map(async (s) => enrichWithMD(cmds,s)));
   }
 
   return cmd;
@@ -661,7 +675,7 @@ async function main() {
   commands = commands.map(x => popagateIfSubcommand(x));
 
   console.log('Enrichening with MarkDown');
-  commands = await Promise.all(commands.map(async (x) => enrichWithMD(x)));
+  commands = await Promise.all(commands.map(async (x) => enrichWithMD(commands,x)));
 
   await fs.writeFile(`commands.json`,JSON.stringify(commands,null,4));
 

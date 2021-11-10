@@ -9,7 +9,7 @@ Because intersection requires an element to be a member of every given sorted
 set, this results in the score of every element in the resulting sorted set to
 be equal to the number of input sorted sets.
 
-For a description of the `WEIGHTS` and `AGGREGATE` options, see `ZUNIONSTORE`.
+For a description of the `WEIGHTS` and `AGGREGATE` options, see [`ZUNIONSTORE`](./zunionstore).
 
 If `destination` already exists, it is overwritten.
 

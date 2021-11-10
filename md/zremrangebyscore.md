@@ -2,7 +2,7 @@ Removes all elements in the sorted set stored at `key` with a score between
 `min` and `max` (inclusive).
 
 Since version 2.1.6, `min` and `max` can be exclusive, following the syntax of
-`ZRANGEBYSCORE`.
+[`ZRANGEBYSCORE`](./zrangebyscore).
 
 @examples
 

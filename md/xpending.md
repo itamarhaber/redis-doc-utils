@@ -1,7 +1,7 @@
 Fetching data from a stream via a consumer group, and not acknowledging
 such data, has the effect of creating *pending entries*. This is
-well explained in the `XREADGROUP` command, and even better in our
-[introduction to Redis Streams](/topics/streams-intro). The `XACK` command
+well explained in the [`XREADGROUP`](./xreadgroup) command, and even better in our
+[introduction to Redis Streams](/topics/streams-intro). The [`XACK`](./xack) command
 will immediately remove the pending entry from the Pending Entries List (PEL)
 since once a message is successfully processed, there is no longer need
 for the consumer group to track it and to remember the current owner
@@ -11,12 +11,12 @@ The `XPENDING` command is the interface to inspect the list of pending
 messages, and is as thus a very important command in order to observe
 and understand what is happening with a streams consumer groups: what
 clients are active, what messages are pending to be consumed, or to see
-if there are idle messages. Moreover this command, together with `XCLAIM`
+if there are idle messages. Moreover this command, together with [`XCLAIM`](./xclaim)
 is used in order to implement recovering of consumers that are failing
 for a long time, and as a result certain messages are not processed: a
 different consumer can claim the message and continue. This is better
 explained in the [streams intro](/topics/streams-intro) and in the
-`XCLAIM` command page, and is not covered here.
+[`XCLAIM`](./xclaim) command page, and is not covered here.
 
 ## Summary form of XPENDING
 
@@ -24,7 +24,7 @@ When `XPENDING` is called with just a key name and a consumer group
 name, it just outputs a summary about the pending messages in a given
 consumer group. In the following example, we create a consumer group and
 immediately create a pending message by reading from the group with
-`XREADGROUP`.
+[`XREADGROUP`](./xreadgroup).
 
 ```
 > XGROUP CREATE mystream group55 0-0
@@ -65,7 +65,7 @@ at least one pending message, and the number of pending messages it has.
 The summary provides a good overview, but sometimes we are interested in the
 details. In order to see all the pending messages with more associated
 information we need to also pass a range of IDs, in a similar way we do it with
-`XRANGE`, and a non optional *count* argument, to limit the number
+[`XRANGE`](./xrange), and a non optional *count* argument, to limit the number
 of messages returned per call:
 
 ```
@@ -86,9 +86,9 @@ each message four attributes are returned:
 4. The number of times this message was delivered.
 
 The deliveries counter, that is the fourth element in the array, is incremented
-when some other consumer *claims* the message with `XCLAIM`, or when the
-message is delivered again via `XREADGROUP`, when accessing the history
-of a consumer in a consumer group (see the `XREADGROUP` page for more info).
+when some other consumer *claims* the message with [`XCLAIM`](./xclaim), or when the
+message is delivered again via [`XREADGROUP`](./xreadgroup), when accessing the history
+of a consumer in a consumer group (see the [`XREADGROUP`](./xreadgroup) page for more info).
 
 It is possible to pass an additional argument to the command, in order
 to see the messages having a specific owner:
@@ -108,7 +108,7 @@ a single consumer.
 ## Idle time filter
 
 Since version 6.2 it is possible to filter entries by their idle-time,
-given in milliseconds (useful for `XCLAIM`ing entries that have not been
+given in milliseconds (useful for [`XCLAIM`](./xclaim)ing entries that have not been
 processed for some time):
 
 ```
@@ -123,7 +123,7 @@ that are idle for over 9 seconds, whereas in the second case only those of
 ## Exclusive ranges and iterating the PEL
 
 The `XPENDING` command allows iterating over the pending entries just like
-`XRANGE` and `XREVRANGE` allow for the stream's entries. You can do this by
+[`XRANGE`](./xrange) and [`XREVRANGE`](./xrevrange) allow for the stream's entries. You can do this by
 prefixing the ID of the last-read pending entry with the `(` character that
 denotes an open (exclusive) range, and proving it to the subsequent call to the
 command.

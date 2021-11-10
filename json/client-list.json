@@ -14,7 +14,7 @@
             ],
             [
                 "5.0",
-                "Added optional `TYPE` filter."
+                "Added optional [`TYPE`](./type) filter."
             ],
             [
                 "6.2",

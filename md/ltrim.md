@@ -16,7 +16,7 @@ causes `key` to be removed).
 If `end` is larger than the end of the list, Redis will treat it like the last
 element of the list.
 
-A common use of `LTRIM` is together with `LPUSH` / `RPUSH`.
+A common use of `LTRIM` is together with [`LPUSH`](./lpush) / [`RPUSH`](./rpush).
 For example:
 
 ```

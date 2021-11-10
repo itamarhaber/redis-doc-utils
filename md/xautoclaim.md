@@ -1,7 +1,7 @@
-This command transfers ownership of pending stream entries that match the specified criteria. Conceptually, `XAUTOCLAIM`  is equivalent to calling `XPENDING` and then `XCLAIM`,
-but provides a more straightforward way to deal with message delivery failures via `SCAN`-like semantics.
+This command transfers ownership of pending stream entries that match the specified criteria. Conceptually, `XAUTOCLAIM`  is equivalent to calling [`XPENDING`](./xpending) and then [`XCLAIM`](./xclaim),
+but provides a more straightforward way to deal with message delivery failures via [`SCAN`](./scan)-like semantics.
 
-Like `XCLAIM`, the command operates on the stream entries at `<key>` and in the context of the provided `<group>`.
+Like [`XCLAIM`](./xclaim), the command operates on the stream entries at `<key>` and in the context of the provided `<group>`.
 It transfers ownership to `<consumer>` of messages pending for more than `<min-idle-time>` milliseconds and having an equal or greater ID than `<start>`.
 
 The optional `<count>` argument, which defaults to 100, is the upper limit of the number of entries that the command attempts to claim.

@@ -1,4 +1,4 @@
-This command is equal to `SUNION`, but instead of returning the resulting set,
+This command is equal to [`SUNION`](./sunion), but instead of returning the resulting set,
 it is stored in `destination`.
 
 If `destination` already exists, it is overwritten.

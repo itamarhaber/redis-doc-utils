@@ -13,7 +13,7 @@ If `source` and `destination` are the same, the operation is equivalent to
 removing the last element from the list and pushing it as first element of the
 list, so it can be considered as a list rotation command.
 
-As per Redis 6.2.0, RPOPLPUSH is considered deprecated. Please prefer `LMOVE` in
+As per Redis 6.2.0, RPOPLPUSH is considered deprecated. Please prefer [`LMOVE`](./lmove) in
 new code.
 
 @examples
@@ -32,18 +32,18 @@ LRANGE myotherlist 0 -1
 Redis is often used as a messaging server to implement processing of background
 jobs or other kinds of messaging tasks.
 A simple form of queue is often obtained pushing values into a list in the
-producer side, and waiting for this values in the consumer side using `RPOP`
-(using polling), or `BRPOP` if the client is better served by a blocking
+producer side, and waiting for this values in the consumer side using [`RPOP`](./rpop)
+(using polling), or [`BRPOP`](./brpop) if the client is better served by a blocking
 operation.
 
 However in this context the obtained queue is not _reliable_ as messages can
 be lost, for example in the case there is a network problem or if the consumer
 crashes just after the message is received but before it can be processed.
 
-`RPOPLPUSH` (or `BRPOPLPUSH` for the blocking variant) offers a way to avoid
+`RPOPLPUSH` (or [`BRPOPLPUSH`](./brpoplpush) for the blocking variant) offers a way to avoid
 this problem: the consumer fetches the message and at the same time pushes it
 into a _processing_ list.
-It will use the `LREM` command in order to remove the message from the
+It will use the [`LREM`](./lrem) command in order to remove the message from the
 _processing_ list once the message has been processed.
 
 An additional client may monitor the _processing_ list for items that remain
@@ -54,7 +54,7 @@ again if needed.
 
 Using `RPOPLPUSH` with the same source and destination key, a client can visit
 all the elements of an N-elements list, one after the other, in O(N) without
-transferring the full list from the server to the client using a single `LRANGE`
+transferring the full list from the server to the client using a single [`LRANGE`](./lrange)
 operation.
 
 The above pattern works even if one or both of the following conditions occur:

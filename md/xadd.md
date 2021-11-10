@@ -6,11 +6,11 @@ disabled with the `NOMKSTREAM` option.
 An entry is composed of a set of field-value pairs, it is basically a
 small dictionary. The field-value pairs are stored in the same order
 they are given by the user, and commands to read the stream such as
-`XRANGE` or `XREAD` are guaranteed to return the fields and values
+[`XRANGE`](./xrange) or [`XREAD`](./xread) are guaranteed to return the fields and values
 exactly in the same order they were added by `XADD`.
 
 `XADD` is the *only Redis command* that can add data to a stream, but 
-there are other commands, such as `XDEL` and `XTRIM`, that are able to
+there are other commands, such as [`XDEL`](./xdel) and [`XTRIM`](./xtrim), that are able to
 remove data from a stream.
 
 ## Specifying a Stream ID as an argument
@@ -49,7 +49,7 @@ IDs to match the one of this other system.
 
 ## Capped streams
 
-`XADD` incorporates the same semantics as the `XTRIM` command - refer to its documentation page for more information.
+`XADD` incorporates the same semantics as the [`XTRIM`](./xtrim) command - refer to its documentation page for more information.
 This allows adding new entries and keeping the stream's size in check with a single call to `XADD`, effectively capping the stream with an arbitrary threshold.
 Although exact trimming is possible and is the default, due to the internal representation of steams it is more efficient to add an entry and trim stream with `XADD` using **almost exact** trimming (the `~` argument).
 

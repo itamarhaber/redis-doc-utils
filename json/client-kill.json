@@ -18,11 +18,11 @@
             ],
             [
                 "3.2",
-                "Added `master` type in for `TYPE` option."
+                "Added `master` type in for [`TYPE`](./type) option."
             ],
             [
                 "5",
-                "Replaced `slave` `TYPE` with `replica`. `slave` still supported for backward compatibility."
+                "Replaced `slave` [`TYPE`](./type) with `replica`. `slave` still supported for backward compatibility."
             ],
             [
                 "6.2",

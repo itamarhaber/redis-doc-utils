@@ -8,7 +8,7 @@ EXPIRE mykey seconds
 ```
 
 `SETEX` is atomic, and can be reproduced by using the previous two commands
-inside an `MULTI` / `EXEC` block.
+inside an [`MULTI`](./multi) / [`EXEC`](./exec) block.
 It is provided as a faster alternative to the given sequence of operations,
 because this operation is very common when Redis is used as a cache.
 

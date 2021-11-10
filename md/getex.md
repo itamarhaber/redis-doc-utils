@@ -1,5 +1,5 @@
 Get the value of `key` and optionally set its expiration.
-`GETEX` is similar to `GET`, but is a write command with additional options.
+`GETEX` is similar to [`GET`](./get), but is a write command with additional options.
 
 ## Options
 
@@ -9,7 +9,7 @@ The `GETEX` command supports a set of options that modify its behavior:
 * `PX` *milliseconds* -- Set the specified expire time, in milliseconds.
 * `EXAT` *timestamp-seconds* -- Set the specified Unix time at which the key will expire, in seconds.
 * `PXAT` *timestamp-milliseconds* -- Set the specified Unix time at which the key will expire, in milliseconds.
-* `PERSIST` -- Remove the time to live associated with the key.
+* [`PERSIST`](./persist) -- Remove the time to live associated with the key.
 
 @examples
 

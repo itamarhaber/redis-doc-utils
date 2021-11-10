@@ -13,7 +13,7 @@
             ],
             [
                 "3.0.2",
-                "Added the `XX`, `NX`, `CH` and `INCR` options."
+                "Added the `XX`, `NX`, `CH` and [`INCR`](./incr) options."
             ],
             [
                 "6.2",

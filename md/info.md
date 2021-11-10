@@ -74,8 +74,8 @@ Here is the meaning of all fields in the **clients** section:
      connections
 *   `client_biggest_input_buf`: Biggest input buffer among current client
      connections
-*   `blocked_clients`: Number of clients pending on a blocking call (`BLPOP`,
-     `BRPOP`, `BRPOPLPUSH`, `BLMOVE`, `BZPOPMIN`, `BZPOPMAX`)
+*   `blocked_clients`: Number of clients pending on a blocking call ([`BLPOP`](./blpop),
+     [`BRPOP`](./brpop), [`BRPOPLPUSH`](./brpoplpush), [`BLMOVE`](./blmove), [`BZPOPMIN`](./bzpopmin), [`BZPOPMAX`](./bzpopmax))
 *   `tracking_clients`: Number of clients being tracked (`CLIENT TRACKING`)
 *   `clients_in_timeout_table`: Number of clients in the clients timeout table
 *    `io_threads_active`: Flag indicating if I/O threads are active
@@ -134,7 +134,7 @@ Here is the meaning of all fields in the **memory** section:
 *   `mem_allocator`: Memory allocator, chosen at compile time.
 *   `active_defrag_running`: When `activedefrag` is enabled, this indicates whether defragmentation is currently active, and the CPU percentage it intends to utilize.
 *   `lazyfree_pending_objects`: The number of objects waiting to be freed (as a
-     result of calling `UNLINK`, or `FLUSHDB` and `FLUSHALL` with the **ASYNC**
+     result of calling [`UNLINK`](./unlink), or [`FLUSHDB`](./flushdb) and [`FLUSHALL`](./flushall) with the **ASYNC**
      option)
 
 Ideally, the `used_memory_rss` value should be only slightly higher than
@@ -196,8 +196,8 @@ Here is the meaning of all fields in the **persistence** section:
      during the last module fork operation
 
 `rdb_changes_since_last_save` refers to the number of operations that produced
-some kind of changes in the dataset since the last time either `SAVE` or
-`BGSAVE` was called.
+some kind of changes in the dataset since the last time either [`SAVE`](./save) or
+[`BGSAVE`](./bgsave) was called.
 
 If AOF is activated, these additional fields will be added:
 
@@ -252,7 +252,7 @@ Here is the meaning of all fields in the **stats** section:
      subscriptions
 *   `latest_fork_usec`: Duration of the latest fork operation in microseconds
 *   `total_forks`: Total number of fork operations since the server start
-*   `migrate_cached_sockets`: The number of sockets open for `MIGRATE` purposes
+*   `migrate_cached_sockets`: The number of sockets open for [`MIGRATE`](./migrate) purposes
 *   `slave_expires_tracked_keys`: The number of keys tracked for expiry purposes
      (applicable only to writable replicas)
 *   `active_defrag_hits`: Number of value reallocations performed by active the

@@ -31,13 +31,13 @@ the node is not already owner of the specified hash slot.
 
 When a slot is set in importing state, the node changes behavior in the following way:
 
-1. Commands about this hash slot are refused and a `MOVED` redirection is generated as usually, but in the case the command follows an `ASKING` command, in this case the command is executed.
+1. Commands about this hash slot are refused and a `MOVED` redirection is generated as usually, but in the case the command follows an [`ASKING`](./asking) command, in this case the command is executed.
 
-In this way when a node in migrating state generates an `ASK` redirection, the client contacts the target node, sends `ASKING`, and immediately after sends the command. This way commands about non-existing keys in the old node or keys already migrated to the target node are executed in the target node, so that:
+In this way when a node in migrating state generates an `ASK` redirection, the client contacts the target node, sends [`ASKING`](./asking), and immediately after sends the command. This way commands about non-existing keys in the old node or keys already migrated to the target node are executed in the target node, so that:
 
 1. New keys are always created in the target node. During a hash slot migration we'll have to move only old keys, not new ones.
 2. Commands about keys already migrated are correctly processed in the context of the node which is the target of the migration, the new hash slot owner, in order to guarantee consistency.
-3. Without `ASKING` the behavior is the same as usually. This guarantees that clients with a broken hash slots mapping will not write for error in the target node, creating a new version of a key that has yet to be migrated.
+3. Without [`ASKING`](./asking) the behavior is the same as usually. This guarantees that clients with a broken hash slots mapping will not write for error in the target node, creating a new version of a key that has yet to be migrated.
 
 ## CLUSTER SETSLOT `<slot>` STABLE
 
@@ -66,7 +66,7 @@ The `CLUSTER SETSLOT` command is an important piece used by Redis Cluster in ord
 
 1. Set the destination node slot to *importing* state using `CLUSTER SETSLOT <slot> IMPORTING <source-node-id>`.
 2. Set the source node slot to *migrating* state using `CLUSTER SETSLOT <slot> MIGRATING <destination-node-id>`.
-3. Get keys from the source node with `CLUSTER GETKEYSINSLOT` command and move them into the destination node using the `MIGRATE` command.
+3. Get keys from the source node with `CLUSTER GETKEYSINSLOT` command and move them into the destination node using the [`MIGRATE`](./migrate) command.
 4. Use `CLUSTER SETSLOT <slot> NODE <destination-node-id>` in the source or destination.
 
 Notes:
