@@ -1,5 +1,6 @@
 {
     "LCS": {
+        "group": "string",
         "arity": -5,
         "container": "STRALGO",
         "function": "stralgoCommand",

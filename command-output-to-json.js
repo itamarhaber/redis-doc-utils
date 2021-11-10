@@ -2,7 +2,6 @@
 // Assumes max subcommand depth of 1
 // Requires Redis from guybe7/redis/cmd_ptr
 // * SORT has unknown key_specs
-// * function is wrong in some cases (e.g. SETNX b/c it doesn't exist, zunionInterDiffGetKeys, COUNT GETKEYS b/c of capitalization, the HOST: command...). Maybe parse server.c?
 // * Some commmands don't have a commands.json entry (e.g. PFSELFTEST, HOST:, CONFIG/XGROUP...)
 // * Command arguments need translation to new format
 // * Need to convert md `SET` to [`SET`](/commands/set) in MD
@@ -70,7 +69,7 @@ async function loadCommandMarkdown(name) {
     'body': '',
     'history': [],
     'return_summary': '',
-    'depracated': false,
+    'deprecated': false,
   };
 
   const fname = commandFileName(name);
@@ -103,7 +102,7 @@ async function loadCommandMarkdown(name) {
 
     if (s == sections.body) {
       m['body'] += l + '\n';
-      m.depracated = m.depracated || (l.indexOf('deprecated') != -1); // TODO: false positives info, role...
+      m.deprecated = m.deprecated || (l.indexOf('deprecated') != -1); // TODO: false positives info, role...
     } else if (s == sections.history) {
       if (l.trim().length == 0) {
         continue;
@@ -121,8 +120,8 @@ async function loadCommandMarkdown(name) {
     delete m['history'];
   }
 
-  if (!m['depracated']) {
-    delete m['depracated'];
+  if (!m['deprecated']) {
+    delete m['deprecated'];
   }
 
   m['return_summary'] = m['return_summary'].trim();
@@ -349,6 +348,8 @@ async function enrichWithMD(cmd) {
     ...cmd[kname],
   };
 
+  // TODO: sanitize MD fully
+
   if (cmd[kname].subcommands !== undefined) {
     await Promise.all(cmd[kname].subcommands.map(async (s) => enrichWithMD(s)));
   }
@@ -383,7 +384,8 @@ async function persistCommand(cmd) {
     group: cmd[kname].group,
     since: cmd[kname].since,
     arity: cmd[kname].arity,
-    depracated: cmd[kname].depracated,
+    internal: cmd[name].internal,
+    deprecated: cmd[kname].deprecated,
     container: cmd[kname].container,
     function: cmd[kname].function,
     get_keys_function: cmd[kname].get_keys_function,
@@ -392,6 +394,8 @@ async function persistCommand(cmd) {
     acl_categories: cmd[kname].acl_categories,
     key_specs: cmd[kname].key_specs,
   };
+
+  if (s[kname].group === undefined) console.error(`--ERR No group for ${name}`);
 
   if (!options.noreturn) {
     s[kname]['return_types'] = cmd[kname].return_types;
@@ -446,7 +450,78 @@ function backpropIfContainer(cmd) {
   return cmd;
 }
 
+function popagateIfSubcommand(cmd) {
+  const kname = getCommandName(cmd);
+  if (cmd[kname].subcommands !== undefined) {
+    cmd[kname].subcommands = cmd[kname].subcommands.map(x => {
+      const sname = getCommandName(x);
+      if (x[sname].group === undefined) {
+        x[sname].group = cmd[kname].group;
+      }
+      return x;
+    });
+  }
+  return cmd;
+}
+
 function manualPatch(cmds) {
+  const p = {
+    "PFSELFTEST": {
+      "group": "hyperloglog",
+      "internal": true,
+    },
+    "GEORADIUS_RO": {
+      "group": "geo",
+    },
+    "PFDEBUG": {
+      "group": "hyperloglog",
+      "internal": true,
+    },
+    "HOST:": {
+      "group": "server",
+      "internal": true,
+    },
+    "REPLCONF": {
+      "group": "server",
+      "internal": true,
+    },
+    "GEORADIUSBYMEMBER_RO": {
+      "group": "",
+    },
+    "DEBUG": {
+      "group": "server",
+      "internal": true,
+    },
+    "RESTORE-ASKING": {
+      "group": "server",
+      "internal": true,
+    },
+    "XSETID": {
+      "group": "streams",
+      "internal": true,
+    },
+    "CLUSTER": {
+      "group": "cluster",
+    },
+    "POST": {
+      "group": "server",
+      "internal": true,
+    },
+    "SUBSTR": {
+      "group": "string",
+      "internal": true,
+    },
+  };
+  cmds = cmds.map(x => {
+    const kname = getCommandName(x);
+    if (kname in p) {
+      x[kname] = {
+        ...x[kname],
+        ...p[kname],
+      }
+    };
+    return x;
+  });
   return cmds;
 }
 
@@ -467,8 +542,8 @@ async function main() {
   console.log('Loading commands.json');
   const commandsJSON = await loadCommandsJSON();
 
-  // console.log('Applying patches');
-  // commands = manualPatch(commands);
+  console.log('Applying patches');
+  commands = manualPatch(commands);
 
   // console.log('Adding functions');
   // commands = commands.map(x => addFunctions(functions,x));
@@ -478,6 +553,9 @@ async function main() {
 
   console.log('Backpropagating container properties');
   commands = commands.map(x => backpropIfContainer(x));
+
+  console.log('Propagating container properties');
+  commands = commands.map(x => popagateIfSubcommand(x));
 
   console.log('Enrichening with MarkDown');
   commands = await Promise.all(commands.map(async (x) => enrichWithMD(x)));
