@@ -52,9 +52,11 @@
                 "type": "oneof",
                 "value": [
                     {
+                        "name": "__TBD__115__",
                         "token": "MIN"
                     },
                     {
+                        "name": "__TBD__116__",
                         "token": "MAX"
                     }
                 ]

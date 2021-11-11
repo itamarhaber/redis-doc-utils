@@ -28,15 +28,19 @@
                 "type": "oneof",
                 "value": [
                     {
+                        "name": "__TBD__38__",
                         "token": "IMPORTING"
                     },
                     {
+                        "name": "__TBD__39__",
                         "token": "MIGRATING"
                     },
                     {
+                        "name": "__TBD__40__",
                         "token": "STABLE"
                     },
                     {
+                        "name": "__TBD__41__",
                         "token": "NODE"
                     }
                 ]

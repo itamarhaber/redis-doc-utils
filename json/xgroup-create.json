@@ -51,9 +51,11 @@
                 "type": "oneof",
                 "value": [
                     {
+                        "name": "__TBD__127__",
                         "token": "id"
                     },
                     {
+                        "name": "__TBD__128__",
                         "token": "$"
                     }
                 ]

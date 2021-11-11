@@ -78,9 +78,11 @@
                 "type": "oneof",
                 "value": [
                     {
+                        "name": "__TBD__49__",
                         "token": "BYSCORE"
                     },
                     {
+                        "name": "__TBD__50__",
                         "token": "BYLEX"
                     }
                 ]

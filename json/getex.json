@@ -46,18 +46,23 @@
                 "type": "oneof",
                 "value": [
                     {
+                        "name": "__TBD__142__",
                         "token": "EX seconds"
                     },
                     {
+                        "name": "__TBD__143__",
                         "token": "PX milliseconds"
                     },
                     {
+                        "name": "__TBD__144__",
                         "token": "EXAT timestamp"
                     },
                     {
+                        "name": "__TBD__145__",
                         "token": "PXAT milliseconds-timestamp"
                     },
                     {
+                        "name": "__TBD__146__",
                         "token": "PERSIST"
                     }
                 ]

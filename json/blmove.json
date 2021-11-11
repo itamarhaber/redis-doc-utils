@@ -71,9 +71,11 @@
                 "type": "oneof",
                 "value": [
                     {
+                        "name": "__TBD__83__",
                         "token": "LEFT"
                     },
                     {
+                        "name": "__TBD__84__",
                         "token": "RIGHT"
                     }
                 ]
@@ -83,9 +85,11 @@
                 "type": "oneof",
                 "value": [
                     {
+                        "name": "__TBD__85__",
                         "token": "LEFT"
                     },
                     {
+                        "name": "__TBD__86__",
                         "token": "RIGHT"
                     }
                 ]

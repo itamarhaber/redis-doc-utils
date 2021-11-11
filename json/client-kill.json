@@ -62,15 +62,19 @@
                 "type": "oneof",
                 "value": [
                     {
+                        "name": "__TBD__96__",
                         "token": "normal"
                     },
                     {
+                        "name": "__TBD__97__",
                         "token": "master"
                     },
                     {
+                        "name": "__TBD__98__",
                         "token": "slave"
                     },
                     {
+                        "name": "__TBD__99__",
                         "token": "pubsub"
                     }
                 ]

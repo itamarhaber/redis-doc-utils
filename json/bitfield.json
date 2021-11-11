@@ -111,12 +111,15 @@
                 "type": "oneof",
                 "value": [
                     {
+                        "name": "__TBD__13__",
                         "token": "WRAP"
                     },
                     {
+                        "name": "__TBD__14__",
                         "token": "SAT"
                     },
                     {
+                        "name": "__TBD__15__",
                         "token": "FAIL"
                     }
                 ]

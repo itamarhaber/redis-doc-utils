@@ -81,15 +81,19 @@
                         "type": "oneof",
                         "value": [
                             {
+                                "name": "__TBD__16__",
                                 "token": "m"
                             },
                             {
+                                "name": "__TBD__17__",
                                 "token": "km"
                             },
                             {
+                                "name": "__TBD__18__",
                                 "token": "ft"
                             },
                             {
+                                "name": "__TBD__19__",
                                 "token": "mi"
                             }
                         ]
@@ -117,15 +121,19 @@
                         "type": "oneof",
                         "value": [
                             {
+                                "name": "__TBD__20__",
                                 "token": "m"
                             },
                             {
+                                "name": "__TBD__21__",
                                 "token": "km"
                             },
                             {
+                                "name": "__TBD__22__",
                                 "token": "ft"
                             },
                             {
+                                "name": "__TBD__23__",
                                 "token": "mi"
                             }
                         ]
@@ -138,9 +146,11 @@
                 "type": "oneof",
                 "value": [
                     {
+                        "name": "__TBD__24__",
                         "token": "ASC"
                     },
                     {
+                        "name": "__TBD__25__",
                         "token": "DESC"
                     }
                 ]

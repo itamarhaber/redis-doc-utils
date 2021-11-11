@@ -104,15 +104,19 @@
                 "type": "oneof",
                 "value": [
                     {
+                        "name": "__TBD__147__",
                         "token": "m"
                     },
                     {
+                        "name": "__TBD__148__",
                         "token": "km"
                     },
                     {
+                        "name": "__TBD__149__",
                         "token": "ft"
                     },
                     {
+                        "name": "__TBD__150__",
                         "token": "mi"
                     }
                 ]
@@ -156,9 +160,11 @@
                 "type": "oneof",
                 "value": [
                     {
+                        "name": "__TBD__151__",
                         "token": "ASC"
                     },
                     {
+                        "name": "__TBD__152__",
                         "token": "DESC"
                     }
                 ]

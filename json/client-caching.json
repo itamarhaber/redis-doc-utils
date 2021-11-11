@@ -22,9 +22,11 @@
                 "type": "oneof",
                 "value": [
                     {
+                        "name": "__TBD__111__",
                         "token": "YES"
                     },
                     {
+                        "name": "__TBD__112__",
                         "token": "NO"
                     }
                 ]

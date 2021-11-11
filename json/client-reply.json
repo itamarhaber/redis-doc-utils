@@ -22,12 +22,15 @@
                 "type": "oneof",
                 "value": [
                     {
+                        "name": "__TBD__104__",
                         "token": "ON"
                     },
                     {
+                        "name": "__TBD__105__",
                         "token": "OFF"
                     },
                     {
+                        "name": "__TBD__106__",
                         "token": "SKIP"
                     }
                 ]

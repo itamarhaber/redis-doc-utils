@@ -24,9 +24,11 @@
                 "type": "oneof",
                 "value": [
                     {
+                        "name": "__TBD__36__",
                         "token": "HARD"
                     },
                     {
+                        "name": "__TBD__37__",
                         "token": "SOFT"
                     }
                 ]

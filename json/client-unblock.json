@@ -31,9 +31,11 @@
                 "type": "oneof",
                 "value": [
                     {
+                        "name": "__TBD__113__",
                         "token": "TIMEOUT"
                     },
                     {
+                        "name": "__TBD__114__",
                         "token": "ERROR"
                     }
                 ]

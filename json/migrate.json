@@ -89,9 +89,11 @@
                 "type": "oneof",
                 "value": [
                     {
+                        "name": "__TBD__5__",
                         "token": "key"
                     },
                     {
+                        "name": "__TBD__6__",
                         "token": "\"\""
                     }
                 ]

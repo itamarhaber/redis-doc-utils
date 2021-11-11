@@ -55,9 +55,11 @@
                         "type": "oneof",
                         "value": [
                             {
+                                "name": "__TBD__62__",
                                 "token": "MAXLEN"
                             },
                             {
+                                "name": "__TBD__63__",
                                 "token": "MINID"
                             }
                         ]
@@ -68,9 +70,11 @@
                         "type": "oneof",
                         "value": [
                             {
+                                "name": "__TBD__64__",
                                 "token": "="
                             },
                             {
+                                "name": "__TBD__65__",
                                 "token": "~"
                             }
                         ]

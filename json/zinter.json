@@ -62,12 +62,15 @@
                 "type": "oneof",
                 "value": [
                     {
+                        "name": "__TBD__91__",
                         "token": "SUM"
                     },
                     {
+                        "name": "__TBD__92__",
                         "token": "MIN"
                     },
                     {
+                        "name": "__TBD__93__",
                         "token": "MAX"
                     }
                 ]

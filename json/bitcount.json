@@ -66,9 +66,11 @@
                         "type": "oneof",
                         "value": [
                             {
+                                "name": "__TBD__117__",
                                 "token": "BYTE"
                             },
                             {
+                                "name": "__TBD__118__",
                                 "token": "BIT"
                             }
                         ]

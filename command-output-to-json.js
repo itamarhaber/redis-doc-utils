@@ -2,8 +2,6 @@
 // Assumes max subcommand depth of 1
 // Requires Redis from guybe7/redis/cmd_ptr
 // * SORT has unknown key_specs
-// * Some commmands don't have a commands.json entry (e.g. PFSELFTEST, HOST:, CONFIG/XGROUP...)
-// * Need to convert md `SET` to [`SET`](/commands/set) in MD
 // * Need to extract return types
 // * The QUIT command doesn't exist in the commands table
 // * The `movablekeys` server flag is deprecated intentionally
@@ -22,14 +20,15 @@ const srcPath = process.env.REDIS_SRC || '../redis';
 const outputPathJSON = './json';
 const outputPathMD = './md';
 
-var getTbdStr = (function () {
-  var i = 0;
-
-  return function () {
-    i++;
-    return `__TBD__${i}__`;
-  };
-});
+function makeTbdStr() {
+    var i = 0;
+    function tbd() {
+      i = i + 1;
+      return `__TBD__${i}__`;  
+    }
+    return tbd;
+}
+const getTbdStr = makeTbdStr()
 
 function isAlpha (s) {
   return (s.search(/[^A-Za-z]/) != -1 && s.length > 0);
@@ -97,12 +96,12 @@ function convertSingleArg(old) {
         if (e == 'ID' || (isAlpha(e) && !isUppder(e))) {
           return {
             name: e.toLowerCase(),
-            type: getTbdStr(),
+            "type": getTbdStr(),
             value: e.toLowerCase(),
           };
         } else {
           return {
-            name: getTbdStr(),
+            "name": getTbdStr(),
             token: e,
           };
         }

@@ -25,9 +25,11 @@
                 "type": "oneof",
                 "value": [
                     {
+                        "name": "__TBD__94__",
                         "token": "ON"
                     },
                     {
+                        "name": "__TBD__95__",
                         "token": "OFF"
                     }
                 ]

@@ -22,9 +22,11 @@
                 "type": "oneof",
                 "value": [
                     {
+                        "name": "__TBD__125__",
                         "token": "ASYNC"
                     },
                     {
+                        "name": "__TBD__126__",
                         "token": "SYNC"
                     }
                 ]

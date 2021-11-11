@@ -20,12 +20,15 @@
                 "type": "oneof",
                 "value": [
                     {
+                        "name": "__TBD__51__",
                         "token": "YES"
                     },
                     {
+                        "name": "__TBD__52__",
                         "token": "SYNC"
                     },
                     {
+                        "name": "__TBD__53__",
                         "token": "NO"
                     }
                 ]

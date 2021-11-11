@@ -23,9 +23,11 @@
                 "type": "oneof",
                 "value": [
                     {
+                        "name": "__TBD__121__",
                         "token": "NOSAVE"
                     },
                     {
+                        "name": "__TBD__122__",
                         "token": "SAVE"
                     }
                 ]

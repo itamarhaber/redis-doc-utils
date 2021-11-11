@@ -24,9 +24,11 @@
                 "type": "oneof",
                 "value": [
                     {
+                        "name": "__TBD__34__",
                         "token": "FORCE"
                     },
                     {
+                        "name": "__TBD__35__",
                         "token": "TAKEOVER"
                     }
                 ]

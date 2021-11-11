@@ -41,9 +41,11 @@
                 "type": "oneof",
                 "value": [
                     {
+                        "name": "__TBD__100__",
                         "token": "WRITE"
                     },
                     {
+                        "name": "__TBD__101__",
                         "token": "ALL"
                     }
                 ]

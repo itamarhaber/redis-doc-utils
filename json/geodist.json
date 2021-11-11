@@ -55,15 +55,19 @@
                 "type": "oneof",
                 "value": [
                     {
+                        "name": "__TBD__66__",
                         "token": "m"
                     },
                     {
+                        "name": "__TBD__67__",
                         "token": "km"
                     },
                     {
+                        "name": "__TBD__68__",
                         "token": "ft"
                     },
                     {
+                        "name": "__TBD__69__",
                         "token": "mi"
                     }
                 ]

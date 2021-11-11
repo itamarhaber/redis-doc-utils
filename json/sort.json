@@ -96,9 +96,11 @@
                 "type": "oneof",
                 "value": [
                     {
+                        "name": "__TBD__70__",
                         "token": "ASC"
                     },
                     {
+                        "name": "__TBD__71__",
                         "token": "DESC"
                     }
                 ]

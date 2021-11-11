@@ -57,15 +57,19 @@
                 "type": "oneof",
                 "value": [
                     {
+                        "name": "__TBD__56__",
                         "token": "NX"
                     },
                     {
+                        "name": "__TBD__57__",
                         "token": "XX"
                     },
                     {
+                        "name": "__TBD__58__",
                         "token": "GT"
                     },
                     {
+                        "name": "__TBD__59__",
                         "token": "LT"
                     }
                 ]
