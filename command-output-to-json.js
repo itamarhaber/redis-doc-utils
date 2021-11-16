@@ -785,7 +785,7 @@ async function main() {
   return;
 }
 
-// await main();
+await main();
 
-// console.log('Melding into commands.json');
+console.log('Melding into commands.json');
 await meldJSONFiles();
