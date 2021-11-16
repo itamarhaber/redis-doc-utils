@@ -5,7 +5,6 @@
         "group": "string",
         "since": "1.0.0",
         "arity": -3,
-        "deprecated": true,
         "function": "setCommand",
         "history": [
             [
@@ -18,11 +17,11 @@
             ],
             [
                 "6.2",
-                "Added the `GET`, `EXAT` and `PXAT` option."
+                "Added the `!GET`, `EXAT` and `PXAT` option."
             ],
             [
                 "7.0",
-                "Allowed the `NX` and `GET` options to be used together."
+                "Allowed the `NX` and `!GET` options to be used together."
             ]
         ],
         "command_flags": [
@@ -67,50 +66,58 @@
             },
             {
                 "optional": true,
-                "name": "ex seconds_px milliseconds_exat timestamp_pxat milliseconds-timestamp_keepttl",
+                "name": "__TBD__22__",
                 "type": "oneof",
                 "value": [
                     {
-                        "name": "__TBD__42__",
-                        "token": "EX seconds"
+                        "name": "__TBD__23__",
+                        "type": "token",
+                        "value": "EX seconds"
                     },
                     {
-                        "name": "__TBD__43__",
-                        "token": "PX milliseconds"
+                        "name": "__TBD__24__",
+                        "type": "token",
+                        "value": "PX milliseconds"
                     },
                     {
-                        "name": "__TBD__44__",
-                        "token": "EXAT timestamp"
+                        "name": "__TBD__25__",
+                        "type": "token",
+                        "value": "EXAT timestamp"
                     },
                     {
-                        "name": "__TBD__45__",
-                        "token": "PXAT milliseconds-timestamp"
+                        "name": "__TBD__26__",
+                        "type": "token",
+                        "value": "PXAT milliseconds-timestamp"
                     },
                     {
-                        "name": "__TBD__46__",
-                        "token": "KEEPTTL"
+                        "name": "keepttl",
+                        "type": "token",
+                        "value": "KEEPTTL"
                     }
                 ]
             },
             {
                 "optional": true,
-                "name": "nx_xx",
+                "name": "__TBD__27__",
                 "type": "oneof",
                 "value": [
                     {
-                        "name": "__TBD__47__",
-                        "token": "NX"
+                        "name": "nx",
+                        "type": "token",
+                        "value": "NX"
                     },
                     {
-                        "name": "__TBD__48__",
-                        "token": "XX"
+                        "name": "xx",
+                        "type": "token",
+                        "value": "XX"
                     }
                 ]
             },
             {
                 "optional": true,
                 "name": "get",
-                "token": "GET"
+                "value": "GET",
+                "type": "token"
             }
         ]
     }

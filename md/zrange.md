@@ -2,7 +2,7 @@ Returns the specified range of elements in the sorted set stored at `<key>`.
 
 `ZRANGE` can perform different types of range queries: by index (rank), by the score, or by lexicographical order.
 
-Starting with Redis 6.2.0, this command can replace the following commands: [`ZREVRANGE`](./zrevrange), [`ZRANGEBYSCORE`](./zrangebyscore), [`ZREVRANGEBYSCORE`](./zrevrangebyscore), [`ZRANGEBYLEX`](./zrangebylex) and [`ZREVRANGEBYLEX`](./zrevrangebylex).
+Starting with Redis 6.2.0, this command can replace the following commands: `ZREVRANGE`, `ZRANGEBYSCORE`, `ZREVRANGEBYSCORE`, `ZRANGEBYLEX` and `ZREVRANGEBYLEX`.
 
 ## Common behavior and options
 
@@ -29,7 +29,7 @@ If `<max>` is greater than the end index of the sorted set, Redis will use the l
 
 ## Score ranges
 
-When the `BYSCORE` option is provided, the command behaves like [`ZRANGEBYSCORE`](./zrangebyscore) and returns the range of elements from the sorted set having scores equal or between `<min>` and `<max>`.
+When the `BYSCORE` option is provided, the command behaves like `ZRANGEBYSCORE` and returns the range of elements from the sorted set having scores equal or between `<min>` and `<max>`.
 
 `<min>` and `<max>` can be `-inf` and `+inf`, denoting the negative and positive infinities, respectively. This means that you are not required to know the highest or lowest score in the sorted set to get all elements from or up to a certain score.
 
@@ -53,7 +53,7 @@ Will return all the elements with `5 < score < 10` (5 and 10 excluded).
 
 ## Lexicographical ranges
 
-When the `BYLEX` option is used, the command behaves like [`ZRANGEBYLEX`](./zrangebylex) and returns the range of elements from the sorted set between the `<min>` and `<max>` lexicographical closed range intervals.
+When the `BYLEX` option is used, the command behaves like `ZRANGEBYLEX` and returns the range of elements from the sorted set between the `<min>` and `<max>` lexicographical closed range intervals.
 
 Note that lexicographical ordering relies on all elements having the same score. The reply is unspecified when the elements have different scores.
 

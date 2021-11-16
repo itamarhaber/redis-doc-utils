@@ -51,31 +51,35 @@
                 "type": "block",
                 "value": [
                     {
-                        "name": "maxlen_minid",
+                        "name": "__TBD__33__",
                         "type": "oneof",
                         "value": [
                             {
-                                "name": "__TBD__62__",
-                                "token": "MAXLEN"
+                                "name": "maxlen",
+                                "type": "token",
+                                "value": "MAXLEN"
                             },
                             {
-                                "name": "__TBD__63__",
-                                "token": "MINID"
+                                "name": "minid",
+                                "type": "token",
+                                "value": "MINID"
                             }
                         ]
                     },
                     {
                         "optional": true,
-                        "name": "=_~",
+                        "name": "__TBD__34__",
                         "type": "oneof",
                         "value": [
                             {
-                                "name": "__TBD__64__",
-                                "token": "="
+                                "name": "__TBD__35__",
+                                "type": "token",
+                                "value": "="
                             },
                             {
-                                "name": "__TBD__65__",
-                                "token": "~"
+                                "name": "__TBD__36__",
+                                "type": "token",
+                                "value": "~"
                             }
                         ]
                     },

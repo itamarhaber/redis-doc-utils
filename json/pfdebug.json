@@ -2,8 +2,9 @@
     "PFDEBUG": {
         "group": "hyperloglog",
         "arity": -3,
-        "internal": true,
         "function": "pfdebugCommand",
+        "internal": true,
+        "undocumented": true,
         "command_flags": [
             "write",
             "denyoom",

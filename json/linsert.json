@@ -41,16 +41,18 @@
                 "value": "key"
             },
             {
-                "name": "before_after",
+                "name": "__TBD__2__",
                 "type": "oneof",
                 "value": [
                     {
-                        "name": "__TBD__3__",
-                        "token": "BEFORE"
+                        "name": "before",
+                        "type": "token",
+                        "value": "BEFORE"
                     },
                     {
-                        "name": "__TBD__4__",
-                        "token": "AFTER"
+                        "name": "after",
+                        "type": "token",
+                        "value": "AFTER"
                     }
                 ]
             },

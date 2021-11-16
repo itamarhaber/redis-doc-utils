@@ -5,14 +5,14 @@
         "group": "string",
         "since": "6.0.0",
         "arity": -2,
-        "command_flags": [],
         "acl_categories": [
             "slow"
         ],
         "arguments": [
             {
                 "name": "algorithm",
-                "token": "LCS"
+                "value": "LCS",
+                "type": "token"
             },
             {
                 "multiple": true,

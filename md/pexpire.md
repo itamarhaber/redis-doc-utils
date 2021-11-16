@@ -1,4 +1,4 @@
-This command works exactly like [`EXPIRE`](./expire) but the time to live of the key is
+This command works exactly like `EXPIRE` but the time to live of the key is
 specified in milliseconds instead of seconds.
 
 ## Options

@@ -1,2 +1,2 @@
-See [`SCAN`](./scan) for `ZSCAN` documentation.
+See `SCAN` for `ZSCAN` documentation.
 

@@ -1,5 +1,5 @@
 {
-    "DEBUG": {
+    "SCRIPT DEBUG": {
         "summary": "Set the debug mode for executed scripts.",
         "complexity": "O(1)",
         "group": "scripting",
@@ -16,20 +16,23 @@
         ],
         "arguments": [
             {
-                "name": "yes_sync_no",
+                "name": "__TBD__29__",
                 "type": "oneof",
                 "value": [
                     {
-                        "name": "__TBD__51__",
-                        "token": "YES"
+                        "name": "yes",
+                        "type": "token",
+                        "value": "YES"
                     },
                     {
-                        "name": "__TBD__52__",
-                        "token": "SYNC"
+                        "name": "sync",
+                        "type": "token",
+                        "value": "SYNC"
                     },
                     {
-                        "name": "__TBD__53__",
-                        "token": "NO"
+                        "name": "no",
+                        "type": "token",
+                        "value": "NO"
                     }
                 ]
             }

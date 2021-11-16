@@ -1,4 +1,4 @@
-**Warning**: this command was renamed to `GETRANGE`, it is called [`SUBSTR`](./substr) in
+**Warning**: this command was renamed to `GETRANGE`, it is called `SUBSTR` in
 Redis versions `<= 2.0`.
 
 Returns the substring of the string value stored at `key`, determined by the

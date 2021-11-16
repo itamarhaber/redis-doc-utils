@@ -71,7 +71,8 @@
             {
                 "optional": true,
                 "name": "justid",
-                "token": "JUSTID"
+                "value": "JUSTID",
+                "type": "token"
             }
         ]
     }

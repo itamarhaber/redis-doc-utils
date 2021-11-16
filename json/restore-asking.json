@@ -2,8 +2,9 @@
     "RESTORE-ASKING": {
         "group": "server",
         "arity": -4,
-        "internal": true,
         "function": "restoreCommand",
+        "internal": true,
+        "undocumented": true,
         "command_flags": [
             "write",
             "denyoom",

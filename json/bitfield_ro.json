@@ -42,13 +42,13 @@
             },
             {
                 "token": "GET",
-                "name": "type_offset",
+                "name": "encoding_offset",
                 "type": "block",
                 "value": [
                     {
-                        "name": "type",
-                        "type": "type",
-                        "value": "type"
+                        "name": "encoding",
+                        "type": "string",
+                        "value": "encoding"
                     },
                     {
                         "name": "offset",

@@ -1,2 +1,2 @@
-See [`SCAN`](./scan) for `SSCAN` documentation.
+See `SCAN` for `SSCAN` documentation.
 

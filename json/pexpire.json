@@ -53,24 +53,28 @@
             },
             {
                 "optional": true,
-                "name": "nx_xx_gt_lt",
+                "name": "__TBD__45__",
                 "type": "oneof",
                 "value": [
                     {
-                        "name": "__TBD__87__",
-                        "token": "NX"
+                        "name": "nx",
+                        "type": "token",
+                        "value": "NX"
                     },
                     {
-                        "name": "__TBD__88__",
-                        "token": "XX"
+                        "name": "xx",
+                        "type": "token",
+                        "value": "XX"
                     },
                     {
-                        "name": "__TBD__89__",
-                        "token": "GT"
+                        "name": "gt",
+                        "type": "token",
+                        "value": "GT"
                     },
                     {
-                        "name": "__TBD__90__",
-                        "token": "LT"
+                        "name": "lt",
+                        "type": "token",
+                        "value": "LT"
                     }
                 ]
             }

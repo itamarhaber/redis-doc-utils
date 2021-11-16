@@ -1,10 +1,15 @@
 // Make a commands.json from COMMAND's output
 // Assumes max subcommand depth of 1
 // Requires Redis from guybe7/redis/cmd_ptr
+// Open:
 // * SORT has unknown key_specs
 // * Need to extract return types
 // * The QUIT command doesn't exist in the commands table
+// * MD deprecation text needs to be edited out
+// * since field for new args (i.e. history)
+// Notes:
 // * The `movablekeys` server flag is deprecated intentionally
+// * Adds until, replaced_by, internal fields, and 'token' type
 
 import { createClient } from 'redis';
 import { promises as fs } from 'fs';
@@ -30,17 +35,24 @@ function makeTbdStr() {
 }
 const getTbdStr = makeTbdStr()
 
-function isAlpha (s) {
-  return (s.search(/[^A-Za-z]/) != -1 && s.length > 0);
+function convertType (t) {
+  if (t === 'posix time') {
+    return 'unix-time';
+  }
+  return t;
 }
 
-function isUppder (s) {
-  return (s.search(/[^A-Z]/) != -1);
+function isAlpha (s) {
+  return (s.search(/[^A-Za-z]/) == -1 && s.length > 0);
+}
+
+function isUpper (s) {
+  return (isAlpha(s) && s.search(/[^A-Z]/) == -1);
 }
 
 function convertSingleArg(old) {
   const n = {};
-  if ("command" in old) {
+  if ("command" in old && old["type"] !== 'command®') {
     n.token = old.command;
   }
   if (old["optional"]) {
@@ -66,18 +78,19 @@ function convertSingleArg(old) {
   } else if (old.type != 'enum' && old.type != 'block') {
     if ('name' in old && old.name.indexOf(' ') == -1) {
       n.name = old.name;
-      n.type = old.type;
+      n.type = convertType(old.type);
       n.value = old.name;
     } else if (!('name' in old)) {
       n.name = old.command.toLowerCase();
-      n.token = old.command;
+      n.value = old.command;
+      n.type = 'token';
     } else if (old.name.indexOf(' ') != -1) {
       n.name = old.name.replace(' ','_');
       n.type = 'block';
-      n.value = old.name.split(' ').map((e,i) => { 
+      n.value = old.name.split(' ').map(e => { 
         return {
           name: e.toLowerCase(),
-          type: old.type,
+          "type": convertType(old.type),
           value: e,
         };
       });
@@ -85,7 +98,8 @@ function convertSingleArg(old) {
   } else if (old.type == 'enum') {
     if (old.enum.length == 1) {
       n.name = old.name;
-      n.token = old.enum[0];
+      n.value = old.enum[0];
+      n.type = 'token';
     } else {
       n.name = old.enum.join('_').toLowerCase();
       if (!isAlpha(n.name)) {
@@ -93,16 +107,23 @@ function convertSingleArg(old) {
       }
       n.type = 'oneof';
       n.value = old.enum.map(e => {
-        if (e == 'ID' || (isAlpha(e) && !isUppder(e))) {
+        if (e == 'ID') {
+          return {
+            name: 'id',
+            "type": 'string',
+            value: 'ID',
+          };
+        } else if (isAlpha(e) && !isUpper(e)) {
           return {
             name: e.toLowerCase(),
-            "type": getTbdStr(),
+            "type": 'token',
             value: e.toLowerCase(),
           };
         } else {
           return {
-            "name": getTbdStr(),
-            token: e,
+            "name": isAlpha(e) ? e.toLowerCase() : getTbdStr(),
+            "type": 'token',
+            value: e,
           };
         }
       });
@@ -114,6 +135,7 @@ function convertSingleArg(old) {
   } else {
     console.error(`-ERR invalid type ${old.type}`);
   }
+
   return n;
 }
 
@@ -158,7 +180,7 @@ function linkifyMD(cmds,name,md) {
     if (k[0] == '!') {
       return `\`${k.slice(1)}\``;
     } else if (e.length == 1 && name != k) {
-      return `[${s}](./${commandFileName(k)})`;
+      return `[${s}](/commands/${commandFileName(k)})`;
     } else {
       return s;
     }
@@ -177,7 +199,6 @@ async function loadCommandMarkdown(cmds,name) {
     'body': '',
     'history': [],
     'return_summary': '',
-    'deprecated': false,
   };
 
   const fname = commandFileName(name);
@@ -189,7 +210,7 @@ async function loadCommandMarkdown(cmds,name) {
     return {};
   }
   let md = buff.toString();
-  md = linkifyMD(cmds,name,md);
+  // md = linkifyMD(cmds,name,md);
   const lines = md.split('\n');
   let i = 0;
   let s = sections.body;
@@ -202,7 +223,6 @@ async function loadCommandMarkdown(cmds,name) {
     } else if (l.startsWith(sections.examples)) {
       s = sections.body;
     } else if (l.startsWith(sections.reply)) {
-      m[''] = '';
       s = sections.reply;
       continue;
     } else if (l.startsWith('#')) {
@@ -211,7 +231,6 @@ async function loadCommandMarkdown(cmds,name) {
 
     if (s == sections.body) {
       m['body'] += l + '\n';
-      m.deprecated = m.deprecated || (l.indexOf('deprecated') != -1); // TODO: false positives info, role...
     } else if (s == sections.history) {
       if (l.trim().length == 0) {
         continue;
@@ -317,6 +336,7 @@ function kargsRESPToObj(name, kargs) {
       default:
         console.error(`-ERR in ${name} keyspec find_keys unknown ${JSON.stringify(s)}`);
     }
+    o['flags'] = undefinedIfZeroArray(o['flags']);
     return o;
   });
   return obj;
@@ -470,6 +490,14 @@ async function enrichWithMD(cmds, cmd) {
   return cmd;
 }
 
+function undefinedIfZeroArray(a) {
+  if (Array.isArray(a) && a.length !== 0) {
+    return a;
+  } else {
+    return undefined;
+  }
+}
+
 async function persistCommand(cmd) {
   const kname = getCommandName(cmd);
   const name = getCommandNameFromObj(cmd);
@@ -491,30 +519,32 @@ async function persistCommand(cmd) {
   const s = {
   };
 
-  s[kname] = {
+  s[name] = {
     summary: cmd[kname].summary,
     complexity: cmd[kname].complexity,
     group: cmd[kname].group,
     since: cmd[kname].since,
     arity: cmd[kname].arity,
-    internal: cmd[kname].internal,
-    deprecated: cmd[kname].deprecated,
     container: cmd[kname].container,
     function: cmd[kname].function,
     get_keys_function: cmd[kname].get_keys_function,
-    history: cmd[kname].history,
-    command_flags: cmd[kname].command_flags,
-    acl_categories: cmd[kname].acl_categories,
-    key_specs: cmd[kname].key_specs,
+    until: cmd[kname].until,
+    replaced_by: cmd[kname].replaced_by,
+    internal: cmd[kname].internal,
+    undocumented: cmd[kname].undocumented,
+    history: undefinedIfZeroArray(cmd[kname].history),
+    command_flags: undefinedIfZeroArray(cmd[kname].command_flags),
+    acl_categories: undefinedIfZeroArray(cmd[kname].acl_categories),
+    key_specs: undefinedIfZeroArray(cmd[kname].key_specs),
   };
 
-  if (s[kname].group === undefined) console.error(`--ERR No group for ${name}`);
+  if (s[name].group === undefined) console.error(`--ERR No group for ${name}`);
 
   if (!options.noreturn) {
-    s[kname]['return_types'] = cmd[kname].return_types;
+    s[name]['return_types'] = undefinedIfZeroArray(cmd[kname].return_types);
   }
   if (!options.noargs) {
-    s[kname]['arguments'] = cmd[kname].arguments;
+    s[name]['arguments'] = undefinedIfZeroArray(cmd[kname].arguments);
   }
 
   const json = JSON.stringify(s,null,4);
@@ -577,29 +607,100 @@ function popagateIfSubcommand(cmd) {
   return cmd;
 }
 
+async function meldJSONFiles() {
+  const files = await fs.readdir(outputPathJSON);
+  const payload = {};
+  await Promise.all(files.map(async (x) => {
+    const path = `${outputPathJSON}/${x}`;
+    const buff = await fs.readFile(path);
+    const json = JSON.parse(buff);
+    const k = Object.keys(json)[0];
+    payload[k] = json[k];
+  }));
+  await fs.writeFile('commands.json',JSON.stringify(payload,null,4),'utf-8');
+}
+
 function manualPatch(cmds) {
   const p = {
-    "PFSELFTEST": {
-      "group": "hyperloglog",
-      "internal": true,
+    "BRPOPLPUSH": {
+      "until": "6.2.0",
+      "replaced_by": "`BLMOVE` with the `RIGHT` and `LEFT` arguments",
+    },
+    "GEORADIUS": {
+      "until": "6.2.0",
+      "replaced_by": "`GEOSEARCH` and `GEOSEARCHSTORE` with the `BYRADIUS` argument",
     },
     "GEORADIUS_RO": {
       "group": "geo",
+      "until": "6.2.0",
+      "replaced_by": "`GEOSEARCH` with the `BYRADIUS` argument",
+    },
+    "GEORADIUSBYMEMBER": {
+      "until": "6.2.0",
+      "replaced_by": "`GEOSEARCH` and `GEOSEARCHSTORE` with the `BYRADIUS` and `FROMMEMBER` arguments",
+    },
+    "GEORADIUSBYMEMBER_RO": {
+      "group": "geo",
+      "until": "6.2.0",
+      "replaced_by": "`GEOSEARCH` with the `BYRADIUS` and `FROMMEMBER` arguments",
+    },
+    "GETSET": {
+      "until": "6.2.0",
+      "replaced_by": "`SET` with the `!GET` argument",
+    },
+    "HMSET": {
+      "until": "4.0.0",
+      "replaced_by": "`HSET` with multiple field-value pairs",
+    },
+    "RPOPLPUSH": {
+      "until": "6.2.0",
+      "replaced_by": "`LMOVE` with the `RIGHT` and `LEFT` arguments",
+    },
+    "ZRANGEBYSCORE": {
+      "until": "6.2.0",
+      "replaced_by": "`ZRANGE` with the `BYSCORE` argument",
+    },
+    "ZRANGEBYLEX": {
+      "until": "6.2.0",
+      "replaced_by": "`ZRANGE` with the `BYSCORE` argument",
+    },
+    "ZREVRANGE": {
+      "until": "6.2.0",
+      "replaced_by": "`ZRANGE` with the `REV` argument",
+    },
+    "ZREVRANGEBYLEX": {
+      "until": "6.2.0",
+      "replaced_by": "`ZRANGE` with the `REV` and `BYLEX` arguments",
+    },
+    "ZREVRANGEBYSCORE": {
+      "until": "6.2.0",
+      "replaced_by": "`ZRANGE` with the `REV` and `BYSCORE` arguments",
+    },
+    "SUBSTR": {
+      "group": "string",
+      "undocumented": true,
+      "until": "2.4.0",
+      "replaced_by": "`GETRANGE`",
+    },
+    "PFSELFTEST": {
+      "group": "hyperloglog",
+      "internal": true,
+      "undocumented": true,
     },
     "PFDEBUG": {
       "group": "hyperloglog",
       "internal": true,
+      "undocumented": true,
     },
     "HOST:": {
       "group": "server",
       "internal": true,
+      "undocumented": true,
     },
     "REPLCONF": {
       "group": "server",
       "internal": true,
-    },
-    "GEORADIUSBYMEMBER_RO": {
-      "group": "",
+      "undocumented": true,
     },
     "DEBUG": {
       "group": "server",
@@ -608,24 +709,23 @@ function manualPatch(cmds) {
     "RESTORE-ASKING": {
       "group": "server",
       "internal": true,
+      "undocumented": true,
     },
     "XSETID": {
-      "group": "streams",
+      "group": "stream",
       "internal": true,
-    },
-    "CLUSTER": {
-      "group": "cluster",
+      "undocumented": true,
     },
     "POST": {
       "group": "server",
       "internal": true,
+      "undocumented": true,
+    },
+    "CLUSTER": {
+      "group": "cluster",
     },
     "MODULE": {
       "group": "server",
-    },
-    "SUBSTR": {
-      "group": "string",
-      "internal": true,
     },
   };
   cmds = cmds.map(x => {
@@ -676,8 +776,6 @@ async function main() {
   console.log('Enrichening with MarkDown');
   commands = await Promise.all(commands.map(async (x) => enrichWithMD(commands,x)));
 
-  await fs.writeFile(`commands.json`,JSON.stringify(commands,null,4));
-
   console.log('Persisting files');
   await Promise.all(Object.values(commands).map(async (cmd) => {
     persistCommand(cmd);
@@ -688,3 +786,6 @@ async function main() {
 }
 
 await main();
+
+console.log('Melding into commands.json');
+await meldJSONFiles();

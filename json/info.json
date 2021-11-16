@@ -4,7 +4,6 @@
         "group": "server",
         "since": "1.0.0",
         "arity": -1,
-        "deprecated": true,
         "function": "infoCommand",
         "command_flags": [
             "random",

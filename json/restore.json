@@ -54,12 +54,14 @@
             {
                 "optional": true,
                 "name": "replace",
-                "token": "REPLACE"
+                "value": "REPLACE",
+                "type": "token"
             },
             {
                 "optional": true,
                 "name": "absttl",
-                "token": "ABSTTL"
+                "value": "ABSTTL",
+                "type": "token"
             },
             {
                 "token": "IDLETIME",

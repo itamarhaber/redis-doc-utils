@@ -1,5 +1,5 @@
 {
-    "CREATECONSUMER": {
+    "XGROUP CREATECONSUMER": {
         "summary": "Create a consumer in a consumer group.",
         "complexity": "O(1)",
         "group": "stream",

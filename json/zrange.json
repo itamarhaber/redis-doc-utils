@@ -57,23 +57,26 @@
             },
             {
                 "optional": true,
-                "name": "byscore_bylex",
+                "name": "__TBD__18__",
                 "type": "oneof",
                 "value": [
                     {
-                        "name": "__TBD__32__",
-                        "token": "BYSCORE"
+                        "name": "byscore",
+                        "type": "token",
+                        "value": "BYSCORE"
                     },
                     {
-                        "name": "__TBD__33__",
-                        "token": "BYLEX"
+                        "name": "bylex",
+                        "type": "token",
+                        "value": "BYLEX"
                     }
                 ]
             },
             {
                 "optional": true,
                 "name": "rev",
-                "token": "REV"
+                "value": "REV",
+                "type": "token"
             },
             {
                 "token": "LIMIT",
@@ -96,7 +99,8 @@
             {
                 "optional": true,
                 "name": "withscores",
-                "token": "WITHSCORES"
+                "value": "WITHSCORES",
+                "type": "token"
             }
         ]
     }

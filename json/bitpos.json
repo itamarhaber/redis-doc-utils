@@ -72,16 +72,18 @@
                             },
                             {
                                 "optional": true,
-                                "name": "byte_bit",
+                                "name": "__TBD__1__",
                                 "type": "oneof",
                                 "value": [
                                     {
-                                        "name": "__TBD__1__",
-                                        "token": "BYTE"
+                                        "name": "byte",
+                                        "type": "token",
+                                        "value": "BYTE"
                                     },
                                     {
-                                        "name": "__TBD__2__",
-                                        "token": "BIT"
+                                        "name": "bit",
+                                        "type": "token",
+                                        "value": "BIT"
                                     }
                                 ]
                             }

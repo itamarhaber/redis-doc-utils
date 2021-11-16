@@ -87,12 +87,14 @@
             {
                 "optional": true,
                 "name": "force",
-                "token": "FORCE"
+                "value": "FORCE",
+                "type": "token"
             },
             {
                 "optional": true,
                 "name": "justid",
-                "token": "JUSTID"
+                "value": "JUSTID",
+                "type": "token"
             }
         ]
     }

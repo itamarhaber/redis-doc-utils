@@ -53,7 +53,8 @@
                     {
                         "optional": true,
                         "name": "withvalues",
-                        "token": "WITHVALUES"
+                        "value": "WITHVALUES",
+                        "type": "token"
                     }
                 ]
             }

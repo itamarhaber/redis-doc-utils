@@ -5,9 +5,10 @@
         "group": "geo",
         "since": "3.2.0",
         "arity": -6,
-        "deprecated": true,
         "function": "georadiusCommand",
         "get_keys_function": "georadiusGetKeys",
+        "until": "6.2.0",
+        "replaced_by": "`GEOSEARCH` and `GEOSEARCHSTORE` with the `BYRADIUS` argument",
         "history": [
             [
                 "6.2",
@@ -100,41 +101,48 @@
                 "value": "radius"
             },
             {
-                "name": "m_km_ft_mi",
+                "name": "__TBD__72__",
                 "type": "oneof",
                 "value": [
                     {
-                        "name": "__TBD__147__",
-                        "token": "m"
+                        "name": "m",
+                        "type": "token",
+                        "value": "m"
                     },
                     {
-                        "name": "__TBD__148__",
-                        "token": "km"
+                        "name": "km",
+                        "type": "token",
+                        "value": "km"
                     },
                     {
-                        "name": "__TBD__149__",
-                        "token": "ft"
+                        "name": "ft",
+                        "type": "token",
+                        "value": "ft"
                     },
                     {
-                        "name": "__TBD__150__",
-                        "token": "mi"
+                        "name": "mi",
+                        "type": "token",
+                        "value": "mi"
                     }
                 ]
             },
             {
                 "optional": true,
                 "name": "withcoord",
-                "token": "WITHCOORD"
+                "value": "WITHCOORD",
+                "type": "token"
             },
             {
                 "optional": true,
                 "name": "withdist",
-                "token": "WITHDIST"
+                "value": "WITHDIST",
+                "type": "token"
             },
             {
                 "optional": true,
                 "name": "withhash",
-                "token": "WITHHASH"
+                "value": "WITHHASH",
+                "type": "token"
             },
             {
                 "optional": true,
@@ -150,22 +158,25 @@
                     {
                         "optional": true,
                         "name": "any",
-                        "token": "ANY"
+                        "value": "ANY",
+                        "type": "token"
                     }
                 ]
             },
             {
                 "optional": true,
-                "name": "asc_desc",
+                "name": "__TBD__73__",
                 "type": "oneof",
                 "value": [
                     {
-                        "name": "__TBD__151__",
-                        "token": "ASC"
+                        "name": "asc",
+                        "type": "token",
+                        "value": "ASC"
                     },
                     {
-                        "name": "__TBD__152__",
-                        "token": "DESC"
+                        "name": "desc",
+                        "type": "token",
+                        "value": "DESC"
                     }
                 ]
             },

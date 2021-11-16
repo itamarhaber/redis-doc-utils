@@ -13,7 +13,7 @@
             ],
             [
                 "6.2.0",
-                "Added the `SYNC` flushing mode modifier and the **lazyfree-lazy-user-flush** configuration directive."
+                "Added the `!SYNC` flushing mode modifier and the **lazyfree-lazy-user-flush** configuration directive."
             ]
         ],
         "command_flags": [
@@ -28,16 +28,18 @@
         "arguments": [
             {
                 "optional": true,
-                "name": "async_sync",
+                "name": "__TBD__39__",
                 "type": "oneof",
                 "value": [
                     {
-                        "name": "__TBD__72__",
-                        "token": "ASYNC"
+                        "name": "async",
+                        "type": "token",
+                        "value": "ASYNC"
                     },
                     {
-                        "name": "__TBD__73__",
-                        "token": "SYNC"
+                        "name": "sync",
+                        "type": "token",
+                        "value": "SYNC"
                     }
                 ]
             }

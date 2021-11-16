@@ -5,8 +5,9 @@
         "group": "list",
         "since": "2.2.0",
         "arity": 4,
-        "deprecated": true,
         "function": "brpoplpushCommand",
+        "until": "6.2.0",
+        "replaced_by": "`BLMOVE` with the `RIGHT` and `LEFT` arguments",
         "history": [
             [
                 "6.0",

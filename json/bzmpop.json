@@ -54,16 +54,18 @@
                 "value": "key"
             },
             {
-                "name": "min_max",
+                "name": "__TBD__57__",
                 "type": "oneof",
                 "value": [
                     {
-                        "name": "__TBD__119__",
-                        "token": "MIN"
+                        "name": "min",
+                        "type": "token",
+                        "value": "MIN"
                     },
                     {
-                        "name": "__TBD__120__",
-                        "token": "MAX"
+                        "name": "max",
+                        "type": "token",
+                        "value": "MAX"
                     }
                 ]
             },

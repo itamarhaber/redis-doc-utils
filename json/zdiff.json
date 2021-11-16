@@ -50,7 +50,8 @@
             {
                 "optional": true,
                 "name": "withscores",
-                "token": "WITHSCORES"
+                "value": "WITHSCORES",
+                "type": "token"
             }
         ]
     }

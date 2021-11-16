@@ -5,7 +5,6 @@
         "group": "list",
         "since": "6.2.0",
         "arity": 5,
-        "deprecated": true,
         "function": "lmoveCommand",
         "command_flags": [
             "write",
@@ -65,30 +64,34 @@
                 "value": "destination"
             },
             {
-                "name": "left_right",
+                "name": "__TBD__15__",
                 "type": "oneof",
                 "value": [
                     {
-                        "name": "__TBD__26__",
-                        "token": "LEFT"
+                        "name": "left",
+                        "type": "token",
+                        "value": "LEFT"
                     },
                     {
-                        "name": "__TBD__27__",
-                        "token": "RIGHT"
+                        "name": "right",
+                        "type": "token",
+                        "value": "RIGHT"
                     }
                 ]
             },
             {
-                "name": "left_right",
+                "name": "__TBD__16__",
                 "type": "oneof",
                 "value": [
                     {
-                        "name": "__TBD__28__",
-                        "token": "LEFT"
+                        "name": "left",
+                        "type": "token",
+                        "value": "LEFT"
                     },
                     {
-                        "name": "__TBD__29__",
-                        "token": "RIGHT"
+                        "name": "right",
+                        "type": "token",
+                        "value": "RIGHT"
                     }
                 ]
             }

@@ -13,7 +13,7 @@
             ],
             [
                 "3.0.2",
-                "Added the `XX`, `NX`, `CH` and [`INCR`](./incr) options."
+                "Added the `XX`, `NX`, `CH` and `INCR` options."
             ],
             [
                 "6.2",
@@ -57,43 +57,49 @@
             },
             {
                 "optional": true,
-                "name": "nx_xx",
+                "name": "__TBD__75__",
                 "type": "oneof",
                 "value": [
                     {
-                        "name": "__TBD__157__",
-                        "token": "NX"
+                        "name": "nx",
+                        "type": "token",
+                        "value": "NX"
                     },
                     {
-                        "name": "__TBD__158__",
-                        "token": "XX"
+                        "name": "xx",
+                        "type": "token",
+                        "value": "XX"
                     }
                 ]
             },
             {
                 "optional": true,
-                "name": "gt_lt",
+                "name": "__TBD__76__",
                 "type": "oneof",
                 "value": [
                     {
-                        "name": "__TBD__159__",
-                        "token": "GT"
+                        "name": "gt",
+                        "type": "token",
+                        "value": "GT"
                     },
                     {
-                        "name": "__TBD__160__",
-                        "token": "LT"
+                        "name": "lt",
+                        "type": "token",
+                        "value": "LT"
                     }
                 ]
             },
             {
                 "optional": true,
                 "name": "change",
-                "token": "CH"
+                "value": "CH",
+                "type": "token"
             },
             {
                 "optional": true,
                 "name": "increment",
-                "token": "INCR"
+                "value": "INCR",
+                "type": "token"
             },
             {
                 "multiple": true,

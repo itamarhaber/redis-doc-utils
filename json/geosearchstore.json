@@ -5,7 +5,6 @@
         "group": "geo",
         "since": "6.2",
         "arity": -8,
-        "deprecated": true,
         "function": "geosearchstoreCommand",
         "command_flags": [
             "write",
@@ -100,24 +99,28 @@
                         "value": "radius"
                     },
                     {
-                        "name": "m_km_ft_mi",
+                        "name": "__TBD__63__",
                         "type": "oneof",
                         "value": [
                             {
-                                "name": "__TBD__129__",
-                                "token": "m"
+                                "name": "m",
+                                "type": "token",
+                                "value": "m"
                             },
                             {
-                                "name": "__TBD__130__",
-                                "token": "km"
+                                "name": "km",
+                                "type": "token",
+                                "value": "km"
                             },
                             {
-                                "name": "__TBD__131__",
-                                "token": "ft"
+                                "name": "ft",
+                                "type": "token",
+                                "value": "ft"
                             },
                             {
-                                "name": "__TBD__132__",
-                                "token": "mi"
+                                "name": "mi",
+                                "type": "token",
+                                "value": "mi"
                             }
                         ]
                     }
@@ -140,24 +143,28 @@
                         "value": "height"
                     },
                     {
-                        "name": "m_km_ft_mi",
+                        "name": "__TBD__64__",
                         "type": "oneof",
                         "value": [
                             {
-                                "name": "__TBD__133__",
-                                "token": "m"
+                                "name": "m",
+                                "type": "token",
+                                "value": "m"
                             },
                             {
-                                "name": "__TBD__134__",
-                                "token": "km"
+                                "name": "km",
+                                "type": "token",
+                                "value": "km"
                             },
                             {
-                                "name": "__TBD__135__",
-                                "token": "ft"
+                                "name": "ft",
+                                "type": "token",
+                                "value": "ft"
                             },
                             {
-                                "name": "__TBD__136__",
-                                "token": "mi"
+                                "name": "mi",
+                                "type": "token",
+                                "value": "mi"
                             }
                         ]
                     }
@@ -165,16 +172,18 @@
             },
             {
                 "optional": true,
-                "name": "asc_desc",
+                "name": "__TBD__65__",
                 "type": "oneof",
                 "value": [
                     {
-                        "name": "__TBD__137__",
-                        "token": "ASC"
+                        "name": "asc",
+                        "type": "token",
+                        "value": "ASC"
                     },
                     {
-                        "name": "__TBD__138__",
-                        "token": "DESC"
+                        "name": "desc",
+                        "type": "token",
+                        "value": "DESC"
                     }
                 ]
             },
@@ -192,14 +201,16 @@
                     {
                         "optional": true,
                         "name": "any",
-                        "token": "ANY"
+                        "value": "ANY",
+                        "type": "token"
                     }
                 ]
             },
             {
                 "optional": true,
                 "name": "storedist",
-                "token": "STOREDIST"
+                "value": "STOREDIST",
+                "type": "token"
             }
         ]
     }

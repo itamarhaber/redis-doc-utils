@@ -1,4 +1,4 @@
-`BZPOPMIN` is the blocking variant of the sorted set [`ZPOPMIN`](./zpopmin) primitive.
+`BZPOPMIN` is the blocking variant of the sorted set `ZPOPMIN` primitive.
 
 It is the blocking version because it blocks the connection when there are no
 members to pop from any of the given sorted sets.
@@ -9,7 +9,7 @@ The `timeout` argument is interpreted as an double value specifying the maximum
 number of seconds to block. A timeout of zero can be used to block indefinitely.
 
 See the [BLPOP documentation][cl] for the exact semantics, since `BZPOPMIN` is
-identical to [`BLPOP`](./blpop) with the only difference being the data structure being
+identical to `BLPOP` with the only difference being the data structure being
 popped from.
 
 [cl]: /commands/blpop

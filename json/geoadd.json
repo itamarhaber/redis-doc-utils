@@ -48,23 +48,26 @@
             },
             {
                 "optional": true,
-                "name": "nx_xx",
+                "name": "__TBD__42__",
                 "type": "oneof",
                 "value": [
                     {
-                        "name": "__TBD__81__",
-                        "token": "NX"
+                        "name": "nx",
+                        "type": "token",
+                        "value": "NX"
                     },
                     {
-                        "name": "__TBD__82__",
-                        "token": "XX"
+                        "name": "xx",
+                        "type": "token",
+                        "value": "XX"
                     }
                 ]
             },
             {
                 "optional": true,
                 "name": "change",
-                "token": "CH"
+                "value": "CH",
+                "type": "token"
             },
             {
                 "multiple": true,

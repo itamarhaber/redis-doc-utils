@@ -1,5 +1,5 @@
 {
-    "CACHING": {
+    "CLIENT CACHING": {
         "summary": "Instruct the server about tracking or not keys in the next request",
         "complexity": "O(1)",
         "group": "connection",
@@ -18,16 +18,18 @@
         ],
         "arguments": [
             {
-                "name": "yes_no",
+                "name": "__TBD__53__",
                 "type": "oneof",
                 "value": [
                     {
-                        "name": "__TBD__111__",
-                        "token": "YES"
+                        "name": "yes",
+                        "type": "token",
+                        "value": "YES"
                     },
                     {
-                        "name": "__TBD__112__",
-                        "token": "NO"
+                        "name": "no",
+                        "type": "token",
+                        "value": "NO"
                     }
                 ]
             }

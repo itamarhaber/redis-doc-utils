@@ -2,8 +2,9 @@
     "PFSELFTEST": {
         "group": "hyperloglog",
         "arity": 1,
-        "internal": true,
         "function": "pfselftestCommand",
+        "internal": true,
+        "undocumented": true,
         "command_flags": [
             "admin"
         ],

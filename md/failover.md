@@ -17,7 +17,7 @@ The field `master_failover_state` in `INFO replication` can be used to track the
 * `waiting-for-sync`: The master is waiting for the replica to catch up to its replication offset.
 * `failover-in-progress`: The master has demoted itself, and is attempting to hand off ownership to a target replica.
 
-If the previous master had additional replicas attached to it, they will continue replicating from it as chained replicas. You will need to manually execute a [`REPLICAOF`](./replicaof) on these replicas to start replicating directly from the new master.
+If the previous master had additional replicas attached to it, they will continue replicating from it as chained replicas. You will need to manually execute a `REPLICAOF` on these replicas to start replicating directly from the new master.
 
 ## Optional arguments
 The following optional arguments exist to modify the behavior of the failover flow:
@@ -41,5 +41,5 @@ For this purpose, the `FAILOVER ABORT` command exists, which will abort an ongoi
 The command has no side effects if issued in the `waiting-for-sync` state but can introduce multi-master scenarios in the `failover-in-progress` state. 
 If a multi-master scenario is encountered, you will need to manually identify which master has the latest data and designate it as the master and have the other replicas.
 
-NOTE: [`REPLICAOF`](./replicaof) is disabled while a failover is in progress, this is to prevent unintended interactions with the failover that might cause data loss.
+NOTE: `REPLICAOF` is disabled while a failover is in progress, this is to prevent unintended interactions with the failover that might cause data loss.
 

@@ -1,7 +1,7 @@
 Reset a Redis Cluster node, in a more or less drastic way depending on the
 reset type, that can be **hard** or **soft**. Note that this command
 **does not work for masters if they hold one or more keys**, in that case
-to completely reset a master node keys must be removed first, e.g. by using [`FLUSHALL`](./flushall) first,
+to completely reset a master node keys must be removed first, e.g. by using `FLUSHALL` first,
 and then `CLUSTER RESET`.
 
 Effects on the node:

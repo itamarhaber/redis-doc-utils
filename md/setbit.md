@@ -33,14 +33,14 @@ GET mykey
 There are cases when you need to set all the bits of single bitmap at once, for
 example when initializing it to a default non-zero value. It is possible to do
 this with multiple calls to the `SETBIT` command, one for each bit that needs to
-be set. However, so as an optimization you can use a single [`SET`](./set) command to set
+be set. However, so as an optimization you can use a single `SET` command to set
 the entire bitmap.
 
 Bitmaps are not an actual data type, but a set of bit-oriented operations
 defined on the String type (for more information refer to the
 [Bitmaps section of the Data Types Introduction page][ti]). This means that
-bitmaps can be used with string commands, and most importantly with [`SET`](./set) and
-[`GET`](./get).
+bitmaps can be used with string commands, and most importantly with `SET` and
+`GET`.
 
 Because Redis' strings are binary-safe, a bitmap is trivially encoded as a bytes
 stream. The first byte of the string corresponds to offsets 0..7 of
@@ -63,7 +63,7 @@ would look like this:
 By getting the string representation of a bitmap, the client can then parse the
 response's bytes by extracting the bit values using native bit operations in its
 native programming language. Symmetrically, it is also possible to set an entire
-bitmap by performing the bits-to-bytes encoding in the client and calling [`SET`](./set)
+bitmap by performing the bits-to-bytes encoding in the client and calling `SET`
 with the resultant string.
 
 [ti]: /topics/data-types-intro#bitmaps
@@ -72,7 +72,7 @@ with the resultant string.
 
 `SETBIT` excels at setting single bits, and can be called several times when
 multiple bits need to be set. To optimize this operation you can replace
-multiple `SETBIT` calls with a single call to the variadic [`BITFIELD`](./bitfield) command
+multiple `SETBIT` calls with a single call to the variadic `BITFIELD` command
 and the use of fields of type `u1`.
 
 For example, the example above could be replaced by:
@@ -83,9 +83,9 @@ For example, the example above could be replaced by:
 
 ## Advanced Pattern: accessing bitmap ranges
 
-It is also possible to use the [`GETRANGE`](./getrange) and [`SETRANGE`](./setrange) string commands to
+It is also possible to use the `GETRANGE` and `SETRANGE` string commands to
 efficiently access a range of bit offsets in a bitmap. Below is a sample
-implementation in idiomatic Redis Lua scripting that can be run with the [`EVAL`](./eval)
+implementation in idiomatic Redis Lua scripting that can be run with the `EVAL`
 command:
 
 ```
@@ -93,7 +93,7 @@ command:
 Sets a bitmap range
 
 Bitmaps are stored as Strings in Redis. A range spans one or more bytes,
-so we can call [`SETRANGE`](./setrange) when entire bytes need to be set instead of flipping
+so we can call `SETRANGE` when entire bytes need to be set instead of flipping
 individual bits. Also, to avoid multiple internal memory allocations in
 Redis, we traverse in reverse.
 Expected input:

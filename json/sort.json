@@ -92,23 +92,26 @@
             },
             {
                 "optional": true,
-                "name": "asc_desc",
+                "name": "__TBD__38__",
                 "type": "oneof",
                 "value": [
                     {
-                        "name": "__TBD__70__",
-                        "token": "ASC"
+                        "name": "asc",
+                        "type": "token",
+                        "value": "ASC"
                     },
                     {
-                        "name": "__TBD__71__",
-                        "token": "DESC"
+                        "name": "desc",
+                        "type": "token",
+                        "value": "DESC"
                     }
                 ]
             },
             {
                 "optional": true,
                 "name": "sorting",
-                "token": "ALPHA"
+                "value": "ALPHA",
+                "type": "token"
             },
             {
                 "token": "STORE",

@@ -1,5 +1,5 @@
 {
-    "HELP": {
+    "SCRIPT HELP": {
         "group": "scripting",
         "arity": 2,
         "container": "SCRIPT",

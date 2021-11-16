@@ -2,8 +2,10 @@
     "SUBSTR": {
         "group": "string",
         "arity": 4,
-        "internal": true,
         "function": "getrangeCommand",
+        "until": "2.4.0",
+        "replaced_by": "`GETRANGE`",
+        "undocumented": true,
         "command_flags": [
             "readonly"
         ],

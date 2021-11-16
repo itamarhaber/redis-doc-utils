@@ -1,7 +1,7 @@
 Returns or stores the elements contained in the [list][tdtl], [set][tdts] or
 [sorted set][tdtss] at `key`.
 
-Since Redis 7.0.0, there is also the [`SORT_RO`](./sort_ro) read-only variant of this command.
+Since Redis 7.0.0, there is also the `SORT_RO` read-only variant of this command.
 
 By default, sorting is numeric and elements are compared by their value
 interpreted as double precision floating point number.
@@ -17,23 +17,23 @@ SORT mylist
 
 Assuming `mylist` is a list of numbers, this command will return the same list
 with the elements sorted from small to large.
-In order to sort the numbers from large to small, use the `DESC` modifier:
+In order to sort the numbers from large to small, use the `!DESC` modifier:
 
 ```
 SORT mylist DESC
 ```
 
 When `mylist` contains string values and you want to sort them
-lexicographically, use the `ALPHA` modifier:
+lexicographically, use the `!ALPHA` modifier:
 
 ```
 SORT mylist ALPHA
 ```
 
-Redis is UTF-8 aware, assuming you correctly set the `LC_COLLATE` environment
+Redis is UTF-8 aware, assuming you correctly set the `!LC_COLLATE` environment
 variable.
 
-The number of returned elements can be limited using the `LIMIT` modifier.
+The number of returned elements can be limited using the `!LIMIT` modifier.
 This modifier takes the `offset` argument, specifying the number of elements to
 skip and the `count` argument, specifying the number of elements to return from
 starting at `offset`.
@@ -73,9 +73,9 @@ actual value of the element in the list (`1`, `2` and `3` in this example).
 
 ## Skip sorting the elements
 
-The `BY` option can also take a non-existent key, which causes `SORT` to skip
+The `!BY` option can also take a non-existent key, which causes `SORT` to skip
 the sorting operation.
-This is useful if you want to retrieve external keys (see the `GET` option
+This is useful if you want to retrieve external keys (see the `!GET` option
 below) without the overhead of sorting.
 
 ```
@@ -94,10 +94,10 @@ be done with the following command:
 SORT mylist BY weight_* GET object_*
 ```
 
-The `GET` option can be used multiple times in order to get more keys for every
+The `!GET` option can be used multiple times in order to get more keys for every
 element of the original list, set or sorted set.
 
-It is also possible to `GET` the element itself using the special pattern `#`:
+It is also possible to `!GET` the element itself using the special pattern `#`:
 
 ```
 SORT mylist BY weight_* GET object_* GET #
@@ -106,7 +106,7 @@ SORT mylist BY weight_* GET object_* GET #
 ## Storing the result of a SORT operation
 
 By default, `SORT` returns the sorted elements to the client.
-With the `STORE` option, the result will be stored as a list at the specified
+With the `!STORE` option, the result will be stored as a list at the specified
 key instead of being returned to the client.
 
 ```
@@ -114,7 +114,7 @@ SORT mylist BY weight_* STORE resultkey
 ```
 
 An interesting pattern using `SORT ... STORE` consists in associating an
-[`EXPIRE`](./expire) timeout to the resulting key so that in applications where the result
+`EXPIRE` timeout to the resulting key so that in applications where the result
 of a `SORT` operation can be cached for some time.
 Other clients will use the cached list instead of calling `SORT` for every
 request.
@@ -123,11 +123,11 @@ calling `SORT ... STORE` again.
 
 Note that for correctly implementing this pattern it is important to avoid
 multiple clients rebuilding the cache at the same time.
-Some kind of locking is needed here (for instance using [`SETNX`](./setnx)).
+Some kind of locking is needed here (for instance using `SETNX`).
 
-## Using hashes in `BY` and `GET`
+## Using hashes in `!BY` and `!GET`
 
-It is possible to use `BY` and `GET` options against hash fields with the
+It is possible to use `!BY` and `!GET` options against hash fields with the
 following syntax:
 
 ```

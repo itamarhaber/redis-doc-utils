@@ -3,7 +3,7 @@ Returns @array-reply of keys from a full Redis command.
 `COMMAND GETKEYS` is a helper command to let you find the keys
 from a full Redis command.
 
-[`COMMAND`](./command) shows some commands as having movablekeys meaning
+`COMMAND` shows some commands as having movablekeys meaning
 the entire command must be parsed to discover storage or retrieval
 keys.  You can use `COMMAND GETKEYS` to discover key positions
 directly from how Redis parses the commands.

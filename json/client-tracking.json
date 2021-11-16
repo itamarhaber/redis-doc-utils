@@ -1,5 +1,5 @@
 {
-    "TRACKING": {
+    "CLIENT TRACKING": {
         "summary": "Enable or disable server assisted client side caching support",
         "complexity": "O(1). Some options may introduce additional complexity.",
         "group": "connection",
@@ -18,16 +18,18 @@
         ],
         "arguments": [
             {
-                "name": "on_off",
+                "name": "__TBD__50__",
                 "type": "oneof",
                 "value": [
                     {
-                        "name": "__TBD__102__",
-                        "token": "ON"
+                        "name": "on",
+                        "type": "token",
+                        "value": "ON"
                     },
                     {
-                        "name": "__TBD__103__",
-                        "token": "OFF"
+                        "name": "off",
+                        "type": "token",
+                        "value": "OFF"
                     }
                 ]
             },
@@ -50,22 +52,26 @@
             {
                 "optional": true,
                 "name": "BCAST",
-                "token": "BCAST"
+                "value": "BCAST",
+                "type": "token"
             },
             {
                 "optional": true,
                 "name": "OPTIN",
-                "token": "OPTIN"
+                "value": "OPTIN",
+                "type": "token"
             },
             {
                 "optional": true,
                 "name": "OPTOUT",
-                "token": "OPTOUT"
+                "value": "OPTOUT",
+                "type": "token"
             },
             {
                 "optional": true,
                 "name": "NOLOOP",
-                "token": "NOLOOP"
+                "value": "NOLOOP",
+                "type": "token"
             }
         ]
     }

@@ -1,5 +1,5 @@
 {
-    "FAILOVER": {
+    "CLUSTER FAILOVER": {
         "summary": "Forces a replica to perform a manual failover of its master.",
         "complexity": "O(1)",
         "group": "cluster",
@@ -20,16 +20,18 @@
         "arguments": [
             {
                 "optional": true,
-                "name": "force_takeover",
+                "name": "__TBD__19__",
                 "type": "oneof",
                 "value": [
                     {
-                        "name": "__TBD__34__",
-                        "token": "FORCE"
+                        "name": "force",
+                        "type": "token",
+                        "value": "FORCE"
                     },
                     {
-                        "name": "__TBD__35__",
-                        "token": "TAKEOVER"
+                        "name": "takeover",
+                        "type": "token",
+                        "value": "TAKEOVER"
                     }
                 ]
             }

@@ -5,8 +5,9 @@
         "group": "sorted_set",
         "since": "2.8.9",
         "arity": -4,
-        "deprecated": true,
         "function": "zrangebylexCommand",
+        "until": "6.2.0",
+        "replaced_by": "`ZRANGE` with the `BYSCORE` argument",
         "command_flags": [
             "readonly"
         ],

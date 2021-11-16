@@ -1,5 +1,5 @@
 {
-    "HELP": {
+    "MODULE HELP": {
         "group": "server",
         "arity": 2,
         "container": "MODULE",

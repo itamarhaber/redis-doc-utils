@@ -48,16 +48,18 @@
                 "value": "key"
             },
             {
-                "name": "left_right",
+                "name": "__TBD__17__",
                 "type": "oneof",
                 "value": [
                     {
-                        "name": "__TBD__30__",
-                        "token": "LEFT"
+                        "name": "left",
+                        "type": "token",
+                        "value": "LEFT"
                     },
                     {
-                        "name": "__TBD__31__",
-                        "token": "RIGHT"
+                        "name": "right",
+                        "type": "token",
+                        "value": "RIGHT"
                     }
                 ]
             },

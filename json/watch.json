@@ -18,7 +18,6 @@
         ],
         "key_specs": [
             {
-                "flags": [],
                 "begin_search": {
                     "index": {
                         "pos": 1

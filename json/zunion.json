@@ -58,27 +58,31 @@
             {
                 "token": "AGGREGATE",
                 "optional": true,
-                "name": "sum_min_max",
+                "name": "__TBD__79__",
                 "type": "oneof",
                 "value": [
                     {
-                        "name": "__TBD__167__",
-                        "token": "SUM"
+                        "name": "sum",
+                        "type": "token",
+                        "value": "SUM"
                     },
                     {
-                        "name": "__TBD__168__",
-                        "token": "MIN"
+                        "name": "min",
+                        "type": "token",
+                        "value": "MIN"
                     },
                     {
-                        "name": "__TBD__169__",
-                        "token": "MAX"
+                        "name": "max",
+                        "type": "token",
+                        "value": "MAX"
                     }
                 ]
             },
             {
                 "optional": true,
                 "name": "withscores",
-                "token": "WITHSCORES"
+                "value": "WITHSCORES",
+                "type": "token"
             }
         ]
     }

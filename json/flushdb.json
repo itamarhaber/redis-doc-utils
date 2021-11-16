@@ -18,16 +18,18 @@
         "arguments": [
             {
                 "optional": true,
-                "name": "async_sync",
+                "name": "__TBD__60__",
                 "type": "oneof",
                 "value": [
                     {
-                        "name": "__TBD__125__",
-                        "token": "ASYNC"
+                        "name": "async",
+                        "type": "token",
+                        "value": "ASYNC"
                     },
                     {
-                        "name": "__TBD__126__",
-                        "token": "SYNC"
+                        "name": "sync",
+                        "type": "token",
+                        "value": "SYNC"
                     }
                 ]
             }

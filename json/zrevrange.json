@@ -5,8 +5,9 @@
         "group": "sorted_set",
         "since": "1.2.0",
         "arity": -4,
-        "deprecated": true,
         "function": "zrevrangeCommand",
+        "until": "6.2.0",
+        "replaced_by": "`ZRANGE` with the `REV` argument",
         "command_flags": [
             "readonly"
         ],
@@ -53,7 +54,8 @@
             {
                 "optional": true,
                 "name": "withscores",
-                "token": "WITHSCORES"
+                "value": "WITHSCORES",
+                "type": "token"
             }
         ]
     }

@@ -2,8 +2,9 @@
     "HOST:": {
         "group": "server",
         "arity": -1,
-        "internal": true,
         "function": "securityWarningCommand",
+        "internal": true,
+        "undocumented": true,
         "command_flags": [
             "readonly",
             "loading",

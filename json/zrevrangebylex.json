@@ -5,8 +5,9 @@
         "group": "sorted_set",
         "since": "2.8.9",
         "arity": -4,
-        "deprecated": true,
         "function": "zrevrangebylexCommand",
+        "until": "6.2.0",
+        "replaced_by": "`ZRANGE` with the `REV` and `BYLEX` arguments",
         "command_flags": [
             "readonly"
         ],

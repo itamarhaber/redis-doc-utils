@@ -1,5 +1,5 @@
 {
-    "INFO": {
+    "COMMAND INFO": {
         "summary": "Get array of specific Redis command details",
         "complexity": "O(N) when N is number of commands to look up",
         "group": "server",

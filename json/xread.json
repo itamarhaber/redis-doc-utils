@@ -53,7 +53,8 @@
             },
             {
                 "name": "streams",
-                "token": "STREAMS"
+                "value": "STREAMS",
+                "type": "token"
             },
             {
                 "multiple": true,

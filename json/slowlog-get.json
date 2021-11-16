@@ -1,5 +1,5 @@
 {
-    "GET": {
+    "SLOWLOG GET": {
         "summary": "Get the slow log's entries",
         "complexity": "O(N) where N is the number of entries returned",
         "group": "server",

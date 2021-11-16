@@ -72,7 +72,8 @@
             {
                 "optional": true,
                 "name": "replace",
-                "token": "REPLACE"
+                "value": "REPLACE",
+                "type": "token"
             }
         ]
     }

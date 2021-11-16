@@ -1,5 +1,5 @@
 {
-    "HELP": {
+    "CONFIG HELP": {
         "group": "server",
         "arity": 2,
         "container": "CONFIG",

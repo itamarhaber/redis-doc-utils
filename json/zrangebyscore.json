@@ -5,8 +5,9 @@
         "group": "sorted_set",
         "since": "1.0.5",
         "arity": -4,
-        "deprecated": true,
         "function": "zrangebyscoreCommand",
+        "until": "6.2.0",
+        "replaced_by": "`ZRANGE` with the `BYSCORE` argument",
         "command_flags": [
             "readonly"
         ],
@@ -53,7 +54,8 @@
             {
                 "optional": true,
                 "name": "withscores",
-                "token": "WITHSCORES"
+                "value": "WITHSCORES",
+                "type": "token"
             },
             {
                 "token": "LIMIT",

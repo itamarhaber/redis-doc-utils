@@ -1,5 +1,5 @@
 {
-    "KILL": {
+    "CLIENT KILL": {
         "summary": "Kill the connection of a client",
         "complexity": "O(N) where N is the number of client connections",
         "group": "connection",
@@ -18,11 +18,11 @@
             ],
             [
                 "3.2",
-                "Added `master` type in for [`TYPE`](./type) option."
+                "Added `master` type in for `TYPE` option."
             ],
             [
                 "5",
-                "Replaced `slave` [`TYPE`](./type) with `replica`. `slave` still supported for backward compatibility."
+                "Replaced `slave` `TYPE` with `replica`. `slave` still supported for backward compatibility."
             ],
             [
                 "6.2",
@@ -58,24 +58,28 @@
             {
                 "token": "TYPE",
                 "optional": true,
-                "name": "normal_master_slave_pubsub",
+                "name": "__TBD__48__",
                 "type": "oneof",
                 "value": [
                     {
-                        "name": "__TBD__96__",
-                        "token": "normal"
+                        "name": "normal",
+                        "type": "token",
+                        "value": "normal"
                     },
                     {
-                        "name": "__TBD__97__",
-                        "token": "master"
+                        "name": "master",
+                        "type": "token",
+                        "value": "master"
                     },
                     {
-                        "name": "__TBD__98__",
-                        "token": "slave"
+                        "name": "slave",
+                        "type": "token",
+                        "value": "slave"
                     },
                     {
-                        "name": "__TBD__99__",
-                        "token": "pubsub"
+                        "name": "pubsub",
+                        "type": "token",
+                        "value": "pubsub"
                     }
                 ]
             },

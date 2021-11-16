@@ -51,24 +51,28 @@
             },
             {
                 "optional": true,
-                "name": "m_km_ft_mi",
+                "name": "__TBD__37__",
                 "type": "oneof",
                 "value": [
                     {
-                        "name": "__TBD__66__",
-                        "token": "m"
+                        "name": "m",
+                        "type": "token",
+                        "value": "m"
                     },
                     {
-                        "name": "__TBD__67__",
-                        "token": "km"
+                        "name": "km",
+                        "type": "token",
+                        "value": "km"
                     },
                     {
-                        "name": "__TBD__68__",
-                        "token": "ft"
+                        "name": "ft",
+                        "type": "token",
+                        "value": "ft"
                     },
                     {
-                        "name": "__TBD__69__",
-                        "token": "mi"
+                        "name": "mi",
+                        "type": "token",
+                        "value": "mi"
                     }
                 ]
             }

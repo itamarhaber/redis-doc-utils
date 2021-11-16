@@ -1,5 +1,5 @@
 {
-    "FLUSH": {
+    "SCRIPT FLUSH": {
         "summary": "Remove all the scripts from the script cache.",
         "complexity": "O(N) with N being the number of scripts in cache",
         "group": "scripting",
@@ -10,7 +10,7 @@
         "history": [
             [
                 "6.2.0",
-                "Added the `ASYNC` and `SYNC` flushing mode modifiers, as well as the  **lazyfree-lazy-user-flush** configuration directive."
+                "Added the `ASYNC` and `!SYNC` flushing mode modifiers, as well as the  **lazyfree-lazy-user-flush** configuration directive."
             ]
         ],
         "command_flags": [
@@ -24,16 +24,18 @@
         "arguments": [
             {
                 "optional": true,
-                "name": "async_sync",
+                "name": "__TBD__30__",
                 "type": "oneof",
                 "value": [
                     {
-                        "name": "__TBD__54__",
-                        "token": "ASYNC"
+                        "name": "async",
+                        "type": "token",
+                        "value": "ASYNC"
                     },
                     {
-                        "name": "__TBD__55__",
-                        "token": "SYNC"
+                        "name": "sync",
+                        "type": "token",
+                        "value": "SYNC"
                     }
                 ]
             }

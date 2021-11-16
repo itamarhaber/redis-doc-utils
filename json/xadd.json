@@ -51,7 +51,9 @@
             {
                 "token": "NOMKSTREAM",
                 "optional": true,
-                "name": "nomkstream"
+                "name": "nomkstream",
+                "value": "NOMKSTREAM",
+                "type": "token"
             },
             {
                 "optional": true,
@@ -59,31 +61,35 @@
                 "type": "block",
                 "value": [
                     {
-                        "name": "maxlen_minid",
+                        "name": "__TBD__5__",
                         "type": "oneof",
                         "value": [
                             {
-                                "name": "__TBD__7__",
-                                "token": "MAXLEN"
+                                "name": "maxlen",
+                                "type": "token",
+                                "value": "MAXLEN"
                             },
                             {
-                                "name": "__TBD__8__",
-                                "token": "MINID"
+                                "name": "minid",
+                                "type": "token",
+                                "value": "MINID"
                             }
                         ]
                     },
                     {
                         "optional": true,
-                        "name": "=_~",
+                        "name": "__TBD__6__",
                         "type": "oneof",
                         "value": [
                             {
-                                "name": "__TBD__9__",
-                                "token": "="
+                                "name": "__TBD__7__",
+                                "type": "token",
+                                "value": "="
                             },
                             {
-                                "name": "__TBD__10__",
-                                "token": "~"
+                                "name": "__TBD__8__",
+                                "type": "token",
+                                "value": "~"
                             }
                         ]
                     },
@@ -102,17 +108,18 @@
                 ]
             },
             {
-                "name": "*_id",
+                "name": "__TBD__9__",
                 "type": "oneof",
                 "value": [
                     {
-                        "name": "__TBD__11__",
-                        "token": "*"
+                        "name": "__TBD__10__",
+                        "type": "token",
+                        "value": "*"
                     },
                     {
                         "name": "id",
-                        "type": "__TBD__12__",
-                        "value": "id"
+                        "type": "string",
+                        "value": "ID"
                     }
                 ]
             },

@@ -23,7 +23,9 @@
                 "value": [
                     {
                         "token": "TO",
-                        "name": "to"
+                        "name": "to",
+                        "value": "TO",
+                        "type": "token"
                     },
                     {
                         "name": "host",
@@ -38,14 +40,18 @@
                     {
                         "token": "FORCE",
                         "optional": true,
-                        "name": "force"
+                        "name": "force",
+                        "value": "FORCE",
+                        "type": "token"
                     }
                 ]
             },
             {
                 "token": "ABORT",
                 "optional": true,
-                "name": "abort"
+                "name": "abort",
+                "value": "ABORT",
+                "type": "token"
             },
             {
                 "token": "TIMEOUT",

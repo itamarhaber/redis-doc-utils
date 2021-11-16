@@ -10,15 +10,15 @@
         "history": [
             [
                 "3.0.0",
-                "Added the `COPY` and `REPLACE` options."
+                "Added the `!COPY` and `REPLACE` options."
             ],
             [
                 "3.0.6",
-                "Added the `KEYS` option."
+                "Added the `!KEYS` option."
             ],
             [
                 "4.0.7",
-                "Added the `AUTH` option."
+                "Added the `!AUTH` option."
             ],
             [
                 "6.0.0",
@@ -85,16 +85,18 @@
                 "value": "port"
             },
             {
-                "name": "key_\"\"",
+                "name": "__TBD__3__",
                 "type": "oneof",
                 "value": [
                     {
-                        "name": "__TBD__5__",
-                        "token": "key"
+                        "name": "key",
+                        "type": "token",
+                        "value": "key"
                     },
                     {
-                        "name": "__TBD__6__",
-                        "token": "\"\""
+                        "name": "__TBD__4__",
+                        "type": "token",
+                        "value": "\"\""
                     }
                 ]
             },
@@ -111,12 +113,14 @@
             {
                 "optional": true,
                 "name": "copy",
-                "token": "COPY"
+                "value": "COPY",
+                "type": "token"
             },
             {
                 "optional": true,
                 "name": "replace",
-                "token": "REPLACE"
+                "value": "REPLACE",
+                "type": "token"
             },
             {
                 "token": "AUTH",

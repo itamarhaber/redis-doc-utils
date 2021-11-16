@@ -24,7 +24,8 @@
             {
                 "optional": true,
                 "name": "schedule",
-                "token": "SCHEDULE"
+                "value": "SCHEDULE",
+                "type": "token"
             }
         ]
     }

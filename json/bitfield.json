@@ -43,13 +43,13 @@
             {
                 "token": "GET",
                 "optional": true,
-                "name": "type_offset",
+                "name": "encoding_offset",
                 "type": "block",
                 "value": [
                     {
-                        "name": "type",
-                        "type": "type",
-                        "value": "type"
+                        "name": "encoding",
+                        "type": "string",
+                        "value": "encoding"
                     },
                     {
                         "name": "offset",
@@ -61,13 +61,13 @@
             {
                 "token": "SET",
                 "optional": true,
-                "name": "type_offset_value",
+                "name": "encoding_offset_value",
                 "type": "block",
                 "value": [
                     {
-                        "name": "type",
-                        "type": "type",
-                        "value": "type"
+                        "name": "encoding",
+                        "type": "string",
+                        "value": "encoding"
                     },
                     {
                         "name": "offset",
@@ -84,13 +84,13 @@
             {
                 "token": "INCRBY",
                 "optional": true,
-                "name": "type_offset_increment",
+                "name": "encoding_offset_increment",
                 "type": "block",
                 "value": [
                     {
-                        "name": "type",
-                        "type": "type",
-                        "value": "type"
+                        "name": "encoding",
+                        "type": "string",
+                        "value": "encoding"
                     },
                     {
                         "name": "offset",
@@ -107,20 +107,23 @@
             {
                 "token": "OVERFLOW",
                 "optional": true,
-                "name": "wrap_sat_fail",
+                "name": "__TBD__11__",
                 "type": "oneof",
                 "value": [
                     {
-                        "name": "__TBD__13__",
-                        "token": "WRAP"
+                        "name": "wrap",
+                        "type": "token",
+                        "value": "WRAP"
                     },
                     {
-                        "name": "__TBD__14__",
-                        "token": "SAT"
+                        "name": "sat",
+                        "type": "token",
+                        "value": "SAT"
                     },
                     {
-                        "name": "__TBD__15__",
-                        "token": "FAIL"
+                        "name": "fail",
+                        "type": "token",
+                        "value": "FAIL"
                     }
                 ]
             }

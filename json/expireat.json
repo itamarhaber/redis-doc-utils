@@ -48,29 +48,33 @@
             },
             {
                 "name": "timestamp",
-                "type": "posix time",
+                "type": "unix-time",
                 "value": "timestamp"
             },
             {
                 "optional": true,
-                "name": "nx_xx_gt_lt",
+                "name": "__TBD__41__",
                 "type": "oneof",
                 "value": [
                     {
-                        "name": "__TBD__77__",
-                        "token": "NX"
+                        "name": "nx",
+                        "type": "token",
+                        "value": "NX"
                     },
                     {
-                        "name": "__TBD__78__",
-                        "token": "XX"
+                        "name": "xx",
+                        "type": "token",
+                        "value": "XX"
                     },
                     {
-                        "name": "__TBD__79__",
-                        "token": "GT"
+                        "name": "gt",
+                        "type": "token",
+                        "value": "GT"
                     },
                     {
-                        "name": "__TBD__80__",
-                        "token": "LT"
+                        "name": "lt",
+                        "type": "token",
+                        "value": "LT"
                     }
                 ]
             }

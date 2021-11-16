@@ -3,7 +3,7 @@ connection state to normal.
 
 [tt]: /topics/transactions
 
-When using [`WATCH`](./watch), `EXEC` will execute commands only if the watched keys were
+When using `WATCH`, `EXEC` will execute commands only if the watched keys were
 not modified, allowing for a [check-and-set mechanism][ttc].
 
 [ttc]: /topics/transactions#cas

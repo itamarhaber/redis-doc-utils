@@ -1,5 +1,5 @@
 {
-    "LIST": {
+    "CLIENT LIST": {
         "summary": "Get the list of client connections",
         "complexity": "O(N) where N is the number of client connections",
         "group": "connection",
@@ -14,7 +14,7 @@
             ],
             [
                 "5.0",
-                "Added optional [`TYPE`](./type) filter."
+                "Added optional `TYPE` filter."
             ],
             [
                 "6.2",
@@ -38,24 +38,28 @@
             {
                 "token": "TYPE",
                 "optional": true,
-                "name": "normal_master_replica_pubsub",
+                "name": "__TBD__52__",
                 "type": "oneof",
                 "value": [
                     {
-                        "name": "__TBD__107__",
-                        "token": "normal"
+                        "name": "normal",
+                        "type": "token",
+                        "value": "normal"
                     },
                     {
-                        "name": "__TBD__108__",
-                        "token": "master"
+                        "name": "master",
+                        "type": "token",
+                        "value": "master"
                     },
                     {
-                        "name": "__TBD__109__",
-                        "token": "replica"
+                        "name": "replica",
+                        "type": "token",
+                        "value": "replica"
                     },
                     {
-                        "name": "__TBD__110__",
-                        "token": "pubsub"
+                        "name": "pubsub",
+                        "type": "token",
+                        "value": "pubsub"
                     }
                 ]
             },
@@ -66,7 +70,9 @@
                 "value": [
                     {
                         "token": "ID",
-                        "name": "id"
+                        "name": "id",
+                        "value": "ID",
+                        "type": "token"
                     },
                     {
                         "multiple": true,

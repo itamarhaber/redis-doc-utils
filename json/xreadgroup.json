@@ -71,11 +71,13 @@
             {
                 "optional": true,
                 "name": "noack",
-                "token": "NOACK"
+                "value": "NOACK",
+                "type": "token"
             },
             {
                 "name": "streams",
-                "token": "STREAMS"
+                "value": "STREAMS",
+                "type": "token"
             },
             {
                 "multiple": true,

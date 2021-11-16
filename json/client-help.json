@@ -1,5 +1,5 @@
 {
-    "HELP": {
+    "CLIENT HELP": {
         "group": "connection",
         "arity": 2,
         "container": "CLIENT",

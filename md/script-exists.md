@@ -5,9 +5,9 @@ zeros to signal if the scripts are already defined or not inside the script
 cache.
 This can be useful before a pipelining operation to ensure that scripts are
 loaded (and if not, to load them using `SCRIPT LOAD`) so that the pipelining
-operation can be performed solely using [`EVALSHA`](./evalsha) instead of [`EVAL`](./eval) to save
+operation can be performed solely using `EVALSHA` instead of `EVAL` to save
 bandwidth.
 
-Please refer to the [`EVAL`](./eval) documentation for detailed information about Redis
+Please refer to the `EVAL` documentation for detailed information about Redis
 Lua scripting.
 

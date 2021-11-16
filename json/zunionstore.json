@@ -81,20 +81,23 @@
             {
                 "token": "AGGREGATE",
                 "optional": true,
-                "name": "sum_min_max",
+                "name": "__TBD__40__",
                 "type": "oneof",
                 "value": [
                     {
-                        "name": "__TBD__74__",
-                        "token": "SUM"
+                        "name": "sum",
+                        "type": "token",
+                        "value": "SUM"
                     },
                     {
-                        "name": "__TBD__75__",
-                        "token": "MIN"
+                        "name": "min",
+                        "type": "token",
+                        "value": "MIN"
                     },
                     {
-                        "name": "__TBD__76__",
-                        "token": "MAX"
+                        "name": "max",
+                        "type": "token",
+                        "value": "MAX"
                     }
                 ]
             }
