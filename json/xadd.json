@@ -49,7 +49,6 @@
                 "value": "key"
             },
             {
-                "token": "NOMKSTREAM",
                 "optional": true,
                 "name": "nomkstream",
                 "value": "NOMKSTREAM",

@@ -52,7 +52,7 @@ function isUpper (s) {
 
 function convertSingleArg(old) {
   const n = {};
-  if ("command" in old && old["type"] !== 'command®') {
+  if ("command" in old && old["type"] !== 'command') {
     n.token = old.command;
   }
   if (old["optional"]) {
@@ -785,7 +785,7 @@ async function main() {
   return;
 }
 
-await main();
+// await main();
 
-console.log('Melding into commands.json');
+// console.log('Melding into commands.json');
 await meldJSONFiles();

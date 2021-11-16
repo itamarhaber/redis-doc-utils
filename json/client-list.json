@@ -69,7 +69,6 @@
                 "type": "block",
                 "value": [
                     {
-                        "token": "ID",
                         "name": "id",
                         "value": "ID",
                         "type": "token"

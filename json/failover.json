@@ -22,7 +22,6 @@
                 "type": "block",
                 "value": [
                     {
-                        "token": "TO",
                         "name": "to",
                         "value": "TO",
                         "type": "token"
@@ -38,7 +37,6 @@
                         "value": "port"
                     },
                     {
-                        "token": "FORCE",
                         "optional": true,
                         "name": "force",
                         "value": "FORCE",
@@ -47,7 +45,6 @@
                 ]
             },
             {
-                "token": "ABORT",
                 "optional": true,
                 "name": "abort",
                 "value": "ABORT",
