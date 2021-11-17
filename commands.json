@@ -1,46 +1,28 @@
 {
     "summary": {
-        "summary": "Add multiple sorted sets and store the resulting sorted set in a new key",
-        "complexity": "O(N)+O(M log(M)) with N being the sum of the sizes of the input sorted sets, and M being the number of elements in the resulting sorted set.",
+        "summary": "Add multiple sorted sets",
+        "complexity": "O(N)+O(M*log(M)) with N being the sum of the sizes of the input sorted sets, and M being the number of elements in the resulting sorted set.",
         "group": "sorted_set",
-        "since": "2.0.0",
-        "arity": -4,
-        "function": "zunionstoreCommand",
-        "get_keys_function": "zunionInterDiffStoreGetKeys",
+        "since": "6.2.0",
+        "arity": -3,
+        "function": "zunionCommand",
+        "get_keys_function": "zunionInterDiffGetKeys",
         "command_flags": [
-            "write",
-            "denyoom"
+            "readonly"
         ],
         "acl_categories": [
-            "write",
+            "read",
             "sortedset",
             "slow"
         ],
         "key_specs": [
             {
                 "flags": [
-                    "write"
-                ],
-                "begin_search": {
-                    "index": {
-                        "pos": 1
-                    }
-                },
-                "find_keys": {
-                    "range": {
-                        "lastkey": 0,
-                        "step": 1,
-                        "limit": 0
-                    }
-                }
-            },
-            {
-                "flags": [
                     "read"
                 ],
                 "begin_search": {
                     "index": {
-                        "pos": 2
+                        "pos": 1
                     }
                 },
                 "find_keys": {
@@ -53,11 +35,6 @@
             }
         ],
         "arguments": [
-            {
-                "name": "destination",
-                "type": "key",
-                "value": "destination"
-            },
             {
                 "name": "numkeys",
                 "type": "integer",
@@ -98,6 +75,12 @@
                         "token": "MAX"
                     }
                 ],
+                "optional": true
+            },
+            {
+                "name": "withscores",
+                "value": "WITHSCORES",
+                "type": "pure-token",
                 "optional": true
             }
         ]
