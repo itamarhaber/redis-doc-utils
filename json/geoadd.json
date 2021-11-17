@@ -65,7 +65,7 @@
             },
             {
                 "name": "change",
-                "value": "CH",
+                "token": "CH",
                 "type": "pure-token",
                 "optional": true
             },

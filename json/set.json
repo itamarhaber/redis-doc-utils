@@ -82,7 +82,7 @@
                     },
                     {
                         "name": "exat",
-                        "type": "integer",
+                        "type": "unix-time",
                         "value": "timestamp",
                         "token": "EXAT"
                     },
@@ -119,7 +119,7 @@
             },
             {
                 "name": "get",
-                "value": "GET",
+                "token": "GET",
                 "type": "pure-token",
                 "optional": true
             }

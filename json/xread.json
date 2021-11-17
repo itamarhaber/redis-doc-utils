@@ -53,7 +53,7 @@
             },
             {
                 "name": "streams",
-                "value": "STREAMS",
+                "token": "STREAMS",
                 "type": "pure-token"
             },
             {

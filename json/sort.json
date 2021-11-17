@@ -109,7 +109,7 @@
             },
             {
                 "name": "sorting",
-                "value": "ALPHA",
+                "token": "ALPHA",
                 "type": "pure-token",
                 "optional": true
             },

@@ -58,7 +58,7 @@
                     },
                     {
                         "name": "exat",
-                        "type": "integer",
+                        "type": "unix-time",
                         "value": "timestamp",
                         "token": "EXAT"
                     },

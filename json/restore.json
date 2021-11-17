@@ -53,13 +53,13 @@
             },
             {
                 "name": "replace",
-                "value": "REPLACE",
+                "token": "REPLACE",
                 "type": "pure-token",
                 "optional": true
             },
             {
                 "name": "absttl",
-                "value": "ABSTTL",
+                "token": "ABSTTL",
                 "type": "pure-token",
                 "optional": true
             },

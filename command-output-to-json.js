@@ -88,7 +88,7 @@ function convertSingleArg(old) {
   } else if (old.type == 'enum') {
     if (old.enum.length == 1) {
       n.name = old.name;
-      n.value = old.enum[0];
+      n.token = old.enum[0];
       n.type = 'pure-token';
     } else {
       if ('name' in old && isAlpha(old.name)) {
@@ -102,11 +102,14 @@ function convertSingleArg(old) {
       n.type = 'oneof';
       n.value = old.enum.map(e => {
         const s = e.split(' ');
+        if (s.length !== 1 && s.length !== 2) {
+          console.error(`-ERR invalid enum type ${e}`);
+        }
         if (s.length == 2 && isUpper(s[0]) && !isUpper(s[1])) {
           // SET ... [EX msec|...
           return {
             name: s[0].toLowerCase(),
-            "type": 'integer',
+            "type": s[1] === 'timestamp' ? 'unix-time' : 'integer',
             "value": s[1],
             token: s[0],
           };
@@ -633,7 +636,7 @@ async function meldJSONFiles() {
     const buff = await fs.readFile(path);
     const json = JSON.parse(buff);
     const k = Object.keys(json)[0];
-    const n = getCommandNameFromObj(json[k]);
+    const n = getCommandNameFromObj(json);
     payload[n] = json[k];
   }));
   await fs.writeFile('commands.json',JSON.stringify(payload,null,4),'utf-8');

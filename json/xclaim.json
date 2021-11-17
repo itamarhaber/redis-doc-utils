@@ -85,13 +85,13 @@
             },
             {
                 "name": "force",
-                "value": "FORCE",
+                "token": "FORCE",
                 "type": "pure-token",
                 "optional": true
             },
             {
                 "name": "justid",
-                "value": "JUSTID",
+                "token": "JUSTID",
                 "type": "pure-token",
                 "optional": true
             }

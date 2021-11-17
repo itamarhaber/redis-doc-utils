@@ -91,7 +91,7 @@
             },
             {
                 "name": "rev",
-                "value": "REV",
+                "token": "REV",
                 "type": "pure-token",
                 "optional": true
             },

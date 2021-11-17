@@ -176,7 +176,7 @@
                     },
                     {
                         "name": "any",
-                        "value": "ANY",
+                        "token": "ANY",
                         "type": "pure-token",
                         "optional": true
                     }
@@ -185,19 +185,19 @@
             },
             {
                 "name": "withcoord",
-                "value": "WITHCOORD",
+                "token": "WITHCOORD",
                 "type": "pure-token",
                 "optional": true
             },
             {
                 "name": "withdist",
-                "value": "WITHDIST",
+                "token": "WITHDIST",
                 "type": "pure-token",
                 "optional": true
             },
             {
                 "name": "withhash",
-                "value": "WITHHASH",
+                "token": "WITHHASH",
                 "type": "pure-token",
                 "optional": true
             }

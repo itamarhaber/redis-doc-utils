@@ -74,7 +74,7 @@
             },
             {
                 "name": "rev",
-                "value": "REV",
+                "token": "REV",
                 "type": "pure-token",
                 "optional": true
             },
@@ -98,7 +98,7 @@
             },
             {
                 "name": "withscores",
-                "value": "WITHSCORES",
+                "token": "WITHSCORES",
                 "type": "pure-token",
                 "optional": true
             }

@@ -51,25 +51,25 @@
             },
             {
                 "name": "BCAST",
-                "value": "BCAST",
+                "token": "BCAST",
                 "type": "pure-token",
                 "optional": true
             },
             {
                 "name": "OPTIN",
-                "value": "OPTIN",
+                "token": "OPTIN",
                 "type": "pure-token",
                 "optional": true
             },
             {
                 "name": "OPTOUT",
-                "value": "OPTOUT",
+                "token": "OPTOUT",
                 "type": "pure-token",
                 "optional": true
             },
             {
                 "name": "NOLOOP",
-                "value": "NOLOOP",
+                "token": "NOLOOP",
                 "type": "pure-token",
                 "optional": true
             }

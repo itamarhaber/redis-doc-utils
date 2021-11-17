@@ -199,7 +199,7 @@
                     },
                     {
                         "name": "any",
-                        "value": "ANY",
+                        "token": "ANY",
                         "type": "pure-token",
                         "optional": true
                     }
@@ -208,7 +208,7 @@
             },
             {
                 "name": "storedist",
-                "value": "STOREDIST",
+                "token": "STOREDIST",
                 "type": "pure-token",
                 "optional": true
             }

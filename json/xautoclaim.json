@@ -70,7 +70,7 @@
             },
             {
                 "name": "justid",
-                "value": "JUSTID",
+                "token": "JUSTID",
                 "type": "pure-token",
                 "optional": true
             }

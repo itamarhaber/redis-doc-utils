@@ -23,7 +23,7 @@
         "arguments": [
             {
                 "name": "schedule",
-                "value": "SCHEDULE",
+                "token": "SCHEDULE",
                 "type": "pure-token",
                 "optional": true
             }

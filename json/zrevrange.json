@@ -53,7 +53,7 @@
             },
             {
                 "name": "withscores",
-                "value": "WITHSCORES",
+                "token": "WITHSCORES",
                 "type": "pure-token",
                 "optional": true
             }

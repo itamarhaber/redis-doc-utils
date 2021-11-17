@@ -51,7 +51,7 @@
                     },
                     {
                         "name": "withvalues",
-                        "value": "WITHVALUES",
+                        "token": "WITHVALUES",
                         "type": "pure-token",
                         "optional": true
                     }

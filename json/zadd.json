@@ -91,13 +91,13 @@
             },
             {
                 "name": "change",
-                "value": "CH",
+                "token": "CH",
                 "type": "pure-token",
                 "optional": true
             },
             {
                 "name": "increment",
-                "value": "INCR",
+                "token": "INCR",
                 "type": "pure-token",
                 "optional": true
             },
