@@ -1,5 +1,5 @@
 {
-    "CLUSTER HELP": {
+    "HELP": {
         "group": "cluster",
         "arity": 2,
         "container": "CLUSTER",

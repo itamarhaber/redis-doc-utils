@@ -52,10 +52,10 @@
                 "value": "stop"
             },
             {
-                "optional": true,
                 "name": "withscores",
                 "value": "WITHSCORES",
-                "type": "token"
+                "type": "pure-token",
+                "optional": true
             }
         ]
     }

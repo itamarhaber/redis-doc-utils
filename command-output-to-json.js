@@ -9,7 +9,8 @@
 // * since field for new args (i.e. history)
 // Notes:
 // * The `movablekeys` server flag is deprecated intentionally
-// * Adds until, replaced_by, internal fields, and 'token' type
+// 
+// * Adds until, replaced_by, internal fields, and 'pure-token' type
 
 import { createClient } from 'redis';
 import { promises as fs } from 'fs';
@@ -43,27 +44,17 @@ function convertType (t) {
 }
 
 function isAlpha (s) {
-  return (s.search(/[^A-Za-z]/) == -1 && s.length > 0);
+  return (s.search(/[^A-Za-z_]/) == -1 && s.length > 0);
 }
 
 function isUpper (s) {
-  return (isAlpha(s) && s.search(/[^A-Z]/) == -1);
+  return (isAlpha(s) && s.search(/[^A-Z_]/) == -1);
 }
 
 function convertSingleArg(old) {
   const n = {};
-  if ("command" in old && old["type"] !== 'command') {
+  if ("command" in old) {
     n.token = old.command;
-  }
-  if (old["optional"]) {
-    n.optional = true;
-  }
-  if (old["variadic"]) {
-    n.multiple = true;
-  }
-  if (old["multiple"]) {
-    n.multiple = true;
-    n.multiple_token = true;
   }
   if (Array.isArray(old.name)) {
     n.name = old.name.join('_');
@@ -82,8 +73,7 @@ function convertSingleArg(old) {
       n.value = old.name;
     } else if (!('name' in old)) {
       n.name = old.command.toLowerCase();
-      n.value = old.command;
-      n.type = 'token';
+      n.type = 'pure-token';
     } else if (old.name.indexOf(' ') != -1) {
       n.name = old.name.replace(' ','_');
       n.type = 'block';
@@ -99,33 +89,47 @@ function convertSingleArg(old) {
     if (old.enum.length == 1) {
       n.name = old.name;
       n.value = old.enum[0];
-      n.type = 'token';
+      n.type = 'pure-token';
     } else {
-      n.name = old.enum.join('_').toLowerCase();
-      if (!isAlpha(n.name)) {
-        n.name = getTbdStr();
+      if ('name' in old && isAlpha(old.name)) {
+        n.name = old.name;
+      } else {
+        n.name = old.enum.join('_').toLowerCase();
+        if (!isAlpha(n.name)) {
+          n.name = getTbdStr();
+        }  
       }
       n.type = 'oneof';
       n.value = old.enum.map(e => {
+        const s = e.split(' ');
+        if (s.length == 2 && isUpper(s[0]) && !isUpper(s[1])) {
+          // SET ... [EX msec|...
+          return {
+            name: s[0].toLowerCase(),
+            "type": 'integer',
+            "value": s[1],
+            token: s[0],
+          };
+        }
         if (e == 'ID') {
           return {
             name: 'id',
             "type": 'string',
             value: 'ID',
           };
-        } else if (isAlpha(e) && !isUpper(e)) {
+        }
+        if (isAlpha(e) && !isUpper(e)) {
           return {
             name: e.toLowerCase(),
-            "type": 'token',
-            value: e.toLowerCase(),
-          };
-        } else {
-          return {
-            "name": isAlpha(e) ? e.toLowerCase() : getTbdStr(),
-            "type": 'token',
-            value: e,
-          };
+            "type": 'pure-token',
+            token: e,
+        };
         }
+        return {
+          "name": isAlpha(e) ? e.toLowerCase() : getTbdStr(),
+          "type": 'pure-token',
+          token: e,
+        };
       });
     }
   } else if (old.type == 'block') {
@@ -134,6 +138,19 @@ function convertSingleArg(old) {
     n.value = old.block.map(x => convertSingleArg(x));
   } else {
     console.error(`-ERR invalid type ${old.type}`);
+  }
+
+  if (old["optional"]) {
+    n.optional = true;
+  }
+  if (old["variadic"]) {
+    n.multiple = true;
+  }
+  if (old["multiple"]) {
+    n.multiple = true;
+    if ('token' in n) {
+      n.multiple_token = true;
+    }
   }
 
   return n;
@@ -519,7 +536,7 @@ async function persistCommand(cmd) {
   const s = {
   };
 
-  s[name] = {
+  s[kname] = {
     summary: cmd[kname].summary,
     complexity: cmd[kname].complexity,
     group: cmd[kname].group,
@@ -538,13 +555,13 @@ async function persistCommand(cmd) {
     key_specs: undefinedIfZeroArray(cmd[kname].key_specs),
   };
 
-  if (s[name].group === undefined) console.error(`--ERR No group for ${name}`);
+  if (s[kname].group === undefined) console.error(`--ERR No group for ${name}`);
 
   if (!options.noreturn) {
-    s[name]['return_types'] = undefinedIfZeroArray(cmd[kname].return_types);
+    s[kname]['return_types'] = undefinedIfZeroArray(cmd[kname].return_types);
   }
   if (!options.noargs) {
-    s[name]['arguments'] = undefinedIfZeroArray(cmd[kname].arguments);
+    s[kname]['arguments'] = undefinedIfZeroArray(cmd[kname].arguments);
   }
 
   const json = JSON.stringify(s,null,4);
@@ -608,6 +625,7 @@ function popagateIfSubcommand(cmd) {
 }
 
 async function meldJSONFiles() {
+  await new Promise(resolve => setTimeout(resolve, 100));
   const files = await fs.readdir(outputPathJSON);
   const payload = {};
   await Promise.all(files.map(async (x) => {
@@ -615,12 +633,13 @@ async function meldJSONFiles() {
     const buff = await fs.readFile(path);
     const json = JSON.parse(buff);
     const k = Object.keys(json)[0];
-    payload[k] = json[k];
+    const n = getCommandNameFromObj(json[k]);
+    payload[n] = json[k];
   }));
   await fs.writeFile('commands.json',JSON.stringify(payload,null,4),'utf-8');
 }
 
-function manualPatch(cmds) {
+function prePatch(cmds) {
   const p = {
     "BRPOPLPUSH": {
       "until": "6.2.0",
@@ -741,6 +760,10 @@ function manualPatch(cmds) {
   return cmds;
 }
 
+function postPatch(cmds) {
+  return cmds;
+}
+
 async function main() {
   const client = createClient();
   client.on('error', (err) => console.error('-ERR Redis client error', err));
@@ -758,8 +781,8 @@ async function main() {
   console.log('Loading commands.json');
   const commandsJSON = await loadCommandsJSON();
 
-  console.log('Applying patches');
-  commands = manualPatch(commands);
+  console.log('Applying pre patch');
+  commands = prePatch(commands);
 
   // console.log('Adding functions');
   // commands = commands.map(x => addFunctions(functions,x));
@@ -775,6 +798,9 @@ async function main() {
 
   console.log('Enrichening with MarkDown');
   commands = await Promise.all(commands.map(async (x) => enrichWithMD(commands,x)));
+
+  console.log('Applying post patch');
+  commands = postPatch(commands);
 
   console.log('Persisting files');
   await Promise.all(Object.values(commands).map(async (cmd) => {
