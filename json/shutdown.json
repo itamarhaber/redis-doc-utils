@@ -9,7 +9,8 @@
             "admin",
             "noscript",
             "loading",
-            "stale"
+            "stale",
+            "sentinel"
         ],
         "acl_categories": [
             "admin",

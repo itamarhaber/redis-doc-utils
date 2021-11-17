@@ -6,7 +6,8 @@
         "internal": true,
         "undocumented": true,
         "command_flags": [
-            "admin"
+            "admin",
+            "internal"
         ],
         "acl_categories": [
             "hyperloglog",

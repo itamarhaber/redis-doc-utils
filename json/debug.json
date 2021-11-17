@@ -8,7 +8,8 @@
             "admin",
             "noscript",
             "loading",
-            "stale"
+            "stale",
+            "internal"
         ],
         "acl_categories": [
             "admin",

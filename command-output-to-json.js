@@ -273,7 +273,8 @@ async function loadCommandMarkdown(cmds,name) {
       }
       let re = l.match(/^\* `>= (.+)`: (.+)$/);
       if (re) {
-        m['history'].push([re[1], re[2]]);
+        const desc = re[2].replace(/`!.+?`/g, s => '`' + s.slice(2));
+        m['history'].push([re[1], desc]);
       }
     } else if (s == sections.reply) {
       m['return_summary'] += l + '\n';
@@ -555,6 +556,11 @@ async function persistCommand(cmd) {
   const s = {
   };
 
+  const flags = [...cmd[kname].command_flags];
+  if (cmd[kname].internal) {
+    flags.push('internal');
+  }
+
   s[kname] = {
     summary: cmd[kname].summary,
     complexity: cmd[kname].complexity,
@@ -569,7 +575,7 @@ async function persistCommand(cmd) {
     internal: cmd[kname].internal,
     undocumented: cmd[kname].undocumented,
     history: undefinedIfZeroArray(cmd[kname].history),
-    command_flags: undefinedIfZeroArray(cmd[kname].command_flags),
+    command_flags: undefinedIfZeroArray(flags),
     acl_categories: undefinedIfZeroArray(cmd[kname].acl_categories),
     key_specs: undefinedIfZeroArray(cmd[kname].key_specs),
   };

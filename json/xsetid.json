@@ -8,7 +8,8 @@
         "command_flags": [
             "write",
             "denyoom",
-            "fast"
+            "fast",
+            "internal"
         ],
         "acl_categories": [
             "write",
