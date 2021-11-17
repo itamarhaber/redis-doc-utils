@@ -10,7 +10,7 @@
 // Notes:
 // * The `movablekeys` server flag is deprecated intentionally
 // 
-// * Adds until, replaced_by, internal fields, and 'pure-token' type
+// * Adds until, replaced_by, internal & undocumented fields, and 'pure-token' type, group=cluster
 
 import { createClient } from 'redis';
 import { promises as fs } from 'fs';
@@ -128,8 +128,24 @@ function convertSingleArg(old) {
             token: e,
         };
         }
+        let name;
+        if (isAlpha(e)) {
+          name = e.toLowerCase();
+        } else if (e === '""') {
+          name = 'empty_string';
+        } else if (e === '=') {
+          name = 'equal';
+        } else if (e === '~') {
+          name = 'approximately';
+        } else if (e === '*') {
+          name = 'auto_id';
+        } else if (e === '$') {
+          name = 'new_id';
+        } else if (e === '>') {
+          name = 'next_id';
+        }
         return {
-          "name": isAlpha(e) ? e.toLowerCase() : getTbdStr(),
+          "name": name,
           "type": 'pure-token',
           token: e,
         };

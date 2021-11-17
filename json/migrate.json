@@ -94,7 +94,7 @@
                         "token": "key"
                     },
                     {
-                        "name": "__TBD__1__",
+                        "name": "empty_string",
                         "type": "pure-token",
                         "token": "\"\""
                     }

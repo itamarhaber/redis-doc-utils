@@ -70,8 +70,8 @@
 -ERR no return types for SET: "@simple-string-reply: `OK` if `SET` was executed correctly.\n\n@nil-reply: `(nil)` if the `SET` operation was not performed because the user specified the `NX` or `XX` option but the condition was not met.\n\nIf the command is issued with the `!GET` option, the above does not apply. It will instead reply as follows, regardless if the `SET` was actually performed:\n\n@bulk-string-reply: the old string value stored at key.\n\n@nil-reply: `(nil)` if the key did not exist."
 -ERR no return types for PSYNC: "**Non standard return value**, a bulk transfer of the data followed by `PING` and write requests from the master."
 -ERR no return types for PFADD: "@integer-reply, specifically:\n\n* 1 if at least 1 HyperLogLog internal register was altered. 0 otherwise."
--ERR no return types for SMOVE: "@integer-reply, specifically:\n\n* `1` if the element is moved.\n* `0` if the element is not a member of `source` and no operation was performed."
 -ERR no return types for PERSIST: "@integer-reply, specifically:\n\n* `1` if the timeout was removed.\n* `0` if `key` does not exist or does not have an associated timeout."
+-ERR no return types for SMOVE: "@integer-reply, specifically:\n\n* `1` if the element is moved.\n* `0` if the element is not a member of `source` and no operation was performed."
 -ERR no return types for PEXPIREAT: "@integer-reply, specifically:\n\n* `1` if the timeout was set.\n* `0` if the timeout was not set. e.g. key doesn't exist, or operation skipped due to the provided arguments."
 -ERR no return types for ZRANDMEMBER: "@bulk-string-reply: without the additional `count` argument, the command returns a Bulk Reply with the randomly selected element, or `nil` when `key` does not exist.\n\n@array-reply: when the additional `count` argument is passed, the command returns an array of elements, or an empty array when `key` does not exist.\nIf the `WITHSCORES` modifier is used, the reply is a list elements and their scores from the sorted set."
 -ERR no return types for PUNSUBSCRIBE: ""
@@ -142,32 +142,11 @@
 -ERR no return types for SLOWLOG RESET: ""
 -ERR no return types for SLOWLOG LEN: ""
 -ERR while reading command-list.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/command-list.md'
--ERR no markdown file for PUBSUB
--ERR no markdown file for CLUSTER
--ERR no markdown file for CLUSTER ADDSLOTSRANGE
--ERR no markdown file for CLUSTER DELSLOTSRANGE
--ERR no markdown file for SCRIPT
--ERR no markdown file for MODULE
--ERR no markdown file for PFDEBUG
--ERR no markdown file for GEORADIUS_RO
--ERR no markdown file for LATENCY
--ERR no markdown file for GEORADIUSBYMEMBER_RO
--ERR no markdown file for CONFIG
--ERR no markdown file for MEMORY
--ERR no markdown file for DEBUG
--ERR no markdown file for XINFO
--ERR no markdown file for POST
--ERR no markdown file for ACL
--ERR no markdown file for CLIENT
--ERR no markdown file for SLOWLOG
--ERR no markdown file for RESTORE-ASKING
--ERR no markdown file for HOST:
--ERR no markdown file for PFSELFTEST
--ERR no markdown file for XSETID
--ERR no markdown file for REPLCONF
--ERR no markdown file for XGROUP
--ERR no markdown file for SUBSTR
--ERR no markdown file for OBJECT
--ERR no markdown file for STRALGO HELP
--ERR no markdown file for STRALGO LCS
--ERR no markdown file for COMMAND LIST
+file:///Users/itamar/work/redis-doc-utils/command-output-to-json.js:783
+  cmds["XADD"]["arguments"][3]["name"] = 'id';
+              ^
+
+TypeError: Cannot read properties of undefined (reading 'arguments')
+    at postPatch (file:///Users/itamar/work/redis-doc-utils/command-output-to-json.js:783:15)
+    at main (file:///Users/itamar/work/redis-doc-utils/command-output-to-json.js:823:14)
+    at async file:///Users/itamar/work/redis-doc-utils/command-output-to-json.js:834:1
