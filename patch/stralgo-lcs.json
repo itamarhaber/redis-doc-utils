@@ -1,0 +1,16 @@
+{
+    "STRALGO LCS": {
+        "summary": "PATCH__TBD__63__",
+        "complexity": "PATCH__TBD__62__",
+        "since": "PATCH__TBD__64__",
+        "returns": [
+            {
+                "description": "PATCH__TBD__360__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    }
+}

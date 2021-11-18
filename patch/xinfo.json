@@ -1,0 +1,14 @@
+{
+    "XINFO": {
+        "summary": "PATCH__TBD__79__",
+        "returns": [
+            {
+                "description": "PATCH__TBD__394__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "DISCARD": {
+        "complexity": "PATCH__TBD__60__",
+        "returns": [
+            {
+                "description": "PATCH__TBD__183__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    }
+}

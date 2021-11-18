@@ -1,7 +1,7 @@
 Select the Redis logical database having the specified zero-based numeric index.
 New connections always use the database 0.
 
-Selectable Redis databases are a form of namespacing: all databases are still persisted in the same RDB / AOF file. However different databases can have keys with the same name, and commands like `FLUSHDB`, `SWAPDB` or `RANDOMKEY` work on specific databases.
+Selectable Redis databases are a form of namespacing: all databases are still persisted in the same RDB / AOF file. However different databases can have keys with the same name, and commands like [`FLUSHDB`](/commands/flushdb), [`SWAPDB`](/commands/swapdb) or [`RANDOMKEY`](/commands/randomkey) work on specific databases.
 
 In practical terms, Redis databases should be used to separate different keys belonging to the same application (if needed), and not to use a single Redis instance for multiple unrelated applications.
 

@@ -3,5 +3,5 @@ connection state to normal.
 
 [tt]: /topics/transactions
 
-If `WATCH` was used, `DISCARD` unwatches all keys watched by the connection.
+If [`WATCH`](/commands/watch) was used, `DISCARD` unwatches all keys watched by the connection.
 

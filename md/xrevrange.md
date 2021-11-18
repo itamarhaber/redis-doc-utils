@@ -1,4 +1,4 @@
-This command is exactly like `XRANGE`, but with the notable difference of
+This command is exactly like [`XRANGE`](/commands/xrange), but with the notable difference of
 returning the entries in reverse order, and also taking the start-end
 range in reverse order: in `XREVRANGE` you need to state the *end* ID
 and later the *start* ID, and the command will produce all the element

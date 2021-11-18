@@ -1,4 +1,4 @@
-This command is similar to `ZDIFFSTORE`, but instead of storing the resulting
+This command is similar to [`ZDIFFSTORE`](/commands/zdiffstore), but instead of storing the resulting
 sorted set, it is returned to the client.
 
 @examples

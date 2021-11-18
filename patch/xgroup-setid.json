@@ -1,0 +1,13 @@
+{
+    "XGROUP SETID": {
+        "returns": [
+            {
+                "description": "PATCH__TBD__388__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    }
+}

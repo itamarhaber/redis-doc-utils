@@ -1,0 +1,14 @@
+{
+    "PSYNC": {
+        "complexity": "PATCH__TBD__58__",
+        "returns": [
+            {
+                "description": "PATCH__TBD__296__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    }
+}

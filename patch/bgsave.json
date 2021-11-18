@@ -1,0 +1,14 @@
+{
+    "BGSAVE": {
+        "complexity": "PATCH__TBD__57__",
+        "returns": [
+            {
+                "description": "PATCH__TBD__108__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    }
+}

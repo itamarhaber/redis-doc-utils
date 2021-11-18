@@ -38,13 +38,13 @@ QUIT
 Connection closed by foreign host.
 ```
 
-Manually issue the `QUIT` or `RESET` commands to stop a `MONITOR` stream running
+Manually issue the `QUIT` or [`RESET`](/commands/reset) commands to stop a `MONITOR` stream running
 via `telnet`.
 
 ## Commands not logged by MONITOR
 
 Because of security concerns, no administrative commands are logged
-by `MONITOR`'s output and sensitive data is redacted in the command `AUTH`.
+by `MONITOR`'s output and sensitive data is redacted in the command [`AUTH`](/commands/auth).
 
 Furthermore, the command `QUIT` is also not logged.
 

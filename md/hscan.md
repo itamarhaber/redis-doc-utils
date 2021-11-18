@@ -1,2 +1,2 @@
-See `SCAN` for `HSCAN` documentation.
+See [`SCAN`](/commands/scan) for `HSCAN` documentation.
 

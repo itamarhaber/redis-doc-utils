@@ -1,0 +1,13 @@
+{
+    "DEL": {
+        "returns": [
+            {
+                "description": "PATCH__TBD__181__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    }
+}

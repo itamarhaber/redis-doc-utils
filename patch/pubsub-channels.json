@@ -1,0 +1,13 @@
+{
+    "PUBSUB CHANNELS": {
+        "returns": [
+            {
+                "description": "PATCH__TBD__299__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    }
+}

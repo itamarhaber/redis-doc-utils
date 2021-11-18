@@ -1,0 +1,14 @@
+{
+    "SCRIPT": {
+        "summary": "PATCH__TBD__83__",
+        "returns": [
+            {
+                "description": "PATCH__TBD__330__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    }
+}

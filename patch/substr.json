@@ -1,0 +1,16 @@
+{
+    "SUBSTR": {
+        "summary": "PATCH__TBD__33__",
+        "complexity": "PATCH__TBD__32__",
+        "since": "PATCH__TBD__34__",
+        "returns": [
+            {
+                "description": "PATCH__TBD__364__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    }
+}

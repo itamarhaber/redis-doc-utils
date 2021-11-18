@@ -1,0 +1,14 @@
+{
+    "MEMORY DOCTOR": {
+        "complexity": "PATCH__TBD__73__",
+        "returns": [
+            {
+                "description": "PATCH__TBD__258__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    }
+}

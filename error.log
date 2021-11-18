@@ -9,8 +9,6 @@
 -ERR no commands.json entry for DEBUG
 -ERR no commands.json entry for SCRIPT
 -ERR no commands.json entry for CLUSTER
--ERR no commands.json entry for CLUSTER DELSLOTSRANGE
--ERR no commands.json entry for CLUSTER ADDSLOTSRANGE
 -ERR no commands.json entry for PFDEBUG
 -ERR no commands.json entry for SLOWLOG
 -ERR no commands.json entry for GEORADIUSBYMEMBER_RO
@@ -51,13 +49,11 @@
 -ERR while reading substr.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/substr.md'
 -ERR while reading memory.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/memory.md'
 -ERR while reading object.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/object.md'
--ERR while reading cluster-delslotsrange.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/cluster-delslotsrange.md'
--ERR while reading cluster-addslotsrange.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/cluster-addslotsrange.md'
 -ERR no return types for GEOPOS: "@array-reply, specifically:\n\nThe command returns an array where each element is a two elements array\nrepresenting longitude and latitude (x,y) of each member name passed as\nargument to the command.\n\nNon existing elements are reported as NULL elements of the array."
 -ERR no return types for SHUTDOWN: "@simple-string-reply on error.\nOn success nothing is returned since the server quits and the connection is\nclosed."
 -ERR no return types for XREVRANGE: "@array-reply, specifically:\n\nThe command returns the entries with IDs matching the specified range,\nfrom the higher ID to the lower ID matching.\nThe returned entries are complete, that means that the ID and all the fields\nthey are composed are returned. Moreover the entries are returned with\ntheir fields and values in the exact same order as `XADD` added them."
--ERR no return types for SETNX: "@integer-reply, specifically:\n\n* `1` if the key was set\n* `0` if the key was not set"
 -ERR no return types for RENAMENX: "@integer-reply, specifically:\n\n* `1` if `key` was renamed to `newkey`.\n* `0` if `newkey` already exists."
+-ERR no return types for SETNX: "@integer-reply, specifically:\n\n* `1` if the key was set\n* `0` if the key was not set"
 -ERR no return types for GEOADD: "@integer-reply, specifically:\n\n* When used without optional arguments, the number of elements added to the sorted set (excluding score updates).\n* If the `CH` option is specified, the number of elements that were changed (added or updated)."
 -ERR no return types for PERSIST: "@integer-reply, specifically:\n\n* `1` if the timeout was removed.\n* `0` if `key` does not exist or does not have an associated timeout."
 -ERR no return types for HEXISTS: "@integer-reply, specifically:\n\n* `1` if the hash contains `field`.\n* `0` if the hash does not contain `field`, or `key` does not exist."
@@ -65,8 +61,8 @@
 -ERR no return types for SET: "@simple-string-reply: `OK` if `SET` was executed correctly.\n\n@nil-reply: `(nil)` if the `SET` operation was not performed because the user specified the `NX` or `XX` option but the condition was not met.\n\nIf the command is issued with the `!GET` option, the above does not apply. It will instead reply as follows, regardless if the `SET` was actually performed:\n\n@bulk-string-reply: the old string value stored at key.\n\n@nil-reply: `(nil)` if the key did not exist."
 -ERR no return types for SRANDMEMBER: "@bulk-string-reply: without the additional `count` argument, the command returns a Bulk Reply with the randomly selected element, or `nil` when `key` does not exist.\n\n@array-reply: when the additional `count` argument is passed, the command returns an array of elements, or an empty array when `key` does not exist."
 -ERR no return types for XRANGE: "@array-reply, specifically:\n\nThe command returns the entries with IDs matching the specified range.\nThe returned entries are complete, that means that the ID and all the fields\nthey are composed are returned. Moreover, the entries are returned with\ntheir fields and values in the exact same order as `XADD` added them."
--ERR no return types for AUTH: "@simple-string-reply or an error if the password, or username/password pair, is invalid."
 -ERR no return types for EXEC: "@array-reply: each element being the reply to each of the commands in the\natomic transaction.\n\nWhen using `WATCH`, `EXEC` can return a @nil-reply if the execution was aborted."
+-ERR no return types for AUTH: "@simple-string-reply or an error if the password, or username/password pair, is invalid."
 -ERR no return types for GEORADIUS: "@array-reply, specifically:\n\n* Without any `WITH` option specified, the command just returns a linear array like [\"New York\",\"Milan\",\"Paris\"].\n* If `WITHCOORD`, `WITHDIST` or `WITHHASH` options are specified, the command returns an array of arrays, where each sub-array represents a single item.\n\nWhen additional information is returned as an array of arrays for each item, the first item in the sub-array is always the name of the returned item. The other information is returned in the following order as successive elements of the sub-array.\n\n1. The distance from the center as a floating point number, in the same unit specified in the radius.\n2. The geohash integer.\n3. The coordinates as a two items x,y array (longitude,latitude).\n\nSo for example the command `GEORADIUS Sicily 15 37 200 km WITHCOORD WITHDIST` will return each item in the following way:\n\n    [\"Palermo\",\"190.4424\",[\"13.361389338970184\",\"38.115556395496299\"]]"
 -ERR no return types for ZRANK: "* If `member` exists in the sorted set, @integer-reply: the rank of `member`.\n* If `member` does not exist in the sorted set or `key` does not exist,\n  @bulk-string-reply: `nil`."
 -ERR no return types for PEXPIREAT: "@integer-reply, specifically:\n\n* `1` if the timeout was set.\n* `0` if the timeout was not set. e.g. key doesn't exist, or operation skipped due to the provided arguments."
@@ -95,8 +91,8 @@
 -ERR no return types for PSYNC: "**Non standard return value**, a bulk transfer of the data followed by `PING` and write requests from the master."
 -ERR no return types for HSETNX: "@integer-reply, specifically:\n\n* `1` if `field` is a new field in the hash and `value` was set.\n* `0` if `field` already exists in the hash and no operation was performed."
 -ERR no return types for RPOP: "When called without the `count` argument:\n\n@bulk-string-reply: the value of the last element, or `nil` when `key` does not exist.\n\nWhen called with the `count` argument:\n\n@array-reply: list of popped elements, or `nil` when `key` does not exist."
--ERR no return types for XCLAIM: "@array-reply, specifically:\n\nThe command returns all the messages successfully claimed, in the same format\nas `XRANGE`. However if the `JUSTID` option was specified, only the message\nIDs are reported, without including the actual message."
 -ERR no return types for PSUBSCRIBE: ""
+-ERR no return types for XCLAIM: "@array-reply, specifically:\n\nThe command returns all the messages successfully claimed, in the same format\nas `XRANGE`. However if the `JUSTID` option was specified, only the message\nIDs are reported, without including the actual message."
 -ERR no return types for EXPIREAT: "@integer-reply, specifically:\n\n* `1` if the timeout was set.\n* `0` if the timeout was not set. e.g. key doesn't exist, or operation skipped due to the provided arguments."
 -ERR no return types for ZRANDMEMBER: "@bulk-string-reply: without the additional `count` argument, the command returns a Bulk Reply with the randomly selected element, or `nil` when `key` does not exist.\n\n@array-reply: when the additional `count` argument is passed, the command returns an array of elements, or an empty array when `key` does not exist.\nIf the `WITHSCORES` modifier is used, the reply is a list elements and their scores from the sorted set."
 -ERR no return types for ZREM: "@integer-reply, specifically:\n\n* The number of members removed from the sorted set, not including non existing\n  members."
@@ -153,8 +149,6 @@
 -ERR no markdown file for DEBUG
 -ERR no markdown file for SCRIPT
 -ERR no markdown file for CLUSTER
--ERR no markdown file for CLUSTER DELSLOTSRANGE
--ERR no markdown file for CLUSTER ADDSLOTSRANGE
 -ERR no markdown file for PFDEBUG
 -ERR no markdown file for SLOWLOG
 -ERR no markdown file for GEORADIUSBYMEMBER_RO

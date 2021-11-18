@@ -13,7 +13,7 @@
 // * Adds until, replaced_by, internal & undocumented fields, and 'pure-token' type, group=cluster
 
 import { createClient } from 'redis';
-import { promises as fs } from 'fs';
+import { promises as fs, existsSync, readFileSync } from 'fs';
 import { assert } from 'console';
 
 const options = {
@@ -246,7 +246,6 @@ async function loadCommandMarkdown(cmds,name) {
     return {};
   }
   let md = buff.toString();
-  // md = linkifyMD(cmds,name,md);
   const lines = md.split('\n');
   let i = 0;
   let s = sections.body;
@@ -280,6 +279,8 @@ async function loadCommandMarkdown(cmds,name) {
       m['return_summary'] += l + '\n';
     }
   }
+
+  m['body'] = linkifyMD(cmds,name,m['body']);
 
   if (m['history'].length == 0) {
     delete m['history'];
@@ -561,11 +562,22 @@ async function persistCommand(cmd) {
     flags.push('internal');
   }
 
+  let complexity = cmd[kname].complexity;
+  if (complexity === undefined) {
+    if (cmd[kname].arity != -1 && cmd[kname].subcommands !== undefined) {
+      complexity = 'Depends on subcommand.';
+    } else if (kname === 'HELP') {
+      complexity = 'O(1)';
+    } else {
+      complexity = getTbdStr();
+    }
+  }
+
   s[kname] = {
-    summary: cmd[kname].summary,
-    complexity: cmd[kname].complexity,
-    group: cmd[kname].group,
-    since: cmd[kname].since,
+    summary: cmd[kname].summary || getTbdStr(),
+    complexity: complexity,
+    group: cmd[kname].group || getTbdStr(),
+    since: cmd[kname].since || getTbdStr(),
     arity: cmd[kname].arity,
     container: cmd[kname].container,
     function: cmd[kname].function,
@@ -585,6 +597,7 @@ async function persistCommand(cmd) {
   if (!options.noreturn) {
     s[kname]['return_types'] = undefinedIfZeroArray(cmd[kname].return_types);
   }
+
   if (!options.noargs) {
     s[kname]['arguments'] = undefinedIfZeroArray(cmd[kname].arguments);
   }
@@ -662,6 +675,40 @@ async function meldJSONFiles() {
     payload[n] = json[k];
   }));
   await fs.writeFile('commands.json',JSON.stringify(payload,null,4),'utf-8');
+
+  const tbds = Object.entries(payload).reduce((a,[ck,cv]) => {
+    const ov = Object.entries(cv)
+      .filter(([_,vv]) => typeof(vv) === 'string' && vv.startsWith('__TBD__')) 
+      .reduce((ac,[tk,tv]) => {
+        ac[tk] = `PATCH${tv}`;
+        return ac;
+      },{});
+
+      // if (cv.returns === undefined) {
+      //   ov.returns = [
+      //     {
+      //       "description": `PATCH${getTbdStr()}`,
+      //       "type": {
+      //         "RESP2":"null-bulk-string",
+      //         "RESP3":"null"
+      //       }
+      //     }
+      //   ];  
+      // }
+
+      if (Object.entries(ov).length != 0) {
+        a[ck] = ov;
+      }
+    return a;
+  },{});
+  await Promise.all(Object.entries(tbds).map(async ([k,v]) => {
+    const path = `./tbds/${commandFileName(k)}.json`;
+    const p = {};
+    p[k] = {
+      ...v,
+    };
+    return await fs.writeFile(path,JSON.stringify(p,null,4),'utf-8');
+  }));
 }
 
 function prePatch(cmds) {
@@ -785,7 +832,23 @@ function prePatch(cmds) {
   return cmds;
 }
 
+function postPatchCommand(cmd) {
+  const kname = getCommandName(cmd);
+  const name = getCommandNameFromObj(cmd);
+  const path = `./patch/${commandFileName(name)}.json`;
+  if (existsSync(path)) {
+    const buff = readFileSync(path);
+    const patch = JSON.parse(buff);
+    Object.entries(patch[name]).forEach(([k,v]) => cmd[kname][k] = v);
+  }
+  if (cmd[kname].subcommands !== undefined) {
+    cmd[kname].subcommands = cmd[kname].subcommands.map((x) => postPatchCommand(x));
+  }
+  return cmd;
+}
+
 function postPatch(cmds) {
+  cmds = cmds.map((x) => postPatchCommand(x));
   return cmds;
 }
 
@@ -838,5 +901,5 @@ async function main() {
 
 await main();
 
-console.log('Melding into commands.json');
+console.log('Melding JSONs');
 await meldJSONFiles();

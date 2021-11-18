@@ -1,0 +1,13 @@
+{
+    "ZCOUNT": {
+        "returns": [
+            {
+                "description": "PATCH__TBD__405__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    }
+}

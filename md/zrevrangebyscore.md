@@ -7,9 +7,9 @@ The elements having the same score are returned in reverse lexicographical
 order.
 
 Apart from the reversed ordering, `ZREVRANGEBYSCORE` is similar to
-`ZRANGEBYSCORE`.
+[`ZRANGEBYSCORE`](/commands/zrangebyscore).
 
-As per Redis 6.2.0, this command is considered deprecated. Please prefer using the `ZRANGE` command with the `BYSCORE` and `REV` arguments in new code.
+As per Redis 6.2.0, this command is considered deprecated. Please prefer using the [`ZRANGE`](/commands/zrange) command with the `BYSCORE` and `REV` arguments in new code.
 
 @examples
 

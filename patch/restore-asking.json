@@ -1,0 +1,16 @@
+{
+    "RESTORE-ASKING": {
+        "summary": "PATCH__TBD__18__",
+        "complexity": "PATCH__TBD__17__",
+        "since": "PATCH__TBD__19__",
+        "returns": [
+            {
+                "description": "PATCH__TBD__314__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    }
+}

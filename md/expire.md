@@ -4,27 +4,27 @@ A key with an associated timeout is often said to be _volatile_ in Redis
 terminology.
 
 The timeout will only be cleared by commands that delete or overwrite the
-contents of the key, including `DEL`, `SET`, `GETSET` and all the `*STORE`
+contents of the key, including [`DEL`](/commands/del), [`SET`](/commands/set), [`GETSET`](/commands/getset) and all the `*STORE`
 commands.
 This means that all the operations that conceptually _alter_ the value stored at
 the key without replacing it with a new one will leave the timeout untouched.
-For instance, incrementing the value of a key with `INCR`, pushing a new value
-into a list with `LPUSH`, or altering the field value of a hash with `HSET` are
+For instance, incrementing the value of a key with [`INCR`](/commands/incr), pushing a new value
+into a list with [`LPUSH`](/commands/lpush), or altering the field value of a hash with [`HSET`](/commands/hset) are
 all operations that will leave the timeout untouched.
 
 The timeout can also be cleared, turning the key back into a persistent key,
-using the `PERSIST` command.
+using the [`PERSIST`](/commands/persist) command.
 
-If a key is renamed with `RENAME`, the associated time to live is transferred to
+If a key is renamed with [`RENAME`](/commands/rename), the associated time to live is transferred to
 the new key name.
 
-If a key is overwritten by `RENAME`, like in the case of an existing key `Key_A`
+If a key is overwritten by [`RENAME`](/commands/rename), like in the case of an existing key `Key_A`
 that is overwritten by a call like `RENAME Key_B Key_A`, it does not matter if
 the original `Key_A` had a timeout associated or not, the new key `Key_A` will
 inherit all the characteristics of `Key_B`.
 
-Note that calling `EXPIRE`/`PEXPIRE` with a non-positive timeout or
-`EXPIREAT`/`PEXPIREAT` with a time in the past will result in the key being
+Note that calling `EXPIRE`/[`PEXPIRE`](/commands/pexpire) with a non-positive timeout or
+[`EXPIREAT`](/commands/expireat)/[`PEXPIREAT`](/commands/pexpireat) with a time in the past will result in the key being
 [deleted][del] rather than expired (accordingly, the emitted [key event][ntf]
 will be `del`, not `expired`).
 
@@ -98,8 +98,8 @@ If the user will be idle more than 60 seconds, the key will be deleted and only
 subsequent page views that have less than 60 seconds of difference will be
 recorded.
 
-This pattern is easily modified to use counters using `INCR` instead of lists
-using `RPUSH`.
+This pattern is easily modified to use counters using [`INCR`](/commands/incr) instead of lists
+using [`RPUSH`](/commands/rpush).
 
 # Appendix: Redis expires
 
@@ -107,7 +107,7 @@ using `RPUSH`.
 
 Normally Redis keys are created without an associated time to live.
 The key will simply live forever, unless it is removed by the user in an
-explicit way, for instance using the `DEL` command.
+explicit way, for instance using the [`DEL`](/commands/del) command.
 
 The `EXPIRE` family of commands is able to associate an expire to a given key,
 at the cost of some additional memory used by the key.
@@ -115,7 +115,7 @@ When a key has an expire set, Redis will make sure to remove the key when the
 specified amount of time elapsed.
 
 The key time to live can be updated or entirely removed using the `EXPIRE` and
-`PERSIST` command (or other strictly related commands).
+[`PERSIST`](/commands/persist) command (or other strictly related commands).
 
 ## Expire accuracy
 
@@ -170,13 +170,13 @@ second divided by 4.
 ## How expires are handled in the replication link and AOF file
 
 In order to obtain a correct behavior without sacrificing consistency, when a
-key expires, a `DEL` operation is synthesized in both the AOF file and gains all
+key expires, a [`DEL`](/commands/del) operation is synthesized in both the AOF file and gains all
 the attached replicas nodes.
 This way the expiration process is centralized in the master instance, and there
 is no chance of consistency errors.
 
 However while the replicas connected to a master will not expire keys
-independently (but will wait for the `DEL` coming from the master), they'll
+independently (but will wait for the [`DEL`](/commands/del) coming from the master), they'll
 still take the full state of the expires existing in the dataset, so when a
 replica is elected to master it will be able to expire the keys independently,
 fully acting as a master.

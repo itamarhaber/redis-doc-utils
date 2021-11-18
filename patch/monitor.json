@@ -1,0 +1,14 @@
+{
+    "MONITOR": {
+        "complexity": "PATCH__TBD__54__",
+        "returns": [
+            {
+                "description": "PATCH__TBD__273__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    }
+}

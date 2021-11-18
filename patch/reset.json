@@ -1,0 +1,14 @@
+{
+    "RESET": {
+        "complexity": "PATCH__TBD__74__",
+        "returns": [
+            {
+                "description": "PATCH__TBD__312__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    }
+}

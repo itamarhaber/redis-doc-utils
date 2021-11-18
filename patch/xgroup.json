@@ -1,0 +1,14 @@
+{
+    "XGROUP": {
+        "summary": "PATCH__TBD__85__",
+        "returns": [
+            {
+                "description": "PATCH__TBD__389__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    }
+}

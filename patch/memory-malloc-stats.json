@@ -1,0 +1,14 @@
+{
+    "MEMORY MALLOC-STATS": {
+        "complexity": "PATCH__TBD__71__",
+        "returns": [
+            {
+                "description": "PATCH__TBD__260__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    }
+}

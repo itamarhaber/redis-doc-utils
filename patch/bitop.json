@@ -1,0 +1,13 @@
+{
+    "BITOP": {
+        "returns": [
+            {
+                "description": "PATCH__TBD__112__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    }
+}

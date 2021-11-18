@@ -1,4 +1,4 @@
-This command is like `ZRANGE`, but stores the result in the `<dst>` destination key.
+This command is like [`ZRANGE`](/commands/zrange), but stores the result in the `<dst>` destination key.
 
 @examples
 

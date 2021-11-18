@@ -1,7 +1,7 @@
-This command is similar to `ZINTERSTORE`, but instead of storing the resulting
+This command is similar to [`ZINTERSTORE`](/commands/zinterstore), but instead of storing the resulting
 sorted set, it is returned to the client.
 
-For a description of the `WEIGHTS` and `AGGREGATE` options, see `ZUNIONSTORE`.
+For a description of the `WEIGHTS` and `AGGREGATE` options, see [`ZUNIONSTORE`](/commands/zunionstore).
 
 @examples
 

@@ -1,0 +1,13 @@
+{
+    "RANDOMKEY": {
+        "returns": [
+            {
+                "description": "PATCH__TBD__305__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    }
+}

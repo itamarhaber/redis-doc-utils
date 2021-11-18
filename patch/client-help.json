@@ -1,0 +1,13 @@
+{
+    "CLIENT HELP": {
+        "returns": [
+            {
+                "description": "PATCH__TBD__125__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    }
+}

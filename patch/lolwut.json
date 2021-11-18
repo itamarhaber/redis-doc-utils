@@ -1,0 +1,14 @@
+{
+    "LOLWUT": {
+        "complexity": "PATCH__TBD__68__",
+        "returns": [
+            {
+                "description": "PATCH__TBD__249__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    }
+}

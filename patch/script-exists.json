@@ -1,0 +1,13 @@
+{
+    "SCRIPT EXISTS": {
+        "returns": [
+            {
+                "description": "PATCH__TBD__325__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    }
+}

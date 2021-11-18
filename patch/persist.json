@@ -1,0 +1,13 @@
+{
+    "PERSIST": {
+        "returns": [
+            {
+                "description": "PATCH__TBD__283__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    }
+}

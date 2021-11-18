@@ -1,6 +1,9 @@
 {
     "DEBUG": {
+        "summary": "PATCH__TBD__9__",
+        "complexity": "PATCH__TBD__8__",
         "group": "server",
+        "since": "PATCH__TBD__10__",
         "arity": -2,
         "function": "debugCommand",
         "internal": true,

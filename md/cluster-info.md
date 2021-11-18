@@ -1,4 +1,4 @@
-`CLUSTER INFO` provides `INFO` style information about Redis Cluster
+`CLUSTER INFO` provides [`INFO`](/commands/info) style information about Redis Cluster
 vital parameters. The following is a sample output, followed by the
 description of each field reported.
 

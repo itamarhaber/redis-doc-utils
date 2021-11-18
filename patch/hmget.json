@@ -1,0 +1,13 @@
+{
+    "HMGET": {
+        "returns": [
+            {
+                "description": "PATCH__TBD__222__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    }
+}

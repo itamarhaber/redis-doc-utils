@@ -1,0 +1,14 @@
+{
+    "CLUSTER": {
+        "summary": "PATCH__TBD__84__",
+        "returns": [
+            {
+                "description": "PATCH__TBD__163__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    }
+}

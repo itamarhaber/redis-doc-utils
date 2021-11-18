@@ -1,0 +1,14 @@
+{
+    "BGREWRITEAOF": {
+        "complexity": "PATCH__TBD__55__",
+        "returns": [
+            {
+                "description": "PATCH__TBD__107__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    }
+}

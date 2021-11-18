@@ -15,7 +15,7 @@ set command (+set rule). Then another SETUSER call can modify the user rules:
 
     ACL SETUSER virginia +get
 
-The above rule will not apply the new rule to the user virginia, so other than `SET`, the user virginia will now be able to also use the `GET` command.
+The above rule will not apply the new rule to the user virginia, so other than [`SET`](/commands/set), the user virginia will now be able to also use the [`GET`](/commands/get) command.
 
 When we want to be sure to define an user from scratch, without caring if
 it had previously defined rules associated, we can use the special rule
@@ -44,7 +44,7 @@ This is a list of all the supported Redis ACL rules:
 
 * `on`: set the user as active, it will be possible to authenticate as this user using `AUTH <username> <password>`.
 * `off`: set user as not active, it will be impossible to log as this user. Please note that if a user gets disabled (set to off) after there are connections already authenticated with such a user, the connections will continue to work as expected. To also kill the old connections you can use `CLIENT KILL` with the user option. An alternative is to delete the user with `ACL DELUSER`, that will result in all the connections authenticated as the deleted user to be disconnected.
-* `~<pattern>`: add the specified key pattern (glob style pattern, like in the `KEYS` command), to the list of key patterns accessible by the user. You can add multiple key patterns to the same user. Example: `~objects:*`
+* `~<pattern>`: add the specified key pattern (glob style pattern, like in the [`KEYS`](/commands/keys) command), to the list of key patterns accessible by the user. You can add multiple key patterns to the same user. Example: `~objects:*`
 * `allkeys`: alias for `~*`, it allows the user to access all the keys.
 * `resetkeys`: removes all the key patterns from the list of key patterns the user can access.
 * `&<pattern>`: add the specified glob style pattern to the list of Pub/Sub channel patterns accessible by the user. You can add multiple channel patterns to the same user. Example: `&chatroom:*`
@@ -61,7 +61,7 @@ This is a list of all the supported Redis ACL rules:
 * `>password`: Add the specified clear text password as an hashed password in the list of the users passwords. Every user can have many active passwords, so that password rotation will be simpler. The specified password is not stored as clear text inside the server. Example: `>mypassword`.
 * `#<hashedpassword>`: Add the specified hashed password to the list of user passwords. A Redis hashed password is hashed with SHA256 and translated into a hexadecimal string. Example: `#c3ab8ff13720e8ad9047dd39466b3c8974e592c2fa383d4a3960714caef0c4f2`.
 * `<password`: Like `>password` but removes the password instead of adding it.
-* `!<hashedpassword>`: Like `#<hashedpassword>` but removes the password instead of adding it.
+* `<hashedpassword>`: Like `#<hashedpassword>` but removes the password instead of adding it.
 * reset: Remove any capability from the user. It is set to off, without passwords, unable to execute any command, unable to access any key.
 
 @examples

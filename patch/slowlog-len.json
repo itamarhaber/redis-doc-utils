@@ -1,0 +1,13 @@
+{
+    "SLOWLOG LEN": {
+        "returns": [
+            {
+                "description": "PATCH__TBD__347__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    }
+}

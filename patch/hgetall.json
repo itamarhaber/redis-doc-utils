@@ -1,0 +1,13 @@
+{
+    "HGETALL": {
+        "returns": [
+            {
+                "description": "PATCH__TBD__217__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    }
+}

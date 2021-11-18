@@ -1,0 +1,16 @@
+{
+    "PFSELFTEST": {
+        "summary": "PATCH__TBD__21__",
+        "complexity": "PATCH__TBD__20__",
+        "since": "PATCH__TBD__22__",
+        "returns": [
+            {
+                "description": "PATCH__TBD__291__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    }
+}

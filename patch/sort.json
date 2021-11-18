@@ -1,0 +1,13 @@
+{
+    "SORT": {
+        "returns": [
+            {
+                "description": "PATCH__TBD__353__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    }
+}

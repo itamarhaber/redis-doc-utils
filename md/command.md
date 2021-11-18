@@ -57,12 +57,12 @@ Command arity _includes_ counting the command name itself.
 
 Examples:
 
-  - `GET` arity is 2 since the command only accepts one
+  - [`GET`](/commands/get) arity is 2 since the command only accepts one
 argument and always has the format `GET _key_`.
-  - `MGET` arity is -2 since the command accepts at a minimum
+  - [`MGET`](/commands/mget) arity is -2 since the command accepts at a minimum
 one argument, but up to an unlimited number: `MGET _key1_ [key2] [key3] ...`.
 
-Also note with `MGET`, the -1 value for "last key position" means the list
+Also note with [`MGET`](/commands/mget), the -1 value for "last key position" means the list
 of keys may have unlimited length.
 
 ### Flags
@@ -103,15 +103,15 @@ Cluster client needs to parse commands marked `movablekeys` to locate all releva
 
 Complete list of commands currently requiring key location parsing:
 
-  - `SORT` - optional `STORE` key, optional `BY` weights, optional `GET` keys
-  - `ZUNION` - keys stop when `WEIGHT` or `AGGREGATE` starts
-  - `ZUNIONSTORE` - keys stop when `WEIGHT` or `AGGREGATE` starts
-  - `ZINTER` - keys stop when `WEIGHT` or `AGGREGATE` starts
-  - `ZINTERSTORE` - keys stop when `WEIGHT` or `AGGREGATE` starts
-  - `ZDIFF` - keys stop after `numkeys` count arguments
-  - `ZDIFFSTORE` - keys stop after `numkeys` count arguments
-  - `EVAL` - keys stop after `numkeys` count arguments
-  - `EVALSHA` - keys stop after `numkeys` count arguments
+  - [`SORT`](/commands/sort) - optional `STORE` key, optional `BY` weights, optional [`GET`](/commands/get) keys
+  - [`ZUNION`](/commands/zunion) - keys stop when `WEIGHT` or `AGGREGATE` starts
+  - [`ZUNIONSTORE`](/commands/zunionstore) - keys stop when `WEIGHT` or `AGGREGATE` starts
+  - [`ZINTER`](/commands/zinter) - keys stop when `WEIGHT` or `AGGREGATE` starts
+  - [`ZINTERSTORE`](/commands/zinterstore) - keys stop when `WEIGHT` or `AGGREGATE` starts
+  - [`ZDIFF`](/commands/zdiff) - keys stop after `numkeys` count arguments
+  - [`ZDIFFSTORE`](/commands/zdiffstore) - keys stop after `numkeys` count arguments
+  - [`EVAL`](/commands/eval) - keys stop after `numkeys` count arguments
+  - [`EVALSHA`](/commands/evalsha) - keys stop after `numkeys` count arguments
 
 Also see `COMMAND GETKEYS` for getting your Redis server tell you where keys
 are in any given command.
@@ -128,7 +128,7 @@ Redis commands usually accept one key, two keys, or an unlimited number of keys.
 
 If a command accepts one key, the first key and last key positions is 1.
 
-If a command accepts two keys (e.g. `BRPOPLPUSH`, `SMOVE`, `RENAME`, ...) then the
+If a command accepts two keys (e.g. [`BRPOPLPUSH`](/commands/brpoplpush), [`SMOVE`](/commands/smove), [`RENAME`](/commands/rename), ...) then the
 last key position is the location of the last key in the argument list.
 
 If a command accepts an unlimited number of keys, the last key position is -1.
@@ -163,10 +163,10 @@ If a command accepts an unlimited number of keys, the last key position is -1.
 </table>
 
 Key step count allows us to find key positions in commands
-like `MSET` where the format is `MSET _key1_ _val1_ [key2] [val2] [key3] [val3]...`.
+like [`MSET`](/commands/mset) where the format is `MSET _key1_ _val1_ [key2] [val2] [key3] [val3]...`.
 
-In the case of `MSET`, keys are every other position so the step value is 2.  Compare
-with `MGET` above where the step value is just 1.
+In the case of [`MSET`](/commands/mset), keys are every other position so the step value is 2.  Compare
+with [`MGET`](/commands/mget) above where the step value is just 1.
 
 
 

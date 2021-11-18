@@ -1,0 +1,13 @@
+{
+    "PUBSUB NUMPAT": {
+        "returns": [
+            {
+                "description": "PATCH__TBD__300__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    }
+}

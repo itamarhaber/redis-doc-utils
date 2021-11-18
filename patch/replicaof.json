@@ -1,0 +1,14 @@
+{
+    "REPLICAOF": {
+        "complexity": "PATCH__TBD__59__",
+        "returns": [
+            {
+                "description": "PATCH__TBD__311__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    }
+}

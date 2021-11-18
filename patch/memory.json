@@ -1,0 +1,14 @@
+{
+    "MEMORY": {
+        "summary": "PATCH__TBD__87__",
+        "returns": [
+            {
+                "description": "PATCH__TBD__263__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    }
+}

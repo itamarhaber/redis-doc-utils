@@ -1,0 +1,14 @@
+{
+    "SELECT": {
+        "complexity": "PATCH__TBD__48__",
+        "returns": [
+            {
+                "description": "PATCH__TBD__333__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    }
+}

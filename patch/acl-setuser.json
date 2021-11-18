@@ -1,0 +1,13 @@
+{
+    "ACL SETUSER": {
+        "returns": [
+            {
+                "description": "PATCH__TBD__100__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    }
+}

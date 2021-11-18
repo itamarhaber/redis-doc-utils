@@ -1,0 +1,16 @@
+{
+    "POST": {
+        "summary": "PATCH__TBD__24__",
+        "complexity": "PATCH__TBD__23__",
+        "since": "PATCH__TBD__25__",
+        "returns": [
+            {
+                "description": "PATCH__TBD__293__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    }
+}

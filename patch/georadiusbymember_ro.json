@@ -1,0 +1,16 @@
+{
+    "GEORADIUSBYMEMBER_RO": {
+        "summary": "PATCH__TBD__15__",
+        "complexity": "PATCH__TBD__14__",
+        "since": "PATCH__TBD__16__",
+        "returns": [
+            {
+                "description": "PATCH__TBD__204__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    }
+}

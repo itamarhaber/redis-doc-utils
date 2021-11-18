@@ -1,0 +1,13 @@
+{
+    "OBJECT REFCOUNT": {
+        "returns": [
+            {
+                "description": "PATCH__TBD__281__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    }
+}

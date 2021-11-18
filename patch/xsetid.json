@@ -1,0 +1,16 @@
+{
+    "XSETID": {
+        "summary": "PATCH__TBD__30__",
+        "complexity": "PATCH__TBD__29__",
+        "since": "PATCH__TBD__31__",
+        "returns": [
+            {
+                "description": "PATCH__TBD__401__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    }
+}

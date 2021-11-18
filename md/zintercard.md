@@ -1,4 +1,4 @@
-This command is similar to `ZINTER`, but instead of returning the result set, it returns just the cardinality of the result.
+This command is similar to [`ZINTER`](/commands/zinter), but instead of returning the result set, it returns just the cardinality of the result.
 
 Keys that do not exist are considered to be empty sets.
 With one of the keys being an empty set, the resulting set is also empty (since set intersection with an empty set always results in an empty set).

@@ -1,0 +1,13 @@
+{
+    "FLUSHALL": {
+        "returns": [
+            {
+                "description": "PATCH__TBD__195__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    }
+}

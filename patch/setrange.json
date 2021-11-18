@@ -1,0 +1,13 @@
+{
+    "SETRANGE": {
+        "returns": [
+            {
+                "description": "PATCH__TBD__338__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    }
+}

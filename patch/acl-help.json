@@ -1,0 +1,13 @@
+{
+    "ACL HELP": {
+        "returns": [
+            {
+                "description": "PATCH__TBD__95__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    }
+}

@@ -1,7 +1,7 @@
 The `CLIENT LIST` command returns information and statistics about the client
 connections server in a mostly human readable format.
 
-You can use one of the optional subcommands to filter the list. The `TYPE type` subcommand filters the list by clients' type, where *type* is one of `normal`, `master`, `replica`, and `pubsub`. Note that clients blocked by the `MONITOR` command belong to the `normal` class.
+You can use one of the optional subcommands to filter the list. The `TYPE type` subcommand filters the list by clients' type, where *type* is one of `normal`, `master`, `replica`, and `pubsub`. Note that clients blocked by the [`MONITOR`](/commands/monitor) command belong to the `normal` class.
 
 The `ID` filter only returns entries for clients with IDs matching the `client-id` arguments.
 

@@ -1,0 +1,13 @@
+{
+    "GEORADIUS": {
+        "returns": [
+            {
+                "description": "PATCH__TBD__201__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    }
+}

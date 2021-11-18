@@ -1,0 +1,14 @@
+{
+    "CONFIG": {
+        "summary": "PATCH__TBD__82__",
+        "returns": [
+            {
+                "description": "PATCH__TBD__175__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    }
+}

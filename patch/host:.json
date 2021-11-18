@@ -1,0 +1,16 @@
+{
+    "HOST:": {
+        "summary": "PATCH__TBD__3__",
+        "complexity": "PATCH__TBD__2__",
+        "since": "PATCH__TBD__4__",
+        "returns": [
+            {
+                "description": "PATCH__TBD__224__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    }
+}

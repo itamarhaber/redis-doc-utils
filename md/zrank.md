@@ -3,7 +3,7 @@ ordered from low to high.
 The rank (or index) is 0-based, which means that the member with the lowest
 score has rank `0`.
 
-Use `ZREVRANK` to get the rank of an element with the scores ordered from high
+Use [`ZREVRANK`](/commands/zrevrank) to get the rank of an element with the scores ordered from high
 to low.
 
 @examples

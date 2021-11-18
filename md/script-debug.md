@@ -1,4 +1,4 @@
-Set the debug mode for subsequent scripts executed with `EVAL`. Redis includes a
+Set the debug mode for subsequent scripts executed with [`EVAL`](/commands/eval). Redis includes a
 complete Lua debugger, codename LDB, that can be used to make the task of
 writing complex scripts much simpler. In debug mode Redis acts as a remote
 debugging server and a client, such as `redis-cli`, can execute scripts step by
@@ -16,6 +16,6 @@ alternative synchronous debug mode blocks the server while the debugging session
 is active and retains all changes to the data set once it ends.
 
 * `YES`. Enable non-blocking asynchronous debugging of Lua scripts (changes are discarded).
-* `!SYNC`. Enable blocking synchronous debugging of Lua scripts (saves changes to data).
+* `SYNC`. Enable blocking synchronous debugging of Lua scripts (saves changes to data).
 * `NO`. Disables scripts debug mode.
 
