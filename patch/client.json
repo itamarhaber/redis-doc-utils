@@ -1,6 +1,6 @@
 {
     "CLIENT": {
-        "summary": "PATCH__TBD__80__",
+        "summary": "A container for client connection commands",
         "returns": [
             {
                 "description": "PATCH__TBD__138__",

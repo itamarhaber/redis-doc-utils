@@ -82,7 +82,7 @@ thing that happens when the timeout is reached.
 If you like science fiction, think of time flowing at infinite speed inside a
 [`MULTI`](/commands/multi) / [`EXEC`](/commands/exec) block...
 
-@examples
+## Examples
 
 ```
 redis> DEL list1 list2

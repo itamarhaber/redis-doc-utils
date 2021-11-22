@@ -26,20 +26,20 @@ Thanks to `SETRANGE` and the analogous [`GETRANGE`](/commands/getrange) commands
 strings as a linear array with O(1) random access.
 This is a very fast and efficient storage in many real world use cases.
 
-@examples
+## Examples
 
 Basic usage:
 
-```cli
+{{% redis-cli %}}
 SET key1 "Hello World"
 SETRANGE key1 6 "Redis"
 GET key1
-```
+{{% /redis-cli %}}
 
 Example of zero padding:
 
-```cli
+{{% redis-cli %}}
 SETRANGE key2 6 "Redis"
 GET key2
-```
+{{% /redis-cli %}}
 

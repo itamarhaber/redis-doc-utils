@@ -1,10 +1,10 @@
 Returns the number of fields contained in the hash stored at `key`.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 HSET myhash field1 "Hello"
 HSET myhash field2 "World"
 HLEN myhash
-```
+{{% /redis-cli %}}
 

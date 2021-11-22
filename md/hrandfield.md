@@ -8,14 +8,14 @@ In this case, the number of returned fields is the absolute value of the specifi
 
 The optional `WITHVALUES` modifier changes the reply so it includes the respective values of the randomly selected hash fields.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 HMSET coin heads obverse tails reverse edge null
 HRANDFIELD coin
 HRANDFIELD coin
 HRANDFIELD coin -5 WITHVALUES
-```
+{{% /redis-cli %}}
 
 ## Specification of the behavior when count is passed
 

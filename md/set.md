@@ -17,14 +17,14 @@ The `SET` command supports a set of options that modify its behavior:
 
 Note: Since the `SET` command options can replace [`SETNX`](/commands/setnx), [`SETEX`](/commands/setex), [`PSETEX`](/commands/psetex), [`GETSET`](/commands/getset), it is possible that in future versions of Redis these commands will be deprecated and finally removed.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 SET mykey "Hello"
 GET mykey
 
 SET anotherkey "will expire in a minute" EX 60
-```
+{{% /redis-cli %}}
 
 ## Patterns
 

@@ -3,10 +3,10 @@ timestamp and the amount of microseconds already elapsed in the current second.
 Basically the interface is very similar to the one of the `gettimeofday` system
 call.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 TIME
 TIME
-```
+{{% /redis-cli %}}
 

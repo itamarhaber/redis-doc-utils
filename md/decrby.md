@@ -6,10 +6,10 @@ This operation is limited to 64 bit signed integers.
 
 See [`INCR`](/commands/incr) for extra information on increment/decrement operations.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 SET mykey "10"
 DECRBY mykey 3
-```
+{{% /redis-cli %}}
 

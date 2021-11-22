@@ -1,6 +1,6 @@
 {
     "CONFIG": {
-        "summary": "PATCH__TBD__82__",
+        "summary": "A container for server configuration commands",
         "returns": [
             {
                 "description": "PATCH__TBD__175__",

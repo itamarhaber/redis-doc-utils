@@ -1,6 +1,6 @@
 {
     "PUBSUB": {
-        "summary": "PATCH__TBD__78__",
+        "summary": "A container for Pub/Sun commands",
         "returns": [
             {
                 "description": "PATCH__TBD__303__",

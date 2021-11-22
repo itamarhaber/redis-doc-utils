@@ -24,14 +24,14 @@ zero-padded up to the length of the longest string.
 The same holds true for non-existent keys, that are considered as a stream of
 zero bytes up to the length of the longest string.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 SET key1 "foobar"
 SET key2 "abcdef"
 BITOP AND dest key1 key2
 GET dest
-```
+{{% /redis-cli %}}
 
 ## Pattern: real time metrics using bitmaps
 

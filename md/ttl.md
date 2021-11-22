@@ -11,11 +11,11 @@ Starting with Redis 2.8 the return value in case of error changed:
 
 See also the [`PTTL`](/commands/pttl) command that returns the same information with milliseconds resolution (Only available in Redis 2.6 or greater).
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 SET mykey "Hello"
 EXPIRE mykey 10
 TTL mykey
-```
+{{% /redis-cli %}}
 

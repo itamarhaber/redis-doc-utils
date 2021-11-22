@@ -23,9 +23,9 @@ If `start` is larger than the end of the list, an empty list is returned.
 If `stop` is larger than the actual end of the list, Redis will treat it like
 the last element of the list.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 RPUSH mylist "one"
 RPUSH mylist "two"
 RPUSH mylist "three"
@@ -33,5 +33,5 @@ LRANGE mylist 0 0
 LRANGE mylist -3 2
 LRANGE mylist -100 100
 LRANGE mylist 5 10
-```
+{{% /redis-cli %}}
 

@@ -1,8 +1,8 @@
 {
     "PFSELFTEST": {
-        "summary": "PATCH__TBD__21__",
-        "complexity": "PATCH__TBD__20__",
-        "since": "PATCH__TBD__22__",
+        "summary": "An internal command for testing HyperLogLog values",
+        "complexity": "N/A",
+        "since": "2.8.9",
         "returns": [
             {
                 "description": "PATCH__TBD__291__",

@@ -12,14 +12,14 @@ removed from the source set.
 
 An error is returned if `source` or `destination` does not hold a set value.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 SADD myset "one"
 SADD myset "two"
 SADD myotherset "three"
 SMOVE myset myotherset "two"
 SMEMBERS myset
 SMEMBERS myotherset
-```
+{{% /redis-cli %}}
 

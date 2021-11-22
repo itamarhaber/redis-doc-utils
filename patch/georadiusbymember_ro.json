@@ -1,8 +1,8 @@
 {
     "GEORADIUSBYMEMBER_RO": {
-        "summary": "PATCH__TBD__15__",
-        "complexity": "PATCH__TBD__14__",
-        "since": "PATCH__TBD__16__",
+        "summary": "A read-only variant for GEORADIUSBYMEMBER",
+        "complexity": "O(N+log(M)) where N is the number of elements inside the bounding box of the circular area delimited by center and radius and M is the number of items inside the index.",
+        "since": "5.0.0",
         "returns": [
             {
                 "description": "PATCH__TBD__204__",

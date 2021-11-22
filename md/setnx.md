@@ -3,13 +3,13 @@ In that case, it is equal to [`SET`](/commands/set).
 When `key` already holds a value, no operation is performed.
 `SETNX` is short for "**SET** if **N**ot e**X**ists".
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 SETNX mykey "Hello"
 SETNX mykey "World"
 GET mykey
-```
+{{% /redis-cli %}}
 
 ## Design pattern: Locking with `SETNX`
 

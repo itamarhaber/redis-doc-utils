@@ -6,11 +6,11 @@ See [`MSETNX`](/commands/msetnx) if you don't want to overwrite existing values.
 It is not possible for clients to see that some of the keys were updated while
 others are unchanged.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 MSET key1 "Hello" key2 "World"
 GET key1
 GET key2
-```
+{{% /redis-cli %}}
 

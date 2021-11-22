@@ -5,12 +5,12 @@ The `min` and `max` arguments have the same meaning as described for
 
 Note: the command has a complexity of just O(log(N)) because it uses elements ranks (see [`ZRANK`](/commands/zrank)) to get an idea of the range. Because of this there is no need to do a work proportional to the size of the range.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 ZADD myzset 0 a 0 b 0 c 0 d 0 e
 ZADD myzset 0 f 0 g
 ZLEXCOUNT myzset - +
 ZLEXCOUNT myzset [b [f
-```
+{{% /redis-cli %}}
 

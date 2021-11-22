@@ -5,12 +5,12 @@ members.
 
 An error is returned when the value stored at `key` is not a set.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 SADD myset "Hello"
 SADD myset "World"
 SADD myset "World"
 SMEMBERS myset
-```
+{{% /redis-cli %}}
 

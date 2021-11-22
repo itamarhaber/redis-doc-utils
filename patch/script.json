@@ -1,6 +1,6 @@
 {
     "SCRIPT": {
-        "summary": "PATCH__TBD__83__",
+        "summary": "A containter for Lua scripts management commands",
         "returns": [
             {
                 "description": "PATCH__TBD__330__",

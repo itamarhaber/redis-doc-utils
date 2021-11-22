@@ -13,12 +13,12 @@ The `PEXPIREAT` command supports a set of options since Redis 7.0:
 A non-volatile key is treated as an infinite TTL for the purpose of `GT` and `LT`.
 The `GT`, `LT` and `NX` options are mutually exclusive.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 SET mykey "Hello"
 PEXPIREAT mykey 1555555555005
 TTL mykey
 PTTL mykey
-```
+{{% /redis-cli %}}
 

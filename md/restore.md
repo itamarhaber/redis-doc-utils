@@ -19,7 +19,7 @@ exists unless you use the `REPLACE` modifier (Redis 3.0 or greater).
 `RESTORE` checks the RDB version and data checksum.
 If they don't match an error is returned.
 
-@examples
+## Examples
 
 ```
 redis> DEL mykey

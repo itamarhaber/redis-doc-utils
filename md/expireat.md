@@ -27,12 +27,12 @@ The `EXPIREAT` command supports a set of options since Redis 7.0:
 A non-volatile key is treated as an infinite TTL for the purpose of `GT` and `LT`.
 The `GT`, `LT` and `NX` options are mutually exclusive.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 SET mykey "Hello"
 EXISTS mykey
 EXPIREAT mykey 1293840000
 EXISTS mykey
-```
+{{% /redis-cli %}}
 

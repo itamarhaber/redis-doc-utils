@@ -1,6 +1,6 @@
 {
     "XINFO": {
-        "summary": "PATCH__TBD__79__",
+        "summary": "A container for stream introspection commands",
         "returns": [
             {
                 "description": "PATCH__TBD__394__",

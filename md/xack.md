@@ -14,7 +14,7 @@ so that such message does not get processed again, and as a side effect,
 the PEL entry about this message is also purged, releasing memory from the
 Redis server.
 
-@examples
+## Examples
 
 ```
 redis> XACK mystream mygroup 1526569495631-0

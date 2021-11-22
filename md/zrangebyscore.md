@@ -42,9 +42,9 @@ ZRANGEBYSCORE zset (5 (10
 
 Will return all the elements with `5 < score < 10` (5 and 10 excluded).
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 ZADD myzset 1 "one"
 ZADD myzset 2 "two"
 ZADD myzset 3 "three"
@@ -52,7 +52,7 @@ ZRANGEBYSCORE myzset -inf +inf
 ZRANGEBYSCORE myzset 1 2
 ZRANGEBYSCORE myzset (1 2
 ZRANGEBYSCORE myzset (1 (2
-```
+{{% /redis-cli %}}
 
 ## Pattern: weighted random selection of an element
 

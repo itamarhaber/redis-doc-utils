@@ -6,12 +6,12 @@ performed.
 
 An error is returned when `key` exists but does not hold a list value.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 RPUSH mylist "Hello"
 RPUSH mylist "World"
 LINSERT mylist BEFORE "World" "There"
 LRANGE mylist 0 -1
-```
+{{% /redis-cli %}}
 

@@ -22,7 +22,7 @@ This ensures that only a single consumer can successfully claim a given pending 
 Lastly, claiming a message with `XAUTOCLAIM` also increments the attempted deliveries count for that message, unless the `JUSTID` option has been specified (which only delivers the message ID, not the message itself).
 Messages that cannot be processed for some reason - for example, because consumers systematically crash when processing them - will exhibit high attempted delivery counts that can be detected by monitoring.
 
-@examples
+## Examples
 
 ```
 > XAUTOCLAIM mystream mygroup Alice 3600000 0-0 COUNT 25

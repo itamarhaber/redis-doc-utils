@@ -26,12 +26,12 @@ Supported glob-style patterns:
 
 Use `\` to escape special characters if you want to match them verbatim.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 MSET firstname Jack lastname Stuntman age 35
 KEYS *name*
 KEYS a??
 KEYS *
-```
+{{% /redis-cli %}}
 

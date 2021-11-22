@@ -6,15 +6,15 @@ performed.
 
 The range of values supported by `HINCRBY` is limited to 64 bit signed integers.
 
-@examples
+## Examples
 
 Since the `increment` argument is signed, both increment and decrement
 operations can be performed:
 
-```cli
+{{% redis-cli %}}
 HSET myhash field 5
 HINCRBY myhash field 1
 HINCRBY myhash field -1
 HINCRBY myhash field -10
-```
+{{% /redis-cli %}}
 

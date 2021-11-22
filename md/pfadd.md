@@ -8,10 +8,10 @@ To call the command without elements but just the variable name is valid, this w
 
 For an introduction to HyperLogLog data structure check the [`PFCOUNT`](/commands/pfcount) command page.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 PFADD hll a b c d e f g
 PFCOUNT hll
-```
+{{% /redis-cli %}}
 

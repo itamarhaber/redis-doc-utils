@@ -7,13 +7,13 @@ Here, `-1` means the last element, `-2` means the penultimate and so forth.
 
 When the value at `key` is not a list, an error is returned.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 LPUSH mylist "World"
 LPUSH mylist "Hello"
 LINDEX mylist 0
 LINDEX mylist -1
 LINDEX mylist 3
-```
+{{% /redis-cli %}}
 

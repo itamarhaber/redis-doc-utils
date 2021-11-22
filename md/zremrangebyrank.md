@@ -7,13 +7,13 @@ the element with the highest score.
 For example: `-1` is the element with the highest score, `-2` the element with
 the second highest score and so forth.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 ZADD myzset 1 "one"
 ZADD myzset 2 "two"
 ZADD myzset 3 "three"
 ZREMRANGEBYRANK myzset 0 1
 ZRANGE myzset 0 -1 WITHSCORES
-```
+{{% /redis-cli %}}
 

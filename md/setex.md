@@ -14,11 +14,11 @@ because this operation is very common when Redis is used as a cache.
 
 An error is returned when `seconds` is invalid.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 SETEX mykey 10 "Hello"
 TTL mykey
 GET mykey
-```
+{{% /redis-cli %}}
 

@@ -1,6 +1,6 @@
 {
     "LATENCY": {
-        "summary": "PATCH__TBD__81__",
+        "summary": "A container for latency diagnostics commands",
         "returns": [
             {
                 "description": "PATCH__TBD__243__",

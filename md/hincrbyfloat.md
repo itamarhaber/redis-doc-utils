@@ -12,15 +12,15 @@ The exact behavior of this command is identical to the one of the [`INCRBYFLOAT`
 command, please refer to the documentation of [`INCRBYFLOAT`](/commands/incrbyfloat) for further
 information.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 HSET mykey field 10.50
 HINCRBYFLOAT mykey field 0.1
 HINCRBYFLOAT mykey field -5
 HSET mykey field 5.0e3
 HINCRBYFLOAT mykey field 2.0e2
-```
+{{% /redis-cli %}}
 
 ## Implementation details
 

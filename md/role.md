@@ -69,11 +69,11 @@ The sentinel output is composed of the following parts:
 1. The string `sentinel`.
 2. An array of master names monitored by this Sentinel instance.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 ROLE
-```
+{{% /redis-cli %}}
 
 **A note about the word slave used in this man page**: Starting with Redis 5, if not for backward compatibility, the Redis project no longer uses the word slave. Unfortunately in this command the word slave is part of the protocol, so we'll be able to remove such occurrences only when this API will be naturally deprecated.
 

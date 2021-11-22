@@ -3,13 +3,13 @@ already exists and holds a list.
 In contrary to [`LPUSH`](/commands/lpush), no operation will be performed when `key` does not yet
 exist.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 LPUSH mylist "World"
 LPUSHX mylist "Hello"
 LPUSHX myotherlist "Hello"
 LRANGE mylist 0 -1
 LRANGE myotherlist 0 -1
-```
+{{% /redis-cli %}}
 

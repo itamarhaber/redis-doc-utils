@@ -10,7 +10,7 @@ The following information is provided for each consumer in the group:
 
 @array-reply: a list of consumers.
 
-@examples
+## Examples
 
 ```
 > XINFO CONSUMERS mystream mygroup

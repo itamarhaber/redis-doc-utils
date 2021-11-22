@@ -12,14 +12,14 @@ For example, `LREM list -2 "hello"` will remove the last two occurrences of
 Note that non-existing keys are treated like empty lists, so when `key` does not
 exist, the command will always return `0`.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 RPUSH mylist "hello"
 RPUSH mylist "hello"
 RPUSH mylist "foo"
 RPUSH mylist "hello"
 LREM mylist -2 "hello"
 LRANGE mylist 0 -1
-```
+{{% /redis-cli %}}
 

@@ -10,11 +10,11 @@ leftmost element to the rightmost element.
 So for instance the command `LPUSH mylist a b c` will result into a list
 containing `c` as first element, `b` as second element and `a` as third element.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 LPUSH mylist "world"
 LPUSH mylist "hello"
 LRANGE mylist 0 -1
-```
+{{% /redis-cli %}}
 

@@ -6,14 +6,14 @@ The array's length is either `count` or the set's cardinality ([`SCARD`](/comman
 If called with a negative `count`, the behavior changes and the command is allowed to return the **same element multiple times**.
 In this case, the number of returned elements is the absolute value of the specified `count`.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 SADD myset one two three
 SRANDMEMBER myset
 SRANDMEMBER myset 2
 SRANDMEMBER myset -5
-```
+{{% /redis-cli %}}
 
 ## Specification of the behavior when count is passed
 

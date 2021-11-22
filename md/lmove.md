@@ -18,9 +18,9 @@ no-op if `wherefrom` is the same as `whereto`).
 This command comes in place of the now deprecated [`RPOPLPUSH`](/commands/rpoplpush). Doing
 `LMOVE RIGHT LEFT` is equivalent.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 RPUSH mylist "one"
 RPUSH mylist "two"
 RPUSH mylist "three"
@@ -28,7 +28,7 @@ LMOVE mylist myotherlist RIGHT LEFT
 LMOVE mylist myotherlist LEFT RIGHT
 LRANGE mylist 0 -1
 LRANGE myotherlist 0 -1
-```
+{{% /redis-cli %}}
 
 ## Pattern: Reliable queue
 

@@ -16,6 +16,15 @@
         "acl_categories": [
             "slow"
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__91__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "categoryname",
@@ -45,6 +54,15 @@
             "slow",
             "dangerous"
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__92__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "username",
@@ -70,6 +88,15 @@
         ],
         "acl_categories": [
             "slow"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__93__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ],
         "arguments": [
             {
@@ -106,6 +133,15 @@
             "slow",
             "dangerous"
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__94__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "username",
@@ -129,6 +165,15 @@
         ],
         "acl_categories": [
             "slow"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__95__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "ACL LIST": {
@@ -150,6 +195,15 @@
             "admin",
             "slow",
             "dangerous"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__96__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "ACL LOAD": {
@@ -171,6 +225,15 @@
             "admin",
             "slow",
             "dangerous"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__97__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "ACL LOG": {
@@ -192,6 +255,15 @@
             "admin",
             "slow",
             "dangerous"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__98__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ],
         "arguments": [
             {
@@ -237,6 +309,15 @@
             "admin",
             "slow",
             "dangerous"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__99__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "ACL SETUSER": {
@@ -264,6 +345,15 @@
             "admin",
             "slow",
             "dangerous"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__100__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ],
         "arguments": [
             {
@@ -299,6 +389,15 @@
             "admin",
             "slow",
             "dangerous"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__101__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "ACL WHOAMI": {
@@ -317,19 +416,15 @@
         ],
         "acl_categories": [
             "slow"
-        ]
-    },
-    "ACL": {
-        "summary": "PATCH__TBD__90__",
-        "complexity": "Depends on subcommand.",
-        "group": "server",
-        "since": "6.0.0",
-        "arity": -2,
-        "command_flags": [
-            "sentinel"
         ],
-        "acl_categories": [
-            "slow"
+        "returns": [
+            {
+                "description": "PATCH__TBD__102__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "APPEND": {
@@ -368,6 +463,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__104__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -394,11 +498,20 @@
         "acl_categories": [
             "fast",
             "connection"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__106__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "AUTH": {
         "summary": "Authenticate to the server",
-        "complexity": "PATCH__TBD__38__",
+        "complexity": "O(N) where N is the number of passwords defined for the user",
         "group": "connection",
         "since": "1.0.0",
         "arity": -2,
@@ -420,6 +533,15 @@
         "acl_categories": [
             "fast",
             "connection"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__105__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ],
         "arguments": [
             {
@@ -450,6 +572,15 @@
             "admin",
             "slow",
             "dangerous"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__107__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "BGSAVE": {
@@ -473,6 +604,15 @@
             "admin",
             "slow",
             "dangerous"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__108__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ],
         "arguments": [
             {
@@ -520,6 +660,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__109__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -597,6 +746,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__110__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -730,6 +888,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__111__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -807,6 +974,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__112__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "operation",
@@ -866,6 +1042,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__113__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -916,84 +1101,6 @@
                         "optional": true
                     }
                 ],
-                "optional": true
-            }
-        ]
-    },
-    "BLMPOP": {
-        "summary": "Pop elements from a list, or block until one is available",
-        "complexity": "O(N+M) where N is the number of provided keys and M is the number of elements returned.",
-        "group": "list",
-        "since": "7.0.0",
-        "arity": -5,
-        "function": "blmpopCommand",
-        "get_keys_function": "blmpopGetKeys",
-        "command_flags": [
-            "write"
-        ],
-        "acl_categories": [
-            "write",
-            "list",
-            "slow",
-            "blocking"
-        ],
-        "key_specs": [
-            {
-                "flags": [
-                    "write"
-                ],
-                "begin_search": {
-                    "index": {
-                        "pos": 2
-                    }
-                },
-                "find_keys": {
-                    "keynum": {
-                        "keynumidx": 0,
-                        "firstkey": 1,
-                        "step": 1
-                    }
-                }
-            }
-        ],
-        "arguments": [
-            {
-                "name": "timeout",
-                "type": "double",
-                "value": "timeout"
-            },
-            {
-                "name": "numkeys",
-                "type": "integer",
-                "value": "numkeys"
-            },
-            {
-                "name": "key",
-                "type": "key",
-                "value": "key",
-                "multiple": true
-            },
-            {
-                "name": "where",
-                "type": "oneof",
-                "value": [
-                    {
-                        "name": "left",
-                        "type": "pure-token",
-                        "token": "LEFT"
-                    },
-                    {
-                        "name": "right",
-                        "type": "pure-token",
-                        "token": "RIGHT"
-                    }
-                ]
-            },
-            {
-                "token": "COUNT",
-                "name": "count",
-                "type": "integer",
-                "value": "count",
                 "optional": true
             }
         ]
@@ -1053,6 +1160,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__114__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "source",
@@ -1103,6 +1219,93 @@
             }
         ]
     },
+    "BLMPOP": {
+        "summary": "Pop elements from a list, or block until one is available",
+        "complexity": "O(N+M) where N is the number of provided keys and M is the number of elements returned.",
+        "group": "list",
+        "since": "7.0.0",
+        "arity": -5,
+        "function": "blmpopCommand",
+        "get_keys_function": "blmpopGetKeys",
+        "command_flags": [
+            "write"
+        ],
+        "acl_categories": [
+            "write",
+            "list",
+            "slow",
+            "blocking"
+        ],
+        "key_specs": [
+            {
+                "flags": [
+                    "write"
+                ],
+                "begin_search": {
+                    "index": {
+                        "pos": 2
+                    }
+                },
+                "find_keys": {
+                    "keynum": {
+                        "keynumidx": 0,
+                        "firstkey": 1,
+                        "step": 1
+                    }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__115__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
+        "arguments": [
+            {
+                "name": "timeout",
+                "type": "double",
+                "value": "timeout"
+            },
+            {
+                "name": "numkeys",
+                "type": "integer",
+                "value": "numkeys"
+            },
+            {
+                "name": "key",
+                "type": "key",
+                "value": "key",
+                "multiple": true
+            },
+            {
+                "name": "where",
+                "type": "oneof",
+                "value": [
+                    {
+                        "name": "left",
+                        "type": "pure-token",
+                        "token": "LEFT"
+                    },
+                    {
+                        "name": "right",
+                        "type": "pure-token",
+                        "token": "RIGHT"
+                    }
+                ]
+            },
+            {
+                "token": "COUNT",
+                "name": "count",
+                "type": "integer",
+                "value": "count",
+                "optional": true
+            }
+        ]
+    },
     "BLPOP": {
         "summary": "Remove and get the first element in a list, or block until one is available",
         "complexity": "O(N) where N is the number of provided keys.",
@@ -1142,6 +1345,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__116__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -1198,6 +1410,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__117__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -1278,6 +1499,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__118__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "source",
@@ -1329,6 +1559,15 @@
                         "firstkey": 1,
                         "step": 1
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__119__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -1417,6 +1656,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__120__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -1474,6 +1722,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__122__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -1505,6 +1762,15 @@
             "slow",
             "connection"
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__121__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "mode",
@@ -1524,24 +1790,6 @@
             }
         ]
     },
-    "CLIENT GETREDIR": {
-        "summary": "Get tracking notifications redirection client ID if any",
-        "complexity": "O(1)",
-        "group": "connection",
-        "since": "6.0.0",
-        "arity": 2,
-        "container": "CLIENT",
-        "function": "clientCommand",
-        "command_flags": [
-            "noscript",
-            "loading",
-            "stale"
-        ],
-        "acl_categories": [
-            "slow",
-            "connection"
-        ]
-    },
     "CLIENT GETNAME": {
         "summary": "Get the current connection name",
         "complexity": "O(1)",
@@ -1558,13 +1806,49 @@
         "acl_categories": [
             "slow",
             "connection"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__124__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    },
+    "CLIENT GETREDIR": {
+        "summary": "Get tracking notifications redirection client ID if any",
+        "complexity": "O(1)",
+        "group": "connection",
+        "since": "6.0.0",
+        "arity": 2,
+        "container": "CLIENT",
+        "function": "clientCommand",
+        "command_flags": [
+            "noscript",
+            "loading",
+            "stale"
+        ],
+        "acl_categories": [
+            "slow",
+            "connection"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__123__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "CLIENT HELP": {
-        "summary": "Show helpful text about the different subcommands",
+        "summary": "__TBD__4__",
         "complexity": "O(1)",
         "group": "connection",
-        "since": "5.0.0",
+        "since": "__TBD__5__",
         "arity": 2,
         "container": "CLIENT",
         "function": "clientCommand",
@@ -1575,6 +1859,15 @@
         "acl_categories": [
             "slow",
             "connection"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__125__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "CLIENT ID": {
@@ -1593,6 +1886,15 @@
         "acl_categories": [
             "slow",
             "connection"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__126__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "CLIENT INFO": {
@@ -1612,6 +1914,15 @@
         "acl_categories": [
             "slow",
             "connection"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__127__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "CLIENT KILL": {
@@ -1655,6 +1966,15 @@
             "slow",
             "dangerous",
             "connection"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__128__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ],
         "arguments": [
             {
@@ -1763,6 +2083,15 @@
             "dangerous",
             "connection"
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__129__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "token": "TYPE",
@@ -1832,6 +2161,15 @@
             "dangerous",
             "connection"
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__130__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "enabled",
@@ -1881,6 +2219,15 @@
             "dangerous",
             "connection"
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__131__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "timeout",
@@ -1923,6 +2270,15 @@
             "slow",
             "connection"
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__132__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "on_off_skip",
@@ -1964,6 +2320,15 @@
             "slow",
             "connection"
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__133__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "connection-name",
@@ -1988,6 +2353,15 @@
         "acl_categories": [
             "slow",
             "connection"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__135__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ],
         "arguments": [
             {
@@ -2064,6 +2438,15 @@
         "acl_categories": [
             "slow",
             "connection"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__134__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "CLIENT UNBLOCK": {
@@ -2085,6 +2468,15 @@
             "slow",
             "dangerous",
             "connection"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__136__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ],
         "arguments": [
             {
@@ -2130,19 +2522,15 @@
             "slow",
             "dangerous",
             "connection"
-        ]
-    },
-    "CLIENT": {
-        "summary": "PATCH__TBD__80__",
-        "complexity": "Depends on subcommand.",
-        "group": "connection",
-        "since": "2.4.0",
-        "arity": -2,
-        "command_flags": [
-            "sentinel"
         ],
-        "acl_categories": [
-            "slow"
+        "returns": [
+            {
+                "description": "PATCH__TBD__137__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "CLUSTER ADDSLOTS": {
@@ -2162,6 +2550,15 @@
             "admin",
             "slow",
             "dangerous"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__139__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ],
         "arguments": [
             {
@@ -2189,6 +2586,15 @@
             "admin",
             "slow",
             "dangerous"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__140__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ],
         "arguments": [
             {
@@ -2227,6 +2633,15 @@
             "admin",
             "slow",
             "dangerous"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__141__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "CLUSTER COUNT-FAILURE-REPORTS": {
@@ -2247,11 +2662,52 @@
             "slow",
             "dangerous"
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__143__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "node-id",
                 "type": "string",
                 "value": "node-id"
+            }
+        ]
+    },
+    "CLUSTER COUNTKEYSINSLOT": {
+        "summary": "Return the number of local keys in the specified hash slot",
+        "complexity": "O(1)",
+        "group": "cluster",
+        "since": "3.0.0",
+        "arity": 3,
+        "container": "CLUSTER",
+        "function": "clusterCommand",
+        "command_flags": [
+            "random",
+            "stale"
+        ],
+        "acl_categories": [
+            "slow"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__142__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
+        "arguments": [
+            {
+                "name": "slot",
+                "type": "integer",
+                "value": "slot"
             }
         ]
     },
@@ -2273,35 +2729,21 @@
             "slow",
             "dangerous"
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__144__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "slot",
                 "type": "integer",
                 "value": "slot",
                 "multiple": true
-            }
-        ]
-    },
-    "CLUSTER COUNTKEYSINSLOT": {
-        "summary": "Return the number of local keys in the specified hash slot",
-        "complexity": "O(1)",
-        "group": "cluster",
-        "since": "3.0.0",
-        "arity": 3,
-        "container": "CLUSTER",
-        "function": "clusterCommand",
-        "command_flags": [
-            "random",
-            "stale"
-        ],
-        "acl_categories": [
-            "slow"
-        ],
-        "arguments": [
-            {
-                "name": "slot",
-                "type": "integer",
-                "value": "slot"
             }
         ]
     },
@@ -2322,6 +2764,15 @@
             "admin",
             "slow",
             "dangerous"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__145__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ],
         "arguments": [
             {
@@ -2361,6 +2812,15 @@
             "slow",
             "dangerous"
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__146__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "options",
@@ -2398,6 +2858,15 @@
             "admin",
             "slow",
             "dangerous"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__147__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "CLUSTER FORGET": {
@@ -2417,6 +2886,15 @@
             "admin",
             "slow",
             "dangerous"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__148__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ],
         "arguments": [
             {
@@ -2441,6 +2919,15 @@
         "acl_categories": [
             "slow"
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__149__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "slot",
@@ -2455,10 +2942,10 @@
         ]
     },
     "CLUSTER HELP": {
-        "summary": "Show helpful text about the different subcommands",
+        "summary": "__TBD__10__",
         "complexity": "O(1)",
         "group": "cluster",
-        "since": "5.0.0",
+        "since": "__TBD__11__",
         "arity": 2,
         "container": "CLUSTER",
         "function": "clusterCommand",
@@ -2468,6 +2955,15 @@
         ],
         "acl_categories": [
             "slow"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__150__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "CLUSTER INFO": {
@@ -2484,6 +2980,15 @@
         ],
         "acl_categories": [
             "slow"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__151__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "CLUSTER KEYSLOT": {
@@ -2500,6 +3005,15 @@
         ],
         "acl_categories": [
             "slow"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__152__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ],
         "arguments": [
             {
@@ -2526,6 +3040,15 @@
             "admin",
             "slow",
             "dangerous"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__153__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ],
         "arguments": [
             {
@@ -2554,6 +3077,15 @@
         ],
         "acl_categories": [
             "slow"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__154__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "CLUSTER NODES": {
@@ -2570,6 +3102,15 @@
         ],
         "acl_categories": [
             "slow"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__155__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "CLUSTER REPLICAS": {
@@ -2589,6 +3130,15 @@
             "admin",
             "slow",
             "dangerous"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__156__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ],
         "arguments": [
             {
@@ -2616,6 +3166,15 @@
             "slow",
             "dangerous"
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__157__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "node-id",
@@ -2641,6 +3200,15 @@
             "admin",
             "slow",
             "dangerous"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__158__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ],
         "arguments": [
             {
@@ -2679,6 +3247,15 @@
             "admin",
             "slow",
             "dangerous"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__159__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "CLUSTER SET-CONFIG-EPOCH": {
@@ -2698,6 +3275,15 @@
             "admin",
             "slow",
             "dangerous"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__160__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ],
         "arguments": [
             {
@@ -2724,6 +3310,15 @@
             "admin",
             "slow",
             "dangerous"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__161__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ],
         "arguments": [
             {
@@ -2785,57 +3380,22 @@
         ],
         "acl_categories": [
             "slow"
-        ]
-    },
-    "CLUSTER": {
-        "summary": "PATCH__TBD__84__",
-        "complexity": "Depends on subcommand.",
-        "group": "cluster",
-        "since": "3.0.0",
-        "arity": -2,
-        "acl_categories": [
-            "slow"
-        ]
-    },
-    "COMMAND COUNT": {
-        "summary": "Get total number of Redis commands",
-        "complexity": "O(1)",
-        "group": "server",
-        "since": "2.8.13",
-        "arity": 2,
-        "container": "COMMAND",
-        "function": "commandCountCommand",
-        "command_flags": [
-            "loading",
-            "stale"
         ],
-        "acl_categories": [
-            "slow",
-            "connection"
-        ]
-    },
-    "COMMAND GETKEYS": {
-        "summary": "Extract keys given a full Redis command",
-        "complexity": "O(N) where N is the number of arguments to the command",
-        "group": "server",
-        "since": "2.8.13",
-        "arity": -4,
-        "container": "COMMAND",
-        "function": "commandGetKeysCommand",
-        "command_flags": [
-            "loading",
-            "stale"
-        ],
-        "acl_categories": [
-            "slow",
-            "connection"
+        "returns": [
+            {
+                "description": "PATCH__TBD__162__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "COMMAND HELP": {
-        "summary": "Show helpful text about the different subcommands",
+        "summary": "__TBD__12__",
         "complexity": "O(1)",
         "group": "server",
-        "since": "5.0.0",
+        "since": "__TBD__13__",
         "arity": 2,
         "container": "COMMAND",
         "function": "commandHelpCommand",
@@ -2846,30 +3406,14 @@
         "acl_categories": [
             "slow",
             "connection"
-        ]
-    },
-    "COMMAND INFO": {
-        "summary": "Get array of specific Redis command details",
-        "complexity": "O(N) when N is number of commands to look up",
-        "group": "server",
-        "since": "2.8.13",
-        "arity": -3,
-        "container": "COMMAND",
-        "function": "commandInfoCommand",
-        "command_flags": [
-            "loading",
-            "stale"
         ],
-        "acl_categories": [
-            "slow",
-            "connection"
-        ],
-        "arguments": [
+        "returns": [
             {
-                "name": "command-name",
-                "type": "string",
-                "value": "command-name",
-                "multiple": true
+                "description": "PATCH__TBD__166__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
             }
         ]
     },
@@ -2888,6 +3432,15 @@
         "acl_categories": [
             "slow",
             "connection"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__168__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "COMMAND": {
@@ -2906,6 +3459,12 @@
         "acl_categories": [
             "slow",
             "connection"
+        ],
+        "return_types": [
+            {
+                "description": "nested list of command details.  Commands are returned",
+                "type": "array"
+            }
         ]
     },
     "CONFIG GET": {
@@ -2927,6 +3486,15 @@
             "slow",
             "dangerous"
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__170__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "parameter",
@@ -2936,10 +3504,10 @@
         ]
     },
     "CONFIG HELP": {
-        "summary": "Show helpful text about the different subcommands",
+        "summary": "__TBD__8__",
         "complexity": "O(1)",
         "group": "server",
-        "since": "5.0.0",
+        "since": "__TBD__9__",
         "arity": 2,
         "container": "CONFIG",
         "function": "configHelpCommand",
@@ -2949,6 +3517,15 @@
         ],
         "acl_categories": [
             "slow"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__171__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "CONFIG RESETSTAT": {
@@ -2968,6 +3545,15 @@
             "admin",
             "slow",
             "dangerous"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__172__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "CONFIG REWRITE": {
@@ -2987,6 +3573,15 @@
             "admin",
             "slow",
             "dangerous"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__173__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "CONFIG SET": {
@@ -3007,6 +3602,15 @@
             "slow",
             "dangerous"
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__174__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "parameter",
@@ -3018,16 +3622,6 @@
                 "type": "string",
                 "value": "value"
             }
-        ]
-    },
-    "CONFIG": {
-        "summary": "PATCH__TBD__82__",
-        "complexity": "Depends on subcommand.",
-        "group": "server",
-        "since": "2.0.0",
-        "arity": -2,
-        "acl_categories": [
-            "slow"
         ]
     },
     "COPY": {
@@ -3082,6 +3676,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__176__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "source",
@@ -3110,7 +3713,7 @@
     },
     "DBSIZE": {
         "summary": "Return the number of keys in the selected database",
-        "complexity": "PATCH__TBD__61__",
+        "complexity": "O(1)",
         "group": "server",
         "since": "1.0.0",
         "arity": 1,
@@ -3123,6 +3726,45 @@
             "keyspace",
             "read",
             "fast"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__177__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    },
+    "DEBUG": {
+        "summary": "A container for debugging commands",
+        "complexity": "Depends on subcommand.",
+        "group": "server",
+        "since": "1.0.0",
+        "arity": -2,
+        "function": "debugCommand",
+        "internal": true,
+        "command_flags": [
+            "admin",
+            "noscript",
+            "loading",
+            "stale",
+            "internal"
+        ],
+        "acl_categories": [
+            "admin",
+            "slow",
+            "dangerous"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__178__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "DECR": {
@@ -3161,33 +3803,21 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__179__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
                 "type": "key",
                 "value": "key"
             }
-        ]
-    },
-    "DEBUG": {
-        "summary": "PATCH__TBD__9__",
-        "complexity": "PATCH__TBD__8__",
-        "group": "server",
-        "since": "PATCH__TBD__10__",
-        "arity": -2,
-        "function": "debugCommand",
-        "internal": true,
-        "command_flags": [
-            "admin",
-            "noscript",
-            "loading",
-            "stale",
-            "internal"
-        ],
-        "acl_categories": [
-            "admin",
-            "slow",
-            "dangerous"
         ]
     },
     "DECRBY": {
@@ -3223,6 +3853,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__180__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -3273,6 +3912,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__181__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -3298,6 +3946,15 @@
         "acl_categories": [
             "fast",
             "transaction"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__183__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "DUMP": {
@@ -3335,6 +3992,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__182__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -3356,6 +4022,15 @@
         "acl_categories": [
             "fast",
             "connection"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__184__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ],
         "arguments": [
             {
@@ -3400,6 +4075,15 @@
                         "firstkey": 1,
                         "step": 1
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__185__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -3466,6 +4150,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__186__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "script",
@@ -3529,6 +4222,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__187__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "sha1",
@@ -3554,24 +4256,6 @@
                 "optional": true,
                 "multiple": true
             }
-        ]
-    },
-    "EXEC": {
-        "summary": "Execute all commands issued after MULTI",
-        "complexity": "PATCH__TBD__39__",
-        "group": "transactions",
-        "since": "1.2.0",
-        "arity": 1,
-        "function": "execCommand",
-        "command_flags": [
-            "noscript",
-            "loading",
-            "stale",
-            "skip_slowlog"
-        ],
-        "acl_categories": [
-            "slow",
-            "transaction"
         ]
     },
     "EVALSHA_RO": {
@@ -3610,6 +4294,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__188__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "sha1",
@@ -3632,6 +4325,33 @@
                 "type": "string",
                 "value": "arg",
                 "multiple": true
+            }
+        ]
+    },
+    "EXEC": {
+        "summary": "Execute all commands issued after MULTI",
+        "complexity": "PATCH__TBD__39__",
+        "group": "transactions",
+        "since": "1.2.0",
+        "arity": 1,
+        "function": "execCommand",
+        "command_flags": [
+            "noscript",
+            "loading",
+            "stale",
+            "skip_slowlog"
+        ],
+        "acl_categories": [
+            "slow",
+            "transaction"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__189__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
             }
         ]
     },
@@ -3667,6 +4387,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__190__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -3717,6 +4446,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__191__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -3801,6 +4539,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__192__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -3877,6 +4624,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__193__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -3901,6 +4657,15 @@
             "admin",
             "slow",
             "dangerous"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__194__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ],
         "arguments": [
             {
@@ -3972,6 +4737,15 @@
             "slow",
             "dangerous"
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__195__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "async",
@@ -4007,6 +4781,15 @@
             "write",
             "slow",
             "dangerous"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__196__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ],
         "arguments": [
             {
@@ -4066,6 +4849,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__197__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -4156,6 +4948,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__198__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -4235,6 +5036,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__199__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -4280,6 +5090,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__200__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -4374,6 +5193,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__201__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -4495,10 +5323,10 @@
         ]
     },
     "GEORADIUS_RO": {
-        "summary": "PATCH__TBD__6__",
-        "complexity": "PATCH__TBD__5__",
+        "summary": "A read-only variant for GEORADIUS",
+        "complexity": "O(N+log(M)) where N is the number of elements inside the bounding box of the circular area delimited by center and radius and M is the number of items inside the index.",
         "group": "geo",
-        "since": "PATCH__TBD__7__",
+        "since": "5.0.0",
         "arity": -6,
         "function": "georadiusroCommand",
         "until": "6.2.0",
@@ -4527,6 +5355,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__202__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ]
@@ -4602,6 +5439,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__203__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -4718,10 +5564,10 @@
         ]
     },
     "GEORADIUSBYMEMBER_RO": {
-        "summary": "PATCH__TBD__15__",
-        "complexity": "PATCH__TBD__14__",
+        "summary": "A read-only variant for GEORADIUSBYMEMBER",
+        "complexity": "O(N+log(M)) where N is the number of elements inside the bounding box of the circular area delimited by center and radius and M is the number of items inside the index.",
         "group": "geo",
-        "since": "PATCH__TBD__16__",
+        "since": "5.0.0",
         "arity": -5,
         "function": "georadiusbymemberroCommand",
         "until": "6.2.0",
@@ -4750,6 +5596,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__204__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ]
@@ -4785,6 +5640,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__205__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -5010,6 +5874,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__206__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "destination",
@@ -5208,6 +6081,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__207__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -5248,6 +6130,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__208__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -5299,6 +6190,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__209__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -5339,6 +6239,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__210__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -5420,6 +6329,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__211__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -5477,6 +6395,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__212__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -5525,6 +6452,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__213__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -5563,6 +6499,15 @@
         "acl_categories": [
             "fast",
             "connection"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__214__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ],
         "arguments": [
             {
@@ -5639,6 +6584,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__215__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -5684,6 +6638,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__216__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -5735,6 +6698,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__217__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -5776,6 +6748,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__218__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -5833,6 +6814,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__219__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -5886,6 +6876,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__220__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -5929,6 +6928,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__221__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -5969,6 +6977,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__222__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -6024,6 +7041,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__223__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -6067,6 +7093,15 @@
         "acl_categories": [
             "read",
             "slow"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__224__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "HRANDFIELD": {
@@ -6101,6 +7136,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__225__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -6162,6 +7206,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__226__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -6228,6 +7281,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__227__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -6289,6 +7351,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__228__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -6342,6 +7413,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__229__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -6390,6 +7470,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__230__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -6434,6 +7523,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__231__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -6475,6 +7573,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__232__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -6527,6 +7634,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__233__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -6537,31 +7653,6 @@
                 "name": "increment",
                 "type": "double",
                 "value": "increment"
-            }
-        ]
-    },
-    "KEYS": {
-        "summary": "Find all keys matching the given pattern",
-        "complexity": "O(N) with N being the number of keys in the database, under the assumption that the key names in the database and the given pattern have limited length.",
-        "group": "generic",
-        "since": "1.0.0",
-        "arity": 2,
-        "function": "keysCommand",
-        "command_flags": [
-            "readonly",
-            "sort_for_script"
-        ],
-        "acl_categories": [
-            "keyspace",
-            "read",
-            "slow",
-            "dangerous"
-        ],
-        "arguments": [
-            {
-                "name": "pattern",
-                "type": "pattern",
-                "value": "pattern"
             }
         ]
     },
@@ -6582,12 +7673,55 @@
             "slow",
             "dangerous"
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__235__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "section",
                 "type": "string",
                 "value": "section",
                 "optional": true
+            }
+        ]
+    },
+    "KEYS": {
+        "summary": "Find all keys matching the given pattern",
+        "complexity": "O(N) with N being the number of keys in the database, under the assumption that the key names in the database and the given pattern have limited length.",
+        "group": "generic",
+        "since": "1.0.0",
+        "arity": 2,
+        "function": "keysCommand",
+        "command_flags": [
+            "readonly",
+            "sort_for_script"
+        ],
+        "acl_categories": [
+            "keyspace",
+            "read",
+            "slow",
+            "dangerous"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__234__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
+        "arguments": [
+            {
+                "name": "pattern",
+                "type": "pattern",
+                "value": "pattern"
             }
         ]
     },
@@ -6608,6 +7742,15 @@
             "admin",
             "fast",
             "dangerous"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__236__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "LATENCY DOCTOR": {
@@ -6628,6 +7771,15 @@
             "admin",
             "slow",
             "dangerous"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__237__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "LATENCY GRAPH": {
@@ -6648,6 +7800,15 @@
             "admin",
             "slow",
             "dangerous"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__238__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ],
         "arguments": [
             {
@@ -6671,6 +7832,15 @@
         ],
         "acl_categories": [
             "slow"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__239__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "LATENCY HISTORY": {
@@ -6691,6 +7861,15 @@
             "admin",
             "slow",
             "dangerous"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__240__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ],
         "arguments": [
             {
@@ -6718,6 +7897,15 @@
             "admin",
             "slow",
             "dangerous"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__241__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "LATENCY RESET": {
@@ -6739,6 +7927,15 @@
             "slow",
             "dangerous"
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__242__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "event",
@@ -6747,16 +7944,6 @@
                 "optional": true,
                 "multiple": true
             }
-        ]
-    },
-    "LATENCY": {
-        "summary": "PATCH__TBD__81__",
-        "complexity": "Depends on subcommand.",
-        "group": "server",
-        "since": "2.8.13",
-        "arity": -2,
-        "acl_categories": [
-            "slow"
         ]
     },
     "LINDEX": {
@@ -6790,6 +7977,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__244__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -6838,6 +8034,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__245__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -6910,6 +8115,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__247__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -6968,6 +8182,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__246__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -7051,6 +8274,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__248__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "numkeys",
@@ -7103,6 +8335,15 @@
             "read",
             "fast"
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__249__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "token": "VERSION",
@@ -7154,6 +8395,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__250__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -7199,6 +8449,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__251__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -7278,6 +8537,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__252__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -7334,6 +8602,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__253__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -7379,6 +8656,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__254__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -7431,6 +8717,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__256__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -7487,6 +8782,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__255__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -7539,6 +8843,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__257__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -7570,6 +8883,15 @@
         ],
         "acl_categories": [
             "slow"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__258__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "MEMORY HELP": {
@@ -7586,6 +8908,15 @@
         ],
         "acl_categories": [
             "slow"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__259__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "MEMORY MALLOC-STATS": {
@@ -7601,6 +8932,15 @@
         ],
         "acl_categories": [
             "slow"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__260__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "MEMORY PURGE": {
@@ -7613,6 +8953,15 @@
         "function": "memoryCommand",
         "acl_categories": [
             "slow"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__261__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "MEMORY STATS": {
@@ -7628,6 +8977,15 @@
         ],
         "acl_categories": [
             "slow"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__262__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "MEMORY USAGE": {
@@ -7664,6 +9022,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__264__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -7677,16 +9044,6 @@
                 "value": "count",
                 "optional": true
             }
-        ]
-    },
-    "MEMORY": {
-        "summary": "PATCH__TBD__87__",
-        "complexity": "Depends on subcommand.",
-        "group": "server",
-        "since": "4.0.0",
-        "arity": -2,
-        "acl_categories": [
-            "slow"
         ]
     },
     "MGET": {
@@ -7721,6 +9078,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__265__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -7804,6 +9170,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__266__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -7892,10 +9267,10 @@
         ]
     },
     "MODULE HELP": {
-        "summary": "Show helpful text about the different subcommands",
+        "summary": "__TBD__6__",
         "complexity": "O(1)",
         "group": "server",
-        "since": "5.0.0",
+        "since": "__TBD__7__",
         "arity": 2,
         "container": "MODULE",
         "function": "moduleCommand",
@@ -7905,6 +9280,15 @@
         ],
         "acl_categories": [
             "slow"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__267__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "MODULE LIST": {
@@ -7923,6 +9307,15 @@
             "admin",
             "slow",
             "dangerous"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__268__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "MODULE LOAD": {
@@ -7941,6 +9334,15 @@
             "admin",
             "slow",
             "dangerous"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__269__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ],
         "arguments": [
             {
@@ -7974,22 +9376,21 @@
             "slow",
             "dangerous"
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__270__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "name",
                 "type": "string",
                 "value": "name"
             }
-        ]
-    },
-    "MODULE": {
-        "summary": "PATCH__TBD__86__",
-        "complexity": "Depends on subcommand.",
-        "group": "server",
-        "since": "4.0.0",
-        "arity": -2,
-        "acl_categories": [
-            "slow"
         ]
     },
     "MONITOR": {
@@ -8023,6 +9424,15 @@
             "admin",
             "slow",
             "dangerous"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__273__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "MOVE": {
@@ -8057,6 +9467,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__272__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -8105,6 +9524,15 @@
                         "step": 2,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__274__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -8163,6 +9591,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__275__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key_value",
@@ -8199,6 +9636,15 @@
         "acl_categories": [
             "fast",
             "transaction"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__276__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "OBJECT ENCODING": {
@@ -8233,6 +9679,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__277__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -8280,6 +9735,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__278__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -8303,6 +9767,15 @@
         "acl_categories": [
             "keyspace",
             "slow"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__279__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "OBJECT IDLETIME": {
@@ -8338,6 +9811,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__280__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -8384,22 +9866,21 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__281__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
                 "type": "key",
                 "value": "key"
             }
-        ]
-    },
-    "OBJECT": {
-        "summary": "PATCH__TBD__88__",
-        "complexity": "Depends on subcommand.",
-        "group": "generic",
-        "since": "2.2.3",
-        "arity": -2,
-        "acl_categories": [
-            "slow"
         ]
     },
     "PERSIST": {
@@ -8434,6 +9915,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__283__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -8483,6 +9973,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__284__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -8567,6 +10066,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__285__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -8643,6 +10151,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__286__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -8684,6 +10201,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__287__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -8737,6 +10263,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__288__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -8747,10 +10282,10 @@
         ]
     },
     "PFDEBUG": {
-        "summary": "PATCH__TBD__12__",
-        "complexity": "PATCH__TBD__11__",
+        "summary": "Internal commands for debugging HyperLogLog values",
+        "complexity": "N/A",
         "group": "hyperloglog",
-        "since": "PATCH__TBD__13__",
+        "since": "2.8.9",
         "arity": -3,
         "function": "pfdebugCommand",
         "internal": true,
@@ -8784,6 +10319,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__289__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ]
@@ -8841,6 +10385,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__290__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "destkey",
@@ -8852,6 +10405,35 @@
                 "type": "key",
                 "value": "sourcekey",
                 "multiple": true
+            }
+        ]
+    },
+    "PFSELFTEST": {
+        "summary": "An internal command for testing HyperLogLog values",
+        "complexity": "N/A",
+        "group": "hyperloglog",
+        "since": "2.8.9",
+        "arity": 1,
+        "function": "pfselftestCommand",
+        "internal": true,
+        "undocumented": true,
+        "command_flags": [
+            "admin",
+            "internal"
+        ],
+        "acl_categories": [
+            "hyperloglog",
+            "admin",
+            "slow",
+            "dangerous"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__291__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
             }
         ]
     },
@@ -8871,6 +10453,15 @@
             "fast",
             "connection"
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__292__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "message",
@@ -8878,26 +10469,6 @@
                 "value": "message",
                 "optional": true
             }
-        ]
-    },
-    "PFSELFTEST": {
-        "summary": "PATCH__TBD__21__",
-        "complexity": "PATCH__TBD__20__",
-        "group": "hyperloglog",
-        "since": "PATCH__TBD__22__",
-        "arity": 1,
-        "function": "pfselftestCommand",
-        "internal": true,
-        "undocumented": true,
-        "command_flags": [
-            "admin",
-            "internal"
-        ],
-        "acl_categories": [
-            "hyperloglog",
-            "admin",
-            "slow",
-            "dangerous"
         ]
     },
     "POST": {
@@ -8918,6 +10489,15 @@
         "acl_categories": [
             "read",
             "slow"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__293__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "PSETEX": {
@@ -8952,6 +10532,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__294__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -8991,6 +10580,15 @@
             "pubsub",
             "slow"
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__295__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "pattern",
@@ -9021,6 +10619,15 @@
             "admin",
             "slow",
             "dangerous"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__296__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ],
         "arguments": [
             {
@@ -9071,37 +10678,20 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__297__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
                 "type": "key",
                 "value": "key"
-            }
-        ]
-    },
-    "PUBSUB CHANNELS": {
-        "summary": "List active channels",
-        "complexity": "O(N) where N is the number of active channels, and assuming constant time pattern matching (relatively short channels and patterns)",
-        "group": "pubsub",
-        "since": "2.8.0",
-        "arity": -2,
-        "container": "PUBSUB",
-        "function": "pubsubCommand",
-        "command_flags": [
-            "pubsub",
-            "loading",
-            "stale"
-        ],
-        "acl_categories": [
-            "pubsub",
-            "slow"
-        ],
-        "arguments": [
-            {
-                "name": "pattern",
-                "type": "string",
-                "value": "pattern",
-                "optional": true
             }
         ]
     },
@@ -9124,6 +10714,15 @@
             "pubsub",
             "fast"
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__298__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "channel",
@@ -9134,6 +10733,41 @@
                 "name": "message",
                 "type": "string",
                 "value": "message"
+            }
+        ]
+    },
+    "PUBSUB CHANNELS": {
+        "summary": "List active channels",
+        "complexity": "O(N) where N is the number of active channels, and assuming constant time pattern matching (relatively short channels and patterns)",
+        "group": "pubsub",
+        "since": "2.8.0",
+        "arity": -2,
+        "container": "PUBSUB",
+        "function": "pubsubCommand",
+        "command_flags": [
+            "pubsub",
+            "loading",
+            "stale"
+        ],
+        "acl_categories": [
+            "pubsub",
+            "slow"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__299__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
+        "arguments": [
+            {
+                "name": "pattern",
+                "type": "string",
+                "value": "pattern",
+                "optional": true
             }
         ]
     },
@@ -9151,6 +10785,15 @@
         ],
         "acl_categories": [
             "slow"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__301__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "PUBSUB NUMPAT": {
@@ -9169,6 +10812,15 @@
         "acl_categories": [
             "pubsub",
             "slow"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__300__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "PUBSUB NUMSUB": {
@@ -9188,6 +10840,15 @@
             "pubsub",
             "slow"
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__302__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "channel",
@@ -9196,16 +10857,6 @@
                 "optional": true,
                 "multiple": true
             }
-        ]
-    },
-    "PUBSUB": {
-        "summary": "PATCH__TBD__78__",
-        "complexity": "Depends on subcommand.",
-        "group": "pubsub",
-        "since": "2.8.0",
-        "arity": -2,
-        "acl_categories": [
-            "slow"
         ]
     },
     "PUNSUBSCRIBE": {
@@ -9225,6 +10876,15 @@
         "acl_categories": [
             "pubsub",
             "slow"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__304__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ],
         "arguments": [
             {
@@ -9251,6 +10911,15 @@
             "keyspace",
             "read",
             "slow"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__305__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "READONLY": {
@@ -9266,6 +10935,15 @@
         "acl_categories": [
             "fast",
             "connection"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__306__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "READWRITE": {
@@ -9281,6 +10959,15 @@
         "acl_categories": [
             "fast",
             "connection"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__307__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "RENAME": {
@@ -9314,6 +11001,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__308__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -9365,6 +11061,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__309__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -9375,6 +11080,37 @@
                 "name": "newkey",
                 "type": "key",
                 "value": "newkey"
+            }
+        ]
+    },
+    "REPLCONF": {
+        "summary": "An internal command for configuring the replication stream",
+        "complexity": "PATCH__TBD__26__",
+        "group": "server",
+        "since": "PATCH__TBD__28__",
+        "arity": -1,
+        "function": "replconfCommand",
+        "internal": true,
+        "undocumented": true,
+        "command_flags": [
+            "admin",
+            "noscript",
+            "loading",
+            "stale",
+            "internal"
+        ],
+        "acl_categories": [
+            "admin",
+            "slow",
+            "dangerous"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__310__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
             }
         ]
     },
@@ -9395,6 +11131,15 @@
             "slow",
             "dangerous"
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__311__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "host",
@@ -9406,28 +11151,6 @@
                 "type": "string",
                 "value": "port"
             }
-        ]
-    },
-    "REPLCONF": {
-        "summary": "PATCH__TBD__27__",
-        "complexity": "PATCH__TBD__26__",
-        "group": "server",
-        "since": "PATCH__TBD__28__",
-        "arity": -1,
-        "function": "replconfCommand",
-        "internal": true,
-        "undocumented": true,
-        "command_flags": [
-            "admin",
-            "noscript",
-            "loading",
-            "stale",
-            "internal"
-        ],
-        "acl_categories": [
-            "admin",
-            "slow",
-            "dangerous"
         ]
     },
     "RESET": {
@@ -9446,10 +11169,19 @@
         "acl_categories": [
             "fast",
             "connection"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__312__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "RESTORE-ASKING": {
-        "summary": "PATCH__TBD__18__",
+        "summary": "An internal command for migrating keys in a cluster",
         "complexity": "PATCH__TBD__17__",
         "group": "server",
         "since": "PATCH__TBD__19__",
@@ -9487,6 +11219,15 @@
                     }
                 }
             }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__314__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "RESTORE": {
@@ -9522,6 +11263,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__313__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -9587,6 +11337,15 @@
             "admin",
             "fast",
             "dangerous"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__315__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "RPOP": {
@@ -9627,6 +11386,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__316__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -9699,6 +11467,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__317__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "source",
@@ -9751,6 +11528,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__318__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -9810,6 +11596,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__319__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -9866,6 +11661,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__320__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -9895,6 +11699,15 @@
             "admin",
             "slow",
             "dangerous"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__321__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "SCAN": {
@@ -9912,6 +11725,15 @@
             "keyspace",
             "read",
             "slow"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__322__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ],
         "arguments": [
             {
@@ -9977,6 +11799,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__323__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -9999,6 +11830,15 @@
         "acl_categories": [
             "slow",
             "scripting"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__324__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ],
         "arguments": [
             {
@@ -10039,6 +11879,15 @@
             "slow",
             "scripting"
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__325__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "sha1",
@@ -10070,6 +11919,15 @@
             "slow",
             "scripting"
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__326__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "async",
@@ -10091,10 +11949,10 @@
         ]
     },
     "SCRIPT HELP": {
-        "summary": "Show helpful text about the different subcommands",
+        "summary": "__TBD__2__",
         "complexity": "O(1)",
         "group": "scripting",
-        "since": "5.0.0",
+        "since": "__TBD__3__",
         "arity": 2,
         "container": "SCRIPT",
         "function": "scriptCommand",
@@ -10105,6 +11963,15 @@
         "acl_categories": [
             "slow",
             "scripting"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__327__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "SCRIPT KILL": {
@@ -10121,6 +11988,15 @@
         "acl_categories": [
             "slow",
             "scripting"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__328__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "SCRIPT LOAD": {
@@ -10139,22 +12015,21 @@
             "slow",
             "scripting"
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__329__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "script",
                 "type": "string",
                 "value": "script"
             }
-        ]
-    },
-    "SCRIPT": {
-        "summary": "PATCH__TBD__83__",
-        "complexity": "Depends on subcommand.",
-        "group": "scripting",
-        "since": "2.6.0",
-        "arity": -2,
-        "acl_categories": [
-            "slow"
         ]
     },
     "SDIFF": {
@@ -10189,6 +12064,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__331__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -10253,6 +12137,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__332__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "destination",
@@ -10282,6 +12175,15 @@
         "acl_categories": [
             "fast",
             "connection"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__333__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ],
         "arguments": [
             {
@@ -10342,6 +12244,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__334__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -10452,6 +12363,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__335__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -10502,6 +12422,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__336__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -10559,6 +12488,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__337__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -10607,6 +12545,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__338__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -10643,6 +12590,15 @@
             "admin",
             "slow",
             "dangerous"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__339__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ],
         "arguments": [
             {
@@ -10699,6 +12655,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__340__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -10740,6 +12705,15 @@
                         "firstkey": 1,
                         "step": 1
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__341__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -10816,6 +12790,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__342__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "destination",
@@ -10865,6 +12848,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__343__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -10894,6 +12886,15 @@
             "admin",
             "slow",
             "dangerous"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__344__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ],
         "arguments": [
             {
@@ -10933,6 +12934,15 @@
             "slow",
             "dangerous"
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__345__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "count",
@@ -10956,6 +12966,15 @@
         ],
         "acl_categories": [
             "slow"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__346__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "SLOWLOG LEN": {
@@ -10976,6 +12995,15 @@
             "admin",
             "slow",
             "dangerous"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__347__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "SLOWLOG RESET": {
@@ -10995,16 +13023,15 @@
             "admin",
             "slow",
             "dangerous"
-        ]
-    },
-    "SLOWLOG": {
-        "summary": "PATCH__TBD__89__",
-        "complexity": "Depends on subcommand.",
-        "group": "server",
-        "since": "2.2.12",
-        "arity": -2,
-        "acl_categories": [
-            "slow"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__348__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "SMEMBERS": {
@@ -11039,6 +13066,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__349__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -11082,6 +13118,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__351__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -11152,6 +13197,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__352__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "source",
@@ -11218,6 +13272,15 @@
                 },
                 "find_keys": {
                     "unknown": null
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__353__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -11293,62 +13356,6 @@
             }
         ]
     },
-    "SPOP": {
-        "summary": "Remove and return one or multiple random members from a set",
-        "complexity": "Without the count argument O(1), otherwise O(N) where N is the value of the passed count.",
-        "group": "set",
-        "since": "1.0.0",
-        "arity": -2,
-        "function": "spopCommand",
-        "history": [
-            [
-                "3.2",
-                "Added the `count` argument."
-            ]
-        ],
-        "command_flags": [
-            "write",
-            "random",
-            "fast"
-        ],
-        "acl_categories": [
-            "write",
-            "set",
-            "fast"
-        ],
-        "key_specs": [
-            {
-                "flags": [
-                    "write"
-                ],
-                "begin_search": {
-                    "index": {
-                        "pos": 1
-                    }
-                },
-                "find_keys": {
-                    "range": {
-                        "lastkey": 0,
-                        "step": 1,
-                        "limit": 0
-                    }
-                }
-            }
-        ],
-        "arguments": [
-            {
-                "name": "key",
-                "type": "key",
-                "value": "key"
-            },
-            {
-                "name": "count",
-                "type": "integer",
-                "value": "count",
-                "optional": true
-            }
-        ]
-    },
     "SORT_RO": {
         "summary": "Sort the elements in a list, set or sorted set. Read-only variant of SORT.",
         "complexity": "O(N+M*log(M)) where N is the number of elements in the list or set to sort, and M the number of returned elements. When the elements are not sorted, complexity is O(N).",
@@ -11383,6 +13390,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__354__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -11451,6 +13467,71 @@
             }
         ]
     },
+    "SPOP": {
+        "summary": "Remove and return one or multiple random members from a set",
+        "complexity": "Without the count argument O(1), otherwise O(N) where N is the value of the passed count.",
+        "group": "set",
+        "since": "1.0.0",
+        "arity": -2,
+        "function": "spopCommand",
+        "history": [
+            [
+                "3.2",
+                "Added the `count` argument."
+            ]
+        ],
+        "command_flags": [
+            "write",
+            "random",
+            "fast"
+        ],
+        "acl_categories": [
+            "write",
+            "set",
+            "fast"
+        ],
+        "key_specs": [
+            {
+                "flags": [
+                    "write"
+                ],
+                "begin_search": {
+                    "index": {
+                        "pos": 1
+                    }
+                },
+                "find_keys": {
+                    "range": {
+                        "lastkey": 0,
+                        "step": 1,
+                        "limit": 0
+                    }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__355__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
+        "arguments": [
+            {
+                "name": "key",
+                "type": "key",
+                "value": "key"
+            },
+            {
+                "name": "count",
+                "type": "integer",
+                "value": "count",
+                "optional": true
+            }
+        ]
+    },
     "SRANDMEMBER": {
         "summary": "Get one or multiple random members from a set",
         "complexity": "Without the count argument O(1), otherwise O(N) where N is the absolute value of the passed count.",
@@ -11489,6 +13570,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__357__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -11547,6 +13637,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__356__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -11596,6 +13695,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__358__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -11638,6 +13746,15 @@
         "acl_categories": [
             "string",
             "slow"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__359__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "STRALGO LCS": {
@@ -11670,28 +13787,14 @@
                     "unknown": null
                 }
             }
-        ]
-    },
-    "STRALGO": {
-        "summary": "Run algorithms (currently LCS) against strings",
-        "complexity": "For LCS O(strlen(s1)*strlen(s2))",
-        "group": "string",
-        "since": "6.0.0",
-        "arity": -2,
-        "acl_categories": [
-            "slow"
         ],
-        "arguments": [
+        "returns": [
             {
-                "name": "algorithm",
-                "token": "LCS",
-                "type": "pure-token"
-            },
-            {
-                "name": "algo-specific-argument",
-                "type": "string",
-                "value": "algo-specific-argument",
-                "multiple": true
+                "description": "PATCH__TBD__360__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
             }
         ]
     },
@@ -11730,6 +13833,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__362__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -11762,6 +13874,15 @@
             "pubsub",
             "slow"
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__363__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "channel",
@@ -11772,15 +13893,21 @@
         ]
     },
     "SUBSTR": {
-        "summary": "PATCH__TBD__33__",
-        "complexity": "PATCH__TBD__32__",
+        "summary": "Get a substring of the string stored at a key",
+        "complexity": "O(N) where N is the length of the returned string. The complexity is ultimately determined by the returned length, but because creating a substring from an existing string is very cheap, it can be considered O(1) for small strings.",
         "group": "string",
-        "since": "PATCH__TBD__34__",
+        "since": "__TBD__14__",
         "arity": 4,
         "function": "getrangeCommand",
-        "until": "2.4.0",
+        "until": "2.0.0",
         "replaced_by": "`GETRANGE`",
         "undocumented": true,
+        "history": [
+            [
+                "2.0.0",
+                "the command has been deprecated and replaced by `GETRANGE`."
+            ]
+        ],
         "command_flags": [
             "readonly"
         ],
@@ -11805,6 +13932,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__364__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ]
@@ -11841,6 +13977,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__365__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -11905,6 +14050,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__366__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "destination",
@@ -11936,6 +14090,15 @@
             "fast",
             "dangerous"
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__367__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "index1",
@@ -11964,6 +14127,15 @@
             "admin",
             "slow",
             "dangerous"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__368__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "TIME": {
@@ -11981,6 +14153,15 @@
         ],
         "acl_categories": [
             "fast"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__369__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "TOUCH": {
@@ -12015,6 +14196,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__370__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -12063,6 +14253,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__371__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -12103,6 +14302,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__372__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -12149,6 +14357,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__373__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -12176,6 +14393,15 @@
             "pubsub",
             "slow"
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__374__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "channel",
@@ -12202,6 +14428,15 @@
         "acl_categories": [
             "fast",
             "transaction"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__375__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "WAIT": {
@@ -12217,6 +14452,15 @@
         "acl_categories": [
             "slow",
             "connection"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__377__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ],
         "arguments": [
             {
@@ -12264,6 +14508,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__376__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -12306,6 +14559,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__378__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -12368,6 +14630,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__379__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -12506,6 +14777,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__380__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -12580,6 +14860,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__381__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -12680,6 +14969,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__382__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -12727,6 +15025,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__383__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -12801,6 +15108,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__384__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -12851,6 +15167,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__385__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -12907,6 +15232,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__386__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -12935,16 +15269,15 @@
         "acl_categories": [
             "stream",
             "slow"
-        ]
-    },
-    "XGROUP": {
-        "summary": "PATCH__TBD__85__",
-        "complexity": "Depends on subcommand.",
-        "group": "stream",
-        "since": "5.0.0",
-        "arity": -2,
-        "acl_categories": [
-            "slow"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__387__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "XGROUP SETID": {
@@ -12979,6 +15312,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__388__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -13036,6 +15378,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__392__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -13084,6 +15435,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__390__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -13107,6 +15467,15 @@
         "acl_categories": [
             "stream",
             "slow"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__391__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
         ]
     },
     "XINFO STREAM": {
@@ -13144,6 +15513,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__393__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -13169,16 +15547,6 @@
                 ],
                 "optional": true
             }
-        ]
-    },
-    "XINFO": {
-        "summary": "PATCH__TBD__79__",
-        "complexity": "Depends on subcommand.",
-        "group": "stream",
-        "since": "5.0.0",
-        "arity": -2,
-        "acl_categories": [
-            "slow"
         ]
     },
     "XLEN": {
@@ -13213,6 +15581,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__395__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -13262,6 +15639,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__396__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -13347,6 +15733,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__397__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -13406,6 +15801,15 @@
                         "step": 1,
                         "limit": 2
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__398__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -13477,6 +15881,15 @@
                         "step": 1,
                         "limit": 2
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__399__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -13571,6 +15984,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__400__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -13597,10 +16019,10 @@
         ]
     },
     "XSETID": {
-        "summary": "PATCH__TBD__30__",
-        "complexity": "PATCH__TBD__29__",
+        "summary": "An internal command for replicating stream values",
+        "complexity": "O(1)",
         "group": "stream",
-        "since": "PATCH__TBD__31__",
+        "since": "5.0.0",
         "arity": 3,
         "function": "xsetidCommand",
         "internal": true,
@@ -13632,6 +16054,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__401__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ]
@@ -13674,6 +16105,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__402__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -13786,6 +16226,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__403__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -13892,6 +16341,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__404__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -13932,6 +16390,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__405__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -13985,6 +16452,15 @@
                         "firstkey": 1,
                         "step": 1
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__406__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -14061,6 +16537,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__407__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "destination",
@@ -14116,6 +16601,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__408__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -14166,6 +16660,15 @@
                         "firstkey": 1,
                         "step": 1
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__409__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -14255,6 +16758,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__410__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "numkeys",
@@ -14326,6 +16838,15 @@
                         "firstkey": 1,
                         "step": 1
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__411__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -14414,6 +16935,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__412__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -14464,6 +16994,15 @@
                         "firstkey": 1,
                         "step": 1
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__413__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -14539,6 +17078,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__414__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -14550,6 +17098,64 @@
                 "type": "string",
                 "value": "member",
                 "multiple": true
+            }
+        ]
+    },
+    "ZPOPMAX": {
+        "summary": "Remove and return members with the highest scores in a sorted set",
+        "complexity": "O(log(N)*M) with N being the number of elements in the sorted set, and M being the number of elements popped.",
+        "group": "sorted_set",
+        "since": "5.0.0",
+        "arity": -2,
+        "function": "zpopmaxCommand",
+        "command_flags": [
+            "write",
+            "fast"
+        ],
+        "acl_categories": [
+            "write",
+            "sortedset",
+            "fast"
+        ],
+        "key_specs": [
+            {
+                "flags": [
+                    "write"
+                ],
+                "begin_search": {
+                    "index": {
+                        "pos": 1
+                    }
+                },
+                "find_keys": {
+                    "range": {
+                        "lastkey": 0,
+                        "step": 1,
+                        "limit": 0
+                    }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__415__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
+        "arguments": [
+            {
+                "name": "key",
+                "type": "key",
+                "value": "key"
+            },
+            {
+                "name": "count",
+                "type": "integer",
+                "value": "count",
+                "optional": true
             }
         ]
     },
@@ -14588,52 +17194,12 @@
                 }
             }
         ],
-        "arguments": [
+        "returns": [
             {
-                "name": "key",
-                "type": "key",
-                "value": "key"
-            },
-            {
-                "name": "count",
-                "type": "integer",
-                "value": "count",
-                "optional": true
-            }
-        ]
-    },
-    "ZPOPMAX": {
-        "summary": "Remove and return members with the highest scores in a sorted set",
-        "complexity": "O(log(N)*M) with N being the number of elements in the sorted set, and M being the number of elements popped.",
-        "group": "sorted_set",
-        "since": "5.0.0",
-        "arity": -2,
-        "function": "zpopmaxCommand",
-        "command_flags": [
-            "write",
-            "fast"
-        ],
-        "acl_categories": [
-            "write",
-            "sortedset",
-            "fast"
-        ],
-        "key_specs": [
-            {
-                "flags": [
-                    "write"
-                ],
-                "begin_search": {
-                    "index": {
-                        "pos": 1
-                    }
-                },
-                "find_keys": {
-                    "range": {
-                        "lastkey": 0,
-                        "step": 1,
-                        "limit": 0
-                    }
+                "description": "PATCH__TBD__416__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -14683,6 +17249,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__417__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -14749,6 +17324,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__418__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -14853,6 +17437,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__419__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -14922,6 +17515,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__420__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -15016,6 +17618,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__421__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -15118,6 +17729,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__422__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -15172,6 +17792,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__423__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -15217,6 +17846,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__424__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -15272,6 +17910,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__425__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -15287,6 +17934,67 @@
                 "name": "stop",
                 "type": "integer",
                 "value": "stop"
+            }
+        ]
+    },
+    "ZREMRANGEBYSCORE": {
+        "summary": "Remove all members in a sorted set within the given scores",
+        "complexity": "O(log(N)+M) with N being the number of elements in the sorted set and M the number of elements removed by the operation.",
+        "group": "sorted_set",
+        "since": "1.2.0",
+        "arity": 4,
+        "function": "zremrangebyscoreCommand",
+        "command_flags": [
+            "write"
+        ],
+        "acl_categories": [
+            "write",
+            "sortedset",
+            "slow"
+        ],
+        "key_specs": [
+            {
+                "flags": [
+                    "write"
+                ],
+                "begin_search": {
+                    "index": {
+                        "pos": 1
+                    }
+                },
+                "find_keys": {
+                    "range": {
+                        "lastkey": 0,
+                        "step": 1,
+                        "limit": 0
+                    }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__426__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
+        "arguments": [
+            {
+                "name": "key",
+                "type": "key",
+                "value": "key"
+            },
+            {
+                "name": "min",
+                "type": "double",
+                "value": "min"
+            },
+            {
+                "name": "max",
+                "type": "double",
+                "value": "max"
             }
         ]
     },
@@ -15326,6 +18034,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__427__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -15347,58 +18064,6 @@
                 "token": "WITHSCORES",
                 "type": "pure-token",
                 "optional": true
-            }
-        ]
-    },
-    "ZREMRANGEBYSCORE": {
-        "summary": "Remove all members in a sorted set within the given scores",
-        "complexity": "O(log(N)+M) with N being the number of elements in the sorted set and M the number of elements removed by the operation.",
-        "group": "sorted_set",
-        "since": "1.2.0",
-        "arity": 4,
-        "function": "zremrangebyscoreCommand",
-        "command_flags": [
-            "write"
-        ],
-        "acl_categories": [
-            "write",
-            "sortedset",
-            "slow"
-        ],
-        "key_specs": [
-            {
-                "flags": [
-                    "write"
-                ],
-                "begin_search": {
-                    "index": {
-                        "pos": 1
-                    }
-                },
-                "find_keys": {
-                    "range": {
-                        "lastkey": 0,
-                        "step": 1,
-                        "limit": 0
-                    }
-                }
-            }
-        ],
-        "arguments": [
-            {
-                "name": "key",
-                "type": "key",
-                "value": "key"
-            },
-            {
-                "name": "min",
-                "type": "double",
-                "value": "min"
-            },
-            {
-                "name": "max",
-                "type": "double",
-                "value": "max"
             }
         ]
     },
@@ -15435,6 +18100,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__428__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -15507,6 +18181,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__429__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -15587,6 +18270,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__430__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -15632,6 +18324,15 @@
                         "step": 1,
                         "limit": 0
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__431__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -15697,6 +18398,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__432__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "key",
@@ -15742,6 +18452,15 @@
                         "firstkey": 1,
                         "step": 1
                     }
+                }
+            }
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__433__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
                 }
             }
         ],
@@ -15849,6 +18568,15 @@
                 }
             }
         ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__434__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
         "arguments": [
             {
                 "name": "destination",
@@ -15896,6 +18624,377 @@
                     }
                 ],
                 "optional": true
+            }
+        ]
+    },
+    "ACL": {
+        "summary": "A container for Access List Control commands ",
+        "complexity": "Depends on subcommand.",
+        "group": "server",
+        "since": "6.0.0",
+        "arity": -2,
+        "command_flags": [
+            "sentinel"
+        ],
+        "acl_categories": [
+            "slow"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__103__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    },
+    "CLIENT": {
+        "summary": "A container for client connection commands",
+        "complexity": "Depends on subcommand.",
+        "group": "connection",
+        "since": "2.4.0",
+        "arity": -2,
+        "command_flags": [
+            "sentinel"
+        ],
+        "acl_categories": [
+            "slow"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__138__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    },
+    "CLUSTER": {
+        "summary": "A container for cluster commands",
+        "complexity": "Depends on subcommand.",
+        "group": "cluster",
+        "since": "3.0.0",
+        "arity": -2,
+        "acl_categories": [
+            "slow"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__163__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    },
+    "COMMAND COUNT": {
+        "summary": "Get total number of Redis commands",
+        "complexity": "O(1)",
+        "group": "server",
+        "since": "2.8.13",
+        "arity": 2,
+        "container": "COMMAND",
+        "function": "commandCountCommand",
+        "command_flags": [
+            "loading",
+            "stale"
+        ],
+        "acl_categories": [
+            "slow",
+            "connection"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__164__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    },
+    "COMMAND GETKEYS": {
+        "summary": "Extract keys given a full Redis command",
+        "complexity": "O(N) where N is the number of arguments to the command",
+        "group": "server",
+        "since": "2.8.13",
+        "arity": -4,
+        "container": "COMMAND",
+        "function": "commandGetKeysCommand",
+        "command_flags": [
+            "loading",
+            "stale"
+        ],
+        "acl_categories": [
+            "slow",
+            "connection"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__165__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    },
+    "COMMAND INFO": {
+        "summary": "Get array of specific Redis command details",
+        "complexity": "O(N) when N is number of commands to look up",
+        "group": "server",
+        "since": "2.8.13",
+        "arity": -3,
+        "container": "COMMAND",
+        "function": "commandInfoCommand",
+        "command_flags": [
+            "loading",
+            "stale"
+        ],
+        "acl_categories": [
+            "slow",
+            "connection"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__167__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
+        "arguments": [
+            {
+                "name": "command-name",
+                "type": "string",
+                "value": "command-name",
+                "multiple": true
+            }
+        ]
+    },
+    "CONFIG": {
+        "summary": "A container for server configuration commands",
+        "complexity": "Depends on subcommand.",
+        "group": "server",
+        "since": "2.0.0",
+        "arity": -2,
+        "acl_categories": [
+            "slow"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__175__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    },
+    "LATENCY": {
+        "summary": "A container for latency diagnostics commands",
+        "complexity": "Depends on subcommand.",
+        "group": "server",
+        "since": "2.8.13",
+        "arity": -2,
+        "acl_categories": [
+            "slow"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__243__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    },
+    "MEMORY": {
+        "summary": "A container for memory diagnostics commands",
+        "complexity": "Depends on subcommand.",
+        "group": "server",
+        "since": "4.0.0",
+        "arity": -2,
+        "acl_categories": [
+            "slow"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__263__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    },
+    "MODULE": {
+        "summary": "A container for module commands",
+        "complexity": "Depends on subcommand.",
+        "group": "server",
+        "since": "4.0.0",
+        "arity": -2,
+        "acl_categories": [
+            "slow"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__271__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    },
+    "OBJECT": {
+        "summary": "A container for object introspection commands",
+        "complexity": "Depends on subcommand.",
+        "group": "generic",
+        "since": "2.2.3",
+        "arity": -2,
+        "acl_categories": [
+            "slow"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__282__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    },
+    "PUBSUB": {
+        "summary": "A container for Pub/Sun commands",
+        "complexity": "Depends on subcommand.",
+        "group": "pubsub",
+        "since": "2.8.0",
+        "arity": -2,
+        "acl_categories": [
+            "slow"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__303__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    },
+    "SCRIPT": {
+        "summary": "A containter for Lua scripts management commands",
+        "complexity": "Depends on subcommand.",
+        "group": "scripting",
+        "since": "2.6.0",
+        "arity": -2,
+        "acl_categories": [
+            "slow"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__330__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    },
+    "SLOWLOG": {
+        "summary": "A container for slow log commands",
+        "complexity": "Depends on subcommand.",
+        "group": "server",
+        "since": "2.2.12",
+        "arity": -2,
+        "acl_categories": [
+            "slow"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__350__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    },
+    "STRALGO": {
+        "summary": "Run algorithms (currently LCS) against strings",
+        "complexity": "For LCS O(strlen(s1)*strlen(s2))",
+        "group": "string",
+        "since": "6.0.0",
+        "arity": -2,
+        "acl_categories": [
+            "slow"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__361__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ],
+        "arguments": [
+            {
+                "name": "algorithm",
+                "token": "LCS",
+                "type": "pure-token"
+            },
+            {
+                "name": "algo-specific-argument",
+                "type": "string",
+                "value": "algo-specific-argument",
+                "multiple": true
+            }
+        ]
+    },
+    "XGROUP": {
+        "summary": "A container for consumer groups commands",
+        "complexity": "Depends on subcommand.",
+        "group": "stream",
+        "since": "5.0.0",
+        "arity": -2,
+        "acl_categories": [
+            "slow"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__389__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
+            }
+        ]
+    },
+    "XINFO": {
+        "summary": "A container for stream introspection commands",
+        "complexity": "Depends on subcommand.",
+        "group": "stream",
+        "since": "5.0.0",
+        "arity": -2,
+        "acl_categories": [
+            "slow"
+        ],
+        "returns": [
+            {
+                "description": "PATCH__TBD__394__",
+                "type": {
+                    "RESP2": "null-bulk-string",
+                    "RESP3": "null"
+                }
             }
         ]
     }

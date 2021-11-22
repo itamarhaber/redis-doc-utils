@@ -15,16 +15,16 @@ We can use an additional argument `BIT` to specify a bit index.
 So 0 is the first bit, 1 is the second bit, and so forth.
 For negative values, -1 is the last bit, -2 is the penultimate, and so forth.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 SET mykey "foobar"
 BITCOUNT mykey
 BITCOUNT mykey 0 0
 BITCOUNT mykey 1 1
 BITCOUNT mykey 1 1 BYTE
 BITCOUNT mykey 5 30 BIT
-```
+{{% /redis-cli %}}
 
 ## Pattern: real-time metrics using bitmaps
 

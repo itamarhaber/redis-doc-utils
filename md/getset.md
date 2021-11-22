@@ -11,19 +11,19 @@ some event occurs, but from time to time we need to get the value of the counter
 and reset it to zero atomically.
 This can be done using `GETSET mycounter "0"`:
 
-```cli
+{{% redis-cli %}}
 INCR mycounter
 GETSET mycounter "0"
 GET mycounter
-```
+{{% /redis-cli %}}
 
 As per Redis 6.2, GETSET is considered deprecated. Please prefer [`SET`](/commands/set) with [`GET`](/commands/get) parameter in new code.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 SET mykey "Hello"
 GETSET mykey "World"
 GET mykey
-```
+{{% /redis-cli %}}
 

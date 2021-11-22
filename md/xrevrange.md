@@ -14,9 +14,9 @@ enough to send:
 
     XREVRANGE somestream + - COUNT 1
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 XADD writers * name Virginia surname Woolf
 XADD writers * name Jane surname Austen
 XADD writers * name Toni surname Morrison
@@ -24,5 +24,5 @@ XADD writers * name Agatha surname Christie
 XADD writers * name Ngozi surname Adichie
 XLEN writers
 XREVRANGE writers + - COUNT 1
-```
+{{% /redis-cli %}}
 

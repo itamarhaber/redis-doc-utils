@@ -1,6 +1,6 @@
 {
     "ACL": {
-        "summary": "PATCH__TBD__90__",
+        "summary": "A container for Access List Control commands ",
         "returns": [
             {
                 "description": "PATCH__TBD__103__",

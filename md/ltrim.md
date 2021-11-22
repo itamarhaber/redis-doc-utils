@@ -31,13 +31,13 @@ It is important to note that when used in this way `LTRIM` is an O(1) operation
 because in the average case just one element is removed from the tail of the
 list.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 RPUSH mylist "one"
 RPUSH mylist "two"
 RPUSH mylist "three"
 LTRIM mylist 1 -1
 LRANGE mylist 0 -1
-```
+{{% /redis-cli %}}
 

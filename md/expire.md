@@ -60,9 +60,9 @@ are now fixed.
 
 `EXPIRE` would return 0 and not alter the timeout for a key with a timeout set.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 SET mykey "Hello"
 EXPIRE mykey 10
 TTL mykey
@@ -72,7 +72,7 @@ EXPIRE mykey 10 XX
 TTL mykey
 EXPIRE mykey 10 NX
 TTL mykey
-```
+{{% /redis-cli %}}
 
 ## Pattern: Navigation session
 

@@ -13,13 +13,13 @@ The unit must be one of the following, and defaults to meters:
 
 The distance is computed assuming that the Earth is a perfect sphere, so errors up to 0.5% are possible in edge cases.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 GEOADD Sicily 13.361389 38.115556 "Palermo" 15.087269 37.502669 "Catania"
 GEODIST Sicily Palermo Catania
 GEODIST Sicily Palermo Catania km
 GEODIST Sicily Palermo Catania mi
 GEODIST Sicily Foo Bar
-```
+{{% /redis-cli %}}
 

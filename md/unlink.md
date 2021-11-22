@@ -5,11 +5,11 @@ blocking, while [`DEL`](/commands/del) is. This is where the command name comes 
 command just **unlinks** the keys from the keyspace. The actual removal
 will happen later asynchronously.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 SET key1 "Hello"
 SET key2 "World"
 UNLINK key1 key2 key3
-```
+{{% /redis-cli %}}
 

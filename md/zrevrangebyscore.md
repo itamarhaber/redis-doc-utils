@@ -11,9 +11,9 @@ Apart from the reversed ordering, `ZREVRANGEBYSCORE` is similar to
 
 As per Redis 6.2.0, this command is considered deprecated. Please prefer using the [`ZRANGE`](/commands/zrange) command with the `BYSCORE` and `REV` arguments in new code.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 ZADD myzset 1 "one"
 ZADD myzset 2 "two"
 ZADD myzset 3 "three"
@@ -21,5 +21,5 @@ ZREVRANGEBYSCORE myzset +inf -inf
 ZREVRANGEBYSCORE myzset 2 1
 ZREVRANGEBYSCORE myzset 2 (1
 ZREVRANGEBYSCORE myzset (2 (1
-```
+{{% /redis-cli %}}
 

@@ -28,7 +28,7 @@ If a cluster instance has non-contiguous slots (e.g. 1-400,900,1800-6000) then
 master and replica IP/Port/ID results will be duplicated for each top-level
 slot range reply.
 
-@examples
+## Examples
 
 ```
 > CLUSTER SLOTS

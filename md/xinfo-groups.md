@@ -11,7 +11,7 @@ By default, only the following information is provided for each of the groups:
 
 @array-reply: a list of consumer groups.
 
-@examples
+## Examples
 
 ```
 > XINFO GROUPS mystream

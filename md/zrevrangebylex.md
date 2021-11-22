@@ -4,12 +4,12 @@ Apart from the reversed ordering, `ZREVRANGEBYLEX` is similar to [`ZRANGEBYLEX`]
 
 As per Redis 6.2.0, this command is considered deprecated. Please prefer using the [`ZRANGE`](/commands/zrange) command with the `BYLEX` and `REV` arguments in new code.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 ZADD myzset 0 a 0 b 0 c 0 d 0 e 0 f 0 g
 ZREVRANGEBYLEX myzset [c -
 ZREVRANGEBYLEX myzset (c -
 ZREVRANGEBYLEX myzset (g [aaa
-```
+{{% /redis-cli %}}
 

@@ -9,11 +9,11 @@ keys.  You can use `COMMAND GETKEYS` to discover key positions
 directly from how Redis parses the commands.
 
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 COMMAND GETKEYS MSET a b c d e f
 COMMAND GETKEYS EVAL "not consulted" 3 key1 key2 key3 arg1 arg2 arg3 argN
 COMMAND GETKEYS SORT mylist ALPHA STORE outlist
-```
+{{% /redis-cli %}}
 

@@ -6,7 +6,7 @@ Since Redis 7.0.0, the `SORT_RO` variant was introduced in order to allow [`SORT
 
 See original [`SORT`](/commands/sort) for more details.
 
-@examples
+## Examples
 
 ```
 SORT_RO mylist BY weight_*->fieldname GET object_*->fieldname

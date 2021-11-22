@@ -12,9 +12,9 @@ The optional `COUNT` can be used to specify the number of elements to pop, and i
 
 The number of popped elements is the minimum from the sorted set's cardinality and `COUNT`'s value.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 ZMPOP 1 notsuchkey MIN
 ZADD myzset 1 "one" 2 "two" 3 "three"
 ZMPOP 1 myzset MIN
@@ -26,5 +26,5 @@ ZRANGE myzset 0 -1 WITHSCORES
 ZMPOP 2 myzset myzset2 MAX COUNT 10
 ZRANGE myzset2 0 -1 WITHSCORES
 EXISTS myzset myzset2
-```
+{{% /redis-cli %}}
 

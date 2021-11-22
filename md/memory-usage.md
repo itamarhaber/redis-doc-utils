@@ -8,7 +8,7 @@ For nested data types, the optional `SAMPLES` option can be provided, where
 `count` is the number of sampled nested values. By default, this option is set
 to `5`. To sample the all of the nested values, use `SAMPLES 0`. 
 
-@examples
+## Examples
 
 With Redis v4.0.1 64-bit and **jemalloc**, the empty string measures as follows:
 

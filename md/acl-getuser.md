@@ -8,7 +8,7 @@ the set of rules used to configure the user, it is still functionally identical.
 
 @array-reply: a list of ACL rule definitions for the user.
 
-@examples
+## Examples
 
 Here's the default configuration for the default user:
 

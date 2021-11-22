@@ -22,9 +22,9 @@ bit, -2 is the penultimate, and so forth.
 
 Non-existent keys are treated as empty strings.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 SET mykey "\xff\xf0\x00"
 BITPOS mykey 0
 SET mykey "\x00\xff\xf0"
@@ -35,5 +35,5 @@ BITPOS mykey 1 7 15 BIT
 set mykey "\x00\x00\x00"
 BITPOS mykey 1
 BITPOS mykey 1 7 -3 BIT
-```
+{{% /redis-cli %}}
 

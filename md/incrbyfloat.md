@@ -23,15 +23,15 @@ Trailing zeroes are always removed.
 The precision of the output is fixed at 17 digits after the decimal point
 regardless of the actual internal precision of the computation.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 SET mykey 10.50
 INCRBYFLOAT mykey 0.1
 INCRBYFLOAT mykey -5
 SET mykey 5.0e3
 INCRBYFLOAT mykey 2.0e2
-```
+{{% /redis-cli %}}
 
 ## Implementation details
 

@@ -9,11 +9,11 @@ Please check the example below and the [`GEORADIUS`](/commands/georadius) docume
 
 Note that [`GEORADIUSBYMEMBER_RO`](/commands/georadiusbymember_ro) is also available since Redis 3.2.10 and Redis 4.0.0 in order to provide a read-only command that can be used in replicas. See the [`GEORADIUS`](/commands/georadius) page for more information.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 GEOADD Sicily 13.583333 37.316667 "Agrigento"
 GEOADD Sicily 13.361389 38.115556 "Palermo" 15.087269 37.502669 "Catania"
 GEORADIUSBYMEMBER Sicily Agrigento 100 km
-```
+{{% /redis-cli %}}
 

@@ -3,14 +3,14 @@ end of the string.
 If `key` does not exist it is created and set as an empty string, so `APPEND`
 will be similar to [`SET`](/commands/set) in this special case.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 EXISTS mykey
 APPEND mykey "Hello"
 APPEND mykey " World"
 GET mykey
-```
+{{% /redis-cli %}}
 
 ## Pattern: Time series
 
@@ -44,10 +44,10 @@ more friendly to be distributed across many Redis instances.
 An example sampling the temperature of a sensor using fixed-size strings (using
 a binary format is better in real implementations).
 
-```cli
+{{% redis-cli %}}
 APPEND ts "0043"
 APPEND ts "0035"
 GETRANGE ts 0 3
 GETRANGE ts 4 7
-```
+{{% /redis-cli %}}
 

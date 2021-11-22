@@ -20,13 +20,13 @@ allocation) takes ~8ms.
 Note that once this first allocation is done, subsequent calls to `SETBIT` for
 the same _key_ will not have the allocation overhead.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 SETBIT mykey 7 1
 SETBIT mykey 7 0
 GET mykey
-```
+{{% /redis-cli %}}
 
 ## Pattern: accessing the entire bitmap
 

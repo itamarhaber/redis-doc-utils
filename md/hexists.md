@@ -1,10 +1,10 @@
 Returns if `field` is an existing field in the hash stored at `key`.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 HSET myhash field1 "foo"
 HEXISTS myhash field1
 HEXISTS myhash field2
-```
+{{% /redis-cli %}}
 

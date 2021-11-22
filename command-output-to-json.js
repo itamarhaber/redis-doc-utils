@@ -17,7 +17,7 @@ import { promises as fs, existsSync, readFileSync } from 'fs';
 import { assert } from 'console';
 
 const options = {
-  noreturn: true,
+  noreturn: false,
   noargs: false,
 }
 
@@ -223,6 +223,14 @@ function linkifyMD(cmds,name,md) {
   });
 }
 
+function convertExamples(md) {
+  md = md.replace(/@examples/g,'## Examples');
+  return md.replace(/```cli[\s\w\W]+?```/gm, s => {
+    const r = '{{% redis-cli %}}' + s.slice(6,s.length-3) + '{{% /redis-cli %}}';
+    return r;
+  });
+}
+
 async function loadCommandMarkdown(cmds,name) {
   const sections = {
     body: '<body>',
@@ -281,6 +289,7 @@ async function loadCommandMarkdown(cmds,name) {
   }
 
   m['body'] = linkifyMD(cmds,name,m['body']);
+  m['body'] = convertExamples(m['body'])
 
   if (m['history'].length == 0) {
     delete m['history'];
@@ -595,7 +604,7 @@ async function persistCommand(cmd) {
   if (s[kname].group === undefined) console.error(`--ERR No group for ${name}`);
 
   if (!options.noreturn) {
-    s[kname]['return_types'] = undefinedIfZeroArray(cmd[kname].return_types);
+    s[kname]['returns'] = undefinedIfZeroArray(cmd[kname].returns);
   }
 
   if (!options.noargs) {
@@ -770,7 +779,7 @@ function prePatch(cmds) {
     "SUBSTR": {
       "group": "string",
       "undocumented": true,
-      "until": "2.4.0",
+      "until": "2.0.0",
       "replaced_by": "`GETRANGE`",
     },
     "PFSELFTEST": {

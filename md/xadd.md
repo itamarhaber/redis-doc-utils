@@ -64,12 +64,12 @@ Will add a new entry but will also evict old entries so that the stream will con
 For further information about Redis streams please check our
 [introduction to Redis Streams document](/topics/streams-intro).
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 XADD mystream * name Sara surname OConnor
 XADD mystream * field1 value1 field2 value2 field3 value3
 XLEN mystream
 XRANGE mystream - +
-```
+{{% /redis-cli %}}
 

@@ -1,6 +1,6 @@
 {
     "MODULE": {
-        "summary": "PATCH__TBD__86__",
+        "summary": "A container for module commands",
         "returns": [
             {
                 "description": "PATCH__TBD__271__",

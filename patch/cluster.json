@@ -1,6 +1,6 @@
 {
     "CLUSTER": {
-        "summary": "PATCH__TBD__84__",
+        "summary": "A container for cluster commands",
         "returns": [
             {
                 "description": "PATCH__TBD__163__",

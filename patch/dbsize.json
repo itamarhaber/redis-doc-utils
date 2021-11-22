@@ -1,6 +1,6 @@
 {
     "DBSIZE": {
-        "complexity": "PATCH__TBD__61__",
+        "complexity": "O(1)",
         "returns": [
             {
                 "description": "PATCH__TBD__177__",

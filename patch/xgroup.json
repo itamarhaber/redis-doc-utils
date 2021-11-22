@@ -1,6 +1,6 @@
 {
     "XGROUP": {
-        "summary": "PATCH__TBD__85__",
+        "summary": "A container for consumer groups commands",
         "returns": [
             {
                 "description": "PATCH__TBD__389__",

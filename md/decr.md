@@ -6,12 +6,12 @@ This operation is limited to **64 bit signed integers**.
 
 See [`INCR`](/commands/incr) for extra information on increment/decrement operations.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 SET mykey "10"
 DECR mykey
 SET mykey "234293482390480948029348230948"
 DECR mykey
-```
+{{% /redis-cli %}}
 

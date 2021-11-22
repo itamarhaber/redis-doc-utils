@@ -14,7 +14,7 @@ popped from.
 
 [cl]: /commands/blpop
 
-@examples
+## Examples
 
 ```
 redis> DEL zset1 zset2

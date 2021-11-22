@@ -16,16 +16,16 @@ list, so it can be considered as a list rotation command.
 As per Redis 6.2.0, RPOPLPUSH is considered deprecated. Please prefer [`LMOVE`](/commands/lmove) in
 new code.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 RPUSH mylist "one"
 RPUSH mylist "two"
 RPUSH mylist "three"
 RPOPLPUSH mylist myotherlist
 LRANGE mylist 0 -1
 LRANGE myotherlist 0 -1
-```
+{{% /redis-cli %}}
 
 ## Pattern: Reliable queue
 

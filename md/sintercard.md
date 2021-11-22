@@ -8,9 +8,9 @@ By default, the command calculates the cardinality of the intersection of all gi
 When provided with the optional `LIMIT` argument (which defaults to 0 and means unlimited), if the intersection cardinality reaches limit partway through the computation, the algorithm will exit and yield limit as the cardinality.
 Such implementation ensures a significant speedup for queries where the limit is lower than the actual intersection cardinality.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 SADD key1 "a"
 SADD key1 "b"
 SADD key1 "c"
@@ -21,5 +21,5 @@ SADD key2 "e"
 SINTER key1 key2
 SINTERCARD 2 key1 key2
 SINTERCARD 2 key1 key2 LIMIT 1
-```
+{{% /redis-cli %}}
 

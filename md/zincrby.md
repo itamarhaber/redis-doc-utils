@@ -11,12 +11,12 @@ The `score` value should be the string representation of a numeric value, and
 accepts double precision floating point numbers.
 It is possible to provide a negative value to decrement the score.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 ZADD myzset 1 "one"
 ZADD myzset 2 "two"
 ZINCRBY myzset 2 "one"
 ZRANGE myzset 0 -1 WITHSCORES
-```
+{{% /redis-cli %}}
 

@@ -13,9 +13,9 @@ The `PEXPIRE` command supports a set of options since Redis 7.0:
 A non-volatile key is treated as an infinite TTL for the purpose of `GT` and `LT`.
 The `GT`, `LT` and `NX` options are mutually exclusive.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 SET mykey "Hello"
 PEXPIRE mykey 1500
 TTL mykey
@@ -24,5 +24,5 @@ PEXPIRE mykey 1000 XX
 TTL mykey
 PEXPIRE mykey 1000 NX
 TTL mykey
-```
+{{% /redis-cli %}}
 

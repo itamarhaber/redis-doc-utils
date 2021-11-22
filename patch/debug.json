@@ -1,8 +1,8 @@
 {
     "DEBUG": {
-        "summary": "PATCH__TBD__9__",
-        "complexity": "PATCH__TBD__8__",
-        "since": "PATCH__TBD__10__",
+        "summary": "A container for debugging commands",
+        "complexity": "Depends on subcommand.",
+        "since": "1.0.0",
         "returns": [
             {
                 "description": "PATCH__TBD__178__",

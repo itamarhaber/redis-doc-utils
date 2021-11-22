@@ -4,10 +4,10 @@ Given a sorted set representing a geospatial index, populated using the [`GEOADD
 
 The command can accept a variable number of arguments so it always returns an array of positions even when a single element is specified.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 GEOADD Sicily 13.361389 38.115556 "Palermo" 15.087269 37.502669 "Catania"
 GEOPOS Sicily Palermo Catania NonExisting
-```
+{{% /redis-cli %}}
 

@@ -5,14 +5,14 @@ If `key` does not exist, it is treated as an empty set and this command returns
 
 An error is returned when the value stored at `key` is not a set.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 SADD myset "one"
 SADD myset "two"
 SADD myset "three"
 SREM myset "one"
 SREM myset "four"
 SMEMBERS myset
-```
+{{% /redis-cli %}}
 

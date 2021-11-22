@@ -7,10 +7,10 @@ If you request details about non-existing commands, their return
 position will be nil.
 
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 COMMAND INFO get set eval
 COMMAND INFO foo evalsha config bar
-```
+{{% /redis-cli %}}
 

@@ -8,14 +8,14 @@ In this case, the number of returned elements is the absolute value of the speci
 
 The optional `WITHSCORES` modifier changes the reply so it includes the respective scores of the randomly selected elements from the sorted set.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 ZADD dadi 1 uno 2 due 3 tre 4 quattro 5 cinque 6 sei
 ZRANDMEMBER dadi
 ZRANDMEMBER dadi
 ZRANDMEMBER dadi -5 WITHSCORES
-```
+{{% /redis-cli %}}
 
 ## Specification of the behavior when count is passed
 

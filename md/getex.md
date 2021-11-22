@@ -11,13 +11,13 @@ The `GETEX` command supports a set of options that modify its behavior:
 * `PXAT` *timestamp-milliseconds* -- Set the specified Unix time at which the key will expire, in milliseconds.
 * [`PERSIST`](/commands/persist) -- Remove the time to live associated with the key.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 SET mykey "Hello"
 GETEX mykey
 TTL mykey
 GETEX mykey EX 60
 TTL mykey
-```
+{{% /redis-cli %}}
 

@@ -64,7 +64,7 @@ This is a list of all the supported Redis ACL rules:
 * `<hashedpassword>`: Like `#<hashedpassword>` but removes the password instead of adding it.
 * reset: Remove any capability from the user. It is set to off, without passwords, unable to execute any command, unable to access any key.
 
-@examples
+## Examples
 
 ```
 > ACL SETUSER alan allkeys +@string +@set -SADD >alanpassword

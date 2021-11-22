@@ -8,7 +8,7 @@ Since Redis 6.2, the `BITFIELD_RO` variant was introduced in order to allow [`BI
 
 See original [`BITFIELD`](/commands/bitfield) for more details.
 
-@examples
+## Examples
 
 ```
 BITFIELD_RO hello GET i8 16

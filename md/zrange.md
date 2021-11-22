@@ -77,25 +77,25 @@ Because of the first *normalized* part in every element (before the colon charac
 
 The binary nature of the comparison allows to use sorted sets as a general purpose index, for example, the first part of the element can be a 64-bit big-endian number. Since big-endian numbers have the most significant bytes in the initial positions, the binary comparison will match the numerical comparison of the numbers. This can be used in order to implement range queries on 64-bit values. As in the example below, after the first 8 bytes, we can store the value of the element we are indexing.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 ZADD myzset 1 "one"
 ZADD myzset 2 "two"
 ZADD myzset 3 "three"
 ZRANGE myzset 0 -1
 ZRANGE myzset 2 3
 ZRANGE myzset -2 -1
-```
+{{% /redis-cli %}}
 
 The following example using `WITHSCORES` shows how the command returns always an array, but this time, populated with *element_1*, *score_1*, *element_2*, *score_2*, ..., *element_N*, *score_N*.
 
-```cli
+{{% redis-cli %}}
 ZRANGE myzset 0 1 WITHSCORES
-```
+{{% /redis-cli %}}
 
 This example shows how to query the sorted set by score, excluding the value `1` and up to infinity, returning only the second element of the result:
 
-```cli
+{{% redis-cli %}}
 ZRANGE myzset (1 +inf BYSCORE LIMIT 1 1
-```
+{{% /redis-cli %}}

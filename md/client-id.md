@@ -7,9 +7,9 @@ ID has certain guarantees:
 This command is especially useful together with `CLIENT UNBLOCK` which was
 introduced also in Redis 5 together with `CLIENT ID`. Check the `CLIENT UNBLOCK` command page for a pattern involving the two commands.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 CLIENT ID
-```
+{{% /redis-cli %}}
 

@@ -1,8 +1,8 @@
 Returns `message`.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 ECHO "Hello World!"
-```
+{{% /redis-cli %}}
 

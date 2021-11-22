@@ -10,11 +10,11 @@ that either all the fields or none at all are set.
 It is not possible for clients to see that some of the keys were updated while
 others are unchanged.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 MSETNX key1 "Hello" key2 "there"
 MSETNX key2 "new" key3 "world"
 MGET key1 key2 key3
-```
+{{% /redis-cli %}}
 

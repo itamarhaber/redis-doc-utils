@@ -6,12 +6,12 @@ value that is higher than the sorted set's cardinality will not produce an
 error. When returning multiple elements, the one with the highest score will
 be the first, followed by the elements with lower scores.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 ZADD myzset 1 "one"
 ZADD myzset 2 "two"
 ZADD myzset 3 "three"
 ZPOPMAX myzset
-```
+{{% /redis-cli %}}
 

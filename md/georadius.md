@@ -43,12 +43,12 @@ Breaking the compatibility with the past was considered but rejected, at least f
 
 Both commands were introduced in Redis 3.2.10 and Redis 4.0.0 respectively.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 GEOADD Sicily 13.361389 38.115556 "Palermo" 15.087269 37.502669 "Catania"
 GEORADIUS Sicily 15 37 200 km WITHDIST
 GEORADIUS Sicily 15 37 200 km WITHCOORD
 GEORADIUS Sicily 15 37 200 km WITHDIST WITHCOORD
-```
+{{% /redis-cli %}}
 

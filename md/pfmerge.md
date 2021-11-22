@@ -9,12 +9,12 @@ If the destination variable exists, it is treated as one of the source sets
 and its cardinality will be included in the cardinality of the computed
 HyperLogLog.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 PFADD hll1 foo bar zap a
 PFADD hll2 a b c foo
 PFMERGE hll3 hll1 hll2
 PFCOUNT hll3
-```
+{{% /redis-cli %}}
 

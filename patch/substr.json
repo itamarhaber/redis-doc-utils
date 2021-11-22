@@ -1,8 +1,7 @@
 {
     "SUBSTR": {
-        "summary": "PATCH__TBD__33__",
-        "complexity": "PATCH__TBD__32__",
-        "since": "PATCH__TBD__34__",
+        "summary": "Get a substring of the string stored at a key",
+        "complexity": "O(N) where N is the length of the returned string. The complexity is ultimately determined by the returned length, but because creating a substring from an existing string is very cheap, it can be considered O(1) for small strings.",
         "returns": [
             {
                 "description": "PATCH__TBD__364__",

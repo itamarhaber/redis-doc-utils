@@ -7,9 +7,9 @@ By default, the command calculates the cardinality of the intersection of all gi
 When provided with the optional `LIMIT` argument (which defaults to 0 and means unlimited), if the intersection cardinality reaches limit partway through the computation, the algorithm will exit and yield limit as the cardinality.
 Such implementation ensures a significant speedup for queries where the limit is lower than the actual intersection cardinality.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 ZADD zset1 1 "one"
 ZADD zset1 2 "two"
 ZADD zset2 1 "one"
@@ -18,5 +18,5 @@ ZADD zset2 3 "three"
 ZINTER 2 zset1 zset2
 ZINTERCARD 2 zset1 zset2
 ZINTERCARD 2 zset1 zset2 LIMIT 1
-```
+{{% /redis-cli %}}
 

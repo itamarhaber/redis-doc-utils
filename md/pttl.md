@@ -9,11 +9,11 @@ Starting with Redis 2.8 the return value in case of error changed:
 * The command returns `-2` if the key does not exist.
 * The command returns `-1` if the key exists but has no associated expire.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 SET mykey "Hello"
 EXPIRE mykey 1
 PTTL mykey
-```
+{{% /redis-cli %}}
 

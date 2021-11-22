@@ -3,11 +3,11 @@ yet exist.
 If `key` does not exist, a new key holding a hash is created.
 If `field` already exists, this operation has no effect.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 HSETNX myhash field "Hello"
 HSETNX myhash field "World"
 HGET myhash field
-```
+{{% /redis-cli %}}
 

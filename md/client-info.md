@@ -2,9 +2,9 @@ The command returns information and statistics about the current client connecti
 
 The reply format is identical to that of `CLIENT LIST`, and the content consists only of information about the current client.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 CLIENT INFO
-```
+{{% /redis-cli %}}
 

@@ -58,12 +58,12 @@ The lexicographic ordering used is binary, it compares strings as array of bytes
 
 If the user inserts all the elements in a sorted set with the same score (for example 0), all the elements of the sorted set are sorted lexicographically, and range queries on elements are possible using the command [`ZRANGEBYLEX`](/commands/zrangebylex) (Note: it is also possible to query sorted sets by range of scores using [`ZRANGEBYSCORE`](/commands/zrangebyscore)).
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 ZADD myzset 1 "one"
 ZADD myzset 1 "uno"
 ZADD myzset 2 "two" 3 "three"
 ZRANGE myzset 0 -1 WITHSCORES
-```
+{{% /redis-cli %}}
 

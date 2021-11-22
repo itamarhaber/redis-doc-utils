@@ -170,9 +170,9 @@ with [`MGET`](/commands/mget) above where the step value is just 1.
 
 
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 COMMAND
-```
+{{% /redis-cli %}}
 

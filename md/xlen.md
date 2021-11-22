@@ -8,12 +8,12 @@ Streams are not auto-deleted once they have no entries inside (for instance
 after an [`XDEL`](/commands/xdel) call), because the stream may have consumer groups
 associated with it.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 XADD mystream * item 1
 XADD mystream * item 2
 XADD mystream * item 3
 XLEN mystream
-```
+{{% /redis-cli %}}
 

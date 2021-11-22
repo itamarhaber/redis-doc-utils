@@ -6,12 +6,12 @@ When _key_ does not exist it is assumed to be an empty string, so _offset_ is
 always out of range and the value is also assumed to be a contiguous space with
 0 bits.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 SETBIT mykey 7 1
 GETBIT mykey 0
 GETBIT mykey 7
 GETBIT mykey 100
-```
+{{% /redis-cli %}}
 

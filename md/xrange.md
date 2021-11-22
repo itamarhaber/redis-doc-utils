@@ -201,9 +201,9 @@ of XRANGE:
 For further information about Redis streams please check our
 [introduction to Redis Streams document](/topics/streams-intro).
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 XADD writers * name Virginia surname Woolf
 XADD writers * name Jane surname Austen
 XADD writers * name Toni surname Morrison
@@ -211,5 +211,5 @@ XADD writers * name Agatha surname Christie
 XADD writers * name Ngozi surname Adichie
 XLEN writers
 XRANGE writers - + COUNT 2
-```
+{{% /redis-cli %}}
 

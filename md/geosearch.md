@@ -28,12 +28,12 @@ When the `ANY` option is used, the command returns as soon as enough matches are
 When `ANY` is not provided, the command will perform an effort that is proportional to the number of items matching the specified area and sort them,
 so to query very large areas with a very small `COUNT` option may be slow even if just a few results are returned.
 
-@examples
+## Examples
 
-```cli
+{{% redis-cli %}}
 GEOADD Sicily 13.361389 38.115556 "Palermo" 15.087269 37.502669 "Catania"
 GEOADD Sicily 12.758489 38.788135 "edge1"   17.241510 38.788135 "edge2" 
 GEOSEARCH Sicily FROMLONLAT 15 37 BYRADIUS 200 km ASC
 GEOSEARCH Sicily FROMLONLAT 15 37 BYBOX 400 400 km ASC WITHCOORD WITHDIST
-```
+{{% /redis-cli %}}
 
