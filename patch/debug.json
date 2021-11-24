@@ -1,16 +1,7 @@
 {
-    "DEBUG": {
-        "summary": "A container for debugging commands",
-        "complexity": "Depends on subcommand.",
-        "since": "1.0.0",
-        "returns": [
-            {
-                "description": "PATCH__TBD__178__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "DEBUG": {
+    "summary": "A container for debugging commands",
+    "complexity": "Depends on subcommand.",
+    "since": "1.0.0"
+  }
 }

@@ -1,16 +1,7 @@
 {
-    "GEORADIUS_RO": {
-        "summary": "A read-only variant for GEORADIUS",
-        "complexity": "O(N+log(M)) where N is the number of elements inside the bounding box of the circular area delimited by center and radius and M is the number of items inside the index.",
-        "since": "5.0.0",
-        "returns": [
-            {
-                "description": "PATCH__TBD__202__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "GEORADIUS_RO": {
+    "summary": "A read-only variant for GEORADIUS",
+    "complexity": "O(N+log(M)) where N is the number of elements inside the bounding box of the circular area delimited by center and radius and M is the number of items inside the index.",
+    "since": "5.0.0"
+  }
 }

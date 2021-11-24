@@ -1,13 +1,3 @@
 {
-    "CLUSTER REPLICAS": {
-        "returns": [
-            {
-                "description": "PATCH__TBD__156__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "CLUSTER REPLICAS": {}
 }

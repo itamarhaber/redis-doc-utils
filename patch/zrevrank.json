@@ -1,13 +1,3 @@
 {
-    "ZREVRANK": {
-        "returns": [
-            {
-                "description": "PATCH__TBD__430__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "ZREVRANK": {}
 }

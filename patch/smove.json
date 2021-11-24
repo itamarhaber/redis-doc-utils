@@ -1,13 +1,3 @@
 {
-    "SMOVE": {
-        "returns": [
-            {
-                "description": "PATCH__TBD__352__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "SMOVE": {}
 }

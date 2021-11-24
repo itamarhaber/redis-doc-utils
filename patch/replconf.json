@@ -1,16 +1,7 @@
 {
-    "REPLCONF": {
-        "summary": "An internal command for configuring the replication stream",
-        "complexity": "PATCH__TBD__26__",
-        "since": "PATCH__TBD__28__",
-        "returns": [
-            {
-                "description": "PATCH__TBD__310__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "REPLCONF": {
+    "summary": "An internal command for configuring the replication stream",
+    "complexity": "PATCH__TBD__26__",
+    "since": "PATCH__TBD__28__"
+  }
 }

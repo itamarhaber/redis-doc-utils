@@ -1,13 +1,3 @@
 {
-    "XINFO STREAM": {
-        "returns": [
-            {
-                "description": "PATCH__TBD__393__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "XINFO STREAM": {}
 }

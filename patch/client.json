@@ -1,14 +1,5 @@
 {
-    "CLIENT": {
-        "summary": "A container for client connection commands",
-        "returns": [
-            {
-                "description": "PATCH__TBD__138__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "CLIENT": {
+    "summary": "A container for client connection commands"
+  }
 }

@@ -1,13 +1,3 @@
 {
-    "ZMPOP": {
-        "returns": [
-            {
-                "description": "PATCH__TBD__413__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "ZMPOP": {}
 }

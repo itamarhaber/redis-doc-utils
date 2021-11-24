@@ -1,13 +1,3 @@
 {
-    "SCRIPT FLUSH": {
-        "returns": [
-            {
-                "description": "PATCH__TBD__326__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "SCRIPT FLUSH": {}
 }

@@ -1,14 +1,5 @@
 {
-    "LATENCY HISTORY": {
-        "complexity": "PATCH__TBD__40__",
-        "returns": [
-            {
-                "description": "PATCH__TBD__240__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "LATENCY HISTORY": {
+    "complexity": "PATCH__TBD__40__"
+  }
 }

@@ -1,13 +1,3 @@
 {
-    "GEODIST": {
-        "returns": [
-            {
-                "description": "PATCH__TBD__198__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "GEODIST": {}
 }

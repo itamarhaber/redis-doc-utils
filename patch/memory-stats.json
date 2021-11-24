@@ -1,14 +1,5 @@
 {
-    "MEMORY STATS": {
-        "complexity": "PATCH__TBD__72__",
-        "returns": [
-            {
-                "description": "PATCH__TBD__262__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "MEMORY STATS": {
+    "complexity": "PATCH__TBD__72__"
+  }
 }

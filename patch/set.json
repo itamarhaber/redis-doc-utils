@@ -1,13 +1,3 @@
 {
-    "SET": {
-        "returns": [
-            {
-                "description": "PATCH__TBD__334__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "SET": {}
 }

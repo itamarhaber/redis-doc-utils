@@ -1,13 +1,3 @@
 {
-    "BITFIELD_RO": {
-        "returns": [
-            {
-                "description": "PATCH__TBD__111__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "BITFIELD_RO": {}
 }

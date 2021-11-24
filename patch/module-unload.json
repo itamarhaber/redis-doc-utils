@@ -1,13 +1,3 @@
 {
-    "MODULE UNLOAD": {
-        "returns": [
-            {
-                "description": "PATCH__TBD__270__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "MODULE UNLOAD": {}
 }

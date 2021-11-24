@@ -1,13 +1,3 @@
 {
-    "HVALS": {
-        "returns": [
-            {
-                "description": "PATCH__TBD__230__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "HVALS": {}
 }

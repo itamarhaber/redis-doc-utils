@@ -1,14 +1,5 @@
 {
-    "LATENCY": {
-        "summary": "A container for latency diagnostics commands",
-        "returns": [
-            {
-                "description": "PATCH__TBD__243__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "LATENCY": {
+    "summary": "A container for latency diagnostics commands"
+  }
 }

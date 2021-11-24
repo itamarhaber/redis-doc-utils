@@ -1,13 +1,3 @@
 {
-    "ACL GETUSER": {
-        "returns": [
-            {
-                "description": "PATCH__TBD__94__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "ACL GETUSER": {}
 }

@@ -1,14 +1,5 @@
 {
-    "CONFIG GET": {
-        "complexity": "PATCH__TBD__45__",
-        "returns": [
-            {
-                "description": "PATCH__TBD__170__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "CONFIG GET": {
+    "complexity": "PATCH__TBD__45__"
+  }
 }

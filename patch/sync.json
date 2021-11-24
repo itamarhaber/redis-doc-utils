@@ -1,14 +1,5 @@
 {
-    "SYNC": {
-        "complexity": "PATCH__TBD__50__",
-        "returns": [
-            {
-                "description": "PATCH__TBD__368__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "SYNC": {
+    "complexity": "PATCH__TBD__50__"
+  }
 }

@@ -1,13 +1,3 @@
 {
-    "COMMAND INFO": {
-        "returns": [
-            {
-                "description": "PATCH__TBD__167__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "COMMAND INFO": {}
 }

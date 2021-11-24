@@ -567,9 +567,6 @@ async function persistCommand(cmd) {
   };
 
   const flags = [...cmd[kname].command_flags];
-  if (cmd[kname].internal) {
-    flags.push('internal');
-  }
 
   let complexity = cmd[kname].complexity;
   if (complexity === undefined) {
@@ -591,11 +588,10 @@ async function persistCommand(cmd) {
     container: cmd[kname].container,
     function: cmd[kname].function,
     get_keys_function: cmd[kname].get_keys_function,
-    until: cmd[kname].until,
-    replaced_by: cmd[kname].replaced_by,
-    internal: cmd[kname].internal,
-    undocumented: cmd[kname].undocumented,
     history: undefinedIfZeroArray(cmd[kname].history),
+    deprecated_since: cmd[kname].deprecated_since,
+    replaced_by: cmd[kname].replaced_by,
+    doc_flags: cmd[kname].doc_flags,
     command_flags: undefinedIfZeroArray(flags),
     acl_categories: undefinedIfZeroArray(cmd[kname].acl_categories),
     key_specs: undefinedIfZeroArray(cmd[kname].key_specs),
@@ -723,93 +719,100 @@ async function meldJSONFiles() {
 function prePatch(cmds) {
   const p = {
     "BRPOPLPUSH": {
-      "until": "6.2.0",
+      "doc_flags": ["deprecated"],
+      "deprecated_since": "6.2.0",
       "replaced_by": "`BLMOVE` with the `RIGHT` and `LEFT` arguments",
     },
     "GEORADIUS": {
-      "until": "6.2.0",
+      "doc_flags": ["deprecated"],
+      "deprecated_since": "6.2.0",
       "replaced_by": "`GEOSEARCH` and `GEOSEARCHSTORE` with the `BYRADIUS` argument",
     },
     "GEORADIUS_RO": {
       "group": "geo",
-      "until": "6.2.0",
+      "doc_flags": ["deprecated"],
+      "deprecated_since": "6.2.0",
       "replaced_by": "`GEOSEARCH` with the `BYRADIUS` argument",
     },
     "GEORADIUSBYMEMBER": {
-      "until": "6.2.0",
+      "doc_flags": ["deprecated"],
+      "deprecated_since": "6.2.0",
       "replaced_by": "`GEOSEARCH` and `GEOSEARCHSTORE` with the `BYRADIUS` and `FROMMEMBER` arguments",
     },
     "GEORADIUSBYMEMBER_RO": {
       "group": "geo",
-      "until": "6.2.0",
+      "doc_flags": ["deprecated"],
+      "deprecated_since": "6.2.0",
       "replaced_by": "`GEOSEARCH` with the `BYRADIUS` and `FROMMEMBER` arguments",
     },
     "GETSET": {
-      "until": "6.2.0",
+      "doc_flags": ["deprecated"],
+      "deprecated_since": "6.2.0",
       "replaced_by": "`SET` with the `!GET` argument",
     },
     "HMSET": {
-      "until": "4.0.0",
+      "doc_flags": ["deprecated"],
+      "deprecated_since": "4.0.0",
       "replaced_by": "`HSET` with multiple field-value pairs",
     },
     "RPOPLPUSH": {
-      "until": "6.2.0",
+      "doc_flags": ["deprecated"],
+      "deprecated_since": "6.2.0",
       "replaced_by": "`LMOVE` with the `RIGHT` and `LEFT` arguments",
     },
     "ZRANGEBYSCORE": {
-      "until": "6.2.0",
+      "doc_flags": ["deprecated"],
+      "deprecated_since": "6.2.0",
       "replaced_by": "`ZRANGE` with the `BYSCORE` argument",
     },
     "ZRANGEBYLEX": {
-      "until": "6.2.0",
+      "doc_flags": ["deprecated"],
+      "deprecated_since": "6.2.0",
       "replaced_by": "`ZRANGE` with the `BYSCORE` argument",
     },
     "ZREVRANGE": {
-      "until": "6.2.0",
+      "doc_flags": ["deprecated"],
+      "deprecated_since": "6.2.0",
       "replaced_by": "`ZRANGE` with the `REV` argument",
     },
     "ZREVRANGEBYLEX": {
-      "until": "6.2.0",
+      "doc_flags": ["deprecated"],
+      "deprecated_since": "6.2.0",
       "replaced_by": "`ZRANGE` with the `REV` and `BYLEX` arguments",
     },
     "ZREVRANGEBYSCORE": {
-      "until": "6.2.0",
+      "doc_flags": ["deprecated"],
+      "deprecated_since": "6.2.0",
       "replaced_by": "`ZRANGE` with the `REV` and `BYSCORE` arguments",
     },
     "SUBSTR": {
       "group": "string",
-      "undocumented": true,
-      "until": "2.0.0",
+      "doc_flags": ["deprecated"],
+      "deprecated_since": "2.0.0",
       "replaced_by": "`GETRANGE`",
     },
     "PFSELFTEST": {
+      "doc_flags": ["syscmd"],
       "group": "hyperloglog",
-      "internal": true,
-      "undocumented": true,
     },
     "PFDEBUG": {
+      "doc_flags": ["syscmd"],
       "group": "hyperloglog",
-      "internal": true,
-      "undocumented": true,
     },
     "REPLCONF": {
+      "doc_flags": ["syscmd"],
       "group": "server",
-      "internal": true,
-      "undocumented": true,
     },
     "DEBUG": {
+      "doc_flags": ["syscmd"],
       "group": "server",
-      "internal": true,
     },
     "RESTORE-ASKING": {
+      "doc_flags": ["syscmd"],
       "group": "server",
-      "internal": true,
-      "undocumented": true,
     },
     "XSETID": {
       "group": "stream",
-      "internal": true,
-      "undocumented": true,
     },
     "CLUSTER": {
       "group": "cluster",

@@ -1,13 +1,3 @@
 {
-    "SCRIPT DEBUG": {
-        "returns": [
-            {
-                "description": "PATCH__TBD__324__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "SCRIPT DEBUG": {}
 }

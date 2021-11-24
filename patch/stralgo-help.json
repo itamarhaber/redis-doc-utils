@@ -1,15 +1,6 @@
 {
-    "STRALGO HELP": {
-        "summary": "PATCH__TBD__65__",
-        "since": "PATCH__TBD__66__",
-        "returns": [
-            {
-                "description": "PATCH__TBD__359__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "STRALGO HELP": {
+    "summary": "PATCH__TBD__65__",
+    "since": "PATCH__TBD__66__"
+  }
 }

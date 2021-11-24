@@ -1,13 +1,3 @@
 {
-    "BLMPOP": {
-        "returns": [
-            {
-                "description": "PATCH__TBD__115__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "BLMPOP": {}
 }

@@ -1,13 +1,3 @@
 {
-    "SETBIT": {
-        "returns": [
-            {
-                "description": "PATCH__TBD__335__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "SETBIT": {}
 }

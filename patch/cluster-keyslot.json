@@ -1,13 +1,3 @@
 {
-    "CLUSTER KEYSLOT": {
-        "returns": [
-            {
-                "description": "PATCH__TBD__152__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "CLUSTER KEYSLOT": {}
 }

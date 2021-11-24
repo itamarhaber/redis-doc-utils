@@ -1,14 +1,5 @@
 {
-    "XGROUP": {
-        "summary": "A container for consumer groups commands",
-        "returns": [
-            {
-                "description": "PATCH__TBD__389__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "XGROUP": {
+    "summary": "A container for consumer groups commands"
+  }
 }

@@ -1,13 +1,3 @@
 {
-    "PSETEX": {
-        "returns": [
-            {
-                "description": "PATCH__TBD__294__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "PSETEX": {}
 }

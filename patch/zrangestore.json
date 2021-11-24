@@ -1,13 +1,3 @@
 {
-    "ZRANGESTORE": {
-        "returns": [
-            {
-                "description": "PATCH__TBD__421__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "ZRANGESTORE": {}
 }

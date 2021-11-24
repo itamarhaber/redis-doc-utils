@@ -1,13 +1,3 @@
 {
-    "SETNX": {
-        "returns": [
-            {
-                "description": "PATCH__TBD__337__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "SETNX": {}
 }

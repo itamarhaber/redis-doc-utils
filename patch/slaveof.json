@@ -1,14 +1,5 @@
 {
-    "SLAVEOF": {
-        "complexity": "PATCH__TBD__56__",
-        "returns": [
-            {
-                "description": "PATCH__TBD__344__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "SLAVEOF": {
+    "complexity": "PATCH__TBD__56__"
+  }
 }

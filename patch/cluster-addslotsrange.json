@@ -1,13 +1,3 @@
 {
-    "CLUSTER ADDSLOTSRANGE": {
-        "returns": [
-            {
-                "description": "PATCH__TBD__140__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "CLUSTER ADDSLOTSRANGE": {}
 }

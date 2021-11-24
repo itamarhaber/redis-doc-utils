@@ -1,14 +1,5 @@
 {
-    "MULTI": {
-        "complexity": "PATCH__TBD__36__",
-        "returns": [
-            {
-                "description": "PATCH__TBD__276__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "MULTI": {
+    "complexity": "PATCH__TBD__36__"
+  }
 }

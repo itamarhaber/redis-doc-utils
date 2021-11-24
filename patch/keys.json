@@ -1,13 +1,3 @@
 {
-    "KEYS": {
-        "returns": [
-            {
-                "description": "PATCH__TBD__234__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "KEYS": {}
 }

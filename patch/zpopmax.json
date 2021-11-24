@@ -1,13 +1,3 @@
 {
-    "ZPOPMAX": {
-        "returns": [
-            {
-                "description": "PATCH__TBD__415__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "ZPOPMAX": {}
 }

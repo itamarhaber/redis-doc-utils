@@ -1,13 +1,3 @@
 {
-    "ACL SAVE": {
-        "returns": [
-            {
-                "description": "PATCH__TBD__99__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "ACL SAVE": {}
 }

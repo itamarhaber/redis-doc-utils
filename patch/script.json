@@ -1,14 +1,5 @@
 {
-    "SCRIPT": {
-        "summary": "A containter for Lua scripts management commands",
-        "returns": [
-            {
-                "description": "PATCH__TBD__330__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "SCRIPT": {
+    "summary": "A containter for Lua scripts management commands"
+  }
 }

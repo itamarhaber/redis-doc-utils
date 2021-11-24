@@ -1,13 +1,3 @@
 {
-    "HEXISTS": {
-        "returns": [
-            {
-                "description": "PATCH__TBD__215__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "HEXISTS": {}
 }

@@ -1,14 +1,5 @@
 {
-    "CONFIG": {
-        "summary": "A container for server configuration commands",
-        "returns": [
-            {
-                "description": "PATCH__TBD__175__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "CONFIG": {
+    "summary": "A container for server configuration commands"
+  }
 }

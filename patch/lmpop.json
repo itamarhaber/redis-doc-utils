@@ -1,13 +1,3 @@
 {
-    "LMPOP": {
-        "returns": [
-            {
-                "description": "PATCH__TBD__248__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "LMPOP": {}
 }

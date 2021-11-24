@@ -1,13 +1,3 @@
 {
-    "EVALSHA_RO": {
-        "returns": [
-            {
-                "description": "PATCH__TBD__188__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "EVALSHA_RO": {}
 }

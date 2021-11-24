@@ -1,13 +1,3 @@
 {
-    "SDIFF": {
-        "returns": [
-            {
-                "description": "PATCH__TBD__331__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "SDIFF": {}
 }

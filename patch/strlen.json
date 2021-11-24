@@ -1,13 +1,3 @@
 {
-    "STRLEN": {
-        "returns": [
-            {
-                "description": "PATCH__TBD__362__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "STRLEN": {}
 }

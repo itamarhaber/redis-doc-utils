@@ -1,13 +1,3 @@
 {
-    "XGROUP CREATECONSUMER": {
-        "returns": [
-            {
-                "description": "PATCH__TBD__384__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "XGROUP CREATECONSUMER": {}
 }

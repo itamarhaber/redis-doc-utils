@@ -1,13 +1,3 @@
 {
-    "MEMORY USAGE": {
-        "returns": [
-            {
-                "description": "PATCH__TBD__264__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "MEMORY USAGE": {}
 }

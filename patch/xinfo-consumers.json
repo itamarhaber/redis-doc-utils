@@ -1,13 +1,3 @@
 {
-    "XINFO CONSUMERS": {
-        "returns": [
-            {
-                "description": "PATCH__TBD__392__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "XINFO CONSUMERS": {}
 }

@@ -1,14 +1,5 @@
 {
-    "DBSIZE": {
-        "complexity": "O(1)",
-        "returns": [
-            {
-                "description": "PATCH__TBD__177__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "DBSIZE": {
+    "complexity": "O(1)"
+  }
 }

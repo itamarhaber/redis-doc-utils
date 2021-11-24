@@ -1,14 +1,5 @@
 {
-    "ROLE": {
-        "complexity": "PATCH__TBD__53__",
-        "returns": [
-            {
-                "description": "PATCH__TBD__315__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "ROLE": {
+    "complexity": "PATCH__TBD__53__"
+  }
 }

@@ -1,13 +1,3 @@
 {
-    "MSETNX": {
-        "returns": [
-            {
-                "description": "PATCH__TBD__275__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "MSETNX": {}
 }

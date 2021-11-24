@@ -1,13 +1,3 @@
 {
-    "GETEX": {
-        "returns": [
-            {
-                "description": "PATCH__TBD__210__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "GETEX": {}
 }

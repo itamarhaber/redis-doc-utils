@@ -1,14 +1,5 @@
 {
-    "MEMORY PURGE": {
-        "complexity": "PATCH__TBD__70__",
-        "returns": [
-            {
-                "description": "PATCH__TBD__261__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "MEMORY PURGE": {
+    "complexity": "PATCH__TBD__70__"
+  }
 }

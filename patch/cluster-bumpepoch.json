@@ -1,13 +1,3 @@
 {
-    "CLUSTER BUMPEPOCH": {
-        "returns": [
-            {
-                "description": "PATCH__TBD__141__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "CLUSTER BUMPEPOCH": {}
 }

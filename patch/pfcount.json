@@ -1,13 +1,3 @@
 {
-    "PFCOUNT": {
-        "returns": [
-            {
-                "description": "PATCH__TBD__288__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "PFCOUNT": {}
 }

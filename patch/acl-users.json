@@ -1,13 +1,3 @@
 {
-    "ACL USERS": {
-        "returns": [
-            {
-                "description": "PATCH__TBD__101__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "ACL USERS": {}
 }

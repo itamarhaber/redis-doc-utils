@@ -1,13 +1,3 @@
 {
-    "XINFO GROUPS": {
-        "returns": [
-            {
-                "description": "PATCH__TBD__390__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "XINFO GROUPS": {}
 }

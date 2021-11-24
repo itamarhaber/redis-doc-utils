@@ -1,13 +1,3 @@
 {
-    "SLOWLOG GET": {
-        "returns": [
-            {
-                "description": "PATCH__TBD__345__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "SLOWLOG GET": {}
 }

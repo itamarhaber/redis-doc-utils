@@ -1,13 +1,3 @@
 {
-    "INCRBY": {
-        "returns": [
-            {
-                "description": "PATCH__TBD__232__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "INCRBY": {}
 }

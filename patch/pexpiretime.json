@@ -1,13 +1,3 @@
 {
-    "PEXPIRETIME": {
-        "returns": [
-            {
-                "description": "PATCH__TBD__286__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "PEXPIRETIME": {}
 }

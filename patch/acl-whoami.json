@@ -1,13 +1,3 @@
 {
-    "ACL WHOAMI": {
-        "returns": [
-            {
-                "description": "PATCH__TBD__102__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "ACL WHOAMI": {}
 }

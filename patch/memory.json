@@ -1,14 +1,5 @@
 {
-    "MEMORY": {
-        "summary": "A container for memory diagnostics commands",
-        "returns": [
-            {
-                "description": "PATCH__TBD__263__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "MEMORY": {
+    "summary": "A container for memory diagnostics commands"
+  }
 }

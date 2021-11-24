@@ -1,16 +1,7 @@
 {
-    "PFDEBUG": {
-        "summary": "Internal commands for debugging HyperLogLog values",
-        "complexity": "N/A",
-        "since": "2.8.9",
-        "returns": [
-            {
-                "description": "PATCH__TBD__289__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "PFDEBUG": {
+    "summary": "Internal commands for debugging HyperLogLog values",
+    "complexity": "N/A",
+    "since": "2.8.9"
+  }
 }

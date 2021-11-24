@@ -6,14 +6,16 @@
         "since": "__TBD__6__",
         "arity": 4,
         "function": "getrangeCommand",
-        "until": "2.0.0",
-        "replaced_by": "`GETRANGE`",
-        "undocumented": true,
         "history": [
             [
                 "2.0.0",
                 "the command has been deprecated and replaced by `GETRANGE`."
             ]
+        ],
+        "deprecated_since": "2.0.0",
+        "replaced_by": "`GETRANGE`",
+        "doc_flags": [
+            "deprecated"
         ],
         "command_flags": [
             "readonly"
@@ -39,15 +41,6 @@
                         "step": 1,
                         "limit": 0
                     }
-                }
-            }
-        ],
-        "returns": [
-            {
-                "description": "PATCH__TBD__364__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
                 }
             }
         ]

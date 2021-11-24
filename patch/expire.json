@@ -1,13 +1,3 @@
 {
-    "EXPIRE": {
-        "returns": [
-            {
-                "description": "PATCH__TBD__191__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "EXPIRE": {}
 }

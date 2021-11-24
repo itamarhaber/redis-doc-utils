@@ -1,13 +1,3 @@
 {
-    "COPY": {
-        "returns": [
-            {
-                "description": "PATCH__TBD__176__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "COPY": {}
 }

@@ -1,13 +1,3 @@
 {
-    "XTRIM": {
-        "returns": [
-            {
-                "description": "PATCH__TBD__402__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "XTRIM": {}
 }

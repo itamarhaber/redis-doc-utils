@@ -1,14 +1,5 @@
 {
-    "SLOWLOG": {
-        "summary": "A container for slow log commands",
-        "returns": [
-            {
-                "description": "PATCH__TBD__350__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "SLOWLOG": {
+    "summary": "A container for slow log commands"
+  }
 }

@@ -1,14 +1,5 @@
 {
-    "CONFIG REWRITE": {
-        "complexity": "PATCH__TBD__46__",
-        "returns": [
-            {
-                "description": "PATCH__TBD__173__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "CONFIG REWRITE": {
+    "complexity": "PATCH__TBD__46__"
+  }
 }

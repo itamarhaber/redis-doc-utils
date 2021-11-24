@@ -1,14 +1,5 @@
 {
-    "LATENCY GRAPH": {
-        "complexity": "PATCH__TBD__41__",
-        "returns": [
-            {
-                "description": "PATCH__TBD__238__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "LATENCY GRAPH": {
+    "complexity": "PATCH__TBD__41__"
+  }
 }

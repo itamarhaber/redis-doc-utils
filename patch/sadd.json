@@ -1,13 +1,3 @@
 {
-    "SADD": {
-        "returns": [
-            {
-                "description": "PATCH__TBD__320__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "SADD": {}
 }

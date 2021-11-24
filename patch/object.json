@@ -1,14 +1,5 @@
 {
-    "OBJECT": {
-        "summary": "A container for object introspection commands",
-        "returns": [
-            {
-                "description": "PATCH__TBD__282__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "OBJECT": {
+    "summary": "A container for object introspection commands"
+  }
 }

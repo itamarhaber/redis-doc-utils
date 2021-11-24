@@ -1,13 +1,3 @@
 {
-    "CONFIG RESETSTAT": {
-        "returns": [
-            {
-                "description": "PATCH__TBD__172__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "CONFIG RESETSTAT": {}
 }

@@ -1,14 +1,5 @@
 {
-    "SAVE": {
-        "complexity": "PATCH__TBD__51__",
-        "returns": [
-            {
-                "description": "PATCH__TBD__321__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "SAVE": {
+    "complexity": "PATCH__TBD__51__"
+  }
 }

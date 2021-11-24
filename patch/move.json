@@ -1,13 +1,3 @@
 {
-    "MOVE": {
-        "returns": [
-            {
-                "description": "PATCH__TBD__272__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "MOVE": {}
 }

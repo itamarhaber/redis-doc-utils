@@ -1,13 +1,3 @@
 {
-    "XGROUP CREATE": {
-        "returns": [
-            {
-                "description": "PATCH__TBD__383__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "XGROUP CREATE": {}
 }

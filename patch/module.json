@@ -1,14 +1,5 @@
 {
-    "MODULE": {
-        "summary": "A container for module commands",
-        "returns": [
-            {
-                "description": "PATCH__TBD__271__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "MODULE": {
+    "summary": "A container for module commands"
+  }
 }

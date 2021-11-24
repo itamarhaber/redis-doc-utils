@@ -1,13 +1,3 @@
 {
-    "PFMERGE": {
-        "returns": [
-            {
-                "description": "PATCH__TBD__290__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "PFMERGE": {}
 }

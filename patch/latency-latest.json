@@ -1,14 +1,5 @@
 {
-    "LATENCY LATEST": {
-        "complexity": "PATCH__TBD__44__",
-        "returns": [
-            {
-                "description": "PATCH__TBD__241__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "LATENCY LATEST": {
+    "complexity": "PATCH__TBD__44__"
+  }
 }

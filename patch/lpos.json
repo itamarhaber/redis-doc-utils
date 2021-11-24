@@ -1,13 +1,3 @@
 {
-    "LPOS": {
-        "returns": [
-            {
-                "description": "PATCH__TBD__251__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "LPOS": {}
 }

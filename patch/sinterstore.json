@@ -1,13 +1,3 @@
 {
-    "SINTERSTORE": {
-        "returns": [
-            {
-                "description": "PATCH__TBD__342__",
-                "type": {
-                    "RESP2": "null-bulk-string",
-                    "RESP3": "null"
-                }
-            }
-        ]
-    }
+  "SINTERSTORE": {}
 }
