@@ -792,11 +792,6 @@ function prePatch(cmds) {
       "internal": true,
       "undocumented": true,
     },
-    "HOST:": {
-      "group": "server",
-      "internal": true,
-      "undocumented": true,
-    },
     "REPLCONF": {
       "group": "server",
       "internal": true,
@@ -813,11 +808,6 @@ function prePatch(cmds) {
     },
     "XSETID": {
       "group": "stream",
-      "internal": true,
-      "undocumented": true,
-    },
-    "POST": {
-      "group": "server",
       "internal": true,
       "undocumented": true,
     },

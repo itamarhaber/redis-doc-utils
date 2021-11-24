@@ -1,9 +1,9 @@
 {
     "HELP": {
-        "summary": "__TBD__2__",
+        "summary": "Show helpful text about the different subcommands",
         "complexity": "O(1)",
         "group": "scripting",
-        "since": "__TBD__3__",
+        "since": "5.0.0",
         "arity": 2,
         "container": "SCRIPT",
         "function": "scriptCommand",

@@ -1,9 +1,9 @@
 {
     "HELP": {
-        "summary": "__TBD__4__",
+        "summary": "Show helpful text about the different subcommands",
         "complexity": "O(1)",
         "group": "connection",
-        "since": "__TBD__5__",
+        "since": "5.0.0",
         "arity": 2,
         "container": "CLIENT",
         "function": "clientCommand",

@@ -1,9 +1,9 @@
 {
     "HELP": {
-        "summary": "__TBD__10__",
+        "summary": "Show helpful text about the different subcommands",
         "complexity": "O(1)",
         "group": "cluster",
-        "since": "__TBD__11__",
+        "since": "5.0.0",
         "arity": 2,
         "container": "CLUSTER",
         "function": "clusterCommand",

@@ -1,9 +1,9 @@
 {
     "HELP": {
-        "summary": "__TBD__8__",
+        "summary": "Show helpful text about the different subcommands",
         "complexity": "O(1)",
         "group": "server",
-        "since": "__TBD__9__",
+        "since": "5.0.0",
         "arity": 2,
         "container": "CONFIG",
         "function": "configHelpCommand",
