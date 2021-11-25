@@ -1,0 +1,8 @@
+{
+    "SENTINEL SIMULATE-FAILURE": {
+        "summary": "PATCH__TBD__82__",
+        "complexity": "PATCH__TBD__81__",
+        "group": "PATCH__TBD__83__",
+        "since": "PATCH__TBD__84__"
+    }
+}

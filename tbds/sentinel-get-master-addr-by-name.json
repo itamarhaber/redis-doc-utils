@@ -1,0 +1,8 @@
+{
+    "SENTINEL GET-MASTER-ADDR-BY-NAME": {
+        "summary": "PATCH__TBD__31__",
+        "complexity": "PATCH__TBD__30__",
+        "group": "PATCH__TBD__32__",
+        "since": "PATCH__TBD__33__"
+    }
+}
