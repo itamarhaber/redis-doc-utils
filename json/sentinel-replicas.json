@@ -1,9 +1,9 @@
 {
     "REPLICAS": {
-        "summary": "__TBD__35__",
-        "complexity": "__TBD__34__",
-        "group": "__TBD__36__",
-        "since": "__TBD__37__",
+        "summary": "List the monitored replicas",
+        "complexity": "O(N) where N is the number of replicas",
+        "group": "sentinel",
+        "since": "5.0.0",
         "arity": 3,
         "container": "SENTINEL",
         "function": "sentinelCommand",

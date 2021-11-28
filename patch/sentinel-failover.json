@@ -1,0 +1,8 @@
+{
+    "SENTINEL FAILOVER": {
+        "summary": "Force a failover",
+        "complexity": "PATCH__TBD__22__",
+        "group": "sentinel",
+        "since": "2.8.4"
+    }
+}

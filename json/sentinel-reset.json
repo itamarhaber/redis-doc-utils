@@ -1,9 +1,9 @@
 {
     "RESET": {
-        "summary": "__TBD__47__",
-        "complexity": "__TBD__46__",
-        "group": "__TBD__48__",
-        "since": "__TBD__49__",
+        "summary": "Reset masters by name pattern",
+        "complexity": "O(N) where N is the number of monitored masters",
+        "group": "sentinel",
+        "since": "2.8.4",
         "arity": 3,
         "container": "SENTINEL",
         "function": "sentinelCommand",

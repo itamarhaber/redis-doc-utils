@@ -1,9 +1,9 @@
 {
     "FAILOVER": {
-        "summary": "__TBD__23__",
-        "complexity": "__TBD__22__",
-        "group": "__TBD__24__",
-        "since": "__TBD__25__",
+        "summary": "Force a failover",
+        "complexity": "PATCH__TBD__22__",
+        "group": "sentinel",
+        "since": "2.8.4",
         "arity": 3,
         "container": "SENTINEL",
         "function": "sentinelCommand",

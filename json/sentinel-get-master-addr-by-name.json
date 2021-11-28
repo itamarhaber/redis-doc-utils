@@ -1,9 +1,9 @@
 {
     "GET-MASTER-ADDR-BY-NAME": {
-        "summary": "__TBD__31__",
-        "complexity": "__TBD__30__",
-        "group": "__TBD__32__",
-        "since": "__TBD__33__",
+        "summary": "Get port and address of a master",
+        "complexity": "O(1)",
+        "group": "sentinel",
+        "since": "2.8.4",
         "arity": 3,
         "container": "SENTINEL",
         "function": "sentinelCommand",

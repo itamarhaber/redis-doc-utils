@@ -1,0 +1,8 @@
+{
+    "SENTINEL MASTER": {
+        "summary": "Shows the state of a master",
+        "complexity": "O(1)",
+        "group": "sentinel",
+        "since": "2.8.4"
+    }
+}

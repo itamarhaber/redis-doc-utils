@@ -1,9 +1,9 @@
 {
     "MASTER": {
-        "summary": "__TBD__19__",
-        "complexity": "__TBD__18__",
-        "group": "__TBD__20__",
-        "since": "__TBD__21__",
+        "summary": "Shows the state of a master",
+        "complexity": "O(1)",
+        "group": "sentinel",
+        "since": "2.8.4",
         "arity": 3,
         "container": "SENTINEL",
         "function": "sentinelCommand",

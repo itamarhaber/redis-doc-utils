@@ -1,9 +1,9 @@
 {
     "MASTERS": {
-        "summary": "__TBD__11__",
-        "complexity": "__TBD__10__",
-        "group": "__TBD__12__",
-        "since": "__TBD__13__",
+        "summary": "List the monitored masters",
+        "complexity": "O(N) where N is the number of masters",
+        "group": "sentinel",
+        "since": "2.8.4",
         "arity": 2,
         "container": "SENTINEL",
         "function": "sentinelCommand",

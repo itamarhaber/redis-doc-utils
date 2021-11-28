@@ -1,0 +1,7 @@
+{
+    "SENTINEL": {
+        "summary": "A container for Sentinel commands",
+        "group": "sentinel",
+        "since": "2.8.4"
+    }
+}

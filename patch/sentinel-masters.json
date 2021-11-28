@@ -1,0 +1,8 @@
+{
+    "SENTINEL MASTERS": {
+        "summary": "List the monitored masters",
+        "complexity": "O(N) where N is the number of masters",
+        "group": "sentinel",
+        "since": "2.8.4"
+    }
+}

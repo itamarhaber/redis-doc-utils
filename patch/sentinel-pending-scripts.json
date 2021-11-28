@@ -1,0 +1,8 @@
+{
+    "SENTINEL PENDING-SCRIPTS": {
+        "summary": "Get information about pending scripts",
+        "complexity": "PATCH__TBD__54__",
+        "group": "sentinel",
+        "since": "2.8.4"
+    }
+}

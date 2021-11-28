@@ -1,9 +1,9 @@
 {
     "MONITOR": {
-        "summary": "__TBD__63__",
-        "complexity": "__TBD__62__",
-        "group": "__TBD__64__",
-        "since": "__TBD__65__",
+        "summary": "Start monitoring",
+        "complexity": "O(1)",
+        "group": "sentinel",
+        "since": "2.8.4",
         "arity": 6,
         "container": "SENTINEL",
         "function": "sentinelCommand",

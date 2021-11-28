@@ -1,9 +1,9 @@
 {
     "REMOVE": {
-        "summary": "__TBD__75__",
-        "complexity": "__TBD__74__",
-        "group": "__TBD__76__",
-        "since": "__TBD__77__",
+        "summary": "Stop monitoring",
+        "complexity": "O(1)",
+        "group": "sentinel",
+        "since": "2.8.4",
         "arity": 3,
         "container": "SENTINEL",
         "function": "sentinelCommand",

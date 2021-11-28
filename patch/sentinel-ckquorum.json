@@ -1,0 +1,8 @@
+{
+    "SENTINEL CKQUORUM": {
+        "summary": "Check for a Sentinel quorum",
+        "complexity": "PATCH__TBD__42__",
+        "group": "sentinel",
+        "since": "2.8.4"
+    }
+}

@@ -1,9 +1,9 @@
 {
     "INFO-CACHE": {
-        "summary": "__TBD__51__",
-        "complexity": "__TBD__50__",
-        "group": "__TBD__52__",
-        "since": "__TBD__53__",
+        "summary": "Get cached INFO from the instances in the deployment",
+        "complexity": "O(N) where N is the number of instances",
+        "group": "sentinel",
+        "since": "3.2.0",
         "arity": 3,
         "container": "SENTINEL",
         "function": "sentinelCommand",

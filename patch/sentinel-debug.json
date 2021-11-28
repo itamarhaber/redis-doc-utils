@@ -2,7 +2,7 @@
     "SENTINEL DEBUG": {
         "summary": "PATCH__TBD__7__",
         "complexity": "PATCH__TBD__6__",
-        "group": "PATCH__TBD__8__",
+        "group": "sentinel",
         "since": "PATCH__TBD__9__"
     }
 }

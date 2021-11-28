@@ -1,0 +1,8 @@
+{
+    "SENTINEL GET-MASTER-ADDR-BY-NAME": {
+        "summary": "Get port and address of a master",
+        "complexity": "O(1)",
+        "group": "sentinel",
+        "since": "2.8.4"
+    }
+}

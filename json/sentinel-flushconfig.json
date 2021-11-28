@@ -1,9 +1,9 @@
 {
     "FLUSHCONFIG": {
-        "summary": "__TBD__15__",
-        "complexity": "__TBD__14__",
-        "group": "__TBD__16__",
-        "since": "__TBD__17__",
+        "summary": "Rewrite configuration file",
+        "complexity": "O(1)",
+        "group": "sentinel",
+        "since": "2.8.4",
         "arity": 2,
         "container": "SENTINEL",
         "function": "sentinelCommand",

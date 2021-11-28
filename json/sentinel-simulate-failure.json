@@ -1,9 +1,9 @@
 {
     "SIMULATE-FAILURE": {
-        "summary": "__TBD__82__",
-        "complexity": "__TBD__81__",
-        "group": "__TBD__83__",
-        "since": "__TBD__84__",
+        "summary": "Simulate failover scenarios",
+        "complexity": "PATCH__TBD__81__",
+        "group": "sentinel",
+        "since": "3.2.0",
         "arity": 3,
         "container": "SENTINEL",
         "function": "sentinelCommand",

@@ -1,9 +1,9 @@
 {
     "CKQUORUM": {
-        "summary": "__TBD__43__",
-        "complexity": "__TBD__42__",
-        "group": "__TBD__44__",
-        "since": "__TBD__45__",
+        "summary": "Check for a Sentinel quorum",
+        "complexity": "PATCH__TBD__42__",
+        "group": "sentinel",
+        "since": "2.8.4",
         "arity": 3,
         "container": "SENTINEL",
         "function": "sentinelCommand",

@@ -1,9 +1,9 @@
 {
     "PENDING-SCRIPTS": {
-        "summary": "__TBD__55__",
-        "complexity": "__TBD__54__",
-        "group": "__TBD__56__",
-        "since": "__TBD__57__",
+        "summary": "Get information about pending scripts",
+        "complexity": "PATCH__TBD__54__",
+        "group": "sentinel",
+        "since": "2.8.4",
         "arity": 2,
         "container": "SENTINEL",
         "function": "sentinelCommand",
