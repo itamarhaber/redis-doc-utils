@@ -409,8 +409,17 @@ function convertCommand(container, args) {
 
   o[name]['command_flags'] = o[name]['command_flags'].filter(x => x !== 'movablekeys');
 
+  const masked_acl = [
+    'read',
+    'write',
+    'fast',
+    'slow',
+    'admin',
+    'dangerous',
+    'pubsub',
+  ];
   if (args[6].length !== 0) {
-    o[name].acl_categories = args[6].map(x => x.slice(1));
+    o[name].acl_categories = args[6].map(x => x.slice(1)).filter(x => masked_acl.indexOf(x) === -1);
   }
 
   if (args[7].length !== 0) {
@@ -607,7 +616,7 @@ async function persistCommand(cmd) {
     s[kname]['arguments'] = undefinedIfZeroArray(cmd[kname].arguments);
   }
 
-  const json = JSON.stringify(s,null,4);
+  const json = `${JSON.stringify(s,null,4)}\n`;
   await fs.writeFile(`${outputPathJSON}/${fname}.json`,json,'utf-8');
 }
 

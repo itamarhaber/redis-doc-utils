@@ -9,11 +9,6 @@
             "admin",
             "sentinel",
             "only_sentinel"
-        ],
-        "acl_categories": [
-            "admin",
-            "slow",
-            "dangerous"
         ]
     }
 }
