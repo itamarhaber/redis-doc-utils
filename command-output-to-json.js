@@ -414,12 +414,15 @@ function convertCommand(container, args) {
     'write',
     'fast',
     'slow',
-    'admin',
-    'dangerous',
     'pubsub',
   ];
   if (args[6].length !== 0) {
-    o[name].acl_categories = args[6].map(x => x.slice(1)).filter(x => masked_acl.indexOf(x) === -1);
+    o[name].acl_categories = args[6]
+      .map(x => x.slice(1))
+      .filter(x => masked_acl.indexOf(x) === -1);
+    if (o[name].command_flags.indexOf('admin') !== -1) {
+      o[name].acl_categories = o[name].acl_categories.filter(x => x !== 'admin' && x != 'dangerous');
+    }
   }
 
   if (args[7].length !== 0) {

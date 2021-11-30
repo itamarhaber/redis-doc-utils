@@ -114,6 +114,22 @@
             "sentinel"
         ]
     },
+    "ACL LOAD": {
+        "summary": "Reload the ACLs from the configured ACL file",
+        "complexity": "O(N). Where N is the number of configured users.",
+        "group": "server",
+        "since": "6.0.0",
+        "arity": 2,
+        "container": "ACL",
+        "function": "aclCommand",
+        "command_flags": [
+            "admin",
+            "noscript",
+            "loading",
+            "stale",
+            "sentinel"
+        ]
+    },
     "ACL HELP": {
         "summary": "Show helpful text about the different subcommands",
         "complexity": "O(1)",
@@ -168,8 +184,8 @@
             }
         ]
     },
-    "ACL LOAD": {
-        "summary": "Reload the ACLs from the configured ACL file",
+    "ACL SAVE": {
+        "summary": "Save the current ACL rules in the configured ACL file",
         "complexity": "O(N). Where N is the number of configured users.",
         "group": "server",
         "since": "6.0.0",
@@ -220,8 +236,8 @@
             }
         ]
     },
-    "ACL SAVE": {
-        "summary": "Save the current ACL rules in the configured ACL file",
+    "ACL USERS": {
+        "summary": "List the username of all the configured ACL rules",
         "complexity": "O(N). Where N is the number of configured users.",
         "group": "server",
         "since": "6.0.0",
@@ -245,22 +261,6 @@
         "container": "ACL",
         "function": "aclCommand",
         "command_flags": [
-            "noscript",
-            "loading",
-            "stale",
-            "sentinel"
-        ]
-    },
-    "ACL USERS": {
-        "summary": "List the username of all the configured ACL rules",
-        "complexity": "O(N). Where N is the number of configured users.",
-        "group": "server",
-        "since": "6.0.0",
-        "arity": 2,
-        "container": "ACL",
-        "function": "aclCommand",
-        "command_flags": [
-            "admin",
             "noscript",
             "loading",
             "stale",
@@ -312,16 +312,6 @@
                 "type": "string",
                 "value": "value"
             }
-        ]
-    },
-    "ACL": {
-        "summary": "A container for Access List Control commands ",
-        "complexity": "Depends on subcommand.",
-        "group": "server",
-        "since": "6.0.0",
-        "arity": -2,
-        "command_flags": [
-            "sentinel"
         ]
     },
     "ASKING": {
@@ -410,6 +400,86 @@
                 "name": "schedule",
                 "token": "SCHEDULE",
                 "type": "pure-token",
+                "optional": true
+            }
+        ]
+    },
+    "BITCOUNT": {
+        "summary": "Count set bits in a string",
+        "complexity": "O(N)",
+        "group": "bitmap",
+        "since": "2.6.0",
+        "arity": -2,
+        "function": "bitcountCommand",
+        "history": [
+            [
+                "7.0",
+                "Added the `BYTE|BIT` option."
+            ]
+        ],
+        "command_flags": [
+            "readonly"
+        ],
+        "acl_categories": [
+            "bitmap"
+        ],
+        "key_specs": [
+            {
+                "flags": [
+                    "read"
+                ],
+                "begin_search": {
+                    "index": {
+                        "pos": 1
+                    }
+                },
+                "find_keys": {
+                    "range": {
+                        "lastkey": 0,
+                        "step": 1,
+                        "limit": 0
+                    }
+                }
+            }
+        ],
+        "arguments": [
+            {
+                "name": "key",
+                "type": "key",
+                "value": "key"
+            },
+            {
+                "name": "index",
+                "type": "block",
+                "value": [
+                    {
+                        "name": "start",
+                        "type": "integer",
+                        "value": "start"
+                    },
+                    {
+                        "name": "end",
+                        "type": "integer",
+                        "value": "end"
+                    },
+                    {
+                        "name": "index_unit",
+                        "type": "oneof",
+                        "value": [
+                            {
+                                "name": "byte",
+                                "type": "pure-token",
+                                "token": "BYTE"
+                            },
+                            {
+                                "name": "bit",
+                                "type": "pure-token",
+                                "token": "BIT"
+                            }
+                        ],
+                        "optional": true
+                    }
+                ],
                 "optional": true
             }
         ]
@@ -536,86 +606,6 @@
                         "name": "fail",
                         "type": "pure-token",
                         "token": "FAIL"
-                    }
-                ],
-                "optional": true
-            }
-        ]
-    },
-    "BITCOUNT": {
-        "summary": "Count set bits in a string",
-        "complexity": "O(N)",
-        "group": "bitmap",
-        "since": "2.6.0",
-        "arity": -2,
-        "function": "bitcountCommand",
-        "history": [
-            [
-                "7.0",
-                "Added the `BYTE|BIT` option."
-            ]
-        ],
-        "command_flags": [
-            "readonly"
-        ],
-        "acl_categories": [
-            "bitmap"
-        ],
-        "key_specs": [
-            {
-                "flags": [
-                    "read"
-                ],
-                "begin_search": {
-                    "index": {
-                        "pos": 1
-                    }
-                },
-                "find_keys": {
-                    "range": {
-                        "lastkey": 0,
-                        "step": 1,
-                        "limit": 0
-                    }
-                }
-            }
-        ],
-        "arguments": [
-            {
-                "name": "key",
-                "type": "key",
-                "value": "key"
-            },
-            {
-                "name": "index",
-                "type": "block",
-                "value": [
-                    {
-                        "name": "start",
-                        "type": "integer",
-                        "value": "start"
-                    },
-                    {
-                        "name": "end",
-                        "type": "integer",
-                        "value": "end"
-                    },
-                    {
-                        "name": "index_unit",
-                        "type": "oneof",
-                        "value": [
-                            {
-                                "name": "byte",
-                                "type": "pure-token",
-                                "token": "BYTE"
-                            },
-                            {
-                                "name": "bit",
-                                "type": "pure-token",
-                                "token": "BIT"
-                            }
-                        ],
-                        "optional": true
                     }
                 ],
                 "optional": true
@@ -841,82 +831,6 @@
             }
         ]
     },
-    "BLMPOP": {
-        "summary": "Pop elements from a list, or block until one is available",
-        "complexity": "O(N+M) where N is the number of provided keys and M is the number of elements returned.",
-        "group": "list",
-        "since": "7.0.0",
-        "arity": -5,
-        "function": "blmpopCommand",
-        "get_keys_function": "blmpopGetKeys",
-        "command_flags": [
-            "write"
-        ],
-        "acl_categories": [
-            "list",
-            "blocking"
-        ],
-        "key_specs": [
-            {
-                "flags": [
-                    "write"
-                ],
-                "begin_search": {
-                    "index": {
-                        "pos": 2
-                    }
-                },
-                "find_keys": {
-                    "keynum": {
-                        "keynumidx": 0,
-                        "firstkey": 1,
-                        "step": 1
-                    }
-                }
-            }
-        ],
-        "arguments": [
-            {
-                "name": "timeout",
-                "type": "double",
-                "value": "timeout"
-            },
-            {
-                "name": "numkeys",
-                "type": "integer",
-                "value": "numkeys"
-            },
-            {
-                "name": "key",
-                "type": "key",
-                "value": "key",
-                "multiple": true
-            },
-            {
-                "name": "where",
-                "type": "oneof",
-                "value": [
-                    {
-                        "name": "left",
-                        "type": "pure-token",
-                        "token": "LEFT"
-                    },
-                    {
-                        "name": "right",
-                        "type": "pure-token",
-                        "token": "RIGHT"
-                    }
-                ]
-            },
-            {
-                "token": "COUNT",
-                "name": "count",
-                "type": "integer",
-                "value": "count",
-                "optional": true
-            }
-        ]
-    },
     "BLMOVE": {
         "summary": "Pop an element from a list, push it to another list and return it; or block until one is available",
         "complexity": "O(1)",
@@ -1017,6 +931,82 @@
                 "name": "timeout",
                 "type": "double",
                 "value": "timeout"
+            }
+        ]
+    },
+    "BLMPOP": {
+        "summary": "Pop elements from a list, or block until one is available",
+        "complexity": "O(N+M) where N is the number of provided keys and M is the number of elements returned.",
+        "group": "list",
+        "since": "7.0.0",
+        "arity": -5,
+        "function": "blmpopCommand",
+        "get_keys_function": "blmpopGetKeys",
+        "command_flags": [
+            "write"
+        ],
+        "acl_categories": [
+            "list",
+            "blocking"
+        ],
+        "key_specs": [
+            {
+                "flags": [
+                    "write"
+                ],
+                "begin_search": {
+                    "index": {
+                        "pos": 2
+                    }
+                },
+                "find_keys": {
+                    "keynum": {
+                        "keynumidx": 0,
+                        "firstkey": 1,
+                        "step": 1
+                    }
+                }
+            }
+        ],
+        "arguments": [
+            {
+                "name": "timeout",
+                "type": "double",
+                "value": "timeout"
+            },
+            {
+                "name": "numkeys",
+                "type": "integer",
+                "value": "numkeys"
+            },
+            {
+                "name": "key",
+                "type": "key",
+                "value": "key",
+                "multiple": true
+            },
+            {
+                "name": "where",
+                "type": "oneof",
+                "value": [
+                    {
+                        "name": "left",
+                        "type": "pure-token",
+                        "token": "LEFT"
+                    },
+                    {
+                        "name": "right",
+                        "type": "pure-token",
+                        "token": "RIGHT"
+                    }
+                ]
+            },
+            {
+                "token": "COUNT",
+                "name": "count",
+                "type": "integer",
+                "value": "count",
+                "optional": true
             }
         ]
     },
@@ -1836,6 +1826,30 @@
             }
         ]
     },
+    "CLIENT SETNAME": {
+        "summary": "Set the current connection name",
+        "complexity": "O(1)",
+        "group": "connection",
+        "since": "2.6.9",
+        "arity": 3,
+        "container": "CLIENT",
+        "function": "clientCommand",
+        "command_flags": [
+            "noscript",
+            "loading",
+            "stale"
+        ],
+        "acl_categories": [
+            "connection"
+        ],
+        "arguments": [
+            {
+                "name": "connection-name",
+                "type": "string",
+                "value": "connection-name"
+            }
+        ]
+    },
     "CLIENT TRACKING": {
         "summary": "Enable or disable server assisted client side caching support",
         "complexity": "O(1). Some options may introduce additional complexity.",
@@ -1911,12 +1925,12 @@
             }
         ]
     },
-    "CLIENT SETNAME": {
-        "summary": "Set the current connection name",
+    "CLIENT TRACKINGINFO": {
+        "summary": "Return information about server assisted client side caching for the current connection",
         "complexity": "O(1)",
         "group": "connection",
-        "since": "2.6.9",
-        "arity": 3,
+        "since": "6.2.0",
+        "arity": 2,
         "container": "CLIENT",
         "function": "clientCommand",
         "command_flags": [
@@ -1926,13 +1940,6 @@
         ],
         "acl_categories": [
             "connection"
-        ],
-        "arguments": [
-            {
-                "name": "connection-name",
-                "type": "string",
-                "value": "connection-name"
-            }
         ]
     },
     "CLIENT UNBLOCK": {
@@ -1977,23 +1984,6 @@
             }
         ]
     },
-    "CLIENT TRACKINGINFO": {
-        "summary": "Return information about server assisted client side caching for the current connection",
-        "complexity": "O(1)",
-        "group": "connection",
-        "since": "6.2.0",
-        "arity": 2,
-        "container": "CLIENT",
-        "function": "clientCommand",
-        "command_flags": [
-            "noscript",
-            "loading",
-            "stale"
-        ],
-        "acl_categories": [
-            "connection"
-        ]
-    },
     "CLIENT UNPAUSE": {
         "summary": "Resume processing of clients that were paused",
         "complexity": "O(N) Where N is the number of paused clients",
@@ -2032,16 +2022,6 @@
                 "value": "slot",
                 "multiple": true
             }
-        ]
-    },
-    "CLIENT": {
-        "summary": "A container for client connection commands",
-        "complexity": "Depends on subcommand.",
-        "group": "connection",
-        "since": "2.4.0",
-        "arity": -2,
-        "command_flags": [
-            "sentinel"
         ]
     },
     "CLUSTER ADDSLOTSRANGE": {
@@ -2306,6 +2286,26 @@
             "stale"
         ]
     },
+    "CLUSTER KEYSLOT": {
+        "summary": "Returns the hash slot of the specified key",
+        "complexity": "O(N) where N is the number of bytes in the key",
+        "group": "cluster",
+        "since": "3.0.0",
+        "arity": 3,
+        "container": "CLUSTER",
+        "function": "clusterCommand",
+        "command_flags": [
+            "random",
+            "stale"
+        ],
+        "arguments": [
+            {
+                "name": "key",
+                "type": "string",
+                "value": "key"
+            }
+        ]
+    },
     "CLUSTER MEET": {
         "summary": "Force a node cluster to handshake with another node",
         "complexity": "O(1)",
@@ -2332,29 +2332,9 @@
             }
         ]
     },
-    "CLUSTER KEYSLOT": {
-        "summary": "Returns the hash slot of the specified key",
-        "complexity": "O(N) where N is the number of bytes in the key",
-        "group": "cluster",
-        "since": "3.0.0",
-        "arity": 3,
-        "container": "CLUSTER",
-        "function": "clusterCommand",
-        "command_flags": [
-            "random",
-            "stale"
-        ],
-        "arguments": [
-            {
-                "name": "key",
-                "type": "string",
-                "value": "key"
-            }
-        ]
-    },
-    "CLUSTER NODES": {
-        "summary": "Get Cluster config for the node",
-        "complexity": "O(N) where N is the total number of Cluster nodes",
+    "CLUSTER MYID": {
+        "summary": "Return the node id",
+        "complexity": "O(1)",
         "group": "cluster",
         "since": "3.0.0",
         "arity": 2,
@@ -2365,9 +2345,9 @@
             "stale"
         ]
     },
-    "CLUSTER MYID": {
-        "summary": "Return the node id",
-        "complexity": "O(1)",
+    "CLUSTER NODES": {
+        "summary": "Get Cluster config for the node",
+        "complexity": "O(N) where N is the total number of Cluster nodes",
         "group": "cluster",
         "since": "3.0.0",
         "arity": 2,
@@ -2560,85 +2540,6 @@
             "stale"
         ]
     },
-    "CLUSTER": {
-        "summary": "A container for cluster commands",
-        "complexity": "Depends on subcommand.",
-        "group": "cluster",
-        "since": "3.0.0",
-        "arity": -2
-    },
-    "COMMAND COUNT": {
-        "summary": "Get total number of Redis commands",
-        "complexity": "O(1)",
-        "group": "server",
-        "since": "2.8.13",
-        "arity": 2,
-        "container": "COMMAND",
-        "function": "commandCountCommand",
-        "command_flags": [
-            "loading",
-            "stale"
-        ],
-        "acl_categories": [
-            "connection"
-        ]
-    },
-    "COMMAND GETKEYS": {
-        "summary": "Extract keys given a full Redis command",
-        "complexity": "O(N) where N is the number of arguments to the command",
-        "group": "server",
-        "since": "2.8.13",
-        "arity": -4,
-        "container": "COMMAND",
-        "function": "commandGetKeysCommand",
-        "command_flags": [
-            "loading",
-            "stale"
-        ],
-        "acl_categories": [
-            "connection"
-        ]
-    },
-    "COMMAND HELP": {
-        "summary": "Show helpful text about the different subcommands",
-        "complexity": "O(1)",
-        "group": "server",
-        "since": "5.0.0",
-        "arity": 2,
-        "container": "COMMAND",
-        "function": "commandHelpCommand",
-        "command_flags": [
-            "loading",
-            "stale"
-        ],
-        "acl_categories": [
-            "connection"
-        ]
-    },
-    "COMMAND INFO": {
-        "summary": "Get array of specific Redis command details",
-        "complexity": "O(N) when N is number of commands to look up",
-        "group": "server",
-        "since": "2.8.13",
-        "arity": -3,
-        "container": "COMMAND",
-        "function": "commandInfoCommand",
-        "command_flags": [
-            "loading",
-            "stale"
-        ],
-        "acl_categories": [
-            "connection"
-        ],
-        "arguments": [
-            {
-                "name": "command-name",
-                "type": "string",
-                "value": "command-name",
-                "multiple": true
-            }
-        ]
-    },
     "COMMAND LIST": {
         "summary": "PATCH__TBD__76__",
         "complexity": "PATCH__TBD__75__",
@@ -2650,23 +2551,6 @@
         "command_flags": [
             "loading",
             "stale"
-        ],
-        "acl_categories": [
-            "connection"
-        ]
-    },
-    "COMMAND": {
-        "summary": "Get array of Redis command details",
-        "complexity": "O(N) where N is the total number of Redis commands",
-        "group": "server",
-        "since": "2.8.13",
-        "arity": -1,
-        "function": "commandCommand",
-        "command_flags": [
-            "random",
-            "loading",
-            "stale",
-            "sentinel"
         ],
         "acl_categories": [
             "connection"
@@ -2760,13 +2644,6 @@
                 "value": "value"
             }
         ]
-    },
-    "CONFIG": {
-        "summary": "A container for server configuration commands",
-        "complexity": "Depends on subcommand.",
-        "group": "server",
-        "since": "2.0.0",
-        "arity": -2
     },
     "COPY": {
         "summary": "Copy a key",
@@ -3085,6 +2962,23 @@
             }
         ]
     },
+    "COMMAND": {
+        "summary": "Get array of Redis command details",
+        "complexity": "O(N) where N is the total number of Redis commands",
+        "group": "server",
+        "since": "2.8.13",
+        "arity": -1,
+        "function": "commandCommand",
+        "command_flags": [
+            "random",
+            "loading",
+            "stale",
+            "sentinel"
+        ],
+        "acl_categories": [
+            "connection"
+        ]
+    },
     "EVAL": {
         "summary": "Execute a Lua script server side",
         "complexity": "Depends on the script that is executed.",
@@ -3273,23 +3167,6 @@
             }
         ]
     },
-    "EXEC": {
-        "summary": "Execute all commands issued after MULTI",
-        "complexity": "PATCH__TBD__39__",
-        "group": "transactions",
-        "since": "1.2.0",
-        "arity": 1,
-        "function": "execCommand",
-        "command_flags": [
-            "noscript",
-            "loading",
-            "stale",
-            "skip_slowlog"
-        ],
-        "acl_categories": [
-            "transaction"
-        ]
-    },
     "EVALSHA_RO": {
         "summary": "Execute a read-only Lua script server side",
         "complexity": "Depends on the script that is executed.",
@@ -3348,6 +3225,23 @@
                 "value": "arg",
                 "multiple": true
             }
+        ]
+    },
+    "EXEC": {
+        "summary": "Execute all commands issued after MULTI",
+        "complexity": "PATCH__TBD__39__",
+        "group": "transactions",
+        "since": "1.2.0",
+        "arity": 1,
+        "function": "execCommand",
+        "command_flags": [
+            "noscript",
+            "loading",
+            "stale",
+            "skip_slowlog"
+        ],
+        "acl_categories": [
+            "transaction"
         ]
     },
     "EXISTS": {
@@ -3669,7 +3563,8 @@
             "write"
         ],
         "acl_categories": [
-            "keyspace"
+            "keyspace",
+            "dangerous"
         ],
         "arguments": [
             {
@@ -3702,7 +3597,8 @@
             "write"
         ],
         "acl_categories": [
-            "keyspace"
+            "keyspace",
+            "dangerous"
         ],
         "arguments": [
             {
@@ -3816,52 +3712,6 @@
             }
         ]
     },
-    "GEOHASH": {
-        "summary": "Returns members of a geospatial index as standard geohash strings",
-        "complexity": "O(log(N)) for each member requested, where N is the number of elements in the sorted set.",
-        "group": "geo",
-        "since": "3.2.0",
-        "arity": -2,
-        "function": "geohashCommand",
-        "command_flags": [
-            "readonly"
-        ],
-        "acl_categories": [
-            "geo"
-        ],
-        "key_specs": [
-            {
-                "flags": [
-                    "read"
-                ],
-                "begin_search": {
-                    "index": {
-                        "pos": 1
-                    }
-                },
-                "find_keys": {
-                    "range": {
-                        "lastkey": 0,
-                        "step": 1,
-                        "limit": 0
-                    }
-                }
-            }
-        ],
-        "arguments": [
-            {
-                "name": "key",
-                "type": "key",
-                "value": "key"
-            },
-            {
-                "name": "member",
-                "type": "string",
-                "value": "member",
-                "multiple": true
-            }
-        ]
-    },
     "GEODIST": {
         "summary": "Returns the distance between two members of a geospatial index",
         "complexity": "O(log(N))",
@@ -3936,6 +3786,52 @@
                     }
                 ],
                 "optional": true
+            }
+        ]
+    },
+    "GEOHASH": {
+        "summary": "Returns members of a geospatial index as standard geohash strings",
+        "complexity": "O(log(N)) for each member requested, where N is the number of elements in the sorted set.",
+        "group": "geo",
+        "since": "3.2.0",
+        "arity": -2,
+        "function": "geohashCommand",
+        "command_flags": [
+            "readonly"
+        ],
+        "acl_categories": [
+            "geo"
+        ],
+        "key_specs": [
+            {
+                "flags": [
+                    "read"
+                ],
+                "begin_search": {
+                    "index": {
+                        "pos": 1
+                    }
+                },
+                "find_keys": {
+                    "range": {
+                        "lastkey": 0,
+                        "step": 1,
+                        "limit": 0
+                    }
+                }
+            }
+        ],
+        "arguments": [
+            {
+                "name": "key",
+                "type": "key",
+                "value": "key"
+            },
+            {
+                "name": "member",
+                "type": "string",
+                "value": "member",
+                "multiple": true
             }
         ]
     },
@@ -4446,6 +4342,208 @@
             }
         ]
     },
+    "GEOSEARCH": {
+        "summary": "Query a sorted set representing a geospatial index to fetch members inside an area of a box or a circle.",
+        "complexity": "O(N+log(M)) where N is the number of elements in the grid-aligned bounding box area around the shape provided as the filter and M is the number of items inside the shape",
+        "group": "geo",
+        "since": "6.2",
+        "arity": -7,
+        "function": "geosearchCommand",
+        "command_flags": [
+            "readonly"
+        ],
+        "acl_categories": [
+            "geo"
+        ],
+        "key_specs": [
+            {
+                "flags": [
+                    "read"
+                ],
+                "begin_search": {
+                    "index": {
+                        "pos": 1
+                    }
+                },
+                "find_keys": {
+                    "range": {
+                        "lastkey": 0,
+                        "step": 1,
+                        "limit": 0
+                    }
+                }
+            }
+        ],
+        "arguments": [
+            {
+                "name": "key",
+                "type": "key",
+                "value": "key"
+            },
+            {
+                "token": "FROMMEMBER",
+                "name": "member",
+                "type": "string",
+                "value": "member",
+                "optional": true
+            },
+            {
+                "token": "FROMLONLAT",
+                "name": "longitude_latitude",
+                "type": "block",
+                "value": [
+                    {
+                        "name": "longitude",
+                        "type": "double",
+                        "value": "longitude"
+                    },
+                    {
+                        "name": "latitude",
+                        "type": "double",
+                        "value": "latitude"
+                    }
+                ],
+                "optional": true
+            },
+            {
+                "name": "circle",
+                "type": "block",
+                "value": [
+                    {
+                        "token": "BYRADIUS",
+                        "name": "radius",
+                        "type": "double",
+                        "value": "radius"
+                    },
+                    {
+                        "name": "unit",
+                        "type": "oneof",
+                        "value": [
+                            {
+                                "name": "m",
+                                "type": "pure-token",
+                                "token": "m"
+                            },
+                            {
+                                "name": "km",
+                                "type": "pure-token",
+                                "token": "km"
+                            },
+                            {
+                                "name": "ft",
+                                "type": "pure-token",
+                                "token": "ft"
+                            },
+                            {
+                                "name": "mi",
+                                "type": "pure-token",
+                                "token": "mi"
+                            }
+                        ]
+                    }
+                ],
+                "optional": true
+            },
+            {
+                "name": "box",
+                "type": "block",
+                "value": [
+                    {
+                        "token": "BYBOX",
+                        "name": "width",
+                        "type": "double",
+                        "value": "width"
+                    },
+                    {
+                        "name": "height",
+                        "type": "double",
+                        "value": "height"
+                    },
+                    {
+                        "name": "unit",
+                        "type": "oneof",
+                        "value": [
+                            {
+                                "name": "m",
+                                "type": "pure-token",
+                                "token": "m"
+                            },
+                            {
+                                "name": "km",
+                                "type": "pure-token",
+                                "token": "km"
+                            },
+                            {
+                                "name": "ft",
+                                "type": "pure-token",
+                                "token": "ft"
+                            },
+                            {
+                                "name": "mi",
+                                "type": "pure-token",
+                                "token": "mi"
+                            }
+                        ]
+                    }
+                ],
+                "optional": true
+            },
+            {
+                "name": "order",
+                "type": "oneof",
+                "value": [
+                    {
+                        "name": "asc",
+                        "type": "pure-token",
+                        "token": "ASC"
+                    },
+                    {
+                        "name": "desc",
+                        "type": "pure-token",
+                        "token": "DESC"
+                    }
+                ],
+                "optional": true
+            },
+            {
+                "name": "count",
+                "type": "block",
+                "value": [
+                    {
+                        "token": "COUNT",
+                        "name": "count",
+                        "type": "integer",
+                        "value": "count"
+                    },
+                    {
+                        "name": "any",
+                        "token": "ANY",
+                        "type": "pure-token",
+                        "optional": true
+                    }
+                ],
+                "optional": true
+            },
+            {
+                "name": "withcoord",
+                "token": "WITHCOORD",
+                "type": "pure-token",
+                "optional": true
+            },
+            {
+                "name": "withdist",
+                "token": "WITHDIST",
+                "type": "pure-token",
+                "optional": true
+            },
+            {
+                "name": "withhash",
+                "token": "WITHHASH",
+                "type": "pure-token",
+                "optional": true
+            }
+        ]
+    },
     "GEOSEARCHSTORE": {
         "summary": "Query a sorted set representing a geospatial index to fetch members inside an area of a box or a circle, and store the result in another key.",
         "complexity": "O(N+log(M)) where N is the number of elements in the grid-aligned bounding box area around the shape provided as the filter and M is the number of items inside the shape",
@@ -4659,18 +4757,19 @@
             }
         ]
     },
-    "GEOSEARCH": {
-        "summary": "Query a sorted set representing a geospatial index to fetch members inside an area of a box or a circle.",
-        "complexity": "O(N+log(M)) where N is the number of elements in the grid-aligned bounding box area around the shape provided as the filter and M is the number of items inside the shape",
-        "group": "geo",
-        "since": "6.2",
-        "arity": -7,
-        "function": "geosearchCommand",
+    "GET": {
+        "summary": "Get the value of a key",
+        "complexity": "O(1)",
+        "group": "string",
+        "since": "1.0.0",
+        "arity": 2,
+        "function": "getCommand",
         "command_flags": [
-            "readonly"
+            "readonly",
+            "fast"
         ],
         "acl_categories": [
-            "geo"
+            "string"
         ],
         "key_specs": [
             {
@@ -4696,168 +4795,6 @@
                 "name": "key",
                 "type": "key",
                 "value": "key"
-            },
-            {
-                "token": "FROMMEMBER",
-                "name": "member",
-                "type": "string",
-                "value": "member",
-                "optional": true
-            },
-            {
-                "token": "FROMLONLAT",
-                "name": "longitude_latitude",
-                "type": "block",
-                "value": [
-                    {
-                        "name": "longitude",
-                        "type": "double",
-                        "value": "longitude"
-                    },
-                    {
-                        "name": "latitude",
-                        "type": "double",
-                        "value": "latitude"
-                    }
-                ],
-                "optional": true
-            },
-            {
-                "name": "circle",
-                "type": "block",
-                "value": [
-                    {
-                        "token": "BYRADIUS",
-                        "name": "radius",
-                        "type": "double",
-                        "value": "radius"
-                    },
-                    {
-                        "name": "unit",
-                        "type": "oneof",
-                        "value": [
-                            {
-                                "name": "m",
-                                "type": "pure-token",
-                                "token": "m"
-                            },
-                            {
-                                "name": "km",
-                                "type": "pure-token",
-                                "token": "km"
-                            },
-                            {
-                                "name": "ft",
-                                "type": "pure-token",
-                                "token": "ft"
-                            },
-                            {
-                                "name": "mi",
-                                "type": "pure-token",
-                                "token": "mi"
-                            }
-                        ]
-                    }
-                ],
-                "optional": true
-            },
-            {
-                "name": "box",
-                "type": "block",
-                "value": [
-                    {
-                        "token": "BYBOX",
-                        "name": "width",
-                        "type": "double",
-                        "value": "width"
-                    },
-                    {
-                        "name": "height",
-                        "type": "double",
-                        "value": "height"
-                    },
-                    {
-                        "name": "unit",
-                        "type": "oneof",
-                        "value": [
-                            {
-                                "name": "m",
-                                "type": "pure-token",
-                                "token": "m"
-                            },
-                            {
-                                "name": "km",
-                                "type": "pure-token",
-                                "token": "km"
-                            },
-                            {
-                                "name": "ft",
-                                "type": "pure-token",
-                                "token": "ft"
-                            },
-                            {
-                                "name": "mi",
-                                "type": "pure-token",
-                                "token": "mi"
-                            }
-                        ]
-                    }
-                ],
-                "optional": true
-            },
-            {
-                "name": "order",
-                "type": "oneof",
-                "value": [
-                    {
-                        "name": "asc",
-                        "type": "pure-token",
-                        "token": "ASC"
-                    },
-                    {
-                        "name": "desc",
-                        "type": "pure-token",
-                        "token": "DESC"
-                    }
-                ],
-                "optional": true
-            },
-            {
-                "name": "count",
-                "type": "block",
-                "value": [
-                    {
-                        "token": "COUNT",
-                        "name": "count",
-                        "type": "integer",
-                        "value": "count"
-                    },
-                    {
-                        "name": "any",
-                        "token": "ANY",
-                        "type": "pure-token",
-                        "optional": true
-                    }
-                ],
-                "optional": true
-            },
-            {
-                "name": "withcoord",
-                "token": "WITHCOORD",
-                "type": "pure-token",
-                "optional": true
-            },
-            {
-                "name": "withdist",
-                "token": "WITHDIST",
-                "type": "pure-token",
-                "optional": true
-            },
-            {
-                "name": "withhash",
-                "token": "WITHHASH",
-                "type": "pure-token",
-                "optional": true
             }
         ]
     },
@@ -4904,47 +4841,6 @@
                 "name": "offset",
                 "type": "integer",
                 "value": "offset"
-            }
-        ]
-    },
-    "GET": {
-        "summary": "Get the value of a key",
-        "complexity": "O(1)",
-        "group": "string",
-        "since": "1.0.0",
-        "arity": 2,
-        "function": "getCommand",
-        "command_flags": [
-            "readonly",
-            "fast"
-        ],
-        "acl_categories": [
-            "string"
-        ],
-        "key_specs": [
-            {
-                "flags": [
-                    "read"
-                ],
-                "begin_search": {
-                    "index": {
-                        "pos": 1
-                    }
-                },
-                "find_keys": {
-                    "range": {
-                        "lastkey": 0,
-                        "step": 1,
-                        "limit": 0
-                    }
-                }
-            }
-        ],
-        "arguments": [
-            {
-                "name": "key",
-                "type": "key",
-                "value": "key"
             }
         ]
     },
@@ -6116,28 +6012,6 @@
             }
         ]
     },
-    "INFO": {
-        "summary": "Get information and statistics about the server",
-        "complexity": "PATCH__TBD__37__",
-        "group": "server",
-        "since": "1.0.0",
-        "arity": -1,
-        "function": "infoCommand",
-        "command_flags": [
-            "random",
-            "loading",
-            "stale",
-            "sentinel"
-        ],
-        "arguments": [
-            {
-                "name": "section",
-                "type": "string",
-                "value": "section",
-                "optional": true
-            }
-        ]
-    },
     "INCRBYFLOAT": {
         "summary": "Increment the float value of a key by the given amount",
         "complexity": "O(1)",
@@ -6185,6 +6059,31 @@
             }
         ]
     },
+    "INFO": {
+        "summary": "Get information and statistics about the server",
+        "complexity": "PATCH__TBD__37__",
+        "group": "server",
+        "since": "1.0.0",
+        "arity": -1,
+        "function": "infoCommand",
+        "command_flags": [
+            "random",
+            "loading",
+            "stale",
+            "sentinel"
+        ],
+        "acl_categories": [
+            "dangerous"
+        ],
+        "arguments": [
+            {
+                "name": "section",
+                "type": "string",
+                "value": "section",
+                "optional": true
+            }
+        ]
+    },
     "KEYS": {
         "summary": "Find all keys matching the given pattern",
         "complexity": "O(N) with N being the number of keys in the database, under the assumption that the key names in the database and the given pattern have limited length.",
@@ -6197,7 +6096,8 @@
             "sort_for_script"
         ],
         "acl_categories": [
-            "keyspace"
+            "keyspace",
+            "dangerous"
         ],
         "arguments": [
             {
@@ -6219,6 +6119,10 @@
             "loading",
             "stale",
             "fast"
+        ],
+        "acl_categories": [
+            "admin",
+            "dangerous"
         ]
     },
     "LATENCY DOCTOR": {
@@ -6232,19 +6136,6 @@
         "command_flags": [
             "admin",
             "noscript",
-            "loading",
-            "stale"
-        ]
-    },
-    "LATENCY HELP": {
-        "summary": "Show helpful text about the different subcommands.",
-        "complexity": "O(1)",
-        "group": "server",
-        "since": "2.8.13",
-        "arity": 2,
-        "container": "LATENCY",
-        "function": "latencyCommand",
-        "command_flags": [
             "loading",
             "stale"
         ]
@@ -6269,6 +6160,19 @@
                 "type": "string",
                 "value": "event"
             }
+        ]
+    },
+    "LATENCY HELP": {
+        "summary": "Show helpful text about the different subcommands.",
+        "complexity": "O(1)",
+        "group": "server",
+        "since": "2.8.13",
+        "arity": 2,
+        "container": "LATENCY",
+        "function": "latencyCommand",
+        "command_flags": [
+            "loading",
+            "stale"
         ]
     },
     "LATENCY HISTORY": {
@@ -6331,13 +6235,6 @@
                 "multiple": true
             }
         ]
-    },
-    "LATENCY": {
-        "summary": "A container for latency diagnostics commands",
-        "complexity": "Depends on subcommand.",
-        "group": "server",
-        "since": "2.8.13",
-        "arity": -2
     },
     "LCS": {
         "summary": "__TBD__3__",
@@ -7091,18 +6988,6 @@
             }
         ]
     },
-    "MEMORY DOCTOR": {
-        "summary": "Outputs memory problems report",
-        "complexity": "PATCH__TBD__73__",
-        "group": "server",
-        "since": "4.0.0",
-        "arity": 2,
-        "container": "MEMORY",
-        "function": "memoryCommand",
-        "command_flags": [
-            "random"
-        ]
-    },
     "LTRIM": {
         "summary": "Trim a list to the specified range",
         "complexity": "O(N) where N is the number of elements to be removed by the operation.",
@@ -7153,6 +7038,18 @@
             }
         ]
     },
+    "MEMORY DOCTOR": {
+        "summary": "Outputs memory problems report",
+        "complexity": "PATCH__TBD__73__",
+        "group": "server",
+        "since": "4.0.0",
+        "arity": 2,
+        "container": "MEMORY",
+        "function": "memoryCommand",
+        "command_flags": [
+            "random"
+        ]
+    },
     "MEMORY HELP": {
         "summary": "Show helpful text about the different subcommands",
         "complexity": "O(1)",
@@ -7198,13 +7095,6 @@
         "command_flags": [
             "random"
         ]
-    },
-    "MEMORY": {
-        "summary": "A container for memory diagnostics commands",
-        "complexity": "Depends on subcommand.",
-        "group": "server",
-        "since": "4.0.0",
-        "arity": -2
     },
     "MEMORY USAGE": {
         "summary": "Estimate the memory usage of a key",
@@ -7324,7 +7214,8 @@
             "random"
         ],
         "acl_categories": [
-            "keyspace"
+            "keyspace",
+            "dangerous"
         ],
         "key_specs": [
             {
@@ -7520,13 +7411,6 @@
                 "value": "name"
             }
         ]
-    },
-    "MODULE": {
-        "summary": "A container for module commands",
-        "complexity": "Depends on subcommand.",
-        "group": "server",
-        "since": "4.0.0",
-        "arity": -2
     },
     "MONITOR": {
         "summary": "Listen for all requests received by the server in real time",
@@ -7907,13 +7791,6 @@
             }
         ]
     },
-    "OBJECT": {
-        "summary": "A container for object introspection commands",
-        "complexity": "Depends on subcommand.",
-        "group": "generic",
-        "since": "2.2.3",
-        "arity": -2
-    },
     "PERSIST": {
         "summary": "Remove the expiration from a key",
         "complexity": "O(1)",
@@ -8113,6 +7990,48 @@
             }
         ]
     },
+    "PEXPIRETIME": {
+        "summary": "Get the expiration Unix timestamp for a key in milliseconds",
+        "complexity": "O(1)",
+        "group": "generic",
+        "since": "7.0.0",
+        "arity": 2,
+        "function": "pexpiretimeCommand",
+        "command_flags": [
+            "readonly",
+            "random",
+            "fast"
+        ],
+        "acl_categories": [
+            "keyspace"
+        ],
+        "key_specs": [
+            {
+                "flags": [
+                    "read"
+                ],
+                "begin_search": {
+                    "index": {
+                        "pos": 1
+                    }
+                },
+                "find_keys": {
+                    "range": {
+                        "lastkey": 0,
+                        "step": 1,
+                        "limit": 0
+                    }
+                }
+            }
+        ],
+        "arguments": [
+            {
+                "name": "key",
+                "type": "key",
+                "value": "key"
+            }
+        ]
+    },
     "PFADD": {
         "summary": "Adds the specified elements to the specified HyperLogLog.",
         "complexity": "O(1) to add every element.",
@@ -8159,48 +8078,6 @@
                 "value": "element",
                 "optional": true,
                 "multiple": true
-            }
-        ]
-    },
-    "PEXPIRETIME": {
-        "summary": "Get the expiration Unix timestamp for a key in milliseconds",
-        "complexity": "O(1)",
-        "group": "generic",
-        "since": "7.0.0",
-        "arity": 2,
-        "function": "pexpiretimeCommand",
-        "command_flags": [
-            "readonly",
-            "random",
-            "fast"
-        ],
-        "acl_categories": [
-            "keyspace"
-        ],
-        "key_specs": [
-            {
-                "flags": [
-                    "read"
-                ],
-                "begin_search": {
-                    "index": {
-                        "pos": 1
-                    }
-                },
-                "find_keys": {
-                    "range": {
-                        "lastkey": 0,
-                        "step": 1,
-                        "limit": 0
-                    }
-                }
-            }
-        ],
-        "arguments": [
-            {
-                "name": "key",
-                "type": "key",
-                "value": "key"
             }
         ]
     },
@@ -8366,6 +8243,29 @@
             "hyperloglog"
         ]
     },
+    "PING": {
+        "summary": "Ping the server",
+        "complexity": "PATCH__TBD__67__",
+        "group": "connection",
+        "since": "1.0.0",
+        "arity": -1,
+        "function": "pingCommand",
+        "command_flags": [
+            "fast",
+            "sentinel"
+        ],
+        "acl_categories": [
+            "connection"
+        ],
+        "arguments": [
+            {
+                "name": "message",
+                "type": "string",
+                "value": "message",
+                "optional": true
+            }
+        ]
+    },
     "PSETEX": {
         "summary": "Set the value and expiration in milliseconds of a key",
         "complexity": "O(1)",
@@ -8417,53 +8317,6 @@
             }
         ]
     },
-    "PING": {
-        "summary": "Ping the server",
-        "complexity": "PATCH__TBD__67__",
-        "group": "connection",
-        "since": "1.0.0",
-        "arity": -1,
-        "function": "pingCommand",
-        "command_flags": [
-            "fast",
-            "sentinel"
-        ],
-        "acl_categories": [
-            "connection"
-        ],
-        "arguments": [
-            {
-                "name": "message",
-                "type": "string",
-                "value": "message",
-                "optional": true
-            }
-        ]
-    },
-    "PSYNC": {
-        "summary": "Internal command used for replication",
-        "complexity": "PATCH__TBD__58__",
-        "group": "server",
-        "since": "2.8.0",
-        "arity": -3,
-        "function": "syncCommand",
-        "command_flags": [
-            "admin",
-            "noscript"
-        ],
-        "arguments": [
-            {
-                "name": "replicationid",
-                "type": "integer",
-                "value": "replicationid"
-            },
-            {
-                "name": "offset",
-                "type": "integer",
-                "value": "offset"
-            }
-        ]
-    },
     "PSUBSCRIBE": {
         "summary": "Listen for messages published to channels matching the given patterns",
         "complexity": "O(N) where N is the number of patterns the client is already subscribed to.",
@@ -8490,6 +8343,30 @@
                     }
                 ],
                 "multiple": true
+            }
+        ]
+    },
+    "PSYNC": {
+        "summary": "Internal command used for replication",
+        "complexity": "PATCH__TBD__58__",
+        "group": "server",
+        "since": "2.8.0",
+        "arity": -3,
+        "function": "syncCommand",
+        "command_flags": [
+            "admin",
+            "noscript"
+        ],
+        "arguments": [
+            {
+                "name": "replicationid",
+                "type": "integer",
+                "value": "replicationid"
+            },
+            {
+                "name": "offset",
+                "type": "integer",
+                "value": "offset"
             }
         ]
     },
@@ -8634,13 +8511,6 @@
                 "multiple": true
             }
         ]
-    },
-    "PUBSUB": {
-        "summary": "A container for Pub/Sun commands",
-        "complexity": "Depends on subcommand.",
-        "group": "pubsub",
-        "since": "2.8.0",
-        "arity": -2
     },
     "PUNSUBSCRIBE": {
         "summary": "Stop listening for messages posted to channels matching the given patterns",
@@ -8894,7 +8764,8 @@
             "asking"
         ],
         "acl_categories": [
-            "keyspace"
+            "keyspace",
+            "dangerous"
         ],
         "key_specs": [
             {
@@ -8928,7 +8799,8 @@
             "denyoom"
         ],
         "acl_categories": [
-            "keyspace"
+            "keyspace",
+            "dangerous"
         ],
         "key_specs": [
             {
@@ -8993,6 +8865,25 @@
             }
         ]
     },
+    "ROLE": {
+        "summary": "Return the role of the instance in the context of replication",
+        "complexity": "PATCH__TBD__53__",
+        "group": "server",
+        "since": "2.8.12",
+        "arity": 1,
+        "function": "roleCommand",
+        "command_flags": [
+            "noscript",
+            "loading",
+            "stale",
+            "fast",
+            "sentinel"
+        ],
+        "acl_categories": [
+            "admin",
+            "dangerous"
+        ]
+    },
     "RPOP": {
         "summary": "Remove and get the last elements in a list",
         "complexity": "O(N) where N is the number of elements returned",
@@ -9044,21 +8935,6 @@
                 "value": "count",
                 "optional": true
             }
-        ]
-    },
-    "ROLE": {
-        "summary": "Return the role of the instance in the context of replication",
-        "complexity": "PATCH__TBD__53__",
-        "group": "server",
-        "since": "2.8.12",
-        "arity": 1,
-        "function": "roleCommand",
-        "command_flags": [
-            "noscript",
-            "loading",
-            "stale",
-            "fast",
-            "sentinel"
         ]
     },
     "RPOPLPUSH": {
@@ -9292,6 +9168,18 @@
             }
         ]
     },
+    "SAVE": {
+        "summary": "Synchronously save the dataset to disk",
+        "complexity": "PATCH__TBD__51__",
+        "group": "server",
+        "since": "1.0.0",
+        "arity": 1,
+        "function": "saveCommand",
+        "command_flags": [
+            "admin",
+            "noscript"
+        ]
+    },
     "SCAN": {
         "summary": "Incrementally iterate the keys space",
         "complexity": "O(1) for every call. O(N) for a complete iteration, including enough command calls for the cursor to return back to 0. N is the number of elements inside the collection.",
@@ -9333,18 +9221,6 @@
                 "value": "type",
                 "optional": true
             }
-        ]
-    },
-    "SAVE": {
-        "summary": "Synchronously save the dataset to disk",
-        "complexity": "PATCH__TBD__51__",
-        "group": "server",
-        "since": "1.0.0",
-        "arity": 1,
-        "function": "saveCommand",
-        "command_flags": [
-            "admin",
-            "noscript"
         ]
     },
     "SCARD": {
@@ -9506,6 +9382,21 @@
             "scripting"
         ]
     },
+    "SCRIPT KILL": {
+        "summary": "Kill the script currently in execution.",
+        "complexity": "O(1)",
+        "group": "scripting",
+        "since": "2.6.0",
+        "arity": 2,
+        "container": "SCRIPT",
+        "function": "scriptCommand",
+        "command_flags": [
+            "noscript"
+        ],
+        "acl_categories": [
+            "scripting"
+        ]
+    },
     "SCRIPT LOAD": {
         "summary": "Load the specified Lua script into the script cache.",
         "complexity": "O(N) with N being the length in bytes of the script body.",
@@ -9528,28 +9419,6 @@
                 "value": "script"
             }
         ]
-    },
-    "SCRIPT KILL": {
-        "summary": "Kill the script currently in execution.",
-        "complexity": "O(1)",
-        "group": "scripting",
-        "since": "2.6.0",
-        "arity": 2,
-        "container": "SCRIPT",
-        "function": "scriptCommand",
-        "command_flags": [
-            "noscript"
-        ],
-        "acl_categories": [
-            "scripting"
-        ]
-    },
-    "SCRIPT": {
-        "summary": "A container for Lua scripts management commands",
-        "complexity": "Depends on subcommand.",
-        "group": "scripting",
-        "since": "2.6.0",
-        "arity": -2
     },
     "SDIFF": {
         "summary": "Subtract multiple sets",
@@ -10591,6 +10460,19 @@
             }
         ]
     },
+    "SLOWLOG HELP": {
+        "summary": "Show helpful text about the different subcommands",
+        "complexity": "O(1)",
+        "group": "server",
+        "since": "6.2.0",
+        "arity": 2,
+        "container": "SLOWLOG",
+        "function": "slowlogCommand",
+        "command_flags": [
+            "loading",
+            "stale"
+        ]
+    },
     "SLOWLOG LEN": {
         "summary": "Get the slow log's length",
         "complexity": "O(1)",
@@ -10602,19 +10484,6 @@
         "command_flags": [
             "admin",
             "random",
-            "loading",
-            "stale"
-        ]
-    },
-    "SLOWLOG HELP": {
-        "summary": "Show helpful text about the different subcommands",
-        "complexity": "O(1)",
-        "group": "server",
-        "since": "6.2.0",
-        "arity": 2,
-        "container": "SLOWLOG",
-        "function": "slowlogCommand",
-        "command_flags": [
             "loading",
             "stale"
         ]
@@ -10673,13 +10542,6 @@
                 "value": "key"
             }
         ]
-    },
-    "SLOWLOG": {
-        "summary": "A container for slow log commands",
-        "complexity": "Depends on subcommand.",
-        "group": "server",
-        "since": "2.2.12",
-        "arity": -2
     },
     "SMISMEMBER": {
         "summary": "Returns the membership associated with the given elements for a set",
@@ -10812,7 +10674,8 @@
         "acl_categories": [
             "set",
             "sortedset",
-            "list"
+            "list",
+            "dangerous"
         ],
         "key_specs": [
             {
@@ -10917,60 +10780,6 @@
             }
         ]
     },
-    "SPOP": {
-        "summary": "Remove and return one or multiple random members from a set",
-        "complexity": "Without the count argument O(1), otherwise O(N) where N is the value of the passed count.",
-        "group": "set",
-        "since": "1.0.0",
-        "arity": -2,
-        "function": "spopCommand",
-        "history": [
-            [
-                "3.2",
-                "Added the `count` argument."
-            ]
-        ],
-        "command_flags": [
-            "write",
-            "random",
-            "fast"
-        ],
-        "acl_categories": [
-            "set"
-        ],
-        "key_specs": [
-            {
-                "flags": [
-                    "write"
-                ],
-                "begin_search": {
-                    "index": {
-                        "pos": 1
-                    }
-                },
-                "find_keys": {
-                    "range": {
-                        "lastkey": 0,
-                        "step": 1,
-                        "limit": 0
-                    }
-                }
-            }
-        ],
-        "arguments": [
-            {
-                "name": "key",
-                "type": "key",
-                "value": "key"
-            },
-            {
-                "name": "count",
-                "type": "integer",
-                "value": "count",
-                "optional": true
-            }
-        ]
-    },
     "SORT_RO": {
         "summary": "Sort the elements in a list, set or sorted set. Read-only variant of SORT.",
         "complexity": "O(N+M*log(M)) where N is the number of elements in the list or set to sort, and M the number of returned elements. When the elements are not sorted, complexity is O(N).",
@@ -10984,7 +10793,8 @@
         "acl_categories": [
             "set",
             "sortedset",
-            "list"
+            "list",
+            "dangerous"
         ],
         "key_specs": [
             {
@@ -11066,6 +10876,60 @@
                 "name": "sorting",
                 "token": "ALPHA",
                 "type": "pure-token",
+                "optional": true
+            }
+        ]
+    },
+    "SPOP": {
+        "summary": "Remove and return one or multiple random members from a set",
+        "complexity": "Without the count argument O(1), otherwise O(N) where N is the value of the passed count.",
+        "group": "set",
+        "since": "1.0.0",
+        "arity": -2,
+        "function": "spopCommand",
+        "history": [
+            [
+                "3.2",
+                "Added the `count` argument."
+            ]
+        ],
+        "command_flags": [
+            "write",
+            "random",
+            "fast"
+        ],
+        "acl_categories": [
+            "set"
+        ],
+        "key_specs": [
+            {
+                "flags": [
+                    "write"
+                ],
+                "begin_search": {
+                    "index": {
+                        "pos": 1
+                    }
+                },
+                "find_keys": {
+                    "range": {
+                        "lastkey": 0,
+                        "step": 1,
+                        "limit": 0
+                    }
+                }
+            }
+        ],
+        "arguments": [
+            {
+                "name": "key",
+                "type": "key",
+                "value": "key"
+            },
+            {
+                "name": "count",
+                "type": "integer",
+                "value": "count",
                 "optional": true
             }
         ]
@@ -11392,33 +11256,6 @@
             }
         ]
     },
-    "SWAPDB": {
-        "summary": "Swaps two Redis databases",
-        "complexity": "O(N) where N is the count of clients watching or blocking on keys from both databases.",
-        "group": "server",
-        "since": "4.0.0",
-        "arity": 3,
-        "function": "swapdbCommand",
-        "command_flags": [
-            "write",
-            "fast"
-        ],
-        "acl_categories": [
-            "keyspace"
-        ],
-        "arguments": [
-            {
-                "name": "index1",
-                "type": "integer",
-                "value": "index1"
-            },
-            {
-                "name": "index2",
-                "type": "integer",
-                "value": "index2"
-            }
-        ]
-    },
     "SUNIONSTORE": {
         "summary": "Add multiple sets and store the resulting set in a key",
         "complexity": "O(N) where N is the total number of elements in all given sets.",
@@ -11480,6 +11317,34 @@
                 "type": "key",
                 "value": "key",
                 "multiple": true
+            }
+        ]
+    },
+    "SWAPDB": {
+        "summary": "Swaps two Redis databases",
+        "complexity": "O(N) where N is the count of clients watching or blocking on keys from both databases.",
+        "group": "server",
+        "since": "4.0.0",
+        "arity": 3,
+        "function": "swapdbCommand",
+        "command_flags": [
+            "write",
+            "fast"
+        ],
+        "acl_categories": [
+            "keyspace",
+            "dangerous"
+        ],
+        "arguments": [
+            {
+                "name": "index1",
+                "type": "integer",
+                "value": "index1"
+            },
+            {
+                "name": "index2",
+                "type": "integer",
+                "value": "index2"
             }
         ]
     },
@@ -12491,13 +12356,6 @@
             }
         ]
     },
-    "XGROUP": {
-        "summary": "A container for consumer groups commands",
-        "complexity": "Depends on subcommand.",
-        "group": "stream",
-        "since": "5.0.0",
-        "arity": -2
-    },
     "XINFO CONSUMERS": {
         "summary": "List the consumers in a consumer group",
         "complexity": "O(1)",
@@ -12661,13 +12519,6 @@
                 "optional": true
             }
         ]
-    },
-    "XINFO": {
-        "summary": "A container for stream introspection commands",
-        "complexity": "Depends on subcommand.",
-        "group": "stream",
-        "since": "5.0.0",
-        "arity": -2
     },
     "XLEN": {
         "summary": "Return the number of entries in a stream",
@@ -15318,5 +15169,174 @@
                 "optional": true
             }
         ]
+    },
+    "ACL": {
+        "summary": "A container for Access List Control commands ",
+        "complexity": "Depends on subcommand.",
+        "group": "server",
+        "since": "6.0.0",
+        "arity": -2,
+        "command_flags": [
+            "sentinel"
+        ]
+    },
+    "CLIENT": {
+        "summary": "A container for client connection commands",
+        "complexity": "Depends on subcommand.",
+        "group": "connection",
+        "since": "2.4.0",
+        "arity": -2,
+        "command_flags": [
+            "sentinel"
+        ]
+    },
+    "CLUSTER": {
+        "summary": "A container for cluster commands",
+        "complexity": "Depends on subcommand.",
+        "group": "cluster",
+        "since": "3.0.0",
+        "arity": -2
+    },
+    "COMMAND COUNT": {
+        "summary": "Get total number of Redis commands",
+        "complexity": "O(1)",
+        "group": "server",
+        "since": "2.8.13",
+        "arity": 2,
+        "container": "COMMAND",
+        "function": "commandCountCommand",
+        "command_flags": [
+            "loading",
+            "stale"
+        ],
+        "acl_categories": [
+            "connection"
+        ]
+    },
+    "COMMAND GETKEYS": {
+        "summary": "Extract keys given a full Redis command",
+        "complexity": "O(N) where N is the number of arguments to the command",
+        "group": "server",
+        "since": "2.8.13",
+        "arity": -4,
+        "container": "COMMAND",
+        "function": "commandGetKeysCommand",
+        "command_flags": [
+            "loading",
+            "stale"
+        ],
+        "acl_categories": [
+            "connection"
+        ]
+    },
+    "COMMAND HELP": {
+        "summary": "Show helpful text about the different subcommands",
+        "complexity": "O(1)",
+        "group": "server",
+        "since": "5.0.0",
+        "arity": 2,
+        "container": "COMMAND",
+        "function": "commandHelpCommand",
+        "command_flags": [
+            "loading",
+            "stale"
+        ],
+        "acl_categories": [
+            "connection"
+        ]
+    },
+    "COMMAND INFO": {
+        "summary": "Get array of specific Redis command details",
+        "complexity": "O(N) when N is number of commands to look up",
+        "group": "server",
+        "since": "2.8.13",
+        "arity": -3,
+        "container": "COMMAND",
+        "function": "commandInfoCommand",
+        "command_flags": [
+            "loading",
+            "stale"
+        ],
+        "acl_categories": [
+            "connection"
+        ],
+        "arguments": [
+            {
+                "name": "command-name",
+                "type": "string",
+                "value": "command-name",
+                "multiple": true
+            }
+        ]
+    },
+    "CONFIG": {
+        "summary": "A container for server configuration commands",
+        "complexity": "Depends on subcommand.",
+        "group": "server",
+        "since": "2.0.0",
+        "arity": -2
+    },
+    "LATENCY": {
+        "summary": "A container for latency diagnostics commands",
+        "complexity": "Depends on subcommand.",
+        "group": "server",
+        "since": "2.8.13",
+        "arity": -2
+    },
+    "MEMORY": {
+        "summary": "A container for memory diagnostics commands",
+        "complexity": "Depends on subcommand.",
+        "group": "server",
+        "since": "4.0.0",
+        "arity": -2
+    },
+    "MODULE": {
+        "summary": "A container for module commands",
+        "complexity": "Depends on subcommand.",
+        "group": "server",
+        "since": "4.0.0",
+        "arity": -2
+    },
+    "OBJECT": {
+        "summary": "A container for object introspection commands",
+        "complexity": "Depends on subcommand.",
+        "group": "generic",
+        "since": "2.2.3",
+        "arity": -2
+    },
+    "PUBSUB": {
+        "summary": "A container for Pub/Sun commands",
+        "complexity": "Depends on subcommand.",
+        "group": "pubsub",
+        "since": "2.8.0",
+        "arity": -2
+    },
+    "SCRIPT": {
+        "summary": "A container for Lua scripts management commands",
+        "complexity": "Depends on subcommand.",
+        "group": "scripting",
+        "since": "2.6.0",
+        "arity": -2
+    },
+    "SLOWLOG": {
+        "summary": "A container for slow log commands",
+        "complexity": "Depends on subcommand.",
+        "group": "server",
+        "since": "2.2.12",
+        "arity": -2
+    },
+    "XGROUP": {
+        "summary": "A container for consumer groups commands",
+        "complexity": "Depends on subcommand.",
+        "group": "stream",
+        "since": "5.0.0",
+        "arity": -2
+    },
+    "XINFO": {
+        "summary": "A container for stream introspection commands",
+        "complexity": "Depends on subcommand.",
+        "group": "stream",
+        "since": "5.0.0",
+        "arity": -2
     }
 }
