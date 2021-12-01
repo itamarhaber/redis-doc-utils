@@ -77,8 +77,8 @@
 -ERR while reading sentinel-monitor.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/sentinel-monitor.md'
 -ERR while reading sentinel-failover.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/sentinel-failover.md'
 -ERR while reading sentinel-info-cache.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/sentinel-info-cache.md'
--ERR while reading sentinel-debug.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/sentinel-debug.md'
 -ERR while reading sentinel-is-master-down-by-addr.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/sentinel-is-master-down-by-addr.md'
+-ERR while reading sentinel-debug.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/sentinel-debug.md'
 -ERR while reading sentinel-reset.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/sentinel-reset.md'
 -ERR while reading sentinel-sentinels.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/sentinel-sentinels.md'
 -ERR while reading sentinel-simulate-failure.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/sentinel-simulate-failure.md'
@@ -87,8 +87,8 @@
 -ERR while reading sentinel-pending-scripts.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/sentinel-pending-scripts.md'
 -ERR while reading sentinel-ckquorum.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/sentinel-ckquorum.md'
 -ERR while reading sentinel-set.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/sentinel-set.md'
--ERR no return types for ZREVRANK: "* If `member` exists in the sorted set, @integer-reply: the rank of `member`.\n* If `member` does not exist in the sorted set or `key` does not exist,\n  @bulk-string-reply: `nil`."
 -ERR no return types for PSYNC: "**Non standard return value**, a bulk transfer of the data followed by `PING` and write requests from the master."
+-ERR no return types for ZREVRANK: "* If `member` exists in the sorted set, @integer-reply: the rank of `member`.\n* If `member` does not exist in the sorted set or `key` does not exist,\n  @bulk-string-reply: `nil`."
 -ERR no return types for PUNSUBSCRIBE: ""
 -ERR no return types for PFADD: "@integer-reply, specifically:\n\n* 1 if at least 1 HyperLogLog internal register was altered. 0 otherwise."
 -ERR no return types for MOVE: "@integer-reply, specifically:\n\n* `1` if `key` was moved.\n* `0` if `key` was not moved."
@@ -99,14 +99,14 @@
 -ERR no return types for HEXISTS: "@integer-reply, specifically:\n\n* `1` if the hash contains `field`.\n* `0` if the hash does not contain `field`, or `key` does not exist."
 -ERR no return types for SSCAN: ""
 -ERR no return types for MSETNX: "@integer-reply, specifically:\n\n* `1` if the all the keys were set.\n* `0` if no key was set (at least one key already existed)."
--ERR no return types for PSUBSCRIBE: ""
 -ERR no return types for XADD: "@bulk-string-reply, specifically:\n\nThe command returns the ID of the added entry. The ID is the one auto-generated\nif `*` is passed as ID argument, otherwise the command just returns the same ID\nspecified by the user during insertion.\n\nThe command returns a @nil-reply when used with the `NOMKSTREAM` option and the\nkey doesn't exist."
+-ERR no return types for PSUBSCRIBE: ""
 -ERR no return types for EXPIREAT: "@integer-reply, specifically:\n\n* `1` if the timeout was set.\n* `0` if the timeout was not set. e.g. key doesn't exist, or operation skipped due to the provided arguments."
 -ERR no return types for GEODIST: "@bulk-string-reply, specifically:\n\nThe command returns the distance as a double (represented as a string)\nin the specified unit, or NULL if one or both the elements are missing."
 -ERR no return types for SETNX: "@integer-reply, specifically:\n\n* `1` if the key was set\n* `0` if the key was not set"
 -ERR no return types for PEXPIRE: "@integer-reply, specifically:\n\n* `1` if the timeout was set.\n* `0` if the timeout was not set. e.g. key doesn't exist, or operation skipped due to the provided arguments."
--ERR no return types for SRANDMEMBER: "@bulk-string-reply: without the additional `count` argument, the command returns a Bulk Reply with the randomly selected element, or `nil` when `key` does not exist.\n\n@array-reply: when the additional `count` argument is passed, the command returns an array of elements, or an empty array when `key` does not exist."
 -ERR no return types for LPOP: "When called without the `count` argument:\n\n@bulk-string-reply: the value of the first element, or `nil` when `key` does not exist.\n\nWhen called with the `count` argument:\n\n@array-reply: list of popped elements, or `nil` when `key` does not exist."
+-ERR no return types for SRANDMEMBER: "@bulk-string-reply: without the additional `count` argument, the command returns a Bulk Reply with the randomly selected element, or `nil` when `key` does not exist.\n\n@array-reply: when the additional `count` argument is passed, the command returns an array of elements, or an empty array when `key` does not exist."
 -ERR no return types for SISMEMBER: "@integer-reply, specifically:\n\n* `1` if the element is a member of the set.\n* `0` if the element is not a member of the set, or if `key` does not exist."
 -ERR no return types for XREADGROUP: "@array-reply, specifically:\n\nThe command returns an array of results: each element of the returned\narray is an array composed of a two element containing the key name and\nthe entries reported for that key. The entries reported are full stream\nentries, having IDs and the list of all the fields and values. Field and\nvalues are guaranteed to be reported in the same order they were added\nby `XADD`.\n\nWhen **BLOCK** is used, on timeout a null reply is returned.\n\nReading the [Redis Streams introduction](/topics/streams-intro) is highly\nsuggested in order to understand more about the streams overall behavior\nand semantics."
 -ERR no return types for PEXPIREAT: "@integer-reply, specifically:\n\n* `1` if the timeout was set.\n* `0` if the timeout was not set. e.g. key doesn't exist, or operation skipped due to the provided arguments."
@@ -129,8 +129,8 @@
 -ERR no return types for BLMOVE: "@bulk-string-reply: the element being popped from `source` and pushed to `destination`.\nIf `timeout` is reached, a @nil-reply is returned."
 -ERR no return types for XREAD: "@array-reply, specifically:\n\nThe command returns an array of results: each element of the returned\narray is an array composed of a two element containing the key name and\nthe entries reported for that key. The entries reported are full stream\nentries, having IDs and the list of all the fields and values. Field and\nvalues are guaranteed to be reported in the same order they were added\nby `XADD`.\n\nWhen **BLOCK** is used, on timeout a null reply is returned.\n\nReading the [Redis Streams introduction](/topics/streams-intro) is highly\nsuggested in order to understand more about the streams overall behavior\nand semantics."
 -ERR no return types for ZSCAN: ""
--ERR no return types for SPOP: "When called without the `count` argument:\n\n@bulk-string-reply: the removed member, or `nil` when `key` does not exist.\n\nWhen called with the `count` argument:\n\n@array-reply: the removed members, or an empty array when `key` does not exist."
 -ERR no return types for ZRANDMEMBER: "@bulk-string-reply: without the additional `count` argument, the command returns a Bulk Reply with the randomly selected element, or `nil` when `key` does not exist.\n\n@array-reply: when the additional `count` argument is passed, the command returns an array of elements, or an empty array when `key` does not exist.\nIf the `WITHSCORES` modifier is used, the reply is a list elements and their scores from the sorted set."
+-ERR no return types for SPOP: "When called without the `count` argument:\n\n@bulk-string-reply: the removed member, or `nil` when `key` does not exist.\n\nWhen called with the `count` argument:\n\n@array-reply: the removed members, or an empty array when `key` does not exist."
 -ERR no return types for EVAL: ""
 -ERR no return types for MONITOR: "**Non standard return value**, just dumps the received commands in an infinite\nflow."
 -ERR no return types for PERSIST: "@integer-reply, specifically:\n\n* `1` if the timeout was removed.\n* `0` if `key` does not exist or does not have an associated timeout."

@@ -81,14 +81,14 @@
                     },
                     {
                         "name": "exat",
-                        "type": "integer",
-                        "value": "unix-time",
+                        "type": "unix-time",
+                        "value": "unix-time-seconds",
                         "token": "EXAT"
                     },
                     {
                         "name": "pxat",
-                        "type": "integer",
-                        "value": "unix-time",
+                        "type": "unix-time",
+                        "value": "unix-time-milliseconds",
                         "token": "PXAT"
                     },
                     {

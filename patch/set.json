@@ -1,3 +1,76 @@
 {
-  "SET": {}
+  "SET": {
+    "arguments": [
+      {
+        "name": "key",
+        "type": "key",
+        "value": "key",
+        "key_spec_index": 0
+      },
+      {
+        "name": "value",
+        "type": "string",
+        "value": "value"
+      },
+      {
+        "name": "expiration",
+        "type": "oneof",
+        "value": [
+          {
+            "name": "ex",
+            "type": "integer",
+            "value": "seconds",
+            "token": "EX"
+          },
+          {
+            "name": "px",
+            "type": "integer",
+            "value": "milliseconds",
+            "token": "PX"
+          },
+          {
+            "name": "exat",
+            "type": "unix-time",
+            "value": "unix-time-seconds",
+            "token": "EXAT"
+          },
+          {
+            "name": "pxat",
+            "type": "unix-time",
+            "value": "unix-time-milliseconds",
+            "token": "PXAT"
+          },
+          {
+            "name": "keepttl",
+            "type": "pure-token",
+            "token": "KEEPTTL"
+          }
+        ],
+        "optional": true
+      },
+      {
+        "name": "condition",
+        "type": "oneof",
+        "value": [
+          {
+            "name": "nx",
+            "type": "pure-token",
+            "token": "NX"
+          },
+          {
+            "name": "xx",
+            "type": "pure-token",
+            "token": "XX"
+          }
+        ],
+        "optional": true
+      },
+      {
+        "name": "get",
+        "token": "GET",
+        "type": "pure-token",
+        "optional": true
+      }
+    ]
+  }
 }
