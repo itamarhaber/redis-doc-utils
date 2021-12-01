@@ -51,7 +51,7 @@ function isUpper (s) {
   return (isAlpha(s) && s.search(/[^A-Z_]/) == -1);
 }
 
-function convertSingleArg(old) {
+function convertSingleArg(old, kidx) {
   const n = {};
   if ("command" in old) {
     n.token = old.command;
@@ -64,6 +64,7 @@ function convertSingleArg(old) {
         name: e,
         type: old.type[i],
         value: e,
+        key_spec_index: old.type[i] === 'key' ? kidx++ : undefined,
       };
     });
   } else if (old.type != 'enum' && old.type != 'block') {
@@ -84,6 +85,9 @@ function convertSingleArg(old) {
           value: e,
         };
       });
+    }
+    if (n.type === 'key') {
+      n.key_spec_index = kidx++;
     }
   } else if (old.type == 'enum') {
     if (old.enum.length == 1) {
@@ -154,7 +158,12 @@ function convertSingleArg(old) {
   } else if (old.type == 'block') {
     n.name = old.name;
     n.type = 'block';
-    n.value = old.block.map(x => convertSingleArg(x));
+    n.value = [];
+    for (let i = 0; i < old.block.length; i++) {
+      let value;
+      [value,kidx] = convertSingleArg(old.block[i],kidx);
+      n.value.push(value);
+    }
   } else {
     console.error(`-ERR invalid type ${old.type}`);
   }
@@ -172,7 +181,7 @@ function convertSingleArg(old) {
     }
   }
 
-  return n;
+  return [n,kidx];
 }
 
 function commandFileName(name) {
@@ -521,7 +530,10 @@ function enrichWithJSON(json, cmd) {
   } else console.error(`-ERR no commands.json entry for ${fname}`);
 
   if (cmd[name].arguments !== undefined) {
-    cmd[name].arguments = cmd[name].arguments.map(a => convertSingleArg(a));
+    let kidx = 0;
+    for (let i = 0; i < cmd[name].arguments.length; i++) {
+      [cmd[name].arguments[i],kidx] = convertSingleArg(cmd[name].arguments[i],kidx);
+    }
   }
 
   if (cmd[name].subcommands !== undefined) {

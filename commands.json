@@ -98,6 +98,20 @@
             }
         ]
     },
+    "ACL HELP": {
+        "summary": "Show helpful text about the different subcommands",
+        "complexity": "O(1)",
+        "group": "server",
+        "since": "6.0.0",
+        "arity": 2,
+        "container": "ACL",
+        "function": "aclCommand",
+        "command_flags": [
+            "loading",
+            "stale",
+            "sentinel"
+        ]
+    },
     "ACL LIST": {
         "summary": "List the current ACL rules in ACL config file format",
         "complexity": "O(N). Where N is the number of configured users.",
@@ -125,20 +139,6 @@
         "command_flags": [
             "admin",
             "noscript",
-            "loading",
-            "stale",
-            "sentinel"
-        ]
-    },
-    "ACL HELP": {
-        "summary": "Show helpful text about the different subcommands",
-        "complexity": "O(1)",
-        "group": "server",
-        "since": "6.0.0",
-        "arity": 2,
-        "container": "ACL",
-        "function": "aclCommand",
-        "command_flags": [
             "loading",
             "stale",
             "sentinel"
@@ -305,7 +305,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "value",
@@ -446,7 +447,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "index",
@@ -521,7 +523,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "token": "GET",
@@ -649,7 +652,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "token": "GET",
@@ -729,12 +733,14 @@
             {
                 "name": "destkey",
                 "type": "key",
-                "value": "destkey"
+                "value": "destkey",
+                "key_spec_index": 0
             },
             {
                 "name": "key",
                 "type": "key",
                 "value": "key",
+                "key_spec_index": 1,
                 "multiple": true
             }
         ]
@@ -781,7 +787,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "bit",
@@ -888,12 +895,14 @@
             {
                 "name": "source",
                 "type": "key",
-                "value": "source"
+                "value": "source",
+                "key_spec_index": 0
             },
             {
                 "name": "destination",
                 "type": "key",
-                "value": "destination"
+                "value": "destination",
+                "key_spec_index": 1
             },
             {
                 "name": "wherefrom",
@@ -983,6 +992,7 @@
                 "name": "key",
                 "type": "key",
                 "value": "key",
+                "key_spec_index": 0,
                 "multiple": true
             },
             {
@@ -1055,6 +1065,7 @@
                 "name": "key",
                 "type": "key",
                 "value": "key",
+                "key_spec_index": 0,
                 "multiple": true
             },
             {
@@ -1109,6 +1120,7 @@
                 "name": "key",
                 "type": "key",
                 "value": "key",
+                "key_spec_index": 0,
                 "multiple": true
             },
             {
@@ -1186,12 +1198,14 @@
             {
                 "name": "source",
                 "type": "key",
-                "value": "source"
+                "value": "source",
+                "key_spec_index": 0
             },
             {
                 "name": "destination",
                 "type": "key",
-                "value": "destination"
+                "value": "destination",
+                "key_spec_index": 1
             },
             {
                 "name": "timeout",
@@ -1249,6 +1263,7 @@
                 "name": "key",
                 "type": "key",
                 "value": "key",
+                "key_spec_index": 0,
                 "multiple": true
             },
             {
@@ -1322,6 +1337,7 @@
                 "name": "key",
                 "type": "key",
                 "value": "key",
+                "key_spec_index": 0,
                 "multiple": true
             },
             {
@@ -1377,6 +1393,7 @@
                 "name": "key",
                 "type": "key",
                 "value": "key",
+                "key_spec_index": 0,
                 "multiple": true
             },
             {
@@ -2556,6 +2573,23 @@
             "connection"
         ]
     },
+    "COMMAND": {
+        "summary": "Get array of Redis command details",
+        "complexity": "O(N) where N is the total number of Redis commands",
+        "group": "server",
+        "since": "2.8.13",
+        "arity": -1,
+        "function": "commandCommand",
+        "command_flags": [
+            "random",
+            "loading",
+            "stale",
+            "sentinel"
+        ],
+        "acl_categories": [
+            "connection"
+        ]
+    },
     "CONFIG GET": {
         "summary": "Get the value of a configuration parameter",
         "complexity": "PATCH__TBD__45__",
@@ -2699,12 +2733,14 @@
             {
                 "name": "source",
                 "type": "key",
-                "value": "source"
+                "value": "source",
+                "key_spec_index": 0
             },
             {
                 "name": "destination",
                 "type": "key",
-                "value": "destination"
+                "value": "destination",
+                "key_spec_index": 1
             },
             {
                 "token": "DB",
@@ -2791,7 +2827,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             }
         ]
     },
@@ -2833,7 +2870,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "decrement",
@@ -2879,6 +2917,7 @@
                 "name": "key",
                 "type": "key",
                 "value": "key",
+                "key_spec_index": 0,
                 "multiple": true
             }
         ]
@@ -2937,7 +2976,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             }
         ]
     },
@@ -2960,23 +3000,6 @@
                 "type": "string",
                 "value": "message"
             }
-        ]
-    },
-    "COMMAND": {
-        "summary": "Get array of Redis command details",
-        "complexity": "O(N) where N is the total number of Redis commands",
-        "group": "server",
-        "since": "2.8.13",
-        "arity": -1,
-        "function": "commandCommand",
-        "command_flags": [
-            "random",
-            "loading",
-            "stale",
-            "sentinel"
-        ],
-        "acl_categories": [
-            "connection"
         ]
     },
     "EVAL": {
@@ -3031,6 +3054,7 @@
                 "name": "key",
                 "type": "key",
                 "value": "key",
+                "key_spec_index": 0,
                 "optional": true,
                 "multiple": true
             },
@@ -3093,6 +3117,7 @@
                 "name": "key",
                 "type": "key",
                 "value": "key",
+                "key_spec_index": 0,
                 "multiple": true
             },
             {
@@ -3155,6 +3180,7 @@
                 "name": "key",
                 "type": "key",
                 "value": "key",
+                "key_spec_index": 0,
                 "optional": true,
                 "multiple": true
             },
@@ -3217,6 +3243,7 @@
                 "name": "key",
                 "type": "key",
                 "value": "key",
+                "key_spec_index": 0,
                 "multiple": true
             },
             {
@@ -3282,6 +3309,7 @@
                 "name": "key",
                 "type": "key",
                 "value": "key",
+                "key_spec_index": 0,
                 "multiple": true
             }
         ]
@@ -3329,7 +3357,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "seconds",
@@ -3408,7 +3437,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "timestamp",
@@ -3482,7 +3512,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             }
         ]
     },
@@ -3663,7 +3694,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "condition",
@@ -3748,7 +3780,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "member1",
@@ -3825,7 +3858,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "member",
@@ -3871,7 +3905,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "member",
@@ -3966,7 +4001,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "longitude",
@@ -4068,6 +4104,7 @@
                 "name": "key",
                 "type": "key",
                 "value": "key",
+                "key_spec_index": 1,
                 "optional": true
             },
             {
@@ -4075,6 +4112,7 @@
                 "name": "key",
                 "type": "key",
                 "value": "key",
+                "key_spec_index": 2,
                 "optional": true
             }
         ]
@@ -4196,7 +4234,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "member",
@@ -4293,6 +4332,7 @@
                 "name": "key",
                 "type": "key",
                 "value": "key",
+                "key_spec_index": 1,
                 "optional": true
             },
             {
@@ -4300,6 +4340,7 @@
                 "name": "key",
                 "type": "key",
                 "value": "key",
+                "key_spec_index": 2,
                 "optional": true
             }
         ]
@@ -4378,7 +4419,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "token": "FROMMEMBER",
@@ -4598,12 +4640,14 @@
             {
                 "name": "destination",
                 "type": "key",
-                "value": "destination"
+                "value": "destination",
+                "key_spec_index": 0
             },
             {
                 "name": "source",
                 "type": "key",
-                "value": "source"
+                "value": "source",
+                "key_spec_index": 1
             },
             {
                 "token": "FROMMEMBER",
@@ -4794,7 +4838,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             }
         ]
     },
@@ -4835,7 +4880,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "offset",
@@ -4881,7 +4927,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             }
         ]
     },
@@ -4922,7 +4969,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "expiration",
@@ -4998,7 +5046,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "start",
@@ -5056,7 +5105,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "value",
@@ -5102,7 +5152,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "field",
@@ -5213,7 +5264,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "field",
@@ -5259,7 +5311,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "field",
@@ -5305,7 +5358,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             }
         ]
     },
@@ -5347,7 +5401,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "field",
@@ -5399,7 +5454,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "field",
@@ -5450,7 +5506,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             }
         ]
     },
@@ -5491,7 +5548,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             }
         ]
     },
@@ -5532,7 +5590,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "field",
@@ -5585,7 +5644,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "field_value",
@@ -5643,7 +5703,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "options",
@@ -5702,7 +5763,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "cursor",
@@ -5763,7 +5825,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "field_value",
@@ -5822,7 +5885,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "field",
@@ -5873,7 +5937,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "field",
@@ -5919,7 +5984,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             }
         ]
     },
@@ -5961,7 +6027,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             }
         ]
     },
@@ -6003,7 +6070,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "increment",
@@ -6050,7 +6118,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "increment",
@@ -6306,7 +6375,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "index",
@@ -6352,7 +6422,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "where",
@@ -6419,7 +6490,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             }
         ]
     },
@@ -6478,12 +6550,14 @@
             {
                 "name": "source",
                 "type": "key",
-                "value": "source"
+                "value": "source",
+                "key_spec_index": 0
             },
             {
                 "name": "destination",
                 "type": "key",
-                "value": "destination"
+                "value": "destination",
+                "key_spec_index": 1
             },
             {
                 "name": "wherefrom",
@@ -6562,6 +6636,7 @@
                 "name": "key",
                 "type": "key",
                 "value": "key",
+                "key_spec_index": 0,
                 "multiple": true
             },
             {
@@ -6653,7 +6728,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "count",
@@ -6699,7 +6775,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "element",
@@ -6773,7 +6850,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "element",
@@ -6827,7 +6905,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "element",
@@ -6873,7 +6952,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "start",
@@ -6923,7 +7003,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "count",
@@ -6974,7 +7055,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "index",
@@ -7024,7 +7106,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "start",
@@ -7130,7 +7213,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "token": "SAMPLES",
@@ -7179,6 +7263,7 @@
                 "name": "key",
                 "type": "key",
                 "value": "key",
+                "key_spec_index": 0,
                 "multiple": true
             }
         ]
@@ -7334,6 +7419,7 @@
                 "name": "key",
                 "type": "key",
                 "value": "key",
+                "key_spec_index": 0,
                 "optional": true,
                 "multiple": true
             }
@@ -7477,7 +7563,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "db",
@@ -7527,7 +7614,8 @@
                     {
                         "name": "key",
                         "type": "key",
-                        "value": "key"
+                        "value": "key",
+                        "key_spec_index": 0
                     },
                     {
                         "name": "value",
@@ -7580,7 +7668,8 @@
                     {
                         "name": "key",
                         "type": "key",
-                        "value": "key"
+                        "value": "key",
+                        "key_spec_index": 0
                     },
                     {
                         "name": "value",
@@ -7646,7 +7735,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             }
         ]
     },
@@ -7688,7 +7778,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             }
         ]
     },
@@ -7746,7 +7837,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             }
         ]
     },
@@ -7787,7 +7879,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             }
         ]
     },
@@ -7828,7 +7921,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             }
         ]
     },
@@ -7875,7 +7969,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "milliseconds",
@@ -7954,7 +8049,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "milliseconds-timestamp",
@@ -8028,7 +8124,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             }
         ]
     },
@@ -8070,7 +8167,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "element",
@@ -8119,6 +8217,7 @@
                 "name": "key",
                 "type": "key",
                 "value": "key",
+                "key_spec_index": 0,
                 "multiple": true
             }
         ]
@@ -8216,12 +8315,14 @@
             {
                 "name": "destkey",
                 "type": "key",
-                "value": "destkey"
+                "value": "destkey",
+                "key_spec_index": 0
             },
             {
                 "name": "sourcekey",
                 "type": "key",
                 "value": "sourcekey",
+                "key_spec_index": 1,
                 "multiple": true
             }
         ]
@@ -8303,7 +8404,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "milliseconds",
@@ -8408,7 +8510,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             }
         ]
     },
@@ -8633,12 +8736,14 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "newkey",
                 "type": "key",
-                "value": "newkey"
+                "value": "newkey",
+                "key_spec_index": 1
             }
         ]
     },
@@ -8679,12 +8784,14 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "newkey",
                 "type": "key",
-                "value": "newkey"
+                "value": "newkey",
+                "key_spec_index": 1
             }
         ]
     },
@@ -8825,7 +8932,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "ttl",
@@ -8927,7 +9035,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "count",
@@ -8997,12 +9106,14 @@
             {
                 "name": "source",
                 "type": "key",
-                "value": "source"
+                "value": "source",
+                "key_spec_index": 0
             },
             {
                 "name": "destination",
                 "type": "key",
-                "value": "destination"
+                "value": "destination",
+                "key_spec_index": 1
             }
         ]
     },
@@ -9050,7 +9161,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "element",
@@ -9104,7 +9216,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "element",
@@ -9158,7 +9271,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "member",
@@ -9260,7 +9374,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             }
         ]
     },
@@ -9458,6 +9573,7 @@
                 "name": "key",
                 "type": "key",
                 "value": "key",
+                "key_spec_index": 0,
                 "multiple": true
             }
         ]
@@ -9516,12 +9632,14 @@
             {
                 "name": "destination",
                 "type": "key",
-                "value": "destination"
+                "value": "destination",
+                "key_spec_index": 0
             },
             {
                 "name": "key",
                 "type": "key",
                 "value": "key",
+                "key_spec_index": 1,
                 "multiple": true
             }
         ]
@@ -9898,7 +10016,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "value",
@@ -9930,7 +10049,7 @@
                     {
                         "name": "pxat",
                         "type": "integer",
-                        "value": "milliseconds-timestamp",
+                        "value": "unix-time",
                         "token": "PXAT"
                     },
                     {
@@ -10003,7 +10122,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "offset",
@@ -10054,7 +10174,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "seconds",
@@ -10106,7 +10227,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "value",
@@ -10152,7 +10274,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "offset",
@@ -10238,6 +10361,7 @@
                 "name": "key",
                 "type": "key",
                 "value": "key",
+                "key_spec_index": 0,
                 "multiple": true
             }
         ]
@@ -10285,6 +10409,7 @@
                 "name": "key",
                 "type": "key",
                 "value": "key",
+                "key_spec_index": 0,
                 "multiple": true
             },
             {
@@ -10350,12 +10475,14 @@
             {
                 "name": "destination",
                 "type": "key",
-                "value": "destination"
+                "value": "destination",
+                "key_spec_index": 0
             },
             {
                 "name": "key",
                 "type": "key",
                 "value": "key",
+                "key_spec_index": 1,
                 "multiple": true
             }
         ]
@@ -10397,7 +10524,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "member",
@@ -10539,7 +10667,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             }
         ]
     },
@@ -10580,7 +10709,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "member",
@@ -10645,12 +10775,14 @@
             {
                 "name": "source",
                 "type": "key",
-                "value": "source"
+                "value": "source",
+                "key_spec_index": 0
             },
             {
                 "name": "destination",
                 "type": "key",
-                "value": "destination"
+                "value": "destination",
+                "key_spec_index": 1
             },
             {
                 "name": "member",
@@ -10712,7 +10844,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "token": "BY",
@@ -10776,6 +10909,7 @@
                 "name": "destination",
                 "type": "key",
                 "value": "destination",
+                "key_spec_index": 1,
                 "optional": true
             }
         ]
@@ -10819,7 +10953,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "token": "BY",
@@ -10924,7 +11059,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "count",
@@ -10977,7 +11113,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "count",
@@ -11030,7 +11167,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "member",
@@ -11077,7 +11215,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "cursor",
@@ -11137,7 +11276,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             }
         ]
     },
@@ -11252,6 +11392,7 @@
                 "name": "key",
                 "type": "key",
                 "value": "key",
+                "key_spec_index": 0,
                 "multiple": true
             }
         ]
@@ -11310,12 +11451,14 @@
             {
                 "name": "destination",
                 "type": "key",
-                "value": "destination"
+                "value": "destination",
+                "key_spec_index": 0
             },
             {
                 "name": "key",
                 "type": "key",
                 "value": "key",
+                "key_spec_index": 1,
                 "multiple": true
             }
         ]
@@ -11412,6 +11555,7 @@
                 "name": "key",
                 "type": "key",
                 "value": "key",
+                "key_spec_index": 0,
                 "multiple": true
             }
         ]
@@ -11454,7 +11598,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             }
         ]
     },
@@ -11495,7 +11640,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             }
         ]
     },
@@ -11537,6 +11683,7 @@
                 "name": "key",
                 "type": "key",
                 "value": "key",
+                "key_spec_index": 0,
                 "multiple": true
             }
         ]
@@ -11645,6 +11792,7 @@
                 "name": "key",
                 "type": "key",
                 "value": "key",
+                "key_spec_index": 0,
                 "multiple": true
             }
         ]
@@ -11687,7 +11835,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "group",
@@ -11747,7 +11896,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "token": "NOMKSTREAM",
@@ -11880,7 +12030,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "group",
@@ -11955,7 +12106,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "group",
@@ -12050,7 +12202,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "ID",
@@ -12098,7 +12251,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "groupname",
@@ -12167,7 +12321,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "groupname",
@@ -12218,7 +12373,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "groupname",
@@ -12269,7 +12425,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "groupname",
@@ -12331,7 +12488,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "groupname",
@@ -12394,7 +12552,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "groupname",
@@ -12440,7 +12599,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             }
         ]
     },
@@ -12497,7 +12657,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "full",
@@ -12557,7 +12718,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             }
         ]
     },
@@ -12604,7 +12766,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "group",
@@ -12684,7 +12847,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "start",
@@ -12764,6 +12928,7 @@
                 "name": "key",
                 "type": "key",
                 "value": "key",
+                "key_spec_index": 0,
                 "multiple": true
             },
             {
@@ -12856,6 +13021,7 @@
                 "name": "key",
                 "type": "key",
                 "value": "key",
+                "key_spec_index": 0,
                 "multiple": true
             },
             {
@@ -12902,7 +13068,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "end",
@@ -13001,7 +13168,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "trim",
@@ -13108,7 +13276,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "condition",
@@ -13212,7 +13381,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             }
         ]
     },
@@ -13253,7 +13423,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "min",
@@ -13310,6 +13481,7 @@
                 "name": "key",
                 "type": "key",
                 "value": "key",
+                "key_spec_index": 0,
                 "multiple": true
             },
             {
@@ -13375,7 +13547,8 @@
             {
                 "name": "destination",
                 "type": "key",
-                "value": "destination"
+                "value": "destination",
+                "key_spec_index": 0
             },
             {
                 "name": "numkeys",
@@ -13386,6 +13559,7 @@
                 "name": "key",
                 "type": "key",
                 "value": "key",
+                "key_spec_index": 1,
                 "multiple": true
             }
         ]
@@ -13428,7 +13602,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "increment",
@@ -13485,6 +13660,7 @@
                 "name": "key",
                 "type": "key",
                 "value": "key",
+                "key_spec_index": 0,
                 "multiple": true
             },
             {
@@ -13569,6 +13745,7 @@
                 "name": "key",
                 "type": "key",
                 "value": "key",
+                "key_spec_index": 0,
                 "multiple": true
             },
             {
@@ -13635,7 +13812,8 @@
             {
                 "name": "destination",
                 "type": "key",
-                "value": "destination"
+                "value": "destination",
+                "key_spec_index": 0
             },
             {
                 "name": "numkeys",
@@ -13646,6 +13824,7 @@
                 "name": "key",
                 "type": "key",
                 "value": "key",
+                "key_spec_index": 1,
                 "multiple": true
             },
             {
@@ -13718,7 +13897,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "min",
@@ -13775,6 +13955,7 @@
                 "name": "key",
                 "type": "key",
                 "value": "key",
+                "key_spec_index": 0,
                 "multiple": true
             },
             {
@@ -13839,7 +14020,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "member",
@@ -13886,7 +14068,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "count",
@@ -13933,7 +14116,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "count",
@@ -13980,7 +14164,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "options",
@@ -14044,7 +14229,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "min",
@@ -14146,7 +14332,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "min",
@@ -14219,7 +14406,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "min",
@@ -14311,12 +14499,14 @@
             {
                 "name": "dst",
                 "type": "key",
-                "value": "dst"
+                "value": "dst",
+                "key_spec_index": 0
             },
             {
                 "name": "src",
                 "type": "key",
-                "value": "src"
+                "value": "src",
+                "key_spec_index": 1
             },
             {
                 "name": "min",
@@ -14408,7 +14598,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "member",
@@ -14460,7 +14651,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "member",
@@ -14506,7 +14698,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "min",
@@ -14556,7 +14749,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "start",
@@ -14606,7 +14800,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "min",
@@ -14661,7 +14856,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "start",
@@ -14722,7 +14918,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "max",
@@ -14795,7 +14992,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "max",
@@ -14870,7 +15068,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "member",
@@ -14916,7 +15115,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "cursor",
@@ -14976,7 +15176,8 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key"
+                "value": "key",
+                "key_spec_index": 0
             },
             {
                 "name": "member",
@@ -15028,6 +15229,7 @@
                 "name": "key",
                 "type": "key",
                 "value": "key",
+                "key_spec_index": 0,
                 "multiple": true
             },
             {
@@ -15124,7 +15326,8 @@
             {
                 "name": "destination",
                 "type": "key",
-                "value": "destination"
+                "value": "destination",
+                "key_spec_index": 0
             },
             {
                 "name": "numkeys",
@@ -15135,6 +15338,7 @@
                 "name": "key",
                 "type": "key",
                 "value": "key",
+                "key_spec_index": 1,
                 "multiple": true
             },
             {
