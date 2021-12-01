@@ -1,3 +1,40 @@
 {
-  "CLUSTER SETSLOT": {}
+  "CLUSTER SETSLOT": {
+    "arguments": [
+      {
+        "name": "slot",
+        "type": "integer",
+        "value": "slot"
+      },
+      {
+        "name": "subcommand",
+        "type": "oneof",
+        "value": [
+          {
+            "name": "node-id",
+            "type": "integer",
+            "value": "node-id",
+            "token": "IMPORTING"
+          },
+          {
+            "name": "node-id",
+            "type": "integer",
+            "value": "node-id",
+            "token": "MIGRATING"
+          },
+          {
+            "name": "node-id",
+            "type": "integer",
+            "value": "node-id",
+            "token": "NODE"
+          },
+          {
+            "name": "stable",
+            "type": "pure-token",
+            "token": "STABLE"
+          }
+        ]
+      }
+    ]
+  }
 }
