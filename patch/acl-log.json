@@ -1,3 +1,23 @@
 {
-  "ACL LOG": {}
+  "ACL LOG": {
+    "arguments": [
+      {
+        "name": "operation",
+        "type": "oneof",
+        "value": [
+          {
+            "name": "count",
+            "type": "integer",
+            "value": "count"
+          },
+          {
+            "name": "reset",
+            "type": "pure-token",
+            "token": "RESET"
+          }
+        ],
+        "optional": true
+      }
+    ]
+  }
 }

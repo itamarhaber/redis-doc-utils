@@ -1,3 +1,88 @@
 {
-  "MIGRATE": {}
+  "MIGRATE": {
+    "arguments": [
+      {
+        "name": "host",
+        "type": "string",
+        "value": "host"
+      },
+      {
+        "name": "port",
+        "type": "string",
+        "value": "port"
+      },
+      {
+        "name": "key_or_empty_string",
+        "type": "oneof",
+        "value": [
+          {
+            "name": "key",
+            "type": "key",
+            "value": "key"
+          },
+          {
+            "name": "empty_string",
+            "type": "pure-token",
+            "token": "\"\""
+          }
+        ]
+      },
+      {
+        "name": "destination-db",
+        "type": "integer",
+        "value": "destination-db"
+      },
+      {
+        "name": "timeout",
+        "type": "integer",
+        "value": "timeout"
+      },
+      {
+        "name": "copy",
+        "token": "COPY",
+        "type": "pure-token",
+        "optional": true
+      },
+      {
+        "name": "replace",
+        "token": "REPLACE",
+        "type": "pure-token",
+        "optional": true
+      },
+      {
+        "token": "AUTH",
+        "name": "password",
+        "type": "string",
+        "value": "password",
+        "optional": true
+      },
+      {
+        "token": "AUTH2",
+        "name": "username_password",
+        "type": "block",
+        "value": [
+          {
+            "name": "username",
+            "type": "string",
+            "value": "username"
+          },
+          {
+            "name": "password",
+            "type": "string",
+            "value": "password"
+          }
+        ],
+        "optional": true
+      },
+      {
+        "token": "KEYS",
+        "name": "key",
+        "type": "key",
+        "value": "key",
+        "key_spec_index": 0,
+        "optional": true,
+        "multiple": true
+      }
+    ]
+  }
 }

@@ -16,23 +16,18 @@
         ],
         "arguments": [
             {
-                "name": "count_or RESET",
-                "type": "block",
+                "name": "operation",
+                "type": "oneof",
                 "value": [
                     {
                         "name": "count",
-                        "type": "string",
+                        "type": "integer",
                         "value": "count"
                     },
                     {
-                        "name": "or",
-                        "type": "string",
-                        "value": "or"
-                    },
-                    {
                         "name": "reset",
-                        "type": "string",
-                        "value": "RESET"
+                        "type": "pure-token",
+                        "token": "RESET"
                     }
                 ],
                 "optional": true
