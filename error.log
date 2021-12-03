@@ -1,5 +1,4 @@
 -ERR no commands.json entry for PUBSUB
--ERR no commands.json entry for LCS
 -ERR no commands.json entry for SCRIPT
 -ERR no commands.json entry for MODULE
 -ERR no commands.json entry for SLOWLOG
@@ -54,7 +53,6 @@
 -ERR no commands.json entry for XINFO
 -ERR no commands.json entry for PFDEBUG
 -ERR while reading pubsub.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/pubsub.md'
--ERR while reading lcs.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/lcs.md'
 -ERR while reading script.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/script.md'
 -ERR while reading module.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/module.md'
 -ERR while reading slowlog.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/slowlog.md'
@@ -81,11 +79,11 @@
 -ERR while reading xinfo.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/xinfo.md'
 -ERR while reading pfdebug.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/pfdebug.md'
 -ERR while reading sentinel-myid.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/sentinel-myid.md'
--ERR while reading sentinel-master.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/sentinel-master.md'
 -ERR while reading sentinel-monitor.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/sentinel-monitor.md'
+-ERR while reading sentinel-master.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/sentinel-master.md'
 -ERR while reading sentinel-failover.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/sentinel-failover.md'
--ERR while reading sentinel-flushconfig.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/sentinel-flushconfig.md'
 -ERR while reading sentinel-info-cache.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/sentinel-info-cache.md'
+-ERR while reading sentinel-flushconfig.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/sentinel-flushconfig.md'
 -ERR while reading sentinel-reset.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/sentinel-reset.md'
 -ERR while reading sentinel-is-master-down-by-addr.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/sentinel-is-master-down-by-addr.md'
 -ERR while reading sentinel-config.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/sentinel-config.md'
@@ -94,16 +92,16 @@
 -ERR while reading sentinel-remove.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/sentinel-remove.md'
 -ERR while reading sentinel-replicas.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/sentinel-replicas.md'
 -ERR while reading sentinel-simulate-failure.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/sentinel-simulate-failure.md'
--ERR while reading sentinel-get-master-addr-by-name.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/sentinel-get-master-addr-by-name.md'
 -ERR while reading sentinel-set.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/sentinel-set.md'
+-ERR while reading sentinel-get-master-addr-by-name.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/sentinel-get-master-addr-by-name.md'
 -ERR while reading sentinel-debug.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/sentinel-debug.md'
 -ERR while reading sentinel-masters.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/sentinel-masters.md'
 -ERR while reading sentinel-help.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/sentinel-help.md'
 -ERR while reading sentinel-sentinels.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/sentinel-sentinels.md'
 -ERR while reading function-info.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/function-info.md'
 -ERR while reading function-create.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/function-create.md'
--ERR while reading function-delete.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/function-delete.md'
 -ERR while reading function-kill.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/function-kill.md'
+-ERR while reading function-delete.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/function-delete.md'
 -ERR while reading function-list.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/function-list.md'
 -ERR while reading function-help.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/function-help.md'
 -ERR while reading function-stats.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/function-stats.md'
@@ -116,9 +114,10 @@
 -ERR no return types for GEOHASH: "@array-reply, specifically:\n\nThe command returns an array where each element is the Geohash corresponding to\neach member name passed as argument to the command."
 -ERR no return types for SET: "@simple-string-reply: `OK` if `SET` was executed correctly.\n\n@nil-reply: `(nil)` if the `SET` operation was not performed because the user specified the `NX` or `XX` option but the condition was not met.\n\nIf the command is issued with the `!GET` option, the above does not apply. It will instead reply as follows, regardless if the `SET` was actually performed:\n\n@bulk-string-reply: the old string value stored at key.\n\n@nil-reply: `(nil)` if the key did not exist."
 -ERR no return types for SMOVE: "@integer-reply, specifically:\n\n* `1` if the element is moved.\n* `0` if the element is not a member of `source` and no operation was performed."
+-ERR no return types for LCS: "* Without modifiers the string representing the longest common substring is returned.\n* When `LEN` is given the command returns the length of the longest common substring.\n* When `IDX` is given the command returns an array with the LCS length and all the ranges in both the strings, start and end offset for each string, where there are matches. When `WITHMATCHLEN` is given each array representing a match will also have the length of the match (see examples)."
 -ERR no return types for GEORADIUS: "@array-reply, specifically:\n\n* Without any `WITH` option specified, the command just returns a linear array like [\"New York\",\"Milan\",\"Paris\"].\n* If `WITHCOORD`, `WITHDIST` or `WITHHASH` options are specified, the command returns an array of arrays, where each sub-array represents a single item.\n\nWhen additional information is returned as an array of arrays for each item, the first item in the sub-array is always the name of the returned item. The other information is returned in the following order as successive elements of the sub-array.\n\n1. The distance from the center as a floating point number, in the same unit specified in the radius.\n2. The geohash integer.\n3. The coordinates as a two items x,y array (longitude,latitude).\n\nSo for example the command `GEORADIUS Sicily 15 37 200 km WITHCOORD WITHDIST` will return each item in the following way:\n\n    [\"Palermo\",\"190.4424\",[\"13.361389338970184\",\"38.115556395496299\"]]"
--ERR no return types for BLMOVE: "@bulk-string-reply: the element being popped from `source` and pushed to `destination`.\nIf `timeout` is reached, a @nil-reply is returned."
 -ERR no return types for PERSIST: "@integer-reply, specifically:\n\n* `1` if the timeout was removed.\n* `0` if `key` does not exist or does not have an associated timeout."
+-ERR no return types for BLMOVE: "@bulk-string-reply: the element being popped from `source` and pushed to `destination`.\nIf `timeout` is reached, a @nil-reply is returned."
 -ERR no return types for GEODIST: "@bulk-string-reply, specifically:\n\nThe command returns the distance as a double (represented as a string)\nin the specified unit, or NULL if one or both the elements are missing."
 -ERR no return types for BRPOPLPUSH: "@bulk-string-reply: the element being popped from `source` and pushed to `destination`.\nIf `timeout` is reached, a @nil-reply is returned."
 -ERR no return types for PFCOUNT: "@integer-reply, specifically:\n\n* The approximated number of unique elements observed via `PFADD`."
@@ -132,8 +131,8 @@
 -ERR no return types for BITFIELD: ""
 -ERR no return types for ZADD: "@integer-reply, specifically:\n\n* When used without optional arguments, the number of elements added to the sorted set (excluding score updates).\n* If the `CH` option is specified, the number of elements that were changed (added or updated).\n\nIf the `INCR` option is specified, the return value will be @bulk-string-reply:\n\n* The new score of `member` (a double precision floating point number) represented as string, or `nil` if the operation was aborted (when called with either the `XX` or the `NX` option)."
 -ERR no return types for XREVRANGE: "@array-reply, specifically:\n\nThe command returns the entries with IDs matching the specified range,\nfrom the higher ID to the lower ID matching.\nThe returned entries are complete, that means that the ID and all the fields\nthey are composed are returned. Moreover the entries are returned with\ntheir fields and values in the exact same order as `XADD` added them."
--ERR no return types for PSUBSCRIBE: ""
 -ERR no return types for SPOP: "When called without the `count` argument:\n\n@bulk-string-reply: the removed member, or `nil` when `key` does not exist.\n\nWhen called with the `count` argument:\n\n@array-reply: the removed members, or an empty array when `key` does not exist."
+-ERR no return types for PSUBSCRIBE: ""
 -ERR no return types for EXPIREAT: "@integer-reply, specifically:\n\n* `1` if the timeout was set.\n* `0` if the timeout was not set. e.g. key doesn't exist, or operation skipped due to the provided arguments."
 -ERR no return types for XACK: "@integer-reply, specifically:\n\nThe command returns the number of messages successfully acknowledged.\nCertain message IDs may no longer be part of the PEL (for example because\nthey have already been acknowledged), and XACK will not count them as\nsuccessfully acknowledged."
 -ERR no return types for SRANDMEMBER: "@bulk-string-reply: without the additional `count` argument, the command returns a Bulk Reply with the randomly selected element, or `nil` when `key` does not exist.\n\n@array-reply: when the additional `count` argument is passed, the command returns an array of elements, or an empty array when `key` does not exist."
@@ -180,8 +179,8 @@
 -ERR no return types for SCRIPT LOAD: "@bulk-string-reply This command returns the SHA1 digest of the script added into the\nscript cache."
 -ERR no return types for SCRIPT EXISTS: "@array-reply The command returns an array of integers that correspond to\nthe specified SHA1 digest arguments.\nFor every corresponding SHA1 digest of a script that actually exists in the\nscript cache, an 1 is returned, otherwise 0 is returned."
 -ERR no return types for SLOWLOG RESET: ""
--ERR no return types for SLOWLOG LEN: ""
 -ERR no return types for SLOWLOG GET: ""
+-ERR no return types for SLOWLOG LEN: ""
 -ERR no return types for CLIENT UNBLOCK: "@integer-reply, specifically:\n\n* `1` if the client was unblocked successfully.\n* `0` if the client wasn't unblocked."
 -ERR no return types for CLIENT KILL: "When called with the three arguments format:\n\n@simple-string-reply: `OK` if the connection exists and has been closed\n\nWhen called with the filter / value format:\n\n@integer-reply: the number of clients killed."
 -ERR while reading command-list.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/command-list.md'
@@ -194,7 +193,6 @@
 -ERR no return types for XINFO GROUPS: ""
 -ERR no return types for XINFO CONSUMERS: ""
 -ERR no markdown file for PUBSUB
--ERR no markdown file for LCS
 -ERR no markdown file for SCRIPT
 -ERR no markdown file for MODULE
 -ERR no markdown file for SLOWLOG
