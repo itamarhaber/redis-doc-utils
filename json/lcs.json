@@ -1,12 +1,11 @@
 {
     "LCS": {
-        "summary": "__TBD__3__",
-        "complexity": "__TBD__2__",
-        "group": "__TBD__4__",
-        "since": "__TBD__5__",
+        "summary": "Find longest common substring",
+        "complexity": "O(N*M) where N and M are the lengths of s1 and s2, respectively",
+        "group": "string",
+        "since": "7.0.0",
         "arity": -3,
         "function": "lcsCommand",
-        "get_keys_function": "lcsGetKeys",
         "command_flags": [
             "readonly"
         ],

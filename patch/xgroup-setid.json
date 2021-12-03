@@ -1,3 +1,33 @@
 {
-  "XGROUP SETID": {}
+  "XGROUP SETID": {
+    "arguments": [
+      {
+        "name": "key",
+        "type": "key",
+        "value": "key",
+        "key_spec_index": 0
+      },
+      {
+        "name": "groupname",
+        "type": "string",
+        "value": "groupname"
+      },
+      {
+        "name": "id",
+        "type": "oneof",
+        "value": [
+          {
+            "name": "id",
+            "type": "string",
+            "value": "ID"
+          },
+          {
+            "name": "new_id",
+            "type": "pure-token",
+            "token": "$"
+          }
+        ]
+      }
+    ]
+  }
 }

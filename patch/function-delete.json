@@ -1,0 +1,8 @@
+{
+    "FUNCTION DELETE": {
+        "summary": "PATCH__TBD__23__",
+        "complexity": "PATCH__TBD__22__",
+        "group": "scripting",
+        "since": "7.0.0"
+    }
+}

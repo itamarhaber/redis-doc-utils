@@ -89,7 +89,8 @@
                     {
                         "name": "key",
                         "type": "key",
-                        "value": "key"
+                        "value": "key",
+                        "key_spec_index": 0
                     },
                     {
                         "name": "empty_string",
@@ -147,10 +148,10 @@
             },
             {
                 "token": "KEYS",
-                "name": "key",
+                "name": "keys",
                 "type": "key",
                 "value": "key",
-                "key_spec_index": 0,
+                "key_spec_index": 1,
                 "optional": true,
                 "multiple": true
             }

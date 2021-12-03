@@ -42,7 +42,7 @@
                 "name": "newkey",
                 "type": "key",
                 "value": "newkey",
-                "key_spec_index": 1
+                "key_spec_index": 0
             }
         ]
     }

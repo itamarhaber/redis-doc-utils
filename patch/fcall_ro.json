@@ -1,0 +1,8 @@
+{
+    "FCALL_RO": {
+        "summary": "PATCH__TBD__7__",
+        "complexity": "PATCH__TBD__6__",
+        "group": "scripting",
+        "since": "7.0.0"
+    }
+}

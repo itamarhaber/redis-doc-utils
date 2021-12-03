@@ -1,0 +1,8 @@
+{
+    "LCS": {
+        "summary": "Find longest common substring",
+        "complexity": "O(N*M) where N and M are the lengths of s1 and s2, respectively",
+        "group": "string",
+        "since": "7.0.0"
+    }
+}

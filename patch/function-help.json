@@ -1,0 +1,7 @@
+{
+    "FUNCTION HELP": {
+        "summary": "Show helpful text about the different subcommands",
+        "group": "scripting",
+        "since": "7.0.0"
+    }
+}
