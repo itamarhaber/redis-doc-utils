@@ -51,8 +51,8 @@
 -ERR no commands.json entry for MEMORY
 -ERR no commands.json entry for MODULE
 -ERR no commands.json entry for ACL
--ERR while reading config.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/config.md'
 -ERR while reading georadiusbymember_ro.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/georadiusbymember_ro.md'
+-ERR while reading config.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/config.md'
 -ERR while reading slowlog.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/slowlog.md'
 -ERR while reading debug.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/debug.md'
 -ERR while reading client.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/client.md'
@@ -105,8 +105,8 @@
 -ERR while reading sentinel-help.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/sentinel-help.md'
 -ERR while reading sentinel-monitor.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/sentinel-monitor.md'
 -ERR no return types for EVALSHA_RO: ""
--ERR no return types for MOVE: "@integer-reply, specifically:\n\n* `1` if `key` was moved.\n* `0` if `key` was not moved."
 -ERR no return types for LPOP: "When called without the `count` argument:\n\n@bulk-string-reply: the value of the first element, or `nil` when `key` does not exist.\n\nWhen called with the `count` argument:\n\n@array-reply: list of popped elements, or `nil` when `key` does not exist."
+-ERR no return types for MOVE: "@integer-reply, specifically:\n\n* `1` if `key` was moved.\n* `0` if `key` was not moved."
 -ERR no return types for PUNSUBSCRIBE: ""
 -ERR no return types for GEORADIUS: "@array-reply, specifically:\n\n* Without any `WITH` option specified, the command just returns a linear array like [\"New York\",\"Milan\",\"Paris\"].\n* If `WITHCOORD`, `WITHDIST` or `WITHHASH` options are specified, the command returns an array of arrays, where each sub-array represents a single item.\n\nWhen additional information is returned as an array of arrays for each item, the first item in the sub-array is always the name of the returned item. The other information is returned in the following order as successive elements of the sub-array.\n\n1. The distance from the center as a floating point number, in the same unit specified in the radius.\n2. The geohash integer.\n3. The coordinates as a two items x,y array (longitude,latitude).\n\nSo for example the command `GEORADIUS Sicily 15 37 200 km WITHCOORD WITHDIST` will return each item in the following way:\n\n    [\"Palermo\",\"190.4424\",[\"13.361389338970184\",\"38.115556395496299\"]]"
 -ERR no return types for MONITOR: "**Non standard return value**, just dumps the received commands in an infinite\nflow."
@@ -115,8 +115,8 @@
 -ERR no return types for PERSIST: "@integer-reply, specifically:\n\n* `1` if the timeout was removed.\n* `0` if `key` does not exist or does not have an associated timeout."
 -ERR no return types for PSYNC: "**Non standard return value**, a bulk transfer of the data followed by `PING` and write requests from the master."
 -ERR no return types for MSETNX: "@integer-reply, specifically:\n\n* `1` if the all the keys were set.\n* `0` if no key was set (at least one key already existed)."
--ERR no return types for SETNX: "@integer-reply, specifically:\n\n* `1` if the key was set\n* `0` if the key was not set"
 -ERR no return types for HRANDFIELD: "@bulk-string-reply: without the additional `count` argument, the command returns a Bulk Reply with the randomly selected field, or `nil` when `key` does not exist.\n\n@array-reply: when the additional `count` argument is passed, the command returns an array of fields, or an empty array when `key` does not exist.\nIf the `WITHVALUES` modifier is used, the reply is a list fields and their values from the hash."
+-ERR no return types for SETNX: "@integer-reply, specifically:\n\n* `1` if the key was set\n* `0` if the key was not set"
 -ERR no return types for SISMEMBER: "@integer-reply, specifically:\n\n* `1` if the element is a member of the set.\n* `0` if the element is not a member of the set, or if `key` does not exist."
 -ERR no return types for SSCAN: ""
 -ERR no return types for SRANDMEMBER: "@bulk-string-reply: without the additional `count` argument, the command returns a Bulk Reply with the randomly selected element, or `nil` when `key` does not exist.\n\n@array-reply: when the additional `count` argument is passed, the command returns an array of elements, or an empty array when `key` does not exist."
@@ -129,14 +129,14 @@
 -ERR no return types for SCAN: ""
 -ERR no return types for XCLAIM: "@array-reply, specifically:\n\nThe command returns all the messages successfully claimed, in the same format\nas `XRANGE`. However if the `JUSTID` option was specified, only the message\nIDs are reported, without including the actual message."
 -ERR no return types for PEXPIREAT: "@integer-reply, specifically:\n\n* `1` if the timeout was set.\n* `0` if the timeout was not set. e.g. key doesn't exist, or operation skipped due to the provided arguments."
--ERR no return types for LOLWUT: "@bulk-string-reply (or verbatim reply when using the RESP3 protocol): the string containing the generative computer art, and a text with the Redis version."
 -ERR no return types for XAUTOCLAIM: "@array-reply, specifically:\n\nAn array with two elements:\n\n1. The first element is a stream ID to be used as the `<start>` argument for the next call to `XAUTOCLAIM`\n2. The second element is an array containing all the successfully claimed messages in the same format as `XRANGE`."
+-ERR no return types for LOLWUT: "@bulk-string-reply (or verbatim reply when using the RESP3 protocol): the string containing the generative computer art, and a text with the Redis version."
 -ERR no return types for HSETNX: "@integer-reply, specifically:\n\n* `1` if `field` is a new field in the hash and `value` was set.\n* `0` if `field` already exists in the hash and no operation was performed."
 -ERR no return types for GEOHASH: "@array-reply, specifically:\n\nThe command returns an array where each element is the Geohash corresponding to\neach member name passed as argument to the command."
 -ERR no return types for PSUBSCRIBE: ""
 -ERR no return types for SPOP: "When called without the `count` argument:\n\n@bulk-string-reply: the removed member, or `nil` when `key` does not exist.\n\nWhen called with the `count` argument:\n\n@array-reply: the removed members, or an empty array when `key` does not exist."
--ERR no return types for XADD: "@bulk-string-reply, specifically:\n\nThe command returns the ID of the added entry. The ID is the one auto-generated\nif `*` is passed as ID argument, otherwise the command just returns the same ID\nspecified by the user during insertion.\n\nThe command returns a @nil-reply when used with the `NOMKSTREAM` option and the\nkey doesn't exist."
 -ERR no return types for GEOSEARCH: "@array-reply, specifically:\n\n* Without any `WITH` option specified, the command just returns a linear array like [\"New York\",\"Milan\",\"Paris\"].\n* If `WITHCOORD`, `WITHDIST` or `WITHHASH` options are specified, the command returns an array of arrays, where each sub-array represents a single item.\n\nWhen additional information is returned as an array of arrays for each item, the first item in the sub-array is always the name of the returned item. The other information is returned in the following order as successive elements of the sub-array.\n\n1. The distance from the center as a floating point number, in the same unit specified in the shape.\n2. The geohash integer.\n3. The coordinates as a two items x,y array (longitude,latitude)."
+-ERR no return types for XADD: "@bulk-string-reply, specifically:\n\nThe command returns the ID of the added entry. The ID is the one auto-generated\nif `*` is passed as ID argument, otherwise the command just returns the same ID\nspecified by the user during insertion.\n\nThe command returns a @nil-reply when used with the `NOMKSTREAM` option and the\nkey doesn't exist."
 -ERR no return types for GEOADD: "@integer-reply, specifically:\n\n* When used without optional arguments, the number of elements added to the sorted set (excluding score updates).\n* If the `CH` option is specified, the number of elements that were changed (added or updated)."
 -ERR no return types for SORT: "@array-reply: without passing the `store` option the command returns a list of sorted elements.\n@integer-reply: when the `store` option is specified the command returns the number of sorted elements in the destination list."
 -ERR no return types for TIME: "@array-reply, specifically:\n\nA multi bulk reply containing two elements:\n\n* unix time in seconds.\n* microseconds."
@@ -150,8 +150,8 @@
 -ERR no return types for EXPIRE: "@integer-reply, specifically:\n\n* `1` if the timeout was set.\n* `0` if the timeout was not set. e.g. key doesn't exist, or operation skipped due to the provided arguments."
 -ERR no return types for XREVRANGE: "@array-reply, specifically:\n\nThe command returns the entries with IDs matching the specified range,\nfrom the higher ID to the lower ID matching.\nThe returned entries are complete, that means that the ID and all the fields\nthey are composed are returned. Moreover the entries are returned with\ntheir fields and values in the exact same order as `XADD` added them."
 -ERR no return types for SET: "@simple-string-reply: `OK` if `SET` was executed correctly.\n\n@nil-reply: `(nil)` if the `SET` operation was not performed because the user specified the `NX` or `XX` option but the condition was not met.\n\nIf the command is issued with the `!GET` option, the above does not apply. It will instead reply as follows, regardless if the `SET` was actually performed:\n\n@bulk-string-reply: the old string value stored at key.\n\n@nil-reply: `(nil)` if the key did not exist."
--ERR no return types for BLMOVE: "@bulk-string-reply: the element being popped from `source` and pushed to `destination`.\nIf `timeout` is reached, a @nil-reply is returned."
 -ERR no return types for XRANGE: "@array-reply, specifically:\n\nThe command returns the entries with IDs matching the specified range.\nThe returned entries are complete, that means that the ID and all the fields\nthey are composed are returned. Moreover, the entries are returned with\ntheir fields and values in the exact same order as `XADD` added them."
+-ERR no return types for BLMOVE: "@bulk-string-reply: the element being popped from `source` and pushed to `destination`.\nIf `timeout` is reached, a @nil-reply is returned."
 -ERR no return types for EXPIREAT: "@integer-reply, specifically:\n\n* `1` if the timeout was set.\n* `0` if the timeout was not set. e.g. key doesn't exist, or operation skipped due to the provided arguments."
 -ERR no return types for GEODIST: "@bulk-string-reply, specifically:\n\nThe command returns the distance as a double (represented as a string)\nin the specified unit, or NULL if one or both the elements are missing."
 -ERR no return types for BITFIELD: ""
@@ -184,11 +184,11 @@
 -ERR no return types for SCRIPT EXISTS: "@array-reply The command returns an array of integers that correspond to\nthe specified SHA1 digest arguments.\nFor every corresponding SHA1 digest of a script that actually exists in the\nscript cache, an 1 is returned, otherwise 0 is returned."
 -ERR no return types for SCRIPT LOAD: "@bulk-string-reply This command returns the SHA1 digest of the script added into the\nscript cache."
 -ERR no return types for CLUSTER REPLICAS: "The command returns data in the same format as `CLUSTER NODES`."
--ERR no return types for XINFO GROUPS: ""
 -ERR no return types for XINFO CONSUMERS: ""
+-ERR no return types for XINFO GROUPS: ""
 -ERR no return types for ACL LIST: "An array of strings."
--ERR no return types for ACL GETUSER: ""
 -ERR no return types for ACL LOG: "When called to show security events:\n\n@array-reply: a list of ACL security events.\n\nWhen called with `RESET`:\n\n@simple-string-reply: `OK` if the security log was cleared."
+-ERR no return types for ACL GETUSER: ""
 -ERR no return types for ACL USERS: "An array of strings."
 -ERR no markdown file for GEORADIUSBYMEMBER_RO
 -ERR no markdown file for CONFIG

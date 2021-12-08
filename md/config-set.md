@@ -15,6 +15,11 @@ configuration parameter used in the [redis.conf][hgcarr22rc] file.
 
 [hgcarr22rc]: http://github.com/redis/redis/raw/unstable/redis.conf
 
+Note that you should look at the redis.conf file relevant to the version you're
+working with as configuration options might change between versions. The link
+above is to the latest development version.
+>>>>>>> multiparameter_config_get
+
 It is possible to switch persistence from RDB snapshotting to append-only file
 (and the other way around) using the `CONFIG SET` command.
 For more information about how to do that please check the [persistence
