@@ -29,25 +29,22 @@
         "arguments": [
             {
                 "name": "timeout",
-                "type": "integer",
-                "value": "timeout"
+                "type": "integer"
             },
             {
                 "name": "mode",
                 "type": "oneof",
-                "value": [
+                "optional": true,
+                "arguments": [
                     {
-                        "name": "write",
                         "type": "pure-token",
                         "token": "WRITE"
                     },
                     {
-                        "name": "all",
                         "type": "pure-token",
                         "token": "ALL"
                     }
-                ],
-                "optional": true
+                ]
             }
         ]
     }

@@ -19,19 +19,16 @@
             {
                 "name": "on_off_skip",
                 "type": "oneof",
-                "value": [
+                "arguments": [
                     {
-                        "name": "on",
                         "type": "pure-token",
                         "token": "ON"
                     },
                     {
-                        "name": "off",
                         "type": "pure-token",
                         "token": "OFF"
                     },
                     {
-                        "name": "skip",
                         "type": "pure-token",
                         "token": "SKIP"
                     }

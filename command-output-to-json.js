@@ -890,9 +890,11 @@ function convertArgFinal(arg) {
 
 function convertCmdArgsFinal(cmd) {
   const kname = getCommandName(cmd);
-  const name = getCommandNameFromObj(cmd);
   if (cmd[kname].arguments !== undefined) {
     cmd[kname].arguments = cmd[kname].arguments.map(x => convertArgFinal(x));
+  }
+  if (cmd[kname].subcommands !== undefined) {
+    cmd[kname].subcommands = cmd[kname].subcommands.map(x => convertCmdArgsFinal(x));
   }
   return cmd;
 }

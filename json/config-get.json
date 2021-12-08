@@ -23,14 +23,13 @@
             {
                 "name": "parameter",
                 "type": "block",
-                "value": [
+                "multiple": true,
+                "arguments": [
                     {
                         "name": "parameter",
-                        "type": "string",
-                        "value": "parameter"
+                        "type": "string"
                     }
-                ],
-                "multiple": true
+                ]
             }
         ]
     }

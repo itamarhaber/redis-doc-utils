@@ -17,19 +17,16 @@
             {
                 "name": "mode",
                 "type": "oneof",
-                "value": [
+                "arguments": [
                     {
-                        "name": "yes",
                         "type": "pure-token",
                         "token": "YES"
                     },
                     {
-                        "name": "sync",
                         "type": "pure-token",
                         "token": "SYNC"
                     },
                     {
-                        "name": "no",
                         "type": "pure-token",
                         "token": "NO"
                     }

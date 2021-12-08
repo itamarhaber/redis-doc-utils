@@ -19,14 +19,12 @@
             {
                 "name": "status",
                 "type": "oneof",
-                "value": [
+                "arguments": [
                     {
-                        "name": "on",
                         "type": "pure-token",
                         "token": "ON"
                     },
                     {
-                        "name": "off",
                         "type": "pure-token",
                         "token": "OFF"
                     }
@@ -36,38 +34,32 @@
                 "token": "REDIRECT",
                 "name": "client-id",
                 "type": "integer",
-                "value": "client-id",
                 "optional": true
             },
             {
                 "token": "PREFIX",
                 "name": "prefix",
                 "type": "string",
-                "value": "prefix",
                 "optional": true,
                 "multiple": true,
                 "multiple_token": true
             },
             {
-                "name": "BCAST",
                 "token": "BCAST",
                 "type": "pure-token",
                 "optional": true
             },
             {
-                "name": "OPTIN",
                 "token": "OPTIN",
                 "type": "pure-token",
                 "optional": true
             },
             {
-                "name": "OPTOUT",
                 "token": "OPTOUT",
                 "type": "pure-token",
                 "optional": true
             },
             {
-                "name": "NOLOOP",
                 "token": "NOLOOP",
                 "type": "pure-token",
                 "optional": true
