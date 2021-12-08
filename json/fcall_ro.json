@@ -1,7 +1,7 @@
 {
     "FCALL_RO": {
-        "summary": "PATCH__TBD__7__",
-        "complexity": "PATCH__TBD__6__",
+        "summary": "__TBD__9__",
+        "complexity": "__TBD__8__",
         "group": "scripting",
         "since": "7.0.0",
         "arity": -3,

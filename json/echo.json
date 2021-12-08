@@ -1,7 +1,7 @@
 {
     "ECHO": {
         "summary": "Echo the given string",
-        "complexity": "PATCH__TBD__52__",
+        "complexity": "__TBD__44__",
         "group": "connection",
         "since": "1.0.0",
         "arity": 2,

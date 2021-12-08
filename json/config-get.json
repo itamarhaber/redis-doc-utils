@@ -1,7 +1,7 @@
 {
     "GET": {
         "summary": "Get the values of configuration parameters",
-        "complexity": "PATCH__TBD__45__",
+        "complexity": "__TBD__56__",
         "group": "server",
         "since": "2.0.0",
         "arity": 3,

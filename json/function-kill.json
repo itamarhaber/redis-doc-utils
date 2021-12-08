@@ -1,7 +1,7 @@
 {
     "KILL": {
-        "summary": "PATCH__TBD__19__",
-        "complexity": "PATCH__TBD__18__",
+        "summary": "__TBD__14__",
+        "complexity": "__TBD__13__",
         "group": "scripting",
         "since": "7.0.0",
         "arity": 2,

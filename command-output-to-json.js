@@ -899,6 +899,19 @@ function convertCmdArgsFinal(cmd) {
   return cmd;
 }
 
+function removeTBDs(cmd) {
+  const kname = getCommandName(cmd);
+  if (cmd[kname].complexity !== undefined && cmd[kname].complexity.startsWith('PATCH__TBD')) {
+    delete cmd[kname].complexity;
+  }
+  if (cmd[kname].summary !== undefined && cmd[kname].summary.startsWith('PATCH__TBD')) {
+    delete cmd[kname].summary;
+  }
+  if (cmd[kname].subcommands !== undefined) {
+    cmd[kname].subcommands = cmd[kname].subcommands.map(x => removeTBDs(x));
+  }
+  return cmd;
+}
 async function main() {
   const client = createClient();
   client.on('error', (err) => console.error('-ERR Redis client error', err));
@@ -939,6 +952,9 @@ async function main() {
 
   console.log('Converting args one final time :)');
   commands = commands.map(x => convertCmdArgsFinal(x));
+
+  console.log('Removing TBDs');
+  commands = commands.map(x => removeTBDs(x));
 
   console.log('Persisting files');
   await Promise.all(Object.values(commands).map(async (cmd) => {
