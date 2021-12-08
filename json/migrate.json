@@ -90,6 +90,7 @@
                         "key_spec_index": 0
                     },
                     {
+                        "name": "empty_string",
                         "type": "pure-token",
                         "token": "\"\""
                     }
@@ -104,11 +105,13 @@
                 "type": "integer"
             },
             {
+                "name": "copy",
                 "token": "COPY",
                 "type": "pure-token",
                 "optional": true
             },
             {
+                "name": "replace",
                 "token": "REPLACE",
                 "type": "pure-token",
                 "optional": true

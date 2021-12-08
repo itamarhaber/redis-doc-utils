@@ -64,6 +64,7 @@
                         "token": "PXAT"
                     },
                     {
+                        "name": "persist",
                         "type": "pure-token",
                         "token": "PERSIST"
                     }

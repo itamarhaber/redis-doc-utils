@@ -37,6 +37,7 @@
                         "token": "NODE"
                     },
                     {
+                        "name": "stable",
                         "type": "pure-token",
                         "token": "STABLE"
                     }

@@ -66,6 +66,20 @@
             }
         ]
     },
+    "ACL HELP": {
+        "summary": "Show helpful text about the different subcommands",
+        "complexity": "O(1)",
+        "group": "server",
+        "since": "6.0.0",
+        "arity": 2,
+        "container": "ACL",
+        "function": "aclCommand",
+        "command_flags": [
+            "loading",
+            "stale",
+            "sentinel"
+        ]
+    },
     "ACL GETUSER": {
         "summary": "Get the rules for a specific ACL user",
         "complexity": "O(N). Where N is the number of password, command and pattern rules that the user has.",
@@ -92,20 +106,6 @@
                 "name": "username",
                 "type": "string"
             }
-        ]
-    },
-    "ACL HELP": {
-        "summary": "Show helpful text about the different subcommands",
-        "complexity": "O(1)",
-        "group": "server",
-        "since": "6.0.0",
-        "arity": 2,
-        "container": "ACL",
-        "function": "aclCommand",
-        "command_flags": [
-            "loading",
-            "stale",
-            "sentinel"
         ]
     },
     "ACL LIST": {
@@ -166,6 +166,7 @@
                         "type": "integer"
                     },
                     {
+                        "name": "reset",
                         "type": "pure-token",
                         "token": "RESET"
                     }
@@ -324,6 +325,18 @@
             "connection"
         ]
     },
+    "BGREWRITEAOF": {
+        "summary": "Asynchronously rewrite the append-only file",
+        "complexity": "PATCH__TBD__55__",
+        "group": "server",
+        "since": "1.0.0",
+        "arity": 1,
+        "function": "bgrewriteaofCommand",
+        "command_flags": [
+            "admin",
+            "noscript"
+        ]
+    },
     "AUTH": {
         "summary": "Authenticate to the server",
         "complexity": "O(N) where N is the number of passwords defined for the user",
@@ -360,18 +373,6 @@
             }
         ]
     },
-    "BGREWRITEAOF": {
-        "summary": "Asynchronously rewrite the append-only file",
-        "complexity": "PATCH__TBD__55__",
-        "group": "server",
-        "since": "1.0.0",
-        "arity": 1,
-        "function": "bgrewriteaofCommand",
-        "command_flags": [
-            "admin",
-            "noscript"
-        ]
-    },
     "BGSAVE": {
         "summary": "Asynchronously save the dataset to disk",
         "complexity": "PATCH__TBD__57__",
@@ -391,9 +392,88 @@
         ],
         "arguments": [
             {
+                "name": "schedule",
                 "token": "SCHEDULE",
                 "type": "pure-token",
                 "optional": true
+            }
+        ]
+    },
+    "BITCOUNT": {
+        "summary": "Count set bits in a string",
+        "complexity": "O(N)",
+        "group": "bitmap",
+        "since": "2.6.0",
+        "arity": -2,
+        "function": "bitcountCommand",
+        "history": [
+            [
+                "7.0",
+                "Added the `BYTE|BIT` option."
+            ]
+        ],
+        "command_flags": [
+            "readonly"
+        ],
+        "acl_categories": [
+            "bitmap"
+        ],
+        "key_specs": [
+            {
+                "flags": [
+                    "read"
+                ],
+                "begin_search": {
+                    "index": {
+                        "pos": 1
+                    }
+                },
+                "find_keys": {
+                    "range": {
+                        "lastkey": 0,
+                        "step": 1,
+                        "limit": 0
+                    }
+                }
+            }
+        ],
+        "arguments": [
+            {
+                "name": "key",
+                "type": "key",
+                "key_spec_index": 0
+            },
+            {
+                "name": "index",
+                "type": "block",
+                "optional": true,
+                "arguments": [
+                    {
+                        "name": "start",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "end",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "index_unit",
+                        "type": "oneof",
+                        "optional": true,
+                        "arguments": [
+                            {
+                                "name": "byte",
+                                "type": "pure-token",
+                                "token": "BYTE"
+                            },
+                            {
+                                "name": "bit",
+                                "type": "pure-token",
+                                "token": "BIT"
+                            }
+                        ]
+                    }
+                ]
             }
         ]
     },
@@ -499,14 +579,17 @@
                 "optional": true,
                 "arguments": [
                     {
+                        "name": "wrap",
                         "type": "pure-token",
                         "token": "WRAP"
                     },
                     {
+                        "name": "sat",
                         "type": "pure-token",
                         "token": "SAT"
                     },
                     {
+                        "name": "fail",
                         "type": "pure-token",
                         "token": "FAIL"
                     }
@@ -514,21 +597,16 @@
             }
         ]
     },
-    "BITCOUNT": {
-        "summary": "Count set bits in a string",
-        "complexity": "O(N)",
+    "BITFIELD_RO": {
+        "summary": "Perform arbitrary bitfield integer operations on strings. Read-only variant of BITFIELD",
+        "complexity": "O(1) for each subcommand specified",
         "group": "bitmap",
-        "since": "2.6.0",
+        "since": "6.2.0",
         "arity": -2,
-        "function": "bitcountCommand",
-        "history": [
-            [
-                "7.0",
-                "Added the `BYTE|BIT` option."
-            ]
-        ],
+        "function": "bitfieldroCommand",
         "command_flags": [
-            "readonly"
+            "readonly",
+            "fast"
         ],
         "acl_categories": [
             "bitmap"
@@ -559,32 +637,17 @@
                 "key_spec_index": 0
             },
             {
-                "name": "index",
+                "token": "GET",
+                "name": "encoding_offset",
                 "type": "block",
-                "optional": true,
                 "arguments": [
                     {
-                        "name": "start",
-                        "type": "integer"
+                        "name": "encoding",
+                        "type": "string"
                     },
                     {
-                        "name": "end",
+                        "name": "offset",
                         "type": "integer"
-                    },
-                    {
-                        "name": "index_unit",
-                        "type": "oneof",
-                        "optional": true,
-                        "arguments": [
-                            {
-                                "type": "pure-token",
-                                "token": "BYTE"
-                            },
-                            {
-                                "type": "pure-token",
-                                "token": "BIT"
-                            }
-                        ]
                     }
                 ]
             }
@@ -655,62 +718,6 @@
                 "type": "key",
                 "key_spec_index": 1,
                 "multiple": true
-            }
-        ]
-    },
-    "BITFIELD_RO": {
-        "summary": "Perform arbitrary bitfield integer operations on strings. Read-only variant of BITFIELD",
-        "complexity": "O(1) for each subcommand specified",
-        "group": "bitmap",
-        "since": "6.2.0",
-        "arity": -2,
-        "function": "bitfieldroCommand",
-        "command_flags": [
-            "readonly",
-            "fast"
-        ],
-        "acl_categories": [
-            "bitmap"
-        ],
-        "key_specs": [
-            {
-                "flags": [
-                    "read"
-                ],
-                "begin_search": {
-                    "index": {
-                        "pos": 1
-                    }
-                },
-                "find_keys": {
-                    "range": {
-                        "lastkey": 0,
-                        "step": 1,
-                        "limit": 0
-                    }
-                }
-            }
-        ],
-        "arguments": [
-            {
-                "name": "key",
-                "type": "key",
-                "key_spec_index": 0
-            },
-            {
-                "token": "GET",
-                "name": "encoding_offset",
-                "type": "block",
-                "arguments": [
-                    {
-                        "name": "encoding",
-                        "type": "string"
-                    },
-                    {
-                        "name": "offset",
-                        "type": "integer"
-                    }
-                ]
             }
         ]
     },
@@ -786,10 +793,12 @@
                                 "optional": true,
                                 "arguments": [
                                     {
+                                        "name": "byte",
                                         "type": "pure-token",
                                         "token": "BYTE"
                                     },
                                     {
+                                        "name": "bit",
                                         "type": "pure-token",
                                         "token": "BIT"
                                     }
@@ -870,10 +879,12 @@
                 "type": "oneof",
                 "arguments": [
                     {
+                        "name": "left",
                         "type": "pure-token",
                         "token": "LEFT"
                     },
                     {
+                        "name": "right",
                         "type": "pure-token",
                         "token": "RIGHT"
                     }
@@ -884,10 +895,12 @@
                 "type": "oneof",
                 "arguments": [
                     {
+                        "name": "left",
                         "type": "pure-token",
                         "token": "LEFT"
                     },
                     {
+                        "name": "right",
                         "type": "pure-token",
                         "token": "RIGHT"
                     }
@@ -953,10 +966,12 @@
                 "type": "oneof",
                 "arguments": [
                     {
+                        "name": "left",
                         "type": "pure-token",
                         "token": "LEFT"
                     },
                     {
+                        "name": "right",
                         "type": "pure-token",
                         "token": "RIGHT"
                     }
@@ -970,13 +985,13 @@
             }
         ]
     },
-    "BLPOP": {
-        "summary": "Remove and get the first element in a list, or block until one is available",
+    "BRPOP": {
+        "summary": "Remove and get the last element in a list, or block until one is available",
         "complexity": "O(N) where N is the number of provided keys.",
         "group": "list",
         "since": "2.0.0",
         "arity": -3,
-        "function": "blpopCommand",
+        "function": "brpopCommand",
         "history": [
             [
                 "6.0",
@@ -1023,13 +1038,13 @@
             }
         ]
     },
-    "BRPOP": {
-        "summary": "Remove and get the last element in a list, or block until one is available",
+    "BLPOP": {
+        "summary": "Remove and get the first element in a list, or block until one is available",
         "complexity": "O(N) where N is the number of provided keys.",
         "group": "list",
         "since": "2.0.0",
         "arity": -3,
-        "function": "brpopCommand",
+        "function": "blpopCommand",
         "history": [
             [
                 "6.0",
@@ -1211,10 +1226,12 @@
                 "type": "oneof",
                 "arguments": [
                     {
+                        "name": "min",
                         "type": "pure-token",
                         "token": "MIN"
                     },
                     {
+                        "name": "max",
                         "type": "pure-token",
                         "token": "MAX"
                     }
@@ -1336,23 +1353,6 @@
             }
         ]
     },
-    "CLIENT GETNAME": {
-        "summary": "Get the current connection name",
-        "complexity": "O(1)",
-        "group": "connection",
-        "since": "2.6.9",
-        "arity": 2,
-        "container": "CLIENT",
-        "function": "clientCommand",
-        "command_flags": [
-            "noscript",
-            "loading",
-            "stale"
-        ],
-        "acl_categories": [
-            "connection"
-        ]
-    },
     "CLIENT CACHING": {
         "summary": "Instruct the server about tracking or not keys in the next request",
         "complexity": "O(1)",
@@ -1375,10 +1375,12 @@
                 "type": "oneof",
                 "arguments": [
                     {
+                        "name": "yes",
                         "type": "pure-token",
                         "token": "YES"
                     },
                     {
+                        "name": "no",
                         "type": "pure-token",
                         "token": "NO"
                     }
@@ -1386,11 +1388,11 @@
             }
         ]
     },
-    "CLIENT GETREDIR": {
-        "summary": "Get tracking notifications redirection client ID if any",
+    "CLIENT GETNAME": {
+        "summary": "Get the current connection name",
         "complexity": "O(1)",
         "group": "connection",
-        "since": "6.0.0",
+        "since": "2.6.9",
         "arity": 2,
         "container": "CLIENT",
         "function": "clientCommand",
@@ -1412,6 +1414,23 @@
         "container": "CLIENT",
         "function": "clientCommand",
         "command_flags": [
+            "loading",
+            "stale"
+        ],
+        "acl_categories": [
+            "connection"
+        ]
+    },
+    "CLIENT GETREDIR": {
+        "summary": "Get tracking notifications redirection client ID if any",
+        "complexity": "O(1)",
+        "group": "connection",
+        "since": "6.0.0",
+        "arity": 2,
+        "container": "CLIENT",
+        "function": "clientCommand",
+        "command_flags": [
+            "noscript",
             "loading",
             "stale"
         ],
@@ -1512,18 +1531,22 @@
                 "optional": true,
                 "arguments": [
                     {
+                        "name": "normal",
                         "type": "pure-token",
                         "token": "normal"
                     },
                     {
+                        "name": "master",
                         "type": "pure-token",
                         "token": "master"
                     },
                     {
+                        "name": "slave",
                         "type": "pure-token",
                         "token": "slave"
                     },
                     {
+                        "name": "pubsub",
                         "type": "pure-token",
                         "token": "pubsub"
                     }
@@ -1552,6 +1575,42 @@
                 "name": "yes/no",
                 "type": "string",
                 "optional": true
+            }
+        ]
+    },
+    "CLIENT NO-EVICT": {
+        "summary": "Set client eviction mode for the current connection",
+        "complexity": "O(1)",
+        "group": "connection",
+        "since": "7.0.0",
+        "arity": 3,
+        "container": "CLIENT",
+        "function": "clientCommand",
+        "command_flags": [
+            "admin",
+            "noscript",
+            "loading",
+            "stale"
+        ],
+        "acl_categories": [
+            "connection"
+        ],
+        "arguments": [
+            {
+                "name": "enabled",
+                "type": "oneof",
+                "arguments": [
+                    {
+                        "name": "on",
+                        "type": "pure-token",
+                        "token": "ON"
+                    },
+                    {
+                        "name": "off",
+                        "type": "pure-token",
+                        "token": "OFF"
+                    }
+                ]
             }
         ]
     },
@@ -1595,18 +1654,22 @@
                 "optional": true,
                 "arguments": [
                     {
+                        "name": "normal",
                         "type": "pure-token",
                         "token": "normal"
                     },
                     {
+                        "name": "master",
                         "type": "pure-token",
                         "token": "master"
                     },
                     {
+                        "name": "replica",
                         "type": "pure-token",
                         "token": "replica"
                     },
                     {
+                        "name": "pubsub",
                         "type": "pure-token",
                         "token": "pubsub"
                     }
@@ -1627,16 +1690,15 @@
             }
         ]
     },
-    "CLIENT NO-EVICT": {
-        "summary": "Set client eviction mode for the current connection",
+    "CLIENT REPLY": {
+        "summary": "Instruct the server whether to reply to commands",
         "complexity": "O(1)",
         "group": "connection",
-        "since": "7.0.0",
+        "since": "3.2.0",
         "arity": 3,
         "container": "CLIENT",
         "function": "clientCommand",
         "command_flags": [
-            "admin",
             "noscript",
             "loading",
             "stale"
@@ -1646,16 +1708,23 @@
         ],
         "arguments": [
             {
-                "name": "enabled",
+                "name": "on_off_skip",
                 "type": "oneof",
                 "arguments": [
                     {
+                        "name": "on",
                         "type": "pure-token",
                         "token": "ON"
                     },
                     {
+                        "name": "off",
                         "type": "pure-token",
                         "token": "OFF"
+                    },
+                    {
+                        "name": "skip",
+                        "type": "pure-token",
+                        "token": "SKIP"
                     }
                 ]
             }
@@ -1699,49 +1768,14 @@
                 "optional": true,
                 "arguments": [
                     {
+                        "name": "write",
                         "type": "pure-token",
                         "token": "WRITE"
                     },
                     {
+                        "name": "all",
                         "type": "pure-token",
                         "token": "ALL"
-                    }
-                ]
-            }
-        ]
-    },
-    "CLIENT REPLY": {
-        "summary": "Instruct the server whether to reply to commands",
-        "complexity": "O(1)",
-        "group": "connection",
-        "since": "3.2.0",
-        "arity": 3,
-        "container": "CLIENT",
-        "function": "clientCommand",
-        "command_flags": [
-            "noscript",
-            "loading",
-            "stale"
-        ],
-        "acl_categories": [
-            "connection"
-        ],
-        "arguments": [
-            {
-                "name": "on_off_skip",
-                "type": "oneof",
-                "arguments": [
-                    {
-                        "type": "pure-token",
-                        "token": "ON"
-                    },
-                    {
-                        "type": "pure-token",
-                        "token": "OFF"
-                    },
-                    {
-                        "type": "pure-token",
-                        "token": "SKIP"
                     }
                 ]
             }
@@ -1792,10 +1826,12 @@
                 "type": "oneof",
                 "arguments": [
                     {
+                        "name": "on",
                         "type": "pure-token",
                         "token": "ON"
                     },
                     {
+                        "name": "off",
                         "type": "pure-token",
                         "token": "OFF"
                     }
@@ -1816,25 +1852,46 @@
                 "multiple_token": true
             },
             {
+                "name": "BCAST",
                 "token": "BCAST",
                 "type": "pure-token",
                 "optional": true
             },
             {
+                "name": "OPTIN",
                 "token": "OPTIN",
                 "type": "pure-token",
                 "optional": true
             },
             {
+                "name": "OPTOUT",
                 "token": "OPTOUT",
                 "type": "pure-token",
                 "optional": true
             },
             {
+                "name": "NOLOOP",
                 "token": "NOLOOP",
                 "type": "pure-token",
                 "optional": true
             }
+        ]
+    },
+    "CLIENT TRACKINGINFO": {
+        "summary": "Return information about server assisted client side caching for the current connection",
+        "complexity": "O(1)",
+        "group": "connection",
+        "since": "6.2.0",
+        "arity": 2,
+        "container": "CLIENT",
+        "function": "clientCommand",
+        "command_flags": [
+            "noscript",
+            "loading",
+            "stale"
+        ],
+        "acl_categories": [
+            "connection"
         ]
     },
     "CLIENT UNBLOCK": {
@@ -1865,32 +1922,17 @@
                 "optional": true,
                 "arguments": [
                     {
+                        "name": "timeout",
                         "type": "pure-token",
                         "token": "TIMEOUT"
                     },
                     {
+                        "name": "error",
                         "type": "pure-token",
                         "token": "ERROR"
                     }
                 ]
             }
-        ]
-    },
-    "CLIENT TRACKINGINFO": {
-        "summary": "Return information about server assisted client side caching for the current connection",
-        "complexity": "O(1)",
-        "group": "connection",
-        "since": "6.2.0",
-        "arity": 2,
-        "container": "CLIENT",
-        "function": "clientCommand",
-        "command_flags": [
-            "noscript",
-            "loading",
-            "stale"
-        ],
-        "acl_categories": [
-            "connection"
         ]
     },
     "CLIENT UNPAUSE": {
@@ -1921,27 +1963,6 @@
             "sentinel"
         ]
     },
-    "CLUSTER ADDSLOTS": {
-        "summary": "Assign new hash slots to receiving node",
-        "complexity": "O(N) where N is the total number of hash slot arguments",
-        "group": "cluster",
-        "since": "3.0.0",
-        "arity": -3,
-        "container": "CLUSTER",
-        "function": "clusterCommand",
-        "command_flags": [
-            "admin",
-            "random",
-            "stale"
-        ],
-        "arguments": [
-            {
-                "name": "slot",
-                "type": "integer",
-                "multiple": true
-            }
-        ]
-    },
     "CLUSTER ADDSLOTSRANGE": {
         "summary": "Assign new hash slots to receiving node",
         "complexity": "O(N) where N is the total number of the slots between the start slot and end slot arguments.",
@@ -1970,6 +1991,27 @@
                         "type": "integer"
                     }
                 ]
+            }
+        ]
+    },
+    "CLUSTER ADDSLOTS": {
+        "summary": "Assign new hash slots to receiving node",
+        "complexity": "O(N) where N is the total number of hash slot arguments",
+        "group": "cluster",
+        "since": "3.0.0",
+        "arity": -3,
+        "container": "CLUSTER",
+        "function": "clusterCommand",
+        "command_flags": [
+            "admin",
+            "random",
+            "stale"
+        ],
+        "arguments": [
+            {
+                "name": "slot",
+                "type": "integer",
+                "multiple": true
             }
         ]
     },
@@ -2047,6 +2089,39 @@
             }
         ]
     },
+    "CLUSTER FAILOVER": {
+        "summary": "Forces a replica to perform a manual failover of its master.",
+        "complexity": "O(1)",
+        "group": "cluster",
+        "since": "3.0.0",
+        "arity": -2,
+        "container": "CLUSTER",
+        "function": "clusterCommand",
+        "command_flags": [
+            "admin",
+            "random",
+            "stale"
+        ],
+        "arguments": [
+            {
+                "name": "options",
+                "type": "oneof",
+                "optional": true,
+                "arguments": [
+                    {
+                        "name": "force",
+                        "type": "pure-token",
+                        "token": "FORCE"
+                    },
+                    {
+                        "name": "takeover",
+                        "type": "pure-token",
+                        "token": "TAKEOVER"
+                    }
+                ]
+            }
+        ]
+    },
     "CLUSTER DELSLOTSRANGE": {
         "summary": "Set hash slots as unbound in receiving node",
         "complexity": "O(N) where N is the total number of the slots between the start slot and end slot arguments.",
@@ -2073,37 +2148,6 @@
                     {
                         "name": "end-slot",
                         "type": "integer"
-                    }
-                ]
-            }
-        ]
-    },
-    "CLUSTER FAILOVER": {
-        "summary": "Forces a replica to perform a manual failover of its master.",
-        "complexity": "O(1)",
-        "group": "cluster",
-        "since": "3.0.0",
-        "arity": -2,
-        "container": "CLUSTER",
-        "function": "clusterCommand",
-        "command_flags": [
-            "admin",
-            "random",
-            "stale"
-        ],
-        "arguments": [
-            {
-                "name": "options",
-                "type": "oneof",
-                "optional": true,
-                "arguments": [
-                    {
-                        "type": "pure-token",
-                        "token": "FORCE"
-                    },
-                    {
-                        "type": "pure-token",
-                        "token": "TAKEOVER"
                     }
                 ]
             }
@@ -2261,11 +2305,11 @@
             "stale"
         ]
     },
-    "CLUSTER REPLICAS": {
-        "summary": "List replica nodes of the specified master node",
+    "CLUSTER REPLICATE": {
+        "summary": "Reconfigure a node as a replica of the specified master node",
         "complexity": "O(1)",
         "group": "cluster",
-        "since": "5.0.0",
+        "since": "3.0.0",
         "arity": 3,
         "container": "CLUSTER",
         "function": "clusterCommand",
@@ -2281,11 +2325,11 @@
             }
         ]
     },
-    "CLUSTER REPLICATE": {
-        "summary": "Reconfigure a node as a replica of the specified master node",
+    "CLUSTER REPLICAS": {
+        "summary": "List replica nodes of the specified master node",
         "complexity": "O(1)",
         "group": "cluster",
-        "since": "3.0.0",
+        "since": "5.0.0",
         "arity": 3,
         "container": "CLUSTER",
         "function": "clusterCommand",
@@ -2321,10 +2365,12 @@
                 "optional": true,
                 "arguments": [
                     {
+                        "name": "hard",
                         "type": "pure-token",
                         "token": "HARD"
                     },
                     {
+                        "name": "soft",
                         "type": "pure-token",
                         "token": "SOFT"
                     }
@@ -2404,6 +2450,7 @@
                         "token": "NODE"
                     },
                     {
+                        "name": "stable",
                         "type": "pure-token",
                         "token": "STABLE"
                     }
@@ -2685,21 +2732,6 @@
         "since": "2.0.0",
         "arity": -2
     },
-    "DBSIZE": {
-        "summary": "Return the number of keys in the selected database",
-        "complexity": "O(1)",
-        "group": "server",
-        "since": "1.0.0",
-        "arity": 1,
-        "function": "dbsizeCommand",
-        "command_flags": [
-            "readonly",
-            "fast"
-        ],
-        "acl_categories": [
-            "keyspace"
-        ]
-    },
     "COPY": {
         "summary": "Copy a key",
         "complexity": "O(N) worst case for collections, where N is the number of nested items. O(1) for string values.",
@@ -2768,10 +2800,43 @@
                 "optional": true
             },
             {
+                "name": "replace",
                 "token": "REPLACE",
                 "type": "pure-token",
                 "optional": true
             }
+        ]
+    },
+    "DBSIZE": {
+        "summary": "Return the number of keys in the selected database",
+        "complexity": "O(1)",
+        "group": "server",
+        "since": "1.0.0",
+        "arity": 1,
+        "function": "dbsizeCommand",
+        "command_flags": [
+            "readonly",
+            "fast"
+        ],
+        "acl_categories": [
+            "keyspace"
+        ]
+    },
+    "DEBUG": {
+        "summary": "A container for debugging commands",
+        "complexity": "Depends on subcommand.",
+        "group": "server",
+        "since": "1.0.0",
+        "arity": -2,
+        "function": "debugCommand",
+        "doc_flags": [
+            "syscmd"
+        ],
+        "command_flags": [
+            "admin",
+            "noscript",
+            "loading",
+            "stale"
         ]
     },
     "DECR": {
@@ -2814,23 +2879,6 @@
                 "type": "key",
                 "key_spec_index": 0
             }
-        ]
-    },
-    "DEBUG": {
-        "summary": "A container for debugging commands",
-        "complexity": "Depends on subcommand.",
-        "group": "server",
-        "since": "1.0.0",
-        "arity": -2,
-        "function": "debugCommand",
-        "doc_flags": [
-            "syscmd"
-        ],
-        "command_flags": [
-            "admin",
-            "noscript",
-            "loading",
-            "stale"
         ]
     },
     "DECRBY": {
@@ -2920,43 +2968,6 @@
             }
         ]
     },
-    "DISCARD": {
-        "summary": "Discard all commands issued after MULTI",
-        "complexity": "PATCH__TBD__60__",
-        "group": "transactions",
-        "since": "2.0.0",
-        "arity": 1,
-        "function": "discardCommand",
-        "command_flags": [
-            "noscript",
-            "loading",
-            "stale",
-            "fast"
-        ],
-        "acl_categories": [
-            "transaction"
-        ]
-    },
-    "ECHO": {
-        "summary": "Echo the given string",
-        "complexity": "PATCH__TBD__52__",
-        "group": "connection",
-        "since": "1.0.0",
-        "arity": 2,
-        "function": "echoCommand",
-        "command_flags": [
-            "fast"
-        ],
-        "acl_categories": [
-            "connection"
-        ],
-        "arguments": [
-            {
-                "name": "message",
-                "type": "string"
-            }
-        ]
-    },
     "DUMP": {
         "summary": "Return a serialized version of the value stored at the specified key.",
         "complexity": "O(1) to access the key and additional O(N*M) to serialize it, where N is the number of Redis objects composing the value and M their average size. For small string values the time complexity is thus O(1)+O(1*M) where M is small, so simply O(1).",
@@ -2995,6 +3006,43 @@
                 "name": "key",
                 "type": "key",
                 "key_spec_index": 0
+            }
+        ]
+    },
+    "DISCARD": {
+        "summary": "Discard all commands issued after MULTI",
+        "complexity": "PATCH__TBD__60__",
+        "group": "transactions",
+        "since": "2.0.0",
+        "arity": 1,
+        "function": "discardCommand",
+        "command_flags": [
+            "noscript",
+            "loading",
+            "stale",
+            "fast"
+        ],
+        "acl_categories": [
+            "transaction"
+        ]
+    },
+    "ECHO": {
+        "summary": "Echo the given string",
+        "complexity": "PATCH__TBD__52__",
+        "group": "connection",
+        "since": "1.0.0",
+        "arity": 2,
+        "function": "echoCommand",
+        "command_flags": [
+            "fast"
+        ],
+        "acl_categories": [
+            "connection"
+        ],
+        "arguments": [
+            {
+                "name": "message",
+                "type": "string"
             }
         ]
     },
@@ -3348,18 +3396,22 @@
                 "optional": true,
                 "arguments": [
                     {
+                        "name": "nx",
                         "type": "pure-token",
                         "token": "NX"
                     },
                     {
+                        "name": "xx",
                         "type": "pure-token",
                         "token": "XX"
                     },
                     {
+                        "name": "gt",
                         "type": "pure-token",
                         "token": "GT"
                     },
                     {
+                        "name": "lt",
                         "type": "pure-token",
                         "token": "LT"
                     }
@@ -3422,18 +3474,22 @@
                 "optional": true,
                 "arguments": [
                     {
+                        "name": "nx",
                         "type": "pure-token",
                         "token": "NX"
                     },
                     {
+                        "name": "xx",
                         "type": "pure-token",
                         "token": "XX"
                     },
                     {
+                        "name": "gt",
                         "type": "pure-token",
                         "token": "GT"
                     },
                     {
+                        "name": "lt",
                         "type": "pure-token",
                         "token": "LT"
                     }
@@ -3483,44 +3539,6 @@
             }
         ]
     },
-    "FCALL": {
-        "summary": "PATCH__TBD__38__",
-        "complexity": "PATCH__TBD__37__",
-        "group": "scripting",
-        "since": "7.0.0",
-        "arity": -3,
-        "function": "fcallCommand",
-        "get_keys_function": "functionGetKeys",
-        "command_flags": [
-            "noscript",
-            "skip_monitor",
-            "may_replicate",
-            "no_mandatory_keys"
-        ],
-        "acl_categories": [
-            "scripting"
-        ],
-        "key_specs": [
-            {
-                "flags": [
-                    "write",
-                    "read"
-                ],
-                "begin_search": {
-                    "index": {
-                        "pos": 2
-                    }
-                },
-                "find_keys": {
-                    "keynum": {
-                        "keynumidx": 0,
-                        "firstkey": 1,
-                        "step": 1
-                    }
-                }
-            }
-        ]
-    },
     "FAILOVER": {
         "summary": "Start a coordinated failover between this server and one of its replicas.",
         "complexity": "PATCH__TBD__69__",
@@ -3550,6 +3568,7 @@
                     },
                     {
                         "token": "FORCE",
+                        "name": "force",
                         "type": "pure-token",
                         "optional": true
                     }
@@ -3557,6 +3576,7 @@
             },
             {
                 "token": "ABORT",
+                "name": "abort",
                 "type": "pure-token",
                 "optional": true
             },
@@ -3587,6 +3607,44 @@
         "key_specs": [
             {
                 "flags": [
+                    "read"
+                ],
+                "begin_search": {
+                    "index": {
+                        "pos": 2
+                    }
+                },
+                "find_keys": {
+                    "keynum": {
+                        "keynumidx": 0,
+                        "firstkey": 1,
+                        "step": 1
+                    }
+                }
+            }
+        ]
+    },
+    "FCALL": {
+        "summary": "PATCH__TBD__38__",
+        "complexity": "PATCH__TBD__37__",
+        "group": "scripting",
+        "since": "7.0.0",
+        "arity": -3,
+        "function": "fcallCommand",
+        "get_keys_function": "functionGetKeys",
+        "command_flags": [
+            "noscript",
+            "skip_monitor",
+            "may_replicate",
+            "no_mandatory_keys"
+        ],
+        "acl_categories": [
+            "scripting"
+        ],
+        "key_specs": [
+            {
+                "flags": [
+                    "write",
                     "read"
                 ],
                 "begin_search": {
@@ -3635,10 +3693,12 @@
                 "optional": true,
                 "arguments": [
                     {
+                        "name": "async",
                         "type": "pure-token",
                         "token": "ASYNC"
                     },
                     {
+                        "name": "sync",
                         "type": "pure-token",
                         "token": "SYNC"
                     }
@@ -3667,10 +3727,12 @@
                 "optional": true,
                 "arguments": [
                     {
+                        "name": "async",
                         "type": "pure-token",
                         "token": "ASYNC"
                     },
                     {
+                        "name": "sync",
                         "type": "pure-token",
                         "token": "SYNC"
                     }
@@ -3694,22 +3756,6 @@
             "scripting"
         ]
     },
-    "FUNCTION DELETE": {
-        "summary": "PATCH__TBD__23__",
-        "complexity": "PATCH__TBD__22__",
-        "group": "scripting",
-        "since": "7.0.0",
-        "arity": 3,
-        "container": "FUNCTION",
-        "function": "functionsDeleteCommand",
-        "command_flags": [
-            "noscript",
-            "may_replicate"
-        ],
-        "acl_categories": [
-            "scripting"
-        ]
-    },
     "FUNCTION HELP": {
         "summary": "Show helpful text about the different subcommands",
         "complexity": "O(1)",
@@ -3721,6 +3767,22 @@
         "command_flags": [
             "loading",
             "stale"
+        ],
+        "acl_categories": [
+            "scripting"
+        ]
+    },
+    "FUNCTION DELETE": {
+        "summary": "PATCH__TBD__23__",
+        "complexity": "PATCH__TBD__22__",
+        "group": "scripting",
+        "since": "7.0.0",
+        "arity": 3,
+        "container": "FUNCTION",
+        "function": "functionsDeleteCommand",
+        "command_flags": [
+            "noscript",
+            "may_replicate"
         ],
         "acl_categories": [
             "scripting"
@@ -3844,16 +3906,19 @@
                 "optional": true,
                 "arguments": [
                     {
+                        "name": "nx",
                         "type": "pure-token",
                         "token": "NX"
                     },
                     {
+                        "name": "xx",
                         "type": "pure-token",
                         "token": "XX"
                     }
                 ]
             },
             {
+                "name": "change",
                 "token": "CH",
                 "type": "pure-token",
                 "optional": true
@@ -3931,18 +3996,22 @@
                 "optional": true,
                 "arguments": [
                     {
+                        "name": "m",
                         "type": "pure-token",
                         "token": "m"
                     },
                     {
+                        "name": "km",
                         "type": "pure-token",
                         "token": "km"
                     },
                     {
+                        "name": "ft",
                         "type": "pure-token",
                         "token": "ft"
                     },
                     {
+                        "name": "mi",
                         "type": "pure-token",
                         "token": "mi"
                     }
@@ -4144,34 +4213,41 @@
                 "type": "oneof",
                 "arguments": [
                     {
+                        "name": "m",
                         "type": "pure-token",
                         "token": "m"
                     },
                     {
+                        "name": "km",
                         "type": "pure-token",
                         "token": "km"
                     },
                     {
+                        "name": "ft",
                         "type": "pure-token",
                         "token": "ft"
                     },
                     {
+                        "name": "mi",
                         "type": "pure-token",
                         "token": "mi"
                     }
                 ]
             },
             {
+                "name": "withcoord",
                 "token": "WITHCOORD",
                 "type": "pure-token",
                 "optional": true
             },
             {
+                "name": "withdist",
                 "token": "WITHDIST",
                 "type": "pure-token",
                 "optional": true
             },
             {
+                "name": "withhash",
                 "token": "WITHHASH",
                 "type": "pure-token",
                 "optional": true
@@ -4187,6 +4263,7 @@
                         "type": "integer"
                     },
                     {
+                        "name": "any",
                         "token": "ANY",
                         "type": "pure-token",
                         "optional": true
@@ -4199,10 +4276,12 @@
                 "optional": true,
                 "arguments": [
                     {
+                        "name": "asc",
                         "type": "pure-token",
                         "token": "ASC"
                     },
                     {
+                        "name": "desc",
                         "type": "pure-token",
                         "token": "DESC"
                     }
@@ -4221,6 +4300,44 @@
                 "type": "key",
                 "key_spec_index": 2,
                 "optional": true
+            }
+        ]
+    },
+    "GEORADIUS_RO": {
+        "summary": "A read-only variant for GEORADIUS",
+        "complexity": "O(N+log(M)) where N is the number of elements inside the bounding box of the circular area delimited by center and radius and M is the number of items inside the index.",
+        "group": "geo",
+        "since": "5.0.0",
+        "arity": -6,
+        "function": "georadiusroCommand",
+        "deprecated_since": "6.2.0",
+        "replaced_by": "`GEOSEARCH` with the `BYRADIUS` argument",
+        "doc_flags": [
+            "deprecated"
+        ],
+        "command_flags": [
+            "readonly"
+        ],
+        "acl_categories": [
+            "geo"
+        ],
+        "key_specs": [
+            {
+                "flags": [
+                    "read"
+                ],
+                "begin_search": {
+                    "index": {
+                        "pos": 1
+                    }
+                },
+                "find_keys": {
+                    "range": {
+                        "lastkey": 0,
+                        "step": 1,
+                        "limit": 0
+                    }
+                }
             }
         ]
     },
@@ -4318,34 +4435,41 @@
                 "type": "oneof",
                 "arguments": [
                     {
+                        "name": "m",
                         "type": "pure-token",
                         "token": "m"
                     },
                     {
+                        "name": "km",
                         "type": "pure-token",
                         "token": "km"
                     },
                     {
+                        "name": "ft",
                         "type": "pure-token",
                         "token": "ft"
                     },
                     {
+                        "name": "mi",
                         "type": "pure-token",
                         "token": "mi"
                     }
                 ]
             },
             {
+                "name": "withcoord",
                 "token": "WITHCOORD",
                 "type": "pure-token",
                 "optional": true
             },
             {
+                "name": "withdist",
                 "token": "WITHDIST",
                 "type": "pure-token",
                 "optional": true
             },
             {
+                "name": "withhash",
                 "token": "WITHHASH",
                 "type": "pure-token",
                 "optional": true
@@ -4361,6 +4485,7 @@
                         "type": "integer"
                     },
                     {
+                        "name": "any",
                         "token": "ANY",
                         "type": "pure-token",
                         "optional": true
@@ -4373,10 +4498,12 @@
                 "optional": true,
                 "arguments": [
                     {
+                        "name": "asc",
                         "type": "pure-token",
                         "token": "ASC"
                     },
                     {
+                        "name": "desc",
                         "type": "pure-token",
                         "token": "DESC"
                     }
@@ -4407,44 +4534,6 @@
         "function": "georadiusbymemberroCommand",
         "deprecated_since": "6.2.0",
         "replaced_by": "`GEOSEARCH` with the `BYRADIUS` and `FROMMEMBER` arguments",
-        "doc_flags": [
-            "deprecated"
-        ],
-        "command_flags": [
-            "readonly"
-        ],
-        "acl_categories": [
-            "geo"
-        ],
-        "key_specs": [
-            {
-                "flags": [
-                    "read"
-                ],
-                "begin_search": {
-                    "index": {
-                        "pos": 1
-                    }
-                },
-                "find_keys": {
-                    "range": {
-                        "lastkey": 0,
-                        "step": 1,
-                        "limit": 0
-                    }
-                }
-            }
-        ]
-    },
-    "GEORADIUS_RO": {
-        "summary": "A read-only variant for GEORADIUS",
-        "complexity": "O(N+log(M)) where N is the number of elements inside the bounding box of the circular area delimited by center and radius and M is the number of items inside the index.",
-        "group": "geo",
-        "since": "5.0.0",
-        "arity": -6,
-        "function": "georadiusroCommand",
-        "deprecated_since": "6.2.0",
-        "replaced_by": "`GEOSEARCH` with the `BYRADIUS` argument",
         "doc_flags": [
             "deprecated"
         ],
@@ -4549,18 +4638,22 @@
                         "type": "oneof",
                         "arguments": [
                             {
+                                "name": "m",
                                 "type": "pure-token",
                                 "token": "m"
                             },
                             {
+                                "name": "km",
                                 "type": "pure-token",
                                 "token": "km"
                             },
                             {
+                                "name": "ft",
                                 "type": "pure-token",
                                 "token": "ft"
                             },
                             {
+                                "name": "mi",
                                 "type": "pure-token",
                                 "token": "mi"
                             }
@@ -4587,18 +4680,22 @@
                         "type": "oneof",
                         "arguments": [
                             {
+                                "name": "m",
                                 "type": "pure-token",
                                 "token": "m"
                             },
                             {
+                                "name": "km",
                                 "type": "pure-token",
                                 "token": "km"
                             },
                             {
+                                "name": "ft",
                                 "type": "pure-token",
                                 "token": "ft"
                             },
                             {
+                                "name": "mi",
                                 "type": "pure-token",
                                 "token": "mi"
                             }
@@ -4612,10 +4709,12 @@
                 "optional": true,
                 "arguments": [
                     {
+                        "name": "asc",
                         "type": "pure-token",
                         "token": "ASC"
                     },
                     {
+                        "name": "desc",
                         "type": "pure-token",
                         "token": "DESC"
                     }
@@ -4632,6 +4731,7 @@
                         "type": "integer"
                     },
                     {
+                        "name": "any",
                         "token": "ANY",
                         "type": "pure-token",
                         "optional": true
@@ -4639,16 +4739,19 @@
                 ]
             },
             {
+                "name": "withcoord",
                 "token": "WITHCOORD",
                 "type": "pure-token",
                 "optional": true
             },
             {
+                "name": "withdist",
                 "token": "WITHDIST",
                 "type": "pure-token",
                 "optional": true
             },
             {
+                "name": "withhash",
                 "token": "WITHHASH",
                 "type": "pure-token",
                 "optional": true
@@ -4753,18 +4856,22 @@
                         "type": "oneof",
                         "arguments": [
                             {
+                                "name": "m",
                                 "type": "pure-token",
                                 "token": "m"
                             },
                             {
+                                "name": "km",
                                 "type": "pure-token",
                                 "token": "km"
                             },
                             {
+                                "name": "ft",
                                 "type": "pure-token",
                                 "token": "ft"
                             },
                             {
+                                "name": "mi",
                                 "type": "pure-token",
                                 "token": "mi"
                             }
@@ -4791,18 +4898,22 @@
                         "type": "oneof",
                         "arguments": [
                             {
+                                "name": "m",
                                 "type": "pure-token",
                                 "token": "m"
                             },
                             {
+                                "name": "km",
                                 "type": "pure-token",
                                 "token": "km"
                             },
                             {
+                                "name": "ft",
                                 "type": "pure-token",
                                 "token": "ft"
                             },
                             {
+                                "name": "mi",
                                 "type": "pure-token",
                                 "token": "mi"
                             }
@@ -4816,10 +4927,12 @@
                 "optional": true,
                 "arguments": [
                     {
+                        "name": "asc",
                         "type": "pure-token",
                         "token": "ASC"
                     },
                     {
+                        "name": "desc",
                         "type": "pure-token",
                         "token": "DESC"
                     }
@@ -4836,6 +4949,7 @@
                         "type": "integer"
                     },
                     {
+                        "name": "any",
                         "token": "ANY",
                         "type": "pure-token",
                         "optional": true
@@ -4843,50 +4957,10 @@
                 ]
             },
             {
+                "name": "storedist",
                 "token": "STOREDIST",
                 "type": "pure-token",
                 "optional": true
-            }
-        ]
-    },
-    "GET": {
-        "summary": "Get the value of a key",
-        "complexity": "O(1)",
-        "group": "string",
-        "since": "1.0.0",
-        "arity": 2,
-        "function": "getCommand",
-        "command_flags": [
-            "readonly",
-            "fast"
-        ],
-        "acl_categories": [
-            "string"
-        ],
-        "key_specs": [
-            {
-                "flags": [
-                    "read"
-                ],
-                "begin_search": {
-                    "index": {
-                        "pos": 1
-                    }
-                },
-                "find_keys": {
-                    "range": {
-                        "lastkey": 0,
-                        "step": 1,
-                        "limit": 0
-                    }
-                }
-            }
-        ],
-        "arguments": [
-            {
-                "name": "key",
-                "type": "key",
-                "key_spec_index": 0
             }
         ]
     },
@@ -4932,6 +5006,47 @@
             {
                 "name": "offset",
                 "type": "integer"
+            }
+        ]
+    },
+    "GET": {
+        "summary": "Get the value of a key",
+        "complexity": "O(1)",
+        "group": "string",
+        "since": "1.0.0",
+        "arity": 2,
+        "function": "getCommand",
+        "command_flags": [
+            "readonly",
+            "fast"
+        ],
+        "acl_categories": [
+            "string"
+        ],
+        "key_specs": [
+            {
+                "flags": [
+                    "read"
+                ],
+                "begin_search": {
+                    "index": {
+                        "pos": 1
+                    }
+                },
+                "find_keys": {
+                    "range": {
+                        "lastkey": 0,
+                        "step": 1,
+                        "limit": 0
+                    }
+                }
+            }
+        ],
+        "arguments": [
+            {
+                "name": "key",
+                "type": "key",
+                "key_spec_index": 0
             }
         ]
     },
@@ -5041,6 +5156,7 @@
                         "token": "PXAT"
                     },
                     {
+                        "name": "persist",
                         "type": "pure-token",
                         "token": "PERSIST"
                     }
@@ -5194,6 +5310,51 @@
             }
         ]
     },
+    "HEXISTS": {
+        "summary": "Determine if a hash field exists",
+        "complexity": "O(1)",
+        "group": "hash",
+        "since": "2.0.0",
+        "arity": 3,
+        "function": "hexistsCommand",
+        "command_flags": [
+            "readonly",
+            "fast"
+        ],
+        "acl_categories": [
+            "hash"
+        ],
+        "key_specs": [
+            {
+                "flags": [
+                    "read"
+                ],
+                "begin_search": {
+                    "index": {
+                        "pos": 1
+                    }
+                },
+                "find_keys": {
+                    "range": {
+                        "lastkey": 0,
+                        "step": 1,
+                        "limit": 0
+                    }
+                }
+            }
+        ],
+        "arguments": [
+            {
+                "name": "key",
+                "type": "key",
+                "key_spec_index": 0
+            },
+            {
+                "name": "field",
+                "type": "string"
+            }
+        ]
+    },
     "HELLO": {
         "summary": "Handshake with Redis",
         "complexity": "O(1)",
@@ -5254,13 +5415,13 @@
             }
         ]
     },
-    "HEXISTS": {
-        "summary": "Determine if a hash field exists",
+    "HGET": {
+        "summary": "Get the value of a hash field",
         "complexity": "O(1)",
         "group": "hash",
         "since": "2.0.0",
         "arity": 3,
-        "function": "hexistsCommand",
+        "function": "hgetCommand",
         "command_flags": [
             "readonly",
             "fast"
@@ -5340,15 +5501,16 @@
             }
         ]
     },
-    "HGET": {
-        "summary": "Get the value of a hash field",
+    "HINCRBYFLOAT": {
+        "summary": "Increment the float value of a hash field by the given amount",
         "complexity": "O(1)",
         "group": "hash",
-        "since": "2.0.0",
-        "arity": 3,
-        "function": "hgetCommand",
+        "since": "2.6.0",
+        "arity": 4,
+        "function": "hincrbyfloatCommand",
         "command_flags": [
-            "readonly",
+            "write",
+            "denyoom",
             "fast"
         ],
         "acl_categories": [
@@ -5357,7 +5519,7 @@
         "key_specs": [
             {
                 "flags": [
-                    "read"
+                    "write"
                 ],
                 "begin_search": {
                     "index": {
@@ -5382,6 +5544,10 @@
             {
                 "name": "field",
                 "type": "string"
+            },
+            {
+                "name": "increment",
+                "type": "double"
             }
         ]
     },
@@ -5435,17 +5601,16 @@
             }
         ]
     },
-    "HINCRBYFLOAT": {
-        "summary": "Increment the float value of a hash field by the given amount",
-        "complexity": "O(1)",
+    "HKEYS": {
+        "summary": "Get all the fields in a hash",
+        "complexity": "O(N) where N is the size of the hash.",
         "group": "hash",
-        "since": "2.6.0",
-        "arity": 4,
-        "function": "hincrbyfloatCommand",
+        "since": "2.0.0",
+        "arity": 2,
+        "function": "hkeysCommand",
         "command_flags": [
-            "write",
-            "denyoom",
-            "fast"
+            "readonly",
+            "sort_for_script"
         ],
         "acl_categories": [
             "hash"
@@ -5453,7 +5618,7 @@
         "key_specs": [
             {
                 "flags": [
-                    "write"
+                    "read"
                 ],
                 "begin_search": {
                     "index": {
@@ -5474,14 +5639,6 @@
                 "name": "key",
                 "type": "key",
                 "key_spec_index": 0
-            },
-            {
-                "name": "field",
-                "type": "string"
-            },
-            {
-                "name": "increment",
-                "type": "double"
             }
         ]
     },
@@ -5526,16 +5683,16 @@
             }
         ]
     },
-    "HKEYS": {
-        "summary": "Get all the fields in a hash",
-        "complexity": "O(N) where N is the size of the hash.",
+    "HMGET": {
+        "summary": "Get the values of all the given hash fields",
+        "complexity": "O(N) where N is the number of fields being requested.",
         "group": "hash",
         "since": "2.0.0",
-        "arity": 2,
-        "function": "hkeysCommand",
+        "arity": -3,
+        "function": "hmgetCommand",
         "command_flags": [
             "readonly",
-            "sort_for_script"
+            "fast"
         ],
         "acl_categories": [
             "hash"
@@ -5564,6 +5721,11 @@
                 "name": "key",
                 "type": "key",
                 "key_spec_index": 0
+            },
+            {
+                "name": "field",
+                "type": "string",
+                "multiple": true
             }
         ]
     },
@@ -5629,52 +5791,6 @@
             }
         ]
     },
-    "HMGET": {
-        "summary": "Get the values of all the given hash fields",
-        "complexity": "O(N) where N is the number of fields being requested.",
-        "group": "hash",
-        "since": "2.0.0",
-        "arity": -3,
-        "function": "hmgetCommand",
-        "command_flags": [
-            "readonly",
-            "fast"
-        ],
-        "acl_categories": [
-            "hash"
-        ],
-        "key_specs": [
-            {
-                "flags": [
-                    "read"
-                ],
-                "begin_search": {
-                    "index": {
-                        "pos": 1
-                    }
-                },
-                "find_keys": {
-                    "range": {
-                        "lastkey": 0,
-                        "step": 1,
-                        "limit": 0
-                    }
-                }
-            }
-        ],
-        "arguments": [
-            {
-                "name": "key",
-                "type": "key",
-                "key_spec_index": 0
-            },
-            {
-                "name": "field",
-                "type": "string",
-                "multiple": true
-            }
-        ]
-    },
     "HRANDFIELD": {
         "summary": "Get one or multiple random fields from a hash",
         "complexity": "O(N) where N is the number of fields returned",
@@ -5724,6 +5840,7 @@
                         "type": "integer"
                     },
                     {
+                        "name": "withvalues",
                         "token": "WITHVALUES",
                         "type": "pure-token",
                         "optional": true
@@ -5896,6 +6013,47 @@
             }
         ]
     },
+    "HVALS": {
+        "summary": "Get all the values in a hash",
+        "complexity": "O(N) where N is the size of the hash.",
+        "group": "hash",
+        "since": "2.0.0",
+        "arity": 2,
+        "function": "hvalsCommand",
+        "command_flags": [
+            "readonly",
+            "sort_for_script"
+        ],
+        "acl_categories": [
+            "hash"
+        ],
+        "key_specs": [
+            {
+                "flags": [
+                    "read"
+                ],
+                "begin_search": {
+                    "index": {
+                        "pos": 1
+                    }
+                },
+                "find_keys": {
+                    "range": {
+                        "lastkey": 0,
+                        "step": 1,
+                        "limit": 0
+                    }
+                }
+            }
+        ],
+        "arguments": [
+            {
+                "name": "key",
+                "type": "key",
+                "key_spec_index": 0
+            }
+        ]
+    },
     "HSTRLEN": {
         "summary": "Get the length of the value of a hash field",
         "complexity": "O(1)",
@@ -5938,47 +6096,6 @@
             {
                 "name": "field",
                 "type": "string"
-            }
-        ]
-    },
-    "HVALS": {
-        "summary": "Get all the values in a hash",
-        "complexity": "O(N) where N is the size of the hash.",
-        "group": "hash",
-        "since": "2.0.0",
-        "arity": 2,
-        "function": "hvalsCommand",
-        "command_flags": [
-            "readonly",
-            "sort_for_script"
-        ],
-        "acl_categories": [
-            "hash"
-        ],
-        "key_specs": [
-            {
-                "flags": [
-                    "read"
-                ],
-                "begin_search": {
-                    "index": {
-                        "pos": 1
-                    }
-                },
-                "find_keys": {
-                    "range": {
-                        "lastkey": 0,
-                        "step": 1,
-                        "limit": 0
-                    }
-                }
-            }
-        ],
-        "arguments": [
-            {
-                "name": "key",
-                "type": "key",
-                "key_spec_index": 0
             }
         ]
     },
@@ -6195,6 +6312,19 @@
             "stale"
         ]
     },
+    "LATENCY HELP": {
+        "summary": "Show helpful text about the different subcommands.",
+        "complexity": "O(1)",
+        "group": "server",
+        "since": "2.8.13",
+        "arity": 2,
+        "container": "LATENCY",
+        "function": "latencyCommand",
+        "command_flags": [
+            "loading",
+            "stale"
+        ]
+    },
     "LATENCY GRAPH": {
         "summary": "Return a latency graph for the event.",
         "complexity": "PATCH__TBD__41__",
@@ -6214,19 +6344,6 @@
                 "name": "event",
                 "type": "string"
             }
-        ]
-    },
-    "LATENCY HELP": {
-        "summary": "Show helpful text about the different subcommands.",
-        "complexity": "O(1)",
-        "group": "server",
-        "since": "2.8.13",
-        "arity": 2,
-        "container": "LATENCY",
-        "function": "latencyCommand",
-        "command_flags": [
-            "loading",
-            "stale"
         ]
     },
     "LATENCY HISTORY": {
@@ -6339,11 +6456,13 @@
                 "key_spec_index": 1
             },
             {
+                "name": "len",
                 "token": "LEN",
                 "type": "pure-token",
                 "optional": true
             },
             {
+                "name": "idx",
                 "token": "IDX",
                 "type": "pure-token",
                 "optional": true
@@ -6355,6 +6474,7 @@
                 "optional": true
             },
             {
+                "name": "withmatchlen",
                 "token": "WITHMATCHLEN",
                 "type": "pure-token",
                 "optional": true
@@ -6405,6 +6525,47 @@
             }
         ]
     },
+    "LLEN": {
+        "summary": "Get the length of a list",
+        "complexity": "O(1)",
+        "group": "list",
+        "since": "1.0.0",
+        "arity": 2,
+        "function": "llenCommand",
+        "command_flags": [
+            "readonly",
+            "fast"
+        ],
+        "acl_categories": [
+            "list"
+        ],
+        "key_specs": [
+            {
+                "flags": [
+                    "read"
+                ],
+                "begin_search": {
+                    "index": {
+                        "pos": 1
+                    }
+                },
+                "find_keys": {
+                    "range": {
+                        "lastkey": 0,
+                        "step": 1,
+                        "limit": 0
+                    }
+                }
+            }
+        ],
+        "arguments": [
+            {
+                "name": "key",
+                "type": "key",
+                "key_spec_index": 0
+            }
+        ]
+    },
     "LINSERT": {
         "summary": "Insert an element before or after another element in a list",
         "complexity": "O(N) where N is the number of elements to traverse before seeing the value pivot. This means that inserting somewhere on the left end on the list (head) can be considered O(1) and inserting somewhere on the right end (tail) is O(N).",
@@ -6449,10 +6610,12 @@
                 "type": "oneof",
                 "arguments": [
                     {
+                        "name": "before",
                         "type": "pure-token",
                         "token": "BEFORE"
                     },
                     {
+                        "name": "after",
                         "type": "pure-token",
                         "token": "AFTER"
                     }
@@ -6465,47 +6628,6 @@
             {
                 "name": "element",
                 "type": "string"
-            }
-        ]
-    },
-    "LLEN": {
-        "summary": "Get the length of a list",
-        "complexity": "O(1)",
-        "group": "list",
-        "since": "1.0.0",
-        "arity": 2,
-        "function": "llenCommand",
-        "command_flags": [
-            "readonly",
-            "fast"
-        ],
-        "acl_categories": [
-            "list"
-        ],
-        "key_specs": [
-            {
-                "flags": [
-                    "read"
-                ],
-                "begin_search": {
-                    "index": {
-                        "pos": 1
-                    }
-                },
-                "find_keys": {
-                    "range": {
-                        "lastkey": 0,
-                        "step": 1,
-                        "limit": 0
-                    }
-                }
-            }
-        ],
-        "arguments": [
-            {
-                "name": "key",
-                "type": "key",
-                "key_spec_index": 0
             }
         ]
     },
@@ -6576,10 +6698,12 @@
                 "type": "oneof",
                 "arguments": [
                     {
+                        "name": "left",
                         "type": "pure-token",
                         "token": "LEFT"
                     },
                     {
+                        "name": "right",
                         "type": "pure-token",
                         "token": "RIGHT"
                     }
@@ -6590,10 +6714,12 @@
                 "type": "oneof",
                 "arguments": [
                     {
+                        "name": "left",
                         "type": "pure-token",
                         "token": "LEFT"
                     },
                     {
+                        "name": "right",
                         "type": "pure-token",
                         "token": "RIGHT"
                     }
@@ -6650,10 +6776,12 @@
                 "type": "oneof",
                 "arguments": [
                     {
+                        "name": "left",
                         "type": "pure-token",
                         "token": "LEFT"
                     },
                     {
+                        "name": "right",
                         "type": "pure-token",
                         "token": "RIGHT"
                     }
@@ -7100,6 +7228,18 @@
             }
         ]
     },
+    "MEMORY DOCTOR": {
+        "summary": "Outputs memory problems report",
+        "complexity": "PATCH__TBD__73__",
+        "group": "server",
+        "since": "4.0.0",
+        "arity": 2,
+        "container": "MEMORY",
+        "function": "memoryCommand",
+        "command_flags": [
+            "random"
+        ]
+    },
     "MEMORY HELP": {
         "summary": "Show helpful text about the different subcommands",
         "complexity": "O(1)",
@@ -7113,30 +7253,6 @@
             "stale"
         ]
     },
-    "MEMORY DOCTOR": {
-        "summary": "Outputs memory problems report",
-        "complexity": "PATCH__TBD__73__",
-        "group": "server",
-        "since": "4.0.0",
-        "arity": 2,
-        "container": "MEMORY",
-        "function": "memoryCommand",
-        "command_flags": [
-            "random"
-        ]
-    },
-    "MEMORY MALLOC-STATS": {
-        "summary": "Show allocator internal stats",
-        "complexity": "PATCH__TBD__71__",
-        "group": "server",
-        "since": "4.0.0",
-        "arity": 2,
-        "container": "MEMORY",
-        "function": "memoryCommand",
-        "command_flags": [
-            "random"
-        ]
-    },
     "MEMORY PURGE": {
         "summary": "Ask the allocator to release memory",
         "complexity": "PATCH__TBD__70__",
@@ -7146,9 +7262,9 @@
         "container": "MEMORY",
         "function": "memoryCommand"
     },
-    "MEMORY STATS": {
-        "summary": "Show memory usage details",
-        "complexity": "PATCH__TBD__72__",
+    "MEMORY MALLOC-STATS": {
+        "summary": "Show allocator internal stats",
+        "complexity": "PATCH__TBD__71__",
         "group": "server",
         "since": "4.0.0",
         "arity": 2,
@@ -7200,6 +7316,18 @@
                 "type": "integer",
                 "optional": true
             }
+        ]
+    },
+    "MEMORY STATS": {
+        "summary": "Show memory usage details",
+        "complexity": "PATCH__TBD__72__",
+        "group": "server",
+        "since": "4.0.0",
+        "arity": 2,
+        "container": "MEMORY",
+        "function": "memoryCommand",
+        "command_flags": [
+            "random"
         ]
     },
     "MEMORY": {
@@ -7342,6 +7470,7 @@
                         "key_spec_index": 0
                     },
                     {
+                        "name": "empty_string",
                         "type": "pure-token",
                         "token": "\"\""
                     }
@@ -7356,11 +7485,13 @@
                 "type": "integer"
             },
             {
+                "name": "copy",
                 "token": "COPY",
                 "type": "pure-token",
                 "optional": true
             },
             {
+                "name": "replace",
                 "token": "REPLACE",
                 "type": "pure-token",
                 "optional": true
@@ -7467,13 +7598,6 @@
             }
         ]
     },
-    "MODULE": {
-        "summary": "A container for module commands",
-        "complexity": "Depends on subcommand.",
-        "group": "server",
-        "since": "4.0.0",
-        "arity": -2
-    },
     "MONITOR": {
         "summary": "Listen for all requests received by the server in real time",
         "complexity": "PATCH__TBD__54__",
@@ -7547,13 +7671,20 @@
             }
         ]
     },
-    "MSET": {
-        "summary": "Set multiple keys to multiple values",
+    "MODULE": {
+        "summary": "A container for module commands",
+        "complexity": "Depends on subcommand.",
+        "group": "server",
+        "since": "4.0.0",
+        "arity": -2
+    },
+    "MSETNX": {
+        "summary": "Set multiple keys to multiple values, only if none of the keys exist",
         "complexity": "O(N) where N is the number of keys to set.",
         "group": "string",
         "since": "1.0.1",
         "arity": -3,
-        "function": "msetCommand",
+        "function": "msetnxCommand",
         "command_flags": [
             "write",
             "denyoom"
@@ -7599,13 +7730,13 @@
             }
         ]
     },
-    "MSETNX": {
-        "summary": "Set multiple keys to multiple values, only if none of the keys exist",
+    "MSET": {
+        "summary": "Set multiple keys to multiple values",
         "complexity": "O(N) where N is the number of keys to set.",
         "group": "string",
         "since": "1.0.1",
         "arity": -3,
-        "function": "msetnxCommand",
+        "function": "msetCommand",
         "command_flags": [
             "write",
             "denyoom"
@@ -7953,18 +8084,22 @@
                 "optional": true,
                 "arguments": [
                     {
+                        "name": "nx",
                         "type": "pure-token",
                         "token": "NX"
                     },
                     {
+                        "name": "xx",
                         "type": "pure-token",
                         "token": "XX"
                     },
                     {
+                        "name": "gt",
                         "type": "pure-token",
                         "token": "GT"
                     },
                     {
+                        "name": "lt",
                         "type": "pure-token",
                         "token": "LT"
                     }
@@ -8027,18 +8162,22 @@
                 "optional": true,
                 "arguments": [
                     {
+                        "name": "nx",
                         "type": "pure-token",
                         "token": "NX"
                     },
                     {
+                        "name": "xx",
                         "type": "pure-token",
                         "token": "XX"
                     },
                     {
+                        "name": "gt",
                         "type": "pure-token",
                         "token": "GT"
                     },
                     {
+                        "name": "lt",
                         "type": "pure-token",
                         "token": "LT"
                     }
@@ -8085,48 +8224,6 @@
                 "name": "key",
                 "type": "key",
                 "key_spec_index": 0
-            }
-        ]
-    },
-    "PFCOUNT": {
-        "summary": "Return the approximated cardinality of the set(s) observed by the HyperLogLog at key(s).",
-        "complexity": "O(1) with a very small average constant time when called with a single key. O(N) with N being the number of keys, and much bigger constant times, when called with multiple keys.",
-        "group": "hyperloglog",
-        "since": "2.8.9",
-        "arity": -2,
-        "function": "pfcountCommand",
-        "command_flags": [
-            "readonly",
-            "may_replicate"
-        ],
-        "acl_categories": [
-            "hyperloglog"
-        ],
-        "key_specs": [
-            {
-                "flags": [
-                    "read"
-                ],
-                "begin_search": {
-                    "index": {
-                        "pos": 1
-                    }
-                },
-                "find_keys": {
-                    "range": {
-                        "lastkey": -1,
-                        "step": 1,
-                        "limit": 0
-                    }
-                }
-            }
-        ],
-        "arguments": [
-            {
-                "name": "key",
-                "type": "key",
-                "key_spec_index": 0,
-                "multiple": true
             }
         ]
     },
@@ -8178,20 +8275,16 @@
             }
         ]
     },
-    "PFDEBUG": {
-        "summary": "Internal commands for debugging HyperLogLog values",
-        "complexity": "N/A",
+    "PFCOUNT": {
+        "summary": "Return the approximated cardinality of the set(s) observed by the HyperLogLog at key(s).",
+        "complexity": "O(1) with a very small average constant time when called with a single key. O(N) with N being the number of keys, and much bigger constant times, when called with multiple keys.",
         "group": "hyperloglog",
         "since": "2.8.9",
-        "arity": -3,
-        "function": "pfdebugCommand",
-        "doc_flags": [
-            "syscmd"
-        ],
+        "arity": -2,
+        "function": "pfcountCommand",
         "command_flags": [
-            "write",
-            "denyoom",
-            "admin"
+            "readonly",
+            "may_replicate"
         ],
         "acl_categories": [
             "hyperloglog"
@@ -8199,20 +8292,28 @@
         "key_specs": [
             {
                 "flags": [
-                    "write"
+                    "read"
                 ],
                 "begin_search": {
                     "index": {
-                        "pos": 2
+                        "pos": 1
                     }
                 },
                 "find_keys": {
                     "range": {
-                        "lastkey": 0,
+                        "lastkey": -1,
                         "step": 1,
                         "limit": 0
                     }
                 }
+            }
+        ],
+        "arguments": [
+            {
+                "name": "key",
+                "type": "key",
+                "key_spec_index": 0,
+                "multiple": true
             }
         ]
     },
@@ -8278,6 +8379,44 @@
                 "type": "key",
                 "key_spec_index": 1,
                 "multiple": true
+            }
+        ]
+    },
+    "PFDEBUG": {
+        "summary": "Internal commands for debugging HyperLogLog values",
+        "complexity": "N/A",
+        "group": "hyperloglog",
+        "since": "2.8.9",
+        "arity": -3,
+        "function": "pfdebugCommand",
+        "doc_flags": [
+            "syscmd"
+        ],
+        "command_flags": [
+            "write",
+            "denyoom",
+            "admin"
+        ],
+        "acl_categories": [
+            "hyperloglog"
+        ],
+        "key_specs": [
+            {
+                "flags": [
+                    "write"
+                ],
+                "begin_search": {
+                    "index": {
+                        "pos": 2
+                    }
+                },
+                "find_keys": {
+                    "range": {
+                        "lastkey": 0,
+                        "step": 1,
+                        "limit": 0
+                    }
+                }
             }
         ]
     },
@@ -8419,32 +8558,6 @@
             }
         ]
     },
-    "PUBLISH": {
-        "summary": "Post a message to a channel",
-        "complexity": "O(N+M) where N is the number of clients subscribed to the receiving channel and M is the total number of subscribed patterns (by any client).",
-        "group": "pubsub",
-        "since": "2.0.0",
-        "arity": 3,
-        "function": "publishCommand",
-        "command_flags": [
-            "pubsub",
-            "loading",
-            "stale",
-            "fast",
-            "may_replicate",
-            "sentinel"
-        ],
-        "arguments": [
-            {
-                "name": "channel",
-                "type": "string"
-            },
-            {
-                "name": "message",
-                "type": "string"
-            }
-        ]
-    },
     "PTTL": {
         "summary": "Get the time to live for a key in milliseconds",
         "complexity": "O(1)",
@@ -8487,6 +8600,32 @@
             }
         ]
     },
+    "PUBLISH": {
+        "summary": "Post a message to a channel",
+        "complexity": "O(N+M) where N is the number of clients subscribed to the receiving channel and M is the total number of subscribed patterns (by any client).",
+        "group": "pubsub",
+        "since": "2.0.0",
+        "arity": 3,
+        "function": "publishCommand",
+        "command_flags": [
+            "pubsub",
+            "loading",
+            "stale",
+            "fast",
+            "may_replicate",
+            "sentinel"
+        ],
+        "arguments": [
+            {
+                "name": "channel",
+                "type": "string"
+            },
+            {
+                "name": "message",
+                "type": "string"
+            }
+        ]
+    },
     "PUBSUB CHANNELS": {
         "summary": "List active channels",
         "complexity": "O(N) where N is the number of active channels, and assuming constant time pattern matching (relatively short channels and patterns)",
@@ -8521,27 +8660,6 @@
             "stale"
         ]
     },
-    "PUBSUB NUMPAT": {
-        "summary": "Get the count of unique patterns pattern subscriptions",
-        "complexity": "O(1)",
-        "group": "pubsub",
-        "since": "2.8.0",
-        "arity": 2,
-        "container": "PUBSUB",
-        "function": "pubsubCommand",
-        "command_flags": [
-            "pubsub",
-            "loading",
-            "stale"
-        ]
-    },
-    "PUBSUB": {
-        "summary": "A container for Pub/Sun commands",
-        "complexity": "Depends on subcommand.",
-        "group": "pubsub",
-        "since": "2.8.0",
-        "arity": -2
-    },
     "PUBSUB NUMSUB": {
         "summary": "Get the count of subscribers for channels",
         "complexity": "O(N) for the NUMSUB subcommand, where N is the number of requested channels",
@@ -8562,6 +8680,20 @@
                 "optional": true,
                 "multiple": true
             }
+        ]
+    },
+    "PUBSUB NUMPAT": {
+        "summary": "Get the count of unique patterns pattern subscriptions",
+        "complexity": "O(1)",
+        "group": "pubsub",
+        "since": "2.8.0",
+        "arity": 2,
+        "container": "PUBSUB",
+        "function": "pubsubCommand",
+        "command_flags": [
+            "pubsub",
+            "loading",
+            "stale"
         ]
     },
     "PUNSUBSCRIBE": {
@@ -8587,6 +8719,28 @@
             }
         ]
     },
+    "PUBSUB": {
+        "summary": "A container for Pub/Sun commands",
+        "complexity": "Depends on subcommand.",
+        "group": "pubsub",
+        "since": "2.8.0",
+        "arity": -2
+    },
+    "RANDOMKEY": {
+        "summary": "Return a random key from the keyspace",
+        "complexity": "O(1)",
+        "group": "generic",
+        "since": "1.0.0",
+        "arity": 1,
+        "function": "randomkeyCommand",
+        "command_flags": [
+            "readonly",
+            "random"
+        ],
+        "acl_categories": [
+            "keyspace"
+        ]
+    },
     "QUIT": {
         "summary": "Close the connection",
         "complexity": "O(1)",
@@ -8603,21 +8757,6 @@
         ],
         "acl_categories": [
             "connection"
-        ]
-    },
-    "RANDOMKEY": {
-        "summary": "Return a random key from the keyspace",
-        "complexity": "O(1)",
-        "group": "generic",
-        "since": "1.0.0",
-        "arity": 1,
-        "function": "randomkeyCommand",
-        "command_flags": [
-            "readonly",
-            "random"
-        ],
-        "acl_categories": [
-            "keyspace"
         ]
     },
     "READONLY": {
@@ -8646,6 +8785,51 @@
         ],
         "acl_categories": [
             "connection"
+        ]
+    },
+    "RENAME": {
+        "summary": "Rename a key",
+        "complexity": "O(1)",
+        "group": "generic",
+        "since": "1.0.0",
+        "arity": 3,
+        "function": "renameCommand",
+        "command_flags": [
+            "write"
+        ],
+        "acl_categories": [
+            "keyspace"
+        ],
+        "key_specs": [
+            {
+                "flags": [
+                    "write"
+                ],
+                "begin_search": {
+                    "index": {
+                        "pos": 1
+                    }
+                },
+                "find_keys": {
+                    "range": {
+                        "lastkey": 1,
+                        "step": 1,
+                        "limit": 0
+                    }
+                }
+            }
+        ],
+        "arguments": [
+            {
+                "name": "key",
+                "type": "key",
+                "key_spec_index": 0
+            },
+            {
+                "name": "newkey",
+                "type": "key",
+                "key_spec_index": 0
+            }
         ]
     },
     "RENAMENX": {
@@ -8694,68 +8878,6 @@
             }
         ]
     },
-    "RENAME": {
-        "summary": "Rename a key",
-        "complexity": "O(1)",
-        "group": "generic",
-        "since": "1.0.0",
-        "arity": 3,
-        "function": "renameCommand",
-        "command_flags": [
-            "write"
-        ],
-        "acl_categories": [
-            "keyspace"
-        ],
-        "key_specs": [
-            {
-                "flags": [
-                    "write"
-                ],
-                "begin_search": {
-                    "index": {
-                        "pos": 1
-                    }
-                },
-                "find_keys": {
-                    "range": {
-                        "lastkey": 1,
-                        "step": 1,
-                        "limit": 0
-                    }
-                }
-            }
-        ],
-        "arguments": [
-            {
-                "name": "key",
-                "type": "key",
-                "key_spec_index": 0
-            },
-            {
-                "name": "newkey",
-                "type": "key",
-                "key_spec_index": 0
-            }
-        ]
-    },
-    "REPLCONF": {
-        "summary": "An internal command for configuring the replication stream",
-        "complexity": "PATCH__TBD__26__",
-        "group": "server",
-        "since": "PATCH__TBD__28__",
-        "arity": -1,
-        "function": "replconfCommand",
-        "doc_flags": [
-            "syscmd"
-        ],
-        "command_flags": [
-            "admin",
-            "noscript",
-            "loading",
-            "stale"
-        ]
-    },
     "REPLICAOF": {
         "summary": "Make the server a replica of another instance, or promote it as master.",
         "complexity": "PATCH__TBD__59__",
@@ -8779,6 +8901,23 @@
             }
         ]
     },
+    "REPLCONF": {
+        "summary": "An internal command for configuring the replication stream",
+        "complexity": "PATCH__TBD__26__",
+        "group": "server",
+        "since": "PATCH__TBD__28__",
+        "arity": -1,
+        "function": "replconfCommand",
+        "doc_flags": [
+            "syscmd"
+        ],
+        "command_flags": [
+            "admin",
+            "noscript",
+            "loading",
+            "stale"
+        ]
+    },
     "RESET": {
         "summary": "Reset the connection",
         "complexity": "PATCH__TBD__74__",
@@ -8795,45 +8934,6 @@
         ],
         "acl_categories": [
             "connection"
-        ]
-    },
-    "RESTORE-ASKING": {
-        "summary": "An internal command for migrating keys in a cluster",
-        "complexity": "PATCH__TBD__17__",
-        "group": "server",
-        "since": "PATCH__TBD__19__",
-        "arity": -4,
-        "function": "restoreCommand",
-        "doc_flags": [
-            "syscmd"
-        ],
-        "command_flags": [
-            "write",
-            "denyoom",
-            "asking"
-        ],
-        "acl_categories": [
-            "keyspace",
-            "dangerous"
-        ],
-        "key_specs": [
-            {
-                "flags": [
-                    "write"
-                ],
-                "begin_search": {
-                    "index": {
-                        "pos": 1
-                    }
-                },
-                "find_keys": {
-                    "range": {
-                        "lastkey": 0,
-                        "step": 1,
-                        "limit": 0
-                    }
-                }
-            }
         ]
     },
     "RESTORE": {
@@ -8885,11 +8985,13 @@
                 "type": "string"
             },
             {
+                "name": "replace",
                 "token": "REPLACE",
                 "type": "pure-token",
                 "optional": true
             },
             {
+                "name": "absttl",
                 "token": "ABSTTL",
                 "type": "pure-token",
                 "optional": true
@@ -8905,6 +9007,45 @@
                 "name": "frequency",
                 "type": "integer",
                 "optional": true
+            }
+        ]
+    },
+    "RESTORE-ASKING": {
+        "summary": "An internal command for migrating keys in a cluster",
+        "complexity": "PATCH__TBD__17__",
+        "group": "server",
+        "since": "PATCH__TBD__19__",
+        "arity": -4,
+        "function": "restoreCommand",
+        "doc_flags": [
+            "syscmd"
+        ],
+        "command_flags": [
+            "write",
+            "denyoom",
+            "asking"
+        ],
+        "acl_categories": [
+            "keyspace",
+            "dangerous"
+        ],
+        "key_specs": [
+            {
+                "flags": [
+                    "write"
+                ],
+                "begin_search": {
+                    "index": {
+                        "pos": 1
+                    }
+                },
+                "find_keys": {
+                    "range": {
+                        "lastkey": 0,
+                        "step": 1,
+                        "limit": 0
+                    }
+                }
             }
         ]
     },
@@ -9207,18 +9348,6 @@
             }
         ]
     },
-    "SAVE": {
-        "summary": "Synchronously save the dataset to disk",
-        "complexity": "PATCH__TBD__51__",
-        "group": "server",
-        "since": "1.0.0",
-        "arity": 1,
-        "function": "saveCommand",
-        "command_flags": [
-            "admin",
-            "noscript"
-        ]
-    },
     "SCAN": {
         "summary": "Incrementally iterate the keys space",
         "complexity": "O(1) for every call. O(N) for a complete iteration, including enough command calls for the cursor to return back to 0. N is the number of elements inside the collection.",
@@ -9256,6 +9385,18 @@
                 "type": "string",
                 "optional": true
             }
+        ]
+    },
+    "SAVE": {
+        "summary": "Synchronously save the dataset to disk",
+        "complexity": "PATCH__TBD__51__",
+        "group": "server",
+        "since": "1.0.0",
+        "arity": 1,
+        "function": "saveCommand",
+        "command_flags": [
+            "admin",
+            "noscript"
         ]
     },
     "SCARD": {
@@ -9299,6 +9440,28 @@
             }
         ]
     },
+    "SCRIPT EXISTS": {
+        "summary": "Check existence of scripts in the script cache.",
+        "complexity": "O(N) with N being the number of scripts to check (so checking a single script is an O(1) operation).",
+        "group": "scripting",
+        "since": "2.6.0",
+        "arity": -3,
+        "container": "SCRIPT",
+        "function": "scriptCommand",
+        "command_flags": [
+            "noscript"
+        ],
+        "acl_categories": [
+            "scripting"
+        ],
+        "arguments": [
+            {
+                "name": "sha1",
+                "type": "string",
+                "multiple": true
+            }
+        ]
+    },
     "SCRIPT DEBUG": {
         "summary": "Set the debug mode for executed scripts.",
         "complexity": "O(1)",
@@ -9319,40 +9482,21 @@
                 "type": "oneof",
                 "arguments": [
                     {
+                        "name": "yes",
                         "type": "pure-token",
                         "token": "YES"
                     },
                     {
+                        "name": "sync",
                         "type": "pure-token",
                         "token": "SYNC"
                     },
                     {
+                        "name": "no",
                         "type": "pure-token",
                         "token": "NO"
                     }
                 ]
-            }
-        ]
-    },
-    "SCRIPT EXISTS": {
-        "summary": "Check existence of scripts in the script cache.",
-        "complexity": "O(N) with N being the number of scripts to check (so checking a single script is an O(1) operation).",
-        "group": "scripting",
-        "since": "2.6.0",
-        "arity": -3,
-        "container": "SCRIPT",
-        "function": "scriptCommand",
-        "command_flags": [
-            "noscript"
-        ],
-        "acl_categories": [
-            "scripting"
-        ],
-        "arguments": [
-            {
-                "name": "sha1",
-                "type": "string",
-                "multiple": true
             }
         ]
     },
@@ -9384,30 +9528,17 @@
                 "optional": true,
                 "arguments": [
                     {
+                        "name": "async",
                         "type": "pure-token",
                         "token": "ASYNC"
                     },
                     {
+                        "name": "sync",
                         "type": "pure-token",
                         "token": "SYNC"
                     }
                 ]
             }
-        ]
-    },
-    "SCRIPT KILL": {
-        "summary": "Kill the script currently in execution.",
-        "complexity": "O(1)",
-        "group": "scripting",
-        "since": "2.6.0",
-        "arity": 2,
-        "container": "SCRIPT",
-        "function": "scriptCommand",
-        "command_flags": [
-            "noscript"
-        ],
-        "acl_categories": [
-            "scripting"
         ]
     },
     "SCRIPT HELP": {
@@ -9426,12 +9557,20 @@
             "scripting"
         ]
     },
-    "SCRIPT": {
-        "summary": "A container for Lua scripts management commands",
-        "complexity": "Depends on subcommand.",
+    "SCRIPT KILL": {
+        "summary": "Kill the script currently in execution.",
+        "complexity": "O(1)",
         "group": "scripting",
         "since": "2.6.0",
-        "arity": -2
+        "arity": 2,
+        "container": "SCRIPT",
+        "function": "scriptCommand",
+        "command_flags": [
+            "noscript"
+        ],
+        "acl_categories": [
+            "scripting"
+        ]
     },
     "SCRIPT LOAD": {
         "summary": "Load the specified Lua script into the script cache.",
@@ -9452,6 +9591,55 @@
             {
                 "name": "script",
                 "type": "string"
+            }
+        ]
+    },
+    "SCRIPT": {
+        "summary": "A container for Lua scripts management commands",
+        "complexity": "Depends on subcommand.",
+        "group": "scripting",
+        "since": "2.6.0",
+        "arity": -2
+    },
+    "SDIFF": {
+        "summary": "Subtract multiple sets",
+        "complexity": "O(N) where N is the total number of elements in all given sets.",
+        "group": "set",
+        "since": "1.0.0",
+        "arity": -2,
+        "function": "sdiffCommand",
+        "command_flags": [
+            "readonly",
+            "sort_for_script"
+        ],
+        "acl_categories": [
+            "set"
+        ],
+        "key_specs": [
+            {
+                "flags": [
+                    "read"
+                ],
+                "begin_search": {
+                    "index": {
+                        "pos": 1
+                    }
+                },
+                "find_keys": {
+                    "range": {
+                        "lastkey": -1,
+                        "step": 1,
+                        "limit": 0
+                    }
+                }
+            }
+        ],
+        "arguments": [
+            {
+                "name": "key",
+                "type": "key",
+                "key_spec_index": 0,
+                "multiple": true
             }
         ]
     },
@@ -9519,48 +9707,6 @@
             }
         ]
     },
-    "SDIFF": {
-        "summary": "Subtract multiple sets",
-        "complexity": "O(N) where N is the total number of elements in all given sets.",
-        "group": "set",
-        "since": "1.0.0",
-        "arity": -2,
-        "function": "sdiffCommand",
-        "command_flags": [
-            "readonly",
-            "sort_for_script"
-        ],
-        "acl_categories": [
-            "set"
-        ],
-        "key_specs": [
-            {
-                "flags": [
-                    "read"
-                ],
-                "begin_search": {
-                    "index": {
-                        "pos": 1
-                    }
-                },
-                "find_keys": {
-                    "range": {
-                        "lastkey": -1,
-                        "step": 1,
-                        "limit": 0
-                    }
-                }
-            }
-        ],
-        "arguments": [
-            {
-                "name": "key",
-                "type": "key",
-                "key_spec_index": 0,
-                "multiple": true
-            }
-        ]
-    },
     "SELECT": {
         "summary": "Change the selected database for the current connection",
         "complexity": "PATCH__TBD__48__",
@@ -9583,12 +9729,12 @@
             }
         ]
     },
-    "SENTINEL CONFIG": {
-        "summary": "Configure Sentinel",
-        "complexity": "O(1)",
+    "SENTINEL CKQUORUM": {
+        "summary": "Check for a Sentinel quorum",
+        "complexity": "PATCH__TBD__42__",
         "group": "sentinel",
-        "since": "6.2.0",
-        "arity": -3,
+        "since": "2.8.4",
+        "arity": 3,
         "container": "SENTINEL",
         "function": "sentinelCommand",
         "command_flags": [
@@ -9597,12 +9743,12 @@
             "only_sentinel"
         ]
     },
-    "SENTINEL CKQUORUM": {
-        "summary": "Check for a Sentinel quorum",
-        "complexity": "PATCH__TBD__42__",
+    "SENTINEL CONFIG": {
+        "summary": "Configure Sentinel",
+        "complexity": "O(1)",
         "group": "sentinel",
-        "since": "2.8.4",
-        "arity": 3,
+        "since": "6.2.0",
+        "arity": -3,
         "container": "SENTINEL",
         "function": "sentinelCommand",
         "command_flags": [
@@ -9780,11 +9926,11 @@
             "only_sentinel"
         ]
     },
-    "SENTINEL REPLICAS": {
-        "summary": "List the monitored replicas",
-        "complexity": "O(N) where N is the number of replicas",
+    "SENTINEL REMOVE": {
+        "summary": "Stop monitoring",
+        "complexity": "O(1)",
         "group": "sentinel",
-        "since": "5.0.0",
+        "since": "2.8.4",
         "arity": 3,
         "container": "SENTINEL",
         "function": "sentinelCommand",
@@ -9794,11 +9940,11 @@
             "only_sentinel"
         ]
     },
-    "SENTINEL REMOVE": {
-        "summary": "Stop monitoring",
-        "complexity": "O(1)",
+    "SENTINEL REPLICAS": {
+        "summary": "List the monitored replicas",
+        "complexity": "O(N) where N is the number of replicas",
         "group": "sentinel",
-        "since": "2.8.4",
+        "since": "5.0.0",
         "arity": 3,
         "container": "SENTINEL",
         "function": "sentinelCommand",
@@ -9841,21 +9987,7 @@
         "complexity": "O(1)",
         "group": "sentinel",
         "since": "2.8.4",
-        "arity": -3,
-        "container": "SENTINEL",
-        "function": "sentinelCommand",
-        "command_flags": [
-            "admin",
-            "sentinel",
-            "only_sentinel"
-        ]
-    },
-    "SENTINEL SIMULATE-FAILURE": {
-        "summary": "Simulate failover scenarios",
-        "complexity": "PATCH__TBD__81__",
-        "group": "sentinel",
-        "since": "3.2.0",
-        "arity": 3,
+        "arity": -5,
         "container": "SENTINEL",
         "function": "sentinelCommand",
         "command_flags": [
@@ -9874,6 +10006,69 @@
             "admin",
             "sentinel",
             "only_sentinel"
+        ]
+    },
+    "SENTINEL SIMULATE-FAILURE": {
+        "summary": "Simulate failover scenarios",
+        "complexity": "PATCH__TBD__81__",
+        "group": "sentinel",
+        "since": "3.2.0",
+        "arity": -3,
+        "container": "SENTINEL",
+        "function": "sentinelCommand",
+        "command_flags": [
+            "admin",
+            "sentinel",
+            "only_sentinel"
+        ]
+    },
+    "SETBIT": {
+        "summary": "Sets or clears the bit at offset in the string value stored at key",
+        "complexity": "O(1)",
+        "group": "bitmap",
+        "since": "2.2.0",
+        "arity": 4,
+        "function": "setbitCommand",
+        "command_flags": [
+            "write",
+            "denyoom"
+        ],
+        "acl_categories": [
+            "bitmap"
+        ],
+        "key_specs": [
+            {
+                "flags": [
+                    "write"
+                ],
+                "begin_search": {
+                    "index": {
+                        "pos": 1
+                    }
+                },
+                "find_keys": {
+                    "range": {
+                        "lastkey": 0,
+                        "step": 1,
+                        "limit": 0
+                    }
+                }
+            }
+        ],
+        "arguments": [
+            {
+                "name": "key",
+                "type": "key",
+                "key_spec_index": 0
+            },
+            {
+                "name": "offset",
+                "type": "integer"
+            },
+            {
+                "name": "value",
+                "type": "integer"
+            }
         ]
     },
     "SET": {
@@ -9964,6 +10159,7 @@
                         "token": "PXAT"
                     },
                     {
+                        "name": "keepttl",
                         "type": "pure-token",
                         "token": "KEEPTTL"
                     }
@@ -9975,68 +10171,22 @@
                 "optional": true,
                 "arguments": [
                     {
+                        "name": "nx",
                         "type": "pure-token",
                         "token": "NX"
                     },
                     {
+                        "name": "xx",
                         "type": "pure-token",
                         "token": "XX"
                     }
                 ]
             },
             {
+                "name": "get",
                 "token": "GET",
                 "type": "pure-token",
                 "optional": true
-            }
-        ]
-    },
-    "SETBIT": {
-        "summary": "Sets or clears the bit at offset in the string value stored at key",
-        "complexity": "O(1)",
-        "group": "bitmap",
-        "since": "2.2.0",
-        "arity": 4,
-        "function": "setbitCommand",
-        "command_flags": [
-            "write",
-            "denyoom"
-        ],
-        "acl_categories": [
-            "bitmap"
-        ],
-        "key_specs": [
-            {
-                "flags": [
-                    "write"
-                ],
-                "begin_search": {
-                    "index": {
-                        "pos": 1
-                    }
-                },
-                "find_keys": {
-                    "range": {
-                        "lastkey": 0,
-                        "step": 1,
-                        "limit": 0
-                    }
-                }
-            }
-        ],
-        "arguments": [
-            {
-                "name": "key",
-                "type": "key",
-                "key_spec_index": 0
-            },
-            {
-                "name": "offset",
-                "type": "integer"
-            },
-            {
-                "name": "value",
-                "type": "integer"
             }
         ]
     },
@@ -10135,38 +10285,6 @@
             }
         ]
     },
-    "SHUTDOWN": {
-        "summary": "Synchronously save the dataset to disk and then shut down the server",
-        "complexity": "PATCH__TBD__35__",
-        "group": "server",
-        "since": "1.0.0",
-        "arity": -1,
-        "function": "shutdownCommand",
-        "command_flags": [
-            "admin",
-            "noscript",
-            "loading",
-            "stale",
-            "sentinel"
-        ],
-        "arguments": [
-            {
-                "name": "nosave_save",
-                "type": "oneof",
-                "optional": true,
-                "arguments": [
-                    {
-                        "type": "pure-token",
-                        "token": "NOSAVE"
-                    },
-                    {
-                        "type": "pure-token",
-                        "token": "SAVE"
-                    }
-                ]
-            }
-        ]
-    },
     "SETRANGE": {
         "summary": "Overwrite part of a string at key starting at the specified offset",
         "complexity": "O(1), not counting the time taken to copy the new string in place. Usually, this string is very small so the amortized complexity is O(1). Otherwise, complexity is O(M) with M being the length of the value argument.",
@@ -10213,6 +10331,40 @@
             {
                 "name": "value",
                 "type": "string"
+            }
+        ]
+    },
+    "SHUTDOWN": {
+        "summary": "Synchronously save the dataset to disk and then shut down the server",
+        "complexity": "PATCH__TBD__35__",
+        "group": "server",
+        "since": "1.0.0",
+        "arity": -1,
+        "function": "shutdownCommand",
+        "command_flags": [
+            "admin",
+            "noscript",
+            "loading",
+            "stale",
+            "sentinel"
+        ],
+        "arguments": [
+            {
+                "name": "nosave_save",
+                "type": "oneof",
+                "optional": true,
+                "arguments": [
+                    {
+                        "name": "nosave",
+                        "type": "pure-token",
+                        "token": "NOSAVE"
+                    },
+                    {
+                        "name": "save",
+                        "type": "pure-token",
+                        "token": "SAVE"
+                    }
+                ]
             }
         ]
     },
@@ -10419,6 +10571,29 @@
             }
         ]
     },
+    "SLAVEOF": {
+        "summary": "Make the server a replica of another instance, or promote it as master. Deprecated starting with Redis 5. Use REPLICAOF instead.",
+        "complexity": "PATCH__TBD__56__",
+        "group": "server",
+        "since": "1.0.0",
+        "arity": 3,
+        "function": "replicaofCommand",
+        "command_flags": [
+            "admin",
+            "noscript",
+            "stale"
+        ],
+        "arguments": [
+            {
+                "name": "host",
+                "type": "string"
+            },
+            {
+                "name": "port",
+                "type": "string"
+            }
+        ]
+    },
     "SLOWLOG GET": {
         "summary": "Get the slow log's entries",
         "complexity": "O(N) where N is the number of entries returned",
@@ -10444,29 +10619,6 @@
                 "name": "count",
                 "type": "integer",
                 "optional": true
-            }
-        ]
-    },
-    "SLAVEOF": {
-        "summary": "Make the server a replica of another instance, or promote it as master. Deprecated starting with Redis 5. Use REPLICAOF instead.",
-        "complexity": "PATCH__TBD__56__",
-        "group": "server",
-        "since": "1.0.0",
-        "arity": 3,
-        "function": "replicaofCommand",
-        "command_flags": [
-            "admin",
-            "noscript",
-            "stale"
-        ],
-        "arguments": [
-            {
-                "name": "host",
-                "type": "string"
-            },
-            {
-                "name": "port",
-                "type": "string"
             }
         ]
     },
@@ -10765,16 +10917,19 @@
                 "optional": true,
                 "arguments": [
                     {
+                        "name": "asc",
                         "type": "pure-token",
                         "token": "ASC"
                     },
                     {
+                        "name": "desc",
                         "type": "pure-token",
                         "token": "DESC"
                     }
                 ]
             },
             {
+                "name": "sorting",
                 "token": "ALPHA",
                 "type": "pure-token",
                 "optional": true
@@ -10865,16 +11020,19 @@
                 "optional": true,
                 "arguments": [
                     {
+                        "name": "asc",
                         "type": "pure-token",
                         "token": "ASC"
                     },
                     {
+                        "name": "desc",
                         "type": "pure-token",
                         "token": "DESC"
                     }
                 ]
             },
             {
+                "name": "sorting",
                 "token": "ALPHA",
                 "type": "pure-token",
                 "optional": true
@@ -10986,6 +11144,63 @@
             }
         ]
     },
+    "SSCAN": {
+        "summary": "Incrementally iterate Set elements",
+        "complexity": "O(1) for every call. O(N) for a complete iteration, including enough command calls for the cursor to return back to 0. N is the number of elements inside the collection..",
+        "group": "set",
+        "since": "2.8.0",
+        "arity": -3,
+        "function": "sscanCommand",
+        "command_flags": [
+            "readonly",
+            "random"
+        ],
+        "acl_categories": [
+            "set"
+        ],
+        "key_specs": [
+            {
+                "flags": [
+                    "read"
+                ],
+                "begin_search": {
+                    "index": {
+                        "pos": 1
+                    }
+                },
+                "find_keys": {
+                    "range": {
+                        "lastkey": 0,
+                        "step": 1,
+                        "limit": 0
+                    }
+                }
+            }
+        ],
+        "arguments": [
+            {
+                "name": "key",
+                "type": "key",
+                "key_spec_index": 0
+            },
+            {
+                "name": "cursor",
+                "type": "integer"
+            },
+            {
+                "token": "MATCH",
+                "name": "pattern",
+                "type": "pattern",
+                "optional": true
+            },
+            {
+                "token": "COUNT",
+                "name": "count",
+                "type": "integer",
+                "optional": true
+            }
+        ]
+    },
     "SREM": {
         "summary": "Remove one or more members from a set",
         "complexity": "O(N) where N is the number of members to be removed.",
@@ -11079,63 +11294,6 @@
             }
         ]
     },
-    "SSCAN": {
-        "summary": "Incrementally iterate Set elements",
-        "complexity": "O(1) for every call. O(N) for a complete iteration, including enough command calls for the cursor to return back to 0. N is the number of elements inside the collection..",
-        "group": "set",
-        "since": "2.8.0",
-        "arity": -3,
-        "function": "sscanCommand",
-        "command_flags": [
-            "readonly",
-            "random"
-        ],
-        "acl_categories": [
-            "set"
-        ],
-        "key_specs": [
-            {
-                "flags": [
-                    "read"
-                ],
-                "begin_search": {
-                    "index": {
-                        "pos": 1
-                    }
-                },
-                "find_keys": {
-                    "range": {
-                        "lastkey": 0,
-                        "step": 1,
-                        "limit": 0
-                    }
-                }
-            }
-        ],
-        "arguments": [
-            {
-                "name": "key",
-                "type": "key",
-                "key_spec_index": 0
-            },
-            {
-                "name": "cursor",
-                "type": "integer"
-            },
-            {
-                "token": "MATCH",
-                "name": "pattern",
-                "type": "pattern",
-                "optional": true
-            },
-            {
-                "token": "COUNT",
-                "name": "count",
-                "type": "integer",
-                "optional": true
-            }
-        ]
-    },
     "SUBSCRIBE": {
         "summary": "Listen for messages published to the given channels",
         "complexity": "O(N) where N is the number of channels to subscribe to.",
@@ -11161,6 +11319,44 @@
                 "name": "channel",
                 "type": "string",
                 "multiple": true
+            }
+        ]
+    },
+    "SUBSTR": {
+        "summary": "Get a substring of the string stored at a key",
+        "complexity": "O(N) where N is the length of the returned string. The complexity is ultimately determined by the returned length, but because creating a substring from an existing string is very cheap, it can be considered O(1) for small strings.",
+        "group": "string",
+        "since": "1.0.0",
+        "arity": 4,
+        "function": "getrangeCommand",
+        "deprecated_since": "2.0.0",
+        "replaced_by": "`GETRANGE`",
+        "doc_flags": [
+            "deprecated"
+        ],
+        "command_flags": [
+            "readonly"
+        ],
+        "acl_categories": [
+            "string"
+        ],
+        "key_specs": [
+            {
+                "flags": [
+                    "read"
+                ],
+                "begin_search": {
+                    "index": {
+                        "pos": 1
+                    }
+                },
+                "find_keys": {
+                    "range": {
+                        "lastkey": 0,
+                        "step": 1,
+                        "limit": 0
+                    }
+                }
             }
         ]
     },
@@ -11203,44 +11399,6 @@
                 "type": "key",
                 "key_spec_index": 0,
                 "multiple": true
-            }
-        ]
-    },
-    "SUBSTR": {
-        "summary": "Get a substring of the string stored at a key",
-        "complexity": "O(N) where N is the length of the returned string. The complexity is ultimately determined by the returned length, but because creating a substring from an existing string is very cheap, it can be considered O(1) for small strings.",
-        "group": "string",
-        "since": "1.0.0",
-        "arity": 4,
-        "function": "getrangeCommand",
-        "deprecated_since": "2.0.0",
-        "replaced_by": "`GETRANGE`",
-        "doc_flags": [
-            "deprecated"
-        ],
-        "command_flags": [
-            "readonly"
-        ],
-        "acl_categories": [
-            "string"
-        ],
-        "key_specs": [
-            {
-                "flags": [
-                    "read"
-                ],
-                "begin_search": {
-                    "index": {
-                        "pos": 1
-                    }
-                },
-                "find_keys": {
-                    "range": {
-                        "lastkey": 0,
-                        "step": 1,
-                        "limit": 0
-                    }
-                }
             }
         ]
     },
@@ -11402,6 +11560,48 @@
             }
         ]
     },
+    "TTL": {
+        "summary": "Get the time to live for a key in seconds",
+        "complexity": "O(1)",
+        "group": "generic",
+        "since": "1.0.0",
+        "arity": 2,
+        "function": "ttlCommand",
+        "command_flags": [
+            "readonly",
+            "random",
+            "fast"
+        ],
+        "acl_categories": [
+            "keyspace"
+        ],
+        "key_specs": [
+            {
+                "flags": [
+                    "read"
+                ],
+                "begin_search": {
+                    "index": {
+                        "pos": 1
+                    }
+                },
+                "find_keys": {
+                    "range": {
+                        "lastkey": 0,
+                        "step": 1,
+                        "limit": 0
+                    }
+                }
+            }
+        ],
+        "arguments": [
+            {
+                "name": "key",
+                "type": "key",
+                "key_spec_index": 0
+            }
+        ]
+    },
     "TYPE": {
         "summary": "Determine the type stored at key",
         "complexity": "O(1)",
@@ -11485,48 +11685,6 @@
             }
         ]
     },
-    "TTL": {
-        "summary": "Get the time to live for a key in seconds",
-        "complexity": "O(1)",
-        "group": "generic",
-        "since": "1.0.0",
-        "arity": 2,
-        "function": "ttlCommand",
-        "command_flags": [
-            "readonly",
-            "random",
-            "fast"
-        ],
-        "acl_categories": [
-            "keyspace"
-        ],
-        "key_specs": [
-            {
-                "flags": [
-                    "read"
-                ],
-                "begin_search": {
-                    "index": {
-                        "pos": 1
-                    }
-                },
-                "find_keys": {
-                    "range": {
-                        "lastkey": 0,
-                        "step": 1,
-                        "limit": 0
-                    }
-                }
-            }
-        ],
-        "arguments": [
-            {
-                "name": "key",
-                "type": "key",
-                "key_spec_index": 0
-            }
-        ]
-    },
     "UNSUBSCRIBE": {
         "summary": "Stop listening for messages posted to the given channels",
         "complexity": "O(N) where N is the number of clients already subscribed to a channel.",
@@ -11547,30 +11705,6 @@
                 "type": "string",
                 "optional": true,
                 "multiple": true
-            }
-        ]
-    },
-    "WAIT": {
-        "summary": "Wait for the synchronous replication of all the write commands sent in the context of the current connection",
-        "complexity": "O(1)",
-        "group": "generic",
-        "since": "3.0.0",
-        "arity": 3,
-        "function": "waitCommand",
-        "command_flags": [
-            "noscript"
-        ],
-        "acl_categories": [
-            "connection"
-        ],
-        "arguments": [
-            {
-                "name": "numreplicas",
-                "type": "integer"
-            },
-            {
-                "name": "timeout",
-                "type": "integer"
             }
         ]
     },
@@ -11632,6 +11766,81 @@
             }
         ]
     },
+    "WAIT": {
+        "summary": "Wait for the synchronous replication of all the write commands sent in the context of the current connection",
+        "complexity": "O(1)",
+        "group": "generic",
+        "since": "3.0.0",
+        "arity": 3,
+        "function": "waitCommand",
+        "command_flags": [
+            "noscript"
+        ],
+        "acl_categories": [
+            "connection"
+        ],
+        "arguments": [
+            {
+                "name": "numreplicas",
+                "type": "integer"
+            },
+            {
+                "name": "timeout",
+                "type": "integer"
+            }
+        ]
+    },
+    "XACK": {
+        "summary": "Marks a pending message as correctly processed, effectively removing it from the pending entries list of the consumer group. Return value of the command is the number of messages successfully acknowledged, that is, the IDs we were actually able to resolve in the PEL.",
+        "complexity": "O(1) for each message ID processed.",
+        "group": "stream",
+        "since": "5.0.0",
+        "arity": -4,
+        "function": "xackCommand",
+        "command_flags": [
+            "write",
+            "random",
+            "fast"
+        ],
+        "acl_categories": [
+            "stream"
+        ],
+        "key_specs": [
+            {
+                "flags": [
+                    "write"
+                ],
+                "begin_search": {
+                    "index": {
+                        "pos": 1
+                    }
+                },
+                "find_keys": {
+                    "range": {
+                        "lastkey": 0,
+                        "step": 1,
+                        "limit": 0
+                    }
+                }
+            }
+        ],
+        "arguments": [
+            {
+                "name": "key",
+                "type": "key",
+                "key_spec_index": 0
+            },
+            {
+                "name": "group",
+                "type": "string"
+            },
+            {
+                "name": "ID",
+                "type": "string",
+                "multiple": true
+            }
+        ]
+    },
     "XADD": {
         "summary": "Appends a new entry to a stream",
         "complexity": "O(1) when adding a new entry, O(N) when trimming where N being the number of entries evicted.",
@@ -11685,6 +11894,7 @@
             },
             {
                 "token": "NOMKSTREAM",
+                "name": "nomkstream",
                 "type": "pure-token",
                 "optional": true,
                 "since": "6.2"
@@ -11699,10 +11909,12 @@
                         "type": "oneof",
                         "arguments": [
                             {
+                                "name": "maxlen",
                                 "type": "pure-token",
                                 "token": "MAXLEN"
                             },
                             {
+                                "name": "minid",
                                 "type": "pure-token",
                                 "token": "MINID",
                                 "since": "6.2"
@@ -11715,10 +11927,12 @@
                         "optional": true,
                         "arguments": [
                             {
+                                "name": "equal",
                                 "type": "pure-token",
                                 "token": "="
                             },
                             {
+                                "name": "approximately",
                                 "type": "pure-token",
                                 "token": "~"
                             }
@@ -11742,6 +11956,7 @@
                 "type": "oneof",
                 "arguments": [
                     {
+                        "name": "auto_id",
                         "type": "pure-token",
                         "token": "*"
                     },
@@ -11765,57 +11980,6 @@
                         "type": "string"
                     }
                 ]
-            }
-        ]
-    },
-    "XACK": {
-        "summary": "Marks a pending message as correctly processed, effectively removing it from the pending entries list of the consumer group. Return value of the command is the number of messages successfully acknowledged, that is, the IDs we were actually able to resolve in the PEL.",
-        "complexity": "O(1) for each message ID processed.",
-        "group": "stream",
-        "since": "5.0.0",
-        "arity": -4,
-        "function": "xackCommand",
-        "command_flags": [
-            "write",
-            "random",
-            "fast"
-        ],
-        "acl_categories": [
-            "stream"
-        ],
-        "key_specs": [
-            {
-                "flags": [
-                    "write"
-                ],
-                "begin_search": {
-                    "index": {
-                        "pos": 1
-                    }
-                },
-                "find_keys": {
-                    "range": {
-                        "lastkey": 0,
-                        "step": 1,
-                        "limit": 0
-                    }
-                }
-            }
-        ],
-        "arguments": [
-            {
-                "name": "key",
-                "type": "key",
-                "key_spec_index": 0
-            },
-            {
-                "name": "group",
-                "type": "string"
-            },
-            {
-                "name": "ID",
-                "type": "string",
-                "multiple": true
             }
         ]
     },
@@ -11882,6 +12046,7 @@
                 "optional": true
             },
             {
+                "name": "justid",
                 "token": "JUSTID",
                 "type": "pure-token",
                 "optional": true
@@ -11964,11 +12129,13 @@
                 "optional": true
             },
             {
+                "name": "force",
                 "token": "FORCE",
                 "type": "pure-token",
                 "optional": true
             },
             {
+                "name": "justid",
                 "token": "JUSTID",
                 "type": "pure-token",
                 "optional": true
@@ -12074,6 +12241,7 @@
                         "type": "string"
                     },
                     {
+                        "name": "new_id",
                         "type": "pure-token",
                         "token": "$"
                     }
@@ -12081,6 +12249,7 @@
             },
             {
                 "token": "MKSTREAM",
+                "name": "mkstream",
                 "type": "pure-token",
                 "optional": true
             }
@@ -12230,6 +12399,22 @@
             }
         ]
     },
+    "XGROUP HELP": {
+        "summary": "Show helpful text about the different subcommands",
+        "complexity": "O(1)",
+        "group": "stream",
+        "since": "5.0.0",
+        "arity": 2,
+        "container": "XGROUP",
+        "function": "xgroupCommand",
+        "command_flags": [
+            "loading",
+            "stale"
+        ],
+        "acl_categories": [
+            "stream"
+        ]
+    },
     "XGROUP SETID": {
         "summary": "Set a consumer group to an arbitrary last delivered ID value.",
         "complexity": "O(1)",
@@ -12282,27 +12467,12 @@
                         "type": "string"
                     },
                     {
+                        "name": "new_id",
                         "type": "pure-token",
                         "token": "$"
                     }
                 ]
             }
-        ]
-    },
-    "XGROUP HELP": {
-        "summary": "Show helpful text about the different subcommands",
-        "complexity": "O(1)",
-        "group": "stream",
-        "since": "5.0.0",
-        "arity": 2,
-        "container": "XGROUP",
-        "function": "xgroupCommand",
-        "command_flags": [
-            "loading",
-            "stale"
-        ],
-        "acl_categories": [
-            "stream"
         ]
     },
     "XGROUP": {
@@ -12399,22 +12569,6 @@
             }
         ]
     },
-    "XINFO HELP": {
-        "summary": "Show helpful text about the different subcommands",
-        "complexity": "O(1)",
-        "group": "stream",
-        "since": "5.0.0",
-        "arity": 2,
-        "container": "XINFO",
-        "function": "xinfoCommand",
-        "command_flags": [
-            "loading",
-            "stale"
-        ],
-        "acl_categories": [
-            "stream"
-        ]
-    },
     "XINFO STREAM": {
         "summary": "Get information about a stream",
         "complexity": "O(1)",
@@ -12470,53 +12624,28 @@
             }
         ]
     },
+    "XINFO HELP": {
+        "summary": "Show helpful text about the different subcommands",
+        "complexity": "O(1)",
+        "group": "stream",
+        "since": "5.0.0",
+        "arity": 2,
+        "container": "XINFO",
+        "function": "xinfoCommand",
+        "command_flags": [
+            "loading",
+            "stale"
+        ],
+        "acl_categories": [
+            "stream"
+        ]
+    },
     "XINFO": {
         "summary": "A container for stream introspection commands",
         "complexity": "Depends on subcommand.",
         "group": "stream",
         "since": "5.0.0",
         "arity": -2
-    },
-    "XLEN": {
-        "summary": "Return the number of entries in a stream",
-        "complexity": "O(1)",
-        "group": "stream",
-        "since": "5.0.0",
-        "arity": 2,
-        "function": "xlenCommand",
-        "command_flags": [
-            "readonly",
-            "fast"
-        ],
-        "acl_categories": [
-            "stream"
-        ],
-        "key_specs": [
-            {
-                "flags": [
-                    "read"
-                ],
-                "begin_search": {
-                    "index": {
-                        "pos": 1
-                    }
-                },
-                "find_keys": {
-                    "range": {
-                        "lastkey": 0,
-                        "step": 1,
-                        "limit": 0
-                    }
-                }
-            }
-        ],
-        "arguments": [
-            {
-                "name": "key",
-                "type": "key",
-                "key_spec_index": 0
-            }
-        ]
     },
     "XPENDING": {
         "summary": "Return information and entries from a stream consumer group pending entries list, that are messages fetched but never acknowledged.",
@@ -12596,6 +12725,47 @@
                         "optional": true
                     }
                 ]
+            }
+        ]
+    },
+    "XLEN": {
+        "summary": "Return the number of entries in a stream",
+        "complexity": "O(1)",
+        "group": "stream",
+        "since": "5.0.0",
+        "arity": 2,
+        "function": "xlenCommand",
+        "command_flags": [
+            "readonly",
+            "fast"
+        ],
+        "acl_categories": [
+            "stream"
+        ],
+        "key_specs": [
+            {
+                "flags": [
+                    "read"
+                ],
+                "begin_search": {
+                    "index": {
+                        "pos": 1
+                    }
+                },
+                "find_keys": {
+                    "range": {
+                        "lastkey": 0,
+                        "step": 1,
+                        "limit": 0
+                    }
+                }
+            }
+        ],
+        "arguments": [
+            {
+                "name": "key",
+                "type": "key",
+                "key_spec_index": 0
             }
         ]
     },
@@ -12785,6 +12955,7 @@
                 "optional": true
             },
             {
+                "name": "noack",
                 "token": "NOACK",
                 "type": "pure-token",
                 "optional": true
@@ -12863,6 +13034,41 @@
             }
         ]
     },
+    "XSETID": {
+        "summary": "An internal command for replicating stream values",
+        "complexity": "O(1)",
+        "group": "stream",
+        "since": "5.0.0",
+        "arity": 3,
+        "function": "xsetidCommand",
+        "command_flags": [
+            "write",
+            "denyoom",
+            "fast"
+        ],
+        "acl_categories": [
+            "stream"
+        ],
+        "key_specs": [
+            {
+                "flags": [
+                    "write"
+                ],
+                "begin_search": {
+                    "index": {
+                        "pos": 1
+                    }
+                },
+                "find_keys": {
+                    "range": {
+                        "lastkey": 0,
+                        "step": 1,
+                        "limit": 0
+                    }
+                }
+            }
+        ]
+    },
     "XTRIM": {
         "summary": "Trims the stream to (approximately if '~' is passed) a certain size",
         "complexity": "O(N), with N being the number of evicted entries. Constant times are very small however, since entries are organized in macro nodes containing multiple entries that can be released with a single deallocation.",
@@ -12917,10 +13123,12 @@
                         "type": "oneof",
                         "arguments": [
                             {
+                                "name": "maxlen",
                                 "type": "pure-token",
                                 "token": "MAXLEN"
                             },
                             {
+                                "name": "minid",
                                 "type": "pure-token",
                                 "token": "MINID"
                             }
@@ -12932,10 +13140,12 @@
                         "optional": true,
                         "arguments": [
                             {
+                                "name": "equal",
                                 "type": "pure-token",
                                 "token": "="
                             },
                             {
+                                "name": "approximately",
                                 "type": "pure-token",
                                 "token": "~"
                             }
@@ -12952,131 +13162,6 @@
                         "optional": true
                     }
                 ]
-            }
-        ]
-    },
-    "XSETID": {
-        "summary": "An internal command for replicating stream values",
-        "complexity": "O(1)",
-        "group": "stream",
-        "since": "5.0.0",
-        "arity": 3,
-        "function": "xsetidCommand",
-        "command_flags": [
-            "write",
-            "denyoom",
-            "fast"
-        ],
-        "acl_categories": [
-            "stream"
-        ],
-        "key_specs": [
-            {
-                "flags": [
-                    "write"
-                ],
-                "begin_search": {
-                    "index": {
-                        "pos": 1
-                    }
-                },
-                "find_keys": {
-                    "range": {
-                        "lastkey": 0,
-                        "step": 1,
-                        "limit": 0
-                    }
-                }
-            }
-        ]
-    },
-    "ZCOUNT": {
-        "summary": "Count the members in a sorted set with scores within the given values",
-        "complexity": "O(log(N)) with N being the number of elements in the sorted set.",
-        "group": "sorted_set",
-        "since": "2.0.0",
-        "arity": 4,
-        "function": "zcountCommand",
-        "command_flags": [
-            "readonly",
-            "fast"
-        ],
-        "acl_categories": [
-            "sortedset"
-        ],
-        "key_specs": [
-            {
-                "flags": [
-                    "read"
-                ],
-                "begin_search": {
-                    "index": {
-                        "pos": 1
-                    }
-                },
-                "find_keys": {
-                    "range": {
-                        "lastkey": 0,
-                        "step": 1,
-                        "limit": 0
-                    }
-                }
-            }
-        ],
-        "arguments": [
-            {
-                "name": "key",
-                "type": "key",
-                "key_spec_index": 0
-            },
-            {
-                "name": "min",
-                "type": "double"
-            },
-            {
-                "name": "max",
-                "type": "double"
-            }
-        ]
-    },
-    "ZCARD": {
-        "summary": "Get the number of members in a sorted set",
-        "complexity": "O(1)",
-        "group": "sorted_set",
-        "since": "1.2.0",
-        "arity": 2,
-        "function": "zcardCommand",
-        "command_flags": [
-            "readonly",
-            "fast"
-        ],
-        "acl_categories": [
-            "sortedset"
-        ],
-        "key_specs": [
-            {
-                "flags": [
-                    "read"
-                ],
-                "begin_search": {
-                    "index": {
-                        "pos": 1
-                    }
-                },
-                "find_keys": {
-                    "range": {
-                        "lastkey": 0,
-                        "step": 1,
-                        "limit": 0
-                    }
-                }
-            }
-        ],
-        "arguments": [
-            {
-                "name": "key",
-                "type": "key",
-                "key_spec_index": 0
             }
         ]
     },
@@ -13140,10 +13225,12 @@
                 "optional": true,
                 "arguments": [
                     {
+                        "name": "nx",
                         "type": "pure-token",
                         "token": "NX"
                     },
                     {
+                        "name": "xx",
                         "type": "pure-token",
                         "token": "XX"
                     }
@@ -13155,21 +13242,25 @@
                 "optional": true,
                 "arguments": [
                     {
+                        "name": "gt",
                         "type": "pure-token",
                         "token": "GT"
                     },
                     {
+                        "name": "lt",
                         "type": "pure-token",
                         "token": "LT"
                     }
                 ]
             },
             {
+                "name": "change",
                 "token": "CH",
                 "type": "pure-token",
                 "optional": true
             },
             {
+                "name": "increment",
                 "token": "INCR",
                 "type": "pure-token",
                 "optional": true
@@ -13188,6 +13279,148 @@
                         "type": "string"
                     }
                 ]
+            }
+        ]
+    },
+    "ZCARD": {
+        "summary": "Get the number of members in a sorted set",
+        "complexity": "O(1)",
+        "group": "sorted_set",
+        "since": "1.2.0",
+        "arity": 2,
+        "function": "zcardCommand",
+        "command_flags": [
+            "readonly",
+            "fast"
+        ],
+        "acl_categories": [
+            "sortedset"
+        ],
+        "key_specs": [
+            {
+                "flags": [
+                    "read"
+                ],
+                "begin_search": {
+                    "index": {
+                        "pos": 1
+                    }
+                },
+                "find_keys": {
+                    "range": {
+                        "lastkey": 0,
+                        "step": 1,
+                        "limit": 0
+                    }
+                }
+            }
+        ],
+        "arguments": [
+            {
+                "name": "key",
+                "type": "key",
+                "key_spec_index": 0
+            }
+        ]
+    },
+    "ZCOUNT": {
+        "summary": "Count the members in a sorted set with scores within the given values",
+        "complexity": "O(log(N)) with N being the number of elements in the sorted set.",
+        "group": "sorted_set",
+        "since": "2.0.0",
+        "arity": 4,
+        "function": "zcountCommand",
+        "command_flags": [
+            "readonly",
+            "fast"
+        ],
+        "acl_categories": [
+            "sortedset"
+        ],
+        "key_specs": [
+            {
+                "flags": [
+                    "read"
+                ],
+                "begin_search": {
+                    "index": {
+                        "pos": 1
+                    }
+                },
+                "find_keys": {
+                    "range": {
+                        "lastkey": 0,
+                        "step": 1,
+                        "limit": 0
+                    }
+                }
+            }
+        ],
+        "arguments": [
+            {
+                "name": "key",
+                "type": "key",
+                "key_spec_index": 0
+            },
+            {
+                "name": "min",
+                "type": "double"
+            },
+            {
+                "name": "max",
+                "type": "double"
+            }
+        ]
+    },
+    "ZDIFF": {
+        "summary": "Subtract multiple sorted sets",
+        "complexity": "O(L + (N-K)log(N)) worst case where L is the total number of elements in all the sets, N is the size of the first set, and K is the size of the result set.",
+        "group": "sorted_set",
+        "since": "6.2.0",
+        "arity": -3,
+        "function": "zdiffCommand",
+        "get_keys_function": "zunionInterDiffGetKeys",
+        "command_flags": [
+            "readonly"
+        ],
+        "acl_categories": [
+            "sortedset"
+        ],
+        "key_specs": [
+            {
+                "flags": [
+                    "read"
+                ],
+                "begin_search": {
+                    "index": {
+                        "pos": 1
+                    }
+                },
+                "find_keys": {
+                    "keynum": {
+                        "keynumidx": 0,
+                        "firstkey": 1,
+                        "step": 1
+                    }
+                }
+            }
+        ],
+        "arguments": [
+            {
+                "name": "numkeys",
+                "type": "integer"
+            },
+            {
+                "name": "key",
+                "type": "key",
+                "key_spec_index": 0,
+                "multiple": true
+            },
+            {
+                "name": "withscores",
+                "token": "WITHSCORES",
+                "type": "pure-token",
+                "optional": true
             }
         ]
     },
@@ -13257,57 +13490,6 @@
                 "type": "key",
                 "key_spec_index": 1,
                 "multiple": true
-            }
-        ]
-    },
-    "ZDIFF": {
-        "summary": "Subtract multiple sorted sets",
-        "complexity": "O(L + (N-K)log(N)) worst case where L is the total number of elements in all the sets, N is the size of the first set, and K is the size of the result set.",
-        "group": "sorted_set",
-        "since": "6.2.0",
-        "arity": -3,
-        "function": "zdiffCommand",
-        "get_keys_function": "zunionInterDiffGetKeys",
-        "command_flags": [
-            "readonly"
-        ],
-        "acl_categories": [
-            "sortedset"
-        ],
-        "key_specs": [
-            {
-                "flags": [
-                    "read"
-                ],
-                "begin_search": {
-                    "index": {
-                        "pos": 1
-                    }
-                },
-                "find_keys": {
-                    "keynum": {
-                        "keynumidx": 0,
-                        "firstkey": 1,
-                        "step": 1
-                    }
-                }
-            }
-        ],
-        "arguments": [
-            {
-                "name": "numkeys",
-                "type": "integer"
-            },
-            {
-                "name": "key",
-                "type": "key",
-                "key_spec_index": 0,
-                "multiple": true
-            },
-            {
-                "token": "WITHSCORES",
-                "type": "pure-token",
-                "optional": true
             }
         ]
     },
@@ -13419,20 +13601,24 @@
                 "optional": true,
                 "arguments": [
                     {
+                        "name": "sum",
                         "type": "pure-token",
                         "token": "SUM"
                     },
                     {
+                        "name": "min",
                         "type": "pure-token",
                         "token": "MIN"
                     },
                     {
+                        "name": "max",
                         "type": "pure-token",
                         "token": "MAX"
                     }
                 ]
             },
             {
+                "name": "withscores",
                 "token": "WITHSCORES",
                 "type": "pure-token",
                 "optional": true
@@ -13572,14 +13758,17 @@
                 "optional": true,
                 "arguments": [
                     {
+                        "name": "sum",
                         "type": "pure-token",
                         "token": "SUM"
                     },
                     {
+                        "name": "min",
                         "type": "pure-token",
                         "token": "MIN"
                     },
                     {
+                        "name": "max",
                         "type": "pure-token",
                         "token": "MAX"
                     }
@@ -13685,10 +13874,12 @@
                 "type": "oneof",
                 "arguments": [
                     {
+                        "name": "min",
                         "type": "pure-token",
                         "token": "MIN"
                     },
                     {
+                        "name": "max",
                         "type": "pure-token",
                         "token": "MAX"
                     }
@@ -13748,6 +13939,52 @@
             }
         ]
     },
+    "ZPOPMAX": {
+        "summary": "Remove and return members with the highest scores in a sorted set",
+        "complexity": "O(log(N)*M) with N being the number of elements in the sorted set, and M being the number of elements popped.",
+        "group": "sorted_set",
+        "since": "5.0.0",
+        "arity": -2,
+        "function": "zpopmaxCommand",
+        "command_flags": [
+            "write",
+            "fast"
+        ],
+        "acl_categories": [
+            "sortedset"
+        ],
+        "key_specs": [
+            {
+                "flags": [
+                    "write"
+                ],
+                "begin_search": {
+                    "index": {
+                        "pos": 1
+                    }
+                },
+                "find_keys": {
+                    "range": {
+                        "lastkey": 0,
+                        "step": 1,
+                        "limit": 0
+                    }
+                }
+            }
+        ],
+        "arguments": [
+            {
+                "name": "key",
+                "type": "key",
+                "key_spec_index": 0
+            },
+            {
+                "name": "count",
+                "type": "integer",
+                "optional": true
+            }
+        ]
+    },
     "ZPOPMIN": {
         "summary": "Remove and return members with the lowest scores in a sorted set",
         "complexity": "O(log(N)*M) with N being the number of elements in the sorted set, and M being the number of elements popped.",
@@ -13794,16 +14031,16 @@
             }
         ]
     },
-    "ZPOPMAX": {
-        "summary": "Remove and return members with the highest scores in a sorted set",
-        "complexity": "O(log(N)*M) with N being the number of elements in the sorted set, and M being the number of elements popped.",
+    "ZRANDMEMBER": {
+        "summary": "Get one or multiple random elements from a sorted set",
+        "complexity": "O(N) where N is the number of elements returned",
         "group": "sorted_set",
-        "since": "5.0.0",
+        "since": "6.2.0",
         "arity": -2,
-        "function": "zpopmaxCommand",
+        "function": "zrandmemberCommand",
         "command_flags": [
-            "write",
-            "fast"
+            "readonly",
+            "random"
         ],
         "acl_categories": [
             "sortedset"
@@ -13811,7 +14048,7 @@
         "key_specs": [
             {
                 "flags": [
-                    "write"
+                    "read"
                 ],
                 "begin_search": {
                     "index": {
@@ -13834,9 +14071,21 @@
                 "key_spec_index": 0
             },
             {
-                "name": "count",
-                "type": "integer",
-                "optional": true
+                "name": "options",
+                "type": "block",
+                "optional": true,
+                "arguments": [
+                    {
+                        "name": "count",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "withscores",
+                        "token": "WITHSCORES",
+                        "type": "pure-token",
+                        "optional": true
+                    }
+                ]
             }
         ]
     },
@@ -13898,16 +14147,19 @@
                 "optional": true,
                 "arguments": [
                     {
+                        "name": "byscore",
                         "type": "pure-token",
                         "token": "BYSCORE"
                     },
                     {
+                        "name": "bylex",
                         "type": "pure-token",
                         "token": "BYLEX"
                     }
                 ]
             },
             {
+                "name": "rev",
                 "token": "REV",
                 "type": "pure-token",
                 "optional": true
@@ -13929,66 +14181,10 @@
                 ]
             },
             {
+                "name": "withscores",
                 "token": "WITHSCORES",
                 "type": "pure-token",
                 "optional": true
-            }
-        ]
-    },
-    "ZRANDMEMBER": {
-        "summary": "Get one or multiple random elements from a sorted set",
-        "complexity": "O(N) where N is the number of elements returned",
-        "group": "sorted_set",
-        "since": "6.2.0",
-        "arity": -2,
-        "function": "zrandmemberCommand",
-        "command_flags": [
-            "readonly",
-            "random"
-        ],
-        "acl_categories": [
-            "sortedset"
-        ],
-        "key_specs": [
-            {
-                "flags": [
-                    "read"
-                ],
-                "begin_search": {
-                    "index": {
-                        "pos": 1
-                    }
-                },
-                "find_keys": {
-                    "range": {
-                        "lastkey": 0,
-                        "step": 1,
-                        "limit": 0
-                    }
-                }
-            }
-        ],
-        "arguments": [
-            {
-                "name": "key",
-                "type": "key",
-                "key_spec_index": 0
-            },
-            {
-                "name": "options",
-                "type": "block",
-                "optional": true,
-                "arguments": [
-                    {
-                        "name": "count",
-                        "type": "integer"
-                    },
-                    {
-                        "token": "WITHSCORES",
-                        "type": "pure-token",
-                        "optional": true
-                    }
-                ]
             }
         ]
     },
@@ -14042,6 +14238,81 @@
             {
                 "name": "max",
                 "type": "string"
+            },
+            {
+                "token": "LIMIT",
+                "name": "offset_count",
+                "type": "block",
+                "optional": true,
+                "arguments": [
+                    {
+                        "name": "offset",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "count",
+                        "type": "integer"
+                    }
+                ]
+            }
+        ]
+    },
+    "ZRANGEBYSCORE": {
+        "summary": "Return a range of members in a sorted set, by score",
+        "complexity": "O(log(N)+M) with N being the number of elements in the sorted set and M the number of elements being returned. If M is constant (e.g. always asking for the first 10 elements with LIMIT), you can consider it O(log(N)).",
+        "group": "sorted_set",
+        "since": "1.0.5",
+        "arity": -4,
+        "function": "zrangebyscoreCommand",
+        "deprecated_since": "6.2.0",
+        "replaced_by": "`ZRANGE` with the `BYSCORE` argument",
+        "doc_flags": [
+            "deprecated"
+        ],
+        "command_flags": [
+            "readonly"
+        ],
+        "acl_categories": [
+            "sortedset"
+        ],
+        "key_specs": [
+            {
+                "flags": [
+                    "read"
+                ],
+                "begin_search": {
+                    "index": {
+                        "pos": 1
+                    }
+                },
+                "find_keys": {
+                    "range": {
+                        "lastkey": 0,
+                        "step": 1,
+                        "limit": 0
+                    }
+                }
+            }
+        ],
+        "arguments": [
+            {
+                "name": "key",
+                "type": "key",
+                "key_spec_index": 0
+            },
+            {
+                "name": "min",
+                "type": "double"
+            },
+            {
+                "name": "max",
+                "type": "double"
+            },
+            {
+                "name": "withscores",
+                "token": "WITHSCORES",
+                "type": "pure-token",
+                "optional": true
             },
             {
                 "token": "LIMIT",
@@ -14136,91 +14407,20 @@
                 "optional": true,
                 "arguments": [
                     {
+                        "name": "byscore",
                         "type": "pure-token",
                         "token": "BYSCORE"
                     },
                     {
+                        "name": "bylex",
                         "type": "pure-token",
                         "token": "BYLEX"
                     }
                 ]
             },
             {
+                "name": "rev",
                 "token": "REV",
-                "type": "pure-token",
-                "optional": true
-            },
-            {
-                "token": "LIMIT",
-                "name": "offset_count",
-                "type": "block",
-                "optional": true,
-                "arguments": [
-                    {
-                        "name": "offset",
-                        "type": "integer"
-                    },
-                    {
-                        "name": "count",
-                        "type": "integer"
-                    }
-                ]
-            }
-        ]
-    },
-    "ZRANGEBYSCORE": {
-        "summary": "Return a range of members in a sorted set, by score",
-        "complexity": "O(log(N)+M) with N being the number of elements in the sorted set and M the number of elements being returned. If M is constant (e.g. always asking for the first 10 elements with LIMIT), you can consider it O(log(N)).",
-        "group": "sorted_set",
-        "since": "1.0.5",
-        "arity": -4,
-        "function": "zrangebyscoreCommand",
-        "deprecated_since": "6.2.0",
-        "replaced_by": "`ZRANGE` with the `BYSCORE` argument",
-        "doc_flags": [
-            "deprecated"
-        ],
-        "command_flags": [
-            "readonly"
-        ],
-        "acl_categories": [
-            "sortedset"
-        ],
-        "key_specs": [
-            {
-                "flags": [
-                    "read"
-                ],
-                "begin_search": {
-                    "index": {
-                        "pos": 1
-                    }
-                },
-                "find_keys": {
-                    "range": {
-                        "lastkey": 0,
-                        "step": 1,
-                        "limit": 0
-                    }
-                }
-            }
-        ],
-        "arguments": [
-            {
-                "name": "key",
-                "type": "key",
-                "key_spec_index": 0
-            },
-            {
-                "name": "min",
-                "type": "double"
-            },
-            {
-                "name": "max",
-                "type": "double"
-            },
-            {
-                "token": "WITHSCORES",
                 "type": "pure-token",
                 "optional": true
             },
@@ -14283,54 +14483,6 @@
             },
             {
                 "name": "member",
-                "type": "string"
-            }
-        ]
-    },
-    "ZREMRANGEBYLEX": {
-        "summary": "Remove all members in a sorted set between the given lexicographical range",
-        "complexity": "O(log(N)+M) with N being the number of elements in the sorted set and M the number of elements removed by the operation.",
-        "group": "sorted_set",
-        "since": "2.8.9",
-        "arity": 4,
-        "function": "zremrangebylexCommand",
-        "command_flags": [
-            "write"
-        ],
-        "acl_categories": [
-            "sortedset"
-        ],
-        "key_specs": [
-            {
-                "flags": [
-                    "write"
-                ],
-                "begin_search": {
-                    "index": {
-                        "pos": 1
-                    }
-                },
-                "find_keys": {
-                    "range": {
-                        "lastkey": 0,
-                        "step": 1,
-                        "limit": 0
-                    }
-                }
-            }
-        ],
-        "arguments": [
-            {
-                "name": "key",
-                "type": "key",
-                "key_spec_index": 0
-            },
-            {
-                "name": "min",
-                "type": "string"
-            },
-            {
-                "name": "max",
                 "type": "string"
             }
         ]
@@ -14435,6 +14587,54 @@
             }
         ]
     },
+    "ZREMRANGEBYLEX": {
+        "summary": "Remove all members in a sorted set between the given lexicographical range",
+        "complexity": "O(log(N)+M) with N being the number of elements in the sorted set and M the number of elements removed by the operation.",
+        "group": "sorted_set",
+        "since": "2.8.9",
+        "arity": 4,
+        "function": "zremrangebylexCommand",
+        "command_flags": [
+            "write"
+        ],
+        "acl_categories": [
+            "sortedset"
+        ],
+        "key_specs": [
+            {
+                "flags": [
+                    "write"
+                ],
+                "begin_search": {
+                    "index": {
+                        "pos": 1
+                    }
+                },
+                "find_keys": {
+                    "range": {
+                        "lastkey": 0,
+                        "step": 1,
+                        "limit": 0
+                    }
+                }
+            }
+        ],
+        "arguments": [
+            {
+                "name": "key",
+                "type": "key",
+                "key_spec_index": 0
+            },
+            {
+                "name": "min",
+                "type": "string"
+            },
+            {
+                "name": "max",
+                "type": "string"
+            }
+        ]
+    },
     "ZREMRANGEBYSCORE": {
         "summary": "Remove all members in a sorted set within the given scores",
         "complexity": "O(log(N)+M) with N being the number of elements in the sorted set and M the number of elements removed by the operation.",
@@ -14535,83 +14735,10 @@
                 "type": "integer"
             },
             {
+                "name": "withscores",
                 "token": "WITHSCORES",
                 "type": "pure-token",
                 "optional": true
-            }
-        ]
-    },
-    "ZREVRANGEBYSCORE": {
-        "summary": "Return a range of members in a sorted set, by score, with scores ordered from high to low",
-        "complexity": "O(log(N)+M) with N being the number of elements in the sorted set and M the number of elements being returned. If M is constant (e.g. always asking for the first 10 elements with LIMIT), you can consider it O(log(N)).",
-        "group": "sorted_set",
-        "since": "2.2.0",
-        "arity": -4,
-        "function": "zrevrangebyscoreCommand",
-        "deprecated_since": "6.2.0",
-        "replaced_by": "`ZRANGE` with the `REV` and `BYSCORE` arguments",
-        "doc_flags": [
-            "deprecated"
-        ],
-        "command_flags": [
-            "readonly"
-        ],
-        "acl_categories": [
-            "sortedset"
-        ],
-        "key_specs": [
-            {
-                "flags": [
-                    "read"
-                ],
-                "begin_search": {
-                    "index": {
-                        "pos": 1
-                    }
-                },
-                "find_keys": {
-                    "range": {
-                        "lastkey": 0,
-                        "step": 1,
-                        "limit": 0
-                    }
-                }
-            }
-        ],
-        "arguments": [
-            {
-                "name": "key",
-                "type": "key",
-                "key_spec_index": 0
-            },
-            {
-                "name": "max",
-                "type": "double"
-            },
-            {
-                "name": "min",
-                "type": "double"
-            },
-            {
-                "token": "WITHSCORES",
-                "type": "pure-token",
-                "optional": true
-            },
-            {
-                "token": "LIMIT",
-                "name": "offset_count",
-                "type": "block",
-                "optional": true,
-                "arguments": [
-                    {
-                        "name": "offset",
-                        "type": "integer"
-                    },
-                    {
-                        "name": "count",
-                        "type": "integer"
-                    }
-                ]
             }
         ]
     },
@@ -14684,16 +14811,20 @@
             }
         ]
     },
-    "ZREVRANK": {
-        "summary": "Determine the index of a member in a sorted set, with scores ordered from high to low",
-        "complexity": "O(log(N))",
+    "ZREVRANGEBYSCORE": {
+        "summary": "Return a range of members in a sorted set, by score, with scores ordered from high to low",
+        "complexity": "O(log(N)+M) with N being the number of elements in the sorted set and M the number of elements being returned. If M is constant (e.g. always asking for the first 10 elements with LIMIT), you can consider it O(log(N)).",
         "group": "sorted_set",
-        "since": "2.0.0",
-        "arity": 3,
-        "function": "zrevrankCommand",
+        "since": "2.2.0",
+        "arity": -4,
+        "function": "zrevrangebyscoreCommand",
+        "deprecated_since": "6.2.0",
+        "replaced_by": "`ZRANGE` with the `REV` and `BYSCORE` arguments",
+        "doc_flags": [
+            "deprecated"
+        ],
         "command_flags": [
-            "readonly",
-            "fast"
+            "readonly"
         ],
         "acl_categories": [
             "sortedset"
@@ -14724,18 +14855,44 @@
                 "key_spec_index": 0
             },
             {
-                "name": "member",
-                "type": "string"
+                "name": "max",
+                "type": "double"
+            },
+            {
+                "name": "min",
+                "type": "double"
+            },
+            {
+                "name": "withscores",
+                "token": "WITHSCORES",
+                "type": "pure-token",
+                "optional": true
+            },
+            {
+                "token": "LIMIT",
+                "name": "offset_count",
+                "type": "block",
+                "optional": true,
+                "arguments": [
+                    {
+                        "name": "offset",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "count",
+                        "type": "integer"
+                    }
+                ]
             }
         ]
     },
-    "ZSCORE": {
-        "summary": "Get the score associated with the given member in a sorted set",
-        "complexity": "O(1)",
+    "ZREVRANK": {
+        "summary": "Determine the index of a member in a sorted set, with scores ordered from high to low",
+        "complexity": "O(log(N))",
         "group": "sorted_set",
-        "since": "1.2.0",
+        "since": "2.0.0",
         "arity": 3,
-        "function": "zscoreCommand",
+        "function": "zrevrankCommand",
         "command_flags": [
             "readonly",
             "fast"
@@ -14832,23 +14989,72 @@
                 "optional": true,
                 "arguments": [
                     {
+                        "name": "sum",
                         "type": "pure-token",
                         "token": "SUM"
                     },
                     {
+                        "name": "min",
                         "type": "pure-token",
                         "token": "MIN"
                     },
                     {
+                        "name": "max",
                         "type": "pure-token",
                         "token": "MAX"
                     }
                 ]
             },
             {
+                "name": "withscores",
                 "token": "WITHSCORES",
                 "type": "pure-token",
                 "optional": true
+            }
+        ]
+    },
+    "ZSCORE": {
+        "summary": "Get the score associated with the given member in a sorted set",
+        "complexity": "O(1)",
+        "group": "sorted_set",
+        "since": "1.2.0",
+        "arity": 3,
+        "function": "zscoreCommand",
+        "command_flags": [
+            "readonly",
+            "fast"
+        ],
+        "acl_categories": [
+            "sortedset"
+        ],
+        "key_specs": [
+            {
+                "flags": [
+                    "read"
+                ],
+                "begin_search": {
+                    "index": {
+                        "pos": 1
+                    }
+                },
+                "find_keys": {
+                    "range": {
+                        "lastkey": 0,
+                        "step": 1,
+                        "limit": 0
+                    }
+                }
+            }
+        ],
+        "arguments": [
+            {
+                "name": "key",
+                "type": "key",
+                "key_spec_index": 0
+            },
+            {
+                "name": "member",
+                "type": "string"
             }
         ]
     },
@@ -14990,14 +15196,17 @@
                 "optional": true,
                 "arguments": [
                     {
+                        "name": "sum",
                         "type": "pure-token",
                         "token": "SUM"
                     },
                     {
+                        "name": "min",
                         "type": "pure-token",
                         "token": "MIN"
                     },
                     {
+                        "name": "max",
                         "type": "pure-token",
                         "token": "MAX"
                     }

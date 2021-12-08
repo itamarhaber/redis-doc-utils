@@ -57,18 +57,22 @@
                 "optional": true,
                 "arguments": [
                     {
+                        "name": "normal",
                         "type": "pure-token",
                         "token": "normal"
                     },
                     {
+                        "name": "master",
                         "type": "pure-token",
                         "token": "master"
                     },
                     {
+                        "name": "slave",
                         "type": "pure-token",
                         "token": "slave"
                     },
                     {
+                        "name": "pubsub",
                         "type": "pure-token",
                         "token": "pubsub"
                     }

@@ -48,11 +48,13 @@
                 "type": "string"
             },
             {
+                "name": "replace",
                 "token": "REPLACE",
                 "type": "pure-token",
                 "optional": true
             },
             {
+                "name": "absttl",
                 "token": "ABSTTL",
                 "type": "pure-token",
                 "optional": true

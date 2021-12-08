@@ -22,10 +22,12 @@
                 "type": "oneof",
                 "arguments": [
                     {
+                        "name": "on",
                         "type": "pure-token",
                         "token": "ON"
                     },
                     {
+                        "name": "off",
                         "type": "pure-token",
                         "token": "OFF"
                     }

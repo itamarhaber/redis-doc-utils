@@ -51,6 +51,7 @@
                         "type": "string"
                     },
                     {
+                        "name": "new_id",
                         "type": "pure-token",
                         "token": "$"
                     }

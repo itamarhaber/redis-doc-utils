@@ -28,6 +28,7 @@
                     },
                     {
                         "token": "FORCE",
+                        "name": "force",
                         "type": "pure-token",
                         "optional": true
                     }
@@ -35,6 +36,7 @@
             },
             {
                 "token": "ABORT",
+                "name": "abort",
                 "type": "pure-token",
                 "optional": true
             },

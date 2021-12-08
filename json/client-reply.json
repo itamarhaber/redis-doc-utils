@@ -21,14 +21,17 @@
                 "type": "oneof",
                 "arguments": [
                     {
+                        "name": "on",
                         "type": "pure-token",
                         "token": "ON"
                     },
                     {
+                        "name": "off",
                         "type": "pure-token",
                         "token": "OFF"
                     },
                     {
+                        "name": "skip",
                         "type": "pure-token",
                         "token": "SKIP"
                     }

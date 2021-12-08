@@ -19,10 +19,12 @@
                 "optional": true,
                 "arguments": [
                     {
+                        "name": "hard",
                         "type": "pure-token",
                         "token": "HARD"
                     },
                     {
+                        "name": "soft",
                         "type": "pure-token",
                         "token": "SOFT"
                     }

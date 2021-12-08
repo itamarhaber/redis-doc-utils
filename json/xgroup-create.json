@@ -52,6 +52,7 @@
                         "type": "string"
                     },
                     {
+                        "name": "new_id",
                         "type": "pure-token",
                         "token": "$"
                     }
@@ -59,6 +60,7 @@
             },
             {
                 "token": "MKSTREAM",
+                "name": "mkstream",
                 "type": "pure-token",
                 "optional": true
             }

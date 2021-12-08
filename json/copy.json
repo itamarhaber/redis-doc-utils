@@ -67,6 +67,7 @@
                 "optional": true
             },
             {
+                "name": "replace",
                 "token": "REPLACE",
                 "type": "pure-token",
                 "optional": true

@@ -43,11 +43,13 @@
                 "key_spec_index": 1
             },
             {
+                "name": "len",
                 "token": "LEN",
                 "type": "pure-token",
                 "optional": true
             },
             {
+                "name": "idx",
                 "token": "IDX",
                 "type": "pure-token",
                 "optional": true
@@ -59,6 +61,7 @@
                 "optional": true
             },
             {
+                "name": "withmatchlen",
                 "token": "WITHMATCHLEN",
                 "type": "pure-token",
                 "optional": true

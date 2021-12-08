@@ -53,10 +53,12 @@
                         "type": "oneof",
                         "arguments": [
                             {
+                                "name": "maxlen",
                                 "type": "pure-token",
                                 "token": "MAXLEN"
                             },
                             {
+                                "name": "minid",
                                 "type": "pure-token",
                                 "token": "MINID"
                             }
@@ -68,10 +70,12 @@
                         "optional": true,
                         "arguments": [
                             {
+                                "name": "equal",
                                 "type": "pure-token",
                                 "token": "="
                             },
                             {
+                                "name": "approximately",
                                 "type": "pure-token",
                                 "token": "~"
                             }

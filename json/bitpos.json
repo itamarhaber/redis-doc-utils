@@ -71,10 +71,12 @@
                                 "optional": true,
                                 "arguments": [
                                     {
+                                        "name": "byte",
                                         "type": "pure-token",
                                         "token": "BYTE"
                                     },
                                     {
+                                        "name": "bit",
                                         "type": "pure-token",
                                         "token": "BIT"
                                     }

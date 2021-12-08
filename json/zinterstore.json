@@ -80,14 +80,17 @@
                 "optional": true,
                 "arguments": [
                     {
+                        "name": "sum",
                         "type": "pure-token",
                         "token": "SUM"
                     },
                     {
+                        "name": "min",
                         "type": "pure-token",
                         "token": "MIN"
                     },
                     {
+                        "name": "max",
                         "type": "pure-token",
                         "token": "MAX"
                     }

@@ -76,16 +76,19 @@
                 "optional": true,
                 "arguments": [
                     {
+                        "name": "asc",
                         "type": "pure-token",
                         "token": "ASC"
                     },
                     {
+                        "name": "desc",
                         "type": "pure-token",
                         "token": "DESC"
                     }
                 ]
             },
             {
+                "name": "sorting",
                 "token": "ALPHA",
                 "type": "pure-token",
                 "optional": true

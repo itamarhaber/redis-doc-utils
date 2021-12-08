@@ -44,6 +44,7 @@
                 "multiple": true
             },
             {
+                "name": "withscores",
                 "token": "WITHSCORES",
                 "type": "pure-token",
                 "optional": true

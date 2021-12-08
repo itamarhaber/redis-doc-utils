@@ -37,10 +37,12 @@
                 "optional": true,
                 "arguments": [
                     {
+                        "name": "write",
                         "type": "pure-token",
                         "token": "WRITE"
                     },
                     {
+                        "name": "all",
                         "type": "pure-token",
                         "token": "ALL"
                     }

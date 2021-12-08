@@ -59,10 +59,12 @@
                 "optional": true,
                 "arguments": [
                     {
+                        "name": "nx",
                         "type": "pure-token",
                         "token": "NX"
                     },
                     {
+                        "name": "xx",
                         "type": "pure-token",
                         "token": "XX"
                     }
@@ -74,21 +76,25 @@
                 "optional": true,
                 "arguments": [
                     {
+                        "name": "gt",
                         "type": "pure-token",
                         "token": "GT"
                     },
                     {
+                        "name": "lt",
                         "type": "pure-token",
                         "token": "LT"
                     }
                 ]
             },
             {
+                "name": "change",
                 "token": "CH",
                 "type": "pure-token",
                 "optional": true
             },
             {
+                "name": "increment",
                 "token": "INCR",
                 "type": "pure-token",
                 "optional": true

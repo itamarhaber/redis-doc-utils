@@ -27,10 +27,12 @@
                 "optional": true,
                 "arguments": [
                     {
+                        "name": "async",
                         "type": "pure-token",
                         "token": "ASYNC"
                     },
                     {
+                        "name": "sync",
                         "type": "pure-token",
                         "token": "SYNC"
                     }

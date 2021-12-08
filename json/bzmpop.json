@@ -53,10 +53,12 @@
                 "type": "oneof",
                 "arguments": [
                     {
+                        "name": "min",
                         "type": "pure-token",
                         "token": "MIN"
                     },
                     {
+                        "name": "max",
                         "type": "pure-token",
                         "token": "MAX"
                     }

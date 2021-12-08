@@ -882,7 +882,7 @@ function convertArgFinal(arg) {
   if (arg.type === 'oneof' || arg.type === 'block') {
     arg.arguments = arg.value.map(x => convertArgFinal(x));
   } else {
-    arg.name = arg.value;
+    arg.name = arg.value || arg.name;
   }
   delete arg.value;
   return arg;

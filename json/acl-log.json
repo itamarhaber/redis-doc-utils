@@ -25,6 +25,7 @@
                         "type": "integer"
                     },
                     {
+                        "name": "reset",
                         "type": "pure-token",
                         "token": "RESET"
                     }

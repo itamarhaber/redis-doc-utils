@@ -43,10 +43,12 @@
                 "type": "oneof",
                 "arguments": [
                     {
+                        "name": "before",
                         "type": "pure-token",
                         "token": "BEFORE"
                     },
                     {
+                        "name": "after",
                         "type": "pure-token",
                         "token": "AFTER"
                     }

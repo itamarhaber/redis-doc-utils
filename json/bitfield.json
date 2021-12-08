@@ -101,14 +101,17 @@
                 "optional": true,
                 "arguments": [
                     {
+                        "name": "wrap",
                         "type": "pure-token",
                         "token": "WRAP"
                     },
                     {
+                        "name": "sat",
                         "type": "pure-token",
                         "token": "SAT"
                     },
                     {
+                        "name": "fail",
                         "type": "pure-token",
                         "token": "FAIL"
                     }

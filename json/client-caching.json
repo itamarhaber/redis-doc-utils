@@ -21,10 +21,12 @@
                 "type": "oneof",
                 "arguments": [
                     {
+                        "name": "yes",
                         "type": "pure-token",
                         "token": "YES"
                     },
                     {
+                        "name": "no",
                         "type": "pure-token",
                         "token": "NO"
                     }

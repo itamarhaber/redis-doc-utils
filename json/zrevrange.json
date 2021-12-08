@@ -51,6 +51,7 @@
                 "type": "integer"
             },
             {
+                "name": "withscores",
                 "token": "WITHSCORES",
                 "type": "pure-token",
                 "optional": true

@@ -66,10 +66,12 @@
                 "type": "oneof",
                 "arguments": [
                     {
+                        "name": "left",
                         "type": "pure-token",
                         "token": "LEFT"
                     },
                     {
+                        "name": "right",
                         "type": "pure-token",
                         "token": "RIGHT"
                     }
@@ -80,10 +82,12 @@
                 "type": "oneof",
                 "arguments": [
                     {
+                        "name": "left",
                         "type": "pure-token",
                         "token": "LEFT"
                     },
                     {
+                        "name": "right",
                         "type": "pure-token",
                         "token": "RIGHT"
                     }

@@ -21,10 +21,12 @@
                 "type": "oneof",
                 "arguments": [
                     {
+                        "name": "on",
                         "type": "pure-token",
                         "token": "ON"
                     },
                     {
+                        "name": "off",
                         "type": "pure-token",
                         "token": "OFF"
                     }
@@ -45,21 +47,25 @@
                 "multiple_token": true
             },
             {
+                "name": "BCAST",
                 "token": "BCAST",
                 "type": "pure-token",
                 "optional": true
             },
             {
+                "name": "OPTIN",
                 "token": "OPTIN",
                 "type": "pure-token",
                 "optional": true
             },
             {
+                "name": "OPTOUT",
                 "token": "OPTOUT",
                 "type": "pure-token",
                 "optional": true
             },
             {
+                "name": "NOLOOP",
                 "token": "NOLOOP",
                 "type": "pure-token",
                 "optional": true

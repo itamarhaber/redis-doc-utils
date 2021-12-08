@@ -19,10 +19,12 @@
                 "optional": true,
                 "arguments": [
                     {
+                        "name": "force",
                         "type": "pure-token",
                         "token": "FORCE"
                     },
                     {
+                        "name": "takeover",
                         "type": "pure-token",
                         "token": "TAKEOVER"
                     }

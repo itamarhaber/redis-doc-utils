@@ -52,6 +52,7 @@
             },
             {
                 "token": "NOMKSTREAM",
+                "name": "nomkstream",
                 "type": "pure-token",
                 "optional": true,
                 "since": "6.2"
@@ -66,10 +67,12 @@
                         "type": "oneof",
                         "arguments": [
                             {
+                                "name": "maxlen",
                                 "type": "pure-token",
                                 "token": "MAXLEN"
                             },
                             {
+                                "name": "minid",
                                 "type": "pure-token",
                                 "token": "MINID",
                                 "since": "6.2"
@@ -82,10 +85,12 @@
                         "optional": true,
                         "arguments": [
                             {
+                                "name": "equal",
                                 "type": "pure-token",
                                 "token": "="
                             },
                             {
+                                "name": "approximately",
                                 "type": "pure-token",
                                 "token": "~"
                             }
@@ -109,6 +114,7 @@
                 "type": "oneof",
                 "arguments": [
                     {
+                        "name": "auto_id",
                         "type": "pure-token",
                         "token": "*"
                     },

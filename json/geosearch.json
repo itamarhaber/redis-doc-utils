@@ -74,18 +74,22 @@
                         "type": "oneof",
                         "arguments": [
                             {
+                                "name": "m",
                                 "type": "pure-token",
                                 "token": "m"
                             },
                             {
+                                "name": "km",
                                 "type": "pure-token",
                                 "token": "km"
                             },
                             {
+                                "name": "ft",
                                 "type": "pure-token",
                                 "token": "ft"
                             },
                             {
+                                "name": "mi",
                                 "type": "pure-token",
                                 "token": "mi"
                             }
@@ -112,18 +116,22 @@
                         "type": "oneof",
                         "arguments": [
                             {
+                                "name": "m",
                                 "type": "pure-token",
                                 "token": "m"
                             },
                             {
+                                "name": "km",
                                 "type": "pure-token",
                                 "token": "km"
                             },
                             {
+                                "name": "ft",
                                 "type": "pure-token",
                                 "token": "ft"
                             },
                             {
+                                "name": "mi",
                                 "type": "pure-token",
                                 "token": "mi"
                             }
@@ -137,10 +145,12 @@
                 "optional": true,
                 "arguments": [
                     {
+                        "name": "asc",
                         "type": "pure-token",
                         "token": "ASC"
                     },
                     {
+                        "name": "desc",
                         "type": "pure-token",
                         "token": "DESC"
                     }
@@ -157,6 +167,7 @@
                         "type": "integer"
                     },
                     {
+                        "name": "any",
                         "token": "ANY",
                         "type": "pure-token",
                         "optional": true
@@ -164,16 +175,19 @@
                 ]
             },
             {
+                "name": "withcoord",
                 "token": "WITHCOORD",
                 "type": "pure-token",
                 "optional": true
             },
             {
+                "name": "withdist",
                 "token": "WITHDIST",
                 "type": "pure-token",
                 "optional": true
             },
             {
+                "name": "withhash",
                 "token": "WITHHASH",
                 "type": "pure-token",
                 "optional": true

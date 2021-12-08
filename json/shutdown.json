@@ -20,10 +20,12 @@
                 "optional": true,
                 "arguments": [
                     {
+                        "name": "nosave",
                         "type": "pure-token",
                         "token": "NOSAVE"
                     },
                     {
+                        "name": "save",
                         "type": "pure-token",
                         "token": "SAVE"
                     }

@@ -18,6 +18,7 @@
         ],
         "arguments": [
             {
+                "name": "schedule",
                 "token": "SCHEDULE",
                 "type": "pure-token",
                 "optional": true
