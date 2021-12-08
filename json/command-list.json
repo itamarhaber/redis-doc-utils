@@ -3,7 +3,7 @@
         "summary": "PATCH__TBD__76__",
         "complexity": "PATCH__TBD__75__",
         "group": "server",
-        "since": "PATCH__TBD__77__",
+        "since": "7.0",
         "arity": -2,
         "container": "COMMAND",
         "function": "commandListCommand",
@@ -17,36 +17,26 @@
         "arguments": [
             {
                 "name": "filterby",
-                "type": "block",
+                "token": "FILTERBY",
+                "type": "oneof",
                 "value": [
                     {
-                        "token": "FILTERBY",
-                        "name": "filterby",
-                        "type": "pure-token"
+                        "name": "module",
+                        "type": "string",
+                        "value": "module-name",
+                        "token": "MODULE"
                     },
                     {
-                        "name": "filter",
-                        "type": "oneof",
-                        "value": [
-                            {
-                                "name": "module",
-                                "type": "integer",
-                                "value": "module-name",
-                                "token": "MODULE"
-                            },
-                            {
-                                "name": "aclcat",
-                                "type": "integer",
-                                "value": "category",
-                                "token": "ACLCAT"
-                            },
-                            {
-                                "name": "pattern",
-                                "type": "integer",
-                                "value": "pattern",
-                                "token": "PATTERN"
-                            }
-                        ]
+                        "name": "aclcat",
+                        "type": "string",
+                        "value": "category",
+                        "token": "ACLCAT"
+                    },
+                    {
+                        "name": "pattern",
+                        "type": "pattern",
+                        "value": "pattern",
+                        "token": "PATTERN"
                     }
                 ],
                 "optional": true

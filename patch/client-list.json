@@ -1,3 +1,48 @@
 {
-  "CLIENT LIST": {}
+  "CLIENT LIST": {
+    "arguments": [
+      {
+        "token": "TYPE",
+        "name": "normal_master_replica_pubsub",
+        "type": "oneof",
+        "value": [
+          {
+            "name": "normal",
+            "type": "pure-token",
+            "token": "normal"
+          },
+          {
+            "name": "master",
+            "type": "pure-token",
+            "token": "master"
+          },
+          {
+            "name": "replica",
+            "type": "pure-token",
+            "token": "replica"
+          },
+          {
+            "name": "pubsub",
+            "type": "pure-token",
+            "token": "pubsub"
+          }
+        ],
+        "optional": true
+      },
+      {
+        "name": "id",
+        "token": "ID",
+        "type": "block",
+        "value": [
+          {
+            "name": "client-id",
+            "type": "integer",
+            "value": "client-id",
+            "multiple": true
+          }
+        ],
+        "optional": true
+      }
+    ]
+  }
 }

@@ -2,6 +2,34 @@
   "COMMAND LIST": {
     "summary": "PATCH__TBD__76__",
     "complexity": "PATCH__TBD__75__",
-    "since": "PATCH__TBD__77__"
+    "since": "7.0",
+    "arguments": [
+      {
+        "name": "filterby",
+        "token": "FILTERBY",
+        "type": "oneof",
+        "value": [
+          {
+            "name": "module",
+            "type": "string",
+            "value": "module-name",
+            "token": "MODULE"
+          },
+          {
+            "name": "aclcat",
+            "type": "string",
+            "value": "category",
+            "token": "ACLCAT"
+          },
+          {
+            "name": "pattern",
+            "type": "pattern",
+            "value": "pattern",
+            "token": "PATTERN"
+          }
+        ],
+        "optional": true
+      }
+    ]
   }
 }

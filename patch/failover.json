@@ -1,5 +1,44 @@
 {
   "FAILOVER": {
-    "complexity": "PATCH__TBD__69__"
+    "complexity": "PATCH__TBD__69__",
+    "arguments": [
+      {
+        "name": "target",
+        "token": "TO",
+        "type": "block",
+        "value": [
+          {
+            "name": "host",
+            "type": "string",
+            "value": "host"
+          },
+          {
+            "name": "port",
+            "type": "integer",
+            "value": "port"
+          },
+          {
+            "token": "FORCE",
+            "name": "force",
+            "type": "pure-token",
+            "optional": true
+          }
+        ],
+        "optional": true
+      },
+      {
+        "token": "ABORT",
+        "name": "abort",
+        "type": "pure-token",
+        "optional": true
+      },
+      {
+        "token": "TIMEOUT",
+        "name": "milliseconds",
+        "type": "integer",
+        "value": "milliseconds",
+        "optional": true
+      }
+    ]
   }
 }
