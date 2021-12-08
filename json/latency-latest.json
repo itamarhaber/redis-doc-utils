@@ -1,7 +1,6 @@
 {
     "LATEST": {
         "summary": "Return the latest latency samples for all events.",
-        "complexity": "__TBD__46__",
         "group": "server",
         "since": "2.8.13",
         "arity": 2,

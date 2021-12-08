@@ -1,7 +1,6 @@
 {
     "PING": {
         "summary": "Ping the server",
-        "complexity": "__TBD__29__",
         "group": "connection",
         "since": "1.0.0",
         "arity": -1,

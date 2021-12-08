@@ -1,7 +1,6 @@
 {
     "PURGE": {
         "summary": "Ask the allocator to release memory",
-        "complexity": "__TBD__34__",
         "group": "server",
         "since": "4.0.0",
         "arity": 2,

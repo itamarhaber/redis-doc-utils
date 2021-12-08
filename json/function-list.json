@@ -1,7 +1,5 @@
 {
     "LIST": {
-        "summary": "__TBD__22__",
-        "complexity": "__TBD__21__",
         "group": "scripting",
         "since": "7.0.0",
         "arity": 2,

@@ -1,7 +1,5 @@
 {
     "DELETE": {
-        "summary": "__TBD__20__",
-        "complexity": "__TBD__19__",
         "group": "scripting",
         "since": "7.0.0",
         "arity": 3,

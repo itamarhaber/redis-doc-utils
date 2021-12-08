@@ -599,12 +599,12 @@ async function persistCommand(cmd) {
     } else if (kname === 'HELP') {
       complexity = 'O(1)';
     } else {
-      complexity = getTbdStr();
+      complexity = undefined;
     }
   }
 
   s[kname] = {
-    summary: cmd[kname].summary || getTbdStr(),
+    summary: cmd[kname].summary,
     complexity: complexity,
     group: cmd[kname].group || getTbdStr(),
     since: cmd[kname].since || getTbdStr(),
@@ -901,17 +901,21 @@ function convertCmdArgsFinal(cmd) {
 
 function removeTBDs(cmd) {
   const kname = getCommandName(cmd);
-  if (cmd[kname].complexity !== undefined && cmd[kname].complexity.startsWith('PATCH__TBD')) {
-    delete cmd[kname].complexity;
+  if (kname == "DEBUG") {
+    console.log('')
   }
-  if (cmd[kname].summary !== undefined && cmd[kname].summary.startsWith('PATCH__TBD')) {
-    delete cmd[kname].summary;
+  if (cmd[kname].complexity !== undefined && (cmd[kname].complexity.startsWith('PATCH') || cmd[kname].complexity.startsWith('__'))) {
+    cmd[kname].complexity = undefined;
+  }
+  if (cmd[kname].summary !== undefined && (cmd[kname].summary.startsWith('PATCH') || cmd[kname].summary.startsWith('__'))) {
+    cmd[kname].summary = undefined;
   }
   if (cmd[kname].subcommands !== undefined) {
     cmd[kname].subcommands = cmd[kname].subcommands.map(x => removeTBDs(x));
   }
   return cmd;
 }
+
 async function main() {
   const client = createClient();
   client.on('error', (err) => console.error('-ERR Redis client error', err));
@@ -950,11 +954,11 @@ async function main() {
   console.log('Applying post patch');
   commands = postPatch(commands);
 
-  console.log('Converting args one final time :)');
-  commands = commands.map(x => convertCmdArgsFinal(x));
-
   console.log('Removing TBDs');
   commands = commands.map(x => removeTBDs(x));
+
+  console.log('Converting args one final time :)');
+  commands = commands.map(x => convertCmdArgsFinal(x));
 
   console.log('Persisting files');
   await Promise.all(Object.values(commands).map(async (cmd) => {

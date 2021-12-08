@@ -1,7 +1,6 @@
 {
     "SET": {
         "summary": "Set configuration parameters to the given values",
-        "complexity": "__TBD__57__",
         "group": "server",
         "since": "2.0.0",
         "arity": -4,

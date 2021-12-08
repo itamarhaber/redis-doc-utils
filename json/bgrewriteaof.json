@@ -1,7 +1,6 @@
 {
     "BGREWRITEAOF": {
         "summary": "Asynchronously rewrite the append-only file",
-        "complexity": "__TBD__39__",
         "group": "server",
         "since": "1.0.0",
         "arity": 1,

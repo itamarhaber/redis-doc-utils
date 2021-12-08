@@ -1,7 +1,5 @@
 {
     "LIST": {
-        "summary": "__TBD__60__",
-        "complexity": "__TBD__59__",
         "group": "server",
         "since": "7.0",
         "arity": -2,

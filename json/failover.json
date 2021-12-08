@@ -1,7 +1,6 @@
 {
     "FAILOVER": {
         "summary": "Start a coordinated failover between this server and one of its replicas.",
-        "complexity": "__TBD__30__",
         "group": "server",
         "since": "6.2.0",
         "arity": -1,

@@ -1,7 +1,5 @@
 {
     "CREATE": {
-        "summary": "__TBD__16__",
-        "complexity": "__TBD__15__",
         "group": "scripting",
         "since": "7.0.0",
         "arity": -5,

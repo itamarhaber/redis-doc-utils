@@ -1,7 +1,6 @@
 {
     "GRAPH": {
         "summary": "Return a latency graph for the event.",
-        "complexity": "__TBD__48__",
         "group": "server",
         "since": "2.8.13",
         "arity": 3,

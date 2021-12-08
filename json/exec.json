@@ -1,7 +1,6 @@
 {
     "EXEC": {
         "summary": "Execute all commands issued after MULTI",
-        "complexity": "__TBD__54__",
         "group": "transactions",
         "since": "1.2.0",
         "arity": 1,

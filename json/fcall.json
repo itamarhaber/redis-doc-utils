@@ -1,7 +1,5 @@
 {
     "FCALL": {
-        "summary": "__TBD__25__",
-        "complexity": "__TBD__24__",
         "group": "scripting",
         "since": "7.0.0",
         "arity": -3,

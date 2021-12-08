@@ -1,7 +1,6 @@
 {
     "MALLOC-STATS": {
         "summary": "Show allocator internal stats",
-        "complexity": "__TBD__37__",
         "group": "server",
         "since": "4.0.0",
         "arity": 2,

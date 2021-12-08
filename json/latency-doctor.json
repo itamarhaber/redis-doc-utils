@@ -1,7 +1,6 @@
 {
     "DOCTOR": {
         "summary": "Return a human readable latency analysis report.",
-        "complexity": "__TBD__47__",
         "group": "server",
         "since": "2.8.13",
         "arity": 2,

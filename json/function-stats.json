@@ -1,7 +1,5 @@
 {
     "STATS": {
-        "summary": "__TBD__18__",
-        "complexity": "__TBD__17__",
         "group": "scripting",
         "since": "7.0.0",
         "arity": 2,
