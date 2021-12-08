@@ -42,28 +42,24 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key",
                 "key_spec_index": 0
             },
             {
                 "name": "condition",
                 "type": "oneof",
-                "value": [
+                "optional": true,
+                "arguments": [
                     {
-                        "name": "nx",
                         "type": "pure-token",
                         "token": "NX"
                     },
                     {
-                        "name": "xx",
                         "type": "pure-token",
                         "token": "XX"
                     }
-                ],
-                "optional": true
+                ]
             },
             {
-                "name": "change",
                 "token": "CH",
                 "type": "pure-token",
                 "optional": true
@@ -71,24 +67,21 @@
             {
                 "name": "longitude_latitude_member",
                 "type": "block",
-                "value": [
+                "multiple": true,
+                "arguments": [
                     {
                         "name": "longitude",
-                        "type": "double",
-                        "value": "longitude"
+                        "type": "double"
                     },
                     {
                         "name": "latitude",
-                        "type": "double",
-                        "value": "latitude"
+                        "type": "double"
                     },
                     {
                         "name": "member",
-                        "type": "string",
-                        "value": "member"
+                        "type": "string"
                     }
-                ],
-                "multiple": true
+                ]
             }
         ]
     }

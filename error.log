@@ -51,8 +51,8 @@
 -ERR no commands.json entry for MEMORY
 -ERR no commands.json entry for MODULE
 -ERR no commands.json entry for ACL
--ERR while reading georadiusbymember_ro.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/georadiusbymember_ro.md'
 -ERR while reading config.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/config.md'
+-ERR while reading georadiusbymember_ro.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/georadiusbymember_ro.md'
 -ERR while reading slowlog.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/slowlog.md'
 -ERR while reading debug.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/debug.md'
 -ERR while reading client.md: Error: ENOENT: no such file or directory, open '../redis-doc/commands/client.md'
@@ -115,12 +115,12 @@
 -ERR no return types for PERSIST: "@integer-reply, specifically:\n\n* `1` if the timeout was removed.\n* `0` if `key` does not exist or does not have an associated timeout."
 -ERR no return types for PSYNC: "**Non standard return value**, a bulk transfer of the data followed by `PING` and write requests from the master."
 -ERR no return types for MSETNX: "@integer-reply, specifically:\n\n* `1` if the all the keys were set.\n* `0` if no key was set (at least one key already existed)."
--ERR no return types for HRANDFIELD: "@bulk-string-reply: without the additional `count` argument, the command returns a Bulk Reply with the randomly selected field, or `nil` when `key` does not exist.\n\n@array-reply: when the additional `count` argument is passed, the command returns an array of fields, or an empty array when `key` does not exist.\nIf the `WITHVALUES` modifier is used, the reply is a list fields and their values from the hash."
 -ERR no return types for SETNX: "@integer-reply, specifically:\n\n* `1` if the key was set\n* `0` if the key was not set"
+-ERR no return types for HRANDFIELD: "@bulk-string-reply: without the additional `count` argument, the command returns a Bulk Reply with the randomly selected field, or `nil` when `key` does not exist.\n\n@array-reply: when the additional `count` argument is passed, the command returns an array of fields, or an empty array when `key` does not exist.\nIf the `WITHVALUES` modifier is used, the reply is a list fields and their values from the hash."
 -ERR no return types for SISMEMBER: "@integer-reply, specifically:\n\n* `1` if the element is a member of the set.\n* `0` if the element is not a member of the set, or if `key` does not exist."
 -ERR no return types for SSCAN: ""
--ERR no return types for XACK: "@integer-reply, specifically:\n\nThe command returns the number of messages successfully acknowledged.\nCertain message IDs may no longer be part of the PEL (for example because\nthey have already been acknowledged), and XACK will not count them as\nsuccessfully acknowledged."
 -ERR no return types for SRANDMEMBER: "@bulk-string-reply: without the additional `count` argument, the command returns a Bulk Reply with the randomly selected element, or `nil` when `key` does not exist.\n\n@array-reply: when the additional `count` argument is passed, the command returns an array of elements, or an empty array when `key` does not exist."
+-ERR no return types for XACK: "@integer-reply, specifically:\n\nThe command returns the number of messages successfully acknowledged.\nCertain message IDs may no longer be part of the PEL (for example because\nthey have already been acknowledged), and XACK will not count them as\nsuccessfully acknowledged."
 -ERR no return types for ZRANDMEMBER: "@bulk-string-reply: without the additional `count` argument, the command returns a Bulk Reply with the randomly selected element, or `nil` when `key` does not exist.\n\n@array-reply: when the additional `count` argument is passed, the command returns an array of elements, or an empty array when `key` does not exist.\nIf the `WITHSCORES` modifier is used, the reply is a list elements and their scores from the sorted set."
 -ERR no return types for SMOVE: "@integer-reply, specifically:\n\n* `1` if the element is moved.\n* `0` if the element is not a member of `source` and no operation was performed."
 -ERR no return types for LPOS: "The command returns the integer representing the matching element, or `nil` if there is no match. However, if the `COUNT` option is given the command returns an array (empty if there are no matches)."
@@ -129,8 +129,8 @@
 -ERR no return types for SCAN: ""
 -ERR no return types for XCLAIM: "@array-reply, specifically:\n\nThe command returns all the messages successfully claimed, in the same format\nas `XRANGE`. However if the `JUSTID` option was specified, only the message\nIDs are reported, without including the actual message."
 -ERR no return types for PEXPIREAT: "@integer-reply, specifically:\n\n* `1` if the timeout was set.\n* `0` if the timeout was not set. e.g. key doesn't exist, or operation skipped due to the provided arguments."
--ERR no return types for XAUTOCLAIM: "@array-reply, specifically:\n\nAn array with two elements:\n\n1. The first element is a stream ID to be used as the `<start>` argument for the next call to `XAUTOCLAIM`\n2. The second element is an array containing all the successfully claimed messages in the same format as `XRANGE`."
 -ERR no return types for LOLWUT: "@bulk-string-reply (or verbatim reply when using the RESP3 protocol): the string containing the generative computer art, and a text with the Redis version."
+-ERR no return types for XAUTOCLAIM: "@array-reply, specifically:\n\nAn array with two elements:\n\n1. The first element is a stream ID to be used as the `<start>` argument for the next call to `XAUTOCLAIM`\n2. The second element is an array containing all the successfully claimed messages in the same format as `XRANGE`."
 -ERR no return types for HSETNX: "@integer-reply, specifically:\n\n* `1` if `field` is a new field in the hash and `value` was set.\n* `0` if `field` already exists in the hash and no operation was performed."
 -ERR no return types for GEOHASH: "@array-reply, specifically:\n\nThe command returns an array where each element is the Geohash corresponding to\neach member name passed as argument to the command."
 -ERR no return types for PSUBSCRIBE: ""
@@ -142,8 +142,8 @@
 -ERR no return types for TIME: "@array-reply, specifically:\n\nA multi bulk reply containing two elements:\n\n* unix time in seconds.\n* microseconds."
 -ERR no return types for PEXPIRE: "@integer-reply, specifically:\n\n* `1` if the timeout was set.\n* `0` if the timeout was not set. e.g. key doesn't exist, or operation skipped due to the provided arguments."
 -ERR no return types for XPENDING: "@array-reply, specifically:\n\nThe command returns data in different format depending on the way it is\ncalled, as previously explained in this page. However the reply is always\nan array of items."
--ERR no return types for ZREM: "@integer-reply, specifically:\n\n* The number of members removed from the sorted set, not including non existing\n  members."
 -ERR no return types for EVAL_RO: ""
+-ERR no return types for ZREM: "@integer-reply, specifically:\n\n* The number of members removed from the sorted set, not including non existing\n  members."
 -ERR no return types for UNSUBSCRIBE: ""
 -ERR no return types for ZREVRANK: "* If `member` exists in the sorted set, @integer-reply: the rank of `member`.\n* If `member` does not exist in the sorted set or `key` does not exist,\n  @bulk-string-reply: `nil`."
 -ERR no return types for GEOPOS: "@array-reply, specifically:\n\nThe command returns an array where each element is a two elements array\nrepresenting longitude and latitude (x,y) of each member name passed as\nargument to the command.\n\nNon existing elements are reported as NULL elements of the array."

@@ -52,39 +52,34 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key",
                 "key_spec_index": 0
             },
             {
                 "token": "BY",
                 "name": "pattern",
                 "type": "pattern",
-                "value": "pattern",
                 "optional": true
             },
             {
                 "token": "LIMIT",
                 "name": "offset_count",
                 "type": "block",
-                "value": [
+                "optional": true,
+                "arguments": [
                     {
                         "name": "offset",
-                        "type": "integer",
-                        "value": "offset"
+                        "type": "integer"
                     },
                     {
                         "name": "count",
-                        "type": "integer",
-                        "value": "count"
+                        "type": "integer"
                     }
-                ],
-                "optional": true
+                ]
             },
             {
                 "token": "GET",
                 "name": "pattern",
                 "type": "string",
-                "value": "pattern",
                 "optional": true,
                 "multiple": true,
                 "multiple_token": true
@@ -92,22 +87,19 @@
             {
                 "name": "order",
                 "type": "oneof",
-                "value": [
+                "optional": true,
+                "arguments": [
                     {
-                        "name": "asc",
                         "type": "pure-token",
                         "token": "ASC"
                     },
                     {
-                        "name": "desc",
                         "type": "pure-token",
                         "token": "DESC"
                     }
-                ],
-                "optional": true
+                ]
             },
             {
-                "name": "sorting",
                 "token": "ALPHA",
                 "type": "pure-token",
                 "optional": true
@@ -116,7 +108,6 @@
                 "token": "STORE",
                 "name": "destination",
                 "type": "key",
-                "value": "destination",
                 "key_spec_index": 1,
                 "optional": true
             }

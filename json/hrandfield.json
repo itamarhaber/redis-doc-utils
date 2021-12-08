@@ -36,26 +36,23 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key",
                 "key_spec_index": 0
             },
             {
                 "name": "options",
                 "type": "block",
-                "value": [
+                "optional": true,
+                "arguments": [
                     {
                         "name": "count",
-                        "type": "integer",
-                        "value": "count"
+                        "type": "integer"
                     },
                     {
-                        "name": "withvalues",
                         "token": "WITHVALUES",
                         "type": "pure-token",
                         "optional": true
                     }
-                ],
-                "optional": true
+                ]
             }
         ]
     }

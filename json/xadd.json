@@ -48,12 +48,10 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key",
                 "key_spec_index": 0
             },
             {
                 "token": "NOMKSTREAM",
-                "name": "nomkstream",
                 "type": "pure-token",
                 "optional": true,
                 "since": "6.2"
@@ -61,18 +59,17 @@
             {
                 "name": "trim",
                 "type": "block",
-                "value": [
+                "optional": true,
+                "arguments": [
                     {
                         "name": "strategy",
                         "type": "oneof",
-                        "value": [
+                        "arguments": [
                             {
-                                "name": "maxlen",
                                 "type": "pure-token",
                                 "token": "MAXLEN"
                             },
                             {
-                                "name": "minid",
                                 "type": "pure-token",
                                 "token": "MINID",
                                 "since": "6.2"
@@ -82,68 +79,59 @@
                     {
                         "name": "operator",
                         "type": "oneof",
-                        "value": [
+                        "optional": true,
+                        "arguments": [
                             {
-                                "name": "equal",
                                 "type": "pure-token",
                                 "token": "="
                             },
                             {
-                                "name": "approximately",
                                 "type": "pure-token",
                                 "token": "~"
                             }
-                        ],
-                        "optional": true
+                        ]
                     },
                     {
                         "name": "threshold",
-                        "type": "string",
-                        "value": "threshold"
+                        "type": "string"
                     },
                     {
                         "token": "LIMIT",
                         "name": "count",
                         "type": "integer",
-                        "value": "count",
                         "optional": true,
                         "since": "6.2"
                     }
-                ],
-                "optional": true
+                ]
             },
             {
                 "name": "id_or_auto",
                 "type": "oneof",
-                "value": [
+                "arguments": [
                     {
-                        "name": "auto_id",
                         "type": "pure-token",
                         "token": "*"
                     },
                     {
-                        "name": "id",
-                        "type": "string",
-                        "value": "ID"
+                        "name": "ID",
+                        "type": "string"
                     }
                 ]
             },
             {
                 "name": "field_value",
                 "type": "block",
-                "value": [
+                "multiple": true,
+                "arguments": [
                     {
                         "name": "field",
-                        "type": "string",
-                        "value": "field"
+                        "type": "string"
                     },
                     {
                         "name": "value",
-                        "type": "string",
-                        "value": "value"
+                        "type": "string"
                     }
-                ],
-                "multiple": true
+                ]
             }
         ]
     }

@@ -53,24 +53,20 @@
             {
                 "name": "source",
                 "type": "key",
-                "value": "source",
                 "key_spec_index": 0
             },
             {
                 "name": "destination",
                 "type": "key",
-                "value": "destination",
                 "key_spec_index": 1
             },
             {
                 "token": "DB",
                 "name": "destination-db",
                 "type": "integer",
-                "value": "destination-db",
                 "optional": true
             },
             {
-                "name": "replace",
                 "token": "REPLACE",
                 "type": "pure-token",
                 "optional": true

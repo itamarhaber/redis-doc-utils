@@ -51,51 +51,44 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key",
                 "key_spec_index": 0
             },
             {
                 "name": "condition",
                 "type": "oneof",
-                "value": [
+                "optional": true,
+                "arguments": [
                     {
-                        "name": "nx",
                         "type": "pure-token",
                         "token": "NX"
                     },
                     {
-                        "name": "xx",
                         "type": "pure-token",
                         "token": "XX"
                     }
-                ],
-                "optional": true
+                ]
             },
             {
                 "name": "comparison",
                 "type": "oneof",
-                "value": [
+                "optional": true,
+                "arguments": [
                     {
-                        "name": "gt",
                         "type": "pure-token",
                         "token": "GT"
                     },
                     {
-                        "name": "lt",
                         "type": "pure-token",
                         "token": "LT"
                     }
-                ],
-                "optional": true
+                ]
             },
             {
-                "name": "change",
                 "token": "CH",
                 "type": "pure-token",
                 "optional": true
             },
             {
-                "name": "increment",
                 "token": "INCR",
                 "type": "pure-token",
                 "optional": true
@@ -103,19 +96,17 @@
             {
                 "name": "score_member",
                 "type": "block",
-                "value": [
+                "multiple": true,
+                "arguments": [
                     {
                         "name": "score",
-                        "type": "double",
-                        "value": "score"
+                        "type": "double"
                     },
                     {
                         "name": "member",
-                        "type": "string",
-                        "value": "member"
+                        "type": "string"
                     }
-                ],
-                "multiple": true
+                ]
             }
         ]
     }

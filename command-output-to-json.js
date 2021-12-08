@@ -878,6 +878,25 @@ function postPatch(cmds) {
   return cmds;
 }
 
+function convertArgFinal(arg) {
+  if (arg.type === 'oneof' || arg.type === 'block') {
+    arg.arguments = arg.value.map(x => convertArgFinal(x));
+  } else {
+    arg.name = arg.value;
+  }
+  delete arg.value;
+  return arg;
+}
+
+function convertCmdArgsFinal(cmd) {
+  const kname = getCommandName(cmd);
+  const name = getCommandNameFromObj(cmd);
+  if (cmd[kname].arguments !== undefined) {
+    cmd[kname].arguments = cmd[kname].arguments.map(x => convertArgFinal(x));
+  }
+  return cmd;
+}
+
 async function main() {
   const client = createClient();
   client.on('error', (err) => console.error('-ERR Redis client error', err));
@@ -915,6 +934,9 @@ async function main() {
 
   console.log('Applying post patch');
   commands = postPatch(commands);
+
+  console.log('Converting args one final time :)');
+  commands = commands.map(x => convertCmdArgsFinal(x));
 
   console.log('Persisting files');
   await Promise.all(Object.values(commands).map(async (cmd) => {

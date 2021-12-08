@@ -40,21 +40,17 @@
             {
                 "name": "key",
                 "type": "key",
-                "value": "key",
                 "key_spec_index": 0
             },
             {
                 "name": "max",
-                "type": "double",
-                "value": "max"
+                "type": "double"
             },
             {
                 "name": "min",
-                "type": "double",
-                "value": "min"
+                "type": "double"
             },
             {
-                "name": "withscores",
                 "token": "WITHSCORES",
                 "type": "pure-token",
                 "optional": true
@@ -63,19 +59,17 @@
                 "token": "LIMIT",
                 "name": "offset_count",
                 "type": "block",
-                "value": [
+                "optional": true,
+                "arguments": [
                     {
                         "name": "offset",
-                        "type": "integer",
-                        "value": "offset"
+                        "type": "integer"
                     },
                     {
                         "name": "count",
-                        "type": "integer",
-                        "value": "count"
+                        "type": "integer"
                     }
-                ],
-                "optional": true
+                ]
             }
         ]
     }
